@@ -1,2 +1,2 @@
-command="bash ~/createHackingDocumentionFolders"
+command="bash /home/kali/Desktop/base/code/createHackingDocumentionFolders"
 xdotool type --delay 10 "${command}"

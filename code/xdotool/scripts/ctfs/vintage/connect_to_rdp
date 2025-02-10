@@ -1,2 +1,0 @@
-#!/bin/bash
-xdotool type --delay 10 "xfreerdp3 /u:'P.Rosa' /p:'Rosaisbest123' /v:'10.129.72.33' /cert:ignore  /smart-sizing /size:1920x1080"

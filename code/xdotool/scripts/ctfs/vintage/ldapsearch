@@ -1,2 +1,0 @@
-#!/bin/bash
-xdotool type --delay 10 "ldapsearch -x -H ldap://10.129.72.33 -D \"P.Rosa@vintage.htb\" -w \"Rosaisbest123\" -b \"DC=vintage,DC=htb\" \"(objectClass=user)\" sAMAccountName memberOf"
