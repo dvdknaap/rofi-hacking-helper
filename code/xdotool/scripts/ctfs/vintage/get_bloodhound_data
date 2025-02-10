@@ -1,0 +1,2 @@
+#!/bin/bash
+xdotool type --delay 10 "bloodhound-python -u P.Rosa -p 'Rosaisbest123' -d vintage.htb -c All -dc dc01.vintage.htb"

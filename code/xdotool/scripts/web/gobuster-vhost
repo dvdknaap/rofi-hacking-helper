@@ -1,0 +1,2 @@
+command='gobuster vhost -u http://[domain] -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain -r --exclude-length 206'
+xdotool type --delay 10 "${command}"

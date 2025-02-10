@@ -1,0 +1,2 @@
+#!/bin/bash
+xdotool type --delay 10 "sudo nmap -sV -p- -sC -A -T4 --min-parallelism 10  --min-rate 1000 -oA nmap -Pn 10.129.72.33"

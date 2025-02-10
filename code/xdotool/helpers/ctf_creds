@@ -1,0 +1,18 @@
+#!/bin/bash
+
+get_script_dir() {
+    echo "$HOME/Desktop/base/code/xdotool/scripts/"
+}
+
+
+# Functie om de CTF-directory op te halen
+get_ctf_dir() {
+    echo "$HOME/.ctf_creds/"
+}
+
+# Functie om een lijst van beschikbare CTF's op te halen
+get_ctfs() {
+    local ctf_dir
+    ctf_dir=$(get_ctf_dir)
+    ls -d ${ctf_dir}*/ 2>/dev/null
+}
