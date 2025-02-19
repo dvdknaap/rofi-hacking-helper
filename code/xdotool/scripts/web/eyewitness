@@ -1,0 +1,2 @@
+command='eyewitness -f documentation/evidence/notes/subdomains -d documentation/evidence/scans/web/eyeWitness'
+xdotool type --delay 10 "${command}"

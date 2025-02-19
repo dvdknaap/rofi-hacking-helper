@@ -1,0 +1,2 @@
+command='rlwrap -cAr nc -lvnp 1337'
+xdotool type "${command}"
