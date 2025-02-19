@@ -1,24 +1,41 @@
 #!/bin/bash
 
-# Haal terminalgrootte op
-rows=$(stty size | awk '{print $1}')
-cols=$(stty size | awk '{print $2}')
+# Wait a bit to get focus
+sleep 0.5
 
-# Commando's om de reverse shell te fixen
-commands=(
-    "python -c 'import pty; pty.spawn(\"/bin/bash\")'"
-    "xdotool key ctrl+z"
-    "stty raw -echo"
-    "fg"
-    "reset"
-    "export SHELL=bash"
-    "export TERM=xterm-256color"
-    "stty rows $rows columns $cols"
-)
+python_pty_spawn="if command -v python3 &>/dev/null; then python3 -c 'import pty; pty.spawn(\"/bin/bash\")'; else python -c 'import pty; pty.spawn(\"/bin/bash\")'; fi"
 
-# Gebruik xdotool om alles uit te voeren
-for cmd in "${commands[@]}"; do
-    xdotool type --delay 100 "$cmd"
-    xdotool key Return
-    sleep 0.2
-done
+# Run a command on the remote shell to determine if python3 is available
+xdotool type --delay 50 "${python_pty_spawn}"
+xdotool key Return
+
+sleep 0.5
+xdotool key ctrl+z
+sleep 0.5
+
+xdotool type --delay 50 "stty raw -echo"
+xdotool key Return
+
+xdotool type --delay 50 "fg"
+xdotool key Return
+
+xdotool type --delay 50 "export SHELL=bash"
+xdotool key Return
+
+xdotool type --delay 50 "export TERM=xterm-256color"
+xdotool key Return
+
+
+# Hard coded because rofi isn't loading a terminal environment
+rows=52
+cols=238
+
+xdotool type --delay 50 "stty rows $rows columns $cols"
+xdotool key Return
+
+xdotool type --delay 50 "reset"
+xdotool key Return
+
+# Run a pty spwan againt to make it fully interactive
+xdotool type --delay 50 "${python_pty_spawn}"
+xdotool key Return
