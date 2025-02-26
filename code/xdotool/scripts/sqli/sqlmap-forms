@@ -1,2 +1,0 @@
-command='sqlmap -u http://[ip] --forms --level 5 --risk 3 --batch'
-xdotool type --delay 10 "${command}"

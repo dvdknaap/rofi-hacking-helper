@@ -1,2 +1,0 @@
-command='nc -lvnp 1337'
-xdotool type "${command}"

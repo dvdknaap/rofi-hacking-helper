@@ -1,2 +1,0 @@
-xdotool type --delay 10 "type C:\\Users\\Administrator\\Desktop\\proof.txt"
-xdotool key Return

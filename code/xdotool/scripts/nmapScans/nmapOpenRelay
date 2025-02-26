@@ -1,2 +1,0 @@
-command='nmap -p25 -Pn --script smtp-open-relay 10.129.203.101 -vvv'
-xdotool type --delay 10 "${command}"
