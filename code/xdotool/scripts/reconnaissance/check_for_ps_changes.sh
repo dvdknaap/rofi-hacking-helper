@@ -1,2 +1,6 @@
+#!/bin/bash
+
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 command='watch -n 1 "ps -aux | grep pass"'
-xdotool type "${command}"
+paste_command "${command}"

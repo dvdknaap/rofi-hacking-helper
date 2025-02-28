@@ -1,5 +1,9 @@
+#!/bin/bash
+
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 command=$(cat <<'EOF'
 showmount -e 172.16.8.20
 EOF
 )
-xdotool type "${command}"
+paste_command "${command}"
