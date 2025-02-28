@@ -1,2 +1,6 @@
+#!/bin/bash
+
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 command='find /home/* -type f -name "*.txt" -o ! -name "*.*"'
-xdotool type "${command}"
+paste_command "${command}"
