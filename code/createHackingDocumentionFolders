@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Basis directory
+# Base directory
 BASE_DIR="documentation"
 
-# Mappenstructuur met uitleg
+# Folder structure with explanation
 declare -A folder_descriptions
 folder_descriptions["admin"]="Scope of Work (SoW) that you're working off of, your notes from the project kickoff meeting, status reports, vulnerability notifications, etc"
 folder_descriptions["deliverables"]="Folder for keeping your deliverables as you work through them. This will often be your report but can include other items such as supplemental spreadsheets and slide decks, depending on the specific client requirements."
@@ -19,12 +19,12 @@ folder_descriptions["evidence/loggingOutput"]="Logging output from Tmux, Metaspl
 folder_descriptions["evidence/miscFiles"]="Web shells, payloads, custom scripts, and any other files generated during the assessment that are relevant to the project."
 folder_descriptions["retest"]="This is an optional folder if you need to return after the original assessment and retest the previously discovered findings. You may want to replicate the folder structure you used during the initial assessment in this directory to keep your retest evidence separate from your original evidence."
 
-# Maak de mappen aan en genereer .md-bestanden
+# Create the folders and generate .md files
 for folder in "${!folder_descriptions[@]}"; do
     mkdir -p "$BASE_DIR/$folder"
     md_file="$BASE_DIR/$folder/info.md"
     
-    # Schrijf de inhoud naar het markdown-bestand
+    # Write the content to the markdown file
     echo "# $folder_name" > "$md_file"
     echo "" >> "$md_file"
     echo "${folder_descriptions[$folder]}" >> "$md_file"
@@ -33,4 +33,4 @@ for folder in "${!folder_descriptions[@]}"; do
 done
 
 tree "${BASE_DIR}"
-echo "Mappenstructuur en markdown-bestanden aangemaakt onder: `pwd`/${BASE_DIR}"
+echo "Folder structure and markdown files created under: `pwd`/${BASE_DIR}"

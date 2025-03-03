@@ -1,5 +1,9 @@
 #!/bin/bash
 
+"""
+Net: Add user john, add to Exchange and Remote Mgmt groups.
+"""
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
 paste_command "net user john abc123! /add /domain"

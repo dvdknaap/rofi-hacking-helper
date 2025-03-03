@@ -21,7 +21,7 @@ window {
     background-color:   @bg0;
 
     location:       center;
-    width:          640;
+    width:          1200;
     border-radius:  8;
 }
 
@@ -93,4 +93,25 @@ element-icon {
 
 element-text {
     text-color: inherit;
+}
+
+listview {
+    lines:      10;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @bg2;
+    
+    scrollbar:      true;  
+}
+
+scrollbar {
+    background-color: @bg1;
+    width: 8px;
+}
+
+handle {
+    background-color: @fg2; 
+    border-radius: 4px;
 }

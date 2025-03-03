@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# """
+# PowerShell: Password spray using DomainPasswordSpray.ps1 (Welcome1).
+# """
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
 paste_command "Import-Module .\DomainPasswordSpray.ps1"

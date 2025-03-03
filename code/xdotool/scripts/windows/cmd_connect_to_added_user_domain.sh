@@ -1,5 +1,9 @@
 #!/bin/bash
 
+"""
+PowerShell: Grant DCSync rights to user john.
+"""
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
 paste_command "$pass = convertto-securestring 'abc123!' -asplain -force"

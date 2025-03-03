@@ -30,69 +30,171 @@ function check_for_updates {
                 rofi -theme-str 'window {width: 300px;}' -e "Update available! Pull changes?"
                 if [[ $? -eq 0 ]]; then
                     git pull origin main
-                    echo "Update complete!"
+                    paste_commands "Update complete!"
                 else
-                    echo "$NOW" > "$UPDATE_CHECK_FILE"
+                    echo "${NOW}" > "${UPDATE_CHECK_FILE}"
                 fi
             fi
         fi
     fi
 }
 
-# Cache directory listing per folder
-function generate_cache {
-    local DIR_LOCAL=$1
-    local CACHE_FILE="${CACHE_DIR}/$(echo -n "$DIR_LOCAL" | md5sum | awk '{print $1}').cache"
+# Function to get description
+function get_description {
+    local file=$1
+    local description=""
 
-    {
-        find "$DIR_LOCAL" -maxdepth 1 -mindepth 1 -type d ! -name ".*" -printf "%f/\n" | sort
-        find "$DIR_LOCAL" -maxdepth 1 -mindepth 1 -type f ! -name ".*" -printf "%f\n" | sort
-    } > "$CACHE_FILE"
+    if [[ -f "${file}" ]]; then
+        description=$(sed -n '/"""/,/"""/p' "${file}" | sed '1d;$d')
+    elif [[ -d "${file}" && -f "${file}/.desc" ]]; then
+        description=$(cat "${file}/.desc")
+    else
+        description=""
+    fi
+
+    echo "${description}"
 }
 
-# Use cached menu if available
+# Function to format file name for search functionality
+function clean_filename {
+    local name=$1
+    echo "${name}" | tr '_-' ' ' | tr '[:upper:]' '[:lower:]'
+}
+
+# Function to assign icons to files/folders
+function get_icon {
+    local file=$1
+    if [[ -d "${file}" ]]; then
+        echo "📂"
+    elif [[ "${file}" == *.sh ]]; then
+        echo "📜"
+    elif [[ "${file}" == *.py ]]; then
+        echo "🐍"
+    elif [[ "${file}" == *.pl ]]; then
+        echo "🐪"
+    else
+        echo "🪲"
+    fi
+}
+
+# Cache directory listing with descriptions and icons
+function generate_cache {
+    local DIR_LOCAL=$1
+    local CACHE_FILE="${CACHE_DIR}/$(echo -n "${DIR_LOCAL}" | md5sum | awk '{print $1}').cache"
+
+    rm -f "$CACHE_FILE"
+
+    # First collect directories
+    while IFS= read -r dir; do
+        local name=$(basename "$dir")
+        local description=$(get_description "${dir}")
+        local search_name=$(clean_filename "${name}")
+        local icon=$(get_icon "$dir")
+
+        echo -e "$icon $name | $description | $search_name" >> "${CACHE_FILE}"
+    done < <(find "$DIR_LOCAL" -mindepth 1 -maxdepth 1 -type d ! -name ".*" | sort)
+
+    # Then collect files
+    while IFS= read -r file; do
+        local name=$(basename "${file}")
+        local description=$(get_description "${file}")
+        local search_name=$(clean_filename "${name}")
+        local icon=$(get_icon "${file}")
+
+        echo -e "$icon $name | $description | $search_name" >> "${CACHE_FILE}"
+    done < <(find "$DIR_LOCAL" -mindepth 1 -maxdepth 1 -type f ! -name ".*" | sort)
+}
+
+# Use cache if available
 function get_cached_menu {
     local DIR_LOCAL=$1
-    local CACHE_FILE="${CACHE_DIR}/$(echo -n "$DIR_LOCAL" | md5sum | awk '{print $1}').cache"
-
-    if [[ ! -f "$CACHE_FILE" || $(find "$DIR_LOCAL" -newer "$CACHE_FILE" | wc -l) -gt 0 ]]; then
-        generate_cache "$DIR_LOCAL"
+    local CACHE_FILE="${CACHE_DIR}/$(echo -n "${DIR_LOCAL}" | md5sum | awk '{print $1}').cache"
+    
+    if [[ ! -f "${CACHE_FILE}" || $(find "${DIR_LOCAL}" -newer "${CACHE_FILE}" | wc -l) -gt 0 ]]; then
+        generate_cache "${DIR_LOCAL}"
     fi
-    cat "$CACHE_FILE"
+    cat "${CACHE_FILE}"
+}
+
+# Smart search in Rofi
+function fuzzy_search {
+    local input="$1"
+    local DIR_LOCAL="$2"
+    local results=""
+
+    # Convert input to lowercase
+    local input_lower=$(echo "$input" | tr '[:upper:]' '[:lower:]')
+
+    while IFS=$'\n' read -r line; do
+        local icon=$(echo "$line" | cut -d' ' -f1)
+        local name=$(echo "$line" | cut -d'|' -f1 | cut -d' ' -f2-)
+        local desc=$(echo "$line" | cut -d'|' -f2 | sed 's/^[[:space:]]*//; s/^[[:space:]]*$//')
+        local search=$(echo "$line" | cut -d'|' -f3 | sed 's/^[[:space:]]*$//; s/^[[:space:]]*$//')
+
+        # Convert search, name, and desc to lowercase
+        local search_lower=$(echo "$search" | tr '[:upper:]' '[:lower:]')
+        local name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
+        local desc_lower=$(echo "$desc" | tr '[:upper:]' '[:lower:]')
+
+        # Simplified matching: check if input is a substring of any of the fields
+        if [[ -z "$input" || "$search_lower$name_lower$desc_lower" == *"$input_lower"* ]]; then
+            local result="${icon} ${name}"
+
+            # Add description if it's not empty
+            if [[ -n "$desc" ]]; then
+                result+=" | ${desc}"
+            fi
+            result+="\n"
+
+            results+="${result}"
+        fi
+    done < <(get_cached_menu "${DIR_LOCAL}")
+
+    echo -e "$results"
 }
 
 function dir_menu {
-    local DIR_LOCAL=$1
+    local DIR_LOCAL="$1"
+    local search_query=""
 
-    if [[ "$DIR_LOCAL" != "$SCRIPTS_DIR" ]]; then
-        CHOICES=".. (Go Back)\n$(get_cached_menu "$DIR_LOCAL")"
-    else
-        CHOICES="$(get_cached_menu "$DIR_LOCAL")"
-    fi
+    while true; do
 
-    local SELECTION=$(echo -e "$CHOICES" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper.rasi")
-
-    if [ -n "$SELECTION" ]; then
-        local FULL_PATH="${DIR_LOCAL}/${SELECTION}"
-
-        if [[ "$SELECTION" == ".. (Go Back)" ]]; then
-            local PARENT_DIR=$(dirname "$DIR_LOCAL")
-            if [[ "$PARENT_DIR" == "$XDOTOOL_DIR" ]]; then
-                dir_menu "$SCRIPTS_DIR"
-            else
-                dir_menu "$PARENT_DIR"
-            fi
-        elif [[ -d "$FULL_PATH" ]]; then
-            dir_menu "$FULL_PATH"
-        elif [[ -f "$FULL_PATH" ]]; then
-            case "$FULL_PATH" in
-                *.sh)  bash "$FULL_PATH" ;;  
-                *.py)  python3 "$FULL_PATH" ;;  
-                *.txt) xdg-open "$FULL_PATH" ;;  
-                *)     paste_command "Unknown file type: $FULL_PATH"; ;;  
-            esac
+        if [[ "$DIR_LOCAL" != "$SCRIPTS_DIR" ]]; then
+            menu_items="🔙 .. (Go Back)\n$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
+        else
+            menu_items="$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
         fi
-    fi
+        local SELECTION=$(echo -e "$menu_items" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper.rasi" -p "Search: $search_query")
+
+        # Rofi exit?
+        if [[ -z "$SELECTION" ]]; then
+            exit 0
+        fi
+
+        local ICON=$(echo "$SELECTION" | cut -d' ' -f1) # Extract icon
+        local NAME=$(echo "$SELECTION" | cut -d'|' -f1 | cut -d' ' -f2- | awk '{$1=$1};1') # Extract name correctly
+        local FULL_PATH="${DIR_LOCAL}/${NAME}"
+                
+        if [[ "${NAME}" == ".. (Go Back)" ]]; then
+            local PARENT_DIR=$(dirname "${DIR_LOCAL}")
+            if [[ "${PARENT_DIR}" == "${XDOTOOL_DIR}" ]]; then
+                dir_menu "${SCRIPTS_DIR}"
+            else
+                dir_menu "${PARENT_DIR}"
+            fi
+        elif [[ -d "${FULL_PATH}" ]]; then
+            dir_menu "${FULL_PATH}"
+        elif [[ -f "${FULL_PATH}" ]]; then
+            case "${FULL_PATH}" in
+                *.sh)  bash "${FULL_PATH}"; break ;;
+                *.py)  python3 "${FULL_PATH}"; break  ;;
+                *.pl)  perl "${FULL_PATH}"; break  ;;
+                *)     paste_command "Unknown file type: ${FULL_PATH}"; ;;
+            esac
+        else
+            paste_command "unknown file/folder: '${FULL_PATH}', '${NAME}' $(type $FULL_PATH)"
+        fi
+    done
 }
 
 check_for_updates

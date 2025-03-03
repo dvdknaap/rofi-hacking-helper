@@ -1,0 +1,13 @@
+📂 crackPasswords | Crack passwords with hashcat | crackpasswords
+📂 nmapScans | Collection of scripts for network scanning. | nmapscans
+📂 reconnaissance |  | reconnaissance
+📂 shell |  | shell
+📂 sqli |  | sqli
+📂 ssh |  | ssh
+📂 web |  | web
+📂 windows | Windows scripts: user/group mgmt, cred dumping, recon, execution. | windows
+📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
+📜 impacket_ntlmrelay.sh |  | impacket ntlmrelay.sh
+📜 kali_ip.sh |  | kali ip.sh
+📜 ligolo_client_connect.sh |  | ligolo client connect.sh
+📜 ssh_key.sh |  | ssh key.sh

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+"""
+PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege.
+"""
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 
