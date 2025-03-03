@@ -1,0 +1,10 @@
+📂 background |  | background
+📂 msfconsole |  | msfconsole
+📂 msfvenom |  | msfvenom
+📂 windows |  | windows
+📜 fix_shell.sh |  | fix shell.sh
+📜 msf_shell.sh |  | msf shell.sh
+📜 netcat.sh |  | netcat.sh
+📜 rlwrap_netcat.sh |  | rlwrap netcat.sh
+📜 socat_listener.sh |  | socat listener.sh
+📜 socat.sh |  | socat.sh

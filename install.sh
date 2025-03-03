@@ -38,7 +38,7 @@ setup_xfce_shortcut() {
     local keybind="$2"
 
     echo "Setting up keyboard shortcut..."
-    xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>m" -t string -s "$shortcut_command" --create
+    xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>m" -t string -s "bash -e '$shortcut_command'" --create
 
     if [ $? -eq 0 ]; then
         echo -e "\e[32mShortcut successfully created! Use $keybind to launch the menu.\e[0m"
