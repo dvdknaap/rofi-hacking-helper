@@ -1,4 +1,5 @@
 📂 bloodhound | Scripts for starting BloodHound and Neo4j. | bloodhound
+📂 cmd |  | cmd
 📂 enum4linux | Scripts for enum4linux. | enum4linux
 📂 evilWinRm | Scripts for establishing Evil-WinRM connections. | evilwinrm
 📂 inveigh |  | inveigh
@@ -8,26 +9,12 @@
 📂 netexec |  | netexec
 📂 passwordSpraying | Scripts for performing password spraying attacks. | passwordspraying
 📂 permissions | Scripts related to privilege escalation and permission manipulation. | permissions
+📂 powershell |  | powershell
 📂 smbclient | Scripts using smbclient for share enumeration and access. | smbclient
 📂 smbmap | Scripts using smbmap for SMB share enumeration and command execution. | smbmap
 📂 xfreerdp |  | xfreerdp
-📜 check_connected_drives.sh | Net: Show connected network drives. | check connected drives.sh
-📜 cmd_add_user.sh | Net: Add user hckr, add to administrators and RDP groups. | cmd add user.sh
-📜 cmd_add_user_to_domain.sh | Net: Add user john, add to Exchange and Remote Mgmt groups. | cmd add user to domain.sh
-📜 cmd_check_user_account.sh | Net: Get user information. | cmd check user account.sh
-📜 cmd_connect_to_added_user_domain.sh | PowerShell: Grant DCSync rights to user john. | cmd connect to added user domain.sh
-📜 cmd_proof_admin.sh | Read contents of C:\Users\Administrator\Desktop\proof.txt. | cmd proof admin.sh
-📜 cmd_root_admin.sh | Read contents of C:\Users\Administrator\Desktopoot.txt. | cmd root admin.sh
-📜 cmd_secretsdump_added_domain_user.sh | Impacket: Remote secretsdump as htb\john on 10.129.80.76. | cmd secretsdump added domain user.sh
-📜 create_new_powershell_session_to_computer.sh | Powershell - login to user on a different computer | create new powershell session to computer.sh
-📜 find_passwords_in_account_description.sh | PowerShell: Get users with non-null descriptions. | find passwords in account description.sh
-📜 import_module_powerview_ps1.sh | PowerShell: Import PowerView module. | import module powerview ps1.sh
-📜 net_user_domain_details.sh | Net: Get domain user information for hporter. | net user domain details.sh
-📜 ps_disable_defender.sh | Disable Windows Defender and Firewall. | ps disable defender.sh
-📜 ps_download_custom.sh | PowerShell: Download file from webroot via Zenity path input. | ps download custom.sh
+📜 get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: | get usernames ntlm hashes from ntlm username rid lm ntlm hashes.sh
 📜 psexect_to_administrator.sh | Impacket: psexec.py get NTLM hashes with user. | psexect to administrator.sh
-📜 ps_rev.sh | PowerShell: Download and execute script from run.txt. | ps rev.sh
 📜 read_sam_database.sh | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. | read sam database.sh
-📜 save_sam_database copy.sh | Powershell: Check default username | save sam database copy.sh
 📜 save_sam_database.sh | Registry: Save SYSTEM, SECURITY, and SAM hives. | save sam database.sh
 📜 snaffler.sh | Run Snaffler on inlanefreight.local domain. | snaffler.sh
