@@ -158,12 +158,13 @@ function dir_menu {
     local search_query=""
 
     while true; do
-
         if [[ "$DIR_LOCAL" != "$SCRIPTS_DIR" ]]; then
-            menu_items="🔙 .. (Go Back)\n$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
+            local current_folder=$(basename "$DIR_LOCAL")
+            menu_items="Current folder: 📂 "$current_folder"  \n🔙 .. (Go Back)\n$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
         else
             menu_items="$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
         fi
+
         local SELECTION=$(echo -e "$menu_items" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper.rasi" -p "Search: $search_query")
 
         # Rofi exit?
@@ -186,11 +187,13 @@ function dir_menu {
             dir_menu "${FULL_PATH}"
         elif [[ -f "${FULL_PATH}" ]]; then
             case "${FULL_PATH}" in
-                *.sh)  bash "${FULL_PATH}"; break ;;
-                *.py)  python3 "${FULL_PATH}"; break  ;;
-                *.pl)  perl "${FULL_PATH}"; break  ;;
+                *.sh)  bash "${FULL_PATH}" ;;
+                *.py)  python3 "${FULL_PATH}"  ;;
+                *.pl)  perl "${FULL_PATH}"  ;;
                 *)     paste_command "Unknown file type: ${FULL_PATH}"; ;;
             esac
+
+            exit 0
         else
             paste_command "unknown file/folder: '${FULL_PATH}', '${NAME}' $(type $FULL_PATH)"
         fi
