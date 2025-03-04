@@ -1,5 +1,6 @@
 #!/bin/bash
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/run_with_proxychains.sh
 
-paste_command "proxychains evil-winrm -i 172.16.8.50 -u 'backupadm' -p '!qazXSW@'"
+run_with_proxychains $0

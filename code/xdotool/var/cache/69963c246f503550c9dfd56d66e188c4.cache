@@ -1,0 +1,4 @@
+📜 dump_lsa_secrets.sh | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). | dump lsa secrets.sh
+📜 dump_lsass_credentials.sh | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). | dump lsass credentials.sh
+📜 dump_lsass_credentials_with_processprotect.sh | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). | dump lsass credentials with processprotect.sh
+📜 kerberos_double_hop_fix.sh | Fix Kerberos "Double Hop" problem when using WinRM/Powershell | kerberos double hop fix.sh

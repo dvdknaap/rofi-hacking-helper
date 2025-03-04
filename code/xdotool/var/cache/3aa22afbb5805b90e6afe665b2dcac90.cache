@@ -1,5 +1,6 @@
+📜 crack_net_ntlmv2_hashes.sh | Crack NetNTLMv2 hashes with hashcat using rockyou.txt. | crack net ntlmv2 hashes.sh
 📜 crack_spn_passwords.sh | Crack SPN passwords with hashcat using rockyou.txt. | crack spn passwords.sh
 📜 crack_spn_passwords_with_best64_rule.sh | Crack SPN passwords with hashcat using rockyou.txt and best64.rule. | crack spn passwords with best64 rule.sh
 📜 crack_spn_passwords_with_OneRuleToRuleThemAll_rule.sh | Crack SPN passwords with hashcat using rockyou.txt and OneRuleToRuleThemAll.rule. | crack spn passwords with oneruletorulethemall rule.sh
-📜 create_rockyou_best64_rule_custom_wordlist.sh |  | create rockyou best64 rule custom wordlist.sh
-📜 create_rockyou_OneRuleToRuleThemAll_rule_custom_wordlist.sh |  | create rockyou oneruletorulethemall rule custom wordlist.sh
+📜 create_rockyou_best64_rule_custom_wordlist.sh | Create sorted, unique wordlist from rockyou.txt + best64.rule. | create rockyou best64 rule custom wordlist.sh
+📜 create_rockyou_OneRuleToRuleThemAll_rule_custom_wordlist.sh | Create sorted, unique wordlist: rockyou.txt + OneRuleToRuleThemAll.rule. | create rockyou oneruletorulethemall rule custom wordlist.sh
