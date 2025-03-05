@@ -194,8 +194,8 @@ function dir_menu {
             esac
 
             exit 0
-        else
-            paste_command "unknown file/folder: '${FULL_PATH}', '${NAME}' $(type $FULL_PATH)"
+        #else
+        #    paste_command "unknown file/folder: '${FULL_PATH}', '${NAME}' $(type $FULL_PATH)"
         fi
     done
 }

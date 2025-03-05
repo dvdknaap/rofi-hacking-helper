@@ -1,0 +1,17 @@
+📜 check_crontab.sh |  | check crontab.sh
+📜 check_database_files.sh |  | check database files.sh
+📜 check_exports.sh |  | check exports.sh
+📜 check_for_config_files.sh |  | check for config files.sh
+📜 check_for_passwords_in_config_files.sh |  | check for passwords in config files.sh
+📜 check_for_ps_changes.sh |  | check for ps changes.sh
+📜 check_for_txt_files_in_home_directory.sh |  | check for txt files in home directory.sh
+📜 check_open_ports.sh |  | check open ports.sh
+📜 check_user_permissions.sh | Check user permissions and other usefull pentest info | check user permissions.sh
+📜 check_users_bash_history.sh |  | check users bash history.sh
+📜 lin_peas_one_liner.sh |  | lin peas one liner.sh
+📜 mount_nfs_file_system.sh |  | mount nfs file system.sh
+📜 ping_sweep_linux.sh |  | ping sweep linux.sh
+📜 proxychains_show_mounts.sh |  | proxychains show mounts.sh
+📜 show_mounts.sh |  | show mounts.sh
+📜 tcpdump.sh |  | tcpdump.sh
+📜 unmount_nfs_file_system.sh |  | unmount nfs file system.sh

@@ -1,5 +1,8 @@
+📂 auditTools |  | audittools
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
+📂 fileTransfer |  | filetransfer
 📂 nmapScans | Collection of scripts for network scanning. | nmapscans
+📂 portListening |  | portlistening
 📂 reconnaissance |  | reconnaissance
 📂 shell |  | shell
 📂 sqli |  | sqli
