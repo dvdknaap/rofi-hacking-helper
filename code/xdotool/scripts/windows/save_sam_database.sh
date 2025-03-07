@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Registry: Save SYSTEM, SECURITY, and SAM hives.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

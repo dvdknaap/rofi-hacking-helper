@@ -1,8 +1,8 @@
  #!/bin/bash
 
-"""
+: '
 save username and ntlm hashes in seperated files from form username:RID:LM:NTLM:::
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

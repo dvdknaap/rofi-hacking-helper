@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Check user permissions and other usefull pentest info
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

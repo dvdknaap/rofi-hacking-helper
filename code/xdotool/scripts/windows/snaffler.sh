@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Run Snaffler on inlanefreight.local domain.
-"""
+'
 
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh

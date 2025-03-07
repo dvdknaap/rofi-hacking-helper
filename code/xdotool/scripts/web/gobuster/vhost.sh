@@ -1,6 +1,15 @@
 #!/bin/bash
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+: '
+gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt
+'
 
-command='gobuster vhost -u http://soccer.htb -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain -r --exclude-length 206'
-paste_command "${command}"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+
+# Generate gui form
+generate_form "Website"
+
+WEBSITE=${form_data["Website"]}
+
+paste_command "gobuster vhost -u ${WEBSITE} -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain -r"

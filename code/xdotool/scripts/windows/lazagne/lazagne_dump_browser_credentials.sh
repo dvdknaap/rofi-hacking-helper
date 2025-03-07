@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Dump browser stored credentials
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

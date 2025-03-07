@@ -1,8 +1,8 @@
  #!/bin/bash
 
-"""
+: '
 Create sorted, unique wordlist from rockyou.txt + best64.rule.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

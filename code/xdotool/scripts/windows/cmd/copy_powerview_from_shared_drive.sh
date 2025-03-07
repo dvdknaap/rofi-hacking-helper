@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Copy PowerView.ps1 from shared drive
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

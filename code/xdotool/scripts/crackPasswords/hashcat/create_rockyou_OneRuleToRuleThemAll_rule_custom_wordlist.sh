@@ -1,8 +1,8 @@
  #!/bin/bash
 
-"""
+: '
 Create sorted, unique wordlist: rockyou.txt + OneRuleToRuleThemAll.rule.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

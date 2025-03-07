@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 smbclient: List shares.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

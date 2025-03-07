@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Import Inveigh.ps1
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Impacket: Remote secretsdump as htb\john on 10.129.80.76.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

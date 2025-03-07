@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 PowerShell: Get SPNs, format for Hashcat, export to spns.csv.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

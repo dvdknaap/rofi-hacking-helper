@@ -47,7 +47,7 @@ Shurtcut: - Press Ctrl+Shift+M and execute scripts from anywhere
 
 ![Custom shortcut](assets/customShortcut.png)
 
-Some example scripts require other tools, like `zenity` or `pwsh`, but the idea is that you manage the scripts yourself.
+Some example scripts require other tools, like `pwsh`, but the idea is that you manage the scripts yourself.
 
 ## What it looks like
 

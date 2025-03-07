@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 smbmap: Execute 'whoami' on smb as Administrator with NTLM hash.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

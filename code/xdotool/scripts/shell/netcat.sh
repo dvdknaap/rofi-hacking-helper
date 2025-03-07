@@ -1,6 +1,14 @@
 #!/bin/bash
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+: '
+start nc port listening
+'
 
-command='nc -lvnp 1337'
-paste_command "${command}"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+
+# Generate gui form
+generate_form "Port"
+
+Port=${form_data["Port"]}
+paste_command "nc -lvnp ${Port}"

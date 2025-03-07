@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege.
-"""
+'
 
 ; '
 https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeImpersonatePrivilege.md

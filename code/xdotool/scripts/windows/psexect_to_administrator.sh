@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Impacket: psexec.py get NTLM hashes with user.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

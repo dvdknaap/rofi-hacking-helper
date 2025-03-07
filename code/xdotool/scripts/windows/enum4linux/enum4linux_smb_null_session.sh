@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Enumerate users and passwords via enum4linux.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

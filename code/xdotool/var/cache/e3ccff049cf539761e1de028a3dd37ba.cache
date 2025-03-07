@@ -1,0 +1,4 @@
+📂 proxychains |  | proxychains
+📜 administrator_hash_execute_cmd.sh | smbclient: Connect to share. | administrator hash execute cmd.sh
+📜 connect_to_share.sh | smbclient: Connect to share. | connect to share.sh
+📜 show_shares.sh | smbclient: List shares. | show shares.sh

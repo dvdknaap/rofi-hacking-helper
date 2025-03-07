@@ -1,0 +1,3 @@
+📜 nmap_open_relay.sh | Nmap: Check for open SMTP relay. | nmap open relay.sh
+📜 nmap_quick.sh | Nmap: Scan hosts from scope.txt, save output to nmap_1k. | nmap quick.sh
+📜 nmap.sh | Nmap: Aggressive scan all ports, save output. | nmap.sh

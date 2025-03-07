@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Net: Check local administrators
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

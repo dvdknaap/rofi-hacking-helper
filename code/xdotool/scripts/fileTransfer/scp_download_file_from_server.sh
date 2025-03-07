@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 SCP download file from server
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
