@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-xfreerdp: Connect with specified credentials.
+login with username and password
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -14,4 +14,4 @@ IP=${form_data["IP"]}
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
 
-paste_command "xfreerdp3 /u:'${USERNAME}' /p:'${PASSWORD}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080"
+paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}'"

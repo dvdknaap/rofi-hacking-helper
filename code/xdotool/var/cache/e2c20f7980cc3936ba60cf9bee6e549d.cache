@@ -1,0 +1,20 @@
+📂 proxychains |  | proxychains
+📜 administrator_hash.sh |  | administrator hash.sh
+📜 check_ad_users_and_passwords.sh |  | check ad users and passwords.sh
+📜 check_anonymous.sh |  | check anonymous.sh
+📜 dump_credentials_from_lsa.sh |  | dump credentials from lsa.sh
+📜 dump_credentials_from_sam.sh |  | dump credentials from sam.sh
+📜 dump_ntds.sh |  | dump ntds.sh
+📜 enumerate_group.sh |  | enumerate group.sh
+📜 enumerate_users_execute_cmd.sh |  | enumerate users execute cmd.sh
+📜 enumerate_users_execute_smbexec.sh |  | enumerate users execute smbexec.sh
+📜 find_autologon_in_registry_xml.sh |  | find autologon in registry xml.sh
+📜 null_session.sh |  | null session.sh
+📜 password_policy.sh |  | password policy.sh
+📜 rid_brute.sh |  | rid brute.sh
+📜 show_shares.sh |  | show shares.sh
+📜 smb_enumerate_local_users.sh |  | smb enumerate local users.sh
+📜 smb_enumerate_users.sh |  | smb enumerate users.sh
+📜 smb_start_listener.sh |  | smb start listener.sh
+📜 smb_user.sh |  | smb user.sh
+📜 spider_plus_share.sh | netexec smb use spider_plus to get all share files | spider plus share.sh

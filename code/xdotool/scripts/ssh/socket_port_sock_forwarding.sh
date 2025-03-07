@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-type ssh port forwarding with ssh key
+-D sock 5 forwarding
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -9,10 +9,10 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP" "SSH key location"
+generate_form "IP" "Username"
 
 IP=${form_data["IP"]}
-SSH_KEY=${form_data["SSH key location"]}
+USERNAME=${form_data["Username"]}
 
-paste_command "ssh -i ${SSH_KEY} -R 172.16.8.120:443:0.0.0.0:7000 root@${IP} -v"
+paste_command "ssh -D 9050 ${USERNAME}@${IP} -v"
 
