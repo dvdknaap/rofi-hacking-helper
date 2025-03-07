@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 smbclient: Connect to share.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

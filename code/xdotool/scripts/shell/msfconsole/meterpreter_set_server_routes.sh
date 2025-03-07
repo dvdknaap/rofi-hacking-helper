@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 meterpreter: set server routes
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

@@ -1,16 +1,17 @@
 📂 auditTools |  | audittools
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
-📂 fileTransfer |  | filetransfer
+📂 decompile | decompile files | decompile
+📂 fileTransfer | transfer file to or from a server | filetransfer
 📂 nmapScans | Collection of scripts for network scanning. | nmapscans
-📂 portListening |  | portlistening
+📂 portListening | different scripts to do port listenings | portlistening
+📂 python | different python scripts like to start http server | python
 📂 reconnaissance |  | reconnaissance
-📂 shell |  | shell
+📂 shell | scripts like automatically fix shell and make it interactive, start port listening, create rev shells | shell
 📂 sqli |  | sqli
-📂 ssh |  | ssh
-📂 web |  | web
+📂 ssh | scripts to start port listening or forwarding | ssh
+📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web
 📂 windows | Windows scripts: user/group mgmt, cred dumping, recon, execution. | windows
 📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
 📜 impacket_ntlmrelay.sh |  | impacket ntlmrelay.sh
-📜 kali_ip.sh |  | kali ip.sh
-📜 ligolo_client_connect.sh |  | ligolo client connect.sh
-📜 ssh_key.sh |  | ssh key.sh
+📜 kali_ip.sh | get Kali IP address | kali ip.sh
+📜 ssh_key.sh | get SSH key | ssh key.sh

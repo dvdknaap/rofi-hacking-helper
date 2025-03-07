@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Fix Kerberos "Double Hop" problem when using WinRM/Powershell
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

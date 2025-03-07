@@ -1,8 +1,8 @@
  #!/bin/bash
 
-"""
+: '
 Crack SPN passwords with hashcat using rockyou.txt.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

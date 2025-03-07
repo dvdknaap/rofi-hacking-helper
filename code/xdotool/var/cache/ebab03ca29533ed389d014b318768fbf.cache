@@ -1,0 +1,2 @@
+📜 export_spn_users.sh | PowerShell: Get SPNs, format for Hashcat, export to spns.csv. | export spn users.sh
+📜 get_samaccountname.sh | PowerShell: Get SPN user account names. | get samaccountname.sh

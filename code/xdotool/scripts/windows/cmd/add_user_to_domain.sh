@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Net: Add user john, add to Exchange and Remote Mgmt groups.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

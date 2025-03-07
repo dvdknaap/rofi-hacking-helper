@@ -45,7 +45,7 @@ function get_description {
     local description=""
 
     if [[ -f "${file}" ]]; then
-        description=$(sed -n '/"""/,/"""/p' "${file}" | sed '1d;$d')
+        description=$(sed -n "/^: '\$/,/^'\$/{//!p}" "${file}")
     elif [[ -d "${file}" && -f "${file}/.desc" ]]; then
         description=$(cat "${file}/.desc")
     else

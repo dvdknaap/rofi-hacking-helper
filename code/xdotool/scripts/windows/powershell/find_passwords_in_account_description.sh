@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 PowerShell: Get users with non-null descriptions.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

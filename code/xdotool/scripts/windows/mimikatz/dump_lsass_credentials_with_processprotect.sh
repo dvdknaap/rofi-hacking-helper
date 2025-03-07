@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords).
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

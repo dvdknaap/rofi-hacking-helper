@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 meterpreter: start reverse tcp rev shell
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

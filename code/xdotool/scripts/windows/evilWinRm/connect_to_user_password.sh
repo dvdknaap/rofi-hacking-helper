@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Connect with Evil-WinRM as Administrator using password.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

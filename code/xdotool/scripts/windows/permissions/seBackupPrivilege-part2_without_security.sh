@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Registry: Save SYSTEM, SECURITY, and SAM hives.
-"""
+'
 
 ; '
 https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md

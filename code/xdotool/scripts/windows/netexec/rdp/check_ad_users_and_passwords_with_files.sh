@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 nxc rdp: Check RDP with user/pass lists, continue on success.
-"""
+'
 
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh

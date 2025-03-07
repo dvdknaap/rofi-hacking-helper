@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Disable Windows Defender and Firewall.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives.
-"""
+'
 ; '
 https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md
 '

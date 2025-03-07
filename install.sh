@@ -77,7 +77,8 @@ main() {
 
     check_and_install_package rofi
     check_and_install_package xdotool
-    check_and_install_package zenity
+    check_and_install_package python3
+    check_and_install_package python3-tk
     check_and_install_package powershell
     check_and_install_package xclip
     

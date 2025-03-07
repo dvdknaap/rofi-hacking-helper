@@ -1,8 +1,8 @@
  #!/bin/bash
 
-"""
+: '
 Format username:RID:LM:NTLM::: to hashcat format
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 SCP upload file to server
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

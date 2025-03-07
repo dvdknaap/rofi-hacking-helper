@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 xfreerdp: Connect with specified credentials.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

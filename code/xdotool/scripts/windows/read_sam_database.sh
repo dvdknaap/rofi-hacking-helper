@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

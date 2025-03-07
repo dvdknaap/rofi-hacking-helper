@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 Start Inveigh and perform a poofing attacks and captures hash/credential
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

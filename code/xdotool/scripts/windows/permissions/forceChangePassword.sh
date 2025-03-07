@@ -1,8 +1,8 @@
 #!/bin/bash
 
-"""
+: '
 PowerShell: Force change password for user.
-"""
+'
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 

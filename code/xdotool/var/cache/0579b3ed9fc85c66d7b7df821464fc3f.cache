@@ -1,0 +1,3 @@
+📂 genericAll |  | genericall
+📂 genericWrite |  | genericwrite
+📜 start_bloodhound.sh | Start Neo4j service and launch BloodHound GUI. | start bloodhound.sh
