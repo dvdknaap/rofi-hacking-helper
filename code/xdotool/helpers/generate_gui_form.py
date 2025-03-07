@@ -1,7 +1,6 @@
 import json
 import tkinter as tk
 import argparse
-from tkinter import messagebox
 from typing import Dict, List
 
 class FormApp:
@@ -26,8 +25,15 @@ class FormApp:
             entry.grid(row=i, column=1, padx=10, pady=5)
             self.entries[field] = entry
 
+            # Zet focus op de eerste input field
+            if i == 0:
+                entry.focus_set()
+
         submit_button = tk.Button(root, text="Send", command=self.submit)
         submit_button.grid(row=len(fields), columnspan=2, pady=10)
+
+        # Bind Enter-toets aan de submit functie
+        root.bind("<Return>", lambda event: self.submit())
 
     def submit(self) -> None:
         """

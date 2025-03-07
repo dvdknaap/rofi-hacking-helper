@@ -2,6 +2,7 @@
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
 📂 decompile | decompile files | decompile
 📂 fileTransfer | transfer file to or from a server | filetransfer
+📂 ftp | scripts for ftp enumeration | ftp
 📂 nmapScans | Collection of scripts for network scanning. | nmapscans
 📂 portListening | different scripts to do port listenings | portlistening
 📂 python | different python scripts like to start http server | python

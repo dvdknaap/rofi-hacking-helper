@@ -5,6 +5,13 @@ xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for t
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-command="xfreerdp3 /u:'user' /p:'pass' /v:ip /cert:ignore /smart-sizing /size:1920x1080 /drive:tools,\"./tools\""
-paste_command "${command}"
+# Generate gui form
+generate_form "IP" "Username" "Password"
+
+IP=${form_data["IP"]}
+USERNAME=${form_data["Username"]}
+PASSWORD=${form_data["Password"]}
+
+paste_command "xfreerdp3 /u:'${USERNAME}' /p:'${PASSWORD}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080 /drive:tools,\"./tools\""
