@@ -1,5 +1,6 @@
 📂 auditTools |  | audittools
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
+📂 customWordlist | create custom wordlists | customwordlist
 📂 decompile | decompile files | decompile
 📂 fileTransfer | transfer file to or from a server | filetransfer
 📂 ftp | scripts for ftp enumeration | ftp
@@ -15,4 +16,5 @@
 📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
 📜 impacket_ntlmrelay.sh |  | impacket ntlmrelay.sh
 📜 kali_ip.sh | get Kali IP address | kali ip.sh
+📜 save_ssh_key_to_authorized_keys.sh | save SSH key to authorized_keys | save ssh key to authorized keys.sh
 📜 ssh_key.sh | get SSH key | ssh key.sh

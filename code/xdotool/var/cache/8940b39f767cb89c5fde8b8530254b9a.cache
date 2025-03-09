@@ -1,4 +1,6 @@
+📜 curl_ligolo_agent.sh |  | curl ligolo agent.sh
 📜 ligolo_client_connect.sh |  | ligolo client connect.sh
 📜 socat_listener.sh |  | socat listener.sh
 📜 socat.sh |  | socat.sh
 📜 ssh_forward_rdp_port.sh | ssh: forward RDP port | ssh forward rdp port.sh
+📜 start_ligolo_proxy.sh |  | start ligolo proxy.sh
