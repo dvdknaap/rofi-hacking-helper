@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# Base settings
-BASEDIR=~/Desktop/base
-SCRIPTS_DIR="${BASEDIR}/code/xdotool/scripts"
-CACHE_FILE="${BASEDIR}/documentation/script_list.md"
-
-mkdir -p "$(dirname "$CACHE_FILE")"
+SCRIPTS_DIR="$HOME/Desktop/base/code/xdotool/scripts"
+OUTPUT_FILE="$HOME/Desktop/base/documentation/script_list.md"
 
 # Function to get description
 function get_description {
@@ -16,71 +12,109 @@ function get_description {
         description=$(sed -n "/^: '\$/,/^'\$/{//!p}" "${file}")
     elif [[ -d "${file}" && -f "${file}/.desc" ]]; then
         description=$(cat "${file}/.desc")
+    else
+        description=""
     fi
 
     echo "${description}"
 }
 
-# Start fresh Markdown file
-echo "" > "$CACHE_FILE"
+# Function to get the correct icon
+function get_icon {
+    local file=$1
 
-# List to store root files separately
-root_files=()
+    if [[ -d "${file}" ]]; then
+        echo "📂"
+    elif [[ "${file}" == *.sh ]]; then
+        echo "📜"
+    elif [[ "${file}" == *.py ]]; then
+        echo "🐍"
+    elif [[ "${file}" == *.pl ]]; then
+        echo "🐪"
+    else
+        echo "🪲"
+    fi
+}
 
-# Step 1: Process only first-level subdirectories
-find "$SCRIPTS_DIR" -mindepth 1 -maxdepth 1 -type d ! -path "*/.*" | sort | while IFS= read -r dir; do
-    rel_path="${dir#$SCRIPTS_DIR/}"
-    description=$(get_description "$dir")
+# Function to process directories recursively
+function process_directory {
+    local dir="$1"
+    local depth="$2"
+    
+    # Get the relative path for the directory (after SCRIPTS_DIR)
+    relative_dir="${dir#$SCRIPTS_DIR/}"
 
-    # Add section header for first-level subdirectories
-    echo -e "### ${rel_path}\n${description}\n" >> "$CACHE_FILE"
-    echo -e "| Path | Description |\n|------|-------------|" >> "$CACHE_FILE"
+    dir_desc=$(get_description "${dir}")
 
-    # Process all files and subdirectories within this first-level directory
-    find "$dir" -mindepth 1 ! -path "*/.*" | sort | while IFS= read -r item; do
-        rel_item_path="${item#$SCRIPTS_DIR/}"
-        description=$(get_description "$item")
+    # Print the directory name based on its depth
+    if [[ ${depth} -eq 1 ]]; then
+        echo "📂 ### ${relative_dir}"   # For the first sub-directory
+    else
+        echo "📂 **${relative_dir}**"   # For deeper sub-directories
+    fi
 
-        if [[ -d "$item" ]]; then
-            # Add subdirectories inside the section, but not as a new section
-            echo -e "| 📂 \`$rel_item_path\` | $description |" >> "$CACHE_FILE"
-        elif [[ -f "$item" ]]; then
-            # Add files with appropriate icons
-            case "$item" in
-                *.sh) icon="📜" ;;
-                *.py) icon="🐍" ;;
-                *.pl) icon="🐪" ;;
-                *) continue ;;
-            esac
-            echo -e "| $icon \`$rel_item_path\` | $description |" >> "$CACHE_FILE"
-        fi
+    [[ -n "${dir_desc}" ]] && echo "${dir_desc}"
+    echo ""
+    echo "| Path | Description |"
+    echo "|------|-------------|"
+
+    # List files in this directory
+    find "${dir}" -maxdepth 1 -type f ! -name ".*" | sort | while read -r file; do
+        echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
     done
 
-    # Close the table
-    echo "" >> "$CACHE_FILE"
-done
+    # Then process subdirectories
+    find "${dir}" -mindepth 1 -type d ! -name ".*" | sort | while read -r sub_dir; do
+        # Recursively call process_directory with increased depth
+        process_directory "${sub_dir}" $((depth + 1))
+    done
 
-# Step 2: Collect root files (not in subdirectories)
-find "$SCRIPTS_DIR" -maxdepth 1 -type f ! -path "*/.*" | sort | while IFS= read -r file; do
-    rel_path="${file#$SCRIPTS_DIR/}"
-    description=$(get_description "$file")
+    echo ""
+}
 
-    case "$file" in
-        *.sh) icon="📜" ;;
-        *.py) icon="🐍" ;;
-        *.pl) icon="🐪" ;;
-        *) continue ;;
-    esac
-
-    root_files+=("| $icon \`$rel_path\` | $description |")
-done
-
-# Step 3: Append root files under "Other Scripts" section
-if [[ ${#root_files[@]} -gt 0 ]]; then
-    echo -e "### Other Scripts\nMiscellaneous scripts in the root folder.\n" >> "$CACHE_FILE"
-    echo -e "| Path | Description |\n|------|-------------|" >> "$CACHE_FILE"
-    printf "%s\n" "${root_files[@]}" >> "$CACHE_FILE"
-    echo "" >> "$CACHE_FILE"
+# Ensure the scripts directory exists
+if [[ ! -d "${SCRIPTS_DIR}" ]]; then
+    echo "Error: Scripts directory not found!"
+    exit 1
 fi
 
-echo "Markdown list generated: ${CACHE_FILE}"
+# Start writing to the markdown file
+{
+    echo "# 📜 Script Documentation"
+    echo ""
+    echo "## 📌 Table of Contents"
+    echo ""
+
+    # Include the main scripts directory files in TOC
+    echo "- [Main Scripts](#main-scripts)"
+
+    # Generate an overview with clickable links for subdirectories
+    for dir in "${SCRIPTS_DIR}"/*/; do
+        [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]] && echo "- [$(basename "${dir}")](#$(basename "${dir}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]'))"
+    done
+
+    echo ""
+    echo "---"
+    echo ""
+
+    # List main directory files
+    echo "### Main Scripts"
+    echo ""
+    echo "| Path | Description |"
+    echo "|------|-------------|"
+
+    for file in "${SCRIPTS_DIR}"/*; do
+        [[ -f "${file}" && ! "$(basename "${file}")" =~ ^\. ]] && echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
+    done
+
+    echo ""
+    
+    # Process directories
+    for dir in "${SCRIPTS_DIR}"/*/; do
+        if [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]]; then
+            process_directory "${dir}" 1  # Start processing with depth 1
+        fi
+    done
+} > "${OUTPUT_FILE}"
+
+echo "✅ Script list generated: ${OUTPUT_FILE}"

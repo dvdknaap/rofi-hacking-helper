@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt
+gobuster directory with wordlists/dirb/common.txt
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "gobuster vhost -u '${WEBSITE}' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain -r"
+paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/wordlists/dirb/common.txt"

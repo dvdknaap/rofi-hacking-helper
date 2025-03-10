@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "cewl ${WEBSITE} > documentation/evidence/miscFiles/wordlist.txt"
+paste_command "cewl '${WEBSITE}' > documentation/evidence/miscFiles/wordlist.txt"

