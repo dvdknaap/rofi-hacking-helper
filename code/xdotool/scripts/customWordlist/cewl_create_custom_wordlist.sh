@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-cewl - create custom ordlist
+cewl - create custom wordlist
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
