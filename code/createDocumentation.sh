@@ -63,7 +63,7 @@ function process_directory {
     echo ""
 
     # List files in this directory
-    local file_count=$(find "${dir}" -maxdepth 1 -type f ! -name ".*" | wc -l)
+    local file_count=$(find "${dir}" -mindepth 1 -maxdepth 1 -type f ! -name ".*" | wc -l)
 
     # If there are files, print the table header
     if [[ ${file_count} -gt 0 ]]; then
