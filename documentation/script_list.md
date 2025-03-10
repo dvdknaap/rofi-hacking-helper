@@ -31,23 +31,24 @@
 | 📜 `save_ssh_key_to_authorized_keys.sh` | save SSH key to authorized_keys |
 | 📜 `ssh_key.sh` | get SSH key |
 
-📂 ### auditTools/
+### 📂 auditTools/
 
 | Path | Description |
 |------|-------------|
-📂 **auditTools/domainPasswordAuditTool_dpat**
+** 📂 auditTools/domainPasswordAuditTool_dpat**
 
 | Path | Description |
 |------|-------------|
 | 📜 `auditTools/domainPasswordAuditTool_dpat/audit_ad_passwords_hashcat_profile.sh` | Domain Password Audit Tool (DPAT) |
 
 
-📂 ### crackPasswords/
+### 📂 crackPasswords/
+
 Crack passwords with hashcat
 
 | Path | Description |
 |------|-------------|
-📂 **crackPasswords/hashcat**
+** 📂 crackPasswords/hashcat**
 
 | Path | Description |
 |------|-------------|
@@ -62,19 +63,22 @@ Crack passwords with hashcat
 | 📜 `crackPasswords/hashcat/format_ntlm_username_rid_lm_ntlm_hashes_to_hashcat.sh` | Format username:RID:LM:NTLM::: to hashcat format |
 
 
-📂 ### customWordlist/
+### 📂 customWordlist/
+
 create custom wordlists
 
 | Path | Description |
 |------|-------------|
 | 📜 `customWordlist/cewl_create_custom_wordlist.sh` | cewl - create custom wordlist |
 
-📂 ### decompile/
+### 📂 decompile/
+
 decompile files
 
 | Path | Description |
 |------|-------------|
-📂 **decompile/java**
+** 📂 decompile/java**
+
 decompile java class files
 
 | Path | Description |
@@ -82,7 +86,8 @@ decompile java class files
 | 📜 `decompile/java/decompile_java_class_file.sh` | Decompile java class file |
 
 
-📂 ### fileTransfer/
+### 📂 fileTransfer/
+
 transfer file to or from a server
 
 | Path | Description |
@@ -90,14 +95,16 @@ transfer file to or from a server
 | 📜 `fileTransfer/scp_download_file_from_server.sh` | SCP download file from server |
 | 📜 `fileTransfer/scp_upload_server_to_file.sh` | SCP upload file to server |
 
-📂 ### ftp/
+### 📂 ftp/
+
 scripts for ftp enumeration
 
 | Path | Description |
 |------|-------------|
 | 📜 `ftp/anonymous_login.sh` | FTP: check for anonymous login |
 
-📂 ### nmapScans/
+### 📂 nmapScans/
+
 Collection of scripts for network scanning.
 
 | Path | Description |
@@ -106,7 +113,7 @@ Collection of scripts for network scanning.
 | 📜 `nmapScans/nmap_check_online_hosts.sh` | Nmap: ping sweep |
 | 📜 `nmapScans/nmap_open_relay.sh` | Nmap: Check for open SMTP relay. |
 | 📜 `nmapScans/nmap_quick.sh` | Nmap: Scan hosts from scope.txt, save output to nmap_1k. |
-📂 **nmapScans/proxychains**
+** 📂 nmapScans/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -116,7 +123,8 @@ Collection of scripts for network scanning.
 | 📜 `nmapScans/proxychains/nmap_quick.sh` | Nmap: Scan hosts from scope.txt, save output to nmap_1k. |
 
 
-📂 ### portListening/
+### 📂 portListening/
+
 different scripts to do port listenings
 
 | Path | Description |
@@ -128,12 +136,14 @@ different scripts to do port listenings
 | 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port |
 | 📜 `portListening/start_ligolo_proxy.sh` |  |
 
-📂 ### python/
+### 📂 python/
+
 different python scripts like to start http server
 
 | Path | Description |
 |------|-------------|
-📂 **python/http_server**
+** 📂 python/http_server**
+
 start a python http server
 
 | Path | Description |
@@ -142,11 +152,11 @@ start a python http server
 | 📜 `python/http_server/http_server.sh` | start http server |
 
 
-📂 ### reconnaissance/
+### 📂 reconnaissance/
 
 | Path | Description |
 |------|-------------|
-📂 **reconnaissance/linux**
+** 📂 reconnaissance/linux**
 
 | Path | Description |
 |------|-------------|
@@ -170,18 +180,18 @@ start a python http server
 | 📜 `reconnaissance/linux/tcpdump.sh` |  |
 | 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` |  |
 
-📂 **reconnaissance/windows**
+** 📂 reconnaissance/windows**
 
 | Path | Description |
 |------|-------------|
-📂 **reconnaissance/windows/cmd**
+** 📂 reconnaissance/windows/cmd**
 
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/cmd/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` |  |
 
-📂 **reconnaissance/windows/powershell**
+** 📂 reconnaissance/windows/powershell**
 
 | Path | Description |
 |------|-------------|
@@ -189,14 +199,14 @@ start a python http server
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` |  |
 
 
-📂 **reconnaissance/windows/cmd**
+** 📂 reconnaissance/windows/cmd**
 
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/cmd/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` |  |
 
-📂 **reconnaissance/windows/powershell**
+** 📂 reconnaissance/windows/powershell**
 
 | Path | Description |
 |------|-------------|
@@ -204,7 +214,8 @@ start a python http server
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` |  |
 
 
-📂 ### shell/
+### 📂 shell/
+
 scripts like automatically fix shell and make it interactive, start port listening, create rev shells
 
 | Path | Description |
@@ -214,13 +225,14 @@ scripts like automatically fix shell and make it interactive, start port listeni
 | 📜 `shell/python3_pty_spawn.sh` | python3 - pyt.spawn |
 | 📜 `shell/python_pty_spawn.sh` | python - pyt.spawn |
 | 📜 `shell/rlwrap_netcat.sh` | start rlwrap nc port listening |
-📂 **shell/background**
+** 📂 shell/background**
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/background/compile_hollow.sh` |  |
 
-📂 **shell/msfconsole**
+** 📂 shell/msfconsole**
+
 msfconsole scripts with start sock proxy, port forwarding, server routes
 
 | Path | Description |
@@ -229,20 +241,22 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
 | 📜 `shell/msfconsole/start_msfconsole.sh` | start msfconsole |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
-📂 **shell/msfconsole/linux**
+** 📂 shell/msfconsole/linux**
+
 meterpreter: start reverse tcp rev shell
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/linux/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
 
-📂 **shell/msfconsole/proxychains**
+** 📂 shell/msfconsole/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/proxychains/start_msfconsole.sh` | start msfconsole |
 
-📂 **shell/msfconsole/windows**
+** 📂 shell/msfconsole/windows**
+
 meterpreter: start reverse tcp rev shell
 
 | Path | Description |
@@ -250,27 +264,30 @@ meterpreter: start reverse tcp rev shell
 | 📜 `shell/msfconsole/windows/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
 
 
-📂 **shell/msfconsole/linux**
+** 📂 shell/msfconsole/linux**
+
 meterpreter: start reverse tcp rev shell
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/linux/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
 
-📂 **shell/msfconsole/proxychains**
+** 📂 shell/msfconsole/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/proxychains/start_msfconsole.sh` | start msfconsole |
 
-📂 **shell/msfconsole/windows**
+** 📂 shell/msfconsole/windows**
+
 meterpreter: start reverse tcp rev shell
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/windows/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
 
-📂 **shell/msfvenom**
+** 📂 shell/msfvenom**
+
 msfvenom to create reverve shell files for metepreter
 
 | Path | Description |
@@ -285,13 +302,14 @@ msfvenom to create reverve shell files for metepreter
 | 📜 `shell/msfvenom/create_python _rev_shell.sh` | Create Python file |
 | 📜 `shell/msfvenom/create_war _rev_shell.sh` | Create WAR file |
 
-📂 **shell/.revShells/asp**
+** 📂 shell/.revShells/asp**
 
 | Path | Description |
 |------|-------------|
 | 🪲 `shell/.revShells/asp/newaspcmd.asp` |  |
 
-📂 **shell/windows**
+** 📂 shell/windows**
+
 scripts to create windows shells
 
 | Path | Description |
@@ -301,11 +319,12 @@ scripts to create windows shells
 | 📜 `shell/windows/powershell_base64.sh` |  |
 
 
-📂 ### sqli/
+### 📂 sqli/
 
 | Path | Description |
 |------|-------------|
-📂 **sqli/mssql**
+** 📂 sqli/mssql**
+
 script to enable xp_cmdshell and read directories
 
 | Path | Description |
@@ -313,7 +332,8 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqli/mssql/enable_xp_cmdshell.sh` | script to enable xp_cmdshell |
 | 📜 `sqli/mssql/read_directory.sh` | script to read directories with xp_dirtree |
 
-📂 **sqli/sql**
+** 📂 sqli/sql**
+
 different sqlmap scripts to perform SQLi
 
 | Path | Description |
@@ -321,7 +341,8 @@ different sqlmap scripts to perform SQLi
 | 📜 `sqli/sql/sqlmap-forms.sh` | SQLi on all forms on a websith with sqlmap |
 
 
-📂 ### ssh/
+### 📂 ssh/
+
 scripts to start port listening or forwarding
 
 | Path | Description |
@@ -332,12 +353,14 @@ scripts to start port listening or forwarding
 | 📜 `ssh/remote_port_forwarding_with_sshkey.sh` | type ssh port forwarding with ssh key |
 | 📜 `ssh/socket_port_sock_forwarding.sh` | -D sock 5 forwarding |
 
-📂 ### web/
+### 📂 web/
+
 scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz
 
 | Path | Description |
 |------|-------------|
-📂 **web/eyewitness**
+** 📂 web/eyewitness**
+
 execute eyewitness with custom or nmap file
 
 | Path | Description |
@@ -345,7 +368,8 @@ execute eyewitness with custom or nmap file
 | 📜 `web/eyewitness/eyewitness_with_custom_file.sh` | execute eyewitness with custom file |
 | 📜 `web/eyewitness/eyewitness_with_nmap_file.sh` | execute eyewitness with nmap file |
 
-📂 **web/feroxbuster**
+** 📂 web/feroxbuster**
+
 execute directory and file search with feroxbuster
 
 | Path | Description |
@@ -353,21 +377,24 @@ execute directory and file search with feroxbuster
 | 📜 `web/feroxbuster/feroxbuster.sh` | execute feroxbuster directory search |
 | 📜 `web/feroxbuster/feroxbuster_with_extension_search.sh` | execute feroxbuster directory search and files with extensions search |
 
-📂 **web/fuzz**
+** 📂 web/fuzz**
+
 scripts to do attacks with fuzz
 
 | Path | Description |
 |------|-------------|
 | 📜 `web/fuzz/vhost.sh` | fuzz vhosts with seclists/Discovery/DNS/namelist.txt |
 
-📂 **web/gitDumper**
+** 📂 web/gitDumper**
+
 dump .git folder to local folder
 
 | Path | Description |
 |------|-------------|
 | 📜 `web/gitDumper/dump_git_folder_to_local_folder.sh` | dump git folder to local folder |
 
-📂 **web/gobuster**
+** 📂 web/gobuster**
+
 scripts to do attacks with gobuster
 
 | Path | Description |
@@ -378,7 +405,8 @@ scripts to do attacks with gobuster
 | 📜 `web/gobuster/dir.sh` | gobuster directory with seclists/Discovery/DNS/subdomains-top1million-110000.txt |
 | 📜 `web/gobuster/vhost.sh` | gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt |
 
-📂 **web/wordpress**
+** 📂 web/wordpress**
+
 script to do wordpress attacks
 
 | Path | Description |
@@ -389,7 +417,8 @@ script to do wordpress attacks
 | 📜 `web/wordpress/wpscan_enumerate_users.sh` | wpscan enumerate users |
 
 
-📂 ### windows/
+### 📂 windows/
+
 Windows scripts: user/group mgmt, cred dumping, recon, execution.
 
 | Path | Description |
@@ -399,64 +428,65 @@ Windows scripts: user/group mgmt, cred dumping, recon, execution.
 | 📜 `windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
 | 📜 `windows/snaffler.sh` | Run Snaffler on inlanefreight.local domain. |
-📂 **windows/bloodhound**
+** 📂 windows/bloodhound**
+
 Scripts for starting BloodHound and Neo4j.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
-📂 **windows/bloodhound/genericAll**
+** 📂 windows/bloodhound/genericAll**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericAll/genericAll_exploit_part1.sh` | powershell: genericAll permissions exploit |
 
-📂 **windows/bloodhound/genericWrite**
+** 📂 windows/bloodhound/genericWrite**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part1.sh` | powershell: genericWrite permissions exploit |
 | 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
-📂 **windows/bloodhound/genericWrite/proxychains**
+** 📂 windows/bloodhound/genericWrite/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
 
 
-📂 **windows/bloodhound/genericWrite/proxychains**
+** 📂 windows/bloodhound/genericWrite/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
 
 
-📂 **windows/bloodhound/genericAll**
+** 📂 windows/bloodhound/genericAll**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericAll/genericAll_exploit_part1.sh` | powershell: genericAll permissions exploit |
 
-📂 **windows/bloodhound/genericWrite**
+** 📂 windows/bloodhound/genericWrite**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part1.sh` | powershell: genericWrite permissions exploit |
 | 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
-📂 **windows/bloodhound/genericWrite/proxychains**
+** 📂 windows/bloodhound/genericWrite/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
 
 
-📂 **windows/bloodhound/genericWrite/proxychains**
+** 📂 windows/bloodhound/genericWrite/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
 
-📂 **windows/cmd**
+** 📂 windows/cmd**
 
 | Path | Description |
 |------|-------------|
@@ -472,33 +502,35 @@ Scripts for starting BloodHound and Neo4j.
 | 📜 `windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `windows/cmd/secretsdump_added_domain_user.sh` | Impacket: Remote secretsdump as htb\john on 10.129.80.76. |
 
-📂 **windows/enum4linux**
+** 📂 windows/enum4linux**
+
 Scripts for enum4linux.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/enum4linux/enum4linux_smb_null_session.sh` | Enumerate users and passwords via enum4linux. |
-📂 **windows/enum4linux/proxychains**
+** 📂 windows/enum4linux/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/enum4linux/proxychains/enum4linux_smb_null_session.sh` |  |
 
 
-📂 **windows/enum4linux/proxychains**
+** 📂 windows/enum4linux/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/enum4linux/proxychains/enum4linux_smb_null_session.sh` |  |
 
-📂 **windows/evilWinRm**
+** 📂 windows/evilWinRm**
+
 Scripts for establishing Evil-WinRM connections.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/evilWinRm/connect_to_user_hash.sh` | Connect with Evil-WinRM as Administrator using NTLM hash. |
 | 📜 `windows/evilWinRm/connect_to_user_password.sh` | Connect with Evil-WinRM as Administrator using password. |
-📂 **windows/evilWinRm/proxychains**
+** 📂 windows/evilWinRm/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -506,14 +538,14 @@ Scripts for establishing Evil-WinRM connections.
 | 📜 `windows/evilWinRm/proxychains/connect_to_user_password.sh` |  |
 
 
-📂 **windows/evilWinRm/proxychains**
+** 📂 windows/evilWinRm/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/evilWinRm/proxychains/connect_to_user_hash.sh` |  |
 | 📜 `windows/evilWinRm/proxychains/connect_to_user_password.sh` |  |
 
-📂 **windows/inveigh**
+** 📂 windows/inveigh**
 
 | Path | Description |
 |------|-------------|
@@ -521,7 +553,8 @@ Scripts for establishing Evil-WinRM connections.
 | 📜 `windows/inveigh/start_inveight.sh` | Start Inveigh and perform a poofing attacks and captures hash/credential |
 | 📜 `windows/inveigh/stop_inveight.sh` | Stop Inveigh |
 
-📂 **windows/kerberoasting**
+** 📂 windows/kerberoasting**
+
 Scripts for Kerberoasting (SPN retrieval).
 
 | Path | Description |
@@ -529,14 +562,15 @@ Scripts for Kerberoasting (SPN retrieval).
 | 📜 `windows/kerberoasting/export_spn_users.sh` | PowerShell: Get SPNs, format for Hashcat, export to spns.csv. |
 | 📜 `windows/kerberoasting/get_samaccountname.sh` | PowerShell: Get SPN user account names. |
 
-📂 **windows/lazagne**
+** 📂 windows/lazagne**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
 | 📜 `windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
 
-📂 **windows/mimikatz**
+** 📂 windows/mimikatz**
+
 Scripts for Active Directory enumeration and credential dumping.
 
 | Path | Description |
@@ -546,46 +580,15 @@ Scripts for Active Directory enumeration and credential dumping.
 | 📜 `windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
 
-📂 **windows/netexec**
+** 📂 windows/netexec**
 
 | Path | Description |
 |------|-------------|
-📂 **windows/netexec/proxychains**
+** 📂 windows/netexec/proxychains**
 
 | Path | Description |
 |------|-------------|
-📂 **windows/netexec/proxychains/smb**
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/proxychains/smb/administrator_hash.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/check_ad_users_and_passwords.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/check_anonymous.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_lsa.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_sam.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_ntds.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_group.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_local_users.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_cmd.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_smbexec.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/find_autologon_in_registry_xml.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/null_session.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/password_policy.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/rid_brute.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/smb_start_listener.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/smb_user.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
-
-📂 **windows/netexec/proxychains/winrm**
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
-
-
-📂 **windows/netexec/proxychains/smb**
+** 📂 windows/netexec/proxychains/smb**
 
 | Path | Description |
 |------|-------------|
@@ -609,20 +612,52 @@ Scripts for Active Directory enumeration and credential dumping.
 | 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
 | 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
 
-📂 **windows/netexec/proxychains/winrm**
+** 📂 windows/netexec/proxychains/winrm**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
 
-📂 **windows/netexec/rdp**
+
+** 📂 windows/netexec/proxychains/smb**
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/netexec/proxychains/smb/administrator_hash.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/check_ad_users_and_passwords.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/check_anonymous.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_lsa.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_sam.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/dump_ntds.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/enumerate_group.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/enumerate_local_users.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_cmd.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_smbexec.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/enumerate_users.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/find_autologon_in_registry_xml.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/null_session.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/password_policy.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/rid_brute.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/smb_start_listener.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/smb_user.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
+| 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
+
+** 📂 windows/netexec/proxychains/winrm**
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
+
+** 📂 windows/netexec/rdp**
+
 NetExec scripts for RDP connections.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/rdp/check_ad_users_and_passwords.sh` | nxc rdp: Check RDP with user/pass. |
 | 📜 `windows/netexec/rdp/check_ad_users_and_passwords_with_files.sh` | nxc rdp: Check RDP with user/pass lists, continue on success. |
-📂 **windows/netexec/rdp/proxychains**
+** 📂 windows/netexec/rdp/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -630,14 +665,14 @@ NetExec scripts for RDP connections.
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
 
 
-📂 **windows/netexec/rdp/proxychains**
+** 📂 windows/netexec/rdp/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords.sh` |  |
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
 
-📂 **windows/netexec/smb**
+** 📂 windows/netexec/smb**
 
 | Path | Description |
 |------|-------------|
@@ -660,42 +695,43 @@ NetExec scripts for RDP connections.
 | 📜 `windows/netexec/smb/smb_enumerate_users.sh` |  |
 | 📜 `windows/netexec/smb/smb_start_listener.sh` |  |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
-📂 **windows/netexec/smb/proxychains**
+** 📂 windows/netexec/smb/proxychains**
 
 | Path | Description |
 |------|-------------|
 
 
-📂 **windows/netexec/smb/proxychains**
+** 📂 windows/netexec/smb/proxychains**
 
 | Path | Description |
 |------|-------------|
 
-📂 **windows/netexec/winrm**
+** 📂 windows/netexec/winrm**
+
 NetExec scripts for WinRM connections.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM on 172.16.8.50 with user/pass lists. |
-📂 **windows/netexec/winrm/proxychains**
+** 📂 windows/netexec/winrm/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
 
 
-📂 **windows/netexec/winrm/proxychains**
+** 📂 windows/netexec/winrm/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
 
 
-📂 **windows/netexec/proxychains**
+** 📂 windows/netexec/proxychains**
 
 | Path | Description |
 |------|-------------|
-📂 **windows/netexec/proxychains/smb**
+** 📂 windows/netexec/proxychains/smb**
 
 | Path | Description |
 |------|-------------|
@@ -719,14 +755,14 @@ NetExec scripts for WinRM connections.
 | 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
 | 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
 
-📂 **windows/netexec/proxychains/winrm**
+** 📂 windows/netexec/proxychains/winrm**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
 
 
-📂 **windows/netexec/proxychains/smb**
+** 📂 windows/netexec/proxychains/smb**
 
 | Path | Description |
 |------|-------------|
@@ -750,20 +786,21 @@ NetExec scripts for WinRM connections.
 | 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
 | 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
 
-📂 **windows/netexec/proxychains/winrm**
+** 📂 windows/netexec/proxychains/winrm**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
 
-📂 **windows/netexec/rdp**
+** 📂 windows/netexec/rdp**
+
 NetExec scripts for RDP connections.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/rdp/check_ad_users_and_passwords.sh` | nxc rdp: Check RDP with user/pass. |
 | 📜 `windows/netexec/rdp/check_ad_users_and_passwords_with_files.sh` | nxc rdp: Check RDP with user/pass lists, continue on success. |
-📂 **windows/netexec/rdp/proxychains**
+** 📂 windows/netexec/rdp/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -771,14 +808,14 @@ NetExec scripts for RDP connections.
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
 
 
-📂 **windows/netexec/rdp/proxychains**
+** 📂 windows/netexec/rdp/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords.sh` |  |
 | 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
 
-📂 **windows/netexec/smb**
+** 📂 windows/netexec/smb**
 
 | Path | Description |
 |------|-------------|
@@ -801,44 +838,47 @@ NetExec scripts for RDP connections.
 | 📜 `windows/netexec/smb/smb_enumerate_users.sh` |  |
 | 📜 `windows/netexec/smb/smb_start_listener.sh` |  |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
-📂 **windows/netexec/smb/proxychains**
+** 📂 windows/netexec/smb/proxychains**
 
 | Path | Description |
 |------|-------------|
 
 
-📂 **windows/netexec/smb/proxychains**
+** 📂 windows/netexec/smb/proxychains**
 
 | Path | Description |
 |------|-------------|
 
-📂 **windows/netexec/winrm**
+** 📂 windows/netexec/winrm**
+
 NetExec scripts for WinRM connections.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM on 172.16.8.50 with user/pass lists. |
-📂 **windows/netexec/winrm/proxychains**
+** 📂 windows/netexec/winrm/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
 
 
-📂 **windows/netexec/winrm/proxychains**
+** 📂 windows/netexec/winrm/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
 
-📂 **windows/passwordSpraying**
+** 📂 windows/passwordSpraying**
+
 Scripts for performing password spraying attacks.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/passwordSpraying/domain_password_spray.sh` | PowerShell: Password spray using DomainPasswordSpray.ps1 (Welcome1). |
 
-📂 **windows/permissions**
+** 📂 windows/permissions**
+
 Scripts related to privilege escalation and permission manipulation.
 
 | Path | Description |
@@ -850,7 +890,7 @@ Scripts related to privilege escalation and permission manipulation.
 | 📜 `windows/permissions/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `windows/permissions/SeImpersonate.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
 
-📂 **windows/powershell**
+** 📂 windows/powershell**
 
 | Path | Description |
 |------|-------------|
@@ -863,7 +903,8 @@ Scripts related to privilege escalation and permission manipulation.
 | 📜 `windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
 | 📜 `windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
 
-📂 **windows/smbclient**
+** 📂 windows/smbclient**
+
 Scripts using smbclient for share enumeration and access.
 
 | Path | Description |
@@ -871,7 +912,7 @@ Scripts using smbclient for share enumeration and access.
 | 📜 `windows/smbclient/administrator_hash_execute_cmd.sh` | smbclient: Connect to share. |
 | 📜 `windows/smbclient/connect_to_share.sh` | smbclient: Connect to share. |
 | 📜 `windows/smbclient/show_shares.sh` | smbclient: List shares. |
-📂 **windows/smbclient/proxychains**
+** 📂 windows/smbclient/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -880,7 +921,7 @@ Scripts using smbclient for share enumeration and access.
 | 📜 `windows/smbclient/proxychains/show_shares.sh` |  |
 
 
-📂 **windows/smbclient/proxychains**
+** 📂 windows/smbclient/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -888,14 +929,15 @@ Scripts using smbclient for share enumeration and access.
 | 📜 `windows/smbclient/proxychains/connect_to_share.sh` |  |
 | 📜 `windows/smbclient/proxychains/show_shares.sh` |  |
 
-📂 **windows/smbmap**
+** 📂 windows/smbmap**
+
 Scripts using smbmap for SMB share enumeration and command execution.
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute 'whoami' on smb as Administrator with NTLM hash. |
 | 📜 `windows/smbmap/administrator_hash_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
-📂 **windows/smbmap/proxychains**
+** 📂 windows/smbmap/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -903,20 +945,20 @@ Scripts using smbmap for SMB share enumeration and command execution.
 | 📜 `windows/smbmap/proxychains/administrator_hash_execute_cmd_with_password.sh` |  |
 
 
-📂 **windows/smbmap/proxychains**
+** 📂 windows/smbmap/proxychains**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/smbmap/proxychains/administrator_hash_execute_cmd_with_ntlm_hash.sh` |  |
 | 📜 `windows/smbmap/proxychains/administrator_hash_execute_cmd_with_password.sh` |  |
 
-📂 **windows/xfreerdp**
+** 📂 windows/xfreerdp**
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/xfreerdp/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
 | 📜 `windows/xfreerdp/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
-📂 **windows/xfreerdp/proxychains**
+** 📂 windows/xfreerdp/proxychains**
 
 | Path | Description |
 |------|-------------|
@@ -924,7 +966,7 @@ Scripts using smbmap for SMB share enumeration and command execution.
 | 📜 `windows/xfreerdp/proxychains/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
 
 
-📂 **windows/xfreerdp/proxychains**
+** 📂 windows/xfreerdp/proxychains**
 
 | Path | Description |
 |------|-------------|
