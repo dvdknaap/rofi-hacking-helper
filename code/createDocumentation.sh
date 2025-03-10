@@ -40,7 +40,13 @@ function get_icon {
 function process_directory {
     local dir="$1"
     local depth="$2"
-    
+
+    # Skip directories starting with a dot
+    if [[ "$(basename "${dir}")" =~ ^\. ]]; then
+        echo "Skipping dot directory: ${dir}"  # Logging
+        return
+    fi
+
     # Get the relative path for the directory (after SCRIPTS_DIR)
     relative_dir="${dir#$SCRIPTS_DIR/}"
 
@@ -55,18 +61,28 @@ function process_directory {
 
     [[ -n "${dir_desc}" ]] && echo "" && echo "${dir_desc}"
     echo ""
-    echo "| Path | Description |"
-    echo "|------|-------------|"
 
     # List files in this directory
-    find "${dir}" -maxdepth 1 -type f ! -name ".*" | sort | while read -r file; do
-        echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
-    done
+    local file_count=$(find "${dir}" -maxdepth 1 -type f ! -name ".*" | wc -l)
 
-    # Then process subdirectories
-    find "${dir}" -mindepth 1 -type d ! -name ".*" | sort | while read -r sub_dir; do
-        # Recursively call process_directory with increased depth
-        process_directory "${sub_dir}" $((depth + 1))
+    # If there are files, print the table header
+    if [[ ${file_count} -gt 0 ]]; then
+        echo "| Path | Description |"
+        echo "|------|-------------|"
+
+        find "${dir}" -maxdepth 1 -type f ! -name ".*" | sort | while read -r file; do
+            echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
+        done
+    fi
+
+    # Then process subdirectories, but skip dot directories
+    find "${dir}" -mindepth 1 -maxdepth 1 -type d ! -name ".*" | while read -r sub_dir; do
+        # Check if the subdirectory is a dot directory
+        if [[ ! "$(basename "${sub_dir}")" =~ ^\. ]]; then
+            process_directory "${sub_dir}" $((depth + 1))
+        else
+            echo "Skipping dot subdirectory: ${sub_dir}"  # Logging
+        fi
     done
 
     echo ""
@@ -90,30 +106,32 @@ fi
 
     # Generate an overview with clickable links for subdirectories
     for dir in "${SCRIPTS_DIR}"/*/; do
-        [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]] && echo "- [$(basename "${dir}")](#$(basename "${dir}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]'))"
+        if [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]]; then
+            echo "- [$(basename "${dir}")](#$(basename "${dir}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]'))"
+        fi
     done
 
     echo ""
     echo "---"
     echo ""
 
-    # List main directory files
+    # List main directory files, excluding ones starting with '.'
     echo "### Main Scripts"
     echo ""
     echo "| Path | Description |"
     echo "|------|-------------|"
 
     for file in "${SCRIPTS_DIR}"/*; do
-        [[ -f "${file}" && ! "$(basename "${file}")" =~ ^\. ]] && echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
+        if [[ -f "${file}" && ! "$(basename "${file}")" =~ ^\. ]]; then
+            echo "| $(get_icon "${file}") \`${file#$SCRIPTS_DIR/}\` | $(get_description "${file}") |"
+        fi
     done
 
     echo ""
-    
-    # Process directories
+
+    # Process directories, excluding those starting with '.'
     for dir in "${SCRIPTS_DIR}"/*/; do
-        if [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]]; then
-            process_directory "${dir}" 1  # Start processing with depth 1
-        fi
+        process_directory "${dir}" 1  # Start processing with depth 1
     done
 } > "${OUTPUT_FILE}"
 
