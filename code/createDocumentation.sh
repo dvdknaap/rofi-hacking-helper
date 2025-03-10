@@ -57,7 +57,7 @@ function process_directory {
     if [[ ${depth} -eq 1 ]]; then
         echo "### 📂 ${relative_dir}"   # For the first sub-directory
     else
-        echo "**📂 ${relative_dir}**"   # For deeper sub-directories
+        echo "***📂 ${relative_dir}***"   # For deeper sub-directories
     fi
 
     [[ -n "${dir_desc}" ]] && echo "" && echo "${dir_desc}"
@@ -133,6 +133,8 @@ fi
     # Process directories, excluding those starting with '.'
     for dir in "${SCRIPTS_DIR}"/*/; do
         process_directory "${dir}" 1  # Start processing with depth 1
+
+        echo "<br />"
     done
 } > "${OUTPUT_FILE}"
 
