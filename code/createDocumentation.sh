@@ -52,11 +52,12 @@ function process_directory {
 
     dir_desc=$(get_description "${dir}")
 
+    echo ""
     # Print the directory name based on its depth
     if [[ ${depth} -eq 1 ]]; then
         echo "### 📂 ${relative_dir}"   # For the first sub-directory
     else
-        echo "** 📂 ${relative_dir}**"   # For deeper sub-directories
+        echo "**📂 ${relative_dir}**"   # For deeper sub-directories
     fi
 
     [[ -n "${dir_desc}" ]] && echo "" && echo "${dir_desc}"
