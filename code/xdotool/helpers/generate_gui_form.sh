@@ -42,5 +42,5 @@ generate_form() {
         form_data["${clean_key}"]="${value}"
     done < <(echo "${json_output}" | jq -r 'to_entries | .[] | .key + "=" + .value')
 
-    return form_data
+    return 0
 }
