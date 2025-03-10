@@ -108,7 +108,7 @@ fi
     # Generate an overview with clickable links for subdirectories
     for dir in "${SCRIPTS_DIR}"/*/; do
         if [[ -d "${dir}" && ! "$(basename "${dir}")" =~ ^\. ]]; then
-            echo "- [📂 $(basename "${dir}")](#$(basename "${dir}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]'))"
+            echo "- [$(basename "${dir}")](#-$(basename "${dir}" | tr ' ' '-' | tr '[:upper:]' '[:lower:]'))"
         fi
     done
 
