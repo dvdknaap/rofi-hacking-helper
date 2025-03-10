@@ -1,76 +1,94 @@
-# Pentest productivity hack with rofi
-Use Rofi and xdotool to automate typing and run background tasks in Kali. It works in arbitrary applications (RDP session, browser, any shell, etc).
 
-This is skeleton code with a few examples. Everyone is welcome to contribute.
+# Pentest Productivity Hack with Rofi
+
+Automate typing and run background tasks in Kali Linux using Rofi and xdotool. It works in arbitrary applications (RDP sessions, browsers, any shell, etc.). This tool enhances your productivity by making frequently used scripts quickly accessible through a Rofi menu.
 
 ## Installation
-### Automated Installation
 
-1. Clone this repository and navigate to it:
-```bash
-git clone https://github.com/dvdknaap/rofi-hacking-helper.git ~/Desktop/base
-cd ~/Desktop/base
-```
+### Super Quick Installation (Automated)
 
-2. Run the `install.sh` script:
-```bash
-bash install.sh
-```
+Instead of the usual steps, you can directly fetch the installation script from GitHub and pipe it to Bash. This saves time and simplifies the installation process.
+
+1. Download and run the install script directly:
+
+   ```bash
+   bash <(curl -s https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh)
+   ```
+
+This will automatically configure everything, including downloading the repository and installing the necessary tools.
 
 ### Manual Installation
 
-1. Clone this repository and navigate to it:
-```bash
-git clone https://github.com/dvdknaap/rofi-hacking-helper.git ~/Desktop/base
-cd ~/Desktop/base
-```
+If you prefer to install it manually, follow these steps:
 
-2. Install Rofi if not already installed
-``` bash
-sudo apt install rofi -y
-```
+1. **Clone the repository**:
 
-3. Add rofisearch script menu as keyboard shortcut:
-- Go to `Settings Manager`->`Keyboard`->`Application Shortcuts` / `Keyboard shortcuts`:
-![Settings](assets/settings.png)
+   ```bash
+   git clone https://github.com/dvdknaap/rofi-hacking-helper.git ~/Desktop/base
+   cd ~/Desktop/base
+   ```
 
-- Scroll down and click on `Custom Shortcuts`
-![Keyboard ShortCuts](assets/keyboardShortCuts.png)
+2. **Install Rofi** (if not already installed):
 
-- Click on add and fill in command and the keyboard shortcut that you want to use
+   ```bash
+   sudo apt install rofi xdotool python3 python3-tk powershell xclip -y
+   ```
 
-Name: `rofi-hacking-helper`
+3. **Add the Rofi script as a keyboard shortcut**:
 
-Command: `/home/username/Desktop/base/code/xdotool/rofisearch_scripts_menu.sh` (change `username` to your username `~/` wont work)
+   - Go to `Settings Manager` -> `Keyboard` -> `Application Shortcuts` / `Keyboard Shortcuts`:
+   
+   ![Settings](assets/settings.png)
 
-Shurtcut: - Press Ctrl+Shift+M and execute scripts from anywhere
+   - Scroll down and click on `Custom Shortcuts`:
+   
+   ![Keyboard ShortCuts](assets/keyboardShortCuts.png)
 
-![Custom shortcut](assets/customShortcut.png)
+   - Click 'Add' and fill in the following details:
 
-Some example scripts require other tools, like `pwsh`, but the idea is that you manage the scripts yourself.
+     **Name**: `rofi-hacking-helper`  
+     **Command**: `/home/username/Desktop/base/code/xdotool/rofisearch_scripts_menu.sh` (replace `username` with your actual username, `~/` won't work)  
+     **Shortcut**: Set it to `Ctrl+Shift+M` to execute scripts from anywhere.
 
-## What it looks like
+   ![Custom shortcut](assets/customShortcut.png)
+
+### What It Looks Like
 
 ![](assets/boon.gif)
 
-### fully automatic fix shell
-[Full size video](assets/shellFix.mp4)
+#### Fully Automatic Shell Fix
+[Full-size video](assets/shellFix.mp4)
+
 <video src='assets/shellFix.mp4' width=1200 />
 
-# TIP
-### Add ip,domain and creds and it will automaticly create custom codes that you can use in the rofi menu
-[dvdknaap/add-creds-rofi](https://github.com/dvdknaap/add-creds-rofi)
+---
+
+## Documentation of Scripts
+
+You can find the list of available scripts and their descriptions in the `documentation/script_list.md` file. This document provides an overview of all the available scripts and how they can be used to boost your pentesting productivity.
+
+[View the Script List Documentation](documentation/script_list.md)
+
+## Tips
+
+- Add **IP addresses**, **domains**, and **credentials**, and the system will automatically generate custom code that can be used in the Rofi menu:  
+  [dvdknaap/add-creds-rofi](https://github.com/dvdknaap/add-creds-rofi)
 
 ## Limitations
-- xdotool doesn't work in Wayland, so this works in Kali but not on Ubuntu.
-- Because it's application independant it doesn't share your normal shell aliases.
 
-## Todo
-- A generic typing helper would be better to enhance readability. It would also allow adaptation of the scripts to Wayland.
+- xdotool doesn't work under Wayland, so it works in Kali but not on Ubuntu.
+- Because it is application-independent, it doesn't share your normal shell aliases.
 
-## Other productivity tips
-See [productivity tips](Productivity.md) for more general Kali productivity tips.
+## To-Do
 
-# Forked and special thanks to @spipm
+- A generic typing helper would improve readability and potentially make the scripts adaptable to Wayland.
+
+## Other Productivity Tips
+
+Check out [productivity tips](Productivity.md) for more general productivity tips for Kali Linux.
+
+---
+
+## Forked and Special Thanks to @spipm
+
 [spipm/rofi-hacking-helper Repository](https://github.com/spipm/rofi-hacking-helper)
-
