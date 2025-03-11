@@ -1,6 +1,0 @@
-📜 audit_user_token_privileges.sh | SharpUp - audit token privileges. | audit user token privileges.sh
-📜 forceChangePassword.sh | PowerShell: Force change password for user. | forcechangepassword.sh
-📜 seBackupPrivilege-part1.sh | Registry: Save SYSTEM, SECURITY, and SAM hives. | sebackupprivilege part1.sh
-📜 seBackupPrivilege-part2_without_security.sh | Registry: Save SYSTEM, SECURITY, and SAM hives. | sebackupprivilege part2 without security.sh
-📜 seBackupPrivilege-part2_with_security.sh | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. | sebackupprivilege part2 with security.sh
-📜 SeImpersonate.sh | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. | seimpersonate.sh

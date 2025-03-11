@@ -1,8 +1,0 @@
-📜 check_default_username.sh | Powershell: Check default username | check default username.sh
-📜 create_new_powershell_session_to_computer.sh | Powershell - login to user on a different computer | create new powershell session to computer.sh
-📜 disable_defender.sh | Disable Windows Defender and Firewall. | disable defender.sh
-📜 download_and_execute_custom_script.sh | PowerShell: Download and execute script in memory. | download and execute custom script.sh
-📜 elevate_user.sh | Powershell - elevate user | elevate user.sh
-📜 find_passwords_in_account_description.sh | PowerShell: Get users with non-null descriptions. | find passwords in account description.sh
-📜 import_module_powerview_ps1.sh | PowerShell: Import PowerView module. | import module powerview ps1.sh
-📜 save_custom_script_to_remote_file.sh | PowerShell: Save file and save in current remote folder. | save custom script to remote file.sh

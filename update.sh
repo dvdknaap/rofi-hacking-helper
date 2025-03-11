@@ -39,6 +39,8 @@ main() {
     check_and_install_package powershell
     check_and_install_package xclip
 
+    pip3 install pyftpdlib --break-system-packages
+
     echo -e "\n\e[32mUpdate is complete.\e[0m"
 }
 

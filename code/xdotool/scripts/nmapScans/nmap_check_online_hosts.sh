@@ -12,4 +12,4 @@ generate_form "Ip range"
 
 IPRANGE=${form_data["Ip range"]}
 
-paste_command "nmap -sn -T4 ${IPRANGE} -oN /home/kali/Documents/hackTheBox/prolab/dante/documentation/evidence/scans/serviceEnumeration/active-hosts"
+paste_command "nmap -sn -T4 ${IPRANGE} -oN documentation/evidence/scans/serviceEnumeration/active-hosts"

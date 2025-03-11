@@ -3,4 +3,5 @@
 📂 fuzz | scripts to do attacks with fuzz | fuzz
 📂 gitDumper | dump .git folder to local folder | gitdumper
 📂 gobuster | scripts to do attacks with gobuster | gobuster
+📂 lfi | scripts to perform LFI attacks | lfi
 📂 wordpress | script to do wordpress attacks | wordpress

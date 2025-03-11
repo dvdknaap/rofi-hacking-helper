@@ -5,7 +5,6 @@ enumerate over ad users and password file
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form

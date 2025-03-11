@@ -11,4 +11,4 @@ source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 generate_form "IP"
 
 IP=${form_data["IP"]}
-paste_command "netexec smb ${IP} -u \"\" up \"\""
+paste_command 'netexec smb ${IP} -u "" -p ""'
