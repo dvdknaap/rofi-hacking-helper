@@ -5,5 +5,11 @@ smbclient: List shares.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "smbclient -L 10.129.9.124"
+# Generate gui form
+generate_form "IP"
+
+IP=${form_data["IP"]}
+
+paste_command "smbclient -L ${IP}"

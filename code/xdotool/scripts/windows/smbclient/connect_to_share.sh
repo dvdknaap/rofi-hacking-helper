@@ -5,5 +5,12 @@ smbclient: Connect to share.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "smbclient //10.129.9.124/HR/"
+# Generate gui form
+generate_form "IP" "Share"
+
+IP=${form_data["IP"]}
+SHARE=${form_data["Share"]}
+
+paste_command "smbclient //${IP}/${SHARE}/"

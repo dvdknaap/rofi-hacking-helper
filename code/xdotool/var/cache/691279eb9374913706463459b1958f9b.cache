@@ -1,0 +1,10 @@
+📜 check_if_expect_attack_is_possible.sh | Check if we can execute expect to execute commands | check if expect attack is possible.sh
+📜 execute_a_cmd_with_php_input_filter.sh | Try to execute a cmd with php://input | execute a cmd with php input filter.sh
+📜 fuzz_for_lfi_files_pathtotest_huge.sh | fuzz for LFI files with /usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt | fuzz for lfi files pathtotest huge.sh
+📜 fuzz_for_lfi_files_with_jhaddix.sh | fuzz for LFI files with /usr/share/seclists/Fuzzing/LFI/LFI-LFISuite-pathtotest-huge.txt | fuzz for lfi files with jhaddix.sh
+📜 fuzz_for_root_directory.sh | fuzz for LFI root directory with custom wordlist | fuzz for root directory.sh
+📜 fuzz_server_files_linux.sh | fuzz for server files | fuzz server files linux.sh
+📜 lfi_read_files_with_php_filter_base64_encode.sh | LFI read files with php filter base64 encode | lfi read files with php filter base64 encode.sh
+📜 remote_rfi_with_ftp.sh | Remote RFI with HTTP | remote rfi with ftp.sh
+📜 remote_rfi_with_http.sh | Remote RFI with HTTP | remote rfi with http.sh
+📜 remote_rfi_with_smb.sh | Remote RFI with SMB | remote rfi with smb.sh

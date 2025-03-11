@@ -1,7 +1,0 @@
-📂 linux | meterpreter: start reverse tcp rev shell | linux
-📂 proxychains |  | proxychains
-📂 windows | meterpreter: start reverse tcp rev shell | windows
-📜 meterpreter_port_forwarding.sh | meterpreter: forward all trafic from remote port 8443 to local port 1234 | meterpreter port forwarding.sh
-📜 meterpreter_set_server_routes.sh | meterpreter: set server routes | meterpreter set server routes.sh
-📜 start_msfconsole.sh | start msfconsole | start msfconsole.sh
-📜 start_sock_proxy.sh | Start socks proxy | start sock proxy.sh

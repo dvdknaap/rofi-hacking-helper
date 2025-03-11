@@ -142,12 +142,11 @@ different scripts to do port listenings
 
 | Path | Description |
 |------|-------------|
-| 📜 `portListening/curl_ligolo_agent.sh` |  |
-| 📜 `portListening/ligolo_client_connect.sh` |  |
+| 📜 `portListening/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |
 | 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port |
-| 📜 `portListening/start_ligolo_proxy.sh` |  |
+| 📜 `portListening/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
 
 <br />
 
@@ -180,10 +179,11 @@ start a python http server
 | 📜 `reconnaissance/linux/check_exports.sh` |  |
 | 📜 `reconnaissance/linux/check_for_config_files.sh` |  |
 | 📜 `reconnaissance/linux/check_for_passwords_in_config_files.sh` |  |
-| 📜 `reconnaissance/linux/check_for_ps_changes.sh` |  |
+| 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_for_suid_files.sh` | check for SUID, check gtfobins for something usefull |
 | 📜 `reconnaissance/linux/check_for_txt_files_in_home_directory.sh` |  |
 | 📜 `reconnaissance/linux/check_open_ports.sh` |  |
+| 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
 | 📜 `reconnaissance/linux/check_users_bash_history.sh` |  |
 | 📜 `reconnaissance/linux/lin_peas_one_liner.sh` |  |
@@ -353,6 +353,11 @@ scripts to do attacks with fuzz
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/fuzz/fuzz_for_files_in_var_www_html_with_php_filter_base64.sh` | fuzz for files in var www html with php filter base64 |
+| 📜 `web/fuzz/fuzz_for_php_files.sh` | fuzz for PHP files with /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-small.txt |
+| 📜 `web/fuzz/fuzz_for_php_param_name.sh` | fuzz for PHP param with /usr/share/wordlists/discovery/burp-parameter-names.txt |
+| 📜 `web/fuzz/fuzz_for_php_param_value.sh` | fuzz for PHP value with /usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt |
+| 📜 `web/fuzz/fuzz_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh` | fuzz for wordpress files in var www html with php filter base64 |
 | 📜 `web/fuzz/vhost.sh` | fuzz vhosts with seclists/Discovery/DNS/namelist.txt |
 
 
@@ -386,6 +391,25 @@ dump .git folder to local folder
 | Path | Description |
 |------|-------------|
 | 📜 `web/gitDumper/dump_git_folder_to_local_folder.sh` | dump git folder to local folder |
+
+
+***📂 web/lfi***
+
+scripts to perform LFI attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/lfi/check_if_expect_attack_is_possible.sh` | Check if we can execute expect to execute commands |
+| 📜 `web/lfi/execute_a_cmd_with_php_input_filter.sh` | Try to execute a cmd with php://input |
+| 📜 `web/lfi/fuzz_for_lfi_files_pathtotest_huge.sh` | fuzz for LFI files with /usr/share/seclists/Fuzzing/LFI/LFI-Jhaddix.txt |
+| 📜 `web/lfi/fuzz_for_lfi_files_with_jhaddix.sh` | fuzz for LFI files with /usr/share/seclists/Fuzzing/LFI/LFI-LFISuite-pathtotest-huge.txt |
+| 📜 `web/lfi/fuzz_for_root_directory.sh` | fuzz for LFI root directory with custom wordlist |
+| 📜 `web/lfi/fuzz_server_files_linux.sh` | fuzz for server files - linux |
+| 📜 `web/lfi/fuzz_server_files_windows.sh` | fuzz for server files - windows |
+| 📜 `web/lfi/lfi_read_files_with_php_filter_base64_encode.sh` | LFI read files with php filter base64 encode |
+| 📜 `web/lfi/remote_rfi_with_ftp.sh` | Remote RFI with HTTP |
+| 📜 `web/lfi/remote_rfi_with_http.sh` | Remote RFI with HTTP |
+| 📜 `web/lfi/remote_rfi_with_smb.sh` | Remote RFI with SMB |
 
 
 ***📂 web/wordpress***
@@ -562,24 +586,24 @@ NetExec scripts for RDP connections.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/netexec/smb/administrator_hash.sh` |  |
-| 📜 `windows/netexec/smb/check_anonymous.sh` |  |
+| 📜 `windows/netexec/smb/administrator_hash.sh` | check if local auth is possible for administrator hash |
+| 📜 `windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
 | 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` |  |
 | 📜 `windows/netexec/smb/dump_credentials_from_sam.sh` |  |
 | 📜 `windows/netexec/smb/dump_ntds.sh` |  |
 | 📜 `windows/netexec/smb/enumerate_ad_users_and_passwords.sh` | enumerate over ad users and password file |
-| 📜 `windows/netexec/smb/enumerate_group.sh` |  |
-| 📜 `windows/netexec/smb/enumerate_users_execute_cmd.sh` |  |
-| 📜 `windows/netexec/smb/enumerate_users_execute_smbexec.sh` |  |
+| 📜 `windows/netexec/smb/enumerate_group.sh` | enumerate groups |
+| 📜 `windows/netexec/smb/enumerate_users_execute_cmd.sh` | execute cmd command |
+| 📜 `windows/netexec/smb/enumerate_users_execute_smbexec.sh` | execute smbexec command |
 | 📜 `windows/netexec/smb/find_autologon_in_registry_xml.sh` | searches the domain controller for registry.xml |
 | 📜 `windows/netexec/smb/login_with_username_password.sh` | login with username and password |
 | 📜 `windows/netexec/smb/null_session.sh` | check if null session is possible |
 | 📜 `windows/netexec/smb/password_policy.sh` | get password policy |
 | 📜 `windows/netexec/smb/rid_brute.sh` | enumerate users by bruteforcing RIDs |
 | 📜 `windows/netexec/smb/show_shares.sh` | show smb shares |
-| 📜 `windows/netexec/smb/smb_enumerate_local_users.sh` |  |
-| 📜 `windows/netexec/smb/smb_enumerate_users.sh` |  |
-| 📜 `windows/netexec/smb/smb_start_listener.sh` |  |
+| 📜 `windows/netexec/smb/smb_enumerate_local_users.sh` | show local users |
+| 📜 `windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
+| 📜 `windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
 
 ***📂 windows/netexec/smb/proxychains***
