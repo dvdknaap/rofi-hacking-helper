@@ -160,7 +160,7 @@ different scripts to do port listenings
 
 | Path | Description |
 |------|-------------|
-| 📜 `portListening/add_new_ligolo_interface.sh` | configure ligolo interface and start proxy |
+| 📜 `portListening/add_new_ligolo_interface.sh` | add new ligolo interface in proxy |
 | 📜 `portListening/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |

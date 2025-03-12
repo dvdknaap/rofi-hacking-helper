@@ -1,4 +1,4 @@
-📜 add_new_ligolo_interface.sh | configure ligolo interface and start proxy | add new ligolo interface.sh
+📜 add_new_ligolo_interface.sh | add new ligolo interface in proxy | add new ligolo interface.sh
 📜 curl_ligolo_agent.sh | download ligolo agent to server and connect to proxy | curl ligolo agent.sh
 📜 socat_listener.sh |  | socat listener.sh
 📜 socat.sh |  | socat.sh
