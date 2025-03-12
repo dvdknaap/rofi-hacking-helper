@@ -1,6 +1,9 @@
 #!/bin/bash
 
+: '
+check for open ports
+'
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
-command='netstat -tpln'
-paste_command "${command}"
+paste_command "netstat -tpln"
