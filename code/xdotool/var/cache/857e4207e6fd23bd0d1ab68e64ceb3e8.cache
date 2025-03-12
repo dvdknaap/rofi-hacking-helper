@@ -6,11 +6,12 @@
 📜 check_for_ps_changes.sh | refresh ps -aux list every second | check for ps changes.sh
 📜 check_for_suid_files.sh | check for SUID, check gtfobins for something usefull | check for suid files.sh
 📜 check_for_txt_files_in_home_directory.sh |  | check for txt files in home directory.sh
-📜 check_open_ports.sh |  | check open ports.sh
+📜 check_open_ports.sh | check for open ports | check open ports.sh
 📜 check_running_cronjobs.sh | download pspy64 to server and run it | check running cronjobs.sh
 📜 check_user_permissions.sh | Check user permissions and other usefull pentest info | check user permissions.sh
 📜 check_users_bash_history.sh |  | check users bash history.sh
-📜 lin_peas_one_liner.sh |  | lin peas one liner.sh
+📜 execute_linpeas.sh | download linpeas to server and execute | execute linpeas.sh
+📜 linpeas_one_liner.sh |  | linpeas one liner.sh
 📜 local_port_scan_on_ip.sh | local port scan on ip | local port scan on ip.sh
 📜 mount_nfs_file_system.sh |  | mount nfs file system.sh
 📜 ping_sweep_linux.sh |  | ping sweep linux.sh

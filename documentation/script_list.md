@@ -202,11 +202,12 @@ start a python http server
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_for_suid_files.sh` | check for SUID, check gtfobins for something usefull |
 | 📜 `reconnaissance/linux/check_for_txt_files_in_home_directory.sh` |  |
-| 📜 `reconnaissance/linux/check_open_ports.sh` |  |
+| 📜 `reconnaissance/linux/check_open_ports.sh` | check for open ports |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
 | 📜 `reconnaissance/linux/check_users_bash_history.sh` |  |
-| 📜 `reconnaissance/linux/lin_peas_one_liner.sh` |  |
+| 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
+| 📜 `reconnaissance/linux/linpeas_one_liner.sh` |  |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
 | 📜 `reconnaissance/linux/mount_nfs_file_system.sh` |  |
 | 📜 `reconnaissance/linux/ping_sweep_linux.sh` |  |
