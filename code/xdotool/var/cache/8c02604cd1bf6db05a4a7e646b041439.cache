@@ -2,7 +2,7 @@
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
 📂 customWordlist | create custom wordlists | customwordlist
 📂 decompile | decompile files | decompile
-📂 fileTransfer | transfer file to or from a server | filetransfer
+📂 fileTransfer | transfer file to or from a server for linux and windows | filetransfer
 📂 ftp | scripts for ftp enumeration | ftp
 📂 nmapScans | Collection of scripts for network scanning. | nmapscans
 📂 portListening | different scripts to do port listenings | portlistening

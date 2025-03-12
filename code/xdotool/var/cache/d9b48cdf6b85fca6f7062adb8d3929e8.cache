@@ -1,0 +1,4 @@
+📜 sqlmap_dump-database.sh | sqlmap dump current database | sqlmap dump database.sh
+📜 sqlmap_dump_specific_database.sh | sqlmap show all databases | sqlmap dump specific database.sh
+📜 sqlmap_forms.sh | SQLi on all forms on a websith with sqlmap | sqlmap forms.sh
+📜 sqlmap_show_databases.sh | sqlmap show all databases | sqlmap show databases.sh

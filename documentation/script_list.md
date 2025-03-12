@@ -53,6 +53,7 @@ Crack passwords with hashcat
 
 | Path | Description |
 |------|-------------|
+| 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh` | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat using rockyou.txt. |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_tgs_rep_hash.sh` | Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat using rockyou.txt. |
 | 📜 `crackPasswords/hashcat/crack_net_ntlm_hashes.sh` | Crack NTLM hashes with hashcat using rockyou.txt. |
 | 📜 `crackPasswords/hashcat/crack_net_ntlmv2_hashes.sh` | Crack NetNTLMv2 hashes with hashcat using rockyou.txt. |
@@ -94,12 +95,29 @@ decompile java class files
 
 ### 📂 fileTransfer/
 
-transfer file to or from a server
+transfer file to or from a server for linux and windows
+
+
+***📂 fileTransfer/linux***
+
+transfer file to or from a server for linux
 
 | Path | Description |
 |------|-------------|
-| 📜 `fileTransfer/scp_download_file_from_server.sh` | SCP download file from server |
-| 📜 `fileTransfer/scp_upload_server_to_file.sh` | SCP upload file to server |
+| 📜 `fileTransfer/linux/scp_download_file_from_server.sh` | SCP download file from server |
+| 📜 `fileTransfer/linux/scp_upload_server_to_file.sh` | SCP upload file to server |
+
+
+***📂 fileTransfer/windows***
+
+transfer file to or from a server for windows
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/windows/cmd_upload_nc_file.sh` | cmd: upload nc file to server |
+| 📜 `fileTransfer/windows/ps_upload_nc_file.sh` | ps: nc file to server |
+| 📜 `fileTransfer/windows/start_python_server_to_binary_folder.sh` | start python server to binary folder |
+
 
 <br />
 
@@ -142,11 +160,13 @@ different scripts to do port listenings
 
 | Path | Description |
 |------|-------------|
+| 📜 `portListening/add_new_ligolo_interface.sh` | configure ligolo interface and start proxy |
 | 📜 `portListening/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |
 | 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port |
 | 📜 `portListening/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
+| 📜 `portListening/upload_ligolo_agent_exe.sh` | download ligolo agent.exe to server and connect to proxy |
 
 <br />
 
@@ -300,6 +320,7 @@ scripts to create windows shells
 | 📜 `shell/windows/nc_cmd.sh` |  |
 | 📜 `shell/windows/nc_powershell.sh` |  |
 | 📜 `shell/windows/powershell_base64.sh` |  |
+| 📜 `shell/windows/ps_download_nc_file_and_execute_shell.sh` | download nc file and execute nc shell |
 
 
 <br />
@@ -313,7 +334,11 @@ different sqlmap scripts to perform SQLi
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqli/sql/sqlmap-forms.sh` | SQLi on all forms on a websith with sqlmap |
+| 📜 `sqli/sql/sqlmap_dump-database.sh` | sqlmap dump current database |
+| 📜 `sqli/sql/sqlmap_dump_specific_database.sh` | sqlmap show all databases |
+| 📜 `sqli/sql/sqlmap_forms.sh` | SQLi on all forms on a websith with sqlmap |
+| 📜 `sqli/sql/sqlmap_show_databases.sh` | sqlmap show all databases |
+| 📜 `sqli/sql/sqlmap_show_tables.sh` | sqlmap show all databases |
 
 
 ***📂 sqli/mssql***
@@ -500,11 +525,31 @@ Scripts related to privilege escalation and permission manipulation.
 | Path | Description |
 |------|-------------|
 | 📜 `windows/permissions/audit_user_token_privileges.sh` | SharpUp - audit token privileges. |
-| 📜 `windows/permissions/forceChangePassword.sh` | PowerShell: Force change password for user. |
-| 📜 `windows/permissions/seBackupPrivilege-part1.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
-| 📜 `windows/permissions/seBackupPrivilege-part2_without_security.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
-| 📜 `windows/permissions/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
-| 📜 `windows/permissions/SeImpersonate.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+
+***📂 windows/permissions/seBackupPrivilege***
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
+
+
+***📂 windows/permissions/forceChangePassword***
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/permissions/forceChangePassword/forceChangePassword.sh` | PowerShell: Force change password for user. |
+
+
+***📂 windows/permissions/seImpersonatePrivilege***
+
+exploit SeImpersonatePrivilege
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/permissions/seImpersonatePrivilege/seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+
 
 
 ***📂 windows/powershell***
@@ -527,7 +572,19 @@ Scripts for starting BloodHound and Neo4j.
 
 | Path | Description |
 |------|-------------|
+| 📜 `windows/bloodhound/cmd_upload_sharphound_and_execute.sh` | cmd: Upload sharphound and execute |
+| 📜 `windows/bloodhound/ps_upload_sharphound_and_execute.sh` | ps: Upload sharphound and execute |
+| 📜 `windows/bloodhound/python_create_bloodhound_zip.sh` | Create a bloodhound zip with bloodhound-python |
 | 📜 `windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
+
+***📂 windows/bloodhound/dcsync***
+
+perform DCSync attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/bloodhound/dcsync/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes |
+
 
 ***📂 windows/bloodhound/genericAll***
 
@@ -730,6 +787,15 @@ Scripts using smbclient for share enumeration and access.
 
 
 
+***📂 windows/asreproast***
+
+perform asreproast attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/asreproast/do_asreproast_attack.sh` | do an asreproast attack |
+
+
 ***📂 windows/xfreerdp***
 
 | Path | Description |
@@ -760,7 +826,7 @@ Scripts using smbclient for share enumeration and access.
 | 📜 `windows/cmd/net_user_domain_details.sh` | Net: Get domain user information for hporter. |
 | 📜 `windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
 | 📜 `windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
-| 📜 `windows/cmd/secretsdump_added_domain_user.sh` | Impacket: Remote secretsdump as htb\john on 10.129.80.76. |
+| 📜 `windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
 
 
 <br />
