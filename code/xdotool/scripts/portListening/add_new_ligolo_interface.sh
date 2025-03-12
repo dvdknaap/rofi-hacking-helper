@@ -17,5 +17,3 @@ INTERFACENAME=${form_data["Interface name"]}
 paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo ip link set ${INTERFACENAME} up && sudo ip route add ${IPRANGE} dev ${INTERFACENAME}"
 xdotool key Return
 sleep 2
-
-paste_command "/opt/tools/ligolo-ng_proxy_*linux_amd64/proxy -selfcert"

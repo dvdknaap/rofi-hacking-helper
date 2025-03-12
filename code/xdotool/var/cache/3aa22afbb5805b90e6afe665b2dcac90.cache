@@ -1,3 +1,4 @@
+📜 crack_kerberos5_etype-23_as_rep_hash.sh | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat using rockyou.txt. | crack kerberos5 etype 23 as rep hash.sh
 📜 crack_kerberos5_etype-23_tgs_rep_hash.sh | Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat using rockyou.txt. | crack kerberos5 etype 23 tgs rep hash.sh
 📜 crack_net_ntlm_hashes.sh | Crack NTLM hashes with hashcat using rockyou.txt. | crack net ntlm hashes.sh
 📜 crack_net_ntlmv2_hashes.sh | Crack NetNTLMv2 hashes with hashcat using rockyou.txt. | crack net ntlmv2 hashes.sh

