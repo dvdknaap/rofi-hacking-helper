@@ -14,6 +14,6 @@ generate_form "Ip range" "Interface name"
 IPRANGE=${form_data["Ip range"]}
 INTERFACENAME=${form_data["Interface name"]}
 
-paste_command "nterface_add_route --name ${INTERFACENAME} --route ${IPRANGE}"
+paste_command "interface_add_route --name ${INTERFACENAME} --route ${IPRANGE}"
 xdotool key Return
 sleep 2
