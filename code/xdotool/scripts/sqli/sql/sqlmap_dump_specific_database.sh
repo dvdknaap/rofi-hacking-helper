@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-sqlmap show all databases
+sqlmap dump specific database
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
