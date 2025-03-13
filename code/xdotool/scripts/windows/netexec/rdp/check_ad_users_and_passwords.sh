@@ -4,7 +4,14 @@
 nxc rdp: Check RDP with user/pass.
 '
 
-
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "netexec rdp 172.16.8.3 -u 'user' -p 'pass'"
+# Generate gui form
+generate_form "IP" "Username" "Password"
+
+IP=${form_data["IP"]}
+USERNAME=${form_data["Username"]}
+PASSWORD=${form_data["Password"]}
+
+paste_command "netexec rdp ${IP} -u '${USERNAME}' -p '${PASSWORD}'"

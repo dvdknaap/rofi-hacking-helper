@@ -1,0 +1,5 @@
+📂 forceChangePassword |  | forcechangepassword
+📂 seBackupPrivilege |  | sebackupprivilege
+📂 seImpersonatePrivilege | exploit SeImpersonatePrivilege | seimpersonateprivilege
+📜 cmd_audit_user_token_privileges.sh | SharpUp - cmd: audit token privileges. | cmd audit user token privileges.sh
+📜 ps_audit_user_token_privileges.sh | SharpUp - PS: audit token privileges. | ps audit user token privileges.sh
