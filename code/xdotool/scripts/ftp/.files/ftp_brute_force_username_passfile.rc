@@ -1,0 +1,5 @@
+use auxiliary/scanner/ftp/ftp_login
+set USERNAME [USERNAME]
+set PASS_FILE [PASS_FILE]
+set RHOSTS [RHOSTS]
+exploit
