@@ -34,8 +34,12 @@
 
 ### 📂 auditTools/
 
+scripts to perform pentest audits
+
 
 ***📂 auditTools/domainPasswordAuditTool_dpat***
+
+script to use Domain Password Audit Tool (DPAT)
 
 | Path | Description |
 |------|-------------|
@@ -139,6 +143,9 @@ scripts for ftp enumeration
 | Path | Description |
 |------|-------------|
 | 📜 `ftp/anonymous_login.sh` | FTP: check for anonymous login |
+| 📜 `ftp/hydra_bruteforce_username_and_password.sh` | hydra: bruteforce username and passwords |
+| 📜 `ftp/metaspolit_bruteforce_username_and_password_file.sh` | hydra: bruteforce username and passwords file |
+| 📜 `ftp/metaspolit_bruteforce_username_file_and_password_file.sh` | hydra: bruteforce username file and passwords file |
 
 <br />
 
@@ -243,6 +250,9 @@ start a python http server
 
 perform kerbrute attacks
 
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
 
 
 ***📂 reconnaissance/windows/cmd***
@@ -659,6 +669,8 @@ NetExec scripts for RDP connections.
 
 ***📂 windows/netexec/smb***
 
+perform netexec smb attacks
+
 | Path | Description |
 |------|-------------|
 | 📜 `windows/netexec/smb/administrator_hash.sh` | check if local auth is possible for administrator hash |
@@ -736,6 +748,16 @@ NetExec scripts for WinRM connections.
 |------|-------------|
 | 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
 
+
+
+***📂 windows/netexec/ftp***
+
+perform netexec ftp attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/netexec/ftp/login_with_username_file_password_file.sh` | login with username file and password file |
+| 📜 `windows/netexec/ftp/login_with_username_password.sh` | login with username and password |
 
 
 
