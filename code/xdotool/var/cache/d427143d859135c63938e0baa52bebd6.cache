@@ -1,0 +1,3 @@
+📂 proxychains |  | proxychains
+📜 check_ad_users_and_passwords.sh | nxc rdp: Check RDP with user/pass. | check ad users and passwords.sh
+📜 check_ad_users_and_passwords_with_files.sh | nxc rdp: Check RDP with user/pass lists, continue on success. | check ad users and passwords with files.sh

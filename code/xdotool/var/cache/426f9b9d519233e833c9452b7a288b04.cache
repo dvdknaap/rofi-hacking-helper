@@ -1,3 +1,6 @@
 📜 anonymous_login.sh | FTP: check for anonymous login | anonymous login.sh
 📜 hydra_bruteforce_username_and_password.sh | hydra: bruteforce username and passwords | hydra bruteforce username and password.sh
-📜 metaspolit_bruteforce_username_file_and_password_file.sh | hydra: bruteforce username file and passwords file | metaspolit bruteforce username file and password file.sh
+📜 login_with_username_password.sh | FTP: login with username and password | login with username password.sh
+📜 metasploit_bruteforce_username_and_password_file.sh | hydra: bruteforce username and passwords file | metasploit bruteforce username and password file.sh
+📜 metasploit_bruteforce_username_file_and_password_file.sh | hydra: bruteforce username file and passwords file | metasploit bruteforce username file and password file.sh
+📜 wget_download_files_from_ftp.sh | wget: download files from ftp | wget download files from ftp.sh

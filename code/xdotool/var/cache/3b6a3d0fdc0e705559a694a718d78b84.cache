@@ -1,4 +1,5 @@
+📂 ftp | perform netexec ftp attacks | ftp
 📂 proxychains |  | proxychains
 📂 rdp | NetExec scripts for RDP connections. | rdp
-📂 smb |  | smb
+📂 smb | perform netexec smb attacks | smb
 📂 winrm | NetExec scripts for WinRM connections. | winrm

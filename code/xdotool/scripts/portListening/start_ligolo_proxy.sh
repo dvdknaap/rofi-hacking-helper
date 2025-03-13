@@ -14,6 +14,10 @@ generate_form "Ip range"
 IPRANGE=${form_data["Ip range"]}
 INTERFACENAME="ligolo"
 
+paste_command "sudo ip link delete ${INTERFACENAME}"
+xdotool key Return
+sleep 0.8
+
 paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo ip link set ${INTERFACENAME} up && sudo ip route add ${IPRANGE} dev ${INTERFACENAME}"
 xdotool key Return
 sleep 2

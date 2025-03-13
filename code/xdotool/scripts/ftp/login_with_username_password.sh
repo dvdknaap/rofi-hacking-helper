@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-nxc winrm: Check WinRM connection with username and password.
+FTP: login with username and password
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -14,4 +14,18 @@ IP=${form_data["IP"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec winrm ${IP} -u ${USERNAME} -p ${PASSWORD} | grep '[+]'"
+paste_command "ftp ${IP}"
+xdotool key Return
+sleep 1
+
+paste_command "${USERNAME}"
+xdotool key Return
+sleep 1
+
+paste_command "${PASSWORD}"
+xdotool key Return
+sleep 1
+
+paste_command "ls"
+xdotool key Return
+sleep 1
