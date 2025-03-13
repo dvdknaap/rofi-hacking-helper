@@ -18,4 +18,4 @@ paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo 
 xdotool key Return
 sleep 2
 
-paste_command "~/Desktop/base/code/xdotool/scripts/portListening/.files -selfcert"
+paste_command "~/Desktop/base/code/xdotool/scripts/portListening/.files/proxy -selfcert"
