@@ -51,6 +51,8 @@ Crack passwords with hashcat
 
 ***📂 crackPasswords/hashcat***
 
+crack passwords with hashcat
+
 | Path | Description |
 |------|-------------|
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh` | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat using rockyou.txt. |
@@ -63,6 +65,15 @@ Crack passwords with hashcat
 | 📜 `crackPasswords/hashcat/create_rockyou_best64_rule_custom_wordlist.sh` | Create sorted, unique wordlist from rockyou.txt + best64.rule. |
 | 📜 `crackPasswords/hashcat/create_rockyou_OneRuleToRuleThemAll_rule_custom_wordlist.sh` | Create sorted, unique wordlist: rockyou.txt + OneRuleToRuleThemAll.rule. |
 | 📜 `crackPasswords/hashcat/format_ntlm_username_rid_lm_ntlm_hashes_to_hashcat.sh` | Format username:RID:LM:NTLM::: to hashcat format |
+
+
+***📂 crackPasswords/john***
+
+crack passwords with john the ripper
+
+| Path | Description |
+|------|-------------|
+| 📜 `crackPasswords/john/unshadow_passwords.sh` | unshadow /etc/passwords |
 
 
 <br />
@@ -226,6 +237,12 @@ start a python http server
 |------|-------------|
 | 📜 `reconnaissance/windows/powershell/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` |  |
+
+
+***📂 reconnaissance/windows/kerbrute***
+
+perform kerbrute attacks
+
 
 
 ***📂 reconnaissance/windows/cmd***
