@@ -23,4 +23,3 @@ sleep 1
 paste_command "RECONFIGURE;"
 xdotool key Return
 sleep 1
-xp_dirtree

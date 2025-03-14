@@ -1,2 +1,2 @@
 📜 check_user_permissions.sh | Check user permissions and other usefull pentest info | check user permissions.sh
-📜 ping_sweep_powershell.sh |  | ping sweep powershell.sh
+📜 ping_sweep_powershell.sh | ping sweep - check if ips are alive in ip range 0.0.0 | ping sweep powershell.sh

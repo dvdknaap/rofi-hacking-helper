@@ -9,7 +9,7 @@
 📂 python | different python scripts like to start http server | python
 📂 reconnaissance |  | reconnaissance
 📂 shell | scripts like automatically fix shell and make it interactive, start port listening, create rev shells | shell
-📂 sqli |  | sqli
+📂 sqlDatabase |  | sqldatabase
 📂 ssh | scripts to start port listening or forwarding | ssh
 📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web
 📂 windows | Windows scripts: user/group mgmt, cred dumping, recon, execution. | windows

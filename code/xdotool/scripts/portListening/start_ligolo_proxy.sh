@@ -9,16 +9,16 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "Ip range"
+generate_form "IP"
 
-IPRANGE=${form_data["Ip range"]}
+IP=${form_data["IP"]}
 INTERFACENAME="ligolo"
 
 paste_command "sudo ip link delete ${INTERFACENAME}"
 xdotool key Return
-sleep 0.8
+sleep 2
 
-paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo ip link set ${INTERFACENAME} up && sudo ip route add ${IPRANGE} dev ${INTERFACENAME}"
+paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo ip link set ${INTERFACENAME} up && sudo ip route add ${IP} dev ${INTERFACENAME}"
 xdotool key Return
 sleep 2
 

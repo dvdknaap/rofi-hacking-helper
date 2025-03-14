@@ -14,7 +14,7 @@
 📜 linpeas_one_liner.sh |  | linpeas one liner.sh
 📜 local_port_scan_on_ip.sh | local port scan on ip | local port scan on ip.sh
 📜 mount_nfs_file_system.sh |  | mount nfs file system.sh
-📜 ping_sweep_linux.sh |  | ping sweep linux.sh
+📜 ping_sweep_linux.sh | ping sweep - check if ips are alive in ip range 0.0.0 | ping sweep linux.sh
 📜 proxychains_show_mounts.sh |  | proxychains show mounts.sh
 📜 show_mounts.sh |  | show mounts.sh
 📜 tcpdump.sh |  | tcpdump.sh

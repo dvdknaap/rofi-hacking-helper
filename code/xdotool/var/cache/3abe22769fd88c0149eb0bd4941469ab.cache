@@ -15,7 +15,7 @@
 📂 smbmap | Scripts using smbmap for SMB share enumeration and command execution. | smbmap
 📂 xfreerdp |  | xfreerdp
 📜 get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: | get usernames ntlm hashes from ntlm username rid lm ntlm hashes.sh
-📜 psexect_to_administrator.sh | Impacket: psexec.py get NTLM hashes with user. | psexect to administrator.sh
+📜 psexect_to_administrator.sh | Impacket: psexec.py get psexec shell  | psexect to administrator.sh
 📜 read_sam_database.sh | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. | read sam database.sh
 📜 save_sam_database.sh | Registry: Save SYSTEM, SECURITY, and SAM hives. | save sam database.sh
 📜 snaffler.sh | Run Snaffler on inlanefreight.local domain. | snaffler.sh
