@@ -1,0 +1,6 @@
+use auxiliary/scanner/ssh/ssh_login
+set RHOSTS [RHOSTS]
+set VERBOSE true
+set THREADS 10
+set USERPASS_FILE [USERPASS_FILE]
+run

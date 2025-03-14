@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-download ligolo agent.exe to server and connect to proxy
+cmd: download ligolo agent.exe to server and connect to proxy
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
