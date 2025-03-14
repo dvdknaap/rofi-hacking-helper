@@ -1,5 +1,8 @@
-📂 forceChangePassword |  | forcechangepassword
-📂 seBackupPrivilege |  | sebackupprivilege
-📂 seImpersonatePrivilege | exploit SeImpersonatePrivilege | seimpersonateprivilege
+📂 forceChangePassword | exploit forceChangePassword permission | forcechangepassword
+📂 seBackupPrivilege | exploit seBackupPrivilege permission | sebackupprivilege
+📂 SeDebugPrivilege | exploit SeDebugPrivilege permission | sedebugprivilege
+📂 seImpersonatePrivilege | exploit SeImpersonatePrivilege permission | seimpersonateprivilege
+📂 seTakeOwnershipPrivilege | exploit SeTakeOwnershipPrivilege permission | setakeownershipprivilege
 📜 cmd_audit_user_token_privileges.sh | SharpUp - audit token privileges - cmd: download SharpUp to server and execute. | cmd audit user token privileges.sh
 📜 ps_audit_user_token_privileges.sh | SharpUp - audit token privileges - PS: download SharpUp to server and execute. | ps audit user token privileges.sh
+📜 ps_enableTokens.sh | enable permission tokens | ps enabletokens.sh

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-download nc file and execute nc shell
+ps: download nc file and execute nc shell
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
