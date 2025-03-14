@@ -354,10 +354,13 @@ scripts to create windows shells
 
 | Path | Description |
 |------|-------------|
+| 📜 `shell/windows/cmd_download_nc_file_and_execute_shell.sh` | cmd: download nc file and execute nc shell |
+| 📜 `shell/windows/cmd_execute_powershellTcp.sh` | cmd: download Invoke-PowerShellTcp.ps1 to server and start shell |
 | 📜 `shell/windows/nc_cmd.sh` |  |
 | 📜 `shell/windows/nc_powershell.sh` |  |
 | 📜 `shell/windows/powershell_base64.sh` |  |
-| 📜 `shell/windows/ps_download_nc_file_and_execute_shell.sh` | download nc file and execute nc shell |
+| 📜 `shell/windows/ps_download_nc_file_and_execute_shell.sh` | ps: download nc file and execute nc shell |
+| 📜 `shell/windows/ps_execute_powershellTcp.sh` | ps: download Invoke-PowerShellTcp.ps1 to server and start shell |
 
 
 <br />

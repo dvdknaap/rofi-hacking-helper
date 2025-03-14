@@ -1,4 +1,7 @@
+📜 cmd_download_nc_file_and_execute_shell.sh | cmd: download nc file and execute nc shell | cmd download nc file and execute shell.sh
+📜 cmd_execute_powershellTcp.sh | cmd: download Invoke-PowerShellTcp.ps1 to server and start shell | cmd execute powershelltcp.sh
 📜 nc_cmd.sh |  | nc cmd.sh
 📜 nc_powershell.sh |  | nc powershell.sh
 📜 powershell_base64.sh |  | powershell base64.sh
-📜 ps_download_nc_file_and_execute_shell.sh | download nc file and execute nc shell | ps download nc file and execute shell.sh
+📜 ps_download_nc_file_and_execute_shell.sh | ps: download nc file and execute nc shell | ps download nc file and execute shell.sh
+📜 ps_execute_powershellTcp.sh | ps: download Invoke-PowerShellTcp.ps1 to server and start shell | ps execute powershelltcp.sh
