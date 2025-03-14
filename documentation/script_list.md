@@ -14,7 +14,7 @@
 - [python](#-python)
 - [reconnaissance](#-reconnaissance)
 - [shell](#-shell)
-- [sqli](#-sqli)
+- [sqlDatabase](#-sqldatabase)
 - [ssh](#-ssh)
 - [web](#-web)
 - [windows](#-windows)
@@ -144,8 +144,10 @@ scripts for ftp enumeration
 |------|-------------|
 | 📜 `ftp/anonymous_login.sh` | FTP: check for anonymous login |
 | 📜 `ftp/hydra_bruteforce_username_and_password.sh` | hydra: bruteforce username and passwords |
-| 📜 `ftp/metaspolit_bruteforce_username_and_password_file.sh` | hydra: bruteforce username and passwords file |
-| 📜 `ftp/metaspolit_bruteforce_username_file_and_password_file.sh` | hydra: bruteforce username file and passwords file |
+| 📜 `ftp/login_with_username_password.sh` | FTP: login with username and password |
+| 📜 `ftp/metasploit_bruteforce_username_and_password_file.sh` | hydra: bruteforce username and passwords file |
+| 📜 `ftp/metasploit_bruteforce_username_file_and_password_file.sh` | hydra: bruteforce username file and passwords file |
+| 📜 `ftp/wget_download_files_from_ftp.sh` | wget: download files from ftp |
 
 <br />
 
@@ -178,13 +180,15 @@ different scripts to do port listenings
 
 | Path | Description |
 |------|-------------|
-| 📜 `portListening/add_new_ligolo_interface.sh` | add new ligolo interface in proxy |
+| 📜 `portListening/add_new_ligolo_interface.sh` | add new ligolo interface |
+| 📜 `portListening/cmd_upload_ligolo_agent_exe.sh` | cmd: download ligolo agent.exe to server and connect to proxy |
 | 📜 `portListening/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
+| 📜 `portListening/ps_cmd_upload_ligolo_agent_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
+| 📜 `portListening/remove_ligolo_interface.sh` | remove ligolo interface |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |
 | 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port |
 | 📜 `portListening/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
-| 📜 `portListening/upload_ligolo_agent_exe.sh` | download ligolo agent.exe to server and connect to proxy |
 
 <br />
 
@@ -228,7 +232,7 @@ start a python http server
 | 📜 `reconnaissance/linux/linpeas_one_liner.sh` |  |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
 | 📜 `reconnaissance/linux/mount_nfs_file_system.sh` |  |
-| 📜 `reconnaissance/linux/ping_sweep_linux.sh` |  |
+| 📜 `reconnaissance/linux/ping_sweep_linux.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/linux/proxychains_show_mounts.sh` |  |
 | 📜 `reconnaissance/linux/show_mounts.sh` |  |
 | 📜 `reconnaissance/linux/tcpdump.sh` |  |
@@ -243,7 +247,7 @@ start a python http server
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/powershell/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
-| 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` |  |
+| 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 
 
 ***📂 reconnaissance/windows/kerbrute***
@@ -260,7 +264,7 @@ perform kerbrute attacks
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/cmd/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
-| 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` |  |
+| 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 
 
 
@@ -353,30 +357,37 @@ scripts to create windows shells
 
 <br />
 
-### 📂 sqli/
+### 📂 sqlDatabase/
 
 
-***📂 sqli/sql***
+***📂 sqlDatabase/sql***
 
 different sqlmap scripts to perform SQLi
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqli/sql/sqlmap_dump-database.sh` | sqlmap dump current database |
-| 📜 `sqli/sql/sqlmap_dump_specific_database.sh` | sqlmap show all databases |
-| 📜 `sqli/sql/sqlmap_forms.sh` | SQLi on all forms on a websith with sqlmap |
-| 📜 `sqli/sql/sqlmap_show_databases.sh` | sqlmap show all databases |
-| 📜 `sqli/sql/sqlmap_show_tables.sh` | sqlmap show all databases |
+| 📜 `sqlDatabase/sql/sqlmap_dump-database.sh` | sqlmap dump current database |
+| 📜 `sqlDatabase/sql/sqlmap_dump_specific_database.sh` | sqlmap dump specific database |
+| 📜 `sqlDatabase/sql/sqlmap_forms.sh` | SQLi on all forms on a websith with sqlmap |
+| 📜 `sqlDatabase/sql/sqlmap_show_databases.sh` | sqlmap show all databases |
+| 📜 `sqlDatabase/sql/sqlmap_show_specific_database_table.sh` | sqlmap show specific database tables |
 
 
-***📂 sqli/mssql***
+***📂 sqlDatabase/mssql***
 
 script to enable xp_cmdshell and read directories
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqli/mssql/enable_xp_cmdshell.sh` | script to enable xp_cmdshell |
-| 📜 `sqli/mssql/read_directory.sh` | script to read directories with xp_dirtree |
+| 📜 `sqlDatabase/mssql/enable_xp_cmdshell.sh` | script to enable xp_cmdshell |
+| 📜 `sqlDatabase/mssql/execute_xp_cmdshell.sh` | execute xp_cmdshell command |
+| 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
+| 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
+| 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | mssql: bruteforce userpass file (user pass) |
+| 📜 `sqlDatabase/mssql/read_directory.sh` | script to read directories with xp_dirtree |
+| 📜 `sqlDatabase/mssql/start_mssql_connection.sh` | start a mssql connection |
+| 📜 `sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh` | execute xp_cmdshell nc reverse shell |
+| 📜 `sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh` | execute xp_cmdshell powershell reverse shell |
 
 
 <br />
@@ -389,6 +400,9 @@ scripts to start port listening or forwarding
 |------|-------------|
 | 📜 `ssh/local_port_listening.sh` | type ssh port listening |
 | 📜 `ssh/local_port_listening_with_sshkey.sh` | type ssh port listening with ssh key |
+| 📜 `ssh/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
+| 📜 `ssh/metasploit_bruteforce_username_file_and_password_file.sh` | ssh: bruteforce username file and passwords file |
+| 📜 `ssh/metasploit_bruteforce_userpass_file.sh` | ssh: bruteforce userpass file (user pass) |
 | 📜 `ssh/remote_port_forwarding.sh` | type ssh port forwarding |
 | 📜 `ssh/remote_port_forwarding_with_sshkey.sh` | type ssh port forwarding with ssh key |
 | 📜 `ssh/socket_port_sock_forwarding.sh` | -D sock 5 forwarding |
@@ -496,7 +510,7 @@ Windows scripts: user/group mgmt, cred dumping, recon, execution.
 | Path | Description |
 |------|-------------|
 | 📜 `windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
-| 📜 `windows/psexect_to_administrator.sh` | Impacket: psexec.py get NTLM hashes with user. |
+| 📜 `windows/psexect_to_administrator.sh` | Impacket: psexec.py get psexec shell  |
 | 📜 `windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
 | 📜 `windows/snaffler.sh` | Run Snaffler on inlanefreight.local domain. |
@@ -552,7 +566,8 @@ Scripts related to privilege escalation and permission manipulation.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/permissions/audit_user_token_privileges.sh` | SharpUp - audit token privileges. |
+| 📜 `windows/permissions/cmd_audit_user_token_privileges.sh` | SharpUp - audit token privileges - cmd: download SharpUp to server and execute. |
+| 📜 `windows/permissions/ps_audit_user_token_privileges.sh` | SharpUp - audit token privileges - PS: download SharpUp to server and execute. |
 
 ***📂 windows/permissions/seBackupPrivilege***
 
@@ -740,7 +755,7 @@ NetExec scripts for WinRM connections.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM on 172.16.8.50 with user/pass lists. |
+| 📜 `windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM connection with username and password. |
 
 ***📂 windows/netexec/winrm/proxychains***
 
