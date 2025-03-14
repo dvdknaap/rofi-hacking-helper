@@ -246,8 +246,13 @@ start a python http server
 
 | Path | Description |
 |------|-------------|
+| 📜 `reconnaissance/windows/powershell/check_defender_status.sh` | check defender status |
 | 📜 `reconnaissance/windows/powershell/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
+| 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
+| 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
+| 📜 `reconnaissance/windows/powershell/ps_disable_defender.sh` | Disable defender |
+| 📜 `reconnaissance/windows/powershell/register_disable_defender.sh` | Disable defender |
 
 
 ***📂 reconnaissance/windows/kerbrute***
@@ -568,8 +573,11 @@ Scripts related to privilege escalation and permission manipulation.
 |------|-------------|
 | 📜 `windows/permissions/cmd_audit_user_token_privileges.sh` | SharpUp - audit token privileges - cmd: download SharpUp to server and execute. |
 | 📜 `windows/permissions/ps_audit_user_token_privileges.sh` | SharpUp - audit token privileges - PS: download SharpUp to server and execute. |
+| 📜 `windows/permissions/ps_enableTokens.sh` | enable permission tokens |
 
 ***📂 windows/permissions/seBackupPrivilege***
+
+exploit seBackupPrivilege permission
 
 | Path | Description |
 |------|-------------|
@@ -580,6 +588,8 @@ Scripts related to privilege escalation and permission manipulation.
 
 ***📂 windows/permissions/forceChangePassword***
 
+exploit forceChangePassword permission
+
 | Path | Description |
 |------|-------------|
 | 📜 `windows/permissions/forceChangePassword/forceChangePassword.sh` | PowerShell: Force change password for user. |
@@ -587,11 +597,29 @@ Scripts related to privilege escalation and permission manipulation.
 
 ***📂 windows/permissions/seImpersonatePrivilege***
 
-exploit SeImpersonatePrivilege
+exploit SeImpersonatePrivilege permission
 
 | Path | Description |
 |------|-------------|
 | 📜 `windows/permissions/seImpersonatePrivilege/seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+
+
+***📂 windows/permissions/SeDebugPrivilege***
+
+exploit SeDebugPrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/permissions/SeDebugPrivilege/SeDebugPrivilege.sh` | exploit SeDebugPrivilege permission |
+
+
+***📂 windows/permissions/seTakeOwnershipPrivilege***
+
+exploit SeTakeOwnershipPrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/permissions/seTakeOwnershipPrivilege/seTakeOwnershipPrivilege.sh` | exploit SeTakeOwnershipPrivilege permission |
 
 
 
@@ -820,6 +848,7 @@ Scripts for Active Directory enumeration and credential dumping.
 | 📜 `windows/mimikatz/dump_lsass_credentials.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
+| 📜 `windows/mimikatz/ps_cmd_upload_ligolo_mimikatz_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
 
 
 ***📂 windows/smbclient***
