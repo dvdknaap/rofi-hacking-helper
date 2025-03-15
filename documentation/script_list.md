@@ -317,34 +317,26 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 
 | Path | Description |
 |------|-------------|
+| 📜 `shell/msfconsole/listen_to_meterpreter_cmd_unix_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_bash |
+| 📜 `shell/msfconsole/listen_to_meterpreter_java_jsp_rev_shell.sh` | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_meterpreter_linux_x64_rev_shell.sh` | meterpreter: start meterpreter listener linux/x86/meterpreter/reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_meterpreter_perl_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_perl |
+| 📜 `shell/msfconsole/listen_to_meterpreter_php_rev_shell.sh` | meterpreter: start meterpreter listener php/meterpreter_reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_meterpreter_python_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_python |
+| 📜 `shell/msfconsole/listen_to_meterpreter_war_rev_shell.sh` | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_meterpreter_windows_rev_shell.sh` | meterpreter: start meterpreter listener windows/meterpreter/reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_meterpreter_windows_x64_rev_shell.sh` | meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp |
 | 📜 `shell/msfconsole/meterpreter_port_forwarding.sh` | meterpreter: forward all trafic from remote port 8443 to local port 1234 |
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
 | 📜 `shell/msfconsole/start_msfconsole.sh` | start msfconsole |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
+| 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
 
 ***📂 shell/msfconsole/proxychains***
 
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfconsole/proxychains/start_msfconsole.sh` | start msfconsole |
-
-
-***📂 shell/msfconsole/linux***
-
-meterpreter: start reverse tcp rev shell
-
-| Path | Description |
-|------|-------------|
-| 📜 `shell/msfconsole/linux/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
-
-
-***📂 shell/msfconsole/windows***
-
-meterpreter: start reverse tcp rev shell
-
-| Path | Description |
-|------|-------------|
-| 📜 `shell/msfconsole/windows/listen_to_meterpreter_rev_shell.sh` | meterpreter: start reverse tcp rev shell |
 
 
 
@@ -505,6 +497,7 @@ execute directory and file search with feroxbuster
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/feroxbuster/directory _with_dirb_common_wordlist.sh` | feroxbuster directory with wordlists/dirb/common.txt |
 | 📜 `web/feroxbuster/feroxbuster.sh` | execute feroxbuster directory search |
 | 📜 `web/feroxbuster/feroxbuster_with_extension_search.sh` | execute feroxbuster directory search and files with extensions search |
 
@@ -604,7 +597,8 @@ exploit SeImpersonatePrivilege permission
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/permissions/seImpersonatePrivilege/seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+| 📜 `windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+| 📜 `windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
 
 
 ***📂 windows/permissions/SeDebugPrivilege***

