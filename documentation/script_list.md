@@ -380,12 +380,15 @@ script to enable xp_cmdshell and read directories
 | Path | Description |
 |------|-------------|
 | 📜 `sqlDatabase/mssql/enable_xp_cmdshell.sh` | script to enable xp_cmdshell |
+| 📜 `sqlDatabase/mssql/execute_sp_execute_external_script.sh` | execute sp_execute_external_script command |
 | 📜 `sqlDatabase/mssql/execute_xp_cmdshell.sh` | execute xp_cmdshell command |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | mssql: bruteforce userpass file (user pass) |
 | 📜 `sqlDatabase/mssql/read_directory.sh` | script to read directories with xp_dirtree |
 | 📜 `sqlDatabase/mssql/start_mssql_connection.sh` | start a mssql connection |
+| 📜 `sqlDatabase/mssql/start_sp_execute_external_script_nc_reverse_shell.sh` | execute sp_execute_external_script nc reverse shell |
+| 📜 `sqlDatabase/mssql/start_sp_execute_external_script_powershell_reverse_shell.sh` | execute sp_execute_external_script powershell reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh` | execute xp_cmdshell nc reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh` | execute xp_cmdshell powershell reverse shell |
 
@@ -448,6 +451,7 @@ scripts to do attacks with gobuster
 | 📜 `web/gobuster/directory _with_dirb_common_wordlist.sh` | gobuster directory with wordlists/dirb/common.txt |
 | 📜 `web/gobuster/directory_with_extensions.sh` | gobuster directory search with extensions and seclists/Discovery/DNS/subdomains-top1million-110000.txt |
 | 📜 `web/gobuster/dir.sh` | gobuster directory with seclists/Discovery/DNS/subdomains-top1million-110000.txt |
+| 📜 `web/gobuster/raft_large_file_search.sh` | gobuster file search with /usr/share/seclists/Discovery/Web-Content/raft-large-files.txtt |
 | 📜 `web/gobuster/vhost.sh` | gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt |
 
 

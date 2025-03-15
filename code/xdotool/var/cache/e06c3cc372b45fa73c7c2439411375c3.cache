@@ -2,4 +2,5 @@
 📜 directory _with_dirb_common_wordlist.sh | gobuster directory with wordlists/dirb/common.txt | directory  with dirb common wordlist.sh
 📜 directory_with_extensions.sh | gobuster directory search with extensions and seclists/Discovery/DNS/subdomains-top1million-110000.txt | directory with extensions.sh
 📜 dir.sh | gobuster directory with seclists/Discovery/DNS/subdomains-top1million-110000.txt | dir.sh
+📜 raft_large_file_search.sh | gobuster file search with /usr/share/seclists/Discovery/Web-Content/raft-large-files.txtt | raft large file search.sh
 📜 vhost.sh | gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt | vhost.sh
