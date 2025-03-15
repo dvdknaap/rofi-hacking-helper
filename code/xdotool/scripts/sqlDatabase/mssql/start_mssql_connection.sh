@@ -14,5 +14,5 @@ IP=${form_data["IP"]}
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
 
-paste_command " mssqlclient.py Sophie:TerrorInflictPurpleDirt996655@172.16.1.5"
+paste_command "mssqlclient.py ${USERNAME}:${PASSWORD}@${IP}"
 xdotool key Return
