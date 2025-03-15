@@ -1,0 +1,5 @@
+use multi/handler
+set LHOST 0.0.0.0
+set LPORT [LPORT]
+set payload [payload]
+run
