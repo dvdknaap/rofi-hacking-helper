@@ -1,9 +1,10 @@
+📂 activeDirectroy | scripts for AD hacking | activedirectroy
 📂 asreproast | perform asreproast attack | asreproast
 📂 bloodhound | Scripts for starting BloodHound and Neo4j. | bloodhound
 📂 cmd |  | cmd
 📂 enum4linux | Scripts for enum4linux. | enum4linux
 📂 evilWinRm | Scripts for establishing Evil-WinRM connections. | evilwinrm
-📂 inveigh |  | inveigh
+📂 inveight |  | inveight
 📂 kerberoasting | Scripts for Kerberoasting (SPN retrieval). | kerberoasting
 📂 lazagne |  | lazagne
 📂 mimikatz | Scripts for Active Directory enumeration and credential dumping. | mimikatz

