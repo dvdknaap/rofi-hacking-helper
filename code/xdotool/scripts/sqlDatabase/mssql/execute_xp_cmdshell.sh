@@ -13,4 +13,3 @@ generate_form "CMD"
 CMD=${form_data["CMD"]}
 paste_command "EXEC xp_cmdshell \"${CMD}\";"
 xdotool key Return
-EXEC sp_execute_external_script @language =N'Python', @script = N'import os; os.system("whoami");';
