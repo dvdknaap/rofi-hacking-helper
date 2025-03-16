@@ -565,6 +565,63 @@ Scripts for establishing Evil-WinRM connections.
 
 
 
+***📂 windows/activeDirectroy***
+
+scripts for AD hacking
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/get_user_tgt.sh` | get user Ticket Granting Ticket (TGT) |
+
+***📂 windows/activeDirectroy/rubeus***
+
+perform Rubeus attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/rubeus/ps_upload_robeus.sh` | ps: Upload Rubeus.exe |
+
+
+***📂 windows/activeDirectroy/runasCs***
+
+runAsCS.exe exploit
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/runasCs/ps_upload_runascs.sh` | ps: Upload RunasCs.exe |
+
+
+***📂 windows/activeDirectroy/invokeTokenManipulation***
+
+invoke TokenManipulation attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload Invoke-TokenManipulation.ps1 |
+
+
+***📂 windows/activeDirectroy/sharpGPOAbuse***
+
+script to do SharpGPOAbuse attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/sharpGPOAbuse/ps_gpo_abuse.sh` | ps: do a GPO abuse |
+| 📜 `windows/activeDirectroy/sharpGPOAbuse/ps_upload_sharp_gpo_abuse.sh` | ps: Upload sharpGPOAbuse |
+
+
+***📂 windows/activeDirectroy/powerVIew***
+
+scripts for powerview.ps1
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/powerVIew/list_domain_users.sh` | creating a List of Domain Users |
+| 📜 `windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | Loop over de ad_users and get AD rights |
+| 📜 `windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload sharphound and execute |
+
+
+
 ***📂 windows/permissions***
 
 Scripts related to privilege escalation and permission manipulation.
@@ -635,7 +692,12 @@ exploit SeTakeOwnershipPrivilege permission
 | 📜 `windows/powershell/elevate_user.sh` | Powershell - elevate user |
 | 📜 `windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
 | 📜 `windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
+| 📜 `windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
 | 📜 `windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
+| 📜 `windows/powershell/search_for_file.sh` | Powershell: search for a file or extension *.7z |
+| 📜 `windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
+| 📜 `windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
+| 📜 `windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
 
 
 ***📂 windows/bloodhound***
@@ -679,15 +741,6 @@ perform DCSync attack
 | 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
 
 
-
-
-***📂 windows/inveigh***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/inveigh/import_inveight.sh` | Import Inveigh.ps1 |
-| 📜 `windows/inveigh/start_inveight.sh` | Start Inveigh and perform a poofing attacks and captures hash/credential |
-| 📜 `windows/inveigh/stop_inveight.sh` | Stop Inveigh |
 
 
 ***📂 windows/netexec***
@@ -879,6 +932,15 @@ perform asreproast attack
 | Path | Description |
 |------|-------------|
 | 📜 `windows/asreproast/do_asreproast_attack.sh` | do an asreproast attack |
+
+
+***📂 windows/inveight***
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/inveight/ps_upload_powerview_and_import.sh` | ps: Upload Inveigh.ps1 and import module |
+| 📜 `windows/inveight/start_inveight.sh` | Start Inveigh and perform a poofing attacks and captures hash/credential |
+| 📜 `windows/inveight/stop_inveight.sh` | Stop Inveigh |
 
 
 ***📂 windows/xfreerdp***
