@@ -1,21 +1,20 @@
-📜 check_crontab.sh |  | check crontab.sh
-📜 check_database_files.sh |  | check database files.sh
-📜 check_exports.sh |  | check exports.sh
-📜 check_for_config_files.sh |  | check for config files.sh
-📜 check_for_passwords_in_config_files.sh |  | check for passwords in config files.sh
+📜 check_crontab.sh | search for crontabs | check crontab.sh
+📜 check_database_files.sh | search for database files: .sql, .sqlite, .db | check database files.sh
+📜 check_exports.sh | show exports (/etc/exports) | check exports.sh
+📜 check_for_config_files.sh | search for config files: .conf, .config, .cnf | check for config files.sh
+📜 check_for_passwords_in_config_files.sh | search for passwords in config files: .conf, .config, .cnf | check for passwords in config files.sh
 📜 check_for_ps_changes.sh | refresh ps -aux list every second | check for ps changes.sh
 📜 check_for_suid_files.sh | check for SUID, check gtfobins for something usefull | check for suid files.sh
-📜 check_for_txt_files_in_home_directory.sh |  | check for txt files in home directory.sh
-📜 check_open_ports.sh | check for open ports | check open ports.sh
+📜 check_for_txt_files_in_home_directory.sh | search text files in /home: .txt | check for txt files in home directory.sh
 📜 check_running_cronjobs.sh | download pspy64 to server and run it | check running cronjobs.sh
 📜 check_user_permissions.sh | Check user permissions and other usefull pentest info | check user permissions.sh
-📜 check_users_bash_history.sh |  | check users bash history.sh
+📜 check_users_bash_history.sh | show user .bash* content | check users bash history.sh
 📜 execute_linpeas.sh | download linpeas to server and execute | execute linpeas.sh
-📜 linpeas_one_liner.sh |  | linpeas one liner.sh
+📜 linpeas_one_liner.sh | linpeas one liner | linpeas one liner.sh
 📜 local_port_scan_on_ip.sh | local port scan on ip | local port scan on ip.sh
-📜 mount_nfs_file_system.sh |  | mount nfs file system.sh
+📜 mount_nfs_file_system.sh | mount to ip | mount nfs file system.sh
+📜 netstat_check_open_ports.sh | netstat: check for open ports | netstat check open ports.sh
 📜 ping_sweep_linux.sh | ping sweep - check if ips are alive in ip range 0.0.0 | ping sweep linux.sh
-📜 proxychains_show_mounts.sh |  | proxychains show mounts.sh
-📜 show_mounts.sh |  | show mounts.sh
-📜 tcpdump.sh |  | tcpdump.sh
-📜 unmount_nfs_file_system.sh |  | unmount nfs file system.sh
+📜 show_mounts.sh | show ip mounts | show mounts.sh
+📜 tcpdump_sniff_traffic.sh | sniff for traffic with tcpdump and save to pcap file | tcpdump sniff traffic.sh
+📜 unmount_nfs_file_system.sh | unmount ip mount | unmount nfs file system.sh

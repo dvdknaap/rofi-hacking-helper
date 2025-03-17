@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -t 40 -b 400,404,403,429 -e"
+paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/seclists/Discovery/Web-Content/raft-large-files.txt -t 40 -b 400,404,403,429 -e -r"

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+: '
+linpeas one liner
+'
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
 command=$(cat <<'EOF'

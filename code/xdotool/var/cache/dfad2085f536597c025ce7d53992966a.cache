@@ -1,3 +1,0 @@
-📂 proxychains |  | proxychains
-📜 administrator_hash_execute_cmd_with_ntlm_hash.sh | smbmap: Execute 'whoami' on smb as Administrator with NTLM hash. | administrator hash execute cmd with ntlm hash.sh
-📜 administrator_hash_execute_cmd_with_password.sh | smbmap: Execute 'whoami' on smb as Administrator with password. | administrator hash execute cmd with password.sh

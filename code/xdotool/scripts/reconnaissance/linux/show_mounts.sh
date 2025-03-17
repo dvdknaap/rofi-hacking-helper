@@ -1,5 +1,9 @@
 #!/bin/bash
 
+: '
+show ip mounts
+'
+
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
