@@ -211,38 +211,45 @@ start a python http server
 
 ### 📂 reconnaissance/
 
+scripts to do reconnaissance
+
 
 ***📂 reconnaissance/linux***
 
+scripts to do reconnaissance on linux
+
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/linux/check_crontab.sh` |  |
-| 📜 `reconnaissance/linux/check_database_files.sh` |  |
-| 📜 `reconnaissance/linux/check_exports.sh` |  |
-| 📜 `reconnaissance/linux/check_for_config_files.sh` |  |
-| 📜 `reconnaissance/linux/check_for_passwords_in_config_files.sh` |  |
+| 📜 `reconnaissance/linux/check_crontab.sh` | search for crontabs |
+| 📜 `reconnaissance/linux/check_database_files.sh` | search for database files: .sql, .sqlite, .db |
+| 📜 `reconnaissance/linux/check_exports.sh` | show exports (/etc/exports) |
+| 📜 `reconnaissance/linux/check_for_config_files.sh` | search for config files: .conf, .config, .cnf |
+| 📜 `reconnaissance/linux/check_for_passwords_in_config_files.sh` | search for passwords in config files: .conf, .config, .cnf |
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_for_suid_files.sh` | check for SUID, check gtfobins for something usefull |
-| 📜 `reconnaissance/linux/check_for_txt_files_in_home_directory.sh` |  |
-| 📜 `reconnaissance/linux/check_open_ports.sh` | check for open ports |
+| 📜 `reconnaissance/linux/check_for_txt_files_in_home_directory.sh` | search text files in /home: .txt |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
-| 📜 `reconnaissance/linux/check_users_bash_history.sh` |  |
+| 📜 `reconnaissance/linux/check_users_bash_history.sh` | show user .bash* content |
 | 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
-| 📜 `reconnaissance/linux/linpeas_one_liner.sh` |  |
+| 📜 `reconnaissance/linux/linpeas_one_liner.sh` | linpeas one liner |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
-| 📜 `reconnaissance/linux/mount_nfs_file_system.sh` |  |
+| 📜 `reconnaissance/linux/mount_nfs_file_system.sh` | mount to ip |
+| 📜 `reconnaissance/linux/netstat_check_open_ports.sh` | netstat: check for open ports |
 | 📜 `reconnaissance/linux/ping_sweep_linux.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
-| 📜 `reconnaissance/linux/proxychains_show_mounts.sh` |  |
-| 📜 `reconnaissance/linux/show_mounts.sh` |  |
-| 📜 `reconnaissance/linux/tcpdump.sh` |  |
-| 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` |  |
+| 📜 `reconnaissance/linux/show_mounts.sh` | show ip mounts |
+| 📜 `reconnaissance/linux/tcpdump_sniff_traffic.sh` | sniff for traffic with tcpdump and save to pcap file |
+| 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` | unmount ip mount |
 
 
 ***📂 reconnaissance/windows***
 
+scripts to do reconnaissance on windows
+
 
 ***📂 reconnaissance/windows/powershell***
+
+scripts to do reconnaissance in powershell
 
 | Path | Description |
 |------|-------------|
@@ -265,6 +272,8 @@ perform kerbrute attacks
 
 
 ***📂 reconnaissance/windows/cmd***
+
+scripts to do reconnaissance in cmd
 
 | Path | Description |
 |------|-------------|
@@ -301,6 +310,7 @@ msfvenom to create reverve shell files for metepreter
 | 📜 `shell/msfvenom/create_perl _rev_shell.sh` | Create Perl file |
 | 📜 `shell/msfvenom/create_php _rev_shell.sh` | Create PHP file |
 | 📜 `shell/msfvenom/create_python _rev_shell.sh` | Create Python file |
+| 📜 `shell/msfvenom/create_splunk_rev_shell.sh` | Create splunk rev shell |
 | 📜 `shell/msfvenom/create_war _rev_shell.sh` | Create WAR file |
 
 
@@ -317,7 +327,7 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 
 | Path | Description |
 |------|-------------|
-| 📜 `shell/msfconsole/listen_to_meterpreter_cmd_unix_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_bash |
+| 📜 `shell/msfconsole/listen_to_meterpreter_cmd_unix_bash_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_bash |
 | 📜 `shell/msfconsole/listen_to_meterpreter_java_jsp_rev_shell.sh` | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp |
 | 📜 `shell/msfconsole/listen_to_meterpreter_linux_x64_rev_shell.sh` | meterpreter: start meterpreter listener linux/x86/meterpreter/reverse_tcp |
 | 📜 `shell/msfconsole/listen_to_meterpreter_perl_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_perl |
@@ -619,6 +629,15 @@ scripts for powerview.ps1
 | 📜 `windows/activeDirectroy/powerVIew/list_domain_users.sh` | creating a List of Domain Users |
 | 📜 `windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | Loop over de ad_users and get AD rights |
 | 📜 `windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload sharphound and execute |
+
+
+***📂 windows/activeDirectroy/kerbrute***
+
+perform kerbrute attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
 
 
 

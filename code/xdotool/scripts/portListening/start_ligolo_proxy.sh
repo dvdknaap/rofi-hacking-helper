@@ -23,3 +23,4 @@ xdotool key Return
 sleep 2
 
 paste_command "~/Desktop/base/code/xdotool/scripts/portListening/.files/proxy -selfcert"
+xdotool key Return

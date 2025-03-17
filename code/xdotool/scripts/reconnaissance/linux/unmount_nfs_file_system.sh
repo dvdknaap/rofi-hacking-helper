@@ -1,9 +1,15 @@
 #!/bin/bash
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+: '
+unmount ip mount
+'
 
-command=$(cat <<'EOF'
-sudo umount ./target-NFS
-EOF
-)
-paste_command "${command}"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+
+# Generate gui form
+generate_form "TARGET_DIR"
+
+TARGET_DIR=${form_data["TARGET_DIR"]}
+
+paste_command "sudo umount ${TARGET_DIR}"

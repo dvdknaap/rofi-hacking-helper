@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/wordlists/dirb/common.txt"
+paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/wordlists/dirb/common.txt -r"

@@ -1,3 +1,0 @@
-📂 proxychains |  | proxychains
-📜 connect_to_user_hash.sh | Connect with Evil-WinRM as Administrator using NTLM hash. | connect to user hash.sh
-📜 connect_to_user_password.sh | Connect with Evil-WinRM as Administrator using password. | connect to user password.sh

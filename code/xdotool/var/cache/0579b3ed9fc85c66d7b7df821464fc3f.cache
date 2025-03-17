@@ -1,7 +1,0 @@
-📂 dcsync | perform DCSync attack | dcsync
-📂 genericAll |  | genericall
-📂 genericWrite |  | genericwrite
-📜 cmd_upload_sharphound_and_execute.sh | cmd: Upload sharphound and execute | cmd upload sharphound and execute.sh
-📜 ps_upload_sharphound_and_execute.sh | ps: Upload sharphound and execute | ps upload sharphound and execute.sh
-📜 python_create_bloodhound_zip.sh | Create a bloodhound zip with bloodhound-python | python create bloodhound zip.sh
-📜 start_bloodhound.sh | Start Neo4j service and launch BloodHound GUI. | start bloodhound.sh
