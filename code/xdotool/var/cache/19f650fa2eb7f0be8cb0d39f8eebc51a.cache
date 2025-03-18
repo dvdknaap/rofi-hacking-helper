@@ -1,0 +1,11 @@
+📜 create_asp _rev_shell.sh | Create ASP file | create asp  rev shell.sh
+📜 create_bash _rev_shell.sh | Create Bash file | create bash  rev shell.sh
+📜 create_elf_rev_shell.sh | Create ELF file | create elf rev shell.sh
+📜 create_exe_rev_shell.sh | Create EXE file | create exe rev shell.sh
+📜 create_jsp _rev_shell.sh | Create JSP file | create jsp  rev shell.sh
+📜 create_perl _rev_shell.sh | Create Perl file | create perl  rev shell.sh
+📜 create_php _rev_shell.sh | Create PHP file | create php  rev shell.sh
+📜 create_ps1_rev_shell.sh | Create PS1 file | create ps1 rev shell.sh
+📜 create_python _rev_shell.sh | Create Python file | create python  rev shell.sh
+📜 create_splunk_rev_shell.sh | Create splunk rev shell | create splunk rev shell.sh
+📜 create_war _rev_shell.sh | Create WAR file | create war  rev shell.sh

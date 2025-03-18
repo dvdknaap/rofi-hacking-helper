@@ -77,6 +77,7 @@ crack passwords with john the ripper
 
 | Path | Description |
 |------|-------------|
+| 📜 `crackPasswords/john/crack_ntlm_hashes.sh` | crack ntlm hashes |
 | 📜 `crackPasswords/john/unshadow_passwords.sh` | unshadow /etc/passwords |
 
 
@@ -129,7 +130,16 @@ transfer file to or from a server for windows
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/windows/cmd_upload_nc64_file.sh` | cmd: upload nc64 file to server |
 | 📜 `fileTransfer/windows/cmd_upload_nc_file.sh` | cmd: upload nc file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_any_file.sh` | cmd: upload winPEASany.exe file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_any_ofs_file.sh` | cmd: upload winPEASany_ofs.exe file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_bat_file.sh` | cmd: upload winPEAS.bat file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_x64_file.sh` | cmd: upload winPEASx64.exe file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_x64_ofs_file.sh` | cmd: upload winPEASx64_ofs.exe file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_x86_file.sh` | cmd: upload winPEASx86.exe file to server |
+| 📜 `fileTransfer/windows/cmd_upload_winpeas_x86_ofs_file.sh` | cmd: upload winPEASx86_ofs.exe file to server |
+| 📜 `fileTransfer/windows/ps_upload_nc64_file.sh` | ps: nc64 file to server |
 | 📜 `fileTransfer/windows/ps_upload_nc_file.sh` | ps: nc file to server |
 | 📜 `fileTransfer/windows/start_python_server_to_binary_folder.sh` | start python server to binary folder |
 
@@ -278,6 +288,14 @@ scripts to do reconnaissance in cmd
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/cmd/check_user_permissions.sh` | Check user permissions and other usefull pentest info |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_any_exe.sh` | download winPEASany.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh` | download winPEASany_ofs.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_bat.sh` | download winPEAS.bat to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_x64_exe.sh` | download winPEASx64.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_x64_ofs_exe.sh` | download winPEASx64_ofs.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_exe.sh` | download winPEASx86.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_ofs_exe.sh` | download winPEASx86_ofs.exe to server and execute |
+| 📜 `reconnaissance/windows/cmd/find_services.sh` | Find services |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 
 
@@ -309,6 +327,7 @@ msfvenom to create reverve shell files for metepreter
 | 📜 `shell/msfvenom/create_jsp _rev_shell.sh` | Create JSP file |
 | 📜 `shell/msfvenom/create_perl _rev_shell.sh` | Create Perl file |
 | 📜 `shell/msfvenom/create_php _rev_shell.sh` | Create PHP file |
+| 📜 `shell/msfvenom/create_ps1_rev_shell.sh` | Create PS1 file |
 | 📜 `shell/msfvenom/create_python _rev_shell.sh` | Create Python file |
 | 📜 `shell/msfvenom/create_splunk_rev_shell.sh` | Create splunk rev shell |
 | 📜 `shell/msfvenom/create_war _rev_shell.sh` | Create WAR file |
@@ -341,6 +360,7 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/start_msfconsole.sh` | start msfconsole |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
 | 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
+| 📜 `shell/msfconsole/start_windows_post_hash_dump.sh` | meterpreter: set windows post hash dump |
 
 ***📂 shell/msfconsole/proxychains***
 
@@ -357,11 +377,15 @@ scripts to create windows shells
 | Path | Description |
 |------|-------------|
 | 📜 `shell/windows/cmd_download_nc_file_and_execute_shell.sh` | cmd: download nc file and execute nc shell |
+| 📜 `shell/windows/cmd_execute_conPtyShell.sh` | cmd: download Invoke-ConPtyShell.ps1 to server and start shell |
 | 📜 `shell/windows/cmd_execute_powershellTcp.sh` | cmd: download Invoke-PowerShellTcp.ps1 to server and start shell |
+| 📜 `shell/windows/nc64_cmd.sh` |  |
+| 📜 `shell/windows/nc64_powershell.sh` |  |
 | 📜 `shell/windows/nc_cmd.sh` |  |
 | 📜 `shell/windows/nc_powershell.sh` |  |
 | 📜 `shell/windows/powershell_base64.sh` |  |
-| 📜 `shell/windows/ps_download_nc_file_and_execute_shell.sh` | ps: download nc file and execute nc shell |
+| 📜 `shell/windows/ps_download_nc_file.sh` | ps: download nc file |
+| 📜 `shell/windows/ps_execute_conPtyShell.sh` | ps: download Invoke-PowerShellTcp.ps1 to server and start shell |
 | 📜 `shell/windows/ps_execute_powershellTcp.sh` | ps: download Invoke-PowerShellTcp.ps1 to server and start shell |
 
 
@@ -525,6 +549,7 @@ Windows scripts: user/group mgmt, cred dumping, recon, execution.
 | Path | Description |
 |------|-------------|
 | 📜 `windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
+| 📜 `windows/get_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
 | 📜 `windows/psexect_to_administrator.sh` | Impacket: psexec.py get psexec shell  |
 | 📜 `windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
@@ -791,9 +816,9 @@ perform netexec smb attacks
 |------|-------------|
 | 📜 `windows/netexec/smb/administrator_hash.sh` | check if local auth is possible for administrator hash |
 | 📜 `windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
-| 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` |  |
-| 📜 `windows/netexec/smb/dump_credentials_from_sam.sh` |  |
-| 📜 `windows/netexec/smb/dump_ntds.sh` |  |
+| 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
+| 📜 `windows/netexec/smb/dump_credentials_from_sam.sh` | dump sam |
+| 📜 `windows/netexec/smb/dump_ntds.sh` | dump ntds |
 | 📜 `windows/netexec/smb/enumerate_ad_users_and_passwords.sh` | enumerate over ad users and password file |
 | 📜 `windows/netexec/smb/enumerate_group.sh` | enumerate groups |
 | 📜 `windows/netexec/smb/enumerate_users_execute_cmd.sh` | execute cmd command |
@@ -804,7 +829,6 @@ perform netexec smb attacks
 | 📜 `windows/netexec/smb/password_policy.sh` | get password policy |
 | 📜 `windows/netexec/smb/rid_brute.sh` | enumerate users by bruteforcing RIDs |
 | 📜 `windows/netexec/smb/show_shares.sh` | show smb shares |
-| 📜 `windows/netexec/smb/smb_enumerate_local_users.sh` | show local users |
 | 📜 `windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
 | 📜 `windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
@@ -982,7 +1006,7 @@ perform asreproast attack
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/cmd/add_user.sh` | Net: Add user hckr, add to administrators and RDP groups. |
+| 📜 `windows/cmd/add_user.sh` | Net: Add use, add to administrators and RDP groups. |
 | 📜 `windows/cmd/add_user_to_domain.sh` | Net: Add user john, add to Exchange and Remote Mgmt groups. |
 | 📜 `windows/cmd/check_connected_drives.sh` | Net: Show connected network drives. |
 | 📜 `windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
