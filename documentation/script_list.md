@@ -14,6 +14,7 @@
 - [python](#-python)
 - [reconnaissance](#-reconnaissance)
 - [shell](#-shell)
+- [smtp](#-smtp)
 - [sqlDatabase](#-sqldatabase)
 - [ssh](#-ssh)
 - [web](#-web)
@@ -320,8 +321,10 @@ msfvenom to create reverve shell files for metepreter
 
 | Path | Description |
 |------|-------------|
+| 📜 `shell/msfvenom/backdoor_exe_file.sh` | create a backdoor in an existing exe file |
 | 📜 `shell/msfvenom/create_asp _rev_shell.sh` | Create ASP file |
 | 📜 `shell/msfvenom/create_bash _rev_shell.sh` | Create Bash file |
+| 📜 `shell/msfvenom/create_c_rev_shell.sh` | Create C file |
 | 📜 `shell/msfvenom/create_elf_rev_shell.sh` | Create ELF file |
 | 📜 `shell/msfvenom/create_exe_rev_shell.sh` | Create EXE file |
 | 📜 `shell/msfvenom/create_jsp _rev_shell.sh` | Create JSP file |
@@ -357,6 +360,7 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/listen_to_meterpreter_windows_x64_rev_shell.sh` | meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp |
 | 📜 `shell/msfconsole/meterpreter_port_forwarding.sh` | meterpreter: forward all trafic from remote port 8443 to local port 1234 |
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
+| 📜 `shell/msfconsole/show_creds_all.sh` | meterpreter: show creds_all (mimikatz) |
 | 📜 `shell/msfconsole/start_msfconsole.sh` | start msfconsole |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
 | 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
@@ -391,20 +395,31 @@ scripts to create windows shells
 
 <br />
 
-### 📂 sqlDatabase/
+### 📂 smtp/
 
-
-***📂 sqlDatabase/sql***
-
-different sqlmap scripts to perform SQLi
+scripts for smtp attacks
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqlDatabase/sql/sqlmap_dump-database.sh` | sqlmap dump current database |
-| 📜 `sqlDatabase/sql/sqlmap_dump_specific_database.sh` | sqlmap dump specific database |
-| 📜 `sqlDatabase/sql/sqlmap_forms.sh` | SQLi on all forms on a websith with sqlmap |
-| 📜 `sqlDatabase/sql/sqlmap_show_databases.sh` | sqlmap show all databases |
-| 📜 `sqlDatabase/sql/sqlmap_show_specific_database_table.sh` | sqlmap show specific database tables |
+| 📜 `smtp/nmap_check_for_open_relay.sh` | nmap: check for smtp open relay |
+| 📜 `smtp/smtp_user_enum_search_for_usernames_big.sh` | smtp-user-enum: search for usernames with given domain name (xato-net-10-million-usernames-dup.txt) |
+| 📜 `smtp/smtp_user_enum_search_for_usernames_small.sh` | smtp-user-enum: search for usernames with given domain name (Honeypot-Captures/multiplesources-users-fabian-fingerle.d.txt) |
+
+***📂 smtp/swaks***
+
+send emails with swaks
+
+| Path | Description |
+|------|-------------|
+| 📜 `smtp/swaks/authentication_with_user_password.sh` | authentication with user and password |
+| 📜 `smtp/swaks/send_email.sh` | send email |
+
+
+<br />
+
+### 📂 sqlDatabase/
+
+perform database injections
 
 
 ***📂 sqlDatabase/mssql***
@@ -425,6 +440,20 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/start_sp_execute_external_script_powershell_reverse_shell.sh` | execute sp_execute_external_script powershell reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh` | execute xp_cmdshell nc reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh` | execute xp_cmdshell powershell reverse shell |
+
+
+***📂 sqlDatabase/sqlmap***
+
+different sqlmap scripts to perform SQLi
+
+| Path | Description |
+|------|-------------|
+| 📜 `sqlDatabase/sqlmap/dump-database.sh` | sqlmap: dump current database |
+| 📜 `sqlDatabase/sqlmap/dump_specific_database.sh` | sqlmap: dump specific database |
+| 📜 `sqlDatabase/sqlmap/forms.sh` | sqlmap: SQLi on all forms on a websith |
+| 📜 `sqlDatabase/sqlmap/perform_authorization_basic_header_attack.sh` | sqlmap: perform Authorization: Basic attack |
+| 📜 `sqlDatabase/sqlmap/show_databases.sh` | sqlmap: show all databases |
+| 📜 `sqlDatabase/sqlmap/show_specific_database_table.sh` | sqlmap: show specific database tables |
 
 
 <br />
@@ -814,7 +843,7 @@ perform netexec smb attacks
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/netexec/smb/administrator_hash.sh` | check if local auth is possible for administrator hash |
+| 📜 `windows/netexec/smb/administrator_hash.sh` | check if smb is possible for administrator hash |
 | 📜 `windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
 | 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
 | 📜 `windows/netexec/smb/dump_credentials_from_sam.sh` | dump sam |
@@ -832,6 +861,7 @@ perform netexec smb attacks
 | 📜 `windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
 | 📜 `windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
+| 📜 `windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
 
 ***📂 windows/netexec/smb/proxychains***
 

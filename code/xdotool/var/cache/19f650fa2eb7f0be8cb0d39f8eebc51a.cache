@@ -1,5 +1,7 @@
+📜 backdoor_exe_file.sh | create a backdoor in an existing exe file | backdoor exe file.sh
 📜 create_asp _rev_shell.sh | Create ASP file | create asp  rev shell.sh
 📜 create_bash _rev_shell.sh | Create Bash file | create bash  rev shell.sh
+📜 create_c_rev_shell.sh | Create C file | create c rev shell.sh
 📜 create_elf_rev_shell.sh | Create ELF file | create elf rev shell.sh
 📜 create_exe_rev_shell.sh | Create EXE file | create exe rev shell.sh
 📜 create_jsp _rev_shell.sh | Create JSP file | create jsp  rev shell.sh

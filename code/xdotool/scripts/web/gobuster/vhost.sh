@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "gobuster vhost -u '${WEBSITE}' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain -r"
+paste_command "gobuster vhost -u '${WEBSITE}' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain"

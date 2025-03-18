@@ -12,4 +12,4 @@ generate_form "Website"
 
 WEBSITE=${form_data["Website"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 40 -b 400,404,403,429 -e -X /usr/share/wordlists/seclists/Discovery/Web-Content/web-extensions.txt  -r"
+paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -t 40 -b 400,404,403,429 -e -X /usr/share/wordlists/seclists/Discovery/Web-Content/web-extensions.txt"

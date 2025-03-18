@@ -1,15 +1,15 @@
 #!/bin/bash
 
 : '
-sqlmap show all databases
+sqlmap: SQLi on all forms on a websith
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP/domain"
+generate_form "URL"
 
-HOST=${form_data["IP/domain"]}
+URL=${form_data["URL"]}
 
-paste_command "sqlmap -u ${HOST} --dbs --random-agent --level 5 --risk 3 --batch"
+paste_command "sqlmap -u ${URL} --forms --random-agent --level 5 --risk 3 --batch"

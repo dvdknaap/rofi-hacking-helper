@@ -1,5 +1,5 @@
 📂 proxychains |  | proxychains
-📜 administrator_hash.sh | check if local auth is possible for administrator hash | administrator hash.sh
+📜 administrator_hash.sh | check if smb is possible for administrator hash | administrator hash.sh
 📜 check_anonymous.sh | check if anonymous guest session is possible | check anonymous.sh
 📜 dump_credentials_from_lsa.sh | dump lsa | dump credentials from lsa.sh
 📜 dump_credentials_from_sam.sh | dump sam | dump credentials from sam.sh
@@ -17,3 +17,4 @@
 📜 smb_enumerate_users.sh | enumerate users | smb enumerate users.sh
 📜 smb_start_listener.sh | inject reverse shell | smb start listener.sh
 📜 spider_plus_share.sh | netexec smb use spider_plus to get all share files | spider plus share.sh
+📜 user_hash.sh | check if smb is possible for user hash | user hash.sh

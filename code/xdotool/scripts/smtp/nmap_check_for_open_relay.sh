@@ -1,16 +1,16 @@
 #!/bin/bash
 
 : '
-check if smb is possible for administrator hash
+nmap: check for smtp open relay
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP" "Hash"
+generate_form "IP" "domain"
 
 IP=${form_data["IP"]}
-HASH=${form_data["Hash"]}
+DOMAIN=${form_data["domain"]}
 
-paste_command "netexec smb ${IP} -u administrator -H ${HASH}"
+paste_command "nmap ${IP} -p25 --script smtp-open-relay -v"

@@ -1,0 +1,3 @@
+📜 directory _with_dirb_common_wordlist.sh | feroxbuster directory with wordlists/dirb/common.txt | directory  with dirb common wordlist.sh
+📜 feroxbuster.sh | execute feroxbuster directory search | feroxbuster.sh
+📜 feroxbuster_with_extension_search.sh | execute feroxbuster directory search and files with extensions search | feroxbuster with extension search.sh

