@@ -1,9 +1,9 @@
 📂 proxychains |  | proxychains
 📜 administrator_hash.sh | check if local auth is possible for administrator hash | administrator hash.sh
 📜 check_anonymous.sh | check if anonymous guest session is possible | check anonymous.sh
-📜 dump_credentials_from_lsa.sh |  | dump credentials from lsa.sh
-📜 dump_credentials_from_sam.sh |  | dump credentials from sam.sh
-📜 dump_ntds.sh |  | dump ntds.sh
+📜 dump_credentials_from_lsa.sh | dump lsa | dump credentials from lsa.sh
+📜 dump_credentials_from_sam.sh | dump sam | dump credentials from sam.sh
+📜 dump_ntds.sh | dump ntds | dump ntds.sh
 📜 enumerate_ad_users_and_passwords.sh | enumerate over ad users and password file | enumerate ad users and passwords.sh
 📜 enumerate_group.sh | enumerate groups | enumerate group.sh
 📜 enumerate_users_execute_cmd.sh | execute cmd command | enumerate users execute cmd.sh
@@ -14,7 +14,6 @@
 📜 password_policy.sh | get password policy | password policy.sh
 📜 rid_brute.sh | enumerate users by bruteforcing RIDs | rid brute.sh
 📜 show_shares.sh | show smb shares | show shares.sh
-📜 smb_enumerate_local_users.sh | show local users | smb enumerate local users.sh
 📜 smb_enumerate_users.sh | enumerate users | smb enumerate users.sh
 📜 smb_start_listener.sh | inject reverse shell | smb start listener.sh
 📜 spider_plus_share.sh | netexec smb use spider_plus to get all share files | spider plus share.sh

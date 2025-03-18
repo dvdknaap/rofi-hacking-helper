@@ -13,3 +13,4 @@ generate_form "Ip range"
 IPRANGE=${form_data["Ip range"]}
 
 paste_command "(for /L %i in (1 1 254) do ping ${IPRANGE}.%i -n 1 -w 100) | find \"Reply\""
+xdotool key Return

@@ -1,0 +1,7 @@
+📜 check_defender_status.sh | check defender status | check defender status.sh
+📜 check_user_permissions.sh | Check user permissions and other usefull pentest info | check user permissions.sh
+📜 disable_firewall.sh | Disable firewall | disable firewall.sh
+📜 find_password_in_txt_ini_config_db_py_files.sh | Search for password in .txt,.ini, config, .db, .py files | find password in txt ini config db py files.sh
+📜 ping_sweep_powershell.sh | ping sweep - check if ips are alive in ip range 0.0.0 | ping sweep powershell.sh
+📜 ps_disable_defender.sh | Disable defender | ps disable defender.sh
+📜 register_disable_defender.sh | Disable defender | register disable defender.sh
