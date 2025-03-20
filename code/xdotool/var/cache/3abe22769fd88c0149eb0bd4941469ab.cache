@@ -7,6 +7,7 @@
 📂 inveight |  | inveight
 📂 kerberoasting | Scripts for Kerberoasting (SPN retrieval). | kerberoasting
 📂 lazagne |  | lazagne
+📂 ldap | scripts to do ldap enumerations | ldap
 📂 mimikatz | Scripts for Active Directory enumeration and credential dumping. | mimikatz
 📂 netexec |  | netexec
 📂 passwordSpraying | Scripts for performing password spraying attacks. | passwordspraying

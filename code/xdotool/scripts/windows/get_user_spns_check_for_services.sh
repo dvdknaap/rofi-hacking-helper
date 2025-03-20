@@ -17,4 +17,3 @@ PASSWORD=${form_data["Password"]}
 
 paste_command "GetUserSPNs.py -dc-ip ${IP} ${DOMAIN}/${USERNAME}:${PASSWORD} -request"
 xdotool key Return
-sleep 1.5

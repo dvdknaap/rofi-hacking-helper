@@ -14,5 +14,5 @@ IP=${form_data["IP"]}
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
 
-paste_command "mssqlclient.py ${USERNAME}:${PASSWORD}@${IP}"
+paste_command "mssqlclient.py -port 1433 ${USERNAME}:'${PASSWORD}'@${IP}"
 xdotool key Return
