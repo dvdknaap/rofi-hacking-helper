@@ -46,6 +46,8 @@ main() {
     check_and_install_package expect
 
     pip3 install pyftpdlib --break-system-packages
+    pip3 install sv-ttk --break-system-packages
+    pip3 install darkdetect --break-system-packages
 
     paste_command "# Update complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"
