@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Set base directory
-BASEDIR=~/Desktop/base/code/xdotool
+BASEDIR=~/Desktop/base
+XDOTOOL_DIR="${BASEDIR}/code/xdotool"
+
+source "${XDOTOOL_DIR}/helpers/paste_commands.sh"
 
 # Function to check if a package is installed and install it if missing
 check_and_install_package() {
@@ -24,6 +27,8 @@ check_and_install_package() {
 # pull latest git version
 pull_latest_git_version() {
     cd "$BASEDIR"
+
+    git checkout main
     git fetch origin
     git pull origin main
 }
@@ -38,9 +43,11 @@ main() {
     check_and_install_package python3-tk
     check_and_install_package powershell
     check_and_install_package xclip
+    check_and_install_package expect
 
     pip3 install pyftpdlib --break-system-packages
 
+    paste_command "# Update complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"
 }
 

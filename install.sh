@@ -81,7 +81,8 @@ main() {
     check_and_install_package python3-tk
     check_and_install_package powershell
     check_and_install_package xclip
-    
+    check_and_install_package expect
+     
     clone_or_update_repo
 
     # Check for existing keybinding

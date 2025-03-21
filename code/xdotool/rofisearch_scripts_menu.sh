@@ -2,7 +2,7 @@
 
 # Set base directory
 BASEDIR=~/Desktop/base
-XDOTOOL_DIR=~/Desktop/base/code/xdotool
+XDOTOOL_DIR="${BASEDIR}/code/xdotool"
 SCRIPTS_DIR="${XDOTOOL_DIR}/scripts"
 CACHE_DIR="${XDOTOOL_DIR}/var/cache"
 UPDATE_CHECK_FILE="${CACHE_DIR}/.rofi_last_update_check"
@@ -30,9 +30,7 @@ function check_for_updates {
                 local CHOICE=$(echo -e "Yes\nNo" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper-update.rasi")
                 
                 if [[ "$CHOICE" == "Yes" ]]; then
-                    git checkout main
-                    git pull origin main
-                    paste_command "Update complete!"
+                    bash update.sh
                 fi
             fi
 
