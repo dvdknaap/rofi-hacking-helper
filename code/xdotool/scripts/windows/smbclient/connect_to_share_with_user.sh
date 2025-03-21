@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-smbclient: Connect to share.
+smbclient: Connect to share with user.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -15,4 +15,5 @@ USERNAME=${form_data["Username"]}
 SHARE=${form_data["Share"]}
 
 paste_command "smbclient -U ${USERNAME} '//${IP}/${SHARE}'"
+xdotool key Return
 

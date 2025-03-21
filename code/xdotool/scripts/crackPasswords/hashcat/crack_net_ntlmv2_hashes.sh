@@ -13,3 +13,4 @@ generate_form "hash file"
 HASH_FILE=${form_data["hash file"]}
 
 paste_command "hashcat -m 5600 -O -w 3 ${HASH_FILE} /usr/share/wordlists/rockyou.txt"
+xdotool key Return

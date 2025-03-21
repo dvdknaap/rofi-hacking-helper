@@ -13,3 +13,4 @@ generate_form "IP"
 IP=${form_data["IP"]}
 
 paste_command "smbclient -L ${IP}"
+xdotool key Return

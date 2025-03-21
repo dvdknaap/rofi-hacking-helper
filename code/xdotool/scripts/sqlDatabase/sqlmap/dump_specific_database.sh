@@ -14,3 +14,4 @@ URL=${form_data["URL"]}
 DB=${form_data["DB"]}
 
 paste_command "sqlmap -u ${URL} -D ${DB} --dump --random-agent --level 5 --risk 3 --batch"
+xdotool key Return

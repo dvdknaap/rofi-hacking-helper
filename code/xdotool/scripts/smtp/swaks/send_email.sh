@@ -17,3 +17,4 @@ BODY=${form_data["body"]}
 SERVER=${form_data["server"]}
 
 paste_command "swaks --to ${TO} --from ${FROM} --header \"Subject: ${SUBJECT}\" --body \"${BODY}\" --server ${SERVER}"
+xdotool key Return

@@ -13,3 +13,4 @@ generate_form "spn file"
 SPN_FILE=${form_data["spn file"]}
 
 paste_command "hashcat -m 13100 -O -w 3 ${SPN_FILE} /usr/share/wordlists/rockyou.txt -r ~/Desktop/base/code/xdotool/scripts/crackPasswords/hashcat/.rules/OneRuleToRuleThemAll.rule"
+xdotool key Return

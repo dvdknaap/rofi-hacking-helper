@@ -15,7 +15,6 @@
 📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web
 📂 windows | Windows scripts: user/group mgmt, cred dumping, recon, execution. | windows
 📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
-📜 impacket_ntlmrelay.sh |  | impacket ntlmrelay.sh
 📜 kali_ip.sh | get Kali IP address | kali ip.sh
 📜 save_ssh_key_to_authorized_keys.sh | save SSH key to authorized_keys | save ssh key to authorized keys.sh
 📜 ssh_key.sh | get SSH key | ssh key.sh

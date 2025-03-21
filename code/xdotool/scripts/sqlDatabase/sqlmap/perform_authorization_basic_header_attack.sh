@@ -17,3 +17,4 @@ PASSWORD=${form_data["Password"]}
 BASIC_BASE64=$(echo -n "${USERNAME}:${PASSWORD}" | base64)
 
 paste_command "sqlmap -u '${URL}' --form --batch --level 5 --risk 3 --headers=\"Authorization: Basic ${BASIC_BASE64}\" --tamper=charencode"
+xdotool key Return
