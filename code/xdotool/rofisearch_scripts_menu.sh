@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set base directory
-BASEDIR=~/Desktop/base/code/xdotool
-XDOTOOL_DIR=~/Desktop/base/code/xdotool
+BASEDIR=~/Desktop/base
+XDOTOOL_DIR="${BASEDIR}/code/xdotool"
 SCRIPTS_DIR="${XDOTOOL_DIR}/scripts"
 CACHE_DIR="${XDOTOOL_DIR}/var/cache"
 UPDATE_CHECK_FILE="${CACHE_DIR}/.rofi_last_update_check"
@@ -18,23 +18,29 @@ function check_for_updates {
     if [[ -f "$UPDATE_CHECK_FILE" ]]; then
         LAST_CHECK=$(cat "$UPDATE_CHECK_FILE")
     fi
-
+    
     if (( NOW - LAST_CHECK > 86400 )); then
-        if [[ -d "$BASEDIR/.git" ]]; then
-            cd "$BASEDIR"
+        if [[ -d "${BASEDIR}/.git" ]]; then
+            cd "${BASEDIR}"
             git fetch origin &>/dev/null
             LOCAL=$(git rev-parse HEAD)
             REMOTE=$(git rev-parse origin/main)
 
             if [[ "$LOCAL" != "$REMOTE" ]]; then
-                rofi -theme-str 'window {width: 300px;}' -e "Update available! Pull changes?"
-                if [[ $? -eq 0 ]]; then
+                local CHOICE=$(echo -e "Yes\nNo" | rofi -dmenu -theme-str 'window {width: 300px;}' -p "Update available! Pull changes?")
+                
+                if [[ "$CHOICE" == "Yes" ]]; then
+                    git checkout main
                     git pull origin main
-                    paste_commands "Update complete!"
-                else
-                    echo "${NOW}" > "${UPDATE_CHECK_FILE}"
+                    paste_commands "# Update complete!"
                 fi
+
+                echo "${NOW}" > "${UPDATE_CHECK_FILE}"
+            else
+                echo "${NOW}" > "${UPDATE_CHECK_FILE}"
             fi
+        else
+           paste_commands "git folder not found"
         fi
     fi
 }
