@@ -3,6 +3,8 @@ import tkinter as tk
 import argparse
 from typing import Dict, List, Union
 from tkinter import ttk, simpledialog
+import sv_ttk
+import darkdetect
 
 class FormApp:
     """A GUI form that collects user input and outputs it as JSON."""
@@ -39,9 +41,9 @@ class FormApp:
             if field_type == "text" or field_type == "number":
                 if field_type == "number":
                     vcmd = (self.root.register(self.validate_numeric_input), "%P")
-                    entry = tk.Entry(root, validate="key", validatecommand=vcmd)
+                    entry = ttk.Entry(root, validate="key", validatecommand=vcmd)
                 else:
-                    entry = tk.Entry(root)
+                    entry = ttk.Entry(root)
 
                 entry.grid(row=i, column=1, padx=10, pady=5)
 
@@ -70,12 +72,11 @@ class FormApp:
             if i == 0:
                 entry.focus_set()
 
-        submit_button = tk.Button(root, text="Send", command=self.submit)
+        submit_button = ttk.Button(root, text="Send", command=self.submit)
         submit_button.grid(row=len(fields), columnspan=2, pady=10)
 
         # Bind Enter key to submit function
         root.bind("<Return>", lambda event: self.submit())
-
 
     def validate_numeric_input(self, new_value: str) -> bool:
         """Validates whether the input contains only numeric values."""
@@ -118,6 +119,8 @@ def main() -> None:
     fields = parse_arguments()
     root = tk.Tk()
     app = FormApp(root, fields)
+
+    sv_ttk.set_theme(darkdetect.theme())
     root.mainloop()
 
 if __name__ == "__main__":
