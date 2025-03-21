@@ -13,3 +13,4 @@ generate_form "port"
 PORT=${form_data["port"]}
 
 paste_command "python3 -m http.server ${PORT}"
+xdotool key Return

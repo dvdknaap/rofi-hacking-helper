@@ -15,3 +15,4 @@ AUTH_PASSWORD=${form_data["auth password"]}
 SERVER=${form_data["server"]}
 
 paste_command "swaks --auth-user '${AUTH_EMAIL}' --auth LOGIN --auth-password ${AUTH_PASSWORD} --quit-after AUTH --server ${SERVER}"
+xdotool key Return

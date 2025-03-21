@@ -27,7 +27,6 @@
 | Path | Description |
 |------|-------------|
 | 📜 `documentation_folders.sh` | create the HTB documentation folder structure |
-| 📜 `impacket_ntlmrelay.sh` |  |
 | 📜 `kali_ip.sh` | get Kali IP address |
 | 📜 `save_ssh_key_to_authorized_keys.sh` | save SSH key to authorized_keys |
 | 📜 `ssh_key.sh` | get SSH key |
@@ -140,6 +139,7 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/cmd_upload_winpeas_x64_ofs_file.sh` | cmd: upload winPEASx64_ofs.exe file to server |
 | 📜 `fileTransfer/windows/cmd_upload_winpeas_x86_file.sh` | cmd: upload winPEASx86.exe file to server |
 | 📜 `fileTransfer/windows/cmd_upload_winpeas_x86_ofs_file.sh` | cmd: upload winPEASx86_ofs.exe file to server |
+| 📜 `fileTransfer/windows/ps_upload_attack_file_to_http_server.sh` | ps: upload attacker file to http server |
 | 📜 `fileTransfer/windows/ps_upload_nc64_file.sh` | ps: nc64 file to server |
 | 📜 `fileTransfer/windows/ps_upload_nc_file.sh` | ps: nc file to server |
 | 📜 `fileTransfer/windows/start_python_server_to_binary_folder.sh` | start python server to binary folder |
@@ -198,7 +198,7 @@ different scripts to do port listenings
 | 📜 `portListening/remove_ligolo_interface.sh` | remove ligolo interface |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |
-| 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port |
+| 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port with id_rsa file |
 | 📜 `portListening/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
 
 <br />
@@ -214,8 +214,8 @@ start a python http server
 
 | Path | Description |
 |------|-------------|
-| 📜 `python/http_server/http_server_always_return_200.sh` | start http server and always return 200 |
 | 📜 `python/http_server/http_server.sh` | start http server |
+| 📜 `python/http_server/server_always_return_200.sh` | start http server and always return 200 |
 
 
 <br />
@@ -321,7 +321,6 @@ msfvenom to create reverve shell files for metepreter
 
 | Path | Description |
 |------|-------------|
-| 📜 `shell/msfvenom/backdoor_exe_file.sh` | create a backdoor in an existing exe file |
 | 📜 `shell/msfvenom/create_asp _rev_shell.sh` | Create ASP file |
 | 📜 `shell/msfvenom/create_bash _rev_shell.sh` | Create Bash file |
 | 📜 `shell/msfvenom/create_c_rev_shell.sh` | Create C file |
@@ -334,6 +333,7 @@ msfvenom to create reverve shell files for metepreter
 | 📜 `shell/msfvenom/create_python _rev_shell.sh` | Create Python file |
 | 📜 `shell/msfvenom/create_splunk_rev_shell.sh` | Create splunk rev shell |
 | 📜 `shell/msfvenom/create_war _rev_shell.sh` | Create WAR file |
+| 📜 `shell/msfvenom/defender_bypass_exe_rev_shell.sh` | defender bypass with x86/shikata_ga_nai for .exe |
 
 
 ***📂 shell/background***
@@ -413,6 +413,7 @@ send emails with swaks
 |------|-------------|
 | 📜 `smtp/swaks/authentication_with_user_password.sh` | authentication with user and password |
 | 📜 `smtp/swaks/send_email.sh` | send email |
+| 📜 `smtp/swaks/send_email_with_attachment.sh` | send email |
 
 
 <br />
@@ -435,11 +436,14 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | mssql: bruteforce userpass file (user pass) |
 | 📜 `sqlDatabase/mssql/read_directory.sh` | script to read directories with xp_dirtree |
+| 📜 `sqlDatabase/mssql/show_databases.sh` | show databases |
+| 📜 `sqlDatabase/mssql/show_tables_in_database.sh` | show tables in database |
 | 📜 `sqlDatabase/mssql/start_mssql_connection.sh` | start a mssql connection |
 | 📜 `sqlDatabase/mssql/start_sp_execute_external_script_nc_reverse_shell.sh` | execute sp_execute_external_script nc reverse shell |
 | 📜 `sqlDatabase/mssql/start_sp_execute_external_script_powershell_reverse_shell.sh` | execute sp_execute_external_script powershell reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh` | execute xp_cmdshell nc reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh` | execute xp_cmdshell powershell reverse shell |
+| 📜 `sqlDatabase/mssql/view_table_content_in_specific_database.sh` | view content in table in specific database |
 
 
 ***📂 sqlDatabase/sqlmap***
@@ -578,11 +582,15 @@ Windows scripts: user/group mgmt, cred dumping, recon, execution.
 | Path | Description |
 |------|-------------|
 | 📜 `windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
-| 📜 `windows/get_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
+| 📜 `windows/impacket_get_ad_users.sh` | Impacket: GetADUsers.py get domain users |
+| 📜 `windows/impacket_ntlmrelay.sh` |  |
 | 📜 `windows/psexect_to_administrator.sh` | Impacket: psexec.py get psexec shell  |
 | 📜 `windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
+| 📜 `windows/request_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
 | 📜 `windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `windows/show_user_spns.sh` | GetUserSPNs: check for services |
 | 📜 `windows/snaffler.sh` | Run Snaffler on inlanefreight.local domain. |
+| 📜 `windows/wmiexec_connect_to_user.sh` | wmiexec: get shell to user |
 
 ***📂 windows/kerberoasting***
 
@@ -609,6 +617,19 @@ Scripts for performing password spraying attacks.
 |------|-------------|
 | 📜 `windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
 | 📜 `windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
+
+
+***📂 windows/ldap***
+
+scripts to do ldap enumerations
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/ldap/ldapsearch_check_base_naming_contexts.sh` | ldapsearch check for base namingcontexts |
+| 📜 `windows/ldap/ldapsearch_check_specific_naming_contexts.sh` | ldapsearch check for specific namingcontexts |
+| 📜 `windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
+| 📜 `windows/ldap/ldapsearch_show_user_info_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
+| 📜 `windows/ldap/nmap_ldap_scripts_scan.sh` | nmap scan with ldap scripts |
 
 
 ***📂 windows/evilWinRm***
@@ -984,9 +1005,14 @@ Scripts using smbclient for share enumeration and access.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/smbclient/administrator_hash_execute_cmd.sh` | smbclient: Connect to share. |
-| 📜 `windows/smbclient/connect_to_share.sh` | smbclient: Connect to share. |
+| 📜 `windows/smbclient/connect_to_share_anonymous.sh` | smbclient: Connect to share anonymous. |
+| 📜 `windows/smbclient/connect_to_share_with_user.sh` | smbclient: Connect to share with user. |
+| 📜 `windows/smbclient/decrypt_groups_xml_cpassword.sh` | decrypt cpassword from groups.xml |
+| 📜 `windows/smbclient/download_folders_resurcive.sh` | smbclient: download files recursive |
+| 📜 `windows/smbclient/enable_recursive.sh` | smbclient: enable recursive |
+| 📜 `windows/smbclient/search_in_downloaded_files_for_groups_xml.sh` | search for group policies in downloaded folders |
 | 📜 `windows/smbclient/show_shares.sh` | smbclient: List shares. |
+| 📜 `windows/smbclient/turn_off_prompt.sh` | smbclient: turn off prompt |
 
 ***📂 windows/smbclient/proxychains***
 

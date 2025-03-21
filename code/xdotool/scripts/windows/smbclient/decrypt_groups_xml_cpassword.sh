@@ -1,16 +1,16 @@
 #!/bin/bash
 
 : '
-nmap: check for smtp open relay
+decrypt cpassword from groups.xml
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP"
+generate_form "cpassword"
 
-IP=${form_data["IP"]}
+CPASSWORD=${form_data["cpassword"]}
 
-paste_command "nmap ${IP} -p25 --script smtp-open-relay -v"
+paste_command "gpp-decrypt ${CPASSWORD}"
 xdotool key Return

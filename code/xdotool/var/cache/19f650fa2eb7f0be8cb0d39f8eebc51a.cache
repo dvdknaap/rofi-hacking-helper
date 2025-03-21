@@ -1,4 +1,3 @@
-📜 backdoor_exe_file.sh | create a backdoor in an existing exe file | backdoor exe file.sh
 📜 create_asp _rev_shell.sh | Create ASP file | create asp  rev shell.sh
 📜 create_bash _rev_shell.sh | Create Bash file | create bash  rev shell.sh
 📜 create_c_rev_shell.sh | Create C file | create c rev shell.sh
@@ -11,3 +10,4 @@
 📜 create_python _rev_shell.sh | Create Python file | create python  rev shell.sh
 📜 create_splunk_rev_shell.sh | Create splunk rev shell | create splunk rev shell.sh
 📜 create_war _rev_shell.sh | Create WAR file | create war  rev shell.sh
+📜 defender_bypass_exe_rev_shell.sh | defender bypass with x86/shikata_ga_nai for .exe | defender bypass exe rev shell.sh

@@ -13,3 +13,4 @@ generate_form "hash file"
 HASH_FILE=${form_data["hash file"]}
 
 paste_command "cat ${HASH_FILE} | cut -d ':' -f 1,4 > hashes.txt"
+xdotool key Return

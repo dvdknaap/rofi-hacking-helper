@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-smbclient: Connect to share.
+smbclient: Connect to share anonymous.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -14,3 +14,4 @@ IP=${form_data["IP"]}
 SHARE=${form_data["Share"]}
 
 paste_command "smbclient //${IP}/${SHARE}/"
+xdotool key Return

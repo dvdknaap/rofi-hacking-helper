@@ -13,3 +13,4 @@ generate_form "URL"
 URL=${form_data["URL"]}
 
 paste_command "sqlmap -u ${URL} --dbs --random-agent --level 5 --risk 3 --batch"
+xdotool key Return

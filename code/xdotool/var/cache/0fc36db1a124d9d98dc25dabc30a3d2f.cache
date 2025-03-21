@@ -1,3 +1,5 @@
-📜 ldapsearch_check_base_naming_contexts copy.sh | ldapsearch check for specific namingcontexts | ldapsearch check base naming contexts copy.sh
 📜 ldapsearch_check_base_naming_contexts.sh | ldapsearch check for base namingcontexts | ldapsearch check base naming contexts.sh
+📜 ldapsearch_check_specific_naming_contexts.sh | ldapsearch check for specific namingcontexts | ldapsearch check specific naming contexts.sh
+📜 ldapsearch_get_spn_of_specific_naming_contexts.sh | ldapsearch show user info of specific namingcontexts | ldapsearch get spn of specific naming contexts.sh
+📜 ldapsearch_show_user_info_of_specific_naming_contexts.sh | ldapsearch show user info of specific namingcontexts | ldapsearch show user info of specific naming contexts.sh
 📜 nmap_ldap_scripts_scan.sh | nmap scan with ldap scripts | nmap ldap scripts scan.sh

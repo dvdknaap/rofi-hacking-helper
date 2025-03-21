@@ -14,3 +14,4 @@ IP=${form_data["IP"]}
 DOMAIN=${form_data["domain"]}
 
 paste_command "smtp-user-enum -M RCPT -U /usr/share/wordlists/seclists/Usernames/xato-net-10-million-usernames-dup.txt -D ${DOMAIN} -t ${IP} -m 50"
+xdotool key Return

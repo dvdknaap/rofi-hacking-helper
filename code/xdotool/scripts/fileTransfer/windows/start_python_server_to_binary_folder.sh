@@ -19,3 +19,4 @@ HTTP_PID=$!
 echo "$HTTP_PID"
 
 paste_command "# use \`kill ${HTTP_PID}\` to kill the server; use http://${KALI_IP}:${PORT} to download files"
+xdotool key Return
