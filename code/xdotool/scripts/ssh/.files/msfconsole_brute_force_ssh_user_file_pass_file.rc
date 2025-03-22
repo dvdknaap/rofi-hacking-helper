@@ -1,4 +1,4 @@
-use auxiliary/scanner/mssql/mssql_login
+use auxiliary/scanner/ssh/ssh_login
 set RHOSTS [RHOSTS]
 set VERBOSE true
 set THREADS 10

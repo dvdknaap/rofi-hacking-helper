@@ -5,5 +5,11 @@ Nmap: Check for open SMTP relay.
 '
 
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-paste_command "nmap -p25 -Pn --script smtp-open-relay 10.129.203.101 -vvv"
+# Generate gui form
+generate_form "IP"
+
+IP=${form_data["IP"]}
+
+paste_command "nmap -p25 -Pn --script smtp-open-relay ${IP} -vvv"
