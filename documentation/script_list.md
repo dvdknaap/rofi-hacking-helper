@@ -365,6 +365,7 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
 | 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
 | 📜 `shell/msfconsole/start_windows_post_hash_dump.sh` | meterpreter: set windows post hash dump |
+| 📜 `shell/msfconsole/upgrade_to_meterpreter.sh` | meterpreter:  upgrade shell to meterpreter |
 
 ***📂 shell/msfconsole/proxychains***
 
@@ -470,7 +471,7 @@ scripts to start port listening or forwarding
 |------|-------------|
 | 📜 `ssh/local_port_listening.sh` | type ssh port listening |
 | 📜 `ssh/local_port_listening_with_sshkey.sh` | type ssh port listening with ssh key |
-| 📜 `ssh/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
+| 📜 `ssh/metasploit_bruteforce_username_and_password_file.sh` | ssh: bruteforce username and passwords file |
 | 📜 `ssh/metasploit_bruteforce_username_file_and_password_file.sh` | ssh: bruteforce username file and passwords file |
 | 📜 `ssh/metasploit_bruteforce_userpass_file.sh` | ssh: bruteforce userpass file (user pass) |
 | 📜 `ssh/remote_port_forwarding.sh` | type ssh port forwarding |

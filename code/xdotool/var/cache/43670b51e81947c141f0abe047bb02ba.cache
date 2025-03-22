@@ -15,3 +15,4 @@
 📜 start_sock_proxy.sh | Start socks proxy | start sock proxy.sh
 📜 start_windows_post_exploit_suggester.sh | meterpreter: set windows post exploit suggester | start windows post exploit suggester.sh
 📜 start_windows_post_hash_dump.sh | meterpreter: set windows post hash dump | start windows post hash dump.sh
+📜 upgrade_to_meterpreter.sh | meterpreter:  upgrade shell to meterpreter | upgrade to meterpreter.sh
