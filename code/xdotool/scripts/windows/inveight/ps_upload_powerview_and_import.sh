@@ -13,7 +13,7 @@ generate_form "Port"
 
 PORT=${form_data["Port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/inveight/.files
+cd ${SCRIPTS_DIR}/windows/inveight/.files
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 

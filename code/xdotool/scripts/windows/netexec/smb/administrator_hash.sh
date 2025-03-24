@@ -8,9 +8,9 @@ source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP" "Hash"
+generate_form '{"label": "IP address", "type": "text", "name": "ip"}' '{"label": "Hash", "type": "text", "name": "hash"}'
 
-IP=${form_data["IP"]}
-HASH=${form_data["Hash"]}
+IP=${form_data["ip"]}
+HASH=${form_data["hash"]}
 
 paste_command "netexec smb ${IP} -u administrator -H ${HASH}"

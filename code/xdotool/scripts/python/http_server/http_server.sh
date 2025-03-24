@@ -4,11 +4,11 @@
 start http server
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item  "port" "port")
 
-# Generate gui form
-generate_form "port"
+# Generate GUI form
+generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 

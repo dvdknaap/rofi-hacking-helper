@@ -4,14 +4,15 @@
 view content in table in specific database
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DATABASE_FIELD=$(form_item "database" "database")
+TABLE_FIELD=$(form_item "table" "table")
 
-# Generate gui form
-generate_form "Database" "Table"
+# Generate GUI form
+generate_form "${DATABASE_FIELD}" "${TABLE_FIELD}"
 
-DATABASE=${form_data["Database"]}
-TABLE=${form_data["Table"]}
+DATABASE=${form_data["database"]}
+TABLE=${form_data["table"]}
 
 paste_command "use ${DATABASE}"
 xdotool key Return

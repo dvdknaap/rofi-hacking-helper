@@ -4,13 +4,13 @@
 show tables in database
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DATABASE_FIELD=$(form_item  "Database" "database")
 
-# Generate gui form
-generate_form "Database"
+# Generate GUI form
+generate_form "${DATABASE_FIELD}"
 
-DATABASE=${form_data["Database"]}
+DATABASE=${form_data["database"]}
 
 paste_command "SELECT * FROM ${DATABASE}.INFORMATION_SCHEMA.TABLES"
 xdotool key Return

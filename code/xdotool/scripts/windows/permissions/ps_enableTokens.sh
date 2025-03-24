@@ -7,7 +7,7 @@ enable permission tokens
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/permissions/.files
+cd ${SCRIPTS_DIR}/windows/permissions/.files
 python3 -m http.server 1337 &
 HTTP_PID=$!
 

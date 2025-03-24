@@ -4,8 +4,6 @@
 Registry: Save SYSTEM, SECURITY, and SAM hives.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-
 paste_command "mkdir C:\temp"
 xdotool key Return
 sleep 1
@@ -14,10 +12,10 @@ paste_command "reg save hklm\system C:\temp\system.save"
 xdotool key Return
 sleep 3
 
-paste_command "reg save hklm\security C:\temp\security.save"
+paste_command "reg save hklm\sam C:\temp\sam.save"
 xdotool key Return
 sleep 3
 
-paste_command "reg save hklm\sam C:\temp\sam.save"
+paste_command "reg save hklm\security C:\temp\security.save"
 xdotool key Return
 sleep 3

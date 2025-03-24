@@ -14,7 +14,7 @@ generate_form "Zipfilename" "Port"
 ZIP_FILENAME=${form_data["Zipfilename"]}
 PORT=${form_data["Port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/bloodhound/.files
+cd ${SCRIPTS_DIR}/windows/bloodhound/.files
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 

@@ -1,12 +1,10 @@
 #!/bin/bash
 
-source "helpers/paste_commands.sh"
-
 function run_with_proxychains {
     local SCRIPT_PATH="$1"
 
     if [[ -z "$1" ]]; then
-        paste_command "Usage: $0 <script path>"
+        paste_command "Usage: run_with_proxychains <script path>"
         exit 1
     fi
 

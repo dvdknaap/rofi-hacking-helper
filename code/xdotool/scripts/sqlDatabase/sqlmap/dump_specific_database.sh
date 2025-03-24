@@ -4,14 +4,15 @@
 sqlmap: dump specific database
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DATABASE_FIELD=$(form_item "database" "database")
+URL_FIELD=$(form_item "URL" "url")
 
-# Generate gui form
-generate_form "URL" "DB"
+# Generate GUI form
+generate_form "${DATABASE_FIELD}" "${URL_FIELD}"
 
-URL=${form_data["URL"]}
-DB=${form_data["DB"]}
+DATABASE=${form_data["database"]}
+URL=${form_data["url"]}
 
-paste_command "sqlmap -u ${URL} -D ${DB} --dump --random-agent --level 5 --risk 3 --batch"
+paste_command "sqlmap -u ${URL} -D ${DATABASE} --dump --random-agent --level 5 --risk 3 --batch"
 xdotool key Return

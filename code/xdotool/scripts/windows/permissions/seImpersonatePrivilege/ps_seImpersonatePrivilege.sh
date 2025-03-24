@@ -15,7 +15,7 @@ generate_form "Shell port"
 
 PORT=${form_data["Shell port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/fileTransfer/windows/.binaries
+cd ${SCRIPTS_DIR}/fileTransfer/windows/.binaries
 python3 -m http.server 1337 &
 HTTP_PID=$!
 TMP_FOLDER="C:\users\public"

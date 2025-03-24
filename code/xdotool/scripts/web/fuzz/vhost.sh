@@ -1,16 +1,20 @@
 #!/bin/bash
 
 : '
-fuzz vhosts with seclists/Discovery/DNS/namelist.txt
+fuzz vhosts
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website")
+HOST_HEADER_DOMAIN_FIELD=$(form_item "Host header domain" "host_header_domain" "domain.com")
+WORDLIST_FIELD=$(form_item "wordlist" "wordlist" "/usr/share/seclists/Discovery/DNS/namelist.txt")
 
-# Generate gui form
-generate_form "Website" "Host header domain"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${HOST_HEADER_DOMAIN_FIELD}" "${WORDLIST_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-HOST_HEADER_DOMAIN=${form_data["Host header domain"]}
+WEBSITE=${form_data["website"]}
+HOST_HEADER_DOMAIN=${form_data["host_header_domain"]}
+WORDLIST=${form_data["wordlist"]}
 
-paste_command "ffuf -w /usr/share/seclists/Discovery/DNS/namelist.txt:FUZZ -u ${WEBSITE} -H 'Host:FUZZ.${HOST_HEADER_DOMAIN}'"
+paste_command "ffuf -w ${WORDLIST}:FUZZ -u ${WEBSITE} -H 'Host:FUZZ.${HOST_HEADER_DOMAIN}'"
+xdotool key Return

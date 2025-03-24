@@ -4,13 +4,13 @@
 sqlmap: SQLi on all forms on a websith
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+URL_FIELD=$(form_item "URL" "url")
 
-# Generate gui form
-generate_form "URL"
+# Generate GUI form
+generate_form "${URL_FIELD}"
 
-URL=${form_data["URL"]}
+URL=${form_data["url"]}
 
 paste_command "sqlmap -u ${URL} --forms --random-agent --level 5 --risk 3 --batch"
 xdotool key Return

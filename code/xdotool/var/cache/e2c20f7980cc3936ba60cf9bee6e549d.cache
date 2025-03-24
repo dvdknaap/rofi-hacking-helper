@@ -1,6 +1,7 @@
 📂 proxychains |  | proxychains
 📜 administrator_hash.sh | check if smb is possible for administrator hash | administrator hash.sh
 📜 check_anonymous.sh | check if anonymous guest session is possible | check anonymous.sh
+📜 convert_smb_rid_brute_force_to_username_list.sh | convert smb rid-bruteforce to users list | convert smb rid brute force to username list.sh
 📜 dump_credentials_from_lsa.sh | dump lsa | dump credentials from lsa.sh
 📜 dump_credentials_from_sam.sh | dump sam | dump credentials from sam.sh
 📜 dump_ntds.sh | dump ntds | dump ntds.sh

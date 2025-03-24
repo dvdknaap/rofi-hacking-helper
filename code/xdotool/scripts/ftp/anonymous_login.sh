@@ -4,23 +4,25 @@
 FTP: check for anonymous login
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item  "IP address" "IP")
 
-# Generate gui form
-generate_form "IP"
+# Generate GUI form
+generate_form "${PORT_FIELD}"
 
 IP=${form_data["IP"]}
+USERNAME="anonymous"
+PASSWORD="anonymous"
 
 paste_command "ftp ${IP}"
 xdotool key Return
 sleep 1
 
-paste_command "anonymous"
+paste_command "${USERNAME}"
 xdotool key Return
 sleep 1
 
-paste_command "anonymous"
+paste_command "${PASSWORD}"
 xdotool key Return
 sleep 1
 

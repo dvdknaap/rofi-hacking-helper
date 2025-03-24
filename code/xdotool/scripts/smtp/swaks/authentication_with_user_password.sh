@@ -4,14 +4,16 @@
 authentication with user and password
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+AUTH_EMAIL_FIELD=$(form_item  "auth email" "auth_email")
+AUTH_PASSWORD_FIELD=$(form_item  "auth password" "auth_password")
+SERVER_FIELD=$(form_item  "server" "server")
 
-# Generate gui form
-generate_form "auth email" "auth password" "server"
+# Generate GUI form
+generate_form "${AUTH_EMAIL_FIELD}" "${AUTH_PASSWORD_FIELD}" "${SERVER_FIELD}"
 
-AUTH_EMAIL=${form_data["auth email"]}
-AUTH_PASSWORD=${form_data["auth password"]}
+AUTH_EMAIL=${form_data["auth_email"]}
+AUTH_PASSWORD=${form_data["auth_password"]}
 SERVER=${form_data["server"]}
 
 paste_command "swaks --auth-user '${AUTH_EMAIL}' --auth LOGIN --auth-password ${AUTH_PASSWORD} --quit-after AUTH --server ${SERVER}"

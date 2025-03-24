@@ -4,17 +4,21 @@
 SCP download file from server
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+ID_RSA_FIELD=$(form_item "id_rsa file" "id_rsa_file")
+USERNAME_FIELD=$(form_item "username" "username")
+IP_FIELD=$(form_item "IP" "ip")
+REMOTE_FILE_FIELD=$(form_item "remote file path" "remote_file_path")
+LOCAL_PATH_FIELD=$(form_item "local path" "local_path")
 
-# Generate gui form
-generate_form "id_rsa file" "username" "IP" "remote file path" "local path"
+# Generate GUI form
+generate_form "${ID_RSA_FIELD}" "${USERNAME_FIELD}" "${IP_FIELD}" "${REMOTE_FILE_FIELD}" "${LOCAL_PATH_FIELD}" 
 
-ID_RSA_FILE=${form_data["id_rsa file"]}
+ID_RSA_FILE=${form_data["id_rsa_file"]}
 USERNAME=${form_data["username"]}
-IP=${form_data["IP"]}
-REMOTE_FILE_PATH=${form_data["remote file path"]}
-LOCAL_PATH=${form_data["local path"]}
+IP=${form_data["ip"]}
+REMOTE_FILE_PATH=${form_data["remote_file_path"]}
+LOCAL_PATH=${form_data["local_path"]}
 
-paste_command "scp -i ${ID_RSA_FILE} ${USERNAME}@${USERNAME}:${REMOTE_FILE_PATH} ${LOCAL_PATH}"
+paste_command "scp -i ${ID_RSA_FILE} ${USERNAME}@${IP}:${REMOTE_FILE_PATH} ${LOCAL_PATH}"
 xdotool key Return

@@ -4,14 +4,13 @@
 remove ligolo interface
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+INTERFACE_NAME_FIELD=$(form_item  "interface name" "interface_name")
 
-# Generate gui form
-generate_form "Ip range" "Interface name"
+# Generate GUI form
+generate_form "${INTERFACE_NAME_FIELD}"
 
-IPRANGE=${form_data["Ip range"]}
-INTERFACENAME=${form_data["Interface name"]}
+INTERFACE_NAME=${form_data["interface_name"]}
 
-paste_command "sudo ip link delete ${INTERFACENAME}"
+paste_command "sudo ip link delete ${INTERFACE_NAME}"
 xdotool key Return

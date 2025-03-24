@@ -4,15 +4,17 @@
 sqlmap: perform Authorization: Basic attack
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+URL_FIELD=$(form_item "URL" "url")
+USERNAME_FIELD=$(form_item "Username" "username")
+PASSWORD_FIELD=$(form_item "Password" "password")
 
-# Generate gui form
-generate_form "URL" "Username" "Password"
+# Generate GUI form
+generate_form "${URL_FIELD}"
 
-URL=${form_data["URL"]}
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
+URL=${form_data["url"]}
+USERNAME=${form_data["username"]}
+PASSWORD=${form_data["password"]}
 
 BASIC_BASE64=$(echo -n "${USERNAME}:${PASSWORD}" | base64)
 

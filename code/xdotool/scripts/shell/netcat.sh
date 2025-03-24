@@ -4,11 +4,13 @@
 start nc port listening
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item  "port" "number" "port" "1337")
 
-# Generate gui form
-generate_form "Port"
+# Generate GUI form
+generate_form "${PORT_FIELD}"
 
-Port=${form_data["Port"]}
-paste_command "nc -lvnp ${Port}"
+PORT=${form_data["port"]}
+
+paste_command "nc -lvnp ${PORT}"
+xdotool key Return

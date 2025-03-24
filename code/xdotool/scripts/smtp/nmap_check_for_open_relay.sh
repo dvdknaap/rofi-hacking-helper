@@ -4,13 +4,13 @@
 nmap: check for smtp open relay
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "number" "ip" "1337")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}'
+# Generate GUI form
+generate_form "${IP_FIELD}"
 
-IP=${form_data["IP"]}
+IP=${form_data["ip"]}
 
 paste_command "nmap ${IP} -p25 --script smtp-open-relay -v"
 xdotool key Return

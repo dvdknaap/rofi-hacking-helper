@@ -82,7 +82,14 @@ main() {
     check_and_install_package powershell
     check_and_install_package xclip
     check_and_install_package expect
-     
+    check_and_install_package seclists
+
+    pip3 install pyftpdlib --break-system-packages
+    pip3 install sv-ttk --break-system-packages
+    pip3 install darkdetect --break-system-packages
+    pip3 install git-dumper --break-system-packages
+    pip3 install pyftpdlib --break-system-packages
+
     clone_or_update_repo
 
     # Check for existing keybinding

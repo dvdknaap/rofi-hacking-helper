@@ -4,15 +4,15 @@
 add new ligolo interface
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP / range address" "ip")
+INTERFACE_NAME_FIELD=$(form_item  "interface name" "interface_name")
 
-# Generate gui form
-generate_form "Ip" "interface name"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${INTERFACE_NAME_FIELD}"
 
-IP=${form_data["Ip"]}
-INTERFACENAME=${form_data["interface name"]}
+IP=${form_data["ip"]}
+INTERFACE_NAME=${form_data["interface_name"]}
 
 paste_command "sudo ip link delete ${INTERFACENAME}"
 xdotool key Return

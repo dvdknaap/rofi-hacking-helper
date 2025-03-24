@@ -4,12 +4,13 @@
 meterpreter: set server routes
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_RANGE_FIELD=$(form_item  "IP range" "ip_range")
 
-# Generate gui form
-generate_form "IP range"
+# Generate GUI form
+generate_form "${REMOTE_PORT_FIELD}" 
 
-IP_RANGE=${form_data["IP range"]}
+IP_RANGE=${form_data["ip_range"]}
 
 paste_command "run autoroute -s ${IP_RANGE}"
+xdotool key Return

@@ -4,13 +4,15 @@
 Format username:RID:LM:NTLM::: to hashcat format
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+HASH_FIELD=$(form_item "hash file" "hash_file")
+OUTPUT_FIELD=$(form_item "output file" "output_file")
 
-# Generate gui form
-generate_form "hash file"
+# Generate GUI form
+generate_form "${HASH_FIELD}" "${OUTPUT_FIELD}"
 
-HASH_FILE=${form_data["hash file"]}
+HASH_FILE=${form_data["hash_file"]}
+OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "cat ${HASH_FILE} | cut -d ':' -f 1,4 > hashes.txt"
+paste_command "cat ${HASH_FILE} | cut -d ':' -f 1,4 > ${OUTPUT_FILE}"
 xdotool key Return

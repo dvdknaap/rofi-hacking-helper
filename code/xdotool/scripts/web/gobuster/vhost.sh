@@ -1,15 +1,18 @@
 #!/bin/bash
 
 : '
-gobuster vhosts with seclists/Discovery/DNS/subdomains-top1million-110000.txt
+gobuster vhosts with subdomains-top1million-110000.txt
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website")
+WORDLIST_FIELD=$(form_item "wordlist" "wordlist" "/usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt")
 
-# Generate gui form
-generate_form "Website"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}"
 
-WEBSITE=${form_data["Website"]}
+WEBSITE=${form_data["website"]}
+WORDLIST=${form_data["wordlist"]}
 
-paste_command "gobuster vhost -u '${WEBSITE}' -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -t 60 --append-domain"
+paste_command "gobuster vhost -u '${WEBSITE}' -w ${WORDLIST} -t 60 --append-domain"
+xdotool key Return

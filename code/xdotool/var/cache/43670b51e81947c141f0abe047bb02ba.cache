@@ -8,10 +8,9 @@
 📜 listen_to_meterpreter_war_rev_shell.sh | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp | listen to meterpreter war rev shell.sh
 📜 listen_to_meterpreter_windows_rev_shell.sh | meterpreter: start meterpreter listener windows/meterpreter/reverse_tcp | listen to meterpreter windows rev shell.sh
 📜 listen_to_meterpreter_windows_x64_rev_shell.sh | meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp | listen to meterpreter windows x64 rev shell.sh
-📜 meterpreter_port_forwarding.sh | meterpreter: forward all trafic from remote port 8443 to local port 1234 | meterpreter port forwarding.sh
+📜 meterpreter_port_forwarding.sh | meterpreter: forward all trafic from remote port to local port | meterpreter port forwarding.sh
 📜 meterpreter_set_server_routes.sh | meterpreter: set server routes | meterpreter set server routes.sh
 📜 show_creds_all.sh | meterpreter: show creds_all (mimikatz) | show creds all.sh
-📜 start_msfconsole.sh | start msfconsole | start msfconsole.sh
 📜 start_sock_proxy.sh | Start socks proxy | start sock proxy.sh
 📜 start_windows_post_exploit_suggester.sh | meterpreter: set windows post exploit suggester | start windows post exploit suggester.sh
 📜 start_windows_post_hash_dump.sh | meterpreter: set windows post hash dump | start windows post hash dump.sh
