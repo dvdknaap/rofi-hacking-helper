@@ -1,0 +1,8 @@
+📂 certipy-ad |  | certipy ad
+📂 invokeTokenManipulation | invoke TokenManipulation attack | invoketokenmanipulation
+📂 kerbrute | perform kerbrute attacks | kerbrute
+📂 powerVIew | scripts for powerview.ps1 | powerview
+📂 rubeus | perform Rubeus attacks | rubeus
+📂 runasCs | runAsCS.exe exploit | runascs
+📂 sharpGPOAbuse | script to do SharpGPOAbuse attack | sharpgpoabuse
+📜 get_user_tgt.sh | get user Ticket Granting Ticket (TGT) | get user tgt.sh

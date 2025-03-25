@@ -1,7 +1,7 @@
 import json
 import tkinter as tk
 import argparse
-from typing import Dict, List, Union
+from typing import List, Dict, Union, Tuple, Any
 from tkinter import ttk, simpledialog
 import sv_ttk
 import darkdetect
@@ -9,17 +9,21 @@ import darkdetect
 class FormApp:
     """A GUI form that collects user input and outputs it as JSON."""
 
-    def __init__(self, root: tk.Tk, fields: List[Union[str, Dict]], form_width: int = 800, form_height: int = 400) -> None:
+    def __init__(self, root: tk.Tk, fields: List[Union[str, Dict]], active_cred_system_fields: Dict[str, Any] | str, form_width: int = 800, form_height: int = 400) -> None:
         """
         Initialize the GUI.
 
         :param root: The main window of Tkinter.
         :param fields: A list of field names or JSON objects with additional parameters.
-        :param form_size: Optional size for the form window.
+        :param active_cred_system_fields: A list of field names or JSON objects with additional parameters.
+        :param form_width: Form width.
+        :param form_height: Form height.
         """
         self.root = root
         self.fields = fields
-        self.entries: Dict[str, tk.Widget] = {}
+        self.entries: Dict[str, tk.Widget | str] = {}
+        form_fields_added = False 
+        first_field = True
 
         root.title("Required Data")
 
@@ -31,7 +35,7 @@ class FormApp:
         x = (screen_width/2) - (form_height/2)
         y = (screen_height/2) - (form_height/2)
 
-        root.geometry('%dx%d+%d+%d' % (form_width, form_height, x, y)) 
+        root.geometry('%dx%d+%d+%d' % (form_width, form_height, x, y))
 
         for i, field in enumerate(fields):
             if isinstance(field, str):
@@ -46,6 +50,13 @@ class FormApp:
                 field_type = field.get("type", "text")
                 options = field.get("options", [])
                 default_value = field.get("default", "")
+
+            # Check if field name is in credential system
+            if active_cred_system_fields != "" and field_name in active_cred_system_fields:
+                if active_cred_system_fields.get(field_name, "") != "":
+                    
+                    self.entries[field_name] = active_cred_system_fields.get(field_name, "")
+                    continue
 
             tk.Label(root, text=label_text).grid(row=i, column=0, padx=10, pady=5)
 
@@ -96,10 +107,17 @@ class FormApp:
                 print(f"Error: Invalid field type '{field_type}' for '{field_name}'")
                 exit(1)
 
-            # Focus on the first input
-            if i == 0:
-                entry.focus_set()
+            form_fields_added = True
 
+            # Focus on the first input
+            if first_field == True:
+                entry.focus_set()
+                first_field = False
+                
+        if form_fields_added == False:
+            self.submit()
+            return
+        
         submit_button = ttk.Button(root, text="Send", command=self.submit)
         submit_button.grid(row=len(fields), columnspan=2, pady=10)
 
@@ -123,24 +141,39 @@ class FormApp:
     def submit(self) -> None:
         """Collect user input and close the window."""
 
-        result = {name: entry.get() for name, entry in self.entries.items()}
-        self.root.destroy()
-        print(json.dumps(result, indent=4))
+        result = {
+            name: (entry.get() if isinstance(entry, (tk.StringVar, ttk.Entry)) else entry)
+            for name, entry in self.entries.items()
+        }
 
-def parse_arguments() -> List[Union[str, Dict]]:
+        print(json.dumps(result))
+
+        self.root.quit()
+        self.root.destroy()
+        exit(0)
+
+def parse_arguments() -> Tuple[List[Union[str, Dict]], Dict[str, Any]]:
     """Parse JSON input and supports both a list of field names and a list of objects."""
 
     parser = argparse.ArgumentParser(description="Show a form based on JSON input.")
     parser.add_argument("json_input", type=str, help="JSON-formatted list of fields or objects.")
+    parser.add_argument("active_cred_system_json", type=str, help="JSON-formatted list of fields from credential system.")
     args = parser.parse_args()
 
     try:
+        active_cred_system_fields=""
         fields = json.loads(args.json_input)
 
         if not isinstance(fields, list):
             raise ValueError("Invalid JSON format. Expected a list.")
         
-        return fields
+        if args.active_cred_system_json != "":
+            active_cred_system_fields = json.loads(args.active_cred_system_json)
+
+            if not isinstance(active_cred_system_fields, dict):
+                raise ValueError("Invalid JSON format. Expected a dict.")
+            
+        return fields,active_cred_system_fields
     except json.JSONDecodeError as e:
         print("Error: Invalid JSON input.", file=e.stderr)
         exit(1)
@@ -148,14 +181,15 @@ def parse_arguments() -> List[Union[str, Dict]]:
 def main() -> None:
     """Start the form."""
 
-    fields = parse_arguments()
+    fields, active_cred_system_fields = parse_arguments()
     form_width=400
     form_height=400
 
     root = tk.Tk()
-    app = FormApp(root, fields, form_width, form_height)
+    app = FormApp(root, fields, active_cred_system_fields, form_width, form_height)
 
     sv_ttk.set_theme(darkdetect.theme())
+
     root.mainloop()
 
 if __name__ == "__main__":

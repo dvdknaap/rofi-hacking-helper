@@ -24,5 +24,5 @@
 📜 request_user_spns_check_for_services.sh | GetUserSPNs: check for services | request user spns check for services.sh
 📜 save_sam_database.sh | Registry: Save SYSTEM, SECURITY, and SAM hives. | save sam database.sh
 📜 show_user_spns.sh | GetUserSPNs: check for services | show user spns.sh
-📜 snaffler.sh | Run Snaffler on inlanefreight.local domain. | snaffler.sh
+📜 snaffler.sh | Run Snaffler on domain. | snaffler.sh
 📜 wmiexec_connect_to_user.sh | wmiexec: get shell to user | wmiexec connect to user.sh
