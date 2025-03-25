@@ -9,7 +9,7 @@ import darkdetect
 class FormApp:
     """A GUI form that collects user input and outputs it as JSON."""
 
-    def __init__(self, root: tk.Tk, fields: List[Union[str, Dict]], active_cred_system_fields: Dict[str, Any] | str, form_width: int = 800, form_height: int = 400) -> None:
+    def __init__(self, root: tk.Tk, fields: List[Union[str, Dict]], active_cred_system_fields: Dict[str, Any] | str, form_width: int = 800, form_height: int = 800) -> None:
         """
         Initialize the GUI.
 
@@ -33,9 +33,27 @@ class FormApp:
 
         # calculate x and y coordinates for the Tk root window
         x = (screen_width/2) - (form_height/2)
-        y = (screen_height/2) - (form_height/2)
+        y = (screen_height/2) - (form_height/2) - 100
 
         root.geometry('%dx%d+%d+%d' % (form_width, form_height, x, y))
+
+        # Scrollable Frame Setup
+        self.canvas = tk.Canvas(root, highlightthickness=0)  # Highlight weg
+        scrollbar = ttk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
+        
+        self.scroll_frame = ttk.Frame(self.canvas)
+
+        self.scroll_frame.bind("<Configure>", lambda e: self.canvas.configure(scrollregion=self.canvas.bbox("all")))
+        self.canvas.create_window((0, 0), window=self.scroll_frame, anchor="nw")
+        self.canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Scrollwheel binding (Windows + Linux)
+        root.bind_all("<MouseWheel>", self._on_mousewheel)  # Windows
+        root.bind_all("<Button-4>", self._on_mousewheel)  # Linux (op sommige distro’s)
+        root.bind_all("<Button-5>", self._on_mousewheel)  # Linux (op sommige distro’s)
+
+        self.canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
 
         for i, field in enumerate(fields):
             if isinstance(field, str):
@@ -58,14 +76,14 @@ class FormApp:
                     self.entries[field_name] = active_cred_system_fields.get(field_name, "")
                     continue
 
-            tk.Label(root, text=label_text).grid(row=i, column=0, padx=10, pady=5)
+            tk.Label(self.scroll_frame, text=label_text).grid(row=i, column=0, padx=10, pady=5)
 
             if field_type == "text" or field_type == "number":
                 if field_type == "number":
                     vcmd = (self.root.register(self.validate_numeric_input), "%P")
-                    entry = ttk.Entry(root, validate="key", validatecommand=vcmd)
+                    entry = ttk.Entry(self.scroll_frame, validate="key", validatecommand=vcmd)
                 else:
-                    entry = ttk.Entry(root)
+                    entry = ttk.Entry(self.scroll_frame)
 
                 entry.grid(row=i, column=1, padx=10, pady=5)
 
@@ -78,7 +96,7 @@ class FormApp:
                 self.entries[field_name] = entry
                 
             elif field_type == "select" and options:
-                entry = ttk.Combobox(root, values=options, state="readonly")
+                entry = ttk.Combobox(self.scroll_frame, values=options, state="readonly")
                 entry.grid(row=i, column=1, padx=10, pady=5)
 
                 if default_value in options:
@@ -90,7 +108,7 @@ class FormApp:
 
             elif field_type == "checkbox":
                 var = tk.BooleanVar(value=default_value)
-                entry = tk.Checkbutton(root, text=label_text, variable=var)
+                entry = tk.Checkbutton(self.scroll_frame, text=label_text, variable=var)
                 entry.grid(row=i, column=1, padx=5, pady=5)
                 self.entries[field_name] = var
 
@@ -98,7 +116,7 @@ class FormApp:
                 var = tk.StringVar(value=default_value)
                 row_offset = i  # Row offset for radio buttons
                 for j, option in enumerate(options):
-                    entry = tk.Radiobutton(root, text=option, value=option, variable=var)
+                    entry = tk.Radiobutton(self.scroll_frame, text=option, value=option, variable=var)
                     entry.grid(row=1, column=row_offset, padx=2, pady=2)
                     row_offset += 1
                 self.entries[field_name] = var
@@ -118,11 +136,20 @@ class FormApp:
             self.submit()
             return
         
-        submit_button = ttk.Button(root, text="Send", command=self.submit)
+        submit_button = ttk.Button(self.scroll_frame, text="Send", command=self.submit)
         submit_button.grid(row=len(fields), columnspan=2, pady=10)
 
         # Bind Enter key to submit function
         root.bind("<Return>", lambda event: self.submit())
+
+    def _on_mousewheel(self, event) -> None:
+        """Enable mousewheel scrolling"""
+        if event.num == 4:  # Linux scroll up
+            self.canvas.yview_scroll(-1, "units")
+        elif event.num == 5:  # Linux scroll down
+            self.canvas.yview_scroll(1, "units")
+        else:  # Windows / macOS
+            self.canvas.yview_scroll(-1 * (event.delta // 120), "units")
 
     def validate_numeric_input(self, new_value: str) -> bool:
         """Validates whether the input contains only numeric values."""
