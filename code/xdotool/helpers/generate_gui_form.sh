@@ -48,9 +48,14 @@ form_item() {
 generate_form() {
     # Check if at least one argument is provided
     if [ $# -eq 0 ]; then
-        paste_command "Usage: generate_form \"Field 1\" \"Field 2\" ..."
-        paste_command "or"
-        paste_command "generate_form '{\"label\": \"Field 1\", \"type\": \"text\", \"name\": \"field1\"}' '{\"label\": \"Field 2\", \"type\": \"password\", \"name\": \"field2\"}' ..."
+        paste_command "# Usage: generate_form \"Field 1\" \"Field 2\" ..."
+        xdotool key Return
+
+        paste_command "# or"
+        xdotool key Return
+
+        paste_command "# generate_form '{\"label\": \"Field 1\", \"type\": \"text\", \"name\": \"field1\"}' '{\"label\": \"Field 2\", \"type\": \"password\", \"name\": \"field2\"}' ..."
+        xdotool key Return
         exit 1
     fi
 
@@ -68,12 +73,34 @@ generate_form() {
         fi
     done
 
+    active_cred_system_json=""
+    # Check if credential system is active
+    if [ -n "${ACTIVE_CRED_SYSTEM[*]}" ]; then
+        jq_labels=()
+        jq_json=""
+
+        for field in "${!ACTIVE_CRED_SYSTEM[@]}"; do
+            jq_labels+=(--arg "${field}" "${ACTIVE_CRED_SYSTEM["${field}"]}")
+            jq_json+="\"${field}\": \$${field}, "
+        done
+
+        jq_json="{ ${jq_json::-2} }"
+
+        active_cred_system_json=$(jq -cn "${jq_labels[@]}" "${jq_json}")
+    fi
+
     # Call the Python script and capture the JSON response
-    json_output=$(python3 "${python_script}" "${json_array}" 2>/dev/null)
+    json_output=$(python3 "${python_script}" "${json_array}" "${active_cred_system_json}" 2>/dev/null)
+
     if [ $? -ne 0 ]; then
-        paste_command "python3 ${python_script} '${json_array}'"
-        paste_command "Error: Failed to execute ${python_script}"
-        paste_command "${json_output}"
+        paste_command "# python3 ${python_script} '${json_array}' '${active_cred_system_json}'"
+        xdotool key Return
+
+        paste_command "# Error: Failed to execute ${python_script}"
+        xdotool key Return
+
+        paste_command "# ${json_output}"
+        xdotool key Return
         exit 1
     fi
 

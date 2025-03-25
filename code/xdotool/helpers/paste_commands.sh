@@ -25,7 +25,7 @@ paste_command() {
                 ACTIVE_WINDOW_ID=$(xdotool getactivewindow)
                 WINDOW_CLASS=$(xprop -id "$ACTIVE_WINDOW_ID" | grep "WM_CLASS" | awk -F '"' '{print $2}' | tr '[:upper:]' '[:lower:]')
                 
-                if [[ "$WINDOW_CLASS" =~ (terminal|konsole|gnome-terminal|xfce4-terminal|alacritty|xterm|tilix|mate-terminal|terminator|warp|xfreerdp|xfreerdp3) ]]; then
+                if [[ "$WINDOW_CLASS" =~ (gnome.terminal|terminal|konsole|gnome-terminal|xfce4-terminal|alacritty|xterm|tilix|mate-terminal|terminator|warp|xfreerdp|xfreerdp3) ]]; then
                     xdotool key ctrl+Shift+v  # Terminal
                 else
                     xdotool key ctrl+v  # GUI-apps
