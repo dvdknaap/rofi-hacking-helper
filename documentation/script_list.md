@@ -661,7 +661,7 @@ Scripts for establishing Evil-WinRM connections.
 
 ***📂 windows/activeDirectroy***
 
-scripts for AD hacking
+scripts for active directory (AD) hacking
 
 | Path | Description |
 |------|-------------|
@@ -692,6 +692,23 @@ invoke TokenManipulation attack
 | Path | Description |
 |------|-------------|
 | 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload Invoke-TokenManipulation.ps1 |
+
+
+***📂 windows/activeDirectroy/certipy_ad***
+
+scripts for cetipy-ad to perform certificate exploit
+
+| Path | Description |
+|------|-------------|
+| 📜 `windows/activeDirectroy/certipy_ad/add_officer.sh` | add officer |
+| 📜 `windows/activeDirectroy/certipy_ad/automate_exploit.sh` | automaticly exploit |
+| 📜 `windows/activeDirectroy/certipy_ad/check_if_user_is_vurnerable.sh` | check if user is vulnerable |
+| 📜 `windows/activeDirectroy/certipy_ad/enable_template.sh` | enable template |
+| 📜 `windows/activeDirectroy/certipy_ad/get_hash_with_pfx_file.sh` | get hash with pfx file |
+| 📜 `windows/activeDirectroy/certipy_ad/issue_request_certificate.sh` | request certificate according to template |
+| 📜 `windows/activeDirectroy/certipy_ad/list_templates.sh` | check if user is vulnerable |
+| 📜 `windows/activeDirectroy/certipy_ad/request_certificate.sh` | request certificate according to template |
+| 📜 `windows/activeDirectroy/certipy_ad/retrieve_certificate.sh` | retrieve certificate |
 
 
 ***📂 windows/activeDirectroy/sharpGPOAbuse***
