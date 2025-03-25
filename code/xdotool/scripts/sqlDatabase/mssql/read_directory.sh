@@ -4,6 +4,13 @@
 script to read directories with xp_dirtree
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DIRECTORY_FIELD=$(form_item  "Directory" "directory")
 
-paste_command 'xp_dirtree "C:\Users\"'
+# Generate GUI form
+generate_form "${DIRECTORY_FIELD}"
+
+DIRECTORY=${form_data["directory"]}
+
+paste_command "xp_dirtree ${DIRECTORY}"
+xdotool key Return

@@ -3,15 +3,15 @@
 : '
 sqlmap: show specific database tables
 '
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+URL_FIELD=$(form_item "URL" "url")
+DATABASE_FIELD=$(form_item "database" "database")
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form
+generate_form "${URL_FIELD}" "${DATABASE_FIELD}"
 
-# Generate gui form
-generate_form "URL" "DB"
+URL=${form_data["url"]}
+DATABASE=${form_data["database"]}
 
-URL=${form_data["URL"]}
-DB=${form_data["DB"]}
-
-paste_command "sqlmap -u ${URL} -D '${DB}' --tables --random-agent --level 5 --risk 3 --batch"
+paste_command "sqlmap -u ${URL} -D '${DATABASE}' --tables --random-agent --level 5 --risk 3 --batch"
 xdotool key Return

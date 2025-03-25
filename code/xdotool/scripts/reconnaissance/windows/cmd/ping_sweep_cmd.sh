@@ -4,13 +4,13 @@
 ping sweep - check if ips are alive in ip range 0.0.0
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_RANGE_FIELD=$(form_item  "Ip range" "ip" "10.10.10")
 
-# Generate gui form
-generate_form "Ip range"
+# Generate GUI form
+generate_form "${IP_RANGE_FIELD}"
 
-IPRANGE=${form_data["Ip range"]}
+IP_RANGE=${form_data["ip"]}
 
-paste_command "(for /L %i in (1 1 254) do ping ${IPRANGE}.%i -n 1 -w 100) | find \"Reply\""
+paste_command "(for /L %i in (1 1 254) do ping ${IP_RANGE}.%i -n 1 -w 100) | find \"Reply\""
 xdotool key Return

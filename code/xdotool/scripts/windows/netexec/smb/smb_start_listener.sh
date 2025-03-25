@@ -9,7 +9,7 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "IP" "Username" "Password" "Port"
+generate_form '{"label": "IP address", "type": "text", "name": "IP"}''{"label": "Username", "type": "text", "name": "Username"}'"Password" "Port"
 
 IP=${form_data["IP"]}
 USERNAME=${form_data["Username"]}

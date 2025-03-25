@@ -4,8 +4,6 @@
 Fix shell to fully interactive shell
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-
 # Wait a bit to get focus
 sleep 0.5
 

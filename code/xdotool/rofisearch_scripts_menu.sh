@@ -187,7 +187,7 @@ function dir_menu {
             dir_menu "${FULL_PATH}"
         elif [[ -f "${FULL_PATH}" ]]; then
             case "${FULL_PATH}" in
-                *.sh)  bash "${FULL_PATH}" ;;
+                *.sh)  bash -c "source ~/Desktop/base/code/xdotool/helpers/env.sh && source ${FULL_PATH}" ;;
                 *.py)  python3 "${FULL_PATH}"  ;;
                 *.pl)  perl "${FULL_PATH}"  ;;
                 *)     paste_command "Unknown file type: ${FULL_PATH}"; ;;

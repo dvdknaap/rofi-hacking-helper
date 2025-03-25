@@ -9,7 +9,7 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "http Port" "Username" "Password" "Domain" "DC" "NsIP"
+generate_form "http Port"'{"label": "Username", "type": "text", "name": "Username"}'"Password" "Domain" "DC" "NsIP"
 
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
@@ -18,7 +18,7 @@ DC=${form_data["DC"]}
 NSIP=${form_data["NsIP"]}
 PORT=${form_data["http Port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/bloodhound/.files
+cd ${SCRIPTS_DIR}/windows/bloodhound/.files
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 

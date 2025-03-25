@@ -4,13 +4,15 @@
 mount to ip
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+TARGET_DIR_FIELD=$(form_item  "target directory" "target_dir")
 
-# Generate gui form
-generate_form "IP" "TARGET_DIR"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${TARGET_DIR_FIELD}"
 
-IP=${form_data["IP"]}
-TARGET_DIR=${form_data["TARGET_DIR"]}
+IP=${form_data["ip"]}
+TARGET_DIR=${form_data["target_dir"]}
 
 paste_command "mkdir ${TARGET_DIR} && sudo mount -t nfs ${IP}:/ ./${TARGET_DIR}/ -o nolock && cd ${TARGET_DIR} && tree ."
+xdotool key Return

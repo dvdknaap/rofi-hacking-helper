@@ -1,15 +1,20 @@
 #!/bin/bash
 
 : '
-gobuster directory search with extensions and seclists/Discovery/DNS/subdomains-top1million-110000.txt
+gobuster directory search with dirb/common.txt and extensions wordlist
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website")
+WORDLIST_FIELD=$(form_item "wordlist" "wordlist" "/usr/share/wordlists/dirb/common.txt")
+EXTENSION_WORDLIST_FIELD=$(form_item "extension wordlist" "extension_wordlist" "/usr/share/wordlists/seclists/Discovery/Web-Content/web-extensions.txt")
 
-# Generate gui form
-generate_form "Website"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}" "${EXTENSION_WORDLIST_FIELD}"
 
-WEBSITE=${form_data["Website"]}
+WEBSITE=${form_data["website"]}
+WORDLIST=${form_data["wordlist"]}
+EXTENSION_WORDLIST=${form_data["extension_wordlist"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w /usr/share/wordlists/dirb/common.txt -t 40 -b 400,404,403,429 -e -X /usr/share/wordlists/seclists/Discovery/Web-Content/web-extensions.txt"
+paste_command "gobuster dir -u '${WEBSITE}' -w ${WORDLIST} -t 40 -b 400,404,403,429 -e -X ${EXTENSION_WORDLIST}"
+xdotool key Return

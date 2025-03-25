@@ -9,7 +9,7 @@ source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "HTTP port" "Shell port" "DC" "Username" "Password"
+generate_form "HTTP port" "Shell port" "DC"'{"label": "Username", "type": "text", "name": "Username"}'"Password"
 
 HTTP_PORT=${form_data["HTTP port"]}
 SHELL_PORT=${form_data["Shell port"]}
@@ -17,7 +17,7 @@ DC=${form_data["DC"]}
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/activeDirectroy/sharpGPOAbuse/.files
+cd ${SCRIPTS_DIR}/windows/activeDirectroy/sharpGPOAbuse/.files
 python3 -m http.server ${HTTP_PORT} &
 HTTP_PID=$!
 

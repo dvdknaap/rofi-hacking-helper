@@ -4,12 +4,13 @@
 show ip mounts
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "ip" "ip")
 
-# Generate gui form
-generate_form "IP"
+# Generate GUI form
+generate_form "${IP_FIELD}"
 
-IP=${form_data["IP"]}
+IP=${form_data["ip"]}
 
 paste_command "showmount -e ${IP}"
+xdotool key Return

@@ -4,14 +4,17 @@
 wpscan bruteforce user file with password file
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website")
+USERNAME_FILE_FIELD=$(form_item "username file" "username_file")
+PASSWORD_FILE_FIELD=$(form_item "password file" "password_file")
 
-# Generate gui form
-generate_form "Website" "UsernameFile" "PasswordFile"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${USERNAME_FILE_FIELD}" "${PASSWORD_FILE_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-USERNAMEFILE=${form_data["UsernameFile"]}
-PASSWORDFILE=${form_data["PasswordFile"]}
+WEBSITE=${form_data["website"]}
+USERNAME_FILE=${form_data["username_file"]}
+PASSWORD_FILE=${form_data["password_file"]}
 
-paste_command "wpscan --url ${WEBSITE} --usernames ${USERNAMEFILE} --passwords ${PASSWORDFILE}  -t 50"
+paste_command "wpscan --url ${WEBSITE} --usernames ${USERNAME_FILE} --passwords ${PASSWORD_FILE} -t 50"
+xdotool key Return

@@ -4,11 +4,15 @@
 send email
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+TO_FIELD=$(form_item  "to" "to")
+FROM_FIELD=$(form_item  "from" "from")
+SUBJECT_FIELD=$(form_item  "subject" "subject")
+BODY_FIELD=$(form_item  "body" "body")
+SERVER_FIELD=$(form_item  "server" "server")
 
-# Generate gui form
-generate_form "to" "from" "subject" "body" "server"
+# Generate GUI form
+generate_form "${TO_FIELD}" "${FROM_FIELD}" "${SUBJECT_FIELD}" "${BODY_FIELD}" "${SERVER_FIELD}"
 
 TO=${form_data["to"]}
 FROM=${form_data["from"]}

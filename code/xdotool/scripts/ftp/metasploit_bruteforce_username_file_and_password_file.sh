@@ -4,28 +4,28 @@
 hydra: bruteforce username file and passwords file
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
-source ~/Desktop/base/code/xdotool/helpers/find_and_replace_in_file.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+RHOSTS_FIELD=$(form_item  "RHOSTS" "rhosts")
+USER_FILE_FIELD=$(form_item  "USER_FILE" "user_file")
+PASS_FILE_FIELD=$(form_item  "PASS_FILE" "pass_file")
 
-# Generate gui form
-generate_form "RHOSTS" "USER_FILE" "PASS_FILE"
+# Generate GUI form
+generate_form "${RHOSTS_FIELD}" "${USER_FILE_FIELD}" "${PASS_FILE_FIELD}"
 
-RHOSTS=${form_data["RHOSTS"]}
-USER_FILE=${form_data["USER_FILE"]}
-PASS_FILE=${form_data["PASS_FILE"]}
+RHOSTS=${form_data["rhosts"]}
+USER_FILE=${form_data["user_file"]}
+PASS_FILE=${form_data["pass_file"]}
 
-FILES_FOLDER="$HOME/Desktop/base/code/xdotool/scripts/ftp/.files"
+FILES_FOLDER="${SCRIPTS_DIR}/ftp/.files"
 
-SRC_FILE="${FILES_FOLDER}/ftp_brute_force_userfile_passfile.rc"
-TMP_FILE="${FILES_FOLDER}/ftp_brute_force_userfile_passfile_tmp.rc"
+# Define replacement fields
+REPLACE_FIELDS=(
+    "[USER_FILE]" "${USER_FILE}"
+    "[PASS_FILE]" "${PASS_FILE}"
+    "[RHOSTS]" "${RHOSTS}"
+)
 
-ls ${FILES_FOLDER}
-
-replace_in_file "${SRC_FILE}" "${TMP_FILE}" "[USER_FILE]"  "${USER_FILE}"  "[PASS_FILE]"  "${PASS_FILE}"  "[RHOSTS]"  "${RHOSTS}" 
+find_and_replace_file "${FILES_FOLDER}" "ftp_brute_force_userfile_passfile" "${REPLACE_FIELDS[@]}"
 
 paste_command "msfconsole -r ${TMP_FILE}"
 xdotool key Return
-
-sleep 30
-rm $TMP_FILE

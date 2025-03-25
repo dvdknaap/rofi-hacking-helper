@@ -11,3 +11,4 @@ file="/tmp/linPE";RED='\033[0;31m';Y='\033[0;33m';B='\033[0;34m';NC='\033[0m';rm
 EOF
 )
 paste_command "${command}"
+xdotool key Return

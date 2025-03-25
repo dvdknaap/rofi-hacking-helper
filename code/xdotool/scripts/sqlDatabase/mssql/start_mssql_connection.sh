@@ -4,15 +4,19 @@
 start a mssql connection
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP" "ip")
+USERNAME_FIELD=$(form_item  "Username" "username")
+PASSWORD_FIELD=$(form_item  "Password" "password")
+PORT_FIELD=$(form_item  "Port" "port" "1433")
 
-# Generate gui form
-generate_form "IP" "Username" "Password"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${PORT_FIELD}"
 
-IP=${form_data["IP"]}
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
+IP=${form_data["ip"]}
+USERNAME=${form_data["username"]}
+PASSWORD=${form_data["password"]}
+PORT=${form_data["port"]}
 
-paste_command "mssqlclient.py -port 1433 ${USERNAME}:'${PASSWORD}'@${IP}"
+paste_command "mssqlclient.py -port ${PORT} ${USERNAME}:'${PASSWORD}'@${IP} -windows-auth"
 xdotool key Return

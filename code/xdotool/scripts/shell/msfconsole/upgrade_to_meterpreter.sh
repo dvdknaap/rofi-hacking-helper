@@ -4,11 +4,11 @@
 meterpreter:  upgrade shell to meterpreter
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+SESSION_FIELD=$(form_item  "SESSION" "number" "SESSION" "-1")
 
-# Generate gui form
-generate_form "SESSION"
+# Generate GUI form
+generate_form "${SESSION_FIELD}" 
 
 SESSION=${form_data["SESSION"]}
 

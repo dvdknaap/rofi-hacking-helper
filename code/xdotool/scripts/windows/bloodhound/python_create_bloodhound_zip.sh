@@ -8,7 +8,7 @@ source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form "Username" "Password" "Domain" "DC" "NsIP"
+generate_form'{"label": "Username", "type": "text", "name": "Username"}'"Password" "Domain" "DC" "NsIP"
 
 USERNAME=${form_data["Username"]}
 PASSWORD=${form_data["Password"]}

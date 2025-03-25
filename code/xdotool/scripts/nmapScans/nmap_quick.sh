@@ -1,15 +1,17 @@
 #!/bin/bash
 
 : '
-Nmap: Scan hosts from scope.txt, save output to nmap_1k.
+Nmap: Scan hosts from hosts file, save output to given location.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+HOSTS_FILE_FIELD=$(form_item  "hosts file" "hosts_file")
+OUTPUT_FILE_FIELD=$(form_item  "Output location" "location" "documentation/evidence/scans/serviceEnumeration/nmap_1k")
 
-# Generate gui form
-generate_form "hosts file"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${OUTPUT_FILE_FIELD}"
 
-HOSTS_FILE=${form_data["hosts file"]}
+HOSTS_FILE=${form_data["hosts_file"]}
+OUTPUT_FILE_=${form_data["location"]}
 
-paste_command "nmap --open -oA nmap_1k -iL ${HOSTS_FILE}"
+paste_command "nmap --open -oA ${OUTPUT_FILE_} -iL ${HOSTS_FILE}"

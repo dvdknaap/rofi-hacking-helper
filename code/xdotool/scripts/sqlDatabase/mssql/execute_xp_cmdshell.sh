@@ -4,12 +4,14 @@
 execute xp_cmdshell command
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+source "${SCRIPTS_DIR}/sqlDatabase/mssql/.files/execute_xp_cmdshell.sh"
 
-# Generate gui form
-generate_form "CMD"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+CMD_FIELD=$(form_item  "CMD" "cmd" "whoami")
 
-CMD=${form_data["CMD"]}
-paste_command "EXEC xp_cmdshell \"${CMD}\";"
-xdotool key Return
+# Generate GUI form
+generate_form "${CMD_FIELD}"
+
+CMD=${form_data["cmd"]}
+
+execute_xp_cmdshell "${CMD}"

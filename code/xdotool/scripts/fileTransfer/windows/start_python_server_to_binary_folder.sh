@@ -3,20 +3,17 @@
 : '
 start python server to binary folder
 '
+location="${SCRIPTS_DIR}/fileTransfer/windows/.binaries"
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item "Python HTTP port" "port")
 
-# Generate gui form
-generate_form "port"
+# Generate GUI form
+generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/fileTransfer/windows/.binaries
-python3 -m http.server $PORT &
-HTTP_PID=$!
-echo "$HTTP_PID"
+start_python_server "${location}" "${PORT}" "0"
 
 paste_command "# use \`kill ${HTTP_PID}\` to kill the server; use http://${KALI_IP}:${PORT} to download files"
 xdotool key Return

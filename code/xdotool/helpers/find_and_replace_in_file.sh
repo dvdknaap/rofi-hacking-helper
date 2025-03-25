@@ -30,3 +30,35 @@ replace_in_file() {
     sed "${sed_commands[@]}" "$input_file" > "$output_file"
     #echo "Processed file saved as: $output_file"
 }
+
+# Declare TMP_FILE as a global variable
+TMP_FILE=""
+
+find_and_replace_file() {
+    local location="${1}"
+    local file_name="${2}"
+
+    # Check for required arguments
+    if [ -z "${location}" ] || [ -z "${file_name}" ]; then
+        paste_command 'Usage: find_and_replace_file "location" "file_name"'
+        exit 1
+    fi
+
+    # Expand ~ to the full path manually
+    location="${location/#\~/$HOME}"
+
+    FILES_FOLDER="${location}"
+
+    SRC_FILE="${FILES_FOLDER}/${file_name}.rc"
+    TMP_FILE="${FILES_FOLDER}/${file_name}_tmp.rc"
+
+    # Pass all arguments starting from $3 onwards (find/replace pairs)
+    shift 2
+    replace_in_file "${SRC_FILE}" "${TMP_FILE}" "$@"
+
+    paste_command "msfconsole -r ${TMP_FILE}"
+    xdotool key Return
+
+    sleep 60
+    rm $TMP_FILE
+}

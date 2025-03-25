@@ -4,14 +4,17 @@
 save username and ntlm hashes in seperated files from form username:RID:LM:NTLM:::
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+NTLM_FILE_FIELD=$(form_item "NTLM file" "ntlm_file")
+USERNAME_OUTPUT_FILE_FIELD=$(form_item "username output file" "username_output_file" "usernames.txt")
+HASHES_OUTPUT_FILE_FIELD=$(form_item "hash output file" "hash_output_file" "hashes.txt")
 
-# Generate gui form
-generate_form "NTLM file" "Username output file" "Hashes output file"
+# Generate GUI form
+generate_form "${NTLM_FILE_FIELD}" "${USERNAME_OUTPUT_FILE_FIELD}" "${HASHES_OUTPUT_FILE_FIELD}"
 
-NTLM_FILE=${form_data["NTLM file"]}
-USERNAME_OUTPUT_FILE=${form_data["Username output file"]}
-HASHES_OUTPUT_FILE=${form_data["Hashes output file"]}
+NTLM_FILE=${form_data["ntlm_file"]}
+USERNAME_OUTPUT_FILE=${form_data["username_output_file"]}
+HASHES_OUTPUT_FILE=${form_data["hash_output_file"]}
 
 paste_command "cat ${NTLM_FILE} | cut -d ':' -f 1 > ${USERNAME_OUTPUT_FILE}; cat ${NTLM_FILE} | cut -d ':' -f 4 > ${HASHES_OUTPUT_FILE}"
+xdotool key Return

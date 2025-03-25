@@ -13,7 +13,7 @@ generate_form "Port"
 
 PORT=${form_data["Port"]}
 
-cd ~/Desktop/base/code/xdotool/scripts/windows/activeDirectroy/runasCs/.files
+cd ${SCRIPTS_DIR}/windows/activeDirectroy/runasCs/.files
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 

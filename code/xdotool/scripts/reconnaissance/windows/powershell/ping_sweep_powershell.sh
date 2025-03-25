@@ -4,12 +4,12 @@
 ping sweep - check if ips are alive in ip range 0.0.0
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_RANGE_FIELD=$(form_item  "Ip range" "ip" "10.10.10")
 
-# Generate gui form
-generate_form "Ip range"
+# Generate GUI form
+generate_form "${IP_RANGE_FIELD}"
 
-IPRANGE=${form_data["Ip range"]}
+IP_RANGE=${form_data["ip"]}
 
-paste_command "1..254 | % {\"${IPRANGE}.\$(\$_): \$(Test-Connection -count 1 -comp ${IPRANGE}.\$(\$_) -quiet)\"}"
+paste_command "1..254 | % {\"${IP_RANGE}.\$(\$_): \$(Test-Connection -count 1 -comp ${IP_RANGE}.\$(\$_) -quiet)\"}"

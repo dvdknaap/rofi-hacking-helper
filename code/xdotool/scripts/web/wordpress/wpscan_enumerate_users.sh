@@ -4,12 +4,13 @@
 wpscan enumerate users
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "website" "website")
 
-# Generate gui form
-generate_form "Website"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}"
 
-WEBSITE=${form_data["Website"]}
+WEBSITE=${form_data["website"]}
 
 paste_command "wpscan --url  '${WEBSITE}' -e u"
+xdotool key Return

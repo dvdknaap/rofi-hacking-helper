@@ -4,14 +4,13 @@
 configure ligolo interface and start proxy
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
 
-# Generate gui form
-generate_form "IP"
+# Generate GUI form
+generate_form "${IP_FIELD}"
 
-IP=${form_data["IP"]}
+IP=${form_data["ip"]}
 INTERFACENAME="ligolo"
 
 paste_command "sudo ip link delete ${INTERFACENAME}"
@@ -22,5 +21,5 @@ paste_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo 
 xdotool key Return
 sleep 2
 
-paste_command "~/Desktop/base/code/xdotool/scripts/portListening/.files/proxy -selfcert"
+paste_command "${SCRIPTS_DIR}/portListening/.files/proxy -selfcert"
 xdotool key Return

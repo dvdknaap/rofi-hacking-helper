@@ -4,15 +4,27 @@
 type ssh port forwarding with ssh key
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate gui form
-generate_form "IP" "SSH key location"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item "IP address" "ip")
+USERNAME_FIELD=$(form_item "username" "text" "username" "root")
+SSH_KEY_LOCATION_FIELD=$(form_item "SSH key location" "ssh_key_location" "./id_rsa")
+LOCAL_IP_FIELD=$(form_item "local ip" "number" "local_ip" "${KALI_IP}")
+LOCAL_PORT_FIELD=$(form_item "local port" "number" "local_port" "")
+REMOTE_IP_FIELD=$(form_item "remote ip" "remote_ip" "0.0.0.0")
+REMOTE_PORT_FIELD=$(form_item "remote port" "number" "remote_port" "")
 
-IP=${form_data["IP"]}
-SSH_KEY=${form_data["SSH key location"]}
+# Generate GUI form
+generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${SSH_KEY_LOCATION_FIELD}" "${LOCAL_PORT_FIELD}" "${REMOTE_IP_FIELD}" "${REMOTE_PORT_FIELD}"
 
-paste_command "ssh -i ${SSH_KEY} -R 172.16.8.120:443:0.0.0.0:7000 root@${IP} -v"
+IP=${form_data["ip"]}
+SSH_KEY_LOCATION=${form_data["ssh_key_location"]}
+USERNAME=${form_data["username"]}
+LOCAL_IP=${form_data["local_ip"]}
+LOCAL_PORT=${form_data["local_port"]}
+REMOTE_IP=${form_data["remote_ip"]}
+REMOTE_PORT=${form_data["remote_port"]}
+
+paste_command "ssh -i ${SSH_KEY_LOCATION} -R ${LOCAL_IP}:${LOCAL_PORT}:${REMOTE_IP}:${REMOTE_IP} ${USERNAME}@${IP} -v"
+xdotool key Return
 

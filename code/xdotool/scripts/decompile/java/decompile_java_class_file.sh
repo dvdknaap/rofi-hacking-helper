@@ -4,7 +4,13 @@
 Decompile java class file
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+CLASS_FIELD=$(form_item "CLASS file" "class_file")
 
-paste_command "javap -c file.class"
+# Generate GUI form
+generate_form "${CLASS_FIELD}"
+
+CLASS_FILE=${form_data["class_file"]}
+
+paste_command "javap -c ${CLASS_FILE}"
+xdotool key Return

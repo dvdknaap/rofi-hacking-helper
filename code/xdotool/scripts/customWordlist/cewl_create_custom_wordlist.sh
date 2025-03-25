@@ -4,14 +4,15 @@
 cewl - create custom wordlist
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+WEBSITE_FIELD=$(form_item "Website" "website")
+OUTPUT_FIELD=$(form_item "output file" "output_file")
 
-# Generate gui form
-generate_form "Website" "output file"
+# Generate GUI form
+generate_form "${WEBSITE_FIELD}" "${OUTPUT_FIELD}"
 
-WEBSITE=${form_data["Website"]}
-OUTPUT_FILE=${form_data["output file"]}
+WEBSITE=${form_data["website"]}
+OUTPUT_FILE=${form_data["output_file"]}
 
 paste_command "cewl '${WEBSITE}' > ${OUTPUT_FILE}"
 xdotool key Return

@@ -1,17 +1,18 @@
 #!/bin/bash
 
 : '
-Run Snaffler on inlanefreight.local domain.
+Run Snaffler on domain.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DOMAIN_FIELD=$(form_item "Domain" "domain")
+OUTPUT_FILE_FIELD=$(form_item "output file" "output_file")
 
-# Generate gui form
-generate_form "Domain" "output file"
+# Generate GUI form
+generate_form "${DOMAIN_FIELD}" "${OUTPUT_FILE_FIELD}"
 
-DOMAIN=${form_data["Domain"]}
-OUTPUT_FILE=${form_data["output file"]}
+DOMAIN=${form_data["domain"]}
+OUTPUT_FILE=${form_data["output_file"]}
 
 paste_command "Snaffler.exe -s -d ${DOMAIN} -o ${OUTPUT_FILE} -v data"
 xdotool key Return
