@@ -7,6 +7,7 @@
 - [crackPasswords](#-crackpasswords)
 - [customWordlist](#-customwordlist)
 - [decompile](#-decompile)
+- [dynamicFields](#-dynamicfields)
 - [fileTransfer](#-filetransfer)
 - [ftp](#-ftp)
 - [nmapScans](#-nmapscans)
@@ -106,6 +107,20 @@ decompile java class files
 |------|-------------|
 | 📜 `decompile/java/decompile_java_class_file.sh` | Decompile java class file |
 
+
+<br />
+
+### 📂 dynamicFields/
+
+scripts to add, edit, remote or copy dynamic fields
+
+| Path | Description |
+|------|-------------|
+| 📜 `dynamicFields/add_dynamic_fields.sh` | add new dynamic fields |
+| 📜 `dynamicFields/edit_dynamic_fields.sh` | show a list of dynamic fields so you can edit them |
+| 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
+| 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
+| 📜 `dynamicFields/unset_active_dynamic_fields.sh` | show a list of dynamic fields and unselect one to use as default values |
 
 <br />
 
@@ -523,8 +538,8 @@ scripts to do attacks with gobuster
 
 | Path | Description |
 |------|-------------|
-| 📜 `web/gobuster/directory _with_dirb_common_wordlist_and_extensions.sh` | gobuster directory search with dirb/common.txt and extensions wordlist |
-| 📜 `web/gobuster/directory _with_dirb_common_wordlist.sh` | gobuster directory with wordlists/dirb/common.txt |
+| 📜 `web/gobuster/directory_with_dirb_common_wordlist_and_extensions.sh` | gobuster directory search with dirb/common.txt and extensions wordlist |
+| 📜 `web/gobuster/directory_with_dirb_common_wordlist.sh` | gobuster directory with wordlists/dirb/common.txt |
 | 📜 `web/gobuster/dir_with_directory_list_medium_and_extensions.sh` | gobuster directory with directory-list-2.3-medium.txt and extensions worldlist |
 | 📜 `web/gobuster/dir_with_directory_list_medium.sh` | gobuster directory with directory-list-2.3-medium.txt |
 | 📜 `web/gobuster/raft_large_file_search.sh` | gobuster file search with /usr/share/seclists/Discovery/Web-Content/raft-large-files.txtt |

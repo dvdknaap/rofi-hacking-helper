@@ -1,0 +1,5 @@
+📜 add_dynamic_fields.sh | add new dynamic fields | add dynamic fields.sh
+📜 edit_dynamic_fields.sh | show a list of dynamic fields so you can edit them | edit dynamic fields.sh
+📜 remove_dynamic_fields.sh | show a list of dynamic fields so you can remove them | remove dynamic fields.sh
+📜 set_active_dynamic_fields.sh | show a list of dynamic fields and select one to use as default values | set active dynamic fields.sh
+📜 unset_active_dynamic_fields.sh | remove active dynamic fields | unset active dynamic fields.sh

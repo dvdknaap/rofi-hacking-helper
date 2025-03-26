@@ -5,12 +5,12 @@ FTP: check for anonymous login
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-PORT_FIELD=$(form_item  "IP address" "IP")
+PORT_FIELD=$(form_item  "IP address" "ip")
 
 # Generate GUI form
 generate_form "${PORT_FIELD}"
 
-IP=${form_data["IP"]}
+IP=${form_data["ip"]}
 USERNAME="anonymous"
 PASSWORD="anonymous"
 

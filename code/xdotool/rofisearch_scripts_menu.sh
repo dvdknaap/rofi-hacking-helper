@@ -84,12 +84,26 @@ function generate_cache {
 
     rm -f "$CACHE_FILE"
 
+    # Eerste: Voeg 'dynamicFields' toe als het in de rootmap staat
+    if [[ "$DIR_LOCAL" == "$SCRIPTS_DIR" && -d "${DIR_LOCAL}/dynamicFields" ]]; then
+        local name="dynamicFields"
+        local description=$(get_description "${DIR_LOCAL}/${name}")
+        local search_name=$(clean_filename "${name}")
+        local icon=$(get_icon "${DIR_LOCAL}/${name}")
+
+        echo -e "$icon $name | $description | $search_name" >> "${CACHE_FILE}"
+    fi
+
     # First collect directories
     while IFS= read -r dir; do
         local name=$(basename "$dir")
         local description=$(get_description "${dir}")
         local search_name=$(clean_filename "${name}")
         local icon=$(get_icon "$dir")
+        
+        if [[ "${name}" == "dynamicFields" ]]; then
+            continue
+        fi
 
         echo -e "$icon $name | $description | $search_name" >> "${CACHE_FILE}"
     done < <(find "$DIR_LOCAL" -mindepth 1 -maxdepth 1 -type d ! -name ".*" | sort)

@@ -1,3 +1,0 @@
-📂 proxychains |  | proxychains
-📜 xfreerdp.sh | xfreerdp: Connect with specified credentials. | xfreerdp.sh
-📜 xfreerdp_with_attached_drive.sh | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). | xfreerdp with attached drive.sh

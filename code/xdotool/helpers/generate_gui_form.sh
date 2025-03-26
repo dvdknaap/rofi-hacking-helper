@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the directory of the current script
-python_script="${HOME}/Desktop/base/code/xdotool/helpers/generate_gui_form.py"
+python_script="${HELPERS_DIR}/generate_gui_form.py"
 
 # Function to create a form item json
 form_item() {
