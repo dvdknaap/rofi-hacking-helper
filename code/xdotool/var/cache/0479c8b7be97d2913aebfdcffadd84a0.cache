@@ -1,7 +1,10 @@
-📜 cmd_download_nc_file_and_execute_shell.sh | cmd: download nc file and execute nc shell | cmd download nc file and execute shell.sh
+📜 cmd_execute_conPtyShell.sh | cmd: download Invoke-ConPtyShell.ps1 to server and start shell | cmd execute conptyshell.sh
 📜 cmd_execute_powershellTcp.sh | cmd: download Invoke-PowerShellTcp.ps1 to server and start shell | cmd execute powershelltcp.sh
-📜 nc_cmd.sh |  | nc cmd.sh
-📜 nc_powershell.sh |  | nc powershell.sh
-📜 powershell_base64.sh |  | powershell base64.sh
-📜 ps_download_nc_file_and_execute_shell.sh | ps: download nc file and execute nc shell | ps download nc file and execute shell.sh
-📜 ps_execute_powershellTcp.sh | ps: download Invoke-PowerShellTcp.ps1 to server and start shell | ps execute powershelltcp.sh
+📜 cmd_upload_nc64_and_execute_cmd.sh | upload nc64.exe and start nc64.exe and execute cmd | cmd upload nc64 and execute cmd.sh
+📜 cmd_upload_nc64_and_execute_powershell.sh | upload nc64.exe and start nc64.exe and execute powershell | cmd upload nc64 and execute powershell.sh
+📜 cmd_upload_nc_and_execute_cmd.sh | upload nc.exe and start nc.exe and execute cmd | cmd upload nc and execute cmd.sh
+📜 cmd_upload_nc_and_execute_powershell.sh | upload nc.exe and start nc.exe and execute powershell | cmd upload nc and execute powershell.sh
+📜 powershell_base64.sh | generate base64 reverse powershell | powershell base64.sh
+📜 ps_download_nc_file.sh | ps: download nc file | ps download nc file.sh
+📜 ps_execute_conPtyShell.sh | ps: download Invoke-ConPtyShell.ps1 to server and start shell | ps execute conptyshell.sh
+📜 ps_execute_powershellTcp.sh | ps: download Invoke-PowerShellTc.ps1 to server and start shell | ps execute powershelltcp.sh

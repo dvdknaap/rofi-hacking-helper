@@ -8,9 +8,9 @@ source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
 # Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}' "domain"'{"label": "Username", "type": "text", "name": "username"}'"password"
+generate_form '{"label": "IP address", "type": "text", "name": "ip"}' "domain"'{"label": "Username", "type": "text", "name": "username"}'"password"
 
-IP=${form_data["IP"]}
+IP=${form_data["ip"]}
 DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}

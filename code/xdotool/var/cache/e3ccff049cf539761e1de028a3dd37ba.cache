@@ -1,9 +1,0 @@
-📂 proxychains |  | proxychains
-📜 connect_to_share_anonymous.sh | smbclient: Connect to share anonymous. | connect to share anonymous.sh
-📜 connect_to_share_with_user.sh | smbclient: Connect to share with user. | connect to share with user.sh
-📜 decrypt_groups_xml_cpassword.sh | decrypt cpassword from groups.xml | decrypt groups xml cpassword.sh
-📜 download_folders_resurcive.sh | smbclient: download files recursive | download folders resurcive.sh
-📜 enable_recursive.sh | smbclient: enable recursive | enable recursive.sh
-📜 search_in_downloaded_files_for_groups_xml.sh | search for group policies in downloaded folders | search in downloaded files for groups xml.sh
-📜 show_shares.sh | smbclient: List shares. | show shares.sh
-📜 turn_off_prompt.sh | smbclient: turn off prompt | turn off prompt.sh

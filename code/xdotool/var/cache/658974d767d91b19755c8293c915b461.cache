@@ -1,9 +1,0 @@
-📜 add_officer.sh | add officer | add officer.sh
-📜 automate_exploit.sh | automaticly exploit | automate exploit.sh
-📜 check_if_user_is_vurnerable.sh | check if user is vulnerable | check if user is vurnerable.sh
-📜 enable_template.sh | enable template | enable template.sh
-📜 get_hash_with_pfx_file.sh | get hash with pfx file | get hash with pfx file.sh
-📜 issue_request_certificate.sh | request certificate according to template | issue request certificate.sh
-📜 list_templates.sh | check if user is vulnerable | list templates.sh
-📜 request_certificate.sh | request certificate according to template | request certificate.sh
-📜 retrieve_certificate.sh | retrieve certificate | retrieve certificate.sh

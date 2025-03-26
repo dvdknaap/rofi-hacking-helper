@@ -84,3 +84,19 @@ curl_upload_file() {
     curl_download "http://${KALI_IP}:${PYTHON_HTTP_PORT}/${file}" "${FILE_LOCATION}"
     xdotool key Return
 }
+
+show_notify_message () {
+    local message="$1"
+    local title="${2:-Notification}"  # Standaard titel als er geen wordt opgegeven
+    local icon="${3:-dialog-information}"  # Standaard pictogram
+
+    notify-send -u normal -i "$icon" "$title" "$message"
+}
+
+show_success_notify_message () {
+    local message="$1"
+    local title="${2:-Success}" 
+    local icon="${3:-dialog-ok}"
+
+    show_notify_message "${message}" "${title}" "${icon}"
+}
