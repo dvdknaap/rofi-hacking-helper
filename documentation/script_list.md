@@ -713,7 +713,12 @@ invoke TokenManipulation attack
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload Invoke-TokenManipulation.ps1 |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_as_system.sh` | ps: Makes the current PowerShell thread impersonate SYSTEM. |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_lsass_security_token.sh` | ps: Makes the current thread impersonate the lsass security token |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_list_all_tokens_on_computer.sh` | ps: Lists all tokens available on the computer. |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_list_tokens_on_computer.sh` | ps: Lists all unique usable tokens on the computer. |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_spawn_cmd_as_system.sh` | ps: Spawns cmd.exe as SYSTEM. |
+| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload and import module Invoke-TokenManipulation.ps1 |
 
 
 ***📂 windows/activeDirectroy/certipy_ad***

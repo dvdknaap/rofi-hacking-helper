@@ -13,3 +13,4 @@ generate_form "${IP_RANGE_FIELD}"
 IP_RANGE=${form_data["ip"]}
 
 paste_command "1..254 | % {\"${IP_RANGE}.\$(\$_): \$(Test-Connection -count 1 -comp ${IP_RANGE}.\$(\$_) -quiet)\"}"
+xdotool key Return
