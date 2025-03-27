@@ -25,7 +25,7 @@ REPLACE_FIELDS=(
     "[RHOSTS]" "${RHOSTS}"
 )
 
-find_and_replace_file "${FILES_FOLDER}" "ftp_brute_force_userfile_passfile" "${REPLACE_FIELDS[@]}"
+find_and_replace_file "${FILES_FOLDER}" "ftp_brute_force_userfile_passfile.rc" "${REPLACE_FIELDS[@]}"
 
 paste_command "msfconsole -r ${TMP_FILE}"
 xdotool key Return

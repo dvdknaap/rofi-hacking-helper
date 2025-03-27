@@ -10,7 +10,7 @@ from typing import Dict, Any
 class DynamicFormApp:
     """A dynamic form application with scrollable fields and editable labels."""
 
-    DEFAULT_FIELDS = ["ip", "domain", "username", "password"]
+    DEFAULT_FIELDS = ["ip", "website", "domain", "username", "password", "dc", "ns_ip", "ad_username_file", "ad_password_file"]
 
     def __init__(self, root: tk.Tk, prefill_data: Dict[str, str], form_width: int, form_height: int):
         """Initialize the form GUI."""

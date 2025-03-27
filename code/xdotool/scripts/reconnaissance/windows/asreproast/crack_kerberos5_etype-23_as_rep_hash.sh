@@ -1,0 +1,1 @@
+/home/kali/Desktop/base/code/xdotool/scripts/crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh

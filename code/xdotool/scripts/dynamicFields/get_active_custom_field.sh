@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-get current active dynamic field password
+get a current active dynamic field
 '
 
 FIELD_VALUE=$(python3 "${generate_gui_dynamic_field_value_form_script}" "${ACTIVE_DYNAMIC_FIELDS_FILE}")

@@ -116,7 +116,7 @@ function generate_cache {
         local icon=$(get_icon "${file}")
 
         echo -e "$icon $name | $description | $search_name" >> "${CACHE_FILE}"
-    done < <(find "$DIR_LOCAL" -mindepth 1 -maxdepth 1 -type f ! -name ".*" | sort)
+    done < <(find "$DIR_LOCAL" -mindepth 1 -maxdepth 1 -type f,l ! -name ".*" | sort)
 }
 
 # Use cache if available

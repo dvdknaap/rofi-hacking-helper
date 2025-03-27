@@ -1,0 +1,20 @@
+📂 dynamicFields | scripts to add, edit or remote dynamic fields | dynamicfields
+📂 auditTools | scripts to perform pentest audits | audittools
+📂 crackPasswords | Crack passwords with hashcat | crackpasswords
+📂 customWordlist | create custom wordlists | customwordlist
+📂 decompile | decompile files | decompile
+📂 fileTransfer | transfer file to or from a server for linux and windows | filetransfer
+📂 ftp | scripts for ftp enumeration | ftp
+📂 nmapScans | Collection of scripts for network scanning. | nmapscans
+📂 portListening | different scripts to do port listenings | portlistening
+📂 python | different python scripts like to start http server | python
+📂 reconnaissance | scripts to do reconnaissance | reconnaissance
+📂 shell | scripts like automatically fix shell and make it interactive, start port listening, create rev shells | shell
+📂 smtp | scripts for smtp attacks | smtp
+📂 sqlDatabase | perform database injections | sqldatabase
+📂 ssh | scripts to start port listening or forwarding | ssh
+📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web
+📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
+📜 kali_ip.sh | get Kali IP address | kali ip.sh
+📜 save_ssh_key_to_authorized_keys.sh | save SSH key to authorized_keys | save ssh key to authorized keys.sh
+📜 ssh_key.sh | get SSH key | ssh key.sh

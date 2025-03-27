@@ -117,7 +117,7 @@ scripts to add, edit or remote dynamic fields
 |------|-------------|
 | 📜 `dynamicFields/add_dynamic_fields.sh` | add new dynamic fields |
 | 📜 `dynamicFields/edit_dynamic_fields.sh` | show a list of dynamic fields so you can edit them |
-| 📜 `dynamicFields/get_active_custom_field.sh` | get current active dynamic field password |
+| 📜 `dynamicFields/get_active_custom_field.sh` | get a current active dynamic field |
 | 📜 `dynamicFields/get_active_domain.sh` | get current active dynamic field domain |
 | 📜 `dynamicFields/get_active_ip.sh` | get current active dynamic field ip |
 | 📜 `dynamicFields/get_active_password.sh` | get current active dynamic field password |
@@ -544,6 +544,15 @@ Scripts for starting BloodHound and Neo4j.
 | 📜 `reconnaissance/windows/bloodhound/python_create_bloodhound_zip.sh` | Create a bloodhound zip with bloodhound-python |
 | 📜 `reconnaissance/windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
 
+***📂 reconnaissance/windows/bloodhound/executeDCOM***
+
+exploit execute dcom permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/executeDCOM/dcom_attack_exploit.sh` | perform executeDcom attack |
+
+
 ***📂 reconnaissance/windows/bloodhound/dcsync***
 
 perform DCSync attack
@@ -555,12 +564,16 @@ perform DCSync attack
 
 ***📂 reconnaissance/windows/bloodhound/genericAll***
 
+perform genericAll attack
+
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/bloodhound/genericAll/genericAll_exploit_part1.sh` | powershell: genericAll permissions exploit |
 
 
 ***📂 reconnaissance/windows/bloodhound/genericWrite***
+
+perform genericWrite attack
 
 | Path | Description |
 |------|-------------|
@@ -577,6 +590,8 @@ perform DCSync attack
 
 
 ***📂 reconnaissance/windows/netexec***
+
+scripts to perform netexec (nxc)
 
 
 ***📂 reconnaissance/windows/netexec/rdp***
@@ -890,6 +905,7 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/listen_to_meterpreter_war_rev_shell.sh` | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp |
 | 📜 `shell/msfconsole/listen_to_meterpreter_windows_rev_shell.sh` | meterpreter: start meterpreter listener windows/meterpreter/reverse_tcp |
 | 📜 `shell/msfconsole/listen_to_meterpreter_windows_x64_rev_shell.sh` | meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp |
+| 📜 `shell/msfconsole/listen_to_windows_rev_shell.sh` | start listener payload windows/shell_reverse_tcp |
 | 📜 `shell/msfconsole/meterpreter_port_forwarding.sh` | meterpreter: forward all trafic from remote port to local port |
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
 | 📜 `shell/msfconsole/show_creds_all.sh` | meterpreter: show creds_all (mimikatz) |
