@@ -4,13 +4,13 @@
 Powershell: restore item from recycle bin
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+FILE_NAME_FIELD=$(form_item  "file name" "file_name")
 
-# Generate gui form
-generate_form "File name"
+# Generate GUI form
+generate_form "${FILE_NAME_FIELD}"
 
-FILE=${form_data["File name"]}
+FILE=${form_data["file_name"]}
 
 TMP_FOLDER="C:\temp"
 

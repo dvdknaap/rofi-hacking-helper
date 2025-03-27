@@ -4,14 +4,17 @@
 check if smb is possible for user hash
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+USERNAME_FIELD=$(form_item  "username" "username")
+HASH_FIELD=$(form_item  "hash" "hash")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}''{"label": "Username", "type": "text", "name": "Username"}'"Hash"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${HASH_FIELD}"
 
-IP=${form_data["IP"]}
-USERNAME=${form_data["Username"]}
-HASH=${form_data["Hash"]}
+IP=${form_data["ip"]}
+USERNAME=${form_data["username"]}
+HASH=${form_data["hash"]}
 
 paste_command "netexec smb ${IP} -u ${USERNAME} -H ${HASH}"
+xdotool key Return

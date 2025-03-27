@@ -4,11 +4,11 @@
 decrypt cpassword from groups.xml
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+CPASSWORD_FIELD=$(form_item  "cpassword" "cpassword")
 
-# Generate gui form
-generate_form "cpassword"
+# Generate GUI form
+generate_form "${CPASSWORD_FIELD}"
 
 CPASSWORD=${form_data["cpassword"]}
 

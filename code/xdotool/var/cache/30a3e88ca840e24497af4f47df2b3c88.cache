@@ -1,0 +1,10 @@
+📜 add_user.sh | Net: Add use, add to administrators and RDP groups. | add user.sh
+📜 add_user_to_domain.sh | Net: Add user, add to Exchange Windows Permissions and Remote Mgmt groups. | add user to domain.sh
+📜 check_connected_drives.sh | Net: Show connected network drives. | check connected drives.sh
+📜 check_local_administrators.sh | Net: Check local administrators | check local administrators.sh
+📜 check_user_account.sh | Net: Get user information. | check user account.sh
+📜 copy_powerview_from_shared_drive.sh | Copy file from shared drive | copy powerview from shared drive.sh
+📜 net_user_domain_details.sh | Net: Get domain user information for hporter. | net user domain details.sh
+📜 proof_admin.sh | Read contents of C:\Users\Administrator\Desktop\proof.txt. | proof admin.sh
+📜 root_admin.sh | Read contents of C:\Users\Administrator\Desktopoot.txt. | root admin.sh
+📜 secretsdump_domain_user.sh | Impacket: use secretsdump to dump hashes (DCSync) | secretsdump domain user.sh

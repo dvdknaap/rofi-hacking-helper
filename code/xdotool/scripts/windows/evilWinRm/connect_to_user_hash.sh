@@ -1,17 +1,17 @@
 #!/bin/bash
 
 : '
-Connect with Evil-WinRM as Administrator using NTLM hash.
+Connect with Evil-WinRM as user using NTLM hash.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+USERNAME_FIELD=$(form_item  "username" "username" "administrator")
+HASH_FIELD=$(form_item  "hash" "hash")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}''{"label": "Username", "type": "text", "name": "Username"}'"Hash"
-
-IP=${form_data["IP"]}
-USERNAME=${form_data["Username"]}
-HASH=${form_data["Hash"]}
+# Generate GUI form
+generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${HASH_FIELD}"
 
 paste_command "evil-winrm -i ${IP} -u '${USERNAME}' -H '${HASH}'"
+xdotool key Return
+

