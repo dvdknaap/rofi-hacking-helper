@@ -4,17 +4,15 @@
 kerbrute: user enumerate on DC
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-DOMAIN_FIELD=$(form_item  "domain" "domain")
-IP_FIELD=$(form_item  "ip" "ip")
-USERNAME_WORDLIST_FILE_FIELD=$(form_item  "username wordlist" "username_wordlist_file" "/usr/share/wordlists/seclists/Usernames/top-usernames-shortlist.txt")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}" "${USERNDOMAIN_FIELDAME_FIELD}" "${USERNAME_WORDLIST_FILE_FIELD}"
+# Generate gui form
+generate_form "Domain" "IP" "Username file"
 
-DOMAIN=${form_data["domain"]}
-IP=${form_data["ip"]}
-USERNAME_WORDLIST_FILE=${form_data["username_wordlist_file"]}
+DOMAIN=${form_data["Domain"]}
+IP=${form_data["IP"]}
+USERNAME_FILE=${form_data["Username file"]}
 
-paste_command "${SCRIPTS_DIR}/windows/activeDirectroy/kerbrute/.files/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_WORDLIST_FILE} -v"
+paste_command "/opt/windows/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_FILE} -v"
 xdotool key Return

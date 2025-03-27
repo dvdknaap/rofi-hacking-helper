@@ -4,6 +4,8 @@
 Powershell - elevate user
 '
 
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 command=$(cat <<'EOF'
  # Get the ID and security principal of the current user account
  $myWindowsID=[System.Security.Principal.WindowsIdentity]::GetCurrent()

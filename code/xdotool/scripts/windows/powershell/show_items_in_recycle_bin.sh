@@ -4,6 +4,8 @@
 Powershell: Show Items in recycle bin
 '
 
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 paste_command "\$shell = New-Object -com shell.application"
 xdotool key Return
 sleep 0.8
