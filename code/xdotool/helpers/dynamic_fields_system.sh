@@ -69,8 +69,15 @@ start_form_and_save() {
     json_filename="${DYNAMIC_FIELDS_DIR}/${new_filename}.json"
 
     # If a file was provided, remove old file
-    if [[ -n "$input_file" && -f "$input_file" ]]; then
-        rm "$input_file"
+    if [[ -n "${input_file}" && -f "${input_file}" ]]; then
+        SYMLINK_TARGET=$(readlink -f "${ACTIVE_DYNAMIC_FIELDS_FILE}")
+
+        rm "${input_file}"
+
+        # update active dynamic fields symlink if needed
+        if [ "${SYMLINK_TARGET}" == "${input_file}" ]; then
+            ln -sf "${json_filename}" "${ACTIVE_DYNAMIC_FIELDS_FILE}"
+        fi
     fi
 
     # Save the JSON to the file

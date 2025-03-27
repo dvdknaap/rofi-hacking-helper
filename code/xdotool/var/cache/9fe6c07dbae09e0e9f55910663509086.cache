@@ -1,4 +1,0 @@
-📂 swaks | send emails with swaks | swaks
-📜 nmap_check_for_open_relay.sh | nmap: check for smtp open relay | nmap check for open relay.sh
-📜 smtp_user_enum_search_for_usernames_big.sh | smtp-user-enum: search for usernames with given domain name (xato-net-10-million-usernames-dup.txt) | smtp user enum search for usernames big.sh
-📜 smtp_user_enum_search_for_usernames_small.sh | smtp-user-enum: search for usernames with given domain name (Honeypot-Captures/multiplesources-users-fabian-fingerle.d.txt) | smtp user enum search for usernames small.sh

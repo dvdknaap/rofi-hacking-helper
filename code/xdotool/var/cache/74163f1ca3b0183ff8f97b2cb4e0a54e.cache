@@ -1,7 +1,0 @@
-📂 eyewitness | execute eyewitness with custom or nmap file | eyewitness
-📂 feroxbuster | execute directory and file search with feroxbuster | feroxbuster
-📂 fuzz | scripts to do attacks with fuzz | fuzz
-📂 gitDumper | dump .git folder to local folder | gitdumper
-📂 gobuster | scripts to do attacks with gobuster | gobuster
-📂 lfi | scripts to perform LFI attacks | lfi
-📂 wordpress | script to do wordpress attacks | wordpress

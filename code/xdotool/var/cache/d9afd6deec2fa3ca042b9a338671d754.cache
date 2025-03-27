@@ -1,3 +1,0 @@
-📜 directory_search_dirb_common.sh | feroxbuster directory search dirb/common.txt | directory search dirb common.sh
-📜 directory_search_directory_list_medium.sh | feroxbuster directory search directory-list-2.3-medium.txt | directory search directory list medium.sh
-📜 extension_search.sh | execute feroxbuster directory search and files with extensions search | extension search.sh
