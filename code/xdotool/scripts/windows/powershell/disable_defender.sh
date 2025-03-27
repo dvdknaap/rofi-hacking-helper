@@ -4,8 +4,6 @@
 Disable Windows Defender and Firewall.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-
 paste_command "cmd.exe /c \"C:\Program Files\Windows Defender\MpCmdRun.exe\" -removedefinitions -all"
 xdotool key Return
 

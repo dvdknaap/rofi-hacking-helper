@@ -4,7 +4,15 @@
 PowerShell: Force change password for user.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+USERNAME_FIELD=$(form_item  "username" "username")
+NEW_PASSWORD_FIELD=$(form_item  "new password" "new_password" "Str0ngpass86!")
 
-paste_command "Set-DomainUserPassword -Identity ssmalls -AccountPassword (ConvertTo-SecureString 'Str0ngpass86!' -AsPlainText -Force ) -Verbose"
+# Generate GUI form
+generate_form "${USERNAME_FIELD}" "${NEW_PASSWORD_FIELD}"
 
+USERNAME=${form_data["username"]}
+NEW_PASSWORD_FILE=${form_data["new_password"]}
+
+paste_command "Set-DomainUserPassword -Identity '${USERNAME}' -AccountPassword (ConvertTo-SecureString '${NEW_PASSWORD_FILE}' -AsPlainText -Force ) -Verbose"
+xdotool key Return

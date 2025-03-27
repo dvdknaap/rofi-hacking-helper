@@ -4,18 +4,19 @@
 get user Ticket Granting Ticket (TGT)
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DOMAIN_FIELD=$(form_item  "domain" "domain")
+USERNAME_FIELD=$(form_item  "username" "username")
+PASSWORD_FIELD=$(form_item  "password" "password")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "ip"}' "domain"'{"label": "Username", "type": "text", "name": "username"}'"password"
+# Generate GUI form
+generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}"
 
-IP=${form_data["ip"]}
 DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "sudo ntpdate ${IP};getTGT.py -dc-ip {IP} ${DOMAIN}/${USERNAME}:'${PASSWORD}'"
+paste_command "sudo ntpdate ${IP} && getTGT.py -dc-ip {IP} ${DOMAIN}/${USERNAME}:'${PASSWORD}'"
 xdotool key Return
 sleep 4
 

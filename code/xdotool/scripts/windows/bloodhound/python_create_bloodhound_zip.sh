@@ -4,17 +4,21 @@
 Create a bloodhound zip with bloodhound-python
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+DOMAIN_FIELD=$(form_item  "domain" "domain")
+USERNAME_FIELD=$(form_item  "username" "username")
+PASSWORD_FIELD=$(form_item  "password" "password")
+DC_FIELD=$(form_item  "DC" "dc")
+NS_IP_FIELD=$(form_item  "nameserver ip" "ns_ip")
 
-# Generate gui form
-generate_form'{"label": "Username", "type": "text", "name": "Username"}'"Password" "Domain" "DC" "NsIP"
+# Generate GUI form
+generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${DC_FIELD}" "${NS_IP_FIELD}"
 
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
-DOMAIN=${form_data["Domain"]}
-DC=${form_data["DC"]}
-NSIP=${form_data["NsIP"]}
+DOMAIN=${form_data["domain"]}
+USERNAME=${form_data["username"]}
+PASSWORD=${form_data["password"]}
+DC=${form_data["dc"]}
+NS_IP=${form_data["ns_ip"]}
 
-paste_command "bloodhound-python -u '${USERNAME}' -p '${PASSWORD}' -d ${DOMAIN} -c All -dc ${DC} -ns ${NSIP} --dns-tcp --zip"
+paste_command "bloodhound-python -u '${USERNAME}' -p '${PASSWORD}' -d ${DOMAIN} -c All -dc ${DC} -ns ${NS_IP} --dns-tcp --zip"
 xdotool key Return

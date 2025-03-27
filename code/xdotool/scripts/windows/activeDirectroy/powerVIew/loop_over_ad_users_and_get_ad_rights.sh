@@ -4,7 +4,13 @@
 Loop over de ad_users and get AD rights
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+AD_USERS_LOCATION_FIELD=$(form_item  "AD users file location" "ad_users_location" "ad_users.txt")
 
-paste_command "foreach(\$line in [System.IO.File]::ReadLines(\"c:\temp\ad_users.txt\")) {get-acl \"AD:\$(Get-ADUser \$line)\" }"
+# Generate GUI form
+generate_form "${AD_USERS_LOCATION_FIELD}"
+
+AD_USERS_LOCATION=${form_data["ad_users_location"]}
+
+paste_command "foreach(\$line in [System.IO.File]::ReadLines(\"${AD_USERS_LOCATION}\")) {get-acl \"AD:\$(Get-ADUser \$line)\" }"
 xdotool key Return
