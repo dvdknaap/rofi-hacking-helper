@@ -4,11 +4,7 @@
 Registry: Save SYSTEM, SECURITY, and SAM hives.
 '
 
-; '
-https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md
-'
-
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+# https://github.com/nickvourd/Windows-Local-Privilege-Escalation-Cookbook/blob/master/Notes/SeBackupPrivilege.md
 
 paste_command "mkdir C:\temp"
 xdotool key Return

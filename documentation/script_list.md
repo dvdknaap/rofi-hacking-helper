@@ -112,7 +112,7 @@ decompile java class files
 
 ### 📂 dynamicFields/
 
-scripts to add, edit, remote or copy dynamic fields
+scripts to add, edit or remote dynamic fields
 
 | Path | Description |
 |------|-------------|
@@ -120,7 +120,7 @@ scripts to add, edit, remote or copy dynamic fields
 | 📜 `dynamicFields/edit_dynamic_fields.sh` | show a list of dynamic fields so you can edit them |
 | 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
 | 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
-| 📜 `dynamicFields/unset_active_dynamic_fields.sh` | show a list of dynamic fields and unselect one to use as default values |
+| 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields |
 
 <br />
 
@@ -152,8 +152,10 @@ transfer file to or from a server for windows
 | Path | Description |
 |------|-------------|
 | 📜 `fileTransfer/windows/powershell/upload_attacker_file_to_nc_as_base64.sh` | ps: upload attacker file to nc as base64 |
+| 📜 `fileTransfer/windows/powershell/upload_lazagne_file.sh` | ps: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc64_file.sh` | ps: upload nc64 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc_file.sh` | ps: upload nc file to server |
+| 📜 `fileTransfer/windows/powershell/upload_print_spoofer_file.sh` | ps: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_any_file.sh` | ps: upload winPEASany.exe file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_any_ofs_file.sh` | ps: upload winPEASany_ofs.exe file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_bat_file.sh` | ps: upload winPEAS.bat file to server |
@@ -167,8 +169,10 @@ transfer file to or from a server for windows
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/windows/cmd/upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc64_file.sh` | cmd: upload nc64 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc_file.sh` | cmd: upload nc file to server |
+| 📜 `fileTransfer/windows/cmd/upload_print_spoofer_file.sh` | cmd: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_any_file.sh` | cmd: upload winPEASany.exe file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_any_ofs_file.sh` | cmd: upload winPEASany_ofs.exe file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_bat_file.sh` | cmd: upload winPEAS.bat file to server |
@@ -632,15 +636,18 @@ Scripts for performing password spraying attacks.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/passwordSpraying/domain_password_spray.sh` | PowerShell: Password spray using DomainPasswordSpray.ps1 (Welcome1). |
+| 📜 `windows/passwordSpraying/domain_password_spray.sh` | PowerShell: Password spray using DomainPasswordSpray.ps1. |
+| 📜 `windows/passwordSpraying/upload_domain_password_spray_ps1.sh` | PowerShell: upload and import DomainPasswordSpray.ps1. |
 
 
 ***📂 windows/lazagne***
 
 | Path | Description |
 |------|-------------|
+| 📜 `windows/lazagne/cmd_upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
 | 📜 `windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
 | 📜 `windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
+| 📜 `windows/lazagne/ps_upload_lazagne_exe.sh` | ps upload LaZagne to server |
 
 
 ***📂 windows/ldap***
@@ -662,7 +669,7 @@ Scripts for establishing Evil-WinRM connections.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/evilWinRm/connect_to_user_hash.sh` | Connect with Evil-WinRM as Administrator using NTLM hash. |
+| 📜 `windows/evilWinRm/connect_to_user_hash.sh` | Connect with Evil-WinRM as user using NTLM hash. |
 | 📜 `windows/evilWinRm/connect_to_user_password.sh` | Connect with Evil-WinRM as Administrator using password. |
 
 ***📂 windows/evilWinRm/proxychains***
@@ -793,17 +800,8 @@ exploit SeImpersonatePrivilege permission
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
-| 📜 `windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
-
-
-***📂 windows/permissions/seMachineAccountPrivilege***
-
-exploit seMachineAccountPrivilege permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/seMachineAccountPrivilege/seMachineAccountPrivilege.sh` | exploit SeTakeOwnershipPrivilege permission |
+| 📜 `windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+| 📜 `windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PS: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
 
 
 ***📂 windows/permissions/SeDebugPrivilege***
@@ -838,7 +836,7 @@ exploit SeTakeOwnershipPrivilege permission
 | 📜 `windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
 | 📜 `windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
 | 📜 `windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
-| 📜 `windows/powershell/search_for_file.sh` | Powershell: search for a file or extension *.7z |
+| 📜 `windows/powershell/search_for_file.sh` | Powershell: search for a file or extension |
 | 📜 `windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
 | 📜 `windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
 | 📜 `windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
@@ -861,7 +859,7 @@ perform DCSync attack
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/bloodhound/dcsync/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes |
+| 📜 `windows/bloodhound/dcsync/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
 
 
 ***📂 windows/bloodhound/genericAll***
@@ -914,7 +912,7 @@ perform netexec smb attacks
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/netexec/smb/administrator_hash.sh` | check if smb is possible for administrator hash |
+| 📜 `windows/netexec/smb/administrator_hash.sh` | check if smb is possible for username and hash |
 | 📜 `windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
 | 📜 `windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh` | convert smb rid-bruteforce to users list |
 | 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
@@ -934,10 +932,6 @@ perform netexec smb attacks
 | 📜 `windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
 | 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
 | 📜 `windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
-
-***📂 windows/netexec/smb/proxychains***
-
-
 
 
 ***📂 windows/netexec/proxychains***
@@ -1025,7 +1019,7 @@ Scripts using smbmap for SMB share enumeration and command execution.
 
 | Path | Description |
 |------|-------------|
-| 📜 `windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute 'whoami' on smb as Administrator with NTLM hash. |
+| 📜 `windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute command on smb as user with NTLM hash. |
 | 📜 `windows/smbmap/administrator_hash_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
 
 ***📂 windows/smbmap/proxychains***
@@ -1043,11 +1037,12 @@ Scripts for Active Directory enumeration and credential dumping.
 
 | Path | Description |
 |------|-------------|
+| 📜 `windows/mimikatz/cmd_upload_mimikatz_exe.sh` | cmd: upload mimikatz to server |
 | 📜 `windows/mimikatz/dump_lsa_secrets.sh` | Mimikatz: Dump lsa secrets. |
 | 📜 `windows/mimikatz/dump_lsass_credentials.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
-| 📜 `windows/mimikatz/ps_cmd_upload_ligolo_mimikatz_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
+| 📜 `windows/mimikatz/ps_upload_mimikatz_exe.sh` | ps: upload mimikatz to server |
 
 
 ***📂 windows/smbclient***
@@ -1114,13 +1109,12 @@ perform asreproast attack
 | Path | Description |
 |------|-------------|
 | 📜 `windows/cmd/add_user.sh` | Net: Add use, add to administrators and RDP groups. |
-| 📜 `windows/cmd/add_user_to_domain.sh` | Net: Add user john, add to Exchange and Remote Mgmt groups. |
+| 📜 `windows/cmd/add_user_to_domain.sh` | Net: Add user, add to Exchange Windows Permissions and Remote Mgmt groups. |
 | 📜 `windows/cmd/check_connected_drives.sh` | Net: Show connected network drives. |
 | 📜 `windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
 | 📜 `windows/cmd/check_user_account.sh` | Net: Get user information. |
-| 📜 `windows/cmd/connect_to_added_user_domain.sh` | PowerShell: Grant DCSync rights to user john. |
-| 📜 `windows/cmd/copy_powerview_from_shared_drive.sh` | Copy PowerView.ps1 from shared drive |
-| 📜 `windows/cmd/net_user_domain_details.sh` | Net: Get domain user information for hporter. |
+| 📜 `windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
+| 📜 `windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
 | 📜 `windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
 | 📜 `windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |

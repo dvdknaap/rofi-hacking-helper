@@ -4,14 +4,15 @@
 smbclient: Connect to share anonymous.
 '
 
-source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
-source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+SHARE_FIELD=$(form_item  "Share" "share")
 
-# Generate gui form
-generate_form '{"label": "IP address", "type": "text", "name": "IP"}' "Share"
+# Generate GUI form
+generate_form "${IP_FIELD}" "${SHARE_FIELD}"
 
-IP=${form_data["IP"]}
-SHARE=${form_data["Share"]}
+IP=${form_data["ip"]}
+SHARE=${form_data["share"]}
 
 paste_command "smbclient //${IP}/${SHARE}/"
 xdotool key Return
