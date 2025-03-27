@@ -513,6 +513,7 @@ scripts to do reconnaissance in powershell
 |------|-------------|
 | 📜 `reconnaissance/windows/powershell/check_default_username.sh` | Powershell: Check default username |
 | 📜 `reconnaissance/windows/powershell/check_defender_status.sh` | check defender status |
+| 📜 `reconnaissance/windows/powershell/check_internal_listening_ports.sh` | check internal listening ports |
 | 📜 `reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh` | Powershell - login to user on a different computer |
 | 📜 `reconnaissance/windows/powershell/disable_defender.sh` | Disable Windows Defender and Firewall. |
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
@@ -857,6 +858,7 @@ scripts like automatically fix shell and make it interactive, start port listeni
 | Path | Description |
 |------|-------------|
 | 📜 `shell/fix_shell.sh` | Fix shell to fully interactive shell |
+| 📜 `shell/listen_for_ping.sh` | listen for ping response |
 | 📜 `shell/netcat.sh` | start nc port listening |
 | 📜 `shell/python3_pty_spawn.sh` | python3 - pyt.spawn |
 | 📜 `shell/python_pty_spawn.sh` | python - pyt.spawn |

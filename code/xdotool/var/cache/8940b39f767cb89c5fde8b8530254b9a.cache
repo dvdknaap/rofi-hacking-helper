@@ -1,0 +1,9 @@
+📜 add_new_ligolo_interface.sh | add new ligolo interface | add new ligolo interface.sh
+📜 cmd_upload_ligolo_agent_exe.sh | cmd: download ligolo agent.exe to server and connect to proxy | cmd upload ligolo agent exe.sh
+📜 curl_ligolo_agent.sh | download ligolo agent to server and connect to proxy | curl ligolo agent.sh
+📜 ps_upload_ligolo_agent_exe.sh | ps download ligolo agent.exe to server and connect to proxy | ps upload ligolo agent exe.sh
+📜 remove_ligolo_interface.sh | remove ligolo interface | remove ligolo interface.sh
+📜 socat_listener.sh |  | socat listener.sh
+📜 socat.sh |  | socat.sh
+📜 ssh_forward_rdp_port.sh | ssh: forward RDP port with id_rsa file | ssh forward rdp port.sh
+📜 start_ligolo_proxy.sh | configure ligolo interface and start proxy | start ligolo proxy.sh

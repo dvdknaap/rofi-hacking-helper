@@ -189,7 +189,9 @@ def parse_arguments() -> Tuple[List[Union[str, Dict]], Dict[str, Any]]:
 
     try:
         active_cred_system_fields=""
-        fields = json.loads(args.json_input)
+        fields = ""
+        if [ "${args.json_input}" != "" ]:
+            fields = json.loads(args.json_input)
 
         if not isinstance(fields, list):
             raise ValueError("Invalid JSON format. Expected a list.")
