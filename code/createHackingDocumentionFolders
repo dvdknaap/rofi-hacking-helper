@@ -26,7 +26,8 @@ for folder in "${!folder_descriptions[@]}"; do
     
     # Write the content to the markdown file
     echo "# ${folder_descriptions["${folder}"]}" > "${md_file}"
-    echo "### created: $(date)" >> "${md_file}"
+    echo "created: $(date)" >> "${md_file}"
+    echo "" >> "${md_file}"
 
 done
 

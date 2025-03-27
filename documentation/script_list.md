@@ -118,6 +118,10 @@ scripts to add, edit or remote dynamic fields
 |------|-------------|
 | 📜 `dynamicFields/add_dynamic_fields.sh` | add new dynamic fields |
 | 📜 `dynamicFields/edit_dynamic_fields.sh` | show a list of dynamic fields so you can edit them |
+| 📜 `dynamicFields/get_current_domain.sh` | get current active dynamic field domain |
+| 📜 `dynamicFields/get_current_ip.sh` | get current active dynamic field ip |
+| 📜 `dynamicFields/get_current_password.sh` | get current active dynamic field password |
+| 📜 `dynamicFields/get_current_username.sh` | get current active dynamic field username |
 | 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
 | 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
 | 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields |

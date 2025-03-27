@@ -13,7 +13,7 @@ add_field_to_dynamic_field_system() {
 get_dynamic_field() {
     local field_name="${1}"
 
-    echo "${ACTIVE_CRED_SYSTEM[${field_name}]:-''}";
+    echo "${ACTIVE_CRED_SYSTEM[${field_name}]}";
 }
 
 load_dynamic_fields() {
