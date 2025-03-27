@@ -58,7 +58,8 @@ If you prefer to install it manually, follow these steps:
 
 #### Fully Automatic Shell Fix
 [Full-size video](assets/shellFix.mp4)
-https://github.com/dvdknaap/rofi-hacking-helper/blob/main/assets%2FshellFix.mp4
+
+https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/assets%2FshellFix.mp4
 
 
 ---
