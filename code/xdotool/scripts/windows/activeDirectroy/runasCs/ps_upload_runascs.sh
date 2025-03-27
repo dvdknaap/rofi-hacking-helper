@@ -3,6 +3,7 @@
 : '
 ps: Upload RunasCs.exe
 '
+
 LOCATION="${SCRIPTS_DIR}/windows/activeDirectroy/runasCs/.files"
 FILE="SharpGPOAbuse.exe"
 
