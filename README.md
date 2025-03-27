@@ -59,7 +59,8 @@ If you prefer to install it manually, follow these steps:
 #### Fully Automatic Shell Fix
 [Full-size video](assets/shellFix.mp4)
 
-https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/assets%2FshellFix.mp4
+<video src='https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/assets%2FshellFix.mp4' width=800/>
+
 
 
 ---
@@ -69,11 +70,6 @@ https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/assets%2Fshe
 You can find the list of available scripts and their descriptions in the `documentation/script_list.md` file. This document provides an overview of all the available scripts and how they can be used to boost your pentesting productivity.
 
 [View the Script List Documentation](documentation/script_list.md)
-
-## Tips
-
-- Add **IP addresses**, **domains**, and **credentials**, and the system will automatically generate custom code that can be used in the Rofi menu:  
-  [dvdknaap/add-creds-rofi](https://github.com/dvdknaap/add-creds-rofi)
 
 ## Limitations
 
