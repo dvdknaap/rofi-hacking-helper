@@ -1,6 +1,6 @@
 # Pentest Productivity Hack with Rofi
 
-Automate typing and run background tasks in Kali Linux using a dynamic menu. 
+Automate typing and run background tasks a dynamic menu. 
 This tool enhances your productivity by making frequently used scripts and credentials quickly accessible.
 
 ## Features
