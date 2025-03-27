@@ -27,11 +27,11 @@ This script will set up everything, including downloading dependencies.
 
 The tool checks for updates daily and will prompt you when a new version is available.
 
-## Usage
-
-1. Open the tool using **`Ctrl+Shift+M`**.
-2. Select a stored credential (e.g., `IP`, `domain`, `username`, `password`) or a custom field.
-3. The selected value will be **automatically typed** into the active input field.
+### Usage
+- Open the tool using `Ctrl+Shift+M`.
+- Select a script from the menu.
+- The selected script will be executed, using stored credentials or user input where required.
+- The output will be displayed in the terminal or applied directly, depending on the script.
 
 ## Example Use Cases
 
