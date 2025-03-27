@@ -2,14 +2,16 @@
 
 # Declare HTTP_PID as a global variable
 HTTP_PID=""
+HTTP_PORT=""
+HTTP_LOCATION=""
 
 start_python_server() {
     local location="${1}"
-    local http_port="${2}"
+    local python_port="${2}"
     local time_to_life="${3:-60}"
 
     # Check for required arguments
-    if [ -z "${http_port}" ] || [ -z "${location}" ]; then
+    if [ -z "${python_port}" ] || [ -z "${location}" ]; then
         paste_command 'Usage: start_python_server "location" "python http port" "TTL time; 0 = forever"'
         exit 1
     fi
@@ -17,11 +19,22 @@ start_python_server() {
     # Expand ~ to the full path manually
     location="${location/#\~/$HOME}"
 
+    # check if we already got a server running with the same port and location
+    if [ "${HTTP_PID}" != "" && "${HTTP_PORT}" == "${python_port}" && "${HTTP_LOCATION}" == "${location}" ]; then
+        if ps -p $HTTP_PID > /dev/null
+        then
+            return
+        fi
+    fi
+
+    HTTP_PORT="${python_port}"
+    HTTP_LOCATION="${location}"
+
     # Change directory to the given location
     cd "${location}"
 
     # Start the Python HTTP server in the background
-    python3 -m http.server ${http_port} &
+    python3 -m http.server ${python_port} &
     HTTP_PID=$!
 
     if [ "${time_to_life}" != "0" ]; then

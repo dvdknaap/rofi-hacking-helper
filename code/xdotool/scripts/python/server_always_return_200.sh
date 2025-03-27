@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-start http server and always return 200
+start server and always return 200
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

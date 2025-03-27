@@ -6,7 +6,6 @@ from tkinter import ttk, messagebox
 import sv_ttk
 import darkdetect
 
-
 class DynamicFieldForm:
     def __init__(self, directory: str, form_width: int = 500, form_height: int = 400):
         self.directory = directory
@@ -144,7 +143,8 @@ def main(directory):
         print("Error: The provided path is not a valid directory.")
         return
 
-    form = DynamicFieldForm(directory, 800, 500)
+    form_width, form_height = 800, 500
+    form = DynamicFieldForm(directory, form_width, form_height)
     form.create_form()
 
 
