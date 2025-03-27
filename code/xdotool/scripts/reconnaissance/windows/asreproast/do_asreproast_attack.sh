@@ -16,5 +16,5 @@ DOMAIN=${form_data["domain"]}
 USERS_FILE=${form_data["users_file"]}
 DC_IP=${form_data["dc_ip"]}
 
-paste_command "GetNPUsers.py ${DOMAIN}/ -dc-ip ${DC_IP} -no-pass -usersfile ${USERS_FILE}"
+paste_command "GetNPUsers.py ${DOMAIN}/ -dc-ip ${DC_IP} -no-pass -usersfile ${USERS_FILE} | grep -v '[-]'"
 xdotool key Return

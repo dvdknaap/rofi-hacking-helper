@@ -18,7 +18,7 @@ create_meterpreter_multi_handler() {
         "[payload]" "${PAYLOAD}"
     )
 
-    find_and_replace_file "${FILES_FOLDER}" "multi_handler" "${REPLACE_FIELDS[@]}"
+    find_and_replace_file "${FILES_FOLDER}" "multi_handler.rc" "${REPLACE_FIELDS[@]}"
 
     paste_command "msfconsole -r ${TMP_FILE}"
     xdotool key Return
