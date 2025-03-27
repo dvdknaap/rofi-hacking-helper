@@ -5,12 +5,12 @@ configure ligolo interface and start proxy
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
+IP_FIELD=$(form_item  "IP or range address" "ip_range")
 
 # Generate GUI form
 generate_form "${IP_FIELD}"
 
-IP=${form_data["ip"]}
+IP=${form_data["ip_range"]}
 INTERFACENAME="ligolo"
 
 paste_command "sudo ip link delete ${INTERFACENAME}"
