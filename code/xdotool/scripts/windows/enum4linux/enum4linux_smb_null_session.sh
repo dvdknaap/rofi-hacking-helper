@@ -4,13 +4,7 @@
 Enumerate users and passwords via enum4linux.
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}"
-
-IP=${form_data["ip"]}
-
-paste_command "/usr/bin/enum4linux -U -P ${IP}"
-xdotool key Return
+command='/usr/bin/enum4linux -U -P 172.16.8.3'
+paste_command "${command}"

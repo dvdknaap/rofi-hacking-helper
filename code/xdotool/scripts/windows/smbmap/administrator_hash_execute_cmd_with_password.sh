@@ -4,19 +4,6 @@
 smbmap: Execute 'whoami' on smb as Administrator with password.
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
-USERNAME_FIELD=$(form_item  "Username" "username" "Administrator")
-PASSWORD_FIELD=$(form_item  "password" "password")
-CMD_FIELD=$(form_item  "cmd" "cmd" "whoami")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${CMD_FIELD}"
-
-IP=${form_data["ip"]}
-USERNAME=${form_data["username"]}
-PASSWORD=${form_data["password"]}
-CMD=${form_data["cmd"]}
-
-paste_command "smbmap -H ${IP}  -u '${USERNAME}' -p '${PASSWORD}' -x '${CMD}'"
-xdotool key Return
+paste_command "smbmap -H 172.16.8.20  -u 'Administrator' -p 'password' -x whoami"

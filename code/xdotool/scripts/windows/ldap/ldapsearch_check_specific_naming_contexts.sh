@@ -4,14 +4,13 @@
 ldapsearch check for specific namingcontexts
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
-NAMING_CONTEXTS_FIELD=$(form_item  "namingcontexts" "namingcontexts")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}" "${NAMING_CONTEXTS_FIELD}"
+# Generate gui form
+generate_form '{"label": "IP address", "type": "text", "name": "IP"}' "namingcontexts"
 
-IP=${form_data["ip"]}
+IP=${form_data["IP"]}
 NAMING_CONTEXTS=${form_data["namingcontexts"]}
 
 paste_command "ldapsearch -H ldap://${IP} -x -b \"DC=${NAMING_CONTEXTS}\""

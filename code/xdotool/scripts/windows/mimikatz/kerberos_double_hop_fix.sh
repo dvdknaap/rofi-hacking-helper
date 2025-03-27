@@ -4,26 +4,19 @@
 Fix Kerberos "Double Hop" problem when using WinRM/Powershell
 '
 
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+
 #$SecPassword = ConvertTo-SecureString '!qazXSW@' -AsPlainText -Force
 #$Cred = New-Object System.Management.Automation.PSCredential('INLANEFREIGHT\backupadm', $SecPassword)
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-DOMAIN_FIELD=$(form_item  "domain" "domain")
-USERNAME_FIELD=$(form_item  "username" "username")
-PASSWORD_FIELD=$(form_item  "password" "password")
+username=$(echo "" | rofi -dmenu -p "Domain\username:"); echo ""
+password=$(echo "" | rofi -dmenu -p "Password:"); echo ""
 
-# Generate GUI form
-generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}"
-
-DOMAIN=${form_data["domain"]}
-USERNAME=${form_data["username"]}
-PASSWORD=${form_data["password"]}
-
-paste_command "\$SecPassword = ConvertTo-SecureString '${PASSWORD}' -AsPlainText -Force"
+paste_command "\$SecPassword = ConvertTo-SecureString '${password}' -AsPlainText -Force"
 xdotool key Return
 sleep 1
 
-paste_command "\$Cred = New-Object System.Management.Automation.PSCredential('${usernaDOMAINme}\\${PASSWORD}', \$SecPassword)"
+paste_command "\$Cred = New-Object System.Management.Automation.PSCredential('${username}', \$SecPassword)"
 xdotool key Return
 sleep 1
 

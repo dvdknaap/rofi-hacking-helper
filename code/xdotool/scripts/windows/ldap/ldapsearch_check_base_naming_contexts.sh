@@ -4,11 +4,11 @@
 ldapsearch check for base namingcontexts
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}"
+# Generate gui form
+generate_form '{"label": "IP address", "type": "text", "name": "ip"}'
 
 IP=${form_data["ip"]}
 

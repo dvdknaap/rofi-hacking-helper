@@ -4,13 +4,12 @@
 check if anonymous guest session is possible
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "ip")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
+source ~/Desktop/base/code/xdotool/helpers/generate_gui_form.sh
 
-# Generate GUI form
-generate_form "${IP_FIELD}"
+# Generate gui form
+generate_form '{"label": "IP address", "type": "text", "name": "IP"}'
 
-IP=${form_data["ip"]}
+IP=${form_data["IP"]}
 
 paste_command "netexec smb ${IP} -u 'a' -p '' --shares"
-xdotool key Return

@@ -4,13 +4,6 @@
 Net: Get user information.
 '
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-USERNAME_FIELD=$(form_item  "username" "username")
+source ~/Desktop/base/code/xdotool/helpers/paste_commands.sh
 
-# Generate GUI form
-generate_form "${USERNAME_FIELD}"
-
-USERNAME=${form_data["username"]}
-
-paste_command "net user ${USERNAME}"
-xdotool key Return
+paste_command "net user ilfserveradm"
