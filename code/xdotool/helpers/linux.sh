@@ -87,16 +87,27 @@ curl_upload_file() {
 
 show_notify_message () {
     local message="$1"
-    local title="${2:-Notification}"  # Standaard titel als er geen wordt opgegeven
-    local icon="${3:-dialog-information}"  # Standaard pictogram
+    local title="${2:-Notification}"
+    local icon="${3:-dialog-information}"
+    local urgency="${4:-normal}"
 
-    notify-send -u normal -i "$icon" "$title" "$message"
+    notify-send -u "${urgency}" -i "$icon" "$title" "$message"
 }
 
 show_success_notify_message () {
     local message="$1"
     local title="${2:-Success}" 
     local icon="${3:-dialog-ok}"
+    local urgency="${4:-normal}"
 
-    show_notify_message "${message}" "${title}" "${icon}"
+    show_notify_message "${message}" "${title}" "${icon}" "${urgency}"
+}
+
+show_error_notify_message () {
+    local message="$1"
+    local title="${2:-Error}" 
+    local icon="${3:-dialog-error}"
+    local urgency="${4:-critical}"
+
+    show_notify_message "${message}" "${title}" "${icon}" "${urgency}"
 }
