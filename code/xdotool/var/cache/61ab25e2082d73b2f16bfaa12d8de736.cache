@@ -1,9 +1,0 @@
-📂 background |  | background
-📂 msfconsole | msfconsole scripts with start sock proxy, port forwarding, server routes | msfconsole
-📂 msfvenom | msfvenom to create reverve shell files for metepreter | msfvenom
-📂 windows | scripts to create windows shells | windows
-📜 fix_shell.sh | Fix shell to fully interactive shell | fix shell.sh
-📜 netcat.sh | start nc port listening | netcat.sh
-📜 python3_pty_spawn.sh | python3 - pyt.spawn | python3 pty spawn.sh
-📜 python_pty_spawn.sh | python - pyt.spawn | python pty spawn.sh
-📜 rlwrap_netcat.sh | start rlwrap nc port listening | rlwrap netcat.sh

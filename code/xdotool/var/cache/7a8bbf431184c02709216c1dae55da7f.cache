@@ -1,9 +1,0 @@
-📜 upload_nc64_file.sh | cmd: upload nc64 file to server | upload nc64 file.sh
-📜 upload_nc_file.sh | cmd: upload nc file to server | upload nc file.sh
-📜 upload_winpeas_any_file.sh | cmd: upload winPEASany.exe file to server | upload winpeas any file.sh
-📜 upload_winpeas_any_ofs_file.sh | cmd: upload winPEASany_ofs.exe file to server | upload winpeas any ofs file.sh
-📜 upload_winpeas_bat_file.sh | cmd: upload winPEAS.bat file to server | upload winpeas bat file.sh
-📜 upload_winpeas_x64_file.sh | cmd: upload winPEASx64.exe file to server | upload winpeas x64 file.sh
-📜 upload_winpeas_x64_ofs_file.sh | cmd: upload winPEASx64_ofs.exe file to server | upload winpeas x64 ofs file.sh
-📜 upload_winpeas_x86_file.sh | cmd: upload winPEASx86.exe file to server | upload winpeas x86 file.sh
-📜 upload_winpeas_x86_ofs_file.sh | cmd: upload winPEASx86_ofs.exe file to server | upload winpeas x86 ofs file.sh

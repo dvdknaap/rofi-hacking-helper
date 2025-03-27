@@ -1,8 +1,0 @@
-📜 local_port_listening.sh | type ssh port listening | local port listening.sh
-📜 local_port_listening_with_sshkey.sh | type ssh port listening with ssh key | local port listening with sshkey.sh
-📜 metasploit_bruteforce_username_and_password_file.sh | ssh: bruteforce username and passwords file | metasploit bruteforce username and password file.sh
-📜 metasploit_bruteforce_username_file_and_password_file.sh | ssh: bruteforce username file and passwords file | metasploit bruteforce username file and password file.sh
-📜 metasploit_bruteforce_userpass_file.sh | ssh: bruteforce userpass file (user pass) | metasploit bruteforce userpass file.sh
-📜 remote_port_forwarding.sh | type ssh port forwarding | remote port forwarding.sh
-📜 remote_port_forwarding_with_sshkey.sh | type ssh port forwarding with ssh key | remote port forwarding with sshkey.sh
-📜 socket_port_sock_forwarding.sh | -D sock 5 forwarding | socket port sock forwarding.sh

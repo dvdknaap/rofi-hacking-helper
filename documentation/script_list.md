@@ -19,7 +19,6 @@
 - [sqlDatabase](#-sqldatabase)
 - [ssh](#-ssh)
 - [web](#-web)
-- [windows](#-windows)
 
 ---
 
@@ -118,10 +117,11 @@ scripts to add, edit or remote dynamic fields
 |------|-------------|
 | 📜 `dynamicFields/add_dynamic_fields.sh` | add new dynamic fields |
 | 📜 `dynamicFields/edit_dynamic_fields.sh` | show a list of dynamic fields so you can edit them |
-| 📜 `dynamicFields/get_current_domain.sh` | get current active dynamic field domain |
-| 📜 `dynamicFields/get_current_ip.sh` | get current active dynamic field ip |
-| 📜 `dynamicFields/get_current_password.sh` | get current active dynamic field password |
-| 📜 `dynamicFields/get_current_username.sh` | get current active dynamic field username |
+| 📜 `dynamicFields/get_active_custom_field.sh` | get current active dynamic field password |
+| 📜 `dynamicFields/get_active_domain.sh` | get current active dynamic field domain |
+| 📜 `dynamicFields/get_active_ip.sh` | get current active dynamic field ip |
+| 📜 `dynamicFields/get_active_password.sh` | get current active dynamic field password |
+| 📜 `dynamicFields/get_active_username.sh` | get current active dynamic field username |
 | 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
 | 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
 | 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields |
@@ -249,16 +249,10 @@ different scripts to do port listenings
 
 different python scripts like to start http server
 
-
-***📂 python/http_server***
-
-start a python http server
-
 | Path | Description |
 |------|-------------|
-| 📜 `python/http_server/http_server.sh` | start http server |
-| 📜 `python/http_server/server_always_return_200.sh` | start http server and always return 200 |
-
+| 📜 `python/http_server.sh` | start http server |
+| 📜 `python/server_always_return_200.sh` | start server and always return 200 |
 
 <br />
 
@@ -290,6 +284,226 @@ scripts to do reconnaissance on linux
 
 scripts to do reconnaissance on windows
 
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
+| 📜 `reconnaissance/windows/impacket_get_ad_users.sh` | Impacket: GetADUsers.py get domain users |
+| 📜 `reconnaissance/windows/impacket_ntlmrelay.sh` | impacket NTLM relayx attack |
+| 📜 `reconnaissance/windows/psexect_to_user.sh` | Impacket: psexec.py get psexec shell  |
+| 📜 `reconnaissance/windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
+| 📜 `reconnaissance/windows/request_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
+| 📜 `reconnaissance/windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `reconnaissance/windows/show_user_spns.sh` | GetUserSPNs: check for services |
+| 📜 `reconnaissance/windows/snaffler.sh` | Run Snaffler on domain. |
+| 📜 `reconnaissance/windows/wmiexec_connect_to_user.sh` | wmiexec: get shell to user |
+
+***📂 reconnaissance/windows/kerberoasting***
+
+Scripts for Kerberoasting (SPN retrieval).
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/kerberoasting/export_spn_users.sh` | PowerShell: Get SPNs, format for Hashcat, export to spns.csv. |
+| 📜 `reconnaissance/windows/kerberoasting/get_samaccountname.sh` | PowerShell: Get SPN user account names. |
+
+
+***📂 reconnaissance/windows/passwordSpraying***
+
+Scripts for performing password spraying attacks.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/passwordSpraying/domain_password_spray.sh` | PowerShell: Password spray using DomainPasswordSpray.ps1. |
+| 📜 `reconnaissance/windows/passwordSpraying/upload_domain_password_spray_ps1.sh` | PowerShell: upload and import DomainPasswordSpray.ps1. |
+
+
+***📂 reconnaissance/windows/lazagne***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/lazagne/cmd_upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
+| 📜 `reconnaissance/windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
+| 📜 `reconnaissance/windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
+| 📜 `reconnaissance/windows/lazagne/ps_upload_lazagne_exe.sh` | ps upload LaZagne to server |
+
+
+***📂 reconnaissance/windows/ldap***
+
+scripts to do ldap enumerations
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/ldap/ldapsearch_check_base_naming_contexts.sh` | ldapsearch check for base namingcontexts |
+| 📜 `reconnaissance/windows/ldap/ldapsearch_check_specific_naming_contexts.sh` | ldapsearch check for specific namingcontexts |
+| 📜 `reconnaissance/windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
+| 📜 `reconnaissance/windows/ldap/ldapsearch_show_user_info_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
+| 📜 `reconnaissance/windows/ldap/nmap_ldap_scripts_scan.sh` | nmap scan with ldap scripts |
+
+
+***📂 reconnaissance/windows/evilWinRm***
+
+Scripts for establishing Evil-WinRM connections.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/evilWinRm/connect_to_user_hash.sh` | Connect with Evil-WinRM as user using NTLM hash. |
+| 📜 `reconnaissance/windows/evilWinRm/connect_to_user_password.sh` | Connect with Evil-WinRM as Administrator using password. |
+
+***📂 reconnaissance/windows/evilWinRm/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/evilWinRm/proxychains/connect_to_user_hash.sh` |  |
+| 📜 `reconnaissance/windows/evilWinRm/proxychains/connect_to_user_password.sh` |  |
+
+
+
+***📂 reconnaissance/windows/activeDirectroy***
+
+scripts for active directory (AD) hacking
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/get_user_tgt.sh` | get user Ticket Granting Ticket (TGT) |
+
+***📂 reconnaissance/windows/activeDirectroy/rubeus***
+
+perform Rubeus attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/rubeus/ps_upload_robeus.sh` | ps: Upload Rubeus.exe |
+
+
+***📂 reconnaissance/windows/activeDirectroy/runasCs***
+
+runAsCS.exe exploit
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/runasCs/ps_upload_runascs.sh` | ps: Upload RunasCs.exe |
+
+
+***📂 reconnaissance/windows/activeDirectroy/invokeTokenManipulation***
+
+invoke TokenManipulation attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_as_system.sh` | ps: Makes the current PowerShell thread impersonate SYSTEM. |
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_lsass_security_token.sh` | ps: Makes the current thread impersonate the lsass security token |
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_list_all_tokens_on_computer.sh` | ps: Lists all tokens available on the computer. |
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_list_tokens_on_computer.sh` | ps: Lists all unique usable tokens on the computer. |
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_spawn_cmd_as_system.sh` | ps: Spawns cmd.exe as SYSTEM. |
+| 📜 `reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload and import module Invoke-TokenManipulation.ps1 |
+
+
+***📂 reconnaissance/windows/activeDirectroy/certipy_ad***
+
+scripts for cetipy-ad to perform certificate exploit
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/add_officer.sh` | add officer |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/automate_exploit.sh` | automaticly exploit |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/check_if_user_is_vurnerable.sh` | check if user is vulnerable |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/enable_template.sh` | enable template |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/get_hash_with_pfx_file.sh` | get hash with pfx file |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/issue_request_certificate.sh` | request certificate according to template |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/list_templates.sh` | check if user is vulnerable |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/request_certificate.sh` | request certificate according to template |
+| 📜 `reconnaissance/windows/activeDirectroy/certipy_ad/retrieve_certificate.sh` | retrieve certificate |
+
+
+***📂 reconnaissance/windows/activeDirectroy/sharpGPOAbuse***
+
+script to do SharpGPOAbuse attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/sharpGPOAbuse/ps_gpo_abuse.sh` | ps: do a GPO abuse |
+| 📜 `reconnaissance/windows/activeDirectroy/sharpGPOAbuse/ps_upload_sharp_gpo_abuse.sh` | ps: Upload sharpGPOAbuse |
+
+
+***📂 reconnaissance/windows/activeDirectroy/powerVIew***
+
+scripts for powerview.ps1
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/list_domain_users.sh` | creating a List of Domain Users |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | Loop over de ad_users and get AD rights |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload sharphound and execute |
+
+
+***📂 reconnaissance/windows/activeDirectroy/kerbrute***
+
+perform kerbrute attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
+
+
+
+***📂 reconnaissance/windows/permissions***
+
+Scripts related to privilege escalation and permission manipulation.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/cmd_audit_user_token_privileges.sh` | SharpUp - audit token privileges - cmd: download SharpUp to server and execute. |
+| 📜 `reconnaissance/windows/permissions/ps_audit_user_token_privileges.sh` | SharpUp - audit token privileges - PS: download SharpUp to server and execute. |
+| 📜 `reconnaissance/windows/permissions/ps_enableTokens.sh` | enable permission tokens |
+
+***📂 reconnaissance/windows/permissions/seBackupPrivilege***
+
+exploit seBackupPrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
+
+
+***📂 reconnaissance/windows/permissions/forceChangePassword***
+
+exploit forceChangePassword permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/forceChangePassword/forceChangePassword.sh` | PowerShell: Force change password for user. |
+
+
+***📂 reconnaissance/windows/permissions/seImpersonatePrivilege***
+
+exploit SeImpersonatePrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PS: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+
+
+***📂 reconnaissance/windows/permissions/SeDebugPrivilege***
+
+exploit SeDebugPrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/SeDebugPrivilege/SeDebugPrivilege.sh` | exploit SeDebugPrivilege permission |
+
+
+***📂 reconnaissance/windows/permissions/seTakeOwnershipPrivilege***
+
+exploit SeTakeOwnershipPrivilege permission
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/permissions/seTakeOwnershipPrivilege/seTakeOwnershipPrivilege.sh` | exploit SeTakeOwnershipPrivilege permission |
+
+
 
 ***📂 reconnaissance/windows/powershell***
 
@@ -297,13 +511,263 @@ scripts to do reconnaissance in powershell
 
 | Path | Description |
 |------|-------------|
+| 📜 `reconnaissance/windows/powershell/check_default_username.sh` | Powershell: Check default username |
 | 📜 `reconnaissance/windows/powershell/check_defender_status.sh` | check defender status |
+| 📜 `reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh` | Powershell - login to user on a different computer |
+| 📜 `reconnaissance/windows/powershell/disable_defender.sh` | Disable Windows Defender and Firewall. |
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
+| 📜 `reconnaissance/windows/powershell/download_and_execute_custom_script_in_memory.sh` | PowerShell: Download and execute script in memory. |
+| 📜 `reconnaissance/windows/powershell/elevate_user.sh` | Powershell - elevate user |
 | 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
+| 📜 `reconnaissance/windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
+| 📜 `reconnaissance/windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
 | 📜 `reconnaissance/windows/powershell/mini_linpeas.sh` | perform mini linpeas to get pentest info |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/windows/powershell/ps_disable_defender.sh` | Disable defender |
 | 📜 `reconnaissance/windows/powershell/register_disable_defender.sh` | Disable defender in register |
+| 📜 `reconnaissance/windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
+| 📜 `reconnaissance/windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
+| 📜 `reconnaissance/windows/powershell/search_for_file.sh` | Powershell: search for a file or extension |
+| 📜 `reconnaissance/windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
+| 📜 `reconnaissance/windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
+| 📜 `reconnaissance/windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
+
+
+***📂 reconnaissance/windows/bloodhound***
+
+Scripts for starting BloodHound and Neo4j.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/cmd_upload_sharphound_and_execute.sh` | cmd: Upload sharphound and execute |
+| 📜 `reconnaissance/windows/bloodhound/ps_upload_sharphound_and_execute.sh` | ps: Upload sharphound and execute |
+| 📜 `reconnaissance/windows/bloodhound/python_create_bloodhound_zip.sh` | Create a bloodhound zip with bloodhound-python |
+| 📜 `reconnaissance/windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
+
+***📂 reconnaissance/windows/bloodhound/dcsync***
+
+perform DCSync attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/dcsync/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
+
+
+***📂 reconnaissance/windows/bloodhound/genericAll***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/genericAll/genericAll_exploit_part1.sh` | powershell: genericAll permissions exploit |
+
+
+***📂 reconnaissance/windows/bloodhound/genericWrite***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/genericWrite/genericWrite_exploit_part1.sh` | powershell: genericWrite permissions exploit |
+| 📜 `reconnaissance/windows/bloodhound/genericWrite/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
+
+***📂 reconnaissance/windows/bloodhound/genericWrite/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
+
+
+
+
+***📂 reconnaissance/windows/netexec***
+
+
+***📂 reconnaissance/windows/netexec/rdp***
+
+NetExec scripts for RDP connections.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/rdp/check_ad_users_and_passwords.sh` | nxc rdp: Check RDP with user/pass. |
+| 📜 `reconnaissance/windows/netexec/rdp/check_ad_users_and_passwords_with_files.sh` | nxc rdp: Check RDP with user/pass lists, continue on success. |
+
+***📂 reconnaissance/windows/netexec/rdp/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/rdp/proxychains/check_ad_users_and_passwords.sh` |  |
+| 📜 `reconnaissance/windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
+
+
+
+***📂 reconnaissance/windows/netexec/smb***
+
+perform netexec smb attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/smb/administrator_hash.sh` | check if smb is possible for username and hash |
+| 📜 `reconnaissance/windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh` | convert smb rid-bruteforce to users list |
+| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
+| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_sam.sh` | dump sam |
+| 📜 `reconnaissance/windows/netexec/smb/dump_ntds.sh` | dump ntds |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_ad_users_and_passwords.sh` | enumerate over ad users and password file |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_group.sh` | enumerate groups |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_cmd.sh` | execute cmd command |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_smbexec.sh` | execute smbexec command |
+| 📜 `reconnaissance/windows/netexec/smb/find_autologon_in_registry_xml.sh` | searches the domain controller for registry.xml |
+| 📜 `reconnaissance/windows/netexec/smb/login_with_username_password.sh` | login with username and password |
+| 📜 `reconnaissance/windows/netexec/smb/null_session.sh` | check if null session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/password_policy.sh` | get password policy |
+| 📜 `reconnaissance/windows/netexec/smb/rid_brute.sh` | enumerate users by bruteforcing RIDs |
+| 📜 `reconnaissance/windows/netexec/smb/show_shares.sh` | show smb shares |
+| 📜 `reconnaissance/windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
+| 📜 `reconnaissance/windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
+| 📜 `reconnaissance/windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
+| 📜 `reconnaissance/windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
+
+
+***📂 reconnaissance/windows/netexec/proxychains***
+
+
+***📂 reconnaissance/windows/netexec/proxychains/smb***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/administrator_hash.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/check_ad_users_and_passwords.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/check_anonymous.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/dump_credentials_from_lsa.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/dump_credentials_from_sam.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/dump_ntds.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/enumerate_group.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/enumerate_local_users.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/enumerate_users_execute_cmd.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/enumerate_users_execute_smbexec.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/enumerate_users.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/find_autologon_in_registry_xml.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/null_session.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/password_policy.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/rid_brute.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/smb_start_listener.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/smb_user.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
+| 📜 `reconnaissance/windows/netexec/proxychains/smb/user_show_shares.sh` |  |
+
+
+***📂 reconnaissance/windows/netexec/proxychains/winrm***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
+
+
+
+***📂 reconnaissance/windows/netexec/winrm***
+
+NetExec scripts for WinRM connections.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM connection with username and password. |
+
+***📂 reconnaissance/windows/netexec/winrm/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
+
+
+
+***📂 reconnaissance/windows/netexec/ftp***
+
+perform netexec ftp attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/netexec/ftp/login_with_username_file_password_file.sh` | login with username file and password file |
+| 📜 `reconnaissance/windows/netexec/ftp/login_with_username_password.sh` | login with username and password |
+
+
+
+***📂 reconnaissance/windows/enum4linux***
+
+Scripts for enum4linux.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/enum4linux/enum4linux_smb_null_session.sh` | Enumerate users and passwords via enum4linux. |
+
+***📂 reconnaissance/windows/enum4linux/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/enum4linux/proxychains/enum4linux_smb_null_session.sh` |  |
+
+
+
+***📂 reconnaissance/windows/smbmap***
+
+Scripts using smbmap for SMB share enumeration and command execution.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute command on smb as user with NTLM hash. |
+| 📜 `reconnaissance/windows/smbmap/administrator_hash_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
+
+***📂 reconnaissance/windows/smbmap/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/smbmap/proxychains/administrator_hash_execute_cmd_with_ntlm_hash.sh` |  |
+| 📜 `reconnaissance/windows/smbmap/proxychains/administrator_hash_execute_cmd_with_password.sh` |  |
+
+
+
+***📂 reconnaissance/windows/mimikatz***
+
+Scripts for Active Directory enumeration and credential dumping.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/mimikatz/cmd_upload_mimikatz_exe.sh` | cmd: upload mimikatz to server |
+| 📜 `reconnaissance/windows/mimikatz/dump_lsa_secrets.sh` | Mimikatz: Dump lsa secrets. |
+| 📜 `reconnaissance/windows/mimikatz/dump_lsass_credentials.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
+| 📜 `reconnaissance/windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
+| 📜 `reconnaissance/windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
+| 📜 `reconnaissance/windows/mimikatz/ps_upload_mimikatz_exe.sh` | ps: upload mimikatz to server |
+
+
+***📂 reconnaissance/windows/smbclient***
+
+Scripts using smbclient for share enumeration and access.
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/smbclient/connect_to_share_anonymous.sh` | smbclient: Connect to share anonymous. |
+| 📜 `reconnaissance/windows/smbclient/connect_to_share_with_user.sh` | smbclient: Connect to share with user. |
+| 📜 `reconnaissance/windows/smbclient/decrypt_groups_xml_cpassword.sh` | decrypt cpassword from groups.xml |
+| 📜 `reconnaissance/windows/smbclient/download_folders_resurcive.sh` | smbclient: download files recursive |
+| 📜 `reconnaissance/windows/smbclient/enable_recursive.sh` | smbclient: enable recursive |
+| 📜 `reconnaissance/windows/smbclient/search_in_downloaded_files_for_groups_xml.sh` | search for group policies in downloaded folders |
+| 📜 `reconnaissance/windows/smbclient/show_shares.sh` | smbclient: List shares. |
+| 📜 `reconnaissance/windows/smbclient/turn_off_prompt.sh` | smbclient: turn off prompt |
+
+***📂 reconnaissance/windows/smbclient/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/smbclient/proxychains/administrator_hash_execute_cmd.sh` |  |
+| 📜 `reconnaissance/windows/smbclient/proxychains/connect_to_share.sh` |  |
+| 📜 `reconnaissance/windows/smbclient/proxychains/show_shares.sh` |  |
+
+
+
+***📂 reconnaissance/windows/asreproast***
+
+perform asreproast attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/asreproast/do_asreproast_attack.sh` | do an asreproast attack |
 
 
 ***📂 reconnaissance/windows/kerbrute***
@@ -315,12 +779,43 @@ perform kerbrute attacks
 | 📜 `reconnaissance/windows/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
 
 
+***📂 reconnaissance/windows/inveight***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/inveight/ps_upload_powerview_and_import.sh` | ps: Upload Inveigh.ps1 and import module |
+| 📜 `reconnaissance/windows/inveight/start_inveight.sh` | Start Inveigh and perform a poofing attacks and captures hash/credential |
+| 📜 `reconnaissance/windows/inveight/stop_inveight.sh` | Stop Inveigh |
+
+
+***📂 reconnaissance/windows/xfreerdp***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/xfreerdp/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
+| 📜 `reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
+
+***📂 reconnaissance/windows/xfreerdp/proxychains***
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/xfreerdp/proxychains/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
+| 📜 `reconnaissance/windows/xfreerdp/proxychains/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
+
+
+
 ***📂 reconnaissance/windows/cmd***
 
 scripts to do reconnaissance in cmd
 
 | Path | Description |
 |------|-------------|
+| 📜 `reconnaissance/windows/cmd/add_user.sh` | Net: Add use, add to administrators and RDP groups. |
+| 📜 `reconnaissance/windows/cmd/add_user_to_domain.sh` | Net: Add user, add to Exchange Windows Permissions and Remote Mgmt groups. |
+| 📜 `reconnaissance/windows/cmd/check_connected_drives.sh` | Net: Show connected network drives. |
+| 📜 `reconnaissance/windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
+| 📜 `reconnaissance/windows/cmd/check_user_account.sh` | Net: Get user information. |
+| 📜 `reconnaissance/windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_exe.sh` | download winPEASany.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh` | download winPEASany_ofs.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_bat.sh` | download winPEAS.bat to server and execute |
@@ -330,7 +825,11 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_ofs_exe.sh` | download winPEASx86_ofs.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/find_services.sh` | Find services |
 | 📜 `reconnaissance/windows/cmd/mini_linpeas.sh` | perform mini linpeas to get pentest info |
+| 📜 `reconnaissance/windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
+| 📜 `reconnaissance/windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
+| 📜 `reconnaissance/windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
+| 📜 `reconnaissance/windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
 
 
 
@@ -603,530 +1102,6 @@ execute directory and file search with feroxbuster
 | 📜 `web/feroxbuster/directory_search_dirb_common.sh` | feroxbuster directory search dirb/common.txt |
 | 📜 `web/feroxbuster/directory_search_directory_list_medium.sh` | feroxbuster directory search directory-list-2.3-medium.txt |
 | 📜 `web/feroxbuster/extension_search.sh` | execute feroxbuster directory search and files with extensions search |
-
-
-<br />
-
-### 📂 windows/
-
-Windows scripts: user/group mgmt, cred dumping, recon, execution.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
-| 📜 `windows/impacket_get_ad_users.sh` | Impacket: GetADUsers.py get domain users |
-| 📜 `windows/impacket_ntlmrelay.sh` | impacket NTLM relayx attack |
-| 📜 `windows/psexect_to_user.sh` | Impacket: psexec.py get psexec shell  |
-| 📜 `windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
-| 📜 `windows/request_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
-| 📜 `windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
-| 📜 `windows/show_user_spns.sh` | GetUserSPNs: check for services |
-| 📜 `windows/snaffler.sh` | Run Snaffler on domain. |
-| 📜 `windows/wmiexec_connect_to_user.sh` | wmiexec: get shell to user |
-
-***📂 windows/kerberoasting***
-
-Scripts for Kerberoasting (SPN retrieval).
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/kerberoasting/export_spn_users.sh` | PowerShell: Get SPNs, format for Hashcat, export to spns.csv. |
-| 📜 `windows/kerberoasting/get_samaccountname.sh` | PowerShell: Get SPN user account names. |
-
-
-***📂 windows/passwordSpraying***
-
-Scripts for performing password spraying attacks.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/passwordSpraying/domain_password_spray.sh` | PowerShell: Password spray using DomainPasswordSpray.ps1. |
-| 📜 `windows/passwordSpraying/upload_domain_password_spray_ps1.sh` | PowerShell: upload and import DomainPasswordSpray.ps1. |
-
-
-***📂 windows/lazagne***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/lazagne/cmd_upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
-| 📜 `windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
-| 📜 `windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
-| 📜 `windows/lazagne/ps_upload_lazagne_exe.sh` | ps upload LaZagne to server |
-
-
-***📂 windows/ldap***
-
-scripts to do ldap enumerations
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/ldap/ldapsearch_check_base_naming_contexts.sh` | ldapsearch check for base namingcontexts |
-| 📜 `windows/ldap/ldapsearch_check_specific_naming_contexts.sh` | ldapsearch check for specific namingcontexts |
-| 📜 `windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
-| 📜 `windows/ldap/ldapsearch_show_user_info_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
-| 📜 `windows/ldap/nmap_ldap_scripts_scan.sh` | nmap scan with ldap scripts |
-
-
-***📂 windows/evilWinRm***
-
-Scripts for establishing Evil-WinRM connections.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/evilWinRm/connect_to_user_hash.sh` | Connect with Evil-WinRM as user using NTLM hash. |
-| 📜 `windows/evilWinRm/connect_to_user_password.sh` | Connect with Evil-WinRM as Administrator using password. |
-
-***📂 windows/evilWinRm/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/evilWinRm/proxychains/connect_to_user_hash.sh` |  |
-| 📜 `windows/evilWinRm/proxychains/connect_to_user_password.sh` |  |
-
-
-
-***📂 windows/activeDirectroy***
-
-scripts for active directory (AD) hacking
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/get_user_tgt.sh` | get user Ticket Granting Ticket (TGT) |
-
-***📂 windows/activeDirectroy/rubeus***
-
-perform Rubeus attacks
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/rubeus/ps_upload_robeus.sh` | ps: Upload Rubeus.exe |
-
-
-***📂 windows/activeDirectroy/runasCs***
-
-runAsCS.exe exploit
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/runasCs/ps_upload_runascs.sh` | ps: Upload RunasCs.exe |
-
-
-***📂 windows/activeDirectroy/invokeTokenManipulation***
-
-invoke TokenManipulation attack
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_as_system.sh` | ps: Makes the current PowerShell thread impersonate SYSTEM. |
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_lsass_security_token.sh` | ps: Makes the current thread impersonate the lsass security token |
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_list_all_tokens_on_computer.sh` | ps: Lists all tokens available on the computer. |
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_list_tokens_on_computer.sh` | ps: Lists all unique usable tokens on the computer. |
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_spawn_cmd_as_system.sh` | ps: Spawns cmd.exe as SYSTEM. |
-| 📜 `windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh` | ps: Upload and import module Invoke-TokenManipulation.ps1 |
-
-
-***📂 windows/activeDirectroy/certipy_ad***
-
-scripts for cetipy-ad to perform certificate exploit
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/certipy_ad/add_officer.sh` | add officer |
-| 📜 `windows/activeDirectroy/certipy_ad/automate_exploit.sh` | automaticly exploit |
-| 📜 `windows/activeDirectroy/certipy_ad/check_if_user_is_vurnerable.sh` | check if user is vulnerable |
-| 📜 `windows/activeDirectroy/certipy_ad/enable_template.sh` | enable template |
-| 📜 `windows/activeDirectroy/certipy_ad/get_hash_with_pfx_file.sh` | get hash with pfx file |
-| 📜 `windows/activeDirectroy/certipy_ad/issue_request_certificate.sh` | request certificate according to template |
-| 📜 `windows/activeDirectroy/certipy_ad/list_templates.sh` | check if user is vulnerable |
-| 📜 `windows/activeDirectroy/certipy_ad/request_certificate.sh` | request certificate according to template |
-| 📜 `windows/activeDirectroy/certipy_ad/retrieve_certificate.sh` | retrieve certificate |
-
-
-***📂 windows/activeDirectroy/sharpGPOAbuse***
-
-script to do SharpGPOAbuse attack
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/sharpGPOAbuse/ps_gpo_abuse.sh` | ps: do a GPO abuse |
-| 📜 `windows/activeDirectroy/sharpGPOAbuse/ps_upload_sharp_gpo_abuse.sh` | ps: Upload sharpGPOAbuse |
-
-
-***📂 windows/activeDirectroy/powerVIew***
-
-scripts for powerview.ps1
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/powerVIew/list_domain_users.sh` | creating a List of Domain Users |
-| 📜 `windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | Loop over de ad_users and get AD rights |
-| 📜 `windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload sharphound and execute |
-
-
-***📂 windows/activeDirectroy/kerbrute***
-
-perform kerbrute attacks
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/activeDirectroy/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
-
-
-
-***📂 windows/permissions***
-
-Scripts related to privilege escalation and permission manipulation.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/cmd_audit_user_token_privileges.sh` | SharpUp - audit token privileges - cmd: download SharpUp to server and execute. |
-| 📜 `windows/permissions/ps_audit_user_token_privileges.sh` | SharpUp - audit token privileges - PS: download SharpUp to server and execute. |
-| 📜 `windows/permissions/ps_enableTokens.sh` | enable permission tokens |
-
-***📂 windows/permissions/seBackupPrivilege***
-
-exploit seBackupPrivilege permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
-| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
-| 📜 `windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
-
-
-***📂 windows/permissions/forceChangePassword***
-
-exploit forceChangePassword permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/forceChangePassword/forceChangePassword.sh` | PowerShell: Force change password for user. |
-
-
-***📂 windows/permissions/seImpersonatePrivilege***
-
-exploit SeImpersonatePrivilege permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
-| 📜 `windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PS: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
-
-
-***📂 windows/permissions/SeDebugPrivilege***
-
-exploit SeDebugPrivilege permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/SeDebugPrivilege/SeDebugPrivilege.sh` | exploit SeDebugPrivilege permission |
-
-
-***📂 windows/permissions/seTakeOwnershipPrivilege***
-
-exploit SeTakeOwnershipPrivilege permission
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/permissions/seTakeOwnershipPrivilege/seTakeOwnershipPrivilege.sh` | exploit SeTakeOwnershipPrivilege permission |
-
-
-
-***📂 windows/powershell***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/powershell/check_default_username.sh` | Powershell: Check default username |
-| 📜 `windows/powershell/create_new_powershell_session_to_computer.sh` | Powershell - login to user on a different computer |
-| 📜 `windows/powershell/disable_defender.sh` | Disable Windows Defender and Firewall. |
-| 📜 `windows/powershell/download_and_execute_custom_script_in_memory.sh` | PowerShell: Download and execute script in memory. |
-| 📜 `windows/powershell/elevate_user.sh` | Powershell - elevate user |
-| 📜 `windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
-| 📜 `windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
-| 📜 `windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
-| 📜 `windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
-| 📜 `windows/powershell/search_for_file.sh` | Powershell: search for a file or extension |
-| 📜 `windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
-| 📜 `windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
-| 📜 `windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
-
-
-***📂 windows/bloodhound***
-
-Scripts for starting BloodHound and Neo4j.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/bloodhound/cmd_upload_sharphound_and_execute.sh` | cmd: Upload sharphound and execute |
-| 📜 `windows/bloodhound/ps_upload_sharphound_and_execute.sh` | ps: Upload sharphound and execute |
-| 📜 `windows/bloodhound/python_create_bloodhound_zip.sh` | Create a bloodhound zip with bloodhound-python |
-| 📜 `windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
-
-***📂 windows/bloodhound/dcsync***
-
-perform DCSync attack
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/bloodhound/dcsync/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
-
-
-***📂 windows/bloodhound/genericAll***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/bloodhound/genericAll/genericAll_exploit_part1.sh` | powershell: genericAll permissions exploit |
-
-
-***📂 windows/bloodhound/genericWrite***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part1.sh` | powershell: genericWrite permissions exploit |
-| 📜 `windows/bloodhound/genericWrite/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
-
-***📂 windows/bloodhound/genericWrite/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh` | powershell: genericWrite permissions exploit |
-
-
-
-
-***📂 windows/netexec***
-
-
-***📂 windows/netexec/rdp***
-
-NetExec scripts for RDP connections.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/rdp/check_ad_users_and_passwords.sh` | nxc rdp: Check RDP with user/pass. |
-| 📜 `windows/netexec/rdp/check_ad_users_and_passwords_with_files.sh` | nxc rdp: Check RDP with user/pass lists, continue on success. |
-
-***📂 windows/netexec/rdp/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords.sh` |  |
-| 📜 `windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh` |  |
-
-
-
-***📂 windows/netexec/smb***
-
-perform netexec smb attacks
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/smb/administrator_hash.sh` | check if smb is possible for username and hash |
-| 📜 `windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
-| 📜 `windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh` | convert smb rid-bruteforce to users list |
-| 📜 `windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
-| 📜 `windows/netexec/smb/dump_credentials_from_sam.sh` | dump sam |
-| 📜 `windows/netexec/smb/dump_ntds.sh` | dump ntds |
-| 📜 `windows/netexec/smb/enumerate_ad_users_and_passwords.sh` | enumerate over ad users and password file |
-| 📜 `windows/netexec/smb/enumerate_group.sh` | enumerate groups |
-| 📜 `windows/netexec/smb/enumerate_users_execute_cmd.sh` | execute cmd command |
-| 📜 `windows/netexec/smb/enumerate_users_execute_smbexec.sh` | execute smbexec command |
-| 📜 `windows/netexec/smb/find_autologon_in_registry_xml.sh` | searches the domain controller for registry.xml |
-| 📜 `windows/netexec/smb/login_with_username_password.sh` | login with username and password |
-| 📜 `windows/netexec/smb/null_session.sh` | check if null session is possible |
-| 📜 `windows/netexec/smb/password_policy.sh` | get password policy |
-| 📜 `windows/netexec/smb/rid_brute.sh` | enumerate users by bruteforcing RIDs |
-| 📜 `windows/netexec/smb/show_shares.sh` | show smb shares |
-| 📜 `windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
-| 📜 `windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
-| 📜 `windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
-| 📜 `windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
-
-
-***📂 windows/netexec/proxychains***
-
-
-***📂 windows/netexec/proxychains/smb***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/proxychains/smb/administrator_hash.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/check_ad_users_and_passwords.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/check_anonymous.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_lsa.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_credentials_from_sam.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/dump_ntds.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_group.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_local_users.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_cmd.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users_execute_smbexec.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/enumerate_users.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/find_autologon_in_registry_xml.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/null_session.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/password_policy.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/rid_brute.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/smb_start_listener.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/smb_user.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/spider_plus_share.sh` |  |
-| 📜 `windows/netexec/proxychains/smb/user_show_shares.sh` |  |
-
-
-***📂 windows/netexec/proxychains/winrm***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/proxychains/winrm/check_ad_users_and_passwords.sh` |  |
-
-
-
-***📂 windows/netexec/winrm***
-
-NetExec scripts for WinRM connections.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/winrm/check_ad_users_and_passwords.sh` | nxc winrm: Check WinRM connection with username and password. |
-
-***📂 windows/netexec/winrm/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh` |  |
-
-
-
-***📂 windows/netexec/ftp***
-
-perform netexec ftp attacks
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/netexec/ftp/login_with_username_file_password_file.sh` | login with username file and password file |
-| 📜 `windows/netexec/ftp/login_with_username_password.sh` | login with username and password |
-
-
-
-***📂 windows/enum4linux***
-
-Scripts for enum4linux.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/enum4linux/enum4linux_smb_null_session.sh` | Enumerate users and passwords via enum4linux. |
-
-***📂 windows/enum4linux/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/enum4linux/proxychains/enum4linux_smb_null_session.sh` |  |
-
-
-
-***📂 windows/smbmap***
-
-Scripts using smbmap for SMB share enumeration and command execution.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute command on smb as user with NTLM hash. |
-| 📜 `windows/smbmap/administrator_hash_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
-
-***📂 windows/smbmap/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/smbmap/proxychains/administrator_hash_execute_cmd_with_ntlm_hash.sh` |  |
-| 📜 `windows/smbmap/proxychains/administrator_hash_execute_cmd_with_password.sh` |  |
-
-
-
-***📂 windows/mimikatz***
-
-Scripts for Active Directory enumeration and credential dumping.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/mimikatz/cmd_upload_mimikatz_exe.sh` | cmd: upload mimikatz to server |
-| 📜 `windows/mimikatz/dump_lsa_secrets.sh` | Mimikatz: Dump lsa secrets. |
-| 📜 `windows/mimikatz/dump_lsass_credentials.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
-| 📜 `windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
-| 📜 `windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
-| 📜 `windows/mimikatz/ps_upload_mimikatz_exe.sh` | ps: upload mimikatz to server |
-
-
-***📂 windows/smbclient***
-
-Scripts using smbclient for share enumeration and access.
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/smbclient/connect_to_share_anonymous.sh` | smbclient: Connect to share anonymous. |
-| 📜 `windows/smbclient/connect_to_share_with_user.sh` | smbclient: Connect to share with user. |
-| 📜 `windows/smbclient/decrypt_groups_xml_cpassword.sh` | decrypt cpassword from groups.xml |
-| 📜 `windows/smbclient/download_folders_resurcive.sh` | smbclient: download files recursive |
-| 📜 `windows/smbclient/enable_recursive.sh` | smbclient: enable recursive |
-| 📜 `windows/smbclient/search_in_downloaded_files_for_groups_xml.sh` | search for group policies in downloaded folders |
-| 📜 `windows/smbclient/show_shares.sh` | smbclient: List shares. |
-| 📜 `windows/smbclient/turn_off_prompt.sh` | smbclient: turn off prompt |
-
-***📂 windows/smbclient/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/smbclient/proxychains/administrator_hash_execute_cmd.sh` |  |
-| 📜 `windows/smbclient/proxychains/connect_to_share.sh` |  |
-| 📜 `windows/smbclient/proxychains/show_shares.sh` |  |
-
-
-
-***📂 windows/asreproast***
-
-perform asreproast attack
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/asreproast/do_asreproast_attack.sh` | do an asreproast attack |
-
-
-***📂 windows/inveight***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/inveight/ps_upload_powerview_and_import.sh` | ps: Upload Inveigh.ps1 and import module |
-| 📜 `windows/inveight/start_inveight.sh` | Start Inveigh and perform a poofing attacks and captures hash/credential |
-| 📜 `windows/inveight/stop_inveight.sh` | Stop Inveigh |
-
-
-***📂 windows/xfreerdp***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/xfreerdp/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
-| 📜 `windows/xfreerdp/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
-
-***📂 windows/xfreerdp/proxychains***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/xfreerdp/proxychains/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
-| 📜 `windows/xfreerdp/proxychains/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive 'tools' to current directory (check `net use` for the location). |
-
-
-
-***📂 windows/cmd***
-
-| Path | Description |
-|------|-------------|
-| 📜 `windows/cmd/add_user.sh` | Net: Add use, add to administrators and RDP groups. |
-| 📜 `windows/cmd/add_user_to_domain.sh` | Net: Add user, add to Exchange Windows Permissions and Remote Mgmt groups. |
-| 📜 `windows/cmd/check_connected_drives.sh` | Net: Show connected network drives. |
-| 📜 `windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
-| 📜 `windows/cmd/check_user_account.sh` | Net: Get user information. |
-| 📜 `windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
-| 📜 `windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
-| 📜 `windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
-| 📜 `windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
-| 📜 `windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
 
 
 <br />
