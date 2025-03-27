@@ -21,16 +21,14 @@ folder_descriptions["retest"]="This is an optional folder if you need to return 
 
 # Create the folders and generate .md files
 for folder in "${!folder_descriptions[@]}"; do
-    mkdir -p "$BASE_DIR/$folder"
-    md_file="$BASE_DIR/$folder/info.md"
+    mkdir -p "${BASE_DIR}/${folder}"
+    md_file="${BASE_DIR}/${folder}/info.md"
     
     # Write the content to the markdown file
-    echo "# $folder_name" > "$md_file"
-    echo "" >> "$md_file"
-    echo "${folder_descriptions[$folder]}" >> "$md_file"
-    echo "Created: $(date)" >> "$md_file"
+    echo "# ${folder_descriptions["${folder}"]}" > "${md_file}"
+    echo "### created: $(date)" >> "${md_file}"
 
 done
 
 tree "${BASE_DIR}"
-echo "Folder structure and markdown files created under: `pwd`/${BASE_DIR}"
+echo "folder structure and markdown files created under: `pwd`/${BASE_DIR}"
