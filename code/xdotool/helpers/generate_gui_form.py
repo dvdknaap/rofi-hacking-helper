@@ -93,6 +93,7 @@ class FormApp:
                 entry.bind("<Control-a>", self.select_all_entry_text)  # Bind Ctrl + A
                 entry.bind("<Command-a>", self.select_all_entry_text)  # Voor Mac (⌘ + A)
                 entry.bind("<Return>", lambda event, field_name=field_name: self.submit_on_enter(event, field_name))
+                entry.bind("<KP_Enter>", lambda event, field_name=field_name: self.submit_on_enter(event, field_name))
                 self.entries[field_name] = entry
                 
             elif field_type == "select" and options:
@@ -141,6 +142,7 @@ class FormApp:
 
         # Bind Enter key to submit function
         root.bind("<Return>", lambda event: self.submit())
+        root.bind("<KP_Enter>", lambda event: self.submit())
 
     def _on_mousewheel(self, event) -> None:
         """Enable mousewheel scrolling"""

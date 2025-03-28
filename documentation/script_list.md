@@ -212,10 +212,17 @@ Collection of scripts for network scanning.
 
 | Path | Description |
 |------|-------------|
+| 📜 `nmapScans/create_html_report_from_nmap_xml.sh` | Nmap: create html report from nmap xml report |
 | 📜 `nmapScans/nmap_aggressive.sh` | Nmap: Aggressive scan all ports, save output. |
 | 📜 `nmapScans/nmap_check_online_hosts.sh` | Nmap: ping sweep |
 | 📜 `nmapScans/nmap_open_relay.sh` | Nmap: Check for open SMTP relay. |
-| 📜 `nmapScans/nmap_quick.sh` | Nmap: Scan hosts from hosts file, save output to given location. |
+| 📜 `nmapScans/nmap_quick_from_hosts_file.sh` | Nmap: Scan hosts from hosts file, save output to given location. |
+| 📜 `nmapScans/scan_for_smtp_banner_and_commands.sh` | Nmap: scan for smtp banner en commands |
+| 📜 `nmapScans/scan_for_specific_category.sh` | Nmap: scan for specific category |
+| 📜 `nmapScans/scan_for_vulnerabilities.sh` | Nmap: scan for vulnerabilities |
+| 📜 `nmapScans/scan_top10_ports.sh` | Nmap: scan top 10 ports |
+| 📜 `nmapScans/scan_udp.sh` | Nmap: udp scan |
+| 📜 `nmapScans/service_detection.sh` | Nmap: scan for services |
 
 ***📂 nmapScans/proxychains***
 
