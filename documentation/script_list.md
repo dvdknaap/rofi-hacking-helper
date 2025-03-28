@@ -16,6 +16,7 @@
 - [reconnaissance](#-reconnaissance)
 - [shell](#-shell)
 - [smtp](#-smtp)
+- [snmp](#-snmp)
 - [sqlDatabase](#-sqldatabase)
 - [ssh](#-ssh)
 - [web](#-web)
@@ -132,8 +133,17 @@ scripts to add, edit or remote dynamic fields
 
 ### 📂 fileTransfer/
 
-transfer file to or from a server for linux and windows
+file transfer to or from a server
 
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/cmd_mount_smb_share.sh` | cmd: mount smb share |
+| 📜 `fileTransfer/ps_upload_ftp_file_to_server.sh` | upload ftp file to server |
+| 📜 `fileTransfer/start_ftp_server.sh` | start a ftp server |
+| 📜 `fileTransfer/start_smb_share.sh` | start a smb server and create share location if not exists |
+| 📜 `fileTransfer/start_upload_server.sh` | start python upload server |
+| 📜 `fileTransfer/upload_base64_file_to_upload_server.sh` | upload base64 file to upload server |
+| 📜 `fileTransfer/upload_file_to_upload_server.sh` | upload file to upload server |
 
 ***📂 fileTransfer/linux***
 
@@ -759,8 +769,9 @@ Scripts using smbmap for SMB share enumeration and command execution.
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/smbmap/administrator_hash_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute command on smb as user with NTLM hash. |
-| 📜 `reconnaissance/windows/smbmap/administrator_hash_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
+| 📜 `reconnaissance/windows/smbmap/administrator_execute_cmd_with_ntlm_hash.sh` | smbmap: Execute command on smb as user with NTLM hash. |
+| 📜 `reconnaissance/windows/smbmap/administrator_execute_cmd_with_password.sh` | smbmap: Execute 'whoami' on smb as Administrator with password. |
+| 📜 `reconnaissance/windows/smbmap/show_shares.sh` | smbmap: show shares. |
 
 ***📂 reconnaissance/windows/smbmap/proxychains***
 
@@ -842,6 +853,12 @@ scripts to read AD info with rpcclient
 | 📜 `reconnaissance/windows/rpcclient/dumping_groups.sh` | rpcclient: Dumping groups |
 | 📜 `reconnaissance/windows/rpcclient/dumping_users_rid.sh` | rpcclient: Duming users rid |
 | 📜 `reconnaissance/windows/rpcclient/dumping_users.sh` | rpcclient: Dumping users |
+| 📜 `reconnaissance/windows/rpcclient/enumerate_all_available_shares.sh` | rpcclient: enumerates all available shares |
+| 📜 `reconnaissance/windows/rpcclient/enumerate_all_domains.sh` | rpcclient: enumerate all domains |
+| 📜 `reconnaissance/windows/rpcclient/get_info_of_specific_share.sh` | rpcclient: provides information about a specific share |
+| 📜 `reconnaissance/windows/rpcclient/get_server_info.sh` | rpcclient: get server info |
+| 📜 `reconnaissance/windows/rpcclient/rpcclient_brute_force_rids.sh` | rpcclient: brute Forcing User RIDs |
+| 📜 `reconnaissance/windows/rpcclient/samrdump_brute_force_rids.sh` | samrdump.py: brute Forcing User RIDs |
 
 
 ***📂 reconnaissance/windows/inveight***
@@ -1016,6 +1033,18 @@ send emails with swaks
 
 <br />
 
+### 📂 snmp/
+
+scripts to enumerate snmp
+
+| Path | Description |
+|------|-------------|
+| 📜 `snmp/braa_enemerate_snmp_server.sh` | braa: get public info of server |
+| 📜 `snmp/onesixtyone_enemerate_snmp_server.sh` | onesixtyone: get public info of server |
+| 📜 `snmp/snmpwalk_enemerate_snmp_server.sh` | snmpwalk: get public info of server |
+
+<br />
+
 ### 📂 sqlDatabase/
 
 perform database injections
@@ -1032,7 +1061,8 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/execute_xp_cmdshell.sh` | execute xp_cmdshell command |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
-| 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | mssql: bruteforce userpass file (user pass) |
+| 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | msfconsole: start mssql ping |
+| 📜 `sqlDatabase/mssql/nmap_enumerate_mssql_service.sh` | nmap: enumerate mysql service |
 | 📜 `sqlDatabase/mssql/read_directory.sh` | script to read directories with xp_dirtree |
 | 📜 `sqlDatabase/mssql/show_databases.sh` | show databases |
 | 📜 `sqlDatabase/mssql/show_tables_in_database.sh` | show tables in database |
@@ -1044,18 +1074,33 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/view_table_content_in_specific_database.sh` | view content in table in specific database |
 
 
-***📂 sqlDatabase/sqlmap***
+***📂 sqlDatabase/msyql***
+
+scripts to enumerate MySQL server
+
+| Path | Description |
+|------|-------------|
+| 📜 `sqlDatabase/msyql/connect_to_mysql_server.sh` | nmap: enumerate mysql service |
+| 📜 `sqlDatabase/msyql/nmap_enumerate_mysql_service.sh` | nmap: enumerate mysql service |
+| 📜 `sqlDatabase/msyql/select_one_existing_database.sh` | mysql: Select one of the existing databases |
+| 📜 `sqlDatabase/msyql/show_all_databases.sh` | mysql: show all databases |
+| 📜 `sqlDatabase/msyql/show_columns_of_table.sh` | mysql: show all columns of table |
+| 📜 `sqlDatabase/msyql/show_everything_of_table.sh` | mysql: show everything in the desired table |
+| 📜 `sqlDatabase/msyql/show_tables.sh` | mysql: show all available tables in the selected database |
+
+***📂 sqlDatabase/msyql/sqlmap***
 
 different sqlmap scripts to perform SQLi
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqlDatabase/sqlmap/dump-database.sh` | sqlmap: dump current database |
-| 📜 `sqlDatabase/sqlmap/dump_specific_database.sh` | sqlmap: dump specific database |
-| 📜 `sqlDatabase/sqlmap/forms.sh` | sqlmap: SQLi on all forms on a websith |
-| 📜 `sqlDatabase/sqlmap/perform_authorization_basic_header_attack.sh` | sqlmap: perform Authorization: Basic attack |
-| 📜 `sqlDatabase/sqlmap/show_databases.sh` | sqlmap: show all databases |
-| 📜 `sqlDatabase/sqlmap/show_specific_database_table.sh` | sqlmap: show specific database tables |
+| 📜 `sqlDatabase/msyql/sqlmap/dump-database.sh` | sqlmap: dump current database |
+| 📜 `sqlDatabase/msyql/sqlmap/dump_specific_database.sh` | sqlmap: dump specific database |
+| 📜 `sqlDatabase/msyql/sqlmap/forms.sh` | sqlmap: SQLi on all forms on a websith |
+| 📜 `sqlDatabase/msyql/sqlmap/perform_authorization_basic_header_attack.sh` | sqlmap: perform Authorization: Basic attack |
+| 📜 `sqlDatabase/msyql/sqlmap/show_databases.sh` | sqlmap: show all databases |
+| 📜 `sqlDatabase/msyql/sqlmap/show_specific_database_table.sh` | sqlmap: show specific database tables |
+
 
 
 <br />
@@ -1080,6 +1125,29 @@ scripts to start port listening or forwarding
 ### 📂 web/
 
 scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/get_ip_addressen_from_subdomain_list.sh` | convert subdomains list to ip addresses |
+| 📜 `web/get_shohan_info_by_ip.sh` | get shohan info by ip |
+| 📜 `web/get_subdomain_from_crt_sh_domain_certificates.sh` | get unique subdomains with crt.sh domain certificates |
+
+***📂 web/wafw00f***
+
+script to use wafw00f
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/wafw00f/check_if_website_is_behind_waf.sh` | wafw00f: check if website is behind waf |
+
+
+***📂 web/finalrecon***
+
+script to use finalrecon
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/finalrecon/gather_domain_info.sh` | finalrecon: gather website info |
 
 
 ***📂 web/fuzz***
@@ -1106,6 +1174,36 @@ execute eyewitness with custom or nmap file
 | 📜 `web/eyewitness/eyewitness_with_nmap_file.sh` | execute eyewitness with nmap file |
 
 
+***📂 web/nikto***
+
+script to use nikto
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/nikto/identify_software.sh` | nikto: identify software |
+
+
+***📂 web/dns***
+
+get DNS records
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/dns/brute_force_subdomain.sh` | brute force subdomain |
+| 📜 `web/dns/dnsenum_enumerate_dns_records.sh` | dnsenum: enumerate dns records |
+| 📜 `web/dns/get_aaaa_dns_records.sh` | dig AAAA domain name |
+| 📜 `web/dns/get_a_dns_records.sh` | dig A domain name |
+| 📜 `web/dns/get_any_dns_records.sh` | dig any domain name |
+| 📜 `web/dns/get_axfr_dns_records.sh` | dig axfr domain name |
+| 📜 `web/dns/get_cname_dns_records.sh` | dig CNAME domain name |
+| 📜 `web/dns/get_dns_server_version.sh` | dig get DNS server version |
+| 📜 `web/dns/get_mx_dns_records.sh` | dig MX domain name |
+| 📜 `web/dns/get_ns_dns_records.sh` | dig NS domain name |
+| 📜 `web/dns/get_ptr_dns_records.sh` | dig PTR domain name |
+| 📜 `web/dns/get_soa_dns_records.sh` | dig SOA domain name |
+| 📜 `web/dns/get_txt_dns_records.sh` | dig TXT domain name |
+
+
 ***📂 web/gobuster***
 
 scripts to do attacks with gobuster
@@ -1127,6 +1225,16 @@ dump .git folder to local folder
 | Path | Description |
 |------|-------------|
 | 📜 `web/gitDumper/dump_git_folder_to_local_folder.sh` | dump git folder to local folder |
+
+
+***📂 web/googleDorking***
+
+scripts to do google dorking
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/googleDorking/search_for_aws.sh` | Google Search for AWS |
+| 📜 `web/googleDorking/search_for_azure.sh` | Google Search for AZURE |
 
 
 ***📂 web/lfi***

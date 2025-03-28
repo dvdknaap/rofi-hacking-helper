@@ -1,0 +1,8 @@
+📂 linux | transfer file to or from a server for linux | linux
+📂 windows | transfer file to or from a server for windows | windows
+📜 cmd_mount_smb_share.sh | cmd: mount smb share | cmd mount smb share.sh
+📜 ps_upload_ftp_file_to_server.sh | upload ftp file to server | ps upload ftp file to server.sh
+📜 start_ftp_server.sh | start a ftp server | start ftp server.sh
+📜 start_smb_share.sh | start a smb server and create share location if not exists | start smb share.sh
+📜 start_upload_server.sh | start python upload server | start upload server.sh
+📜 upload_file_to_upload_server.sh | upload file to upload server | upload file to upload server.sh

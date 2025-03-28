@@ -3,7 +3,7 @@
 📂 crackPasswords | Crack passwords with hashcat | crackpasswords
 📂 customWordlist | create custom wordlists | customwordlist
 📂 decompile | decompile files | decompile
-📂 fileTransfer | transfer file to or from a server for linux and windows | filetransfer
+📂 fileTransfer | file transfer to or from a server | filetransfer
 📂 ftp | scripts for ftp enumeration | ftp
 📂 nmapScans | Collection of scripts for network scanning. | nmapscans
 📂 portListening | different scripts to do port listenings | portlistening
@@ -11,6 +11,7 @@
 📂 reconnaissance | scripts to do reconnaissance | reconnaissance
 📂 shell | scripts like automatically fix shell and make it interactive, start port listening, create rev shells | shell
 📂 smtp | scripts for smtp attacks | smtp
+📂 snmp | scripts to enumerate snmp | snmp
 📂 sqlDatabase | perform database injections | sqldatabase
 📂 ssh | scripts to start port listening or forwarding | ssh
 📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web

@@ -1,0 +1,10 @@
+📜 get_aaaa_dns_records.sh | dig AAAA domain name | get aaaa dns records.sh
+📜 get_a_dns_records.sh | dig A domain name | get a dns records.sh
+📜 get_any_dns_records.sh | dig any domain name | get any dns records.sh
+📜 get_cname_dns_records.sh | dig CNAME domain name | get cname dns records.sh
+📜 get_dns_server_version.sh | dig get DNS server version | get dns server version.sh
+📜 get_mx_dns_records.sh | dig MX domain name | get mx dns records.sh
+📜 get_ns_dns_records.sh | dig NS domain name | get ns dns records.sh
+📜 get_ptr_dns_records.sh | dig PTR domain name | get ptr dns records.sh
+📜 get_soa_dns_records.sh | dig SOA domain name | get soa dns records.sh
+📜 get_txt_dns_records.sh | dig TXT domain name | get txt dns records.sh

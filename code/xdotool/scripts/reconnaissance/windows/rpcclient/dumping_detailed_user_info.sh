@@ -13,7 +13,7 @@ DC_FIELD=$(form_item  "DC" "dc")
 RID_FIELD=$(form_item  "rid" "rid")
 
 # Generate GUI form
-generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${IP_FIELD}" "${RID_FIELD}"
+generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${IP_FIELD}" "${DC_FIELD}" "${RID_FIELD}"
 
 DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}

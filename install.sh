@@ -4,18 +4,28 @@
 check_and_install_package() {
     local package="$1"
 
-    if [[ -z "$package" ]]; then
-        echo "Usage: check_and_install_package <package_name>"
+    if [[ -z "${package}" ]]; then
+        show_info_notify_message "Usage: check_and_install_package <package_name>"
         return 1
     fi
 
-    echo "Checking if '$package' is installed..."
-    if ! command -v "$package" &>/dev/null; then
-        echo "'$package' is not installed. Installing..."
-        sudo apt update && sudo apt install -y "$package"
-    else
-        echo "'$package' is already installed."
+    echo "Checking if '${package}' is installed..."
+    if ! command -v "${package}" &>/dev/null; then
+        echo "'${package}' is not installed. Installing..."
+        sudo apt update && sudo apt install -y "${package}"
     fi
+}
+
+# Function to install pip3 packages
+install_pip3_packages() {
+    local package="$1"
+
+    if [[ -z "${package}" ]]; then
+        show_info_notify_message "Usage: install_pip3_packages <package_name>"
+        return 1
+    fi
+
+    pip3 install "${package}" --break-system-packages
 }
 
 # Function to clone or update the repository
@@ -23,12 +33,12 @@ clone_or_update_repo() {
     local repo_url="https://github.com/dvdknaap/rofi-hacking-helper.git"
     local target_dir="$HOME/Desktop/base"
 
-    if [ -d "$target_dir" ]; then
-        echo "Target directory $target_dir already exists. Pulling latest changes..."
-        git -C "$target_dir" pull
+    if [ -d "${target_dir}" ]; then
+        echo "Target directory ${target_dir} already exists. Pulling latest changes..."
+        git -C "${target_dir}" pull
     else
-        echo "Cloning repository to $target_dir..."
-        git clone "$repo_url" "$target_dir"
+        echo "Cloning repository to ${target_dir}..."
+        git clone "${repo_url}" "${target_dir}"
     fi
 }
 
@@ -43,6 +53,7 @@ setup_xfce_shortcut() {
     if [ $? -eq 0 ]; then
         echo -e "\e[32mShortcut successfully created! Use $keybind to launch the menu.\e[0m"
     else
+        show_error_notify_message "Failed to create shortcut. Please check your XFCE settings manually."
         echo -e "\e[31mFailed to create shortcut. Please check your XFCE settings manually.\e[0m"
     fi
 }
@@ -51,22 +62,22 @@ setup_xfce_shortcut() {
 check_gsettings_keybinding() {
     local search_command="$1"
 
-    echo "Checking if keybinding with command '$search_command' already exists..."
+    echo "Checking if keybinding with command '${search_command}' already exists..."
     local keybindings
     keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
 
     for key in $keybindings; do
-        local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.$key"
+        local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.${key}"
         local command
-        command=$(gsettings get "$key_path" command | tr -d "'")
+        command=$(gsettings get "${key_path}" command | tr -d "'")
 
-        if [[ "$command" == *"$search_command" ]]; then
+        if [[ "${command}" == *"${search_command}" ]]; then
             echo -e "\e[32mKeybinding already exists:\e[0m $command"
             return 0
         fi
     done
 
-    echo -e "\e[33mNo existing keybinding found for command '$search_command'.\e[0m"
+    echo -e "\e[33mNo existing keybinding found for command '${search_command}'.\e[0m"
     return 1
 }
 
@@ -83,24 +94,30 @@ main() {
     check_and_install_package xclip
     check_and_install_package expect
     check_and_install_package seclists
+    check_and_install_package jq
+    check_and_install_package onesixtyone
+    check_and_install_package braa
+    check_and_install_package wafw00f
+    check_and_install_package nikto
+    check_and_install_package finalrecon
 
-    pip3 install pyftpdlib --break-system-packages
-    pip3 install sv-ttk --break-system-packages
-    pip3 install darkdetect --break-system-packages
-    pip3 install git-dumper --break-system-packages
-    pip3 install pyftpdlib --break-system-packages
+    install_pip3_packages pyftpdlib
+    install_pip3_packages sv-ttk
+    install_pip3_packages darkdetect
+    install_pip3_packages git-dumper
+    install_pip3_packages shodan
+    install_pip3_packages uploadserver
 
     clone_or_update_repo
 
     # Check for existing keybinding
-    check_gsettings_keybinding "$shortcut_command"
+    check_gsettings_keybinding "${shortcut_command{}"
     if [ $? -ne 0 ]; then
-        setup_xfce_shortcut "$shortcut_command" "$keybind"
-    else
-        echo "Keybinding setup skipped as it already exists."
+        setup_xfce_shortcut "${shortcut_command}" "${keybind}"
     fi
-
-    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with $keybind in your terminal.\e[0m"
+    
+    show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
+    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal.\e[0m"
 }
 
 # Run the main function

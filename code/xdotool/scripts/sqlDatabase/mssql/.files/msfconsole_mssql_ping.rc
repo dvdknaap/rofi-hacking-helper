@@ -1,0 +1,3 @@
+use auxiliary/scanner/mssql/mssql_ping
+set RHOSTS [RHOSTS]
+run

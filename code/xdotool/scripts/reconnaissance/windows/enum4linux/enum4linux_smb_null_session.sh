@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "/usr/bin/enum4linux -U -P ${IP}"
+paste_command "/usr/bin/enum4linux -A -U -P ${IP}"
 xdotool key Return

@@ -59,5 +59,5 @@ find_and_replace_file() {
     shift 2
     replace_in_file "${SRC_FILE}" "${TMP_FILE}" "$@"
 
-    sleep 60 && rm $TMP_FILE &
+    sleep 60 && rm "${TMP_FILE}" &
 }

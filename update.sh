@@ -4,24 +4,35 @@
 BASEDIR=~/Desktop/base
 XDOTOOL_DIR="${BASEDIR}/code/xdotool"
 
-source "${XDOTOOL_DIR}/helpers/paste_commands.sh"
+source "${XDOTOOL_DIR}/helpers/linux.sh"
 
 # Function to check if a package is installed and install it if missing
 check_and_install_package() {
     local package="$1"
 
     if [[ -z "$package" ]]; then
-        echo "Usage: check_and_install_package <package_name>"
+        show_info_notify_message "Usage: check_and_install_package <package_name>"
         return 1
     fi
 
-    echo "Checking if '$package' is installed..."
-    if ! command -v "$package" &>/dev/null; then
-        echo "'$package' is not installed. Installing..."
-        sudo apt update && sudo apt install -y "$package"
-    else
-        echo "'$package' is already installed."
+    echo "Checking if '${package}' is installed..."
+    if ! command -v "${package}" &>/dev/null; then
+        echo "'${package}' is not installed. Installing..."
+        sudo apt update && sudo apt install -y "${package}"
     fi
+}
+
+# Function to install pip3 packages
+install_pip3_packages() {
+    local package="$1"
+
+    if [[ -z "$package" ]]; then
+        show_info_notify_message "Usage: install_pip3_packages <package_name>"
+        echo "Usage: install_pip3_packages <package_name>"
+        return 1
+    fi
+
+    pip3 install "${package}" --break-system-packages
 }
 
 # pull latest git version
@@ -45,14 +56,21 @@ main() {
     check_and_install_package xclip
     check_and_install_package expect
     check_and_install_package seclists
+    check_and_install_package jq
+    check_and_install_package onesixtyone
+    check_and_install_package braa
+    check_and_install_package wafw00f
+    check_and_install_package nikto
+    check_and_install_package finalrecon
 
-    pip3 install pyftpdlib --break-system-packages
-    pip3 install sv-ttk --break-system-packages
-    pip3 install darkdetect --break-system-packages
-    pip3 install git-dumper --break-system-packages
-    pip3 install pyftpdlib --break-system-packages
+    install_pip3_packages pyftpdlib
+    install_pip3_packages sv-ttk
+    install_pip3_packages darkdetect
+    install_pip3_packages git-dumper
+    install_pip3_packages shodan
+    install_pip3_packages uploadserver
 
-    paste_command "# Update complete!"
+    show_success_notify_message "Update is complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"
 }
 

@@ -5,7 +5,7 @@ smtp-user-enum: search for usernames with given domain name (Honeypot-Captures/m
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-IP_FIELD=$(form_item  "IP address" "number" "ip" "1337")
+IP_FIELD=$(form_item  "IP address" "ip")
 DOMAIN_FIELD=$(form_item  "domain" "domain")
 
 # Generate GUI form
