@@ -131,6 +131,7 @@ class DynamicFieldForm:
         self.root.bind("<Up>", self.on_key_press)
         self.root.bind("<Down>", self.on_key_press)
         self.root.bind("<Return>", self.on_key_press)
+        self.root.bind("<KP_Enter>", self.on_key_press)
 
         self.root.mainloop()
 

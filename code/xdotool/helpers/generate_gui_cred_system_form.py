@@ -127,6 +127,7 @@ class DynamicFormApp:
         entry.bind("<Control-a>", self.select_all_entry_text)  # Windows/Linux Ctrl + A
         entry.bind("<Command-a>", self.select_all_entry_text)  # Mac ⌘ + A
         entry.bind("<Return>", self.submit_on_enter)
+        entry.bind("<KP_Enter>", self.submit_on_enter)
 
         self.entries[field_name] = entry
 

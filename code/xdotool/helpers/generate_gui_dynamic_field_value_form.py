@@ -40,6 +40,7 @@ class JSONSelectorApp:
             self.listbox.insert(tk.END, key)
 
         self.listbox.bind("<Return>", self.submit_value)
+        self.listbox.bind("<KP_Enter>", self.submit_value)
         self.listbox.bind("<Up>", self.move_selection)
         self.listbox.bind("<Down>", self.move_selection)
 
