@@ -1,0 +1,4 @@
+open [IP]
+user [USERNAME] [PASSWORD]
+binary
+ls

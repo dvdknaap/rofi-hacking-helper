@@ -128,3 +128,12 @@ show_error_notify_message () {
 
     show_notify_message "${message}" "${title}" "${icon}" "${urgency}"
 }
+
+show_info_notify_message () {
+    local message="$1"
+    local title="${2:-Notification}" 
+    local icon="${3:-dialog-information}"
+    local urgency="${4:-normal}"
+
+    show_notify_message "${message}" "${title}" "${icon}" "${urgency}"
+}

@@ -12,7 +12,7 @@ IP_FIELD=$(form_item  "ip" "ip")
 DC_FIELD=$(form_item  "DC" "dc")
 
 # Generate GUI form
-generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${IP_FIELD}"
+generate_form "${DOMAIN_FIELD}" "${USERNAME_FIELD}" "${PASSWORD_FIELD}" "${IP_FIELD}" "${DC_FIELD}"
 
 DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}

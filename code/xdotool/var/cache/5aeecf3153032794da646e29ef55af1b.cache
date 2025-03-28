@@ -1,0 +1,8 @@
+📂 sqlmap | different sqlmap scripts to perform SQLi | sqlmap
+📜 connect_to_mysql_server.sh | nmap: enumerate mysql service | connect to mysql server.sh
+📜 nmap_enumerate_mysql_service.sh | nmap: enumerate mysql service | nmap enumerate mysql service.sh
+📜 select_one_existing_database.sh | mysql: Select one of the existing databases | select one existing database.sh
+📜 show_all_databases.sh | mysql: Show all databases | show all databases.sh
+📜 show_columns_of_table.sh | mysql: show all columns of table | show columns of table.sh
+📜 show_everything_of_table.sh | mysql: show everything in the desired table | show everything of table.sh
+📜 show_tables.sh | mysql: show all available tables in the selected database | show tables.sh

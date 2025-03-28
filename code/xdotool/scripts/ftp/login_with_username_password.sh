@@ -6,7 +6,7 @@ FTP: login with username and password
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
 IP_FIELD=$(form_item  "IP address" "ip")
-USERNAME_FIELD=$(form_item  "Username" "username")
+USERNAME_FIELD=$(form_item  "username" "username")
 PASSWORD_FIELD=$(form_item  "password" "password")
 
 # Generate GUI form
@@ -16,18 +16,16 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "ftp ${IP}"
-xdotool key Return
-sleep 1
+FILES_FOLDER="${SCRIPTS_DIR}/ftp/.files"
 
-paste_command "${USERNAME}"
-xdotool key Return
-sleep 1
+# Define replacement fields
+REPLACE_FIELDS=(
+    "[IP]" "${IP}"
+    "[USERNAME]" "${USERNAME}"
+    "[PASSWORD]" "${PASSWORD}"
+)
 
-paste_command "${PASSWORD}"
-xdotool key Return
-sleep 1
+find_and_replace_file "${FILES_FOLDER}" "user_login.txt" "${REPLACE_FIELDS[@]}"
 
-paste_command "ls"
+paste_command "ftp -v -n -s:${TMP_FILE} ${IP}"
 xdotool key Return
-sleep 1
