@@ -14,6 +14,7 @@
 📂 passwordSpraying | Scripts for performing password spraying attacks. | passwordspraying
 📂 permissions | Scripts related to privilege escalation and permission manipulation. | permissions
 📂 powershell | scripts to do reconnaissance in powershell | powershell
+📂 rpcclient | scripts to read AD info with rpcclient | rpcclient
 📂 smbclient | Scripts using smbclient for share enumeration and access. | smbclient
 📂 smbmap | Scripts using smbmap for SMB share enumeration and command execution. | smbmap
 📂 xfreerdp |  | xfreerdp

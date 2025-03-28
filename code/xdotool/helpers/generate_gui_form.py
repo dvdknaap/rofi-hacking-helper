@@ -212,8 +212,8 @@ def main() -> None:
     """Start the form."""
 
     fields, active_cred_system_fields = parse_arguments()
-    form_width=400
-    form_height=400
+    form_width=800
+    form_height=500
 
     root = tk.Tk()
     app = FormApp(root, fields, active_cred_system_fields, form_width, form_height)
