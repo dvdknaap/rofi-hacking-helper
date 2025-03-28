@@ -106,10 +106,13 @@ generate_form() {
 
     # Parse JSON output into a Bash associative array
     declare -gA form_data
-    while IFS="=" read -r key value; do
+    while IFS="]}" read -r key value; do
         clean_key=$(echo "${key}" | sed 's/\\\\/\\/g')
+        # Remove '}' from the start of the value
+        value=$(echo "$value" | sed 's/^}//')
+            
         form_data["${clean_key}"]="${value}"
-    done < <(echo "${json_output}" | jq -r 'to_entries | .[] | .key + "=" + .value')
+    done < <(echo "${json_output}" | jq -r 'to_entries | .[] | "\(.key)]}\(.value)"')
 
     return 0
 }
