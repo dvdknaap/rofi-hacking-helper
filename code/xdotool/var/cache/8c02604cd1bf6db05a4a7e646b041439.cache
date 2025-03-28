@@ -14,6 +14,7 @@
 📂 sqlDatabase | perform database injections | sqldatabase
 📂 ssh | scripts to start port listening or forwarding | ssh
 📂 web | scripts to execute web pentests like gobuster, eyewitness, ferobuster, fuzz | web
+📜 add_ip_domain_to_etc_hosts.sh | add ip and domains to /etc/hosts | add ip domain to etc hosts.sh
 📜 documentation_folders.sh | create the HTB documentation folder structure | documentation folders.sh
 📜 kali_ip.sh | get Kali IP address | kali ip.sh
 📜 save_ssh_key_to_authorized_keys.sh | save SSH key to authorized_keys | save ssh key to authorized keys.sh
