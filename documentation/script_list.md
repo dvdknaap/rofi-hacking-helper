@@ -26,6 +26,7 @@
 
 | Path | Description |
 |------|-------------|
+| 📜 `add_ip_domain_to_etc_hosts.sh` | add ip and domains to /etc/hosts |
 | 📜 `documentation_folders.sh` | create the HTB documentation folder structure |
 | 📜 `kali_ip.sh` | get Kali IP address |
 | 📜 `save_ssh_key_to_authorized_keys.sh` | save SSH key to authorized_keys |
@@ -77,6 +78,7 @@ crack passwords with john the ripper
 
 | Path | Description |
 |------|-------------|
+| 📜 `crackPasswords/john/crack_kerberost_5_as_rep_hashes.sh` | crack krb 5 as rep |
 | 📜 `crackPasswords/john/crack_ntlm_hashes.sh` | crack ntlm hashes |
 | 📜 `crackPasswords/john/unshadow_passwords.sh` | unshadow /etc/passwords |
 
@@ -783,7 +785,8 @@ perform asreproast attack
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/asreproast/do_asreproast_attack.sh` | do an asreproast attack |
+| 📜 `reconnaissance/windows/asreproast/do_asreproast_attack_hashcat.sh` | do an asreproast attack |
+| 📜 `reconnaissance/windows/asreproast/do_asreproast_attack_john.sh` | do an asreproast attack |
 
 
 ***📂 reconnaissance/windows/kerbrute***
@@ -793,6 +796,21 @@ perform kerbrute attacks
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/kerbrute/bruteforce_username_and_password.sh` | kerbrute: user enumerate on DC |
+
+
+***📂 reconnaissance/windows/rpcclient***
+
+scripts to read AD info with rpcclient
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/rpcclient/dumping_detailed_user_info.sh` | rpcclient: dumping detailed user info |
+| 📜 `reconnaissance/windows/rpcclient/dumping_domain_info.sh` | rpcclient: dumping domain info |
+| 📜 `reconnaissance/windows/rpcclient/dumping_domain_password_policy.sh` | rpcclient: Dumping domain password policy |
+| 📜 `reconnaissance/windows/rpcclient/dumping_groups_rid.sh` | rpcclient: Dumping groups rid |
+| 📜 `reconnaissance/windows/rpcclient/dumping_groups.sh` | rpcclient: Dumping groups |
+| 📜 `reconnaissance/windows/rpcclient/dumping_users_rid.sh` | rpcclient: Duming users rid |
+| 📜 `reconnaissance/windows/rpcclient/dumping_users.sh` | rpcclient: Dumping users |
 
 
 ***📂 reconnaissance/windows/inveight***

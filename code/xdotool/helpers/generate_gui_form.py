@@ -188,19 +188,20 @@ def parse_arguments() -> Tuple[List[Union[str, Dict]], Dict[str, Any]]:
     args = parser.parse_args()
 
     try:
-        active_cred_system_fields=""
-        fields = ""
-        if [ "${args.json_input}" != "" ]:
+        active_cred_system_fields={}
+        fields = []
+        
+        if args.json_input != '':
             fields = json.loads(args.json_input)
 
         if not isinstance(fields, list):
             raise ValueError("Invalid JSON format. Expected a list.")
         
-        if args.active_cred_system_json != "":
+        if args.active_cred_system_json != '':
             active_cred_system_fields = json.loads(args.active_cred_system_json)
 
-            if not isinstance(active_cred_system_fields, dict):
-                raise ValueError("Invalid JSON format. Expected a dict.")
+        if not isinstance(active_cred_system_fields, dict):
+            raise ValueError("Invalid JSON format. Expected a dict.")
             
         return fields,active_cred_system_fields
     except json.JSONDecodeError as e:

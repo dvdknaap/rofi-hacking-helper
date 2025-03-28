@@ -22,4 +22,3 @@ sleep 2
 
 paste_command "john --wordlist=${WORDLIST_FILE} unshadow.txt"
 xdotool key Return
-sleep 2
