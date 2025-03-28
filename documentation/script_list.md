@@ -235,15 +235,35 @@ different scripts to do port listenings
 
 | Path | Description |
 |------|-------------|
-| 📜 `portListening/add_new_ligolo_interface.sh` | add new ligolo interface |
-| 📜 `portListening/cmd_upload_ligolo_agent_exe.sh` | cmd: download ligolo agent.exe to server and connect to proxy |
-| 📜 `portListening/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
-| 📜 `portListening/ps_upload_ligolo_agent_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
-| 📜 `portListening/remove_ligolo_interface.sh` | remove ligolo interface |
 | 📜 `portListening/socat_listener.sh` |  |
 | 📜 `portListening/socat.sh` |  |
 | 📜 `portListening/ssh_forward_rdp_port.sh` | ssh: forward RDP port with id_rsa file |
-| 📜 `portListening/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
+
+***📂 portListening/chisel***
+
+scripts to use chisel
+
+| Path | Description |
+|------|-------------|
+| 📜 `portListening/chisel/cmd_upload_chisel_exe.sh` | cmd: download chisel.exe to server and connect to proxy |
+| 📜 `portListening/chisel/curl_chisel.sh` | download chisel agent to server and connect to proxy |
+| 📜 `portListening/chisel/ps_upload_chisel_exe.sh` | ps download chisel.exe to server and connect to proxy |
+| 📜 `portListening/chisel/start_chisel_proxy.sh` | start chisel proxy |
+
+
+***📂 portListening/ligolo***
+
+scripts to use ligolo
+
+| Path | Description |
+|------|-------------|
+| 📜 `portListening/ligolo/add_new_ligolo_interface.sh` | add new ligolo interface |
+| 📜 `portListening/ligolo/cmd_upload_ligolo_agent_exe.sh` | cmd: download ligolo agent.exe to server and connect to proxy |
+| 📜 `portListening/ligolo/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
+| 📜 `portListening/ligolo/ps_upload_ligolo_agent_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
+| 📜 `portListening/ligolo/remove_ligolo_interface.sh` | remove ligolo interface |
+| 📜 `portListening/ligolo/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
+
 
 <br />
 
@@ -254,6 +274,8 @@ different python scripts like to start http server
 | Path | Description |
 |------|-------------|
 | 📜 `python/http_server.sh` | start http server |
+| 📜 `python/python3_create_venv_folder.sh` | python3 create venv env folder |
+| 📜 `python/python3_venv_install_requirements.sh` | python3 venv install requirements.txt |
 | 📜 `python/server_always_return_200.sh` | start server and always return 200 |
 
 <br />
@@ -526,9 +548,11 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
 | 📜 `reconnaissance/windows/powershell/mini_linpeas.sh` | perform mini linpeas to get pentest info |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
+| 📜 `reconnaissance/windows/powershell/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
 | 📜 `reconnaissance/windows/powershell/ps_disable_defender.sh` | Disable defender |
 | 📜 `reconnaissance/windows/powershell/register_disable_defender.sh` | Disable defender in register |
 | 📜 `reconnaissance/windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
+| 📜 `reconnaissance/windows/powershell/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `reconnaissance/windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
 | 📜 `reconnaissance/windows/powershell/search_for_file.sh` | Powershell: search for a file or extension |
 | 📜 `reconnaissance/windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |

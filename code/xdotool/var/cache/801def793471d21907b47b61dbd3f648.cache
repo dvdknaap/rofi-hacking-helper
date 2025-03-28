@@ -1,5 +1,6 @@
 📜 check_default_username.sh | Powershell: Check default username | check default username.sh
 📜 check_defender_status.sh | check defender status | check defender status.sh
+📜 check_internal_listening_ports.sh | check internal listening ports | check internal listening ports.sh
 📜 create_new_powershell_session_to_computer.sh | Powershell - login to user on a different computer | create new powershell session to computer.sh
 📜 disable_defender.sh | Disable Windows Defender and Firewall. | disable defender.sh
 📜 disable_firewall.sh | Disable firewall | disable firewall.sh
