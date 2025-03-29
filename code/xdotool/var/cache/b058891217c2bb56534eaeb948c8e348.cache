@@ -1,6 +1,0 @@
-📜 dump-database.sh | sqlmap: dump current database | dump database.sh
-📜 dump_specific_database.sh | sqlmap: dump specific database | dump specific database.sh
-📜 forms.sh | sqlmap: SQLi on all forms on a websith | forms.sh
-📜 perform_authorization_basic_header_attack.sh | sqlmap: perform Authorization: Basic attack | perform authorization basic header attack.sh
-📜 show_databases.sh | sqlmap: show all databases | show databases.sh
-📜 show_specific_database_table.sh | sqlmap: show specific database tables | show specific database table.sh

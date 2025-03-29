@@ -1,5 +1,0 @@
-📂 chisel | scripts to use chisel | chisel
-📂 ligolo | scripts to use ligolo | ligolo
-📜 socat_listener.sh |  | socat listener.sh
-📜 socat.sh |  | socat.sh
-📜 ssh_forward_rdp_port.sh | ssh: forward RDP port with id_rsa file | ssh forward rdp port.sh

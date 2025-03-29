@@ -44,12 +44,37 @@ function get_description {
     local file=$1
     local description=""
 
+    # Check if it's a file
     if [[ -f "${file}" ]]; then
-        description=$(sed -n "/^: '\$/,/^'\$/{//!p}" "${file}")
-    elif [[ -d "${file}" && -f "${file}/.desc" ]]; then
-        description=$(cat "${file}/.desc")
-    else
-        description=""
+        # If the file is inside a 'proxychains' directory, get description from the parent directory
+        if [[ "${file}" == *"/proxychains"* ]]; then
+            # Remove 'proxychains/' from the path to get the parent directory
+            local parent_file=$(echo "${file}" | sed 's/\/proxychains//')
+
+            # Get the description from the parent directory's .desc file
+            if [[ -f "${parent_file}" ]]; then
+                # For files outside 'proxychains', get description from the file itself (comments)
+                description="proxychains: $(sed -n "/^: '\$/,/^'\$/{//!p}" "${parent_file}")"
+            fi
+        else
+            # For files outside 'proxychains', get description from the file itself (comments)
+            description=$(sed -n "/^: '\$/,/^'\$/{//!p}" "${file}")
+        fi
+    # Check if it's a directory
+    elif [[ -d "${file}" ]]; then
+
+        # If the directory is inside 'proxychains', get description from the parent directory's .desc file
+        if [[ "${file}" == *"/proxychains"* ]]; then
+            local parent_dir=$(echo "${file}" | sed 's/\/proxychains//')
+            local parent_desc="${parent_dir}/.desc"
+
+            if [[ -f "${parent_desc}" ]]; then
+                description="proxychains: $(cat "${parent_desc}")"
+            fi
+        elif [[ -f "${file}/.desc" ]]; then
+            # Otherwise, get the description from the .desc file in the directory
+            description=$(cat "${file}/.desc")
+        fi
     fi
 
     echo "${description}"

@@ -1,4 +1,0 @@
-📜 cmd_upload_chisel_exe.sh | cmd: download chisel.exe to server and connect to proxy | cmd upload chisel exe.sh
-📜 curl_chisel.sh | download chisel agent to server and connect to proxy | curl chisel.sh
-📜 ps_upload_chisel_exe.sh | ps download chisel.exe to server and connect to proxy | ps upload chisel exe.sh
-📜 start_chisel_proxy.sh | start chisel proxy | start chisel proxy.sh

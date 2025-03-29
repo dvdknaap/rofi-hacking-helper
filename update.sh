@@ -72,6 +72,9 @@ main() {
 
     show_success_notify_message "Update is complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"
+    
+    sleep 0.8
+    firefox documentation/scripts_list.html
 }
 
 # Run the main function

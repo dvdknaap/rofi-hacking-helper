@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Documentation</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #1e1e1e;
+        }
+        tr:nth-child(even) {
+            background-color: #222;
+        }
+        tr:nth-child(odd) {
+            background-color: #181818;
+        }
+        tr:hover {
+            background-color: #333 !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>📜 Script Documentation</h1>
+    <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
+    <table>
+        <thead>
+            <tr>
+                <th>Path</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody id="scriptTable">
+            <!-- Table rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+    <script>
+        const scripts = [
+    {
+        "type": "script",
+        "path": "dynamicFields/add_dynamic_fields.sh",
+        "description": "add new dynamic fields"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/edit_dynamic_fields.sh",
+        "description": "show a list of dynamic fields so you can edit them"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/get_active_custom_field.sh",
+        "description": "get a current active dynamic field"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/get_active_domain.sh",
+        "description": "get current active dynamic field domain"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/get_active_ip.sh",
+        "description": "get current active dynamic field ip"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/get_active_password.sh",
+        "description": "get current active dynamic field password"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/get_active_username.sh",
+        "description": "get current active dynamic field username"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/remove_dynamic_fields.sh",
+        "description": "show a list of dynamic fields so you can remove them"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/set_active_dynamic_fields.sh",
+        "description": "show a list of dynamic fields and select one to use as default values"
+    },
+    {
+        "type": "script",
+        "path": "dynamicFields/unset_active_dynamic_fields.sh",
+        "description": "remove active dynamic fields"
+    },
+    {
+        "type": "script",
+        "path": "auditTools/domainPasswordAuditTool_dpat/audit_ad_passwords_hashcat_profile.sh",
+        "description": "Domain Password Audit Tool (DPAT)"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh",
+        "description": "Crack Kerberos 5, etype 23, AS-REP hashes with hashcat."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_kerberos5_etype-23_tgs_rep_hash.sh",
+        "description": "Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_net_ntlm_hashes.sh",
+        "description": "Crack NTLM hashes with hashcat."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_net_ntlmv2_hashes.sh",
+        "description": "Crack NetNTLMv2 hashes with hashcat."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_spn_passwords.sh",
+        "description": "Crack SPN passwords with hashcat using rockyou.txt."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_spn_passwords_with_OneRuleToRuleThemAll_rule.sh",
+        "description": "Crack SPN passwords with hashcat and OneRuleToRuleThemAll.rule."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_spn_passwords_with_best64_rule.sh",
+        "description": "Crack SPN passwords with hashcat and best64.rule."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/create_rockyou_OneRuleToRuleThemAll_rule_custom_wordlist.sh",
+        "description": "Create sorted, unique wordlist: given wordlist + OneRuleToRuleThemAll.rule."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/create_rockyou_best64_rule_custom_wordlist.sh",
+        "description": "Create sorted, unique wordlist from given wordlist + best64.rule."
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/format_ntlm_username_rid_lm_ntlm_hashes_to_hashcat.sh",
+        "description": "Format username:RID:LM:NTLM::: to hashcat format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_kerberost_5_as_rep_hashes.sh",
+        "description": "crack krb 5 as rep"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_ntlm_hashes.sh",
+        "description": "crack ntlm hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/unshadow_passwords.sh",
+        "description": "unshadow /etc/passwords"
+    },
+    {
+        "type": "script",
+        "path": "customWordlist/cewl_create_custom_wordlist.sh",
+        "description": "cewl - create custom wordlist"
+    },
+    {
+        "type": "script",
+        "path": "decompile/java/decompile_java_class_file.sh",
+        "description": "Decompile java class file"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/cmd_mount_smb_share.sh",
+        "description": "cmd: mount smb share"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ps_upload_ftp_file_to_server.sh",
+        "description": "upload ftp file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/start_ftp_server.sh",
+        "description": "start a ftp server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/start_smb_share.sh",
+        "description": "start a smb server and create share location if not exists"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/start_upload_server.sh",
+        "description": "start python upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/upload_base64_file_to_upload_server.sh",
+        "description": "upload base64 file to upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/upload_file_to_upload_server.sh",
+        "description": "upload file to upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/linux/scp_download_file_from_server.sh",
+        "description": "SCP download file from server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/linux/scp_upload_server_to_file.sh",
+        "description": "SCP upload file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/start_python_server_to_binary_folder.sh",
+        "description": "start python server to binary folder"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_lazagne_file.sh",
+        "description": "cmd: upload LaZagne file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_nc64_file.sh",
+        "description": "cmd: upload nc64 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_nc_file.sh",
+        "description": "cmd: upload nc file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_print_spoofer_file.sh",
+        "description": "cmd: upload PrintSpoofer file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_any_file.sh",
+        "description": "cmd: upload winPEASany.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_any_ofs_file.sh",
+        "description": "cmd: upload winPEASany_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_bat_file.sh",
+        "description": "cmd: upload winPEAS.bat file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_x64_file.sh",
+        "description": "cmd: upload winPEASx64.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_x64_ofs_file.sh",
+        "description": "cmd: upload winPEASx64_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_x86_file.sh",
+        "description": "cmd: upload winPEASx86.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_winpeas_x86_ofs_file.sh",
+        "description": "cmd: upload winPEASx86_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_attacker_file_to_nc_as_base64.sh",
+        "description": "ps: upload attacker file to nc as base64"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_lazagne_file.sh",
+        "description": "ps: upload LaZagne file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_nc64_file.sh",
+        "description": "ps: upload nc64 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_nc_file.sh",
+        "description": "ps: upload nc file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_print_spoofer_file.sh",
+        "description": "ps: upload PrintSpoofer file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_any_file.sh",
+        "description": "ps: upload winPEASany.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_any_ofs_file.sh",
+        "description": "ps: upload winPEASany_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_bat_file.sh",
+        "description": "ps: upload winPEAS.bat file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_x64_file.sh",
+        "description": "ps: upload winPEASx64.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_x64_ofs_file.sh",
+        "description": "ps: upload winPEASx64_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_x86_file.sh",
+        "description": "ps: upload winPEASx86.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_winpeas_x86_ofs_file.sh",
+        "description": "ps: upload winPEASx86_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "ftp/anonymous_login.sh",
+        "description": "FTP: check for anonymous login"
+    },
+    {
+        "type": "script",
+        "path": "ftp/hydra_bruteforce_username_and_password.sh",
+        "description": "hydra: bruteforce username and password"
+    },
+    {
+        "type": "script",
+        "path": "ftp/login_with_username_password.sh",
+        "description": "FTP: login with username and password"
+    },
+    {
+        "type": "script",
+        "path": "ftp/metasploit_bruteforce_username_and_password_file.sh",
+        "description": "hydra: bruteforce username and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "ftp/metasploit_bruteforce_username_file_and_password_file.sh",
+        "description": "hydra: bruteforce username file and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "ftp/wget_download_files_from_ftp.sh",
+        "description": "wget: download files from ftp"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/create_html_report_from_nmap_xml.sh",
+        "description": "Nmap: create html report from nmap xml report"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/nmap_aggressive.sh",
+        "description": "Nmap: Aggressive scan all ports, save output."
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/nmap_check_online_hosts.sh",
+        "description": "Nmap: ping sweep"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/nmap_open_relay.sh",
+        "description": "Nmap: Check for open SMTP relay."
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/nmap_quick_from_hosts_file.sh",
+        "description": "Nmap: Scan hosts from hosts file, save output to given location."
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/scan_for_smtp_banner_and_commands.sh",
+        "description": "Nmap: scan for smtp banner en commands"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/scan_for_specific_category.sh",
+        "description": "Nmap: scan for specific category"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/scan_for_vulnerabilities.sh",
+        "description": "Nmap: scan for vulnerabilities"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/scan_top10_ports.sh",
+        "description": "Nmap: scan top 10 ports"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/scan_udp.sh",
+        "description": "Nmap: udp scan"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/service_detection.sh",
+        "description": "Nmap: scan for services"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/proxychains/nmap_aggressive.sh",
+        "description": "proxychains: Nmap: Aggressive scan all ports, save output."
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/proxychains/nmap_check_online_hosts.sh",
+        "description": "proxychains: Nmap: ping sweep"
+    },
+    {
+        "type": "script",
+        "path": "nmapScans/proxychains/nmap_open_relay.sh",
+        "description": "proxychains: Nmap: Check for open SMTP relay."
+    },
+    {
+        "type": "script",
+        "path": "portListening/socat.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "portListening/socat_listener.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "portListening/ssh_forward_rdp_port.sh",
+        "description": "ssh: forward RDP port with id_rsa file"
+    },
+    {
+        "type": "script",
+        "path": "portListening/chisel/cmd_upload_chisel_exe.sh",
+        "description": "cmd: download chisel.exe to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/chisel/curl_chisel.sh",
+        "description": "download chisel agent to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/chisel/ps_upload_chisel_exe.sh",
+        "description": "ps download chisel.exe to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/chisel/start_chisel_proxy.sh",
+        "description": "start chisel proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/add_new_ligolo_interface.sh",
+        "description": "add new ligolo interface"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/cmd_upload_ligolo_agent_exe.sh",
+        "description": "cmd: download ligolo agent.exe to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/curl_ligolo_agent.sh",
+        "description": "download ligolo agent to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/ps_upload_ligolo_agent_exe.sh",
+        "description": "ps download ligolo agent.exe to server and connect to proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/remove_ligolo_interface.sh",
+        "description": "remove ligolo interface"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/start_ligolo_proxy.sh",
+        "description": "configure ligolo interface and start proxy"
+    },
+    {
+        "type": "script",
+        "path": "python/http_server.sh",
+        "description": "start http server"
+    },
+    {
+        "type": "script",
+        "path": "python/python3_create_venv_folder.sh",
+        "description": "python3 create venv env folder"
+    },
+    {
+        "type": "script",
+        "path": "python/python3_venv_install_requirements.sh",
+        "description": "python3 venv install requirements.txt"
+    },
+    {
+        "type": "script",
+        "path": "python/server_always_return_200.sh",
+        "description": "start server and always return 200"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/check_for_ps_changes.sh",
+        "description": "refresh ps -aux list every second"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/check_running_cronjobs.sh",
+        "description": "download pspy64 to server and run it"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/execute_linpeas.sh",
+        "description": "download linpeas to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/linpeas_one_liner.sh",
+        "description": "linpeas one liner"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/local_port_scan_on_ip.sh",
+        "description": "local port scan on ip"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/mini_linpeas.sh",
+        "description": "perform mini linpeas to get pentest info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/mount_nfs_file_system.sh",
+        "description": "mount to ip"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/ping_sweep_linux.sh",
+        "description": "ping sweep - check if ips are alive in ip range 0.0.0"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/show_mounts.sh",
+        "description": "show ip mounts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/tcpdump_sniff_traffic.sh",
+        "description": "sniff for traffic with tcpdump and save to pcap file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/unmount_nfs_file_system.sh",
+        "description": "unmount ip mount"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh",
+        "description": "save username and ntlm hashes in seperated files from form username:RID:LM:NTLM:::"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/impacket_get_ad_users.sh",
+        "description": "Impacket: GetADUsers.py get domain users"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/impacket_ntlmrelay.sh",
+        "description": "impacket NTLM relayx attack"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/psexect_to_user.sh",
+        "description": "Impacket: psexec.py get psexec shell"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/read_sam_database.sh",
+        "description": "Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/request_user_spns_check_for_services.sh",
+        "description": "GetUserSPNs: check for services"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/save_sam_database.sh",
+        "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/show_user_spns.sh",
+        "description": "GetUserSPNs: check for services"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/snaffler.sh",
+        "description": "Run Snaffler on domain."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/wmiexec_connect_to_user.sh",
+        "description": "wmiexec: get shell to user"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/get_user_tgt.sh",
+        "description": "get user Ticket Granting Ticket (TGT)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/add_officer.sh",
+        "description": "add officer"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/automate_exploit.sh",
+        "description": "automaticly exploit"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/check_if_user_is_vurnerable.sh",
+        "description": "check if user is vulnerable"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/enable_template.sh",
+        "description": "enable template"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/get_hash_with_pfx_file.sh",
+        "description": "get hash with pfx file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/issue_request_certificate.sh",
+        "description": "request certificate according to template"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/list_templates.sh",
+        "description": "check if user is vulnerable"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/request_certificate.sh",
+        "description": "request certificate according to template"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/certipy_ad/retrieve_certificate.sh",
+        "description": "retrieve certificate"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_as_system.sh",
+        "description": "ps: Makes the current PowerShell thread impersonate SYSTEM."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_impersonate_lsass_security_token.sh",
+        "description": "ps: Makes the current thread impersonate the lsass security token"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_list_all_tokens_on_computer.sh",
+        "description": "ps: Lists all tokens available on the computer."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_list_tokens_on_computer.sh",
+        "description": "ps: Lists all unique usable tokens on the computer."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_spawn_cmd_as_system.sh",
+        "description": "ps: Spawns cmd.exe as SYSTEM."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/invokeTokenManipulation/ps_upload_tokenManipulation.sh",
+        "description": "ps: Upload and import module Invoke-TokenManipulation.ps1"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/kerbrute/bruteforce_username_and_password.sh",
+        "description": "kerbrute: user enumerate on DC"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/list_domain_users.sh",
+        "description": "creating a List of Domain Users"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh",
+        "description": "Loop over de ad_users and get AD rights"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh",
+        "description": "ps: Upload sharphound and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/rubeus/ps_upload_robeus.sh",
+        "description": "ps: Upload Rubeus.exe"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/runasCs/ps_upload_runascs.sh",
+        "description": "ps: Upload RunasCs.exe"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/sharpGPOAbuse/ps_gpo_abuse.sh",
+        "description": "ps: do a GPO abuse"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/sharpGPOAbuse/ps_upload_sharp_gpo_abuse.sh",
+        "description": "ps: Upload sharpGPOAbuse"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/asreproast/crack_kerberos5_etype-23_as_rep_hash.sh",
+        "description": "Crack Kerberos 5, etype 23, AS-REP hashes with hashcat."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/asreproast/do_asreproast_attack_hashcat.sh",
+        "description": "do an asreproast attack"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/asreproast/do_asreproast_attack_john.sh",
+        "description": "do an asreproast attack"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/cmd_upload_sharphound_and_execute.sh",
+        "description": "cmd: Upload sharphound and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/ps_upload_sharphound_and_execute.sh",
+        "description": "ps: Upload sharphound and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/python_create_bloodhound_zip.sh",
+        "description": "Create a bloodhound zip with bloodhound-python"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/start_bloodhound.sh",
+        "description": "Start Neo4j service and launch BloodHound GUI."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/dcsync/secretsdump_domain_user.sh",
+        "description": "Impacket: use secretsdump to dump hashes (DCSync)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/executeDCOM/dcom_attack_exploit.sh",
+        "description": "perform executeDcom attack"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/genericAll/genericAll_exploit_part1.sh",
+        "description": "powershell: genericAll permissions exploit"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/genericWrite/genericWrite_exploit_part1.sh",
+        "description": "powershell: genericWrite permissions exploit"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/genericWrite/genericWrite_exploit_part2.sh",
+        "description": "powershell: genericWrite permissions exploit"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/bloodhound/genericWrite/proxychains/genericWrite_exploit_part2.sh",
+        "description": "proxychains: powershell: genericWrite permissions exploit"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/add_user.sh",
+        "description": "Net: Add use, add to administrators and RDP groups."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/add_user_to_domain.sh",
+        "description": "Net: Add user, add to Exchange Windows Permissions and Remote Mgmt groups."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/check_connected_drives.sh",
+        "description": "Net: Show connected network drives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/check_local_administrators.sh",
+        "description": "Net: Check local administrators"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/check_user_account.sh",
+        "description": "Net: Get user information."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/copy_file_from_shared_drive.sh",
+        "description": "Copy file from shared drive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_any_exe.sh",
+        "description": "download winPEASany.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh",
+        "description": "download winPEASany_ofs.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_bat.sh",
+        "description": "download winPEAS.bat to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_x64_exe.sh",
+        "description": "download winPEASx64.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_x64_ofs_exe.sh",
+        "description": "download winPEASx64_ofs.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_x86_exe.sh",
+        "description": "download winPEASx86.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/execute_winpeas_x86_ofs_exe.sh",
+        "description": "download winPEASx86_ofs.exe to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/find_services.sh",
+        "description": "Find services"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/mini_linpeas.sh",
+        "description": "perform mini linpeas to get pentest info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/net_user_domain_details.sh",
+        "description": "Net: Get domain user information."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/ping_sweep_cmd.sh",
+        "description": "ping sweep - check if ips are alive in ip range 0.0.0"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/proof_admin.sh",
+        "description": "Read contents of C:\\Users\\Administrator\\Desktop\\proof.txt."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/root_admin.sh",
+        "description": "Read contents of C:\\Users\\Administrator\\Desktop\\root.txt."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/secretsdump_domain_user.sh",
+        "description": "Impacket: use secretsdump to dump hashes (DCSync)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/enum4linux/enum4linux_smb_null_session.sh",
+        "description": "Enumerate users and passwords via enum4linux."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/enum4linux/proxychains/enum4linux_smb_null_session.sh",
+        "description": "proxychains: Enumerate users and passwords via enum4linux."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/evilWinRm/connect_to_user_hash.sh",
+        "description": "Connect with Evil-WinRM as user using NTLM hash."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/evilWinRm/connect_to_user_password.sh",
+        "description": "Connect with Evil-WinRM as Administrator using password."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/evilWinRm/proxychains/connect_to_user_hash.sh",
+        "description": "proxychains: Connect with Evil-WinRM as user using NTLM hash."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/evilWinRm/proxychains/connect_to_user_password.sh",
+        "description": "proxychains: Connect with Evil-WinRM as Administrator using password."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/inveight/ps_upload_powerview_and_import.sh",
+        "description": "ps: Upload Inveigh.ps1 and import module"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/inveight/start_inveight.sh",
+        "description": "Start Inveigh and perform a poofing attacks and captures hash/credential"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/inveight/stop_inveight.sh",
+        "description": "Stop Inveigh"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/kerberoasting/export_spn_users.sh",
+        "description": "PowerShell: Get SPNs, format for Hashcat, export to spns.csv."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/kerberoasting/get_samaccountname.sh",
+        "description": "PowerShell: Get SPN user account names."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/kerbrute/bruteforce_username_and_password.sh",
+        "description": "kerbrute: user enumerate on DC"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/lazagne/cmd_upload_lazagne_file.sh",
+        "description": "cmd: upload LaZagne file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/lazagne/lazagne_dump_browser_credentials.sh",
+        "description": "Dump browser stored credentials"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/lazagne/lazagne_dump_credentials.sh",
+        "description": "Dump windows stored credentials"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/lazagne/ps_upload_lazagne_exe.sh",
+        "description": "ps upload LaZagne to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/ldapsearch_check_base_naming_contexts.sh",
+        "description": "ldapsearch check for base namingcontexts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/ldapsearch_check_specific_naming_contexts.sh",
+        "description": "ldapsearch check for specific namingcontexts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh",
+        "description": "ldapsearch show user info of specific namingcontexts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/ldapsearch_show_user_info_of_specific_naming_contexts.sh",
+        "description": "ldapsearch show user info of specific namingcontexts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/nmap_ldap_scripts_scan.sh",
+        "description": "nmap scan with ldap scripts"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/cmd_upload_mimikatz_exe.sh",
+        "description": "cmd: upload mimikatz to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/dump_lsa_secrets.sh",
+        "description": "Mimikatz: Dump lsa secrets."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/dump_lsass_credentials.sh",
+        "description": "Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords)."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/dump_lsass_credentials_with_processprotect.sh",
+        "description": "Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords)."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/kerberos_double_hop_fix.sh",
+        "description": "Fix Kerberos \"Double Hop\" problem when using WinRM/Powershell"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/ps_upload_mimikatz_exe.sh",
+        "description": "ps: upload mimikatz to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/ftp/login_with_username_file_password_file.sh",
+        "description": "login with username file and password file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/ftp/login_with_username_password.sh",
+        "description": "login with username and password"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/rdp/check_ad_users_and_passwords.sh",
+        "description": "nxc rdp: Check RDP with user/pass."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/rdp/check_ad_users_and_passwords_with_files.sh",
+        "description": "nxc rdp: Check RDP with user/pass lists, continue on success."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/rdp/proxychains/check_ad_users_and_passwords.sh",
+        "description": "proxychains: nxc rdp: Check RDP with user/pass."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/rdp/proxychains/check_ad_users_and_passwords_with_files.sh",
+        "description": "proxychains: nxc rdp: Check RDP with user/pass lists, continue on success."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/administrator_hash.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/check_anonymous.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/dump_credentials_from_lsa.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/dump_credentials_from_sam.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/dump_ntds.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/enumerate_ad_users_and_passwords.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/enumerate_group.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/enumerate_users_execute_cmd.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/enumerate_users_execute_smbexec.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/find_autologon_in_registry_xml.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/login_with_username_password.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/null_session.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/password_policy.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/rid_brute.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/show_shares.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/smb_enumerate_users.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/smb_start_listener.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/spider_plus_share.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/user_hash.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/administrator_hash.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/check_anonymous.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/convert_smb_rid_brute_force_to_username_list.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_lsa.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_sam.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/dump_ntds.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_ad_users_and_passwords.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_group.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_cmd.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_smbexec.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/find_autologon_in_registry_xml.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/login_with_username_password.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/null_session.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/password_policy.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/rid_brute.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/show_shares.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/smb_enumerate_users.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/smb_start_listener.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/spider_plus_share.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/proxychains/user_hash.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/winrm/check_ad_users_and_passwords.sh",
+        "description": "nxc winrm: Check WinRM connection with username and password."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/winrm/proxychains/check_ad_users_and_passwords.sh",
+        "description": "proxychains: nxc winrm: Check WinRM connection with username and password."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/passwordSpraying/domain_password_spray.sh",
+        "description": "PowerShell: Password spray using DomainPasswordSpray.ps1."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/passwordSpraying/upload_domain_password_spray_ps1.sh",
+        "description": "PowerShell: upload and import DomainPasswordSpray.ps1."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/cmd_audit_user_token_privileges.sh",
+        "description": "SharpUp - audit token privileges - cmd: download SharpUp to server and execute."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/ps_audit_user_token_privileges.sh",
+        "description": "SharpUp - audit token privileges - PS: download SharpUp to server and execute."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/ps_enableTokens.sh",
+        "description": "enable permission tokens"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/SeDebugPrivilege/SeDebugPrivilege.sh",
+        "description": "exploit SeDebugPrivilege permission"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/forceChangePassword/forceChangePassword.sh",
+        "description": "PowerShell: Force change password for user."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh",
+        "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_with_security.sh",
+        "description": "Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh",
+        "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh",
+        "description": "CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh",
+        "description": "PS: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seTakeOwnershipPrivilege/seTakeOwnershipPrivilege.sh",
+        "description": "exploit SeTakeOwnershipPrivilege permission"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/check_default_username.sh",
+        "description": "Powershell: Check default username"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/check_defender_status.sh",
+        "description": "check defender status"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/check_internal_listening_ports.sh",
+        "description": "check internal listening ports"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh",
+        "description": "Powershell - login to user on a different computer"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/disable_defender.sh",
+        "description": "Disable Windows Defender and Firewall."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/disable_firewall.sh",
+        "description": "Disable firewall"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/download_and_execute_custom_script_in_memory.sh",
+        "description": "PowerShell: Download and execute script in memory."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/elevate_user.sh",
+        "description": "Powershell - elevate user"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh",
+        "description": "Search for password in .txt,.ini, config, .db, .py files"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/find_passwords_in_account_description.sh",
+        "description": "PowerShell: Get users with non-null descriptions."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/import_module_powerview_ps1.sh",
+        "description": "PowerShell: Import PowerView module."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/mini_linpeas.sh",
+        "description": "perform mini linpeas to get pentest info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/ping_sweep_powershell.sh",
+        "description": "ping sweep - check if ips are alive in ip range 0.0.0"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/proof_admin.sh",
+        "description": "Read contents of C:\\Users\\Administrator\\Desktop\\proof.txt."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/ps_disable_defender.sh",
+        "description": "Disable defender"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/register_disable_defender.sh",
+        "description": "Disable defender in register"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/restore_item_from_recycle_bin.sh",
+        "description": "Powershell: restore item from recycle bin"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/root_admin.sh",
+        "description": "Read contents of C:\\Users\\Administrator\\Desktop\\root.txt."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/save_custom_script_to_remote_server.sh",
+        "description": "PowerShell: Save file and save in current remote folder."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/search_for_file.sh",
+        "description": "Powershell: search for a file or extension"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/show_hidden_directories.sh",
+        "description": "Powershell: show hidden directories"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/show_hidden_files.sh",
+        "description": "Powershell: show hidden files"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/show_items_in_recycle_bin.sh",
+        "description": "Powershell: Show Items in recycle bin"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_detailed_user_info.sh",
+        "description": "rpcclient: dumping detailed user info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_domain_info.sh",
+        "description": "rpcclient: dumping domain info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_domain_password_policy.sh",
+        "description": "rpcclient: Dumping domain password policy"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_groups.sh",
+        "description": "rpcclient: Dumping groups"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_groups_rid.sh",
+        "description": "rpcclient: Dumping groups rid"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_users.sh",
+        "description": "rpcclient: Dumping users"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/dumping_users_rid.sh",
+        "description": "rpcclient: Duming users rid"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/enumerate_all_available_shares.sh",
+        "description": "rpcclient: enumerates all available shares"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/enumerate_all_domains.sh",
+        "description": "rpcclient: enumerate all domains"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/get_info_of_specific_share.sh",
+        "description": "rpcclient: provides information about a specific share"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/get_server_info.sh",
+        "description": "rpcclient: get server info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/rpcclient_brute_force_rids.sh",
+        "description": "rpcclient: brute Forcing User RIDs"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rpcclient/samrdump_brute_force_rids.sh",
+        "description": "samrdump.py: brute Forcing User RIDs"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/connect_to_share_anonymous.sh",
+        "description": "smbclient: Connect to share anonymous."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/connect_to_share_with_user.sh",
+        "description": "smbclient: Connect to share with user."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/decrypt_groups_xml_cpassword.sh",
+        "description": "decrypt cpassword from groups.xml"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/download_folders_resurcive.sh",
+        "description": "smbclient: download files recursive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/enable_recursive.sh",
+        "description": "smbclient: enable recursive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/search_in_downloaded_files_for_groups_xml.sh",
+        "description": "search for group policies in downloaded folders"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/show_shares.sh",
+        "description": "smbclient: List shares."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/turn_off_prompt.sh",
+        "description": "smbclient: turn off prompt"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/proxychains/connect_to_share_anonymous.sh",
+        "description": "proxychains: smbclient: Connect to share anonymous."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/proxychains/connect_to_share_with_user.sh",
+        "description": "proxychains: smbclient: Connect to share with user."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/proxychains/show_shares.sh",
+        "description": "proxychains: smbclient: List shares."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/administrator_execute_cmd_with_ntlm_hash.sh",
+        "description": "smbmap: Execute command on smb as user with NTLM hash."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/administrator_execute_cmd_with_password.sh",
+        "description": "smbmap: Execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/show_shares.sh",
+        "description": "smbmap: show shares."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/proxychains/administrator_execute_cmd_with_ntlm_hash.sh",
+        "description": "proxychains: smbmap: Execute command on smb as user with NTLM hash."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/proxychains/administrator_execute_cmd_with_password.sh",
+        "description": "proxychains: smbmap: Execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbmap/proxychains/show_shares.sh",
+        "description": "proxychains: smbmap: show shares."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/xfreerdp.sh",
+        "description": "xfreerdp: Connect with specified credentials."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive.sh",
+        "description": "xfreerdp: Connect, map drive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/proxychains/xfreerdp.sh",
+        "description": "proxychains: xfreerdp: Connect with specified credentials."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/proxychains/xfreerdp_with_attached_drive.sh",
+        "description": "proxychains: xfreerdp: Connect, map drive"
+    },
+    {
+        "type": "script",
+        "path": "shell/fix_shell.sh",
+        "description": "Fix shell to fully interactive shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/listen_for_ping.sh",
+        "description": "listen for ping response"
+    },
+    {
+        "type": "script",
+        "path": "shell/netcat.sh",
+        "description": "start nc port listening"
+    },
+    {
+        "type": "script",
+        "path": "shell/python3_pty_spawn.sh",
+        "description": "python3 - pyt.spawn"
+    },
+    {
+        "type": "script",
+        "path": "shell/python_pty_spawn.sh",
+        "description": "python - pyt.spawn"
+    },
+    {
+        "type": "script",
+        "path": "shell/rlwrap_netcat.sh",
+        "description": "start rlwrap nc port listening"
+    },
+    {
+        "type": "script",
+        "path": "shell/background/compile_hollow.sh",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_cmd_unix_bash_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener cmd/unix/reverse_bash"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_java_jsp_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_linux_x64_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener linux/x86/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_perl_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener cmd/unix/reverse_perl"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_php_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener php/meterpreter_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_python_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener cmd/unix/reverse_python"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_war_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_windows_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener windows/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_meterpreter_windows_x64_rev_shell.sh",
+        "description": "meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/listen_to_windows_rev_shell.sh",
+        "description": "start listener payload windows/shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/meterpreter_port_forwarding.sh",
+        "description": "meterpreter: forward all trafic from remote port to local port"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/meterpreter_set_server_routes.sh",
+        "description": "meterpreter: set server routes"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/show_creds_all.sh",
+        "description": "meterpreter: show creds_all (mimikatz)"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/start_sock_proxy.sh",
+        "description": "Start socks proxy"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/start_windows_post_exploit_suggester.sh",
+        "description": "meterpreter: set windows post exploit suggester"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/start_windows_post_hash_dump.sh",
+        "description": "meterpreter: set windows post hash dump"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/upgrade_to_meterpreter.sh",
+        "description": "meterpreter:  upgrade shell to meterpreter"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_cmd_unix_bash_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener cmd/unix/reverse_bash"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_java_jsp_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_linux_x64_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener linux/x86/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_perl_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener cmd/unix/reverse_perl"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_php_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener php/meterpreter_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_python_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener cmd/unix/reverse_python"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_war_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_windows_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener windows/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_meterpreter_windows_x64_rev_shell.sh",
+        "description": "proxychains: meterpreter: start meterpreter listener windows/x64/meterpreter/reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/proxychains/listen_to_windows_rev_shell.sh",
+        "description": "proxychains: start listener payload windows/shell_reverse_tcp"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_asp_rev_shell.sh",
+        "description": "Create ASP file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_bash_rev_shell.sh",
+        "description": "Create Bash file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_c_rev_shell.sh",
+        "description": "Create C file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_elf_rev_shell.sh",
+        "description": "Create ELF file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_exe_rev_shell.sh",
+        "description": "Create EXE file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_jsp_rev_shell.sh",
+        "description": "Create JSP file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_perl_rev_shell.sh",
+        "description": "Create Perl file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_php_rev_shell.sh",
+        "description": "Create PHP file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_ps1_rev_shell.sh",
+        "description": "Create PS1 file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_python_rev_shell.sh",
+        "description": "Create Python file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_splunk_rev_shell.sh",
+        "description": "Create splunk rev shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_war_rev_shell.sh",
+        "description": "Create WAR file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/defender_bypass_exe_rev_shell.sh",
+        "description": "defender bypass with x86/shikata_ga_nai for .exe"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_execute_conPtyShell.sh",
+        "description": "cmd: download Invoke-ConPtyShell.ps1 to server and start shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_execute_powershellTcp.sh",
+        "description": "cmd: download Invoke-PowerShellTcp.ps1 to server and start shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_upload_nc64_and_execute_cmd.sh",
+        "description": "upload nc64.exe and start nc64.exe and execute cmd"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_upload_nc64_and_execute_powershell.sh",
+        "description": "upload nc64.exe and start nc64.exe and execute powershell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_upload_nc_and_execute_cmd.sh",
+        "description": "upload nc.exe and start nc.exe and execute cmd"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/cmd_upload_nc_and_execute_powershell.sh",
+        "description": "upload nc.exe and start nc.exe and execute powershell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/powershell_base64.sh",
+        "description": "generate base64 reverse powershell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/ps_download_nc_file.sh",
+        "description": "ps: download nc file"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/ps_execute_conPtyShell.sh",
+        "description": "ps: download Invoke-ConPtyShell.ps1 to server and start shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/ps_execute_powershellTcp.sh",
+        "description": "ps: download Invoke-PowerShellTc.ps1 to server and start shell"
+    },
+    {
+        "type": "script",
+        "path": "smtp/nmap_check_for_open_relay.sh",
+        "description": "nmap: check for smtp open relay"
+    },
+    {
+        "type": "script",
+        "path": "smtp/smtp_user_enum_search_for_usernames_big.sh",
+        "description": "smtp-user-enum: search for usernames with given domain name (xato-net-10-million-usernames-dup.txt)"
+    },
+    {
+        "type": "script",
+        "path": "smtp/smtp_user_enum_search_for_usernames_small.sh",
+        "description": "smtp-user-enum: search for usernames with given domain name (Honeypot-Captures/multiplesources-users-fabian-fingerle.d.txt)"
+    },
+    {
+        "type": "script",
+        "path": "smtp/swaks/authentication_with_user_password.sh",
+        "description": "authentication with user and password"
+    },
+    {
+        "type": "script",
+        "path": "smtp/swaks/send_email.sh",
+        "description": "send email"
+    },
+    {
+        "type": "script",
+        "path": "smtp/swaks/send_email_with_attachment.sh",
+        "description": "send email"
+    },
+    {
+        "type": "script",
+        "path": "snmp/braa_enemerate_snmp_server.sh",
+        "description": "braa: get public info of server"
+    },
+    {
+        "type": "script",
+        "path": "snmp/onesixtyone_enemerate_snmp_server.sh",
+        "description": "onesixtyone: get public info of server"
+    },
+    {
+        "type": "script",
+        "path": "snmp/snmpwalk_enemerate_snmp_server.sh",
+        "description": "snmpwalk: get public info of server"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/enable_xp_cmdshell.sh",
+        "description": "script to enable xp_cmdshell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/execute_sp_execute_external_script.sh",
+        "description": "execute sp_execute_external_script command"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/execute_xp_cmdshell.sh",
+        "description": "execute xp_cmdshell command"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh",
+        "description": "mssql: bruteforce username and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh",
+        "description": "mssql: bruteforce username file and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh",
+        "description": "msfconsole: start mssql ping"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/nmap_enumerate_mssql_service.sh",
+        "description": "nmap: enumerate mysql service"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/read_directory.sh",
+        "description": "script to read directories with xp_dirtree"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/show_databases.sh",
+        "description": "show databases"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/show_tables_in_database.sh",
+        "description": "show tables in database"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/start_mssql_connection.sh",
+        "description": "start a mssql connection"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/start_sp_execute_external_script_nc_reverse_shell.sh",
+        "description": "execute sp_execute_external_script nc reverse shell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/start_sp_execute_external_script_powershell_reverse_shell.sh",
+        "description": "execute sp_execute_external_script powershell reverse shell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh",
+        "description": "execute xp_cmdshell nc reverse shell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh",
+        "description": "execute xp_cmdshell powershell reverse shell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/view_table_content_in_specific_database.sh",
+        "description": "view content in table in specific database"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/connect_to_mysql_server.sh",
+        "description": "nmap: enumerate mysql service"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/nmap_enumerate_mysql_service.sh",
+        "description": "nmap: enumerate mysql service"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/select_one_existing_database.sh",
+        "description": "mysql: Select one of the existing databases"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/show_all_databases.sh",
+        "description": "mysql: show all databases"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/show_columns_of_table.sh",
+        "description": "mysql: show all columns of table"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/show_everything_of_table.sh",
+        "description": "mysql: show everything in the desired table"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/show_tables.sh",
+        "description": "mysql: show all available tables in the selected database"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/dump-database.sh",
+        "description": "sqlmap: dump current database"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/dump_specific_database.sh",
+        "description": "sqlmap: dump specific database"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/forms.sh",
+        "description": "sqlmap: SQLi on all forms on a websith"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/perform_authorization_basic_header_attack.sh",
+        "description": "sqlmap: perform Authorization: Basic attack"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/show_databases.sh",
+        "description": "sqlmap: show all databases"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/sqlmap/show_specific_database_table.sh",
+        "description": "sqlmap: show specific database tables"
+    },
+    {
+        "type": "script",
+        "path": "ssh/local_port_listening.sh",
+        "description": "type ssh port listening"
+    },
+    {
+        "type": "script",
+        "path": "ssh/local_port_listening_with_sshkey.sh",
+        "description": "type ssh port listening with ssh key"
+    },
+    {
+        "type": "script",
+        "path": "ssh/metasploit_bruteforce_username_and_password_file.sh",
+        "description": "ssh: bruteforce username and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "ssh/metasploit_bruteforce_username_file_and_password_file.sh",
+        "description": "ssh: bruteforce username file and passwords file"
+    },
+    {
+        "type": "script",
+        "path": "ssh/metasploit_bruteforce_userpass_file.sh",
+        "description": "ssh: bruteforce userpass file (user pass)"
+    },
+    {
+        "type": "script",
+        "path": "ssh/remote_port_forwarding.sh",
+        "description": "type ssh port forwarding"
+    },
+    {
+        "type": "script",
+        "path": "ssh/remote_port_forwarding_with_sshkey.sh",
+        "description": "type ssh port forwarding with ssh key"
+    },
+    {
+        "type": "script",
+        "path": "ssh/socket_port_sock_forwarding.sh",
+        "description": "-D sock 5 forwarding"
+    },
+    {
+        "type": "script",
+        "path": "web/get_ip_addressen_from_subdomain_list.sh",
+        "description": "convert subdomains list to ip addresses"
+    },
+    {
+        "type": "script",
+        "path": "web/get_shohan_info_by_ip.sh",
+        "description": "get shohan info by ip"
+    },
+    {
+        "type": "script",
+        "path": "web/get_subdomain_from_crt_sh_domain_certificates.sh",
+        "description": "get unique subdomains with crt.sh domain certificates"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/brute_force_subdomain.sh",
+        "description": "brute force subdomain"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/dnsenum_enumerate_dns_records.sh",
+        "description": "dnsenum: enumerate dns records"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_a_dns_records.sh",
+        "description": "dig A domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_aaaa_dns_records.sh",
+        "description": "dig AAAA domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_any_dns_records.sh",
+        "description": "dig any domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_axfr_dns_records.sh",
+        "description": "dig axfr domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_cname_dns_records.sh",
+        "description": "dig CNAME domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_dns_server_version.sh",
+        "description": "dig get DNS server version"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_mx_dns_records.sh",
+        "description": "dig MX domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_ns_dns_records.sh",
+        "description": "dig NS domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_ptr_dns_records.sh",
+        "description": "dig PTR domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_soa_dns_records.sh",
+        "description": "dig SOA domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/dns/get_txt_dns_records.sh",
+        "description": "dig TXT domain name"
+    },
+    {
+        "type": "script",
+        "path": "web/eyewitness/eyewitness_with_custom_file.sh",
+        "description": "execute eyewitness with custom file"
+    },
+    {
+        "type": "script",
+        "path": "web/eyewitness/eyewitness_with_nmap_file.sh",
+        "description": "execute eyewitness with nmap file"
+    },
+    {
+        "type": "script",
+        "path": "web/feroxbuster/directory_search_dirb_common.sh",
+        "description": "feroxbuster directory search dirb/common.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/feroxbuster/directory_search_directory_list_medium.sh",
+        "description": "feroxbuster directory search directory-list-2.3-medium.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/feroxbuster/extension_search.sh",
+        "description": "execute feroxbuster directory search and files with extensions search"
+    },
+    {
+        "type": "script",
+        "path": "web/finalrecon/gather_domain_info.sh",
+        "description": "finalrecon: gather website info"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/fuzz_for_files_in_var_www_html_with_php_filter_base64.sh",
+        "description": "fuzz for files in var www html with php filter base64"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/fuzz_for_php_files.sh",
+        "description": "fuzz for PHP files"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/fuzz_for_php_param_name.sh",
+        "description": "fuzz for PHP param"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/fuzz_for_php_param_value.sh",
+        "description": "fuzz for PHP param value"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/fuzz_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh",
+        "description": "fuzz for wordpress files in var www html with php filter base64"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzz/vhost.sh",
+        "description": "fuzz vhosts"
+    },
+    {
+        "type": "script",
+        "path": "web/gitDumper/dump_git_folder_to_local_folder.sh",
+        "description": "dump git folder to local folder"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/dir_with_directory_list_medium.sh",
+        "description": "gobuster directory with directory-list-2.3-medium.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/dir_with_directory_list_medium_and_extensions.sh",
+        "description": "gobuster directory with directory-list-2.3-medium.txt and extensions worldlist"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/directory_with_dirb_common_wordlist.sh",
+        "description": "gobuster directory with wordlists/dirb/common.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/directory_with_dirb_common_wordlist_and_extensions.sh",
+        "description": "gobuster directory search with dirb/common.txt and extensions wordlist"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/raft_large_file_search.sh",
+        "description": "gobuster file search with /usr/share/seclists/Discovery/Web-Content/raft-large-files.txtt"
+    },
+    {
+        "type": "script",
+        "path": "web/gobuster/vhost.sh",
+        "description": "gobuster vhosts with subdomains-top1million-110000.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/googleDorking/search_for_aws.sh",
+        "description": "Google Search for AWS"
+    },
+    {
+        "type": "script",
+        "path": "web/googleDorking/search_for_azure.sh",
+        "description": "Google Search for AZURE"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/check_if_expect_attack_is_possible.sh",
+        "description": "Check if we can execute expect to execute commands"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/execute_a_cmd_with_php_input_filter.sh",
+        "description": "Try to execute a cmd with php://input"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/fuzz_for_lfi_files_pathtotest_huge.sh",
+        "description": "fuzz for LFI files with LFI-Jhaddix.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/fuzz_for_lfi_files_with_jhaddix.sh",
+        "description": "fuzz for LFI files with LFI-LFISuite-pathtotest-huge.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/fuzz_for_root_directory.sh",
+        "description": "fuzz for LFI root directory with custom wordlist"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/fuzz_web_root_directories_linux.sh",
+        "description": "fuzz for web root directories - linux"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/fuzz_web_root_directories_windows.sh",
+        "description": "fuzz for web root directories - windows"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/lfi_read_files_with_php_filter_base64_encode.sh",
+        "description": "LFI read files with php filter base64 encode"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/remote_rfi_with_ftp.sh",
+        "description": "Remote RFI with FTP"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/remote_rfi_with_http.sh",
+        "description": "Remote RFI with HTTP"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/remote_rfi_with_smb.sh",
+        "description": "Remote RFI with SMB"
+    },
+    {
+        "type": "script",
+        "path": "web/nikto/identify_software.sh",
+        "description": "nikto: identify software"
+    },
+    {
+        "type": "script",
+        "path": "web/wafw00f/check_if_website_is_behind_waf.sh",
+        "description": "wafw00f: check if website is behind waf"
+    },
+    {
+        "type": "script",
+        "path": "web/wordpress/wpscan_bruteforce_user_file_with_password_file.sh",
+        "description": "wpscan bruteforce user file with password file"
+    },
+    {
+        "type": "script",
+        "path": "web/wordpress/wpscan_bruteforce_user_with_password_file.sh",
+        "description": "wpscan bruteforce user with password file"
+    },
+    {
+        "type": "script",
+        "path": "web/wordpress/wpscan_check_for_vulnerable_plugins.sh",
+        "description": "wpscan check for vulnerable plugins"
+    },
+    {
+        "type": "script",
+        "path": "web/wordpress/wpscan_enumerate_users.sh",
+        "description": "wpscan enumerate users"
+    },
+    {
+        "type": "script",
+        "path": "add_ip_domain_to_etc_hosts.sh",
+        "description": "add ip and domains to /etc/hosts"
+    },
+    {
+        "type": "script",
+        "path": "documentation_folders.sh",
+        "description": "create the HTB documentation folder structure"
+    },
+    {
+        "type": "script",
+        "path": "kali_ip.sh",
+        "description": "get Kali IP address"
+    },
+    {
+        "type": "script",
+        "path": "save_ssh_key_to_authorized_keys.sh",
+        "description": "save SSH key to authorized_keys"
+    },
+    {
+        "type": "script",
+        "path": "ssh_key.sh",
+        "description": "get SSH key"
+    }
+];
+
+        function loadTable() {
+            const tableBody = document.getElementById("scriptTable");
+            tableBody.innerHTML = "";
+            scripts.forEach(script => {
+                let row = `<tr><td>${script.path}</td><td>${script.description}</td></tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function filterTable() {
+            const query = document.getElementById("search").value.toLowerCase().trim();
+            const rows = document.querySelectorAll("#scriptTable tr");
+
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                const words = query.split(/\s+/); // split on spaces for fuzzy matching
+                
+                // Match all words in any order (fuzzy)
+                const fuzzyMatch = words.every(word => text.includes(word));
+
+                row.style.display = fuzzyMatch ? "" : "none";
+            });
+        }
+
+        window.onload = loadTable;
+    </script>
+</body>
+</html>
