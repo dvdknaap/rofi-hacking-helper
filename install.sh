@@ -4,19 +4,13 @@ ROOT_DIR="${HOME}/Desktop/base"
 source "${ROOT_DIR}/code/xdotool/env.sh"
 
 # Function to check if a package is installed and install it if missing
-check_and_install_packages() {
+install_packages() {
     if [[ $# -eq 0 ]]; then
-        show_info_notify_message "Usage: check_and_install_packages <package1> <package2> ..."
+        show_info_notify_message "Usage: install_packages <package1> <package2> ..."
         return 1
     fi
 
-    for package in "$@"; do
-        echo "Checking if '${package}' is installed..."
-        if ! command -v "${package}" &>/dev/null; then
-            echo "'${package}' is not installed. Installing..."
-            sudo apt update && sudo apt install -y "${package}"
-        fi
-    done
+    sudo apt update && sudo apt install -y "$@"
 }
 
 # Function to install pip3 packages
