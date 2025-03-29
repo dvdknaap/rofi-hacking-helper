@@ -149,7 +149,7 @@ main() {
 
     pull_latest_git_version
 
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick
 
     install_pip3_packages pyftpdlib
     install_pip3_packages sv-ttk
