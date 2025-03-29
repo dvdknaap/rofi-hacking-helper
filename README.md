@@ -41,7 +41,7 @@ The tool checks for updates daily and will prompt you when a new version is avai
 
 ## Documentation
 
-A full list of scripts and functionality can be found [here](https://github.com/dvdknaap/rofi-hacking-helper/blob/main/documentation/index.md).
+A full list of scripts and functionality can be found [here](https://dvdknaap.github.io/rofi-hacking-helper/).
 
 ## Disclaimer
 
