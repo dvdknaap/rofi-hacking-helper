@@ -663,26 +663,26 @@ perform netexec smb attacks
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/netexec/smb/administrator_hash.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/check_anonymous.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_lsa.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_sam.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/dump_ntds.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/enumerate_ad_users_and_passwords.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/enumerate_group.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_cmd.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_smbexec.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/find_autologon_in_registry_xml.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/login_with_username_password.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/null_session.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/password_policy.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/rid_brute.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/show_shares.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/smb_enumerate_users.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/smb_start_listener.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/spider_plus_share.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/user_hash.sh` |  |
+| 📜 `reconnaissance/windows/netexec/smb/administrator_hash.sh` | check if smb is possible for username and hash |
+| 📜 `reconnaissance/windows/netexec/smb/check_anonymous.sh` | check if anonymous guest session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh` | convert smb rid-bruteforce to users list |
+| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_lsa.sh` | dump lsa |
+| 📜 `reconnaissance/windows/netexec/smb/dump_credentials_from_sam.sh` | dump sam |
+| 📜 `reconnaissance/windows/netexec/smb/dump_ntds.sh` | dump ntds |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_ad_users_and_passwords.sh` | enumerate over ad users and password file |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_group.sh` | enumerate groups |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_cmd.sh` | execute cmd command |
+| 📜 `reconnaissance/windows/netexec/smb/enumerate_users_execute_smbexec.sh` | execute smbexec command |
+| 📜 `reconnaissance/windows/netexec/smb/find_autologon_in_registry_xml.sh` | searches the domain controller for registry.xml |
+| 📜 `reconnaissance/windows/netexec/smb/login_with_username_password.sh` | login with username and password |
+| 📜 `reconnaissance/windows/netexec/smb/null_session.sh` | check if null session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/password_policy.sh` | get password policy |
+| 📜 `reconnaissance/windows/netexec/smb/rid_brute.sh` | enumerate users by bruteforcing RIDs |
+| 📜 `reconnaissance/windows/netexec/smb/show_shares.sh` | show smb shares |
+| 📜 `reconnaissance/windows/netexec/smb/smb_enumerate_users.sh` | enumerate users |
+| 📜 `reconnaissance/windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
+| 📜 `reconnaissance/windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
+| 📜 `reconnaissance/windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
 <br />
 
 ### reconnaissance/windows/netexec/smb/proxychains
@@ -691,26 +691,26 @@ proxychains: perform netexec smb attacks
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/administrator_hash.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/check_anonymous.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/convert_smb_rid_brute_force_to_username_list.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_lsa.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_sam.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_ntds.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_ad_users_and_passwords.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_group.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_cmd.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_smbexec.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/find_autologon_in_registry_xml.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/login_with_username_password.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/null_session.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/password_policy.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/rid_brute.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/show_shares.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/smb_enumerate_users.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/smb_start_listener.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/spider_plus_share.sh` |  |
-| 📜 `reconnaissance/windows/netexec/smb/proxychains/user_hash.sh` |  |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/administrator_hash.sh` | proxychains: check if smb is possible for username and hash |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/check_anonymous.sh` | proxychains: check if anonymous guest session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/convert_smb_rid_brute_force_to_username_list.sh` | proxychains: convert smb rid-bruteforce to users list |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_lsa.sh` | proxychains: dump lsa |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_sam.sh` | proxychains: dump sam |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/dump_ntds.sh` | proxychains: dump ntds |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_ad_users_and_passwords.sh` | proxychains: enumerate over ad users and password file |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_group.sh` | proxychains: enumerate groups |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_cmd.sh` | proxychains: execute cmd command |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_smbexec.sh` | proxychains: execute smbexec command |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/find_autologon_in_registry_xml.sh` | proxychains: searches the domain controller for registry.xml |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/login_with_username_password.sh` | proxychains: login with username and password |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/null_session.sh` | proxychains: check if null session is possible |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/password_policy.sh` | proxychains: get password policy |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/rid_brute.sh` | proxychains: enumerate users by bruteforcing RIDs |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/show_shares.sh` | proxychains: show smb shares |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/smb_enumerate_users.sh` | proxychains: enumerate users |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/smb_start_listener.sh` | proxychains: inject reverse shell |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/spider_plus_share.sh` | proxychains: netexec smb use spider_plus to get all share files |
+| 📜 `reconnaissance/windows/netexec/smb/proxychains/user_hash.sh` | proxychains: check if smb is possible for user hash |
 <br />
 
 ### reconnaissance/windows/netexec/winrm

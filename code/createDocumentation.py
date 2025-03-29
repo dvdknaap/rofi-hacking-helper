@@ -5,11 +5,11 @@ CODE_ROOT = "~/Desktop/base"
 SCRIPTS_DIR = os.path.expanduser(f"{CODE_ROOT}/code/xdotool/scripts/")
 JSON_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list.json")
 
-HTML_TEMPLATE_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list_template.html")
-OUTPUT_HTML_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list.html")
+HTML_TEMPLATE_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/templates/scripts_list.html")
+OUTPUT_HTML_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/index.html")
 
 MARKDOWN_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list.md")
-MARKDOWN_TEMPLATE_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list_template.md")
+MARKDOWN_TEMPLATE_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/templates/scripts_list.md")
 
 def get_description(path):
     """Return description of the file or directory."""
