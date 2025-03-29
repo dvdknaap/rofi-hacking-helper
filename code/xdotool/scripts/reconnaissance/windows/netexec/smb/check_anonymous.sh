@@ -1,3 +1,16 @@
 #!/bin/bash
 
-run_with_proxychains "${BASH_SOURCE[0]}"
+: '
+check if anonymous guest session is possible
+'
+
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+IP_FIELD=$(form_item  "IP address" "ip")
+
+# Generate GUI form
+generate_form "${IP_FIELD}"
+
+IP=${form_data["ip"]}
+
+paste_command "netexec smb ${IP} -u 'a' -p '' --shares"
+xdotool key Return

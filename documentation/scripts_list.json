@@ -1312,102 +1312,102 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/administrator_hash.sh",
-        "description": ""
+        "description": "check if smb is possible for username and hash"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/check_anonymous.sh",
-        "description": ""
+        "description": "check if anonymous guest session is possible"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/convert_smb_rid_brute_force_to_username_list.sh",
-        "description": ""
+        "description": "convert smb rid-bruteforce to users list"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/dump_credentials_from_lsa.sh",
-        "description": ""
+        "description": "dump lsa"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/dump_credentials_from_sam.sh",
-        "description": ""
+        "description": "dump sam"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/dump_ntds.sh",
-        "description": ""
+        "description": "dump ntds"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/enumerate_ad_users_and_passwords.sh",
-        "description": ""
+        "description": "enumerate over ad users and password file"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/enumerate_group.sh",
-        "description": ""
+        "description": "enumerate groups"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/enumerate_users_execute_cmd.sh",
-        "description": ""
+        "description": "execute cmd command"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/enumerate_users_execute_smbexec.sh",
-        "description": ""
+        "description": "execute smbexec command"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/find_autologon_in_registry_xml.sh",
-        "description": ""
+        "description": "searches the domain controller for registry.xml"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/login_with_username_password.sh",
-        "description": ""
+        "description": "login with username and password"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/null_session.sh",
-        "description": ""
+        "description": "check if null session is possible"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/password_policy.sh",
-        "description": ""
+        "description": "get password policy"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/rid_brute.sh",
-        "description": ""
+        "description": "enumerate users by bruteforcing RIDs"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/show_shares.sh",
-        "description": ""
+        "description": "show smb shares"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/smb_enumerate_users.sh",
-        "description": ""
+        "description": "enumerate users"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/smb_start_listener.sh",
-        "description": ""
+        "description": "inject reverse shell"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/spider_plus_share.sh",
-        "description": ""
+        "description": "netexec smb use spider_plus to get all share files"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/user_hash.sh",
-        "description": ""
+        "description": "check if smb is possible for user hash"
     },
     {
         "type": "directory",
@@ -1417,102 +1417,102 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/administrator_hash.sh",
-        "description": ""
+        "description": "proxychains: check if smb is possible for username and hash"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/check_anonymous.sh",
-        "description": ""
+        "description": "proxychains: check if anonymous guest session is possible"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/convert_smb_rid_brute_force_to_username_list.sh",
-        "description": ""
+        "description": "proxychains: convert smb rid-bruteforce to users list"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_lsa.sh",
-        "description": ""
+        "description": "proxychains: dump lsa"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/dump_credentials_from_sam.sh",
-        "description": ""
+        "description": "proxychains: dump sam"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/dump_ntds.sh",
-        "description": ""
+        "description": "proxychains: dump ntds"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_ad_users_and_passwords.sh",
-        "description": ""
+        "description": "proxychains: enumerate over ad users and password file"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_group.sh",
-        "description": ""
+        "description": "proxychains: enumerate groups"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_cmd.sh",
-        "description": ""
+        "description": "proxychains: execute cmd command"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/enumerate_users_execute_smbexec.sh",
-        "description": ""
+        "description": "proxychains: execute smbexec command"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/find_autologon_in_registry_xml.sh",
-        "description": ""
+        "description": "proxychains: searches the domain controller for registry.xml"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/login_with_username_password.sh",
-        "description": ""
+        "description": "proxychains: login with username and password"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/null_session.sh",
-        "description": ""
+        "description": "proxychains: check if null session is possible"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/password_policy.sh",
-        "description": ""
+        "description": "proxychains: get password policy"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/rid_brute.sh",
-        "description": ""
+        "description": "proxychains: enumerate users by bruteforcing RIDs"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/show_shares.sh",
-        "description": ""
+        "description": "proxychains: show smb shares"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/smb_enumerate_users.sh",
-        "description": ""
+        "description": "proxychains: enumerate users"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/smb_start_listener.sh",
-        "description": ""
+        "description": "proxychains: inject reverse shell"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/spider_plus_share.sh",
-        "description": ""
+        "description": "proxychains: netexec smb use spider_plus to get all share files"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/proxychains/user_hash.sh",
-        "description": ""
+        "description": "proxychains: check if smb is possible for user hash"
     },
     {
         "type": "directory",
