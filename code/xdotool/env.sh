@@ -4,6 +4,7 @@ XDOTOOL_DIR="$(dirname "${BASH_SOURCE[0]}")"
 HELPERS_DIR="${XDOTOOL_DIR}/helpers"
 SCRIPTS_DIR="${XDOTOOL_DIR}/scripts"
 DYNAMIC_FIELDS_DIR="${XDOTOOL_DIR}/dynamicFields"
+SCREENSHOTS_DIR="${XDOTOOL_DIR}/screenshots"
 
 declare -gA ACTIVE_CRED_SYSTEM
 

@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# Function to check if a package is installed and install it if missing
-check_and_install_package() {
-    local package="$1"
+ROOT_DIR="${HOME}/Desktop/base"
+source "${ROOT_DIR}/code/xdotool/env.sh"
 
-    if [[ -z "${package}" ]]; then
-        show_info_notify_message "Usage: check_and_install_package <package_name>"
+# Function to check if a package is installed and install it if missing
+check_and_install_packages() {
+    if [[ $# -eq 0 ]]; then
+        show_info_notify_message "Usage: check_and_install_packages <package1> <package2> ..."
         return 1
     fi
 
-    echo "Checking if '${package}' is installed..."
-    if ! command -v "${package}" &>/dev/null; then
-        echo "'${package}' is not installed. Installing..."
-        sudo apt update && sudo apt install -y "${package}"
-    fi
+    for package in "$@"; do
+        echo "Checking if '${package}' is installed..."
+        if ! command -v "${package}" &>/dev/null; then
+            echo "'${package}' is not installed. Installing..."
+            sudo apt update && sudo apt install -y "${package}"
+        fi
+    done
 }
 
 # Function to install pip3 packages
@@ -31,27 +34,28 @@ install_pip3_packages() {
 # Function to clone or update the repository
 clone_or_update_repo() {
     local repo_url="https://github.com/dvdknaap/rofi-hacking-helper.git"
-    local target_dir="$HOME/Desktop/base"
 
-    if [ -d "${target_dir}" ]; then
-        echo "Target directory ${target_dir} already exists. Pulling latest changes..."
-        git -C "${target_dir}" pull
+    if [ -d "${ROOT_DIR}" ]; then
+        echo "Target directory ${ROOT_DIR} already exists. Pulling latest changes..."
+        git -C "${ROOT_DIR}" pull
     else
-        echo "Cloning repository to ${target_dir}..."
-        git clone "${repo_url}" "${target_dir}"
+        echo "Cloning repository to ${ROOT_DIR}..."
+        git clone "${repo_url}" "${ROOT_DIR}"
     fi
 }
+
 
 # Function to set up a keyboard shortcut using XFCE
 setup_xfce_shortcut() {
     local shortcut_command="$1"
     local keybind="$2"
+    local letter="$3"
 
     echo "Setting up keyboard shortcut..."
-    xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>m" -t string -s "bash -e '$shortcut_command'" --create
+    xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>${letter}" -t string -s "${shortcut_command}" --create
 
     if [ $? -eq 0 ]; then
-        echo -e "\e[32mShortcut successfully created! Use $keybind to launch the menu.\e[0m"
+        echo -e "\e[32mShortcut successfully created! Use ${keybind} to launch the menu.\e[0m"
     else
         show_error_notify_message "Failed to create shortcut. Please check your XFCE settings manually."
         echo -e "\e[31mFailed to create shortcut. Please check your XFCE settings manually.\e[0m"
@@ -59,47 +63,92 @@ setup_xfce_shortcut() {
 }
 
 # Function to check if a keybinding already exists using gsettings
-check_gsettings_keybinding() {
-    local search_command="$1"
+setup_gnome_binding() {
+    local shortcut_name="$1"
+    local shortcut_command="$2"
+    local shortcut_keybind="$3"
 
-    echo "Checking if keybinding with command '${search_command}' already exists..."
-    local keybindings
-    keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
+    local found_binding="0"
+    local keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
+
+    echo "Checking if keybinding with command '${shortcut_name}' already exists..."
 
     for key in $keybindings; do
-        local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.${key}"
-        local command
-        command=$(gsettings get "${key_path}" command | tr -d "'")
+        if [[ "@as" == "${key}" ]]; then
+            continue
+        fi
 
-        if [[ "${command}" == *"${search_command}" ]]; then
-            echo -e "\e[32mKeybinding already exists:\e[0m $command"
-            return 0
+        local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:${key}"
+        local name=$(gsettings get "${key_path}" name | tr -d "'")
+        
+        echo "key_path: ${key_path}"
+        echo "name: ${name}"
+
+        # /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
+        if [[ "${name}" == *"${shortcut_name}" ]]; then
+            local command=$(gsettings get "${key_path}" command | tr -d "'")
+            local binding=$(gsettings get "${key_path}" binding | tr -d "'")
+
+            if [[ "${command}" != *"${search_command}" ]]; then
+                gsettings set "${key_path}" command "${shortcut_command}"
+                return 0
+            fi
+
+            if [[ "${binding}" != *"${shortcut_keybind}" ]]; then
+                gsettings set "${key_path}" binding "${shortcut_keybind}"
+                return 0
+            fi
+
+            found_binding="1"
+            break;
         fi
     done
 
-    echo -e "\e[33mNo existing keybinding found for command '${search_command}'.\e[0m"
+    if [[ "${found_binding}" == "0" ]]; then
+        local new_custom_key="/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/${shortcut_name}/"
+        local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:${new_custom_key}"
+        local keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
+        local new_custom_keybindings="["
+
+        for key in $keybindings; do
+            if [[ "@as" == "${key}" ]]; then
+                continue
+            fi
+
+            new_custom_keybindings+="'${key}',"
+        done
+
+        new_custom_keybindings+="'${new_custom_key}'"
+        new_custom_keybindings+="]"
+
+        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${new_custom_keybindings}"
+        gsettings set "${key_path}" name "${shortcut_name}"
+        gsettings set "${key_path}" command "${shortcut_command}"
+        gsettings set "${key_path}" binding "${shortcut_keybind}"
+    fi
+
     return 1
 }
 
 # Main function to execute the script steps
 main() {
-    local shortcut_command="$HOME/Desktop/base/code/xdotool/rofisearch_scripts_menu.sh"
-    local keybind="Ctrl+Shift+M"
+    local helper_name="rofi-hacking-helper"
+    local helper_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/rofisearch_scripts_menu.sh\""
+    local helper_keybind="M"
 
-    check_and_install_package rofi
-    check_and_install_package xdotool
-    check_and_install_package python3
-    check_and_install_package python3-tk
-    check_and_install_package powershell
-    check_and_install_package xclip
-    check_and_install_package expect
-    check_and_install_package seclists
-    check_and_install_package jq
-    check_and_install_package onesixtyone
-    check_and_install_package braa
-    check_and_install_package wafw00f
-    check_and_install_package nikto
-    check_and_install_package finalrecon
+    local screenshot_name="rofi-hacking-helper-screenshot"
+    local screenshot_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/createScreenshot.sh\""
+    local screenshot_keybind="N"
+
+    # Check for existing keybinding
+    setup_xfce_shortcut "${helper_shortcut_command}" "Ctrl+Shift+${helper_keybind}" "m"
+    setup_gnome_binding "${helper_name}" "${helper_shortcut_command}" "<Shift><Control>${helper_keybind}"
+
+    # Check for existing keybinding
+    setup_xfce_shortcut "${screenshot_shortcut_command}" "Ctrl+Shift+${screenshot_keybind}" "n"
+    setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
+
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon
 
     install_pip3_packages pyftpdlib
     install_pip3_packages sv-ttk
@@ -110,12 +159,6 @@ main() {
 
     clone_or_update_repo
 
-    # Check for existing keybinding
-    check_gsettings_keybinding "${shortcut_command{}"
-    if [ $? -ne 0 ]; then
-        setup_xfce_shortcut "${shortcut_command}" "${keybind}"
-    fi
-    
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
     echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal.\e[0m"
 }
