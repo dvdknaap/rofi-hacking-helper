@@ -37,5 +37,6 @@ fi
 # wait for focus
 sleep 0.8
 
-import -window root "${screenshot_filename}"
+paste_command "import -window root ${screenshot_filename}"
+
 show_success_notify_message "screenshot created: ${screenshot_filename}"
