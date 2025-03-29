@@ -119,7 +119,10 @@ def load_json():
 def generate_html():
     """Reads the template, filters only script files, and inserts them as JSON."""
     scripts = load_json()
-    
+
+    script_count = sum(1 for s in scripts if s["type"] == "script")
+    folder_count = len(set(os.path.dirname(s["path"]) for s in scripts if s["type"] == "directory"))
+
     script_list = [script for script in scripts if script["type"] == "script"]
 
     scripts_json = json.dumps(script_list, indent=4)
@@ -127,7 +130,9 @@ def generate_html():
     with open(HTML_TEMPLATE_PATH, 'r') as template_file:
         template = template_file.read()
 
-    output_html = template.replace("[scripts]", scripts_json)
+    output_html = template.replace("[script_count]", f"{script_count}")
+    output_html = output_html.replace("[folder_count]", f"{folder_count}")
+    output_html = output_html.replace("[scripts]", scripts_json)
 
     with open(OUTPUT_HTML_PATH, 'w') as output_file:
         output_file.write(output_html)
