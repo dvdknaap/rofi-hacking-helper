@@ -1,7 +1,3 @@
 #!/bin/bash
 
-: '
-Nmap: ping sweep
-'
-
-run_with_proxychains $0
+run_with_proxychains "${BASH_SOURCE[0]}"
