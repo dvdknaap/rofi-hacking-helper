@@ -3,6 +3,7 @@
 : '
 cmd: Upload sharphound and execute
 '
+
 LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/bloodhound/.files"
 FILE="SharpHound.exe"
 
