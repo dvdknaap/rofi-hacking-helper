@@ -4,7 +4,7 @@
 ps: Upload and import module Invoke-TokenManipulation.ps1
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/activeDirectroy/invokeTokenManipulation/.files"
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/invokeTokenManipulation/.files"
 FILE="Invoke-TokenManipulation.ps1"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"

@@ -4,7 +4,7 @@
 ps: do a GPO abuse
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/activeDirectroy/sharpGPOAbuse/.files"
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/sharpGPOAbuse/.files"
 FILE="SharpGPOAbuse.exe"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"
