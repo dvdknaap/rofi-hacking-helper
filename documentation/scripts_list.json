@@ -1122,7 +1122,7 @@
     {
         "type": "directory",
         "path": "reconnaissance/windows/inveight",
-        "description": ""
+        "description": "perform attacks with inveight"
     },
     {
         "type": "script",
@@ -1167,7 +1167,7 @@
     {
         "type": "directory",
         "path": "reconnaissance/windows/lazagne",
-        "description": ""
+        "description": "perform attacks with lazagne"
     },
     {
         "type": "script",

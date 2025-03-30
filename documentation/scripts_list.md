@@ -558,6 +558,8 @@ proxychains: Scripts for establishing Evil-WinRM connections.
 
 ### reconnaissance/windows/inveight
 
+perform attacks with inveight
+
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/inveight/ps_upload_powerview_and_import.sh` | ps: Upload Inveigh.ps1 and import module |
@@ -585,6 +587,8 @@ perform kerbrute attacks
 <br />
 
 ### reconnaissance/windows/lazagne
+
+perform attacks with lazagne
 
 | Path | Description |
 |------|-------------|

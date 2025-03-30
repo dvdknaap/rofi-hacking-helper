@@ -4,7 +4,7 @@
 ps: Upload sharphound and execute
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/bloodhound/.files"
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/bloodhound/.files"
 FILE="SharpHound.exe"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"

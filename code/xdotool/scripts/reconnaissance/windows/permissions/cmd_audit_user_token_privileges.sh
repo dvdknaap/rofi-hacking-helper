@@ -4,7 +4,7 @@
 SharpUp - audit token privileges - cmd: download SharpUp to server and execute.
 '
 
-LOCATION="${SCRIPTS_DIR}/windows/permissions/.files"
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/permissions/.files"
 FILE="SharpUp.exe"
 
 cmd_upload_file "${LOCATION}" "${FILE}"
