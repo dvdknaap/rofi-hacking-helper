@@ -4,7 +4,7 @@
 ps: Upload sharphound and execute
 '
 
-LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/rubeus/.files"
+LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/powerVIew/.files"
 FILE="powerview.ps1"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"
