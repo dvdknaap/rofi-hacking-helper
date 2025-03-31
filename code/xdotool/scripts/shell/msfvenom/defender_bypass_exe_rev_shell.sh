@@ -9,7 +9,7 @@ LPORT_FIELD=$(form_item  "LPORT" "number" "lport" "1337")
 OUTPUT_FILE_FIELD=$(form_item  "output file" "text" "output_file" "shell.exe")
 
 # Generate GUI form
-generate_form "${LPORT_FIELD}""${OUTPUT_FILE_FIELD}"
+generate_form "${LPORT_FIELD}" "${OUTPUT_FILE_FIELD}"
 
 LPORT=${form_data["lport"]}
 OUTPUT_FILE=${form_data["output_file"]}

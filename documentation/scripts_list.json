@@ -2176,6 +2176,11 @@
     },
     {
         "type": "script",
+        "path": "shell/msf_virustotal_check_file.sh",
+        "description": "msf-virustotal: check file for virus scanner detection"
+    },
+    {
+        "type": "script",
         "path": "shell/netcat.sh",
         "description": "start nc port listening"
     },
@@ -2266,6 +2271,16 @@
     },
     {
         "type": "script",
+        "path": "shell/msfconsole/copy_ruby_file_to_metasploit_modules.sh",
+        "description": "copy ruby file to metasploit framework plugins folder"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/copy_ruby_file_to_metasploit_plugins.sh",
+        "description": "copy ruby file to metasploit framework modules folder"
+    },
+    {
+        "type": "script",
         "path": "shell/msfconsole/listen_to_meterpreter_cmd_unix_bash_rev_shell.sh",
         "description": "meterpreter: start meterpreter listener cmd/unix/reverse_bash"
     },
@@ -2323,6 +2338,16 @@
         "type": "script",
         "path": "shell/msfconsole/meterpreter_set_server_routes.sh",
         "description": "meterpreter: set server routes"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/reload_all.sh",
+        "description": "reload all"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/search_exploitdb_for_metasploit_scripts.sh",
+        "description": "search exploit db for exploits"
     },
     {
         "type": "script",
@@ -2463,6 +2488,16 @@
         "type": "script",
         "path": "shell/msfvenom/create_asp_rev_shell.sh",
         "description": "Create ASP file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_aspx_rev_shell.sh",
+        "description": "Create ASPX file"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfvenom/create_backdoor_in_file.sh",
+        "description": "defender bypass with x86/shikata_ga_nai for .exe"
     },
     {
         "type": "script",

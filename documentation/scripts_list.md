@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **525** scripts organized into **30** subdirectories.
+This repository contains **532** scripts organized into **30** subdirectories.
 
 ## Table of Contents
 
@@ -1053,6 +1053,7 @@ scripts like automatically fix shell and make it interactive, start port listeni
 |------|-------------|
 | 📜 `shell/fix_shell.sh` | Fix shell to fully interactive shell |
 | 📜 `shell/listen_for_ping.sh` | listen for ping response |
+| 📜 `shell/msf_virustotal_check_file.sh` | msf-virustotal: check file for virus scanner detection |
 | 📜 `shell/netcat.sh` | start nc port listening |
 | 📜 `shell/rlwrap_netcat.sh` | start rlwrap nc port listening |
 <br />
@@ -1097,6 +1098,8 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 
 | Path | Description |
 |------|-------------|
+| 📜 `shell/msfconsole/copy_ruby_file_to_metasploit_modules.sh` | copy ruby file to metasploit framework plugins folder |
+| 📜 `shell/msfconsole/copy_ruby_file_to_metasploit_plugins.sh` | copy ruby file to metasploit framework modules folder |
 | 📜 `shell/msfconsole/listen_to_meterpreter_cmd_unix_bash_rev_shell.sh` | meterpreter: start meterpreter listener cmd/unix/reverse_bash |
 | 📜 `shell/msfconsole/listen_to_meterpreter_java_jsp_rev_shell.sh` | meterpreter: start meterpreter listener java/jsp_shell_reverse_tcp |
 | 📜 `shell/msfconsole/listen_to_meterpreter_linux_x64_rev_shell.sh` | meterpreter: start meterpreter listener linux/x86/meterpreter/reverse_tcp |
@@ -1109,6 +1112,8 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/listen_to_windows_rev_shell.sh` | start listener payload windows/shell_reverse_tcp |
 | 📜 `shell/msfconsole/meterpreter_port_forwarding.sh` | meterpreter: forward all trafic from remote port to local port |
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
+| 📜 `shell/msfconsole/reload_all.sh` | reload all |
+| 📜 `shell/msfconsole/search_exploitdb_for_metasploit_scripts.sh` | search exploit db for exploits |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
 | 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
 | 📜 `shell/msfconsole/start_windows_post_hash_dump.sh` | meterpreter: set windows post hash dump |
@@ -1175,6 +1180,8 @@ msfvenom to create reverve shell files for metepreter
 | Path | Description |
 |------|-------------|
 | 📜 `shell/msfvenom/create_asp_rev_shell.sh` | Create ASP file |
+| 📜 `shell/msfvenom/create_aspx_rev_shell.sh` | Create ASPX file |
+| 📜 `shell/msfvenom/create_backdoor_in_file.sh` | defender bypass with x86/shikata_ga_nai for .exe |
 | 📜 `shell/msfvenom/create_bash_rev_shell.sh` | Create Bash file |
 | 📜 `shell/msfvenom/create_c_rev_shell.sh` | Create C file |
 | 📜 `shell/msfvenom/create_elf_rev_shell.sh` | Create ELF file |
