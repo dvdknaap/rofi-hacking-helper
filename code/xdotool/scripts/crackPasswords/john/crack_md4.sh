@@ -1,9 +1,9 @@
  #!/bin/bash
 
 : '
-crack rar (winrar) hashes
+crack md4 hashes
 '
 
 source "${SCRIPTS_DIR}/crackPasswords/john/.files/crack_format.sh"
 
-crack_format "rar"
+crack_format "raw-md4"
