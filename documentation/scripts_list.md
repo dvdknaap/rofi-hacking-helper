@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **570** scripts organized into **31** subdirectories.
+This repository contains **572** scripts organized into **31** subdirectories.
 
 ## Table of Contents
 
@@ -472,6 +472,16 @@ different python scripts like to start http server
 
 scripts to do reconnaissance
 
+<br />
+
+### reconnaissance/defaultCreds
+
+search default creds
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/defaultCreds/get_default_creds.sh` | get default credentials of program |
+| 📜 `reconnaissance/defaultCreds/get_defaults_creds_wordlist.sh` | get default credentials wordlist |
 <br />
 
 ### reconnaissance/linux

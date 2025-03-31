@@ -986,6 +986,21 @@
     },
     {
         "type": "directory",
+        "path": "reconnaissance/defaultCreds",
+        "description": "search default creds"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/defaultCreds/get_default_creds.sh",
+        "description": "get default credentials of program"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/defaultCreds/get_defaults_creds_wordlist.sh",
+        "description": "get default credentials wordlist"
+    },
+    {
+        "type": "directory",
         "path": "reconnaissance/linux",
         "description": "scripts to do reconnaissance on linux"
     },
