@@ -105,7 +105,7 @@ crack passwords with john the ripper
 | 📜 `crackPasswords/john/crack_crypt3.sh` | crack Traditional Unix crypt(3) hashes |
 | 📜 `crackPasswords/john/crack_hmac_md5.sh` | crack hmac-md5 password hashes |
 | 📜 `crackPasswords/john/crack_kerberos4.sh` | crack Kerberos 4 password hashes |
-| 📜 `crackPasswords/john/crack_kerberos5.sh` | crack Kerberos 4 password hashes |
+| 📜 `crackPasswords/john/crack_kerberos5.sh` | crack Kerberos 5 password hashes |
 | 📜 `crackPasswords/john/crack_kerberost_5_as_rep.sh` | crack krb 5 as rep hashes |
 | 📜 `crackPasswords/john/crack_md4.sh` | crack md4 hashes |
 | 📜 `crackPasswords/john/crack_md5.sh` | crack md5 hashes |
