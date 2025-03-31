@@ -15,14 +15,12 @@ install_packages() {
 
 # Function to install pip3 packages
 install_pip3_packages() {
-    local package="$1"
-
-    if [[ -z "${package}" ]]; then
-        show_info_notify_message "Usage: install_pip3_packages <package_name>"
+    if [[ $# -eq 0 ]]; then
+        show_info_notify_message "Usage: install_pip3_packages <package1> <package2> ..."
         return 1
     fi
 
-    pip3 install "${package}" --break-system-packages
+    pip3 install "$@" --break-system-packages
 }
 
 # Function to clone or update the repository
@@ -142,14 +140,11 @@ main() {
     setup_xfce_shortcut "${screenshot_shortcut_command}" "Ctrl+Shift+${screenshot_keybind}" "n"
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
+    # Install required programs
     check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick
 
-    install_pip3_packages pyftpdlib
-    install_pip3_packages sv-ttk
-    install_pip3_packages darkdetect
-    install_pip3_packages git-dumper
-    install_pip3_packages shodan
-    install_pip3_packages uploadserver
+    # install pip3 packages
+    install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot
 
     clone_or_update_repo
 

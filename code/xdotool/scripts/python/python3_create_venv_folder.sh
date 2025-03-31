@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-python3 create venv env folder
+python3: create venv env folder
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

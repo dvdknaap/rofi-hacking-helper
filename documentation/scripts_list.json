@@ -181,28 +181,13 @@
     },
     {
         "type": "script",
-        "path": "fileTransfer/cmd_mount_smb_share.sh",
-        "description": "cmd: mount smb share"
+        "path": "fileTransfer/decode_base64_and_save_to_file.sh",
+        "description": "decode base64 string and save to file"
     },
     {
         "type": "script",
-        "path": "fileTransfer/ps_upload_ftp_file_to_server.sh",
-        "description": "upload ftp file to server"
-    },
-    {
-        "type": "script",
-        "path": "fileTransfer/start_ftp_server.sh",
-        "description": "start a ftp server"
-    },
-    {
-        "type": "script",
-        "path": "fileTransfer/start_smb_share.sh",
-        "description": "start a smb server and create share location if not exists"
-    },
-    {
-        "type": "script",
-        "path": "fileTransfer/start_upload_server.sh",
-        "description": "start python upload server"
+        "path": "fileTransfer/encode_file_to_base64.sh",
+        "description": "upload base64 file to upload server"
     },
     {
         "type": "script",
@@ -210,14 +195,69 @@
         "description": "upload base64 file to upload server"
     },
     {
+        "type": "directory",
+        "path": "fileTransfer/bash",
+        "description": "send files over bash"
+    },
+    {
         "type": "script",
-        "path": "fileTransfer/upload_file_to_upload_server.sh",
-        "description": "upload file to upload server"
+        "path": "fileTransfer/bash/upload_file_to_upload_server.sh",
+        "description": "upload file to upload server (only works if enable-net-redirections is enabled)"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/curl",
+        "description": "script to upload a file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/curl/curl_upload_file_to_upload_server.sh",
+        "description": "curl: upload file to upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/curl/curl_upload_file_to_upload_server_with_post.sh",
+        "description": "curl: upload file to upload server with post method"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/dev_tcp",
+        "description": "download file over /dev/tcp/"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/dev_tcp/download_file_one_liner.sh",
+        "description": "download file over /dev/tcp/"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/ftp",
+        "description": "script to start ftp server and upload or download files"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ftp/ps_download_ftp_file_to_server.sh",
+        "description": "download ftp file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ftp/ps_upload_ftp_file_to_server.sh",
+        "description": "upload ftp file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ftp/start_ftp_server.sh",
+        "description": "start a ftp server"
     },
     {
         "type": "directory",
         "path": "fileTransfer/linux",
         "description": "transfer file to or from a server for linux"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/linux/encode_file_to_base64.sh",
+        "description": "encode file to base64 string"
     },
     {
         "type": "script",
@@ -228,6 +268,146 @@
         "type": "script",
         "path": "fileTransfer/linux/scp_upload_server_to_file.sh",
         "description": "SCP upload file to server"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/netcat",
+        "description": "download file over netcat (nc)"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/netcat/nc_download_file.sh",
+        "description": "nc: download file"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/netcat/nc_upload_file.sh",
+        "description": "nc: upload file"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/netcat/netcat_download_file.sh",
+        "description": "ncat: download file"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/netcat/netcat_upload_file.sh",
+        "description": "ncat: upload file"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/perl",
+        "description": "script to download files"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/perl/download_file_one_liner.sh",
+        "description": "perl: download file one liner"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/php",
+        "description": "start php server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/php/file_get_contents_download_file_one_liner.sh",
+        "description": "php: download file one liner with file_get_contents"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/php/fopen_download_file_one_liner.sh",
+        "description": "php: download file one liner with fopen"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/php/php_http_server.sh",
+        "description": "php: start http server"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/python",
+        "description": "start python http server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/python/python2.7_download_file_one_liner.sh",
+        "description": "python2.7: download file one liner"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/python/python2.7_http_server.sh",
+        "description": "python2.7: start http server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/python/python3_download_file_one_liner.sh",
+        "description": "python3: download file one liner"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/python/python3_http_server.sh",
+        "description": "python3: start http server"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/ruby",
+        "description": "start http server with ruby"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ruby/download_file_one_liner.sh",
+        "description": "ruby: download file one liner"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/ruby/php_http_server.sh",
+        "description": "ruby: start http server"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/smb",
+        "description": "scripts to start smb server, mount and copy files to smb server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/smb/cmd_mount_smb_share.sh",
+        "description": "cmd: mount smb share"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/smb/start_smb_share.sh",
+        "description": "start a smb server and create share location if not exists"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/uploadServer",
+        "description": "scripts start upload server and upload files to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/uploadServer/curl_upload_file_to_upload_server.sh",
+        "description": "curl: upload file to upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/uploadServer/ps_upload_file_to_upload_server.sh",
+        "description": "ps: upload file to upload server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/uploadServer/start_upload_server_port_443.sh",
+        "description": "start python upload server with port 433"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/uploadServer/start_upload_server_port_80.sh",
+        "description": "start python upload server with port 80"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/uploadServer/upload_file_one_liner.sh",
+        "description": "python3: upload file one liner"
     },
     {
         "type": "directory",
@@ -363,6 +543,21 @@
         "type": "script",
         "path": "fileTransfer/windows/powershell/upload_winpeas_x86_ofs_file.sh",
         "description": "ps: upload winPEASx86_ofs.exe file to server"
+    },
+    {
+        "type": "directory",
+        "path": "fileTransfer/wsgidav",
+        "description": "scripts to start wsgidav and copy to or from target"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/wsgidav/get_swgidav_share_address.sh",
+        "description": "get wsgidav server share address"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/wsgidav/start_wsgidav_server.sh",
+        "description": "start a wsgidav server"
     },
     {
         "type": "directory",
@@ -566,13 +761,18 @@
     },
     {
         "type": "script",
-        "path": "python/http_server.sh",
-        "description": "start http server"
+        "path": "python/python2.7_http_server.sh",
+        "description": "python2.7: start http server"
     },
     {
         "type": "script",
         "path": "python/python3_create_venv_folder.sh",
-        "description": "python3 create venv env folder"
+        "description": "python3: create venv env folder"
+    },
+    {
+        "type": "script",
+        "path": "python/python3_http_server.sh",
+        "description": "python3: start http server"
     },
     {
         "type": "script",

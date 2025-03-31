@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **481** scripts organized into **29** subdirectories.
+This repository contains **509** scripts organized into **29** subdirectories.
 
 ## Table of Contents
 
@@ -134,13 +134,48 @@ file transfer to or from a server
 
 | Path | Description |
 |------|-------------|
-| 📜 `fileTransfer/cmd_mount_smb_share.sh` | cmd: mount smb share |
-| 📜 `fileTransfer/ps_upload_ftp_file_to_server.sh` | upload ftp file to server |
-| 📜 `fileTransfer/start_ftp_server.sh` | start a ftp server |
-| 📜 `fileTransfer/start_smb_share.sh` | start a smb server and create share location if not exists |
-| 📜 `fileTransfer/start_upload_server.sh` | start python upload server |
+| 📜 `fileTransfer/decode_base64_and_save_to_file.sh` | decode base64 string and save to file |
+| 📜 `fileTransfer/encode_file_to_base64.sh` | upload base64 file to upload server |
 | 📜 `fileTransfer/upload_base64_file_to_upload_server.sh` | upload base64 file to upload server |
-| 📜 `fileTransfer/upload_file_to_upload_server.sh` | upload file to upload server |
+<br />
+
+### fileTransfer/bash
+
+send files over bash
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/bash/upload_file_to_upload_server.sh` | upload file to upload server (only works if enable-net-redirections is enabled) |
+<br />
+
+### fileTransfer/curl
+
+script to upload a file to server
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/curl/curl_upload_file_to_upload_server.sh` | curl: upload file to upload server |
+| 📜 `fileTransfer/curl/curl_upload_file_to_upload_server_with_post.sh` | curl: upload file to upload server with post method |
+<br />
+
+### fileTransfer/dev_tcp
+
+download file over /dev/tcp/
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/dev_tcp/download_file_one_liner.sh` | download file over /dev/tcp/ |
+<br />
+
+### fileTransfer/ftp
+
+script to start ftp server and upload or download files
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/ftp/ps_download_ftp_file_to_server.sh` | download ftp file to server |
+| 📜 `fileTransfer/ftp/ps_upload_ftp_file_to_server.sh` | upload ftp file to server |
+| 📜 `fileTransfer/ftp/start_ftp_server.sh` | start a ftp server |
 <br />
 
 ### fileTransfer/linux
@@ -149,8 +184,86 @@ transfer file to or from a server for linux
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/linux/encode_file_to_base64.sh` | encode file to base64 string |
 | 📜 `fileTransfer/linux/scp_download_file_from_server.sh` | SCP download file from server |
 | 📜 `fileTransfer/linux/scp_upload_server_to_file.sh` | SCP upload file to server |
+<br />
+
+### fileTransfer/netcat
+
+download file over netcat (nc)
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/netcat/nc_download_file.sh` | nc: download file |
+| 📜 `fileTransfer/netcat/nc_upload_file.sh` | nc: upload file |
+| 📜 `fileTransfer/netcat/netcat_download_file.sh` | ncat: download file |
+| 📜 `fileTransfer/netcat/netcat_upload_file.sh` | ncat: upload file |
+<br />
+
+### fileTransfer/perl
+
+script to download files
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/perl/download_file_one_liner.sh` | perl: download file one liner |
+<br />
+
+### fileTransfer/php
+
+start php server
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/php/file_get_contents_download_file_one_liner.sh` | php: download file one liner with file_get_contents |
+| 📜 `fileTransfer/php/fopen_download_file_one_liner.sh` | php: download file one liner with fopen |
+| 📜 `fileTransfer/php/php_http_server.sh` | php: start http server |
+<br />
+
+### fileTransfer/python
+
+start python http server
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/python/python2.7_download_file_one_liner.sh` | python2.7: download file one liner |
+| 📜 `fileTransfer/python/python2.7_http_server.sh` | python2.7: start http server |
+| 📜 `fileTransfer/python/python3_download_file_one_liner.sh` | python3: download file one liner |
+| 📜 `fileTransfer/python/python3_http_server.sh` | python3: start http server |
+<br />
+
+### fileTransfer/ruby
+
+start http server with ruby
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/ruby/download_file_one_liner.sh` | ruby: download file one liner |
+| 📜 `fileTransfer/ruby/php_http_server.sh` | ruby: start http server |
+<br />
+
+### fileTransfer/smb
+
+scripts to start smb server, mount and copy files to smb server
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/smb/cmd_mount_smb_share.sh` | cmd: mount smb share |
+| 📜 `fileTransfer/smb/start_smb_share.sh` | start a smb server and create share location if not exists |
+<br />
+
+### fileTransfer/uploadServer
+
+scripts start upload server and upload files to server
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/uploadServer/curl_upload_file_to_upload_server.sh` | curl: upload file to upload server |
+| 📜 `fileTransfer/uploadServer/ps_upload_file_to_upload_server.sh` | ps: upload file to upload server |
+| 📜 `fileTransfer/uploadServer/start_upload_server_port_443.sh` | start python upload server with port 433 |
+| 📜 `fileTransfer/uploadServer/start_upload_server_port_80.sh` | start python upload server with port 80 |
+| 📜 `fileTransfer/uploadServer/upload_file_one_liner.sh` | python3: upload file one liner |
 <br />
 
 ### fileTransfer/windows
@@ -195,6 +308,16 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_x64_ofs_file.sh` | ps: upload winPEASx64_ofs.exe file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_x86_file.sh` | ps: upload winPEASx86.exe file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_x86_ofs_file.sh` | ps: upload winPEASx86_ofs.exe file to server |
+<br />
+
+### fileTransfer/wsgidav
+
+scripts to start wsgidav and copy to or from target
+
+| Path | Description |
+|------|-------------|
+| 📜 `fileTransfer/wsgidav/get_swgidav_share_address.sh` | get wsgidav server share address |
+| 📜 `fileTransfer/wsgidav/start_wsgidav_server.sh` | start a wsgidav server |
 <br />
 
 ### ftp
@@ -284,8 +407,9 @@ different python scripts like to start http server
 
 | Path | Description |
 |------|-------------|
-| 📜 `python/http_server.sh` | start http server |
-| 📜 `python/python3_create_venv_folder.sh` | python3 create venv env folder |
+| 📜 `python/python2.7_http_server.sh` | python2.7: start http server |
+| 📜 `python/python3_create_venv_folder.sh` | python3: create venv env folder |
+| 📜 `python/python3_http_server.sh` | python3: start http server |
 | 📜 `python/python3_venv_install_requirements.sh` | python3 venv install requirements.txt |
 | 📜 `python/server_always_return_200.sh` | start server and always return 200 |
 <br />
