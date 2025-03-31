@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>532</b> scripts organized into <b>30</b> subdirectories.</p>
+    <p>This repository contains <b>566</b> scripts organized into <b>31</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -118,6 +118,11 @@
     },
     {
         "type": "script",
+        "path": "crackPasswords/hashcat/crack_jwt.sh",
+        "description": "Crack JWT (JSON Web Token) string"
+    },
+    {
+        "type": "script",
         "path": "crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh",
         "description": "Crack Kerberos 5, etype 23, AS-REP hashes with hashcat."
     },
@@ -168,18 +173,183 @@
     },
     {
         "type": "script",
-        "path": "crackPasswords/john/crack_kerberost_5_as_rep_hashes.sh",
-        "description": "crack krb 5 as rep"
+        "path": "crackPasswords/john/crack_blowfish.sh",
+        "description": "crack Blowfish-based crypt(3) hashes"
     },
     {
         "type": "script",
-        "path": "crackPasswords/john/crack_ntlm_hashes.sh",
+        "path": "crackPasswords/john/crack_crypt3.sh",
+        "description": "crack Traditional Unix crypt(3) hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_hmac_md5.sh",
+        "description": "crack hmac-md5 password hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_kerberos4.sh",
+        "description": "crack Kerberos 4 password hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_kerberos5.sh",
+        "description": "crack Kerberos 4 password hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_kerberost_5_as_rep.sh",
+        "description": "crack krb 5 as rep hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_md4.sh",
+        "description": "crack rar (winrar) hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_md5.sh",
+        "description": "crack md5 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_mssql.sh",
+        "description": "crack mssql hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_mysql.sh",
+        "description": "crack mysql hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_mysql_sha1.sh",
+        "description": "crack mysql sha1 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_ntlm.sh",
         "description": "crack ntlm hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_pdf.sh",
+        "description": "crack pdf hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_rar.sh",
+        "description": "crack rar (winrar) hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_sha1.sh",
+        "description": "crack sha1 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_sha224.sh",
+        "description": "crack sha224 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_sha256.sh",
+        "description": "crack sha256 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_sha384.sh",
+        "description": "crack sha384 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_sha512.sh",
+        "description": "crack sha512 hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_ssh.sh",
+        "description": "crack ssh hashes"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/crack_zip.sh",
+        "description": "crack zip (winzip) hashes"
     },
     {
         "type": "script",
         "path": "crackPasswords/john/unshadow_passwords.sh",
         "description": "unshadow /etc/passwords"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/hccap2john.sh",
+        "description": "covert wpa/wpa2 handshake captures to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/keepass2john.sh",
+        "description": "covert keepass to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/keychain2john.sh",
+        "description": "covert keychain to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/mscash2john.sh",
+        "description": "covert mscash to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/office2john.sh",
+        "description": "covert ms office to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/pdf2john.sh",
+        "description": "covert pdf to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/pfx2john.sh",
+        "description": "covert pfx (pkcs#12) to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/putty2john.sh",
+        "description": "covert putty to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/rar2john.sh",
+        "description": "covert keychain to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/ssh2john.sh",
+        "description": "covert ssh to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/truecrypt_volume2john.sh",
+        "description": "covert truecrypt volumes to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/vncpcap2john.sh",
+        "description": "covert vnc pcap to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/wpa2john.sh",
+        "description": "covert wpa/wpa2 handshake to john format"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/john/convert_to_john/zip2john.sh",
+        "description": "covert zip to john format"
     },
     {
         "type": "script",

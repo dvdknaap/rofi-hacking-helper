@@ -1,7 +1,7 @@
  #!/bin/bash
 
 : '
-crack ntlm hashes
+Crack JWT (JSON Web Token) string
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${WORDLIST_FIELD}"
 HASH_FILE=${form_data["hash_file"]}
 WORDLIST_FILE=${form_data["wordlist_file"]}
 
-paste_command "john --wordlist=${WORDLIST_FILE} --format=NT ${HASH_FILE}"
+paste_command "hashcat -m 16500 -O -w 3 ${HASH_FILE} ${WORDLIST_FILE}"
 xdotool key Return
