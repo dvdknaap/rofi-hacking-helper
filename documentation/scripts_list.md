@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **566** scripts organized into **31** subdirectories.
+This repository contains **570** scripts organized into **31** subdirectories.
 
 ## Table of Contents
 
@@ -14,6 +14,7 @@ This repository contains **566** scripts organized into **31** subdirectories.
 - [decompile](#decompile)
 - [fileTransfer](#filetransfer)
 - [ftp](#ftp)
+- [hydra](#hydra)
 - [nmapScans](#nmapscans)
 - [portListening](#portlistening)
 - [python](#python)
@@ -374,6 +375,17 @@ scripts for ftp enumeration
 | 📜 `ftp/metasploit_bruteforce_username_and_password_file.sh` | hydra: bruteforce username and passwords file |
 | 📜 `ftp/metasploit_bruteforce_username_file_and_password_file.sh` | hydra: bruteforce username file and passwords file |
 | 📜 `ftp/wget_download_files_from_ftp.sh` | wget: download files from ftp |
+<br />
+
+### hydra
+
+scripts to do hydra brute force attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `hydra/rdp_brute_force.sh` | hydra: rdp brute force |
+| 📜 `hydra/smb_brute_force.sh` | hydra: smb brute force |
+| 📜 `hydra/ssh_brute_force.sh` | hydra: ssh brute force |
 <br />
 
 ### nmapScans
@@ -1355,6 +1367,7 @@ scripts to start port listening or forwarding
 
 | Path | Description |
 |------|-------------|
+| 📜 `ssh/hydra_ssh_brute_force.sh` | hydra: ssh brute force |
 | 📜 `ssh/local_port_listening.sh` | type ssh port listening |
 | 📜 `ssh/local_port_listening_with_sshkey.sh` | type ssh port listening with ssh key |
 | 📜 `ssh/metasploit_bruteforce_username_and_password_file.sh` | ssh: bruteforce username and passwords file |

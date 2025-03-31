@@ -771,6 +771,26 @@
     },
     {
         "type": "directory",
+        "path": "hydra",
+        "description": "scripts to do hydra brute force attacks"
+    },
+    {
+        "type": "script",
+        "path": "hydra/rdp_brute_force.sh",
+        "description": "hydra: rdp brute force"
+    },
+    {
+        "type": "script",
+        "path": "hydra/smb_brute_force.sh",
+        "description": "hydra: smb brute force"
+    },
+    {
+        "type": "script",
+        "path": "hydra/ssh_brute_force.sh",
+        "description": "hydra: ssh brute force"
+    },
+    {
+        "type": "directory",
         "path": "nmapScans",
         "description": "Collection of scripts for network scanning."
     },
@@ -3023,6 +3043,11 @@
         "type": "directory",
         "path": "ssh",
         "description": "scripts to start port listening or forwarding"
+    },
+    {
+        "type": "script",
+        "path": "ssh/hydra_ssh_brute_force.sh",
+        "description": "hydra: ssh brute force"
     },
     {
         "type": "script",

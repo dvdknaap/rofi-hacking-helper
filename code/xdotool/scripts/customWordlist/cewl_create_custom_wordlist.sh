@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${OUTPUT_FIELD}"
 WEBSITE=${form_data["website"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "cewl '${WEBSITE}' > ${OUTPUT_FILE}"
+paste_command "cewl '${WEBSITE}' -d 4 -m 6 -w ${OUTPUT_FILE}"
 xdotool key Return
