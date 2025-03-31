@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **509** scripts organized into **29** subdirectories.
+This repository contains **519** scripts organized into **29** subdirectories.
 
 ## Table of Contents
 
@@ -1054,8 +1054,6 @@ scripts like automatically fix shell and make it interactive, start port listeni
 | 📜 `shell/fix_shell.sh` | Fix shell to fully interactive shell |
 | 📜 `shell/listen_for_ping.sh` | listen for ping response |
 | 📜 `shell/netcat.sh` | start nc port listening |
-| 📜 `shell/python3_pty_spawn.sh` | python3 - pyt.spawn |
-| 📜 `shell/python_pty_spawn.sh` | python - pyt.spawn |
 | 📜 `shell/rlwrap_netcat.sh` | start rlwrap nc port listening |
 <br />
 
@@ -1064,6 +1062,33 @@ scripts like automatically fix shell and make it interactive, start port listeni
 | Path | Description |
 |------|-------------|
 | 📜 `shell/background/compile_hollow.sh` |  |
+<br />
+
+### shell/interactive_shell
+
+scripts to get interactive shells
+
+| Path | Description |
+|------|-------------|
+| 📜 `shell/interactive_shell/awk_get_interactive_shell.sh` | awk - get interactive shell |
+| 📜 `shell/interactive_shell/find_get_interactive_shell.sh` | find - get interactive shell |
+| 📜 `shell/interactive_shell/find_get_interactive_shell_usin_exec.sh` | find - get interactive shell using exec |
+| 📜 `shell/interactive_shell/lua_get_interactive_shell.sh` | lua - get interactive shell |
+| 📜 `shell/interactive_shell/perl_get_interactive_shell.sh` | perl - get interactive shell |
+| 📜 `shell/interactive_shell/python3_pty_spawn.sh` | python3 - pyt.spawn |
+| 📜 `shell/interactive_shell/python_pty_spawn.sh` | python - pyt.spawn |
+| 📜 `shell/interactive_shell/ruby_get_interactive_shell.sh` | ruby - get interactive shell |
+| 📜 `shell/interactive_shell/sh_get_interactive_shell.sh` | sh - get interactive shell |
+| 📜 `shell/interactive_shell/vim_get_interactive_shell.sh` | vim - get interactive shell |
+<br />
+
+### shell/linux
+
+linux reverse shells
+
+| Path | Description |
+|------|-------------|
+| 📜 `shell/linux/mkfifo_reverse_shell.sh` | generate mkfifo reverse |
 <br />
 
 ### shell/msfconsole
@@ -1142,7 +1167,8 @@ scripts to create windows shells
 | 📜 `shell/windows/cmd_upload_nc64_and_execute_powershell.sh` | upload nc64.exe and start nc64.exe and execute powershell |
 | 📜 `shell/windows/cmd_upload_nc_and_execute_cmd.sh` | upload nc.exe and start nc.exe and execute cmd |
 | 📜 `shell/windows/cmd_upload_nc_and_execute_powershell.sh` | upload nc.exe and start nc.exe and execute powershell |
-| 📜 `shell/windows/powershell_base64.sh` | generate base64 reverse powershell |
+| 📜 `shell/windows/powershell_one_liner_reverse_shell.sh` | generate reverse powershell oneliner |
+| 📜 `shell/windows/powershell_reverse_shell_base64.sh` | generate base64 reverse powershell |
 | 📜 `shell/windows/ps_download_nc_file.sh` | ps: download nc file |
 | 📜 `shell/windows/ps_execute_conPtyShell.sh` | ps: download Invoke-ConPtyShell.ps1 to server and start shell |
 | 📜 `shell/windows/ps_execute_powershellTcp.sh` | ps: download Invoke-PowerShellTc.ps1 to server and start shell |
