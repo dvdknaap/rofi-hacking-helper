@@ -22,4 +22,3 @@ sleep 0.8
 
 paste_command "run"
 xdotool key Return
-

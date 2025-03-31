@@ -3,3 +3,4 @@
 /code/xdotool/dynamicFields/*
 /code/xdotool/var/cache/*.cache
 /code/xdotool/screenshots/*
+/code/xdotool/settings.sh
