@@ -107,7 +107,7 @@ crack passwords with john the ripper
 | 📜 `crackPasswords/john/crack_kerberos4.sh` | crack Kerberos 4 password hashes |
 | 📜 `crackPasswords/john/crack_kerberos5.sh` | crack Kerberos 4 password hashes |
 | 📜 `crackPasswords/john/crack_kerberost_5_as_rep.sh` | crack krb 5 as rep hashes |
-| 📜 `crackPasswords/john/crack_md4.sh` | crack rar (winrar) hashes |
+| 📜 `crackPasswords/john/crack_md4.sh` | crack md4 hashes |
 | 📜 `crackPasswords/john/crack_md5.sh` | crack md5 hashes |
 | 📜 `crackPasswords/john/crack_mssql.sh` | crack mssql hashes |
 | 📜 `crackPasswords/john/crack_mysql.sh` | crack mysql hashes |
@@ -133,13 +133,13 @@ convert hash to john format
 |------|-------------|
 | 📜 `crackPasswords/john/convert_to_john/hccap2john.sh` | covert wpa/wpa2 handshake captures to john format |
 | 📜 `crackPasswords/john/convert_to_john/keepass2john.sh` | covert keepass to john format |
-| 📜 `crackPasswords/john/convert_to_john/keychain2john.sh` | covert keychain to john format |
+| 📜 `crackPasswords/john/convert_to_john/keychain2john.sh` | covert OS X keychain to john format |
 | 📜 `crackPasswords/john/convert_to_john/mscash2john.sh` | covert mscash to john format |
 | 📜 `crackPasswords/john/convert_to_john/office2john.sh` | covert ms office to john format |
 | 📜 `crackPasswords/john/convert_to_john/pdf2john.sh` | covert pdf to john format |
 | 📜 `crackPasswords/john/convert_to_john/pfx2john.sh` | covert pfx (pkcs#12) to john format |
 | 📜 `crackPasswords/john/convert_to_john/putty2john.sh` | covert putty to john format |
-| 📜 `crackPasswords/john/convert_to_john/rar2john.sh` | covert keychain to john format |
+| 📜 `crackPasswords/john/convert_to_john/rar2john.sh` | covert rar to john format |
 | 📜 `crackPasswords/john/convert_to_john/ssh2john.sh` | covert ssh to john format |
 | 📜 `crackPasswords/john/convert_to_john/truecrypt_volume2john.sh` | covert truecrypt volumes to john format |
 | 📜 `crackPasswords/john/convert_to_john/vncpcap2john.sh` | covert vnc pcap to john format |
