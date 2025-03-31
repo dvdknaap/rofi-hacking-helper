@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-upload file to upload server
+ps: upload file to upload server
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

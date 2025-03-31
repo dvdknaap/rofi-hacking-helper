@@ -1,16 +1,16 @@
 #!/bin/bash
 
 : '
-start http server
+ruby: start http server
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-PORT_FIELD=$(form_item  "port" "port")
+PORT_FIELD=$(form_item  "port" "number" "port" "80")
 
 # Generate GUI form
 generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "python3 -m http.server ${PORT}"
+paste_command "ruby -run -ehttpd . -p${PORT}"
 xdotool key Return

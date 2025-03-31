@@ -18,15 +18,13 @@ install_packages() {
 
 # Function to install pip3 packages
 install_pip3_packages() {
-    local package="$1"
-
-    if [[ -z "$package" ]]; then
-        show_info_notify_message "Usage: install_pip3_packages <package_name>"
-        echo "Usage: install_pip3_packages <package_name>"
+    if [[ $# -eq 0 ]]; then
+        show_info_notify_message "Usage: install_pip3_packages <package1> <package2> ..."
+        echo "Usage: install_pip3_package s<package1> <package2> ..."
         return 1
     fi
 
-    pip3 install "${package}" --break-system-packages
+    pip3 install "$@" --break-system-packages
 }
 
 # pull latest git version
@@ -143,14 +141,11 @@ main() {
 
     pull_latest_git_version
 
+    # Install required programs
     check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick
 
-    install_pip3_packages pyftpdlib
-    install_pip3_packages sv-ttk
-    install_pip3_packages darkdetect
-    install_pip3_packages git-dumper
-    install_pip3_packages shodan
-    install_pip3_packages uploadserver
+    # install pip3 packages
+    install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot
 
     show_success_notify_message "Update is complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"

