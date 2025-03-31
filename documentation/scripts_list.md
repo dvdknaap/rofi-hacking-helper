@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **572** scripts organized into **31** subdirectories.
+This repository contains **579** scripts organized into **32** subdirectories.
 
 ## Table of Contents
 
@@ -388,6 +388,17 @@ scripts to do hydra brute force attacks
 | 📜 `hydra/ssh_brute_force.sh` | hydra: ssh brute force |
 <br />
 
+### hydra/userPassFile
+
+hydra scripts that use userpass file
+
+| Path | Description |
+|------|-------------|
+| 📜 `hydra/userPassFile/rdp_brute_force.sh` | hydra: rdp brute force with userpass file |
+| 📜 `hydra/userPassFile/smb_brute_force.sh` | hydra: smb brute force with userpass file |
+| 📜 `hydra/userPassFile/ssh_brute_force.sh` | hydra: ssh brute force with userpass file |
+<br />
+
 ### nmapScans
 
 Collection of scripts for network scanning.
@@ -492,6 +503,7 @@ scripts to do reconnaissance on linux
 |------|-------------|
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
+| 📜 `reconnaissance/linux/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
 | 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
 | 📜 `reconnaissance/linux/linpeas_one_liner.sh` | linpeas one liner |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
@@ -698,6 +710,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_exe.sh` | download winPEASx86.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_ofs_exe.sh` | download winPEASx86_ofs.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/find_services.sh` | Find services |
+| 📜 `reconnaissance/windows/cmd/get_tasklist.sh` | Get tasklist |
 | 📜 `reconnaissance/windows/cmd/mini_linpeas.sh` | perform mini linpeas to get pentest info |
 | 📜 `reconnaissance/windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
@@ -1001,6 +1014,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/check_default_username.sh` | Powershell: Check default username |
 | 📜 `reconnaissance/windows/powershell/check_defender_status.sh` | check defender status |
 | 📜 `reconnaissance/windows/powershell/check_internal_listening_ports.sh` | check internal listening ports |
+| 📜 `reconnaissance/windows/powershell/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
 | 📜 `reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh` | Powershell - login to user on a different computer |
 | 📜 `reconnaissance/windows/powershell/disable_defender.sh` | Disable Windows Defender and Firewall. |
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
@@ -1021,6 +1035,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
 | 📜 `reconnaissance/windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
 | 📜 `reconnaissance/windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
+| 📜 `reconnaissance/windows/powershell/show_process_info.sh` | Powershell: show process info |
 <br />
 
 ### reconnaissance/windows/rpcclient
