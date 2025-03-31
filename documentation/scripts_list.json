@@ -791,6 +791,26 @@
     },
     {
         "type": "directory",
+        "path": "hydra/userPassFile",
+        "description": "hydra scripts that use userpass file"
+    },
+    {
+        "type": "script",
+        "path": "hydra/userPassFile/rdp_brute_force.sh",
+        "description": "hydra: rdp brute force with userpass file"
+    },
+    {
+        "type": "script",
+        "path": "hydra/userPassFile/smb_brute_force.sh",
+        "description": "hydra: smb brute force with userpass file"
+    },
+    {
+        "type": "script",
+        "path": "hydra/userPassFile/ssh_brute_force.sh",
+        "description": "hydra: ssh brute force with userpass file"
+    },
+    {
+        "type": "directory",
         "path": "nmapScans",
         "description": "Collection of scripts for network scanning."
     },
@@ -1013,6 +1033,11 @@
         "type": "script",
         "path": "reconnaissance/linux/check_running_cronjobs.sh",
         "description": "download pspy64 to server and run it"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/create_lsass_dump.sh",
+        "description": "Powershell: create lsass.dump in elevated powershell"
     },
     {
         "type": "script",
@@ -1448,6 +1473,11 @@
         "type": "script",
         "path": "reconnaissance/windows/cmd/find_services.sh",
         "description": "Find services"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/get_tasklist.sh",
+        "description": "Get tasklist"
     },
     {
         "type": "script",
@@ -2066,6 +2096,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/powershell/create_lsass_dump.sh",
+        "description": "Powershell: create lsass.dump in elevated powershell"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh",
         "description": "Powershell - login to user on a different computer"
     },
@@ -2163,6 +2198,11 @@
         "type": "script",
         "path": "reconnaissance/windows/powershell/show_items_in_recycle_bin.sh",
         "description": "Powershell: Show Items in recycle bin"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/show_process_info.sh",
+        "description": "Powershell: show process info"
     },
     {
         "type": "directory",
