@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **519** scripts organized into **29** subdirectories.
+This repository contains **525** scripts organized into **30** subdirectories.
 
 ## Table of Contents
 
@@ -1109,11 +1109,45 @@ msfconsole scripts with start sock proxy, port forwarding, server routes
 | 📜 `shell/msfconsole/listen_to_windows_rev_shell.sh` | start listener payload windows/shell_reverse_tcp |
 | 📜 `shell/msfconsole/meterpreter_port_forwarding.sh` | meterpreter: forward all trafic from remote port to local port |
 | 📜 `shell/msfconsole/meterpreter_set_server_routes.sh` | meterpreter: set server routes |
-| 📜 `shell/msfconsole/show_creds_all.sh` | meterpreter: show creds_all (mimikatz) |
 | 📜 `shell/msfconsole/start_sock_proxy.sh` | Start socks proxy |
 | 📜 `shell/msfconsole/start_windows_post_exploit_suggester.sh` | meterpreter: set windows post exploit suggester |
 | 📜 `shell/msfconsole/start_windows_post_hash_dump.sh` | meterpreter: set windows post hash dump |
 | 📜 `shell/msfconsole/upgrade_to_meterpreter.sh` | meterpreter:  upgrade shell to meterpreter |
+<br />
+
+### shell/msfconsole/meterpreter
+
+scripts for meterpreter
+
+| Path | Description |
+|------|-------------|
+| 📜 `shell/msfconsole/meterpreter/dump_hashes.sh` | dump hashes |
+| 📜 `shell/msfconsole/meterpreter/dump_lsa_dump_sam.sh` | dump lsa_dump_sam |
+| 📜 `shell/msfconsole/meterpreter/dump_lsa_dump_secrets.sh` | dump lsa_dump_secrets |
+<br />
+
+### shell/msfconsole/plugins
+
+scripts for metasploit plugins
+
+<br />
+
+### shell/msfconsole/plugins/darkoperators_metasploit_plugins
+
+scripts for darkoperator metasploit plugins
+
+| Path | Description |
+|------|-------------|
+| 📜 `shell/msfconsole/plugins/darkoperators_metasploit_plugins/install_plugins.sh` | install plugins |
+| 📜 `shell/msfconsole/plugins/darkoperators_metasploit_plugins/load_pentest.sh` | load pentest |
+<br />
+
+### shell/msfconsole/plugins/mimikatz
+
+| Path | Description |
+|------|-------------|
+| 📜 `shell/msfconsole/plugins/mimikatz/load_mimikatz.sh` | load mimikatz |
+| 📜 `shell/msfconsole/plugins/mimikatz/show_creds_all.sh` | meterpreter: show creds_all (mimikatz) |
 <br />
 
 ### shell/msfconsole/proxychains

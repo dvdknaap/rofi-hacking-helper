@@ -2326,11 +2326,6 @@
     },
     {
         "type": "script",
-        "path": "shell/msfconsole/show_creds_all.sh",
-        "description": "meterpreter: show creds_all (mimikatz)"
-    },
-    {
-        "type": "script",
         "path": "shell/msfconsole/start_sock_proxy.sh",
         "description": "Start socks proxy"
     },
@@ -2348,6 +2343,61 @@
         "type": "script",
         "path": "shell/msfconsole/upgrade_to_meterpreter.sh",
         "description": "meterpreter:  upgrade shell to meterpreter"
+    },
+    {
+        "type": "directory",
+        "path": "shell/msfconsole/meterpreter",
+        "description": "scripts for meterpreter"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/meterpreter/dump_hashes.sh",
+        "description": "dump hashes"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/meterpreter/dump_lsa_dump_sam.sh",
+        "description": "dump lsa_dump_sam"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/meterpreter/dump_lsa_dump_secrets.sh",
+        "description": "dump lsa_dump_secrets"
+    },
+    {
+        "type": "directory",
+        "path": "shell/msfconsole/plugins",
+        "description": "scripts for metasploit plugins"
+    },
+    {
+        "type": "directory",
+        "path": "shell/msfconsole/plugins/darkoperators_metasploit_plugins",
+        "description": "scripts for darkoperator metasploit plugins"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/plugins/darkoperators_metasploit_plugins/install_plugins.sh",
+        "description": "install plugins"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/plugins/darkoperators_metasploit_plugins/load_pentest.sh",
+        "description": "load pentest"
+    },
+    {
+        "type": "directory",
+        "path": "shell/msfconsole/plugins/mimikatz",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/plugins/mimikatz/load_mimikatz.sh",
+        "description": "load mimikatz"
+    },
+    {
+        "type": "script",
+        "path": "shell/msfconsole/plugins/mimikatz/show_creds_all.sh",
+        "description": "meterpreter: show creds_all (mimikatz)"
     },
     {
         "type": "directory",
