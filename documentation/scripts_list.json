@@ -162,7 +162,7 @@
     {
         "type": "script",
         "path": "crackPasswords/john/crack_kerberos5.sh",
-        "description": "crack Kerberos 4 password hashes"
+        "description": "crack Kerberos 5 password hashes"
     },
     {
         "type": "script",
