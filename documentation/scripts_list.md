@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **532** scripts organized into **30** subdirectories.
+This repository contains **570** scripts organized into **31** subdirectories.
 
 ## Table of Contents
 
@@ -14,6 +14,7 @@ This repository contains **532** scripts organized into **30** subdirectories.
 - [decompile](#decompile)
 - [fileTransfer](#filetransfer)
 - [ftp](#ftp)
+- [hydra](#hydra)
 - [nmapScans](#nmapscans)
 - [portListening](#portlistening)
 - [python](#python)
@@ -81,6 +82,7 @@ crack passwords with hashcat
 
 | Path | Description |
 |------|-------------|
+| 📜 `crackPasswords/hashcat/crack_jwt.sh` | Crack JWT (JSON Web Token) string |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh` | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_tgs_rep_hash.sh` | Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_net_ntlm_hashes.sh` | Crack NTLM hashes with hashcat. |
@@ -99,9 +101,50 @@ crack passwords with john the ripper
 
 | Path | Description |
 |------|-------------|
-| 📜 `crackPasswords/john/crack_kerberost_5_as_rep_hashes.sh` | crack krb 5 as rep |
-| 📜 `crackPasswords/john/crack_ntlm_hashes.sh` | crack ntlm hashes |
+| 📜 `crackPasswords/john/crack_blowfish.sh` | crack Blowfish-based crypt(3) hashes |
+| 📜 `crackPasswords/john/crack_crypt3.sh` | crack Traditional Unix crypt(3) hashes |
+| 📜 `crackPasswords/john/crack_hmac_md5.sh` | crack hmac-md5 password hashes |
+| 📜 `crackPasswords/john/crack_kerberos4.sh` | crack Kerberos 4 password hashes |
+| 📜 `crackPasswords/john/crack_kerberos5.sh` | crack Kerberos 4 password hashes |
+| 📜 `crackPasswords/john/crack_kerberost_5_as_rep.sh` | crack krb 5 as rep hashes |
+| 📜 `crackPasswords/john/crack_md4.sh` | crack rar (winrar) hashes |
+| 📜 `crackPasswords/john/crack_md5.sh` | crack md5 hashes |
+| 📜 `crackPasswords/john/crack_mssql.sh` | crack mssql hashes |
+| 📜 `crackPasswords/john/crack_mysql.sh` | crack mysql hashes |
+| 📜 `crackPasswords/john/crack_mysql_sha1.sh` | crack mysql sha1 hashes |
+| 📜 `crackPasswords/john/crack_ntlm.sh` | crack ntlm hashes |
+| 📜 `crackPasswords/john/crack_pdf.sh` | crack pdf hashes |
+| 📜 `crackPasswords/john/crack_rar.sh` | crack rar (winrar) hashes |
+| 📜 `crackPasswords/john/crack_sha1.sh` | crack sha1 hashes |
+| 📜 `crackPasswords/john/crack_sha224.sh` | crack sha224 hashes |
+| 📜 `crackPasswords/john/crack_sha256.sh` | crack sha256 hashes |
+| 📜 `crackPasswords/john/crack_sha384.sh` | crack sha384 hashes |
+| 📜 `crackPasswords/john/crack_sha512.sh` | crack sha512 hashes |
+| 📜 `crackPasswords/john/crack_ssh.sh` | crack ssh hashes |
+| 📜 `crackPasswords/john/crack_zip.sh` | crack zip (winzip) hashes |
 | 📜 `crackPasswords/john/unshadow_passwords.sh` | unshadow /etc/passwords |
+<br />
+
+### crackPasswords/john/convert_to_john
+
+convert hash to john format
+
+| Path | Description |
+|------|-------------|
+| 📜 `crackPasswords/john/convert_to_john/hccap2john.sh` | covert wpa/wpa2 handshake captures to john format |
+| 📜 `crackPasswords/john/convert_to_john/keepass2john.sh` | covert keepass to john format |
+| 📜 `crackPasswords/john/convert_to_john/keychain2john.sh` | covert keychain to john format |
+| 📜 `crackPasswords/john/convert_to_john/mscash2john.sh` | covert mscash to john format |
+| 📜 `crackPasswords/john/convert_to_john/office2john.sh` | covert ms office to john format |
+| 📜 `crackPasswords/john/convert_to_john/pdf2john.sh` | covert pdf to john format |
+| 📜 `crackPasswords/john/convert_to_john/pfx2john.sh` | covert pfx (pkcs#12) to john format |
+| 📜 `crackPasswords/john/convert_to_john/putty2john.sh` | covert putty to john format |
+| 📜 `crackPasswords/john/convert_to_john/rar2john.sh` | covert keychain to john format |
+| 📜 `crackPasswords/john/convert_to_john/ssh2john.sh` | covert ssh to john format |
+| 📜 `crackPasswords/john/convert_to_john/truecrypt_volume2john.sh` | covert truecrypt volumes to john format |
+| 📜 `crackPasswords/john/convert_to_john/vncpcap2john.sh` | covert vnc pcap to john format |
+| 📜 `crackPasswords/john/convert_to_john/wpa2john.sh` | covert wpa/wpa2 handshake to john format |
+| 📜 `crackPasswords/john/convert_to_john/zip2john.sh` | covert zip to john format |
 <br />
 
 ### customWordlist
@@ -332,6 +375,17 @@ scripts for ftp enumeration
 | 📜 `ftp/metasploit_bruteforce_username_and_password_file.sh` | hydra: bruteforce username and passwords file |
 | 📜 `ftp/metasploit_bruteforce_username_file_and_password_file.sh` | hydra: bruteforce username file and passwords file |
 | 📜 `ftp/wget_download_files_from_ftp.sh` | wget: download files from ftp |
+<br />
+
+### hydra
+
+scripts to do hydra brute force attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `hydra/rdp_brute_force.sh` | hydra: rdp brute force |
+| 📜 `hydra/smb_brute_force.sh` | hydra: smb brute force |
+| 📜 `hydra/ssh_brute_force.sh` | hydra: ssh brute force |
 <br />
 
 ### nmapScans
@@ -1313,6 +1367,7 @@ scripts to start port listening or forwarding
 
 | Path | Description |
 |------|-------------|
+| 📜 `ssh/hydra_ssh_brute_force.sh` | hydra: ssh brute force |
 | 📜 `ssh/local_port_listening.sh` | type ssh port listening |
 | 📜 `ssh/local_port_listening_with_sshkey.sh` | type ssh port listening with ssh key |
 | 📜 `ssh/metasploit_bruteforce_username_and_password_file.sh` | ssh: bruteforce username and passwords file |
