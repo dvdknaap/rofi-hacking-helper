@@ -32,7 +32,7 @@ install_pip3_packages() {
 clone_or_update_repo() {
     local repo_url="https://github.com/dvdknaap/rofi-hacking-helper.git"
 
-    if [ -d "${ROOT_DIR}" ]; then
+    if [ -d "${ROOT_DIR}/.git" ]; then
         echo "Target directory ${ROOT_DIR} already exists. Pulling latest changes..."
         git -C "${ROOT_DIR}" pull
     else
