@@ -14,9 +14,6 @@ crack_hashcat_method() {
     HASH_FILE=${form_data["hash_file"]}
     WORDLIST_FILE=${form_data["wordlist_file"]}
 
-    execute_command "${HASH_FILE} ${WORDLIST_FILE}"
-    create_new_line
-
     rule_switch=""
     if [[ "${rule_file}" != "" ]]; then
         rule_switch=" -r ${rule_file}"
