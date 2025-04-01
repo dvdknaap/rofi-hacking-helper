@@ -12,5 +12,5 @@ FILE="linpeas.sh"
 curl_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
-paste_command " bash ${FILE_LOCATION}"
+paste_command "bash ${FILE_LOCATION}"
 xdotool key Return
