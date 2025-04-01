@@ -78,9 +78,6 @@ setup_gnome_binding() {
         local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:${key}"
         local name=$(gsettings get "${key_path}" name | tr -d "'")
         
-        echo "key_path: ${key_path}"
-        echo "name: ${name}"
-
         # /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
         if [[ "${name}" == *"${shortcut_name}" ]]; then
             local command=$(gsettings get "${key_path}" command | tr -d "'")
@@ -158,12 +155,13 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    if [ -f "${SCRIPTS_DIR}/settings.sh" ]; then
+    if [ ! -f "${SCRIPTS_DIR}/settings.sh" ]; then
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
+        echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
 
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
-    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal.\e[0m"
+    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal\nIf the menu isn't showing up logout and login again.\e[0m"
 }
 
 # Run the main function
