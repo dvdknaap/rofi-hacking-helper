@@ -11,8 +11,8 @@ declare -gA ACTIVE_CRED_SYSTEM
 
 # Source all helper functies
 for file in "${HELPERS_DIR}"/*.sh; do
-  [ -f "$file" ] || continue  # Skip if not a regular file
-  source "$file"
+  [ -f "${file}" ] || continue  # Skip if not a regular file
+  source "${file}"
 done
 
 # Load dynamic fields

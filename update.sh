@@ -125,11 +125,11 @@ setup_gnome_binding() {
 # Main function to execute the script steps
 main() {
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
 
     # get latest update repo
@@ -149,8 +149,9 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    if [ ! -f "${SCRIPTS_DIR}/settings.sh"]; then
-        cp "${SCRIPTS_DIR}/settings_example.sh" "${SCRIPTS_DIR}/settings.sh"
+    if [ ! -f "${XDOTOOL_DIR}/settings.sh"]; then
+        cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
+        echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
     
     show_success_notify_message "Update is complete!"

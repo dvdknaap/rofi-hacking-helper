@@ -25,7 +25,7 @@ paste_command() {
             if grep -q Microsoft /proc/version &>/dev/null; then
                 CLIPBOARD_OLD=$(powershell.exe Get-Clipboard | tr -d '\r')
                 echo -n "$command" | clip.exe
-                
+
                 xdotool key Shift+v
 
                 echo -n "$CLIPBOARD_OLD" | clip.exe
@@ -33,7 +33,7 @@ paste_command() {
                 # Detect active window class
                 ACTIVE_WINDOW_ID=$(xdotool getactivewindow)
                 WINDOW_CLASS=$(xprop -id "$ACTIVE_WINDOW_ID" | grep "WM_CLASS" | awk -F '"' '{print $2}' | tr '[:upper:]' '[:lower:]')
-            
+
                 if [[ "$WINDOW_CLASS" =~ (xfreerdp|xfreerdp3) ]]; then
                     type_command "${command}"
                     return 0
@@ -41,7 +41,7 @@ paste_command() {
 
                 CLIPBOARD_OLD=$(xclip -o -selection clipboard)
                 echo -n "$command" | xclip -selection clipboard
-                
+
                 if [[ "$WINDOW_CLASS" =~ (gnome.terminal|terminal|konsole|gnome-terminal|xfce4-terminal|alacritty|xterm|tilix|mate-terminal|terminator|warp) ]]; then
                     xdotool key ctrl+Shift+v  # Terminal
                 else
@@ -62,7 +62,7 @@ paste_command() {
             echo -n "$command" | clip.exe
         
             xdotool key ctrl+v
-            
+
             echo -n "$CLIPBOARD_OLD" | clip.exe
             ;;
         *)
@@ -83,8 +83,9 @@ execute_command() {
     local COMMAND="${1}"
     local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
     local TYPING_CHARACTER_DELAY="${3:-"${SETTING_TYPING_CHARACTER_DELAY}"}"
+    local EXECUTE_COMMAND_TYPE="${SETTING_EXECUTE_COMMAND_TYPE:-"paste"}"
 
-    case "${SETTING_EXECUTE_COMMAND_TYPE}" in
+    case "${EXECUTE_COMMAND_TYPE}" in
         type*)
             type_command "${COMMAND}" "${TYPEING_DELAY}" "${TYPING_CHARACTER_DELAY}"
             ;;
@@ -92,7 +93,7 @@ execute_command() {
             paste_command "${COMMAND}"
             ;;
         *)
-            xdotool type "Unsupported execute command type setting"
+            xdotool type "Unsupported execute command type setting: ${EXECUTE_COMMAND_TYPE}"
             return 1
             ;;
     esac
