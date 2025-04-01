@@ -63,8 +63,6 @@ setup_gnome_binding() {
     local found_binding="0"
     local keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
 
-    echo "Checking if keybinding with command '${shortcut_name}' already exists..."
-
     for key in $keybindings; do
         if [[ "@as" == "${key}" ]]; then
             continue
@@ -72,9 +70,6 @@ setup_gnome_binding() {
 
         local key_path="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:${key}"
         local name=$(gsettings get "${key_path}" name | tr -d "'")
-        
-        echo "key_path: ${key_path}"
-        echo "name: ${name}"
 
         # /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
         if [[ "${name}" == *"${shortcut_name}" ]]; then
@@ -125,11 +120,11 @@ setup_gnome_binding() {
 # Main function to execute the script steps
 main() {
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
 
     # get latest update repo
@@ -149,7 +144,7 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    if [ ! -f "${XDOTOOL_DIR}/settings.sh"]; then
+    if [ ! -f "${XDOTOOL_DIR}/settings.sh" ]; then
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
         echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
@@ -158,7 +153,7 @@ main() {
     echo -e "\n\e[32mUpdate is complete.\e[0m"
     
     sleep 0.8
-    firefox documentation/scripts_list.html
+    firefox "${ROOT_DIR}/documentation/index.html"
 }
 
 # Run the main function

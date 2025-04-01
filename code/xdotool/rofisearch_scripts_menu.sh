@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Set base directory
-REAL_PATH="$(realpath "$0")"
-ROOT_DIR="$(dirname "${REAL_PATH}")"
+REAL_PATH="$(realpath "${BASH_SOURCE[0]}")"
+ROOT_DIR="$(realpath "$(dirname "${REAL_PATH}")/../../")"
 XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
 SCRIPTS_DIR="${XDOTOOL_DIR}/scripts"
 CACHE_DIR="${XDOTOOL_DIR}/var/cache"
