@@ -1,9 +1,10 @@
  #!/bin/bash
 
 : '
-Crack JWT (JSON Web Token) string
+Crack md5 hashes
 '
 
 source "${SCRIPTS_DIR}/crackPasswords/hashcat/.files/crack_hashcat_method.sh"
 
-crack_hashcat_method "16500"
+crack_hashcat_method "500"
+
