@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **589** scripts organized into **123** subdirectories.
+This repository contains **590** scripts organized into **123** subdirectories.
 
 ## Table of Contents
 
@@ -85,6 +85,7 @@ crack passwords with hashcat
 | 📜 `crackPasswords/hashcat/crack_jwt.sh` | Crack JWT (JSON Web Token) string |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh` | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_tgs_rep_hash.sh` | Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat. |
+| 📜 `crackPasswords/hashcat/crack_md5_hashes.sh` | Crack md5 hashes |
 | 📜 `crackPasswords/hashcat/crack_net_ntlm_hashes.sh` | Crack NTLM hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_net_ntlmv2_hashes.sh` | Crack NetNTLMv2 hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_spn_passwords.sh` | Crack SPN passwords with hashcat using rockyou.txt. |

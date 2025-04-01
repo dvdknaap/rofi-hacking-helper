@@ -96,6 +96,11 @@
     },
     {
         "type": "script",
+        "path": "crackPasswords/hashcat/crack_md5_hashes.sh",
+        "description": "Crack md5 hashes"
+    },
+    {
+        "type": "script",
         "path": "crackPasswords/hashcat/crack_net_ntlm_hashes.sh",
         "description": "Crack NTLM hashes with hashcat."
     },
