@@ -135,6 +135,11 @@
         "description": "Format username:RID:LM:NTLM::: to hashcat format"
     },
     {
+        "type": "script",
+        "path": "crackPasswords/hashcat/unshadow_passwords.sh",
+        "description": "unshadow /etc/passwords"
+    },
+    {
         "type": "directory",
         "path": "crackPasswords/john",
         "description": "crack passwords with john the ripper"

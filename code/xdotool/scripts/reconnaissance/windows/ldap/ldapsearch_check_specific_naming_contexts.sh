@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${NAMING_CONTEXTS_FIELD}"
 IP=${form_data["ip"]}
 NAMING_CONTEXTS=${form_data["namingcontexts"]}
 
-execute_commandnd "ldapsearch -H ldap://${IP} -x -b \"DC=${NAMING_CONTEXTS}\""
+execute_command "ldapsearch -H ldap://${IP} -x -b \"DC=${NAMING_CONTEXTS}\""
 create_new_line

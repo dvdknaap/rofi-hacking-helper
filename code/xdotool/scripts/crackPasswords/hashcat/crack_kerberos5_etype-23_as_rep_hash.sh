@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${WORDLIST_FIELD}"
 HASH_FILE=${form_data["hash_file"]}
 WORDLIST_FILE=${form_data["wordlist_file"]}
 
-execute_commandndndndndndndndndndndndndnd "hashcat -m 18200 -O -w 3 ${HASH_FILE} ${WORDLIST_FILE}"
+execute_command "hashcat -m 18200 -O -w 3 ${HASH_FILE} ${WORDLIST_FILE}"
 create_new_line

@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-execute_commandnd "/usr/bin/enum4linux -A -U -P ${IP}"
+execute_command "/usr/bin/enum4linux -A -U -P ${IP}"
 create_new_line

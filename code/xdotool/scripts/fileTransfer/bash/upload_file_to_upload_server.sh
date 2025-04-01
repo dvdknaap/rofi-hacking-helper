@@ -12,7 +12,7 @@ generate_form "${FILE_TO_DOWNLOAD_FIELD}"
 
 FILE_TO_DOWNLOAD=${form_data["file_to_download"]}
 
-execute_commandnd "# make sure a server is running in another window; python3 -m http.server 80"
+execute_command "# make sure a server is running in another window; python3 -m http.server 80"
 create_new_line
 sleep 0.8
 
