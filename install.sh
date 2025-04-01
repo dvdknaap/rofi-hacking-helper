@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # Set base directory
-REAL_PATH="$(realpath "$0")"
-ROOT_DIR="$(dirname "${REAL_PATH}")"
+if [[ -n "$1" ]]; then
+    ROOT_DIR="$1"
+else
+    REAL_PATH="$(realpath "$0")"
+    ROOT_DIR="$(dirname "${REAL_PATH}")"
+fi
 
 # Function to check if a package is installed and install it if missing
 check_and_install_packages() {
