@@ -19,5 +19,3 @@ sleep 1
 
 execute_command "sekurlsa::logonpasswords"
 create_new_line
-sleep 1
-

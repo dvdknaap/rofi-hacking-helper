@@ -21,7 +21,7 @@ check_and_install_packages() {
 install_pip3_packages() {
     if [[ $# -eq 0 ]]; then
         show_info_notify_message "Usage: install_pip3_packages <package1> <package2> ..."
-        echo "Usage: install_pip3_package s<package1> <package2> ..."
+        echo "Usage: install_pip3_packages <package1> <package2> ..."
         return 1
     fi
 
@@ -139,7 +139,7 @@ main() {
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
     # Install required programs
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user
 
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
