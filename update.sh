@@ -149,7 +149,7 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    if [[ -f "${SCRIPTS_DIR}/settings.sh"]]; then
+    if [ -f "${SCRIPTS_DIR}/settings.sh"]; then
         cp "${SCRIPTS_DIR}/settings_example.sh" "${SCRIPTS_DIR}/settings.sh"
     fi
     
