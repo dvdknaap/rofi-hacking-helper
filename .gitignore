@@ -1,6 +1,6 @@
 /code/xdotool/helpers/ctf_creds
 /code/xdotool/scripts/ctfs/*
 /code/xdotool/dynamicFields/*
-/code/xdotool/var/cache/*.cache
+/code/xdotool/var/cache/*
 /code/xdotool/screenshots/*
 /code/xdotool/settings.sh

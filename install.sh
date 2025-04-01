@@ -123,6 +123,8 @@ main() {
     clone_or_update_repo
 
     XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
+    CACHE_DIR="${XDOTOOL_DIR}/var/cache"
+    UPDATE_CHECK_FILE="${CACHE_DIR}/.rofi_last_update_check"
 
     source "${XDOTOOL_DIR}/env.sh"
     
@@ -152,6 +154,10 @@ main() {
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
         echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
+    fi
+
+    local NOW=$(date +%s)
+    echo "${NOW}" > "${UPDATE_CHECK_FILE}"
     
     sleep 0.8
     firefox "${ROOT_DIR}/documentation/index.html"
