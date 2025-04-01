@@ -126,6 +126,13 @@ setup_gnome_binding() {
 
 # Main function to execute the script steps
 main() {
+    # clone or update repo
+    clone_or_update_repo
+
+    XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
+
+    source "${XDOTOOL_DIR}/env.sh"
+    
     local helper_name="rofi-hacking-helper"
     local helper_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
@@ -133,13 +140,6 @@ main() {
     local screenshot_name="rofi-hacking-helper-screenshot"
     local screenshot_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
-
-    # clone or update repo
-    clone_or_update_repo
-
-    XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
-
-    source "${XDOTOOL_DIR}/env.sh"
 
     # Check for existing keybinding
     setup_xfce_shortcut "${helper_shortcut_command}" "Ctrl+Shift+${helper_keybind}" "m"
@@ -156,8 +156,8 @@ main() {
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
     if [ ! -f "${SCRIPTS_DIR}/settings.sh" ]; then
-        cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
-        echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
+        cp "${SCRIPTS_DIR}/settings_example.sh" "${SCRIPTS_DIR}/settings.sh"
+        echo -e "\e[32mSettings file created ${SCRIPTS_DIR}/settings.sh.\e[0m"
     fi
 
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
