@@ -12,5 +12,5 @@ generate_form "${TARGET_DIR_FIELD}"
 
 TARGET_DIR=${form_data["target_dir"]}
 
-paste_command "sudo umount ${TARGET_DIR}"
-xdotool key Return
+execute_command "sudo umount ${TARGET_DIR}"
+create_new_line

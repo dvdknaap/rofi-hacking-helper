@@ -21,5 +21,5 @@ if [[ "${FORMAT}" != "all" ]]; then
     selected_format="--select-format '${FORMAT}'"
 fi
 
-paste_command "${PROGRAM_PATH} -input-file '${USERS_FILE}' ${selected_format}"
-xdotool key Return
+execute_command "${PROGRAM_PATH} -input-file '${USERS_FILE}' ${selected_format}"
+create_new_line

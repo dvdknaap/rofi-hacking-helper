@@ -20,6 +20,6 @@ PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 DC=${form_data["dc"]}
 
-paste_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'querydominfo; quit;'"
-xdotool key Return
+execute_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'querydominfo; quit;'"
+create_new_line
 

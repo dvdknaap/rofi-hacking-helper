@@ -12,5 +12,5 @@ generate_form "${TABLE_FIELD}"
 
 TABLE=${form_data["table"]}
 
-paste_command "select * from ${TABLE}/G"
-xdotool key Return
+execute_command "select * from ${TABLE}/G"
+create_new_line

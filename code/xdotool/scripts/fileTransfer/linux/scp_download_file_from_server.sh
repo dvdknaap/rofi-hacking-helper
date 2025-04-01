@@ -20,5 +20,5 @@ IP=${form_data["ip"]}
 REMOTE_FILE_PATH=${form_data["remote_file_path"]}
 LOCAL_PATH=${form_data["local_path"]}
 
-paste_command "scp -i ${ID_RSA_FILE} ${USERNAME}@${IP}:${REMOTE_FILE_PATH} ${LOCAL_PATH}"
-xdotool key Return
+execute_command "scp -i ${ID_RSA_FILE} ${USERNAME}@${IP}:${REMOTE_FILE_PATH} ${LOCAL_PATH}"
+create_new_line

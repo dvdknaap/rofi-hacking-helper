@@ -4,5 +4,5 @@
 Get tasklist
 '
 
-paste_command "tasklist /svc"
-xdotool key Return
+execute_command "tasklist /svc"
+create_new_line

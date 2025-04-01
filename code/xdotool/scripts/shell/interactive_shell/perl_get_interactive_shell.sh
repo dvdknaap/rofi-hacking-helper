@@ -4,5 +4,5 @@
 perl - get interactive shell
 '
 
-paste_command "perl —e 'exec "/bin/sh";'"
-xdotool key Return
+execute_command "perl —e 'exec "/bin/sh";'"
+create_new_line

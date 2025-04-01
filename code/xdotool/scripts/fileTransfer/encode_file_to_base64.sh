@@ -12,9 +12,9 @@ generate_form "${LISTEN_PORT_FIELD}" "${UPLOAD_FILE_LOCATION_FIELD}"
 
 FILE=${form_data["file"]}
 
-paste_command "cat ${FILE} |base64 -w 0;echo"
-xdotool key Return
+execute_command "cat ${FILE} |base64 -w 0;echo"
+create_new_line
 sleep 0.8
 
-paste_command "md5sum ${FILE}"
-xdotool key Return
+execute_command "md5sum ${FILE}"
+create_new_line

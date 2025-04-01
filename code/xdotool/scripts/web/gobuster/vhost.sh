@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}"
 WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 
-paste_command "gobuster vhost -u '${WEBSITE}' -w ${WORDLIST} -t 60 --append-domain"
-xdotool key Return
+execute_command "gobuster vhost -u '${WEBSITE}' -w ${WORDLIST} -t 60 --append-domain"
+create_new_line

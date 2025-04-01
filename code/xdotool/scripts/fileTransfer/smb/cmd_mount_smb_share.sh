@@ -12,5 +12,5 @@ generate_form "${SHARE_FIELD}"
 
 SHARE=${form_data["share"]}
 
-paste_command "net use n: \\\\${KALI_IP}\\${SHARE}"
-xdotool key Return
+execute_command "net use n: \\\\${KALI_IP}\\${SHARE}"
+create_new_line

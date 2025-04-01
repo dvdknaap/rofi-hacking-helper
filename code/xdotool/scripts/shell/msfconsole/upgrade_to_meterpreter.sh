@@ -12,13 +12,13 @@ generate_form "${SESSION_FIELD}"
 
 SESSION=${form_data["SESSION"]}
 
-paste_command "use multi/manage/shell_to_meterpreter"
-xdotool key Return
+execute_command "use multi/manage/shell_to_meterpreter"
+create_new_line
 sleep 1
 
-paste_command "set SESSION ${SESSION}"
-xdotool key Return
+execute_command "set SESSION ${SESSION}"
+create_new_line
 sleep 0.8
 
-paste_command "run"
-xdotool key Return
+execute_command "run"
+create_new_line

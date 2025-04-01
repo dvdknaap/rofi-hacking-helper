@@ -4,14 +4,14 @@
 vim - get interactive shell
 '
 
-paste_command "vim"
-xdotool key Return
+execute_command "vim"
+create_new_line
 sleep 0.8
 
-paste_command ":set shell=/bin/sh"
-xdotool key Return
+execute_command ":set shell=/bin/sh"
+create_new_line
 sleep 0.8
 
-paste_command ":shell"
-xdotool key Return
+execute_command ":shell"
+create_new_line
 sleep 0.8

@@ -12,5 +12,5 @@ generate_form "${PATH_FIELD}"
 
 PATH=${form_data["root_path"]}
 
-paste_command "sudo wsgidav --host=0.0.0.0 --port=80 --root=${PATH} --auth=anonymous"
-xdotool key Return
+execute_command "sudo wsgidav --host=0.0.0.0 --port=80 --root=${PATH} --auth=anonymous"
+create_new_line

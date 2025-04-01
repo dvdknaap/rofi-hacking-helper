@@ -4,5 +4,5 @@
 Stop Inveigh
 '
 
-paste_command "Stop-Inveigh"
-xdotool key Return
+execute_command "Stop-Inveigh"
+create_new_line

@@ -17,5 +17,5 @@ FILE="DomainPasswordSpray.ps1"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "Import-Module ${FILE_LOCATION}"
-xdotool key Return
+execute_command "Import-Module ${FILE_LOCATION}"
+create_new_line

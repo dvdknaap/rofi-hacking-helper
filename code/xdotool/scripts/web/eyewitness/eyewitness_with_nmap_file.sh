@@ -14,5 +14,5 @@ generate_form "${NMAP_XML_FILE_FIELD}" "${OUTPUT_FOLDER_FIELD}"
 NMAP_XML_FILE=${form_data["nmap_xml_file"]}
 OUTPUT_FOLDER=${form_data["output_folder"]}
 
-paste_command "eyewitness -x ${NMAP_XML_FILE} -d ${OUTPUT_FOLDER}"
-xdotool key Return
+execute_command "eyewitness -x ${NMAP_XML_FILE} -d ${OUTPUT_FOLDER}"
+create_new_line

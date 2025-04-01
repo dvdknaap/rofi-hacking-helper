@@ -12,5 +12,5 @@ generate_form "${PROGRAM_NAME_FIELD}"
 
 PROGRAM_NAME=${form_data["program_name"]}
 
-paste_command "creds search ${PROGRAM_NAME}"
-xdotool key Return
+execute_command "creds search ${PROGRAM_NAME}"
+create_new_line

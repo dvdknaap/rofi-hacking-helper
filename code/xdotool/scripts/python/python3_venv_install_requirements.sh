@@ -12,5 +12,5 @@ generate_form "${VENV_FOLDER_FIELD}"
 
 VENV_FOLDER=${form_data["venv_folder"]}
 
-paste_command "${VENV_FOLDER}/bin/pip3 install -r requirements.txt"
-xdotool key Return
+execute_command "${VENV_FOLDER}/bin/pip3 install -r requirements.txt"
+create_new_line

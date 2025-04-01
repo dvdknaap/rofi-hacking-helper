@@ -18,5 +18,5 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 PORT=${form_data["port"]}
 
-paste_command "mssqlclient.py -port ${PORT} ${USERNAME}:'${PASSWORD}'@${IP} -windows-auth"
-xdotool key Return
+execute_command "mssqlclient.py -port ${PORT} ${USERNAME}:'${PASSWORD}'@${IP} -windows-auth"
+create_new_line

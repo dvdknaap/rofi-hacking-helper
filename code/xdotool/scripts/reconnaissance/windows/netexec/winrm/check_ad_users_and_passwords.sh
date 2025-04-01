@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec winrm ${IP} -u '${USERNAME}' -p '${PASSWORD}' | grep '[+]'"
-xdotool key Return
+execute_command "netexec winrm ${IP} -u '${USERNAME}' -p '${PASSWORD}' | grep '[+]'"
+create_new_line

@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${DOMAIN_FIELD}"
 IP=${form_data["ip"]}
 DOMAIN=${form_data["domain"]}
 
-paste_command "smtp-user-enum -M RCPT -U /usr/share/wordlists/seclists/Usernames/Honeypot-Captures/multiplesources-users-fabian-fingerle.de.txt -D ${DOMAIN} -t ${IP} -m 50"
-xdotool key Return
+execute_command "smtp-user-enum -M RCPT -U /usr/share/wordlists/seclists/Usernames/Honeypot-Captures/multiplesources-users-fabian-fingerle.de.txt -D ${DOMAIN} -t ${IP} -m 50"
+create_new_line

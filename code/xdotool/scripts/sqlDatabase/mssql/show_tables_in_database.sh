@@ -12,6 +12,6 @@ generate_form "${DATABASE_FIELD}"
 
 DATABASE=${form_data["database"]}
 
-paste_command "SELECT * FROM ${DATABASE}.INFORMATION_SCHEMA.TABLES"
-xdotool key Return
+execute_command "SELECT * FROM ${DATABASE}.INFORMATION_SCHEMA.TABLES"
+create_new_line
 

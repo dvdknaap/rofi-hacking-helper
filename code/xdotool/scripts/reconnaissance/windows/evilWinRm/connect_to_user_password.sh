@@ -16,6 +16,6 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "evil-winrm -i ${IP} -u '${USERNAME}' -p '${PASSWORD}'"
-xdotool key Return
+execute_command "evil-winrm -i ${IP} -u '${USERNAME}' -p '${PASSWORD}'"
+create_new_line
 

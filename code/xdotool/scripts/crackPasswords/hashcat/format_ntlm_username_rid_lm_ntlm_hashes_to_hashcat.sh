@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${OUTPUT_FIELD}"
 HASH_FILE=${form_data["hash_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "cat ${HASH_FILE} | cut -d ':' -f 1,4 > ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "cat ${HASH_FILE} | cut -d ':' -f 1,4 > ${OUTPUT_FILE}"
+create_new_line

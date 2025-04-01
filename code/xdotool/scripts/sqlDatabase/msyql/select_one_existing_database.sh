@@ -12,5 +12,5 @@ generate_form "${DATABASE_FIELD}"
 
 DATABASE=${form_data["database"]}
 
-paste_command "use ${DATABASE};"
-xdotool key Return
+execute_command "use ${DATABASE};"
+create_new_line

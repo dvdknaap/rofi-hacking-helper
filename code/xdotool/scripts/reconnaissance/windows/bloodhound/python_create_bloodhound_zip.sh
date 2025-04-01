@@ -20,5 +20,5 @@ PASSWORD=${form_data["password"]}
 DC=${form_data["dc"]}
 NS_IP=${form_data["ns_ip"]}
 
-paste_command "bloodhound-python -u '${USERNAME}' -p '${PASSWORD}' -d ${DOMAIN} -c All -dc ${DC} -ns ${NS_IP} --dns-tcp --zip"
-xdotool key Return
+execute_command "bloodhound-python -u '${USERNAME}' -p '${PASSWORD}' -d ${DOMAIN} -c All -dc ${DC} -ns ${NS_IP} --dns-tcp --zip"
+create_new_line

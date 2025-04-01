@@ -12,5 +12,5 @@ generate_form "${CPASSWORD_FIELD}"
 
 CPASSWORD=${form_data["cpassword"]}
 
-paste_command "gpp-decrypt ${CPASSWORD}"
-xdotool key Return
+execute_command "gpp-decrypt ${CPASSWORD}"
+create_new_line

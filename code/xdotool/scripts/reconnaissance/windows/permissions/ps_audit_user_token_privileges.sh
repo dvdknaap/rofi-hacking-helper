@@ -9,5 +9,5 @@ FILE="SharpUp.exe"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "${FILE_LOCATION}\SharpUp.exe audit TokenPrivileges"
-xdotool key Return
+execute_command "${FILE_LOCATION}\SharpUp.exe audit TokenPrivileges"
+create_new_line

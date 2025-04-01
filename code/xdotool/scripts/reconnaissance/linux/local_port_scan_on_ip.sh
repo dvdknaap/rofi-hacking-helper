@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}" "${INTERFACE_NAME_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "for PORT in {0..1000}; do timeout 1 bash -c \"</dev/tcp/${IP}/\$PORT &>/dev/null\" 2>/dev/null && echo \"port \$PORT is open\"; done"
-xdotool key Return
+execute_command "for PORT in {0..1000}; do timeout 1 bash -c \"</dev/tcp/${IP}/\$PORT &>/dev/null\" 2>/dev/null && echo \"port \$PORT is open\"; done"
+create_new_line

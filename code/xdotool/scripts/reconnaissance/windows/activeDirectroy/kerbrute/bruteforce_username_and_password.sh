@@ -16,5 +16,5 @@ DOMAIN=${form_data["domain"]}
 IP=${form_data["ip"]}
 USERNAME_WORDLIST_FILE=${form_data["username_wordlist_file"]}
 
-paste_command "${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/kerbrute/.files/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_WORDLIST_FILE} -v"
-xdotool key Return
+execute_command "${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/kerbrute/.files/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_WORDLIST_FILE} -v"
+create_new_line

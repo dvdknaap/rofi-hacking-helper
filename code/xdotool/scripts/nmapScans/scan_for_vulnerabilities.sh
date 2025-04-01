@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${PORT_FIELD}"
 IP=${form_data["ip"]}
 PORT=${form_data["port"]}
 
-paste_command "nmap ${IP} -p ${PORT} -sV --script vuln -vvv"
-xdotool key Return
+execute_command "nmap ${IP} -p ${PORT} -sV --script vuln -vvv"
+create_new_line

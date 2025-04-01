@@ -4,5 +4,5 @@
 Disable firewall
 '
 
-paste_command "Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False"
-xdotool key Return
+execute_command "Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False"
+create_new_line

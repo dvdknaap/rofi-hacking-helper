@@ -12,4 +12,4 @@ if [ ! -n "${FIELD_VALUE}" ]; then
     exit
 fi
 
-paste_command "${FIELD_VALUE}"
+execute_command "${FIELD_VALUE}"

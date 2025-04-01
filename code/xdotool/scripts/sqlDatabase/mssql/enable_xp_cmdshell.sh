@@ -4,20 +4,20 @@
 script to enable xp_cmdshell
 '
 
-paste_command "EXEC sp_configure 'show advanced options', '1';"
-xdotool key Return
+execute_command "EXEC sp_configure 'show advanced options', '1';"
+create_new_line
 sleep 1
 
-paste_command "RECONFIGURE;"
-xdotool key Return
-sleep 1
-
-
-paste_command "EXEC sp_configure 'xp_cmdshell', '1';"
-xdotool key Return
+execute_command "RECONFIGURE;"
+create_new_line
 sleep 1
 
 
-paste_command "RECONFIGURE;"
-xdotool key Return
+execute_command "EXEC sp_configure 'xp_cmdshell', '1';"
+create_new_line
+sleep 1
+
+
+execute_command "RECONFIGURE;"
+create_new_line
 sleep 1

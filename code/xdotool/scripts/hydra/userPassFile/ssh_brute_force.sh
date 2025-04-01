@@ -14,6 +14,6 @@ generate_form "${IP_FIELD}" "${USERPASS_FILE_FIELD}"
 IP=${form_data["ip"]}
 USERPASS_FILE=${form_data["userpass_file"]}
 
-paste_command "hydra -C ${USERPASS_FILE} ssh://${IP}"
-xdotool key Return
+execute_commandnd "hydra -C ${USERPASS_FILE} ssh://${IP}"
+create_new_line
 

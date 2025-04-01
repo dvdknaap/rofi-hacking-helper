@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "onesixtyone -c /usr/share/seclists/Discovery/SNMP/snmp.txt ${IP}"
-xdotool key Return
+execute_command "onesixtyone -c /usr/share/seclists/Discovery/SNMP/snmp.txt ${IP}"
+create_new_line

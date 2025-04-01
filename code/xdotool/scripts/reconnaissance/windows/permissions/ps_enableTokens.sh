@@ -9,5 +9,5 @@ FILE="Enable-Privilege.ps1"
 
 ps_webclient_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "${TMP_FOLFILE_LOCATIONDER}\EnableAllTokenPrivs.ps1"
-xdotool key Return 
+execute_command "${TMP_FOLFILE_LOCATIONDER}\EnableAllTokenPrivs.ps1"
+create_new_line 

@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "mysql -u ${USERNAME} -p'${PASSWORD}' -h ${IP}"
-xdotool key Return
+execute_command "mysql -u ${USERNAME} -p'${PASSWORD}' -h ${IP}"
+create_new_line

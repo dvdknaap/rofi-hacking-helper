@@ -14,5 +14,5 @@ generate_form "${SERVER_PORT_FIELD}" "${LOCAL_FILE_FIELD}"
 SERVER_PORT=${form_data["server_port"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "ncat -l -p  ${SERVER_PORT} --send-only < ${LOCAL_FILE}"
-xdotool key Return
+execute_command "ncat -l -p  ${SERVER_PORT} --send-only < ${LOCAL_FILE}"
+create_new_line

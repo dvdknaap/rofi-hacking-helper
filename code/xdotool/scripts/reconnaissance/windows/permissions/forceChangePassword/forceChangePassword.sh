@@ -14,5 +14,5 @@ generate_form "${USERNAME_FIELD}" "${NEW_PASSWORD_FIELD}"
 USERNAME=${form_data["username"]}
 NEW_PASSWORD_FILE=${form_data["new_password"]}
 
-paste_command "Set-DomainUserPassword -Identity '${USERNAME}' -AccountPassword (ConvertTo-SecureString '${NEW_PASSWORD_FILE}' -AsPlainText -Force ) -Verbose"
-xdotool key Return
+execute_command "Set-DomainUserPassword -Identity '${USERNAME}' -AccountPassword (ConvertTo-SecureString '${NEW_PASSWORD_FILE}' -AsPlainText -Force ) -Verbose"
+create_new_line

@@ -4,4 +4,4 @@
 get Kali IP address
 '
 
-paste_command "${KALI_IP}"
+execute_command "${KALI_IP}"

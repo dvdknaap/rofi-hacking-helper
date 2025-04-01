@@ -14,5 +14,5 @@ generate_form "${DOMAIN_FIELD}" "${SUBDOMAINS_FILE_FIELD}"
 DOMAIN=${form_data["domain"]}
 SUBDOMAINS_FILE=${form_data["subdomains_file"]}
 
-paste_command "for i in \$(cat ${SUBDOMAINS_FILE});do host \$i | grep \"has address\" | grep ${DOMAIN} | cut -d\" \" -f4 >> ip-addresses.txt;done"
-xdotool key Return
+execute_command "for i in \$(cat ${SUBDOMAINS_FILE});do host \$i | grep \"has address\" | grep ${DOMAIN} | cut -d\" \" -f4 >> ip-addresses.txt;done"
+create_new_line

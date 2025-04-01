@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${WORDLIST_FIELD}"
 SPN_FILE=${form_data["spn_file"]}
 WORDLIST_FILE=${form_data["wordlist_file"]}
 
-paste_command "hashcat -m 13100 -O -w 3 ${SPN_FILE} ${WORDLIST_FILE} -r ${SCRIPTS_DIR}/crackPasswords/hashcat/.rules/OneRuleToRuleThemAll.rule"
-xdotool key Return
+execute_commandndndndndndndndndndndndndndndnd "hashcat -m 13100 -O -w 3 ${SPN_FILE} ${WORDLIST_FILE} -r ${SCRIPTS_DIR}/crackPasswords/hashcat/.rules/OneRuleToRuleThemAll.rule"
+create_new_line

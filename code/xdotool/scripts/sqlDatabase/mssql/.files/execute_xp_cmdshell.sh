@@ -3,6 +3,6 @@
 execute_xp_cmdshell () {
     local cmd="$1"
     
-    paste_command "EXEC xp_cmdshell \"${CMD}\";"
-    xdotool key Return
+    execute_command "EXEC xp_cmdshell \"${CMD}\";"
+    create_new_line
 }

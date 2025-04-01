@@ -12,5 +12,5 @@ generate_form "${WEBSITE_FIELD}"
 
 WEBSITE=${form_data["website"]}
 
-paste_command "wpscan --url  '${WEBSITE}' -e u"
-xdotool key Return
+execute_command "wpscan --url  '${WEBSITE}' -e u"
+create_new_line

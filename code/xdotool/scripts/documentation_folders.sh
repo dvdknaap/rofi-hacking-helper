@@ -4,5 +4,5 @@
 create the HTB documentation folder structure
 '
 
-paste_command "bash ~/Desktop/base/code/createHackingDocumentionFolders"
-xdotool key Return
+execute_command "bash ~/Desktop/base/code/createHackingDocumentionFolders"
+create_new_line

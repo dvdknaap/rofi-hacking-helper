@@ -45,4 +45,4 @@ command=$(cat <<'EOF'
  $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 EOF
 )
-paste_command "${command}"
+execute_command "${command}"

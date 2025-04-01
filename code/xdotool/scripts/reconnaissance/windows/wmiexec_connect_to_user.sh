@@ -18,5 +18,5 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "wmiexec.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"
-xdotool key Return
+execute_command "wmiexec.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"
+create_new_line

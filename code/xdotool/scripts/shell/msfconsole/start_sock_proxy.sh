@@ -14,17 +14,17 @@ generate_form "${PORT_FIELD}" "${VERSION_FIELD}"
 PORT=${form_data["port"]}
 VERSION=${form_data["version"]}
 
-paste_command "use auxiliary/server/socks_proxy"
-xdotool key Return
+execute_command "use auxiliary/server/socks_proxy"
+create_new_line
 sleep 1
 
-paste_command "set SRVPORT ${PORT}"
-xdotool key Return
+execute_command "set SRVPORT ${PORT}"
+create_new_line
 sleep 0.8
 
-paste_command "set VERSION ${VERSION}"
-xdotool key Return
+execute_command "set VERSION ${VERSION}"
+create_new_line
 sleep 0.8
 
-paste_command "run"
-xdotool key Return
+execute_command "run"
+create_new_line

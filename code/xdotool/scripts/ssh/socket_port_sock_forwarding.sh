@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PROXY_PORT=${form_data["proxy_port"]}
 
-paste_command "ssh -D ${PROXY_PORT} ${USERNAME}@${IP} -v"
-xdotool key Return
+execute_command "ssh -D ${PROXY_PORT} ${USERNAME}@${IP} -v"
+create_new_line

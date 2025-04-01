@@ -4,5 +4,5 @@
 ps: Lists all unique usable tokens on the computer.
 '
 
-paste_command "Invoke-TokenManipulation -Enumerate"
-xdotool key Return
+execute_command "Invoke-TokenManipulation -Enumerate"
+create_new_line

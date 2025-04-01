@@ -4,5 +4,5 @@
 sh - get interactive shell
 '
 
-paste_command "/bin/sh -i"
-xdotool key Return
+execute_command "/bin/sh -i"
+create_new_line

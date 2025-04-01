@@ -14,10 +14,10 @@ generate_form "${NMAP_XML_FILE_FIELD}" "${OUTPUT_FILE_FIELD}"
 INMAP_XML_FILEP=${form_data["nmap_xml_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "xsltproc ${INMAP_XML_FILEP} -o ${OUTPUT_FILE}"
-xdotool key Return
+execute_commandnd "xsltproc ${INMAP_XML_FILEP} -o ${OUTPUT_FILE}"
+create_new_line
 sleep 0.8
 
-paste_command "firefox ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "firefox ${OUTPUT_FILE}"
+create_new_line
 sleep 0.8

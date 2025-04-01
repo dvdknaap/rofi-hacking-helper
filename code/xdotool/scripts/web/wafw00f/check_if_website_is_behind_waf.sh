@@ -11,5 +11,5 @@ generate_form "${WEBSITE_FIELD}"
 
 WEBSITE=${form_data["website"]}
 
-paste_command "wafw00f ${WEBSITE}"
-xdotool key Return
+execute_command "wafw00f ${WEBSITE}"
+create_new_line

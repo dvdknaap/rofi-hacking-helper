@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 HASH=${form_data["hash"]}
 
-paste_command "netexec smb ${IP} -u ${USERNAME} -H ${HASH}"
-xdotool key Return
+execute_command "netexec smb ${IP} -u ${USERNAME} -H ${HASH}"
+create_new_line

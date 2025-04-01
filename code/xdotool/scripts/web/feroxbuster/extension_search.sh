@@ -17,5 +17,5 @@ WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 EXT_WORDLIST=${form_data["wordlist"]}
 
-paste_command "feroxbuster -u '${WEBSITE}' -w ${WORDLIST} -x ${EXT_WORDLIST} -C 400,404,403,429"
-xdotool key Return
+execute_command "feroxbuster -u '${WEBSITE}' -w ${WORDLIST} -x ${EXT_WORDLIST} -C 400,404,403,429"
+create_new_line

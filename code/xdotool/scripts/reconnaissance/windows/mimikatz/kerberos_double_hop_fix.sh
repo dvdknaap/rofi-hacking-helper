@@ -19,15 +19,15 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "\$SecPassword = ConvertTo-SecureString '${PASSWORD}' -AsPlainText -Force"
-xdotool key Return
+execute_command "\$SecPassword = ConvertTo-SecureString '${PASSWORD}' -AsPlainText -Force"
+create_new_line
 sleep 1
 
-paste_command "\$Cred = New-Object System.Management.Automation.PSCredential('${usernaDOMAINme}\\${PASSWORD}', \$SecPassword)"
-xdotool key Return
+execute_command "\$Cred = New-Object System.Management.Automation.PSCredential('${usernaDOMAINme}\\${PASSWORD}', \$SecPassword)"
+create_new_line
 sleep 1
 
-paste_command "get-domainuser -spn -credential \$Cred | select samaccountname"
-xdotool key Return
+execute_command "get-domainuser -spn -credential \$Cred | select samaccountname"
+create_new_line
 sleep 1
 

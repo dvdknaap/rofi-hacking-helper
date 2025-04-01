@@ -12,5 +12,5 @@ generate_form "${REMOTE_PORT_FIELD}"
 
 IP_RANGE=${form_data["ip_range"]}
 
-paste_command "run autoroute -s ${IP_RANGE}"
-xdotool key Return
+execute_command "run autoroute -s ${IP_RANGE}"
+create_new_line

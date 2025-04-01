@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 PORT=${form_data["port"]}
 CATEGORY=${form_data["category"]}
 
-paste_command "nmap ${IP} -p ${PORT} -script ${CATEGORY} -vvv"
-xdotool key Return
+execute_command "nmap ${IP} -p ${PORT} -script ${CATEGORY} -vvv"
+create_new_line

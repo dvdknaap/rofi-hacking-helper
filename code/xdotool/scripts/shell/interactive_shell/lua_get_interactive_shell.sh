@@ -4,5 +4,5 @@
 lua - get interactive shell
 '
 
-paste_command "lua: os.execute('/bin/sh')"
-xdotool key Return
+execute_command "lua: os.execute('/bin/sh')"
+create_new_line

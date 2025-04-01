@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}"
 WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w ${WORDLIST} -t 40 -b 400,404,403,429 -e"
-xdotool key Return
+execute_command "gobuster dir -u '${WEBSITE}' -w ${WORDLIST} -t 40 -b 400,404,403,429 -e"
+create_new_line

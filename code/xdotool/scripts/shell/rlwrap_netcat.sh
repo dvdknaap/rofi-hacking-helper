@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "rlwrap -cAr nc -lvnp ${PORT}"
-xdotool key Return
+execute_command "rlwrap -cAr nc -lvnp ${PORT}"
+create_new_line

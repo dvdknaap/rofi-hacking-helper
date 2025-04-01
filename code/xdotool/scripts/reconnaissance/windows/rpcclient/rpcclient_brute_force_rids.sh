@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "for i in \$(seq 500 1100);do rpcclient -N -U \"\" ${IP} -c "queryuser 0x\$(printf '%x\n' \$i)" | grep \"User Name\|user_rid\|group_rid\" && echo \"\";done"
-xdotool key Return
+execute_command "for i in \$(seq 500 1100);do rpcclient -N -U \"\" ${IP} -c "queryuser 0x\$(printf '%x\n' \$i)" | grep \"User Name\|user_rid\|group_rid\" && echo \"\";done"
+create_new_line

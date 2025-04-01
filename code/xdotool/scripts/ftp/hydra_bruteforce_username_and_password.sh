@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "hydra -L ${USERNAME} -P ${PASSWORD} ${IP} ftp -V"
-xdotool key Return
+execute_command "hydra -L ${USERNAME} -P ${PASSWORD} ${IP} ftp -V"
+create_new_line

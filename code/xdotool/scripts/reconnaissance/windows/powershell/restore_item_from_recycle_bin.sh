@@ -14,22 +14,22 @@ FILE=${form_data["file_name"]}
 
 TMP_FOLDER="C:\temp"
 
-paste_command 'New-Item -Path "c:\" -Name "temp" -ItemType "directory"'
-xdotool key Return
+execute_command 'New-Item -Path "c:\" -Name "temp" -ItemType "directory"'
+create_new_line
 sleep 0.8
 
-paste_command "\$shell = New-Object -com shell.application"
-xdotool key Return
+execute_command "\$shell = New-Object -com shell.application"
+create_new_line
 sleep 0.8
 
-paste_command "\$rb = \$shell.Namespace(10)"
-xdotool key Return
+execute_command "\$rb = \$shell.Namespace(10)"
+create_new_line
 sleep 0.8
 
-paste_command "\$Undelete = \$rb.Items() | Where-Object {\$_.Name -like '${FILE}'}"
-xdotool key Return
+execute_command "\$Undelete = \$rb.Items() | Where-Object {\$_.Name -like '${FILE}'}"
+create_new_line
 sleep 0.8
 
-paste_command "Copy-Item -Path \$Undelete.Path -Destination ${TMP_FOLDER}/${FILE} -Force"
-xdotool key Return
+execute_command "Copy-Item -Path \$Undelete.Path -Destination ${TMP_FOLDER}/${FILE} -Force"
+create_new_line
 sleep 0.8

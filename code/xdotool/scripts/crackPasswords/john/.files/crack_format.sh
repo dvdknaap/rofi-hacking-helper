@@ -13,6 +13,6 @@ crack_format() {
     HASH_FILE=${form_data["hash_file"]}
     WORDLIST_FILE=${form_data["wordlist_file"]}
 
-    paste_command "john --wordlist=${WORDLIST_FILE} --format=${format} ${HASH_FILE}"
-    xdotool key Return
+    execute_command "john --wordlist=${WORDLIST_FILE} --format=${format} ${HASH_FILE}"
+    create_new_line
 }

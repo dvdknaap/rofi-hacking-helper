@@ -4,5 +4,5 @@
 dump lsa_dump_sam
 '
 
-paste_command "lsa_dump_sam"
-xdotool key Return
+execute_command "lsa_dump_sam"
+create_new_line

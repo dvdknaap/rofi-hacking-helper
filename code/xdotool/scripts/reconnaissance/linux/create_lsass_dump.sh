@@ -12,5 +12,5 @@ generate_form "${LSASS_DMP_FILE_FIELD}"
 
 LSASS_DMP=${form_data["lsass_dump_file"]}
 
-paste_command "pypykatz lsa minidump ${LSASS_DMP}"
-xdotool key Return
+execute_command "pypykatz lsa minidump ${LSASS_DMP}"
+create_new_line

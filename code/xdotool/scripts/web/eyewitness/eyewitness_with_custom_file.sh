@@ -14,5 +14,5 @@ generate_form "${SUBDOMAINS_FILE_FIELD}" "${OUTPUT_FOLDER_FIELD}"
 SUBDOMAINS_FILE=${form_data["subdomains_file"]}
 OUTPUT_FOLDER=${form_data["output_folder"]}
 
-paste_command "eyewitness -f ${SUBDOMAINS_FILE} -d ${OUTPUT_FOLDER}"
-xdotool key Return
+execute_command "eyewitness -f ${SUBDOMAINS_FILE} -d ${OUTPUT_FOLDER}"
+create_new_line

@@ -4,5 +4,5 @@
 mysql: show all databases
 '
 
-paste_command "show databases;"
-xdotool key Return
+execute_command "show databases;"
+create_new_line

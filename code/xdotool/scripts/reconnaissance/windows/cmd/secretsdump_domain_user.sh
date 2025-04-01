@@ -18,5 +18,5 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 
-paste_command "secretsdump.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"
-xdotool key Return
+execute_command "secretsdump.py ${DOMAIN}/${USERNAME}:${PASSWORD}@${IP}"
+create_new_line

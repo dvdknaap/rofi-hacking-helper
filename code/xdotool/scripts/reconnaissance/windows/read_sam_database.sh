@@ -21,5 +21,5 @@ if [[ ! -z "${SECURITY_FILE}" ]]; then
     SECURITY_SWITCH="-security ${SECURITY_FILE}"
 fi
 
-paste_command "secretsdump.py LOCAL -system ${SYTEM_FILE} -sam ${SAM_FILE} ${SECURITY_SWITCH}"
-xdotool key Return
+execute_command "secretsdump.py LOCAL -system ${SYTEM_FILE} -sam ${SAM_FILE} ${SECURITY_SWITCH}"
+create_new_line

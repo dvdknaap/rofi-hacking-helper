@@ -16,5 +16,5 @@ NTLM_FILE=${form_data["ntlm_file"]}
 USERNAME_OUTPUT_FILE=${form_data["username_output_file"]}
 HASHES_OUTPUT_FILE=${form_data["hash_output_file"]}
 
-paste_command "cat ${NTLM_FILE} | cut -d ':' -f 1 > ${USERNAME_OUTPUT_FILE}; cat ${NTLM_FILE} | cut -d ':' -f 4 > ${HASHES_OUTPUT_FILE}"
-xdotool key Return
+execute_command "cat ${NTLM_FILE} | cut -d ':' -f 1 > ${USERNAME_OUTPUT_FILE}; cat ${NTLM_FILE} | cut -d ':' -f 4 > ${HASHES_OUTPUT_FILE}"
+create_new_line

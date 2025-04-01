@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "php -S 0.0.0.0:${PORT}"
-xdotool key Return
+execute_command "php -S 0.0.0.0:${PORT}"
+create_new_line

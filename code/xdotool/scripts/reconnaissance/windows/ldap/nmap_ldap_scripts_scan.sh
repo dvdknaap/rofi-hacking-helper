@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "nmap -n -sV --script "ldap* and not brute" ${IP}"
-xdotool key Return
+execute_command "nmap -n -sV --script "ldap* and not brute" ${IP}"
+create_new_line

@@ -12,5 +12,5 @@ FILE="winPEASx86_ofs.exe"
 cmd_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
-paste_command "${FILE_LOCATION}"
-xdotool key Return
+execute_command "${FILE_LOCATION}"
+create_new_line

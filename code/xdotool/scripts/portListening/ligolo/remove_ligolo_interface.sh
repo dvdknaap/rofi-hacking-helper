@@ -12,5 +12,5 @@ generate_form "${INTERFACE_NAME_FIELD}"
 
 INTERFACE_NAME=${form_data["interface_name"]}
 
-paste_command "sudo ip link delete ${INTERFACE_NAME}"
-xdotool key Return
+execute_command "sudo ip link delete ${INTERFACE_NAME}"
+create_new_line

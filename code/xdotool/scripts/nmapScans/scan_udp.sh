@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${TOP_PORTS_FIELD}"
 IP=${form_data["ip"]}
 TOP_PORTS=${form_data["top_ports"]}
 
-paste_command "sudo nmap ${IP} -sU --top-ports=${TOP_PORTS} -vvv"
-xdotool key Return
+execute_command "sudo nmap ${IP} -sU --top-ports=${TOP_PORTS} -vvv"
+create_new_line

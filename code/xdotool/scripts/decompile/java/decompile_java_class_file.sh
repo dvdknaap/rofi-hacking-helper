@@ -12,5 +12,5 @@ generate_form "${CLASS_FIELD}"
 
 CLASS_FILE=${form_data["class_file"]}
 
-paste_command "javap -c ${CLASS_FILE}"
-xdotool key Return
+execute_command "javap -c ${CLASS_FILE}"
+create_new_line

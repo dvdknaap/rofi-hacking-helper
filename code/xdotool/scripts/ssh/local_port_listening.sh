@@ -20,6 +20,6 @@ LOCAL_PORT=${form_data["local_port"]}
 REMOTE_IP=${form_data["remote_ip"]}
 REMOTE_PORT=${form_data["remote_port"]}
 
-paste_command "ssh -L ${LOCAL_PORT}:${REMOTE_IP}:${REMOTE_PORT} ${USERNAME}@${IP} -v"
-xdotool key Return
+execute_command "ssh -L ${LOCAL_PORT}:${REMOTE_IP}:${REMOTE_PORT} ${USERNAME}@${IP} -v"
+create_new_line
 

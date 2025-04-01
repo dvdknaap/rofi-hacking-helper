@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${WORDLIST_FIELD}"
 SPN_FILE=${form_data["spn_file"]}
 WORDLIST_FILE=${form_data["wordlist_file"]}
 
-paste_command "hashcat -m 13100 -O -w 3 ${SPN_FILE} ${WORDLIST_FILE} -r /usr/share/hashcat/rules/best64.rule"
-xdotool key Return
+execute_commandndndndndndndndndndndndndndndndndndndndnd "hashcat -m 13100 -O -w 3 ${SPN_FILE} ${WORDLIST_FILE} -r /usr/share/hashcat/rules/best64.rule"
+create_new_line
