@@ -1,12 +1,7 @@
 #!/bin/bash
 
 # Set base directory
-if [[ -n "$1" ]]; then
-    ROOT_DIR="$1"
-else
-    REAL_PATH="$(realpath "$0")"
-    ROOT_DIR="$(dirname "${REAL_PATH}")"
-fi
+ROOT_DIR="${1}"
 
 # Function to check if a package is installed and install it if missing
 check_and_install_packages() {
@@ -134,11 +129,11 @@ main() {
     source "${XDOTOOL_DIR}/env.sh"
     
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
 
     # Check for existing keybinding
@@ -155,9 +150,9 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    if [ ! -f "${SCRIPTS_DIR}/settings.sh" ]; then
-        cp "${SCRIPTS_DIR}/settings_example.sh" "${SCRIPTS_DIR}/settings.sh"
-        echo -e "\e[32mSettings file created ${SCRIPTS_DIR}/settings.sh.\e[0m"
+    if [ ! -f "${XDOTOOL_DIR}/settings.sh" ]; then
+        cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
+        echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
 
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."

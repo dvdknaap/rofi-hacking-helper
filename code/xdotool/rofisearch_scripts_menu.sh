@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # Set base directory
-BASEDIR=~/Desktop/base
-XDOTOOL_DIR="${BASEDIR}/code/xdotool"
+REAL_PATH="$(realpath "$0")"
+ROOT_DIR="$(dirname "${REAL_PATH}")"
+XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
 SCRIPTS_DIR="${XDOTOOL_DIR}/scripts"
 CACHE_DIR="${XDOTOOL_DIR}/var/cache"
 UPDATE_CHECK_FILE="${CACHE_DIR}/.rofi_last_update_check"
 
-source "${XDOTOOL_DIR}/helpers/paste_commands.sh"
-
-mkdir -p "$CACHE_DIR"
+mkdir -p "${CACHE_DIR}"
 
 # Check for updates from git (once per day)
 function check_for_updates {
@@ -20,15 +19,15 @@ function check_for_updates {
     fi
 
     if (( NOW - LAST_CHECK > 86400 )); then
-        if [[ -d "$BASEDIR/.git" ]]; then
-            cd "$BASEDIR"
+        if [[ -d "${ROOT_DIR}/.git" ]]; then
+            cd "${ROOT_DIR}"
             git fetch origin &>/dev/null
             LOCAL=$(git rev-parse HEAD)
             REMOTE=$(git rev-parse origin/main)
 
             if [[ "$LOCAL" != "$REMOTE" ]]; then
                 local CHOICE=$(echo -e "Yes\nNo" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper-update.rasi")
-                
+
                 if [[ "$CHOICE" == "Yes" ]]; then
                     bash update.sh
                 fi
@@ -107,7 +106,7 @@ function generate_cache {
     local DIR_LOCAL=$1
     local CACHE_FILE="${CACHE_DIR}/$(echo -n "${DIR_LOCAL}" | md5sum | awk '{print $1}').cache"
 
-    rm -f "$CACHE_FILE"
+    rm -f "${CACHE_FILE}"
 
     # Eerste: Voeg 'dynamicFields' toe als het in de rootmap staat
     if [[ "$DIR_LOCAL" == "$SCRIPTS_DIR" && -d "${DIR_LOCAL}/dynamicFields" ]]; then
@@ -125,7 +124,7 @@ function generate_cache {
         local description=$(get_description "${dir}")
         local search_name=$(clean_filename "${name}")
         local icon=$(get_icon "$dir")
-        
+
         if [[ "${name}" == "dynamicFields" ]]; then
             continue
         fi
@@ -148,10 +147,11 @@ function generate_cache {
 function get_cached_menu {
     local DIR_LOCAL=$1
     local CACHE_FILE="${CACHE_DIR}/$(echo -n "${DIR_LOCAL}" | md5sum | awk '{print $1}').cache"
-    
+
     if [[ ! -f "${CACHE_FILE}" || $(find "${DIR_LOCAL}" -newer "${CACHE_FILE}" | wc -l) -gt 0 ]]; then
         generate_cache "${DIR_LOCAL}"
     fi
+
     cat "${CACHE_FILE}"
 }
 
@@ -162,21 +162,21 @@ function fuzzy_search {
     local results=""
 
     # Convert input to lowercase
-    local input_lower=$(echo "$input" | tr '[:upper:]' '[:lower:]')
+    local input_lower=$(echo "${input}" | tr '[:upper:]' '[:lower:]')
 
     while IFS=$'\n' read -r line; do
-        local icon=$(echo "$line" | cut -d' ' -f1)
-        local name=$(echo "$line" | cut -d'|' -f1 | cut -d' ' -f2-)
-        local desc=$(echo "$line" | cut -d'|' -f2 | sed 's/^[[:space:]]*//; s/^[[:space:]]*$//')
-        local search=$(echo "$line" | cut -d'|' -f3 | sed 's/^[[:space:]]*$//; s/^[[:space:]]*$//')
+        local icon=$(echo "${line}" | cut -d' ' -f1)
+        local name=$(echo "${line}" | cut -d'|' -f1 | cut -d' ' -f2-)
+        local desc=$(echo "${line}" | cut -d'|' -f2 | sed 's/^[[:space:]]*//; s/^[[:space:]]*$//')
+        local search=$(echo "${line}" | cut -d'|' -f3 | sed 's/^[[:space:]]*$//; s/^[[:space:]]*$//')
 
         # Convert search, name, and desc to lowercase
-        local search_lower=$(echo "$search" | tr '[:upper:]' '[:lower:]')
-        local name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
-        local desc_lower=$(echo "$desc" | tr '[:upper:]' '[:lower:]')
+        local search_lower=$(echo "${search}" | tr '[:upper:]' '[:lower:]')
+        local name_lower=$(echo "${name}" | tr '[:upper:]' '[:lower:]')
+        local desc_lower=$(echo "${desc}" | tr '[:upper:]' '[:lower:]')
 
         # Simplified matching: check if input is a substring of any of the fields
-        if [[ -z "$input" || "$search_lower$name_lower$desc_lower" == *"$input_lower"* ]]; then
+        if [[ -z "${input}" || "${search_lower}${name_lower}${desc_lower}" == *"${input_lower}"* ]]; then
             local result="${icon} ${name}"
 
             # Add description if it's not empty
@@ -197,24 +197,24 @@ function dir_menu {
     local search_query=""
 
     while true; do
-        if [[ "$DIR_LOCAL" != "$SCRIPTS_DIR" ]]; then
-            local current_folder=$(basename "$DIR_LOCAL")
-            menu_items="Current folder: 📂 "$current_folder"  \n🔙 .. (Go Back)\n$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
+        if [[ "${DIR_LOCAL}" != "${SCRIPTS_DIR}" ]]; then
+            local current_folder=$(basename "${DIR_LOCAL}")
+            menu_items="Current folder: 📂 "${current_folder}"  \n🔙 .. (Go Back)\n$(fuzzy_search  "${search_query}" "${DIR_LOCAL}")"
         else
-            menu_items="$(fuzzy_search  "$search_query" "$DIR_LOCAL")"
+            menu_items="$(fuzzy_search  "${search_query}" "${DIR_LOCAL}")"
         fi
 
-        local SELECTION=$(echo -e "$menu_items" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper.rasi" -p "Search: $search_query")
+        local SELECTION=$(echo -e "${menu_items}" | rofi -dmenu -theme "${XDOTOOL_DIR}/theme/rofi-hacking-helper.rasi" -p "Search: ${search_query}")
 
         # Rofi exit?
-        if [[ -z "$SELECTION" ]]; then
+        if [[ -z "${SELECTION}" ]]; then
             exit 0
         fi
 
-        local ICON=$(echo "$SELECTION" | cut -d' ' -f1) # Extract icon
-        local NAME=$(echo "$SELECTION" | cut -d'|' -f1 | cut -d' ' -f2- | awk '{$1=$1};1') # Extract name correctly
+        local ICON=$(echo "${SELECTION}" | cut -d' ' -f1) # Extract icon
+        local NAME=$(echo "${SELECTION}" | cut -d'|' -f1 | cut -d' ' -f2- | awk '{$1=$1};1') # Extract name correctly
         local FULL_PATH="${DIR_LOCAL}/${NAME}"
-                
+
         if [[ "${NAME}" == ".. (Go Back)" ]]; then
             local PARENT_DIR=$(dirname "${DIR_LOCAL}")
             if [[ "${PARENT_DIR}" == "${XDOTOOL_DIR}" ]]; then
@@ -240,4 +240,4 @@ function dir_menu {
 }
 
 check_for_updates
-dir_menu "$SCRIPTS_DIR"
+dir_menu "${SCRIPTS_DIR}"

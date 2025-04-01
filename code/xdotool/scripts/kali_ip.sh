@@ -4,4 +4,4 @@
 get Kali IP address
 '
 
-execute_command "${KALI_IP}"
+execute_command "foute: ${KALI_IP}"
