@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **579** scripts organized into **122** subdirectories.
+This repository contains **588** scripts organized into **123** subdirectories.
 
 ## Table of Contents
 
@@ -504,7 +504,10 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
+| 📜 `reconnaissance/linux/execute_firefox_decrypt.sh` | download firefox_decrypt.py to server and execute |
 | 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
+| 📜 `reconnaissance/linux/execute_mimipenguin_bash.sh` | download mimipenguin.sh and find credentials in files and memory (root required) |
+| 📜 `reconnaissance/linux/execute_mimipenguin_python.sh` | download mimipenguin.py and find credentials in files and memory (root required) |
 | 📜 `reconnaissance/linux/linpeas_one_liner.sh` | linpeas one liner |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
 | 📜 `reconnaissance/linux/mini_linpeas.sh` | perform mini linpeas to get pentest info |
@@ -513,6 +516,19 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/show_mounts.sh` | show ip mounts |
 | 📜 `reconnaissance/linux/tcpdump_sniff_traffic.sh` | sniff for traffic with tcpdump and save to pcap file |
 | 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` | unmount ip mount |
+<br />
+
+### reconnaissance/username-anarchy
+
+scripts to create custom ad username lists with username-anarchy
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/username-anarchy/create_from_country_name.sh` | create ad usernames from country name |
+| 📜 `reconnaissance/username-anarchy/create_from_firstname_lastname.sh` | create ad usernames from firstname and lastname |
+| 📜 `reconnaissance/username-anarchy/create_usernames_from_input_file.sh` | create ad usernames from input file |
+| 📜 `reconnaissance/username-anarchy/reconise_format_from_username.sh` | recognise format from username |
+| 📜 `reconnaissance/username-anarchy/show_formats.sh` | show available formats |
 <br />
 
 ### reconnaissance/windows
@@ -716,6 +732,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
 | 📜 `reconnaissance/windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
+| 📜 `reconnaissance/windows/cmd/search_for_sensative_files.sh` | search for sensative files |
 | 📜 `reconnaissance/windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
 <br />
 
