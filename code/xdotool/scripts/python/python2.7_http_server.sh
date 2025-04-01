@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-execute_commandnd "python2.7 -m SimpleHTTPServer ${PORT}"
+execute_command "python2.7 -m SimpleHTTPServer ${PORT}"
 create_new_line

@@ -14,7 +14,7 @@ generate_form "${NMAP_XML_FILE_FIELD}" "${OUTPUT_FILE_FIELD}"
 INMAP_XML_FILEP=${form_data["nmap_xml_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-execute_commandnd "xsltproc ${INMAP_XML_FILEP} -o ${OUTPUT_FILE}"
+execute_command "xsltproc ${INMAP_XML_FILEP} -o ${OUTPUT_FILE}"
 create_new_line
 sleep 0.8
 

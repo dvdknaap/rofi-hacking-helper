@@ -4,5 +4,5 @@
 Net: Check local administrators
 '
 
-execute_commandnd "net localgroup administrators"
+execute_command "net localgroup administrators"
 create_new_line

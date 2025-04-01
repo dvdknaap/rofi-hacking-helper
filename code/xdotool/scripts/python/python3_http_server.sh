@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-execute_commandnd "python3 -m http.server ${PORT}"
+execute_command "python3 -m http.server ${PORT}"
 create_new_line

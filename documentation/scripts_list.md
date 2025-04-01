@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **588** scripts organized into **123** subdirectories.
+This repository contains **589** scripts organized into **123** subdirectories.
 
 ## Table of Contents
 
@@ -93,6 +93,7 @@ crack passwords with hashcat
 | 📜 `crackPasswords/hashcat/create_rockyou_OneRuleToRuleThemAll_rule_custom_wordlist.sh` | Create sorted, unique wordlist: given wordlist + OneRuleToRuleThemAll.rule. |
 | 📜 `crackPasswords/hashcat/create_rockyou_best64_rule_custom_wordlist.sh` | Create sorted, unique wordlist from given wordlist + best64.rule. |
 | 📜 `crackPasswords/hashcat/format_ntlm_username_rid_lm_ntlm_hashes_to_hashcat.sh` | Format username:RID:LM:NTLM::: to hashcat format |
+| 📜 `crackPasswords/hashcat/unshadow_passwords.sh` | unshadow /etc/passwords |
 <br />
 
 ### crackPasswords/john
