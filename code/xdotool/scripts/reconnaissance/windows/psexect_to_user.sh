@@ -18,5 +18,5 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 IP=${form_data["ip"]}
 
-execute_command "psexec.py -hashes '${HASH}' '${DOMAIN}/${USERNAME}@${IP}'"
+execute_command "psexec.py -hashes ':${HASH}' '${DOMAIN}/${USERNAME}@${IP}'"
 create_new_line

@@ -29,5 +29,3 @@ sleep 1
 
 execute_command "get-domainuser -spn -credential \$Cred | select samaccountname"
 create_new_line
-sleep 1
-

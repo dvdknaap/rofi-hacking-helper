@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **590** scripts organized into **123** subdirectories.
+This repository contains **633** scripts organized into **124** subdirectories.
 
 ## Table of Contents
 
@@ -324,6 +324,11 @@ transfer file to or from a server for windows
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/windows/cmd/upload_invoke_smb_client.sh` | cmd: upload invoke-smbclient.ps1 file to server |
+| 📜 `fileTransfer/windows/cmd/upload_invoke_smb_enum.sh` | cmd: upload invoke-smbenum.ps1 file to server |
+| 📜 `fileTransfer/windows/cmd/upload_invoke_smb_exec.sh` | cmd: upload invoke-smbexec.ps1 file to server |
+| 📜 `fileTransfer/windows/cmd/upload_invoke_the_hash.sh` | cmd: upload invoke-thehash.ps1 file to server |
+| 📜 `fileTransfer/windows/cmd/upload_invoke_wmi_exec.sh` | cmd: upload invoke-wmiexec.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc64_file.sh` | cmd: upload nc64 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc_file.sh` | cmd: upload nc file to server |
@@ -342,6 +347,11 @@ transfer file to or from a server for windows
 | Path | Description |
 |------|-------------|
 | 📜 `fileTransfer/windows/powershell/upload_attacker_file_to_nc_as_base64.sh` | ps: upload attacker file to nc as base64 |
+| 📜 `fileTransfer/windows/powershell/upload_invoke_smb_client.sh` | ps: upload invoke-smbclient.ps1 file to server |
+| 📜 `fileTransfer/windows/powershell/upload_invoke_smb_enum.sh` | ps: upload invoke-smbenum.ps1 file to server |
+| 📜 `fileTransfer/windows/powershell/upload_invoke_smb_exec.sh` | ps: upload invoke-smbexec.ps1 file to server |
+| 📜 `fileTransfer/windows/powershell/upload_invoke_the_hash.sh` | ps: upload invoke-thehash.ps1 file to server |
+| 📜 `fileTransfer/windows/powershell/upload_invoke_wmi_exec.sh` | ps: upload invoke-wmiexec.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_lazagne_file.sh` | ps: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc64_file.sh` | ps: upload nc64 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc_file.sh` | ps: upload nc file to server |
@@ -510,6 +520,8 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
 | 📜 `reconnaissance/linux/execute_mimipenguin_bash.sh` | download mimipenguin.sh and find credentials in files and memory (root required) |
 | 📜 `reconnaissance/linux/execute_mimipenguin_python.sh` | download mimipenguin.py and find credentials in files and memory (root required) |
+| 📜 `reconnaissance/linux/klist_get_info.sh` | klist: get info of file |
+| 📜 `reconnaissance/linux/klist_impersonating_user_with_file.sh` | klist: impersonating user with file |
 | 📜 `reconnaissance/linux/linpeas_one_liner.sh` | linpeas one liner |
 | 📜 `reconnaissance/linux/local_port_scan_on_ip.sh` | local port scan on ip |
 | 📜 `reconnaissance/linux/mini_linpeas.sh` | perform mini linpeas to get pentest info |
@@ -720,6 +732,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
 | 📜 `reconnaissance/windows/cmd/check_user_account.sh` | Net: Get user information. |
 | 📜 `reconnaissance/windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
+| 📜 `reconnaissance/windows/cmd/enable_restricted_admin_mode_rdp.sh` | enable restricted admin mode |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_exe.sh` | download winPEASany.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh` | download winPEASany_ofs.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_bat.sh` | download winPEAS.bat to server and execute |
@@ -736,6 +749,11 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `reconnaissance/windows/cmd/search_for_sensative_files.sh` | search for sensative files |
 | 📜 `reconnaissance/windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
+| 📜 `reconnaissance/windows/cmd/upload_invoke_smb_client.sh` | cmd: upload invoke-smbclient.ps1 file to server |
+| 📜 `reconnaissance/windows/cmd/upload_invoke_smb_enum.sh` | cmd: upload invoke-smbenum.ps1 file to server |
+| 📜 `reconnaissance/windows/cmd/upload_invoke_smb_exec.sh` | cmd: upload invoke-smbexec.ps1 file to server |
+| 📜 `reconnaissance/windows/cmd/upload_invoke_the_hash.sh` | cmd: upload invoke-thehash.ps1 file to server |
+| 📜 `reconnaissance/windows/cmd/upload_invoke_wmi_exec.sh` | cmd: upload invoke-wmiexec.ps1 file to server |
 <br />
 
 ### reconnaissance/windows/enum4linux
@@ -841,6 +859,11 @@ Scripts for Active Directory enumeration and credential dumping.
 | 📜 `reconnaissance/windows/mimikatz/dump_lsa_secrets.sh` | Mimikatz: Dump lsa secrets. |
 | 📜 `reconnaissance/windows/mimikatz/dump_lsass_credentials.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
 | 📜 `reconnaissance/windows/mimikatz/dump_lsass_credentials_with_processprotect.sh` | Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords). |
+| 📜 `reconnaissance/windows/mimikatz/execute_program_with_pass_the_hash.sh` | Mimikatz: execute program with pass the hash |
+| 📜 `reconnaissance/windows/mimikatz/export_tickets.sh` | Mimikatz: export tickets |
+| 📜 `reconnaissance/windows/mimikatz/extract_kerberos_keys.sh` | Mimikatz: extract kerberos keys |
+| 📜 `reconnaissance/windows/mimikatz/get_tgt_ticket.sh` | Mimikatz: get tgt ticket |
+| 📜 `reconnaissance/windows/mimikatz/import_tgt_ticket.sh` | Mimikatz: import tgt ticket |
 | 📜 `reconnaissance/windows/mimikatz/kerberos_double_hop_fix.sh` | Fix Kerberos "Double Hop" problem when using WinRM/Powershell |
 | 📜 `reconnaissance/windows/mimikatz/ps_upload_mimikatz_exe.sh` | ps: upload mimikatz to server |
 <br />
@@ -1039,6 +1062,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
 | 📜 `reconnaissance/windows/powershell/download_and_execute_custom_script_in_memory.sh` | PowerShell: Download and execute script in memory. |
 | 📜 `reconnaissance/windows/powershell/elevate_user.sh` | Powershell - elevate user |
+| 📜 `reconnaissance/windows/powershell/execute_invoke_smb_exec.sh` | ps: upload invoke-smbexec.ps1 file to server |
 | 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
 | 📜 `reconnaissance/windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
 | 📜 `reconnaissance/windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
@@ -1055,6 +1079,17 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |
 | 📜 `reconnaissance/windows/powershell/show_items_in_recycle_bin.sh` | Powershell: Show Items in recycle bin |
 | 📜 `reconnaissance/windows/powershell/show_process_info.sh` | Powershell: show process info |
+| 📜 `reconnaissance/windows/powershell/upload_invoke_smb_client.sh` | ps: upload invoke-smbclient.ps1 file to server |
+| 📜 `reconnaissance/windows/powershell/upload_invoke_smb_enum.sh` | ps: upload invoke-smbenum.ps1 file to server |
+| 📜 `reconnaissance/windows/powershell/upload_invoke_the_hash.sh` | ps: upload invoke-thehash.ps1 file to server |
+| 📜 `reconnaissance/windows/powershell/upload_invoke_wmi_exec.sh` | ps: upload invoke-wmiexec.ps1 file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_any_file.sh` | ps: upload winPEASany.exe file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_any_ofs_file.sh` | ps: upload winPEASany_ofs.exe file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_bat_file.sh` | ps: upload winPEAS.bat file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_x64_file.sh` | ps: upload winPEASx64.exe file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_x64_ofs_file.sh` | ps: upload winPEASx64_ofs.exe file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_x86_file.sh` | ps: upload winPEASx86.exe file to server |
+| 📜 `reconnaissance/windows/powershell/upload_winpeas_x86_ofs_file.sh` | ps: upload winPEASx86_ofs.exe file to server |
 <br />
 
 ### reconnaissance/windows/rpcclient
@@ -1078,6 +1113,17 @@ scripts to read AD info with rpcclient
 | 📜 `reconnaissance/windows/rpcclient/samrdump_brute_force_rids.sh` | samrdump.py: brute Forcing User RIDs |
 <br />
 
+### reconnaissance/windows/rubeus
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/rubeus/execute_createnetonly.sh` | Rubeus: execute createnetonly |
+| 📜 `reconnaissance/windows/rubeus/export_tickets.sh` | Rubeus: export tickets |
+| 📜 `reconnaissance/windows/rubeus/get_tgt_ticket.sh` | Rubeus: get tgt ticket |
+| 📜 `reconnaissance/windows/rubeus/import_tgt_ticket.sh` | Rubeus: import tgt ticket |
+| 📜 `reconnaissance/windows/rubeus/ps_upload_robeus.sh` | ps: Upload Rubeus.exe |
+<br />
+
 ### reconnaissance/windows/smbclient
 
 Scripts using smbclient for share enumeration and access.
@@ -1089,6 +1135,7 @@ Scripts using smbclient for share enumeration and access.
 | 📜 `reconnaissance/windows/smbclient/decrypt_groups_xml_cpassword.sh` | decrypt cpassword from groups.xml |
 | 📜 `reconnaissance/windows/smbclient/download_folders_resurcive.sh` | smbclient: download files recursive |
 | 📜 `reconnaissance/windows/smbclient/enable_recursive.sh` | smbclient: enable recursive |
+| 📜 `reconnaissance/windows/smbclient/execute_cmd_with_kerberos_user.sh` | smbclient: execute cmd with kerberos user |
 | 📜 `reconnaissance/windows/smbclient/search_in_downloaded_files_for_groups_xml.sh` | search for group policies in downloaded folders |
 | 📜 `reconnaissance/windows/smbclient/show_shares.sh` | smbclient: List shares. |
 | 📜 `reconnaissance/windows/smbclient/turn_off_prompt.sh` | smbclient: turn off prompt |
@@ -1132,7 +1179,9 @@ proxychains: Scripts using smbmap for SMB share enumeration and command executio
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/xfreerdp/xfreerdp.sh` | xfreerdp: Connect with specified credentials. |
+| 📜 `reconnaissance/windows/xfreerdp/xfreerdp_pass_the_hash.sh` | xfreerdp: Connect with specified credentials with pass the hash |
 | 📜 `reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive.sh` | xfreerdp: Connect, map drive |
+| 📜 `reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive_pass_the_hash.sh` | xfreerdp: Connect with pass the hash, map drive |
 <br />
 
 ### reconnaissance/windows/xfreerdp/proxychains

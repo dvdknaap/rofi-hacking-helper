@@ -1,0 +1,1 @@
+../../../../fileTransfer/windows/.binaries/Invoke-SMBEnum.ps1

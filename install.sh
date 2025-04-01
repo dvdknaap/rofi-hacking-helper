@@ -123,6 +123,8 @@ main() {
     clone_or_update_repo
 
     XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
+    CACHE_DIR="${XDOTOOL_DIR}/var/cache"
+    UPDATE_CHECK_FILE="${CACHE_DIR}/.rofi_last_update_check"
 
     source "${XDOTOOL_DIR}/env.sh"
     
@@ -143,7 +145,7 @@ main() {
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
     # Install required programs
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user
 
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
@@ -152,6 +154,10 @@ main() {
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
         echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
+    fi
+
+    local NOW=$(date +%s)
+    echo "${NOW}" > "${UPDATE_CHECK_FILE}"
     
     sleep 0.8
     firefox "${ROOT_DIR}/documentation/index.html"

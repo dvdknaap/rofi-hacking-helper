@@ -1,0 +1,1 @@
+../../../../fileTransfer/windows/.binaries/Invoke-SMBClient.ps1

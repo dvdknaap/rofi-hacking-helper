@@ -6,6 +6,7 @@ perform mini linpeas to get pentest info
 
 declare -gA all_commands
 all_commands["id"]='id'
+all_commands["env"]='env'
 all_commands["cat /etc/passwd"]='cat /etc/passwd|grep /home/'
 all_commands["ls -alF"]='ls -alF'
 all_commands["cat /etc/*-release"]='cat /etc/*-release'
@@ -30,6 +31,8 @@ all_commands["SSH Private Keys"]='grep -rnw "PRIVATE KEY" /home/* 2>/dev/null | 
 all_commands["SSH Public Keys"]='grep -rnw "ssh-rsa" /home/* 2>/dev/null | grep ":1"'
 all_commands["cat /etc/hosts"]='cat /etc/hosts'
 all_commands["sudo -l"]='sudo -l'
+all_commands["check if machine is domain joined"]='ps -ef | grep -i "winbind\|sssd"'
+all_commands["search for Files with keytab in the name"]='find / -name *keytab* -ls 2>/dev/null'
 
 commands_oneline=""
 

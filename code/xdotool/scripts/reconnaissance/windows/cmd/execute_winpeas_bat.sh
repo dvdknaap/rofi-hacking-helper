@@ -10,3 +10,7 @@ LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/cmd/.files"
 FILE="winPEAS.bat"
 
 cmd_upload_file "${LOCATION}" "${FILE}"
+sleep 3
+
+execute_command "${FILE_LOCATION}"
+create_new_line
