@@ -63,8 +63,6 @@ setup_gnome_binding() {
     local found_binding="0"
     local keybindings=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")
 
-    echo "Checking if keybinding with command '${shortcut_name}' already exists..."
-
     for key in $keybindings; do
         if [[ "@as" == "${key}" ]]; then
             continue
@@ -129,11 +127,11 @@ main() {
     source "${XDOTOOL_DIR}/env.sh"
     
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR};source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
 
     # Check for existing keybinding
@@ -154,6 +152,9 @@ main() {
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
         echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
+    
+    sleep 0.8
+    firefox "${ROOT_DIR}/documentation/index.html"
 
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
     echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal\nIf the menu isn't showing up logout and login again.\e[0m"
