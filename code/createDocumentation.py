@@ -119,11 +119,17 @@ def load_json():
 def generate_html():
     """Reads the template, filters only script files, and inserts them as JSON."""
     scripts = load_json()
+    script_list = []
+    folder_paths = set()
 
-    script_count = sum(1 for s in scripts if s["type"] == "script")
-    folder_count = len(set(os.path.dirname(s["path"]) for s in scripts if s["type"] == "directory"))
+    for script in scripts:
+        if script["type"] == "script":
+            script_list.append(script)
+        elif script["type"] == "directory":
+            folder_paths.add(script["path"])
 
-    script_list = [script for script in scripts if script["type"] == "script"]
+    script_count = len(script_list)
+    folder_count = len(folder_paths)
 
     scripts_json = json.dumps(script_list, indent=4)
 
@@ -142,9 +148,8 @@ def generate_html():
 def generate_markdown():
     """Generate a markdown file from the script data, preserving JSON order."""
     scripts = load_json()
-
-    script_count = sum(1 for s in scripts if s["type"] == "script")
-    folder_count = len(set(os.path.dirname(s["path"]) for s in scripts if s["type"] == "directory"))
+    script_list = []
+    folder_paths = set()
 
     main_script = "Main Scripts"
     toc = f"- [{main_script}](#{main_script.lower().replace(' ', '-')})\n"
@@ -157,16 +162,24 @@ def generate_markdown():
         description = script["description"]
 
         if script["type"] == "directory":
+            folder_paths.add(script["path"])
+
             if not "/" in folder:
                 toc += f"- [{folder}](#{folder.lower().replace(' ', '-')})\n"
+
             directories[folder] = {"description": description, "files": []}
 
         elif script["type"] == "script":
+            script_list.append(script)
+
             dir_name = os.path.dirname(folder) or main_script
             icon = "📜"
             script_entry = f"| {icon} `{script['path']}` | {script['description']} |\n"
             directories[dir_name]['files'].append(script_entry)
 
+
+    script_count = len(script_list)
+    folder_count = len(folder_paths)
 
     # TOC met alleen root directories
     for folder, data in directories.items():

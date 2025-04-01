@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **579** scripts organized into **32** subdirectories.
+This repository contains **579** scripts organized into **122** subdirectories.
 
 ## Table of Contents
 
