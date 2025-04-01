@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Set base directory
-ROOT_DIR="${HOME}/Desktop/base"
+REAL_PATH="$(realpath "$0")"
+ROOT_DIR="$(dirname "${REAL_PATH}")"
 XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
 
 source "${XDOTOOL_DIR}/env.sh"
 
 # Function to check if a package is installed and install it if missing
-install_packages() {
+check_and_install_packages() {
     if [[ $# -eq 0 ]]; then
-        show_info_notify_message "Usage: install_packages <package1> <package2> ..."
+        show_info_notify_message "Usage: check_and_install_packages <package1> <package2> ..."
         return 1
     fi
 
@@ -124,12 +125,15 @@ setup_gnome_binding() {
 # Main function to execute the script steps
 main() {
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
+
+    # get latest update repo
+    pull_latest_git_version
 
     # Check for existing keybinding
     setup_xfce_shortcut "${helper_shortcut_command}" "Ctrl+Shift+${helper_keybind}" "m"
@@ -139,14 +143,16 @@ main() {
     setup_xfce_shortcut "${screenshot_shortcut_command}" "Ctrl+Shift+${screenshot_keybind}" "n"
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
-    pull_latest_git_version
-
     # Install required programs
     check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec
 
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
+    if [[ -f "${SCRIPTS_DIR}/settings.sh"]]; then
+        cp "${SCRIPTS_DIR}/settings_example.sh" "${SCRIPTS_DIR}/settings.sh"
+    fi
+    
     show_success_notify_message "Update is complete!"
     echo -e "\n\e[32mUpdate is complete.\e[0m"
     
