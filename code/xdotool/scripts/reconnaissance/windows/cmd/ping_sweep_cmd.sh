@@ -12,5 +12,5 @@ generate_form "${IP_RANGE_FIELD}"
 
 IP_RANGE=${form_data["ip"]}
 
-paste_command "(for /L %i in (1 1 254) do ping ${IP_RANGE}.%i -n 1 -w 100) | find \"Reply\""
-xdotool key Return
+execute_command "(for /L %i in (1 1 254) do ping ${IP_RANGE}.%i -n 1 -w 100) | find \"Reply\""
+create_new_line

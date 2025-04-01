@@ -12,4 +12,4 @@ generate_form "${IP_RANGE_FIELD}"
 
 IP_RANGE=${form_data["ip"]}
 
-paste_command "for i in \$(seq 254); do ping ${IP_RANGE}.\$i -c1 -W1 & done | grep from"
+execute_command "for i in \$(seq 254); do ping ${IP_RANGE}.\$i -c1 -W1 & done | grep from"

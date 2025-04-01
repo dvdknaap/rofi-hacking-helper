@@ -4,6 +4,6 @@
 reload all
 '
 
-paste_command "reload_all"
-xdotool key Return
+execute_command "reload_all"
+create_new_line
 

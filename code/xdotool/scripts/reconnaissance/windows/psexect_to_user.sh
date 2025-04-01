@@ -18,5 +18,5 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 IP=${form_data["ip"]}
 
-paste_command "psexec.py -hashes '${HASH}' '${DOMAIN}/${USERNAME}@${IP}'"
-xdotool key Return
+execute_command "psexec.py -hashes '${HASH}' '${DOMAIN}/${USERNAME}@${IP}'"
+create_new_line

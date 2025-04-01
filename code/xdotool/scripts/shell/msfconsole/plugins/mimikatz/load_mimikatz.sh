@@ -4,5 +4,5 @@
 load mimikatz
 '
 
-paste_command "load kiwi"
-xdotool key Return
+execute_command "load kiwi"
+create_new_line

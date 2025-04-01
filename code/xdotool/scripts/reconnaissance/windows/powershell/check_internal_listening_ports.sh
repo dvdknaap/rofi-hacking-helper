@@ -4,5 +4,5 @@
 check internal listening ports
 '
 
-paste_command "netstat -ano | findstr LISTENING"
-xdotool key Return
+execute_command "netstat -ano | findstr LISTENING"
+create_new_line

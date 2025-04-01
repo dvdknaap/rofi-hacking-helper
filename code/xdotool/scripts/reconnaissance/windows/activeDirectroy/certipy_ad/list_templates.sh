@@ -20,5 +20,5 @@ PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 CA_NAME=${form_data["ca_name"]}
 
-paste_command "certipy-ad ca -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -list-template"
-xdotool key Return
+execute_command "certipy-ad ca -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -list-template"
+create_new_line

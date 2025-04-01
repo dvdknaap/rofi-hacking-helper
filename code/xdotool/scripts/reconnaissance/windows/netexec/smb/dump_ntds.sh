@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --ntds"
-xdotool key Return
+execute_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --ntds"
+create_new_line

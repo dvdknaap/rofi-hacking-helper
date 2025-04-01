@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${MYSQL_PORT_FIELD}"
 IP=${form_data["ip"]}
 MYSQL_PORT=${form_data["mysql_port"]}
 
-paste_command "nmap ${IP} -sV -sC -p${MYSQL_PORT} --script 'mysql*'"
-xdotool key Return
+execute_command "nmap ${IP} -sV -sC -p${MYSQL_PORT} --script 'mysql*'"
+create_new_line

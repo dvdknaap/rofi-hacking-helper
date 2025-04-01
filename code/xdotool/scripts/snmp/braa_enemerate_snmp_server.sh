@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${COMMUNITY_STRING_FIELD}"
 IP=${form_data["ip"]}
 COMMUNITY_STRING=${form_data["community_string"]}
 
-paste_command "braa ${COMMUNITY_STRING}@${IP}:.1.3.6.* "
-xdotool key Return
+execute_command "braa ${COMMUNITY_STRING}@${IP}:.1.3.6.* "
+create_new_line

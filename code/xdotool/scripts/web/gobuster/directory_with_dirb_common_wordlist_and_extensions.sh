@@ -16,5 +16,5 @@ WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 EXTENSION_WORDLIST=${form_data["extension_wordlist"]}
 
-paste_command "gobuster dir -u '${WEBSITE}' -w ${WORDLIST} -t 40 -b 400,404,403,429 -e -X ${EXTENSION_WORDLIST}"
-xdotool key Return
+execute_command "gobuster dir -u '${WEBSITE}' -w ${WORDLIST} -t 40 -b 400,404,403,429 -e -X ${EXTENSION_WORDLIST}"
+create_new_line

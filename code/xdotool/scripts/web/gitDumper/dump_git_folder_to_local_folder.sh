@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${LOCAL_FOLDER_FIELD}"
 WEBSITE=${form_data["website"]}
 LOCAL_FOLDER=${form_data["local_foler"]}
 
-paste_command "git-dumper '${WEBSITE}' ${LOCAL_FOLDER}"
-xdotool key Return
+execute_command "git-dumper '${WEBSITE}' ${LOCAL_FOLDER}"
+create_new_line

@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${CMD_FIELD}"
 WEBSITE=${form_data["website"]}
 CMD=${form_data["cmd"]}
 
-paste_command "curl -ks '${WEBSITE}expect://${CMD}'"
-xdotool key Return
+execute_command "curl -ks '${WEBSITE}expect://${CMD}'"
+create_new_line

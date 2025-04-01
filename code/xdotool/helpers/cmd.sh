@@ -10,7 +10,7 @@ certutil_download() {
     fi
 
     paste_command "certutil.exe -urlcache -split -f ${url} ${location}"
-    xdotool key Return
+    create_new_line
     sleep 3
 }
 
@@ -56,7 +56,7 @@ cmd_upload_file() {
         TMP_FOLDER="${PARENT_FOLDER}\\${FOLDER_NAME}"
 
         paste_command "if not exist ${TMP_FOLDER} mkdir ${TMP_FOLDER}"
-        xdotool key Return
+        create_new_line
         sleep 0.8
     fi
 

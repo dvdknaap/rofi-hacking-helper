@@ -12,6 +12,6 @@ HASH_FIELD=$(form_item  "hash" "hash")
 # Generate GUI form
 generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${HASH_FIELD}"
 
-paste_command "evil-winrm -i ${IP} -u '${USERNAME}' -H '${HASH}'"
-xdotool key Return
+execute_command "evil-winrm -i ${IP} -u '${USERNAME}' -H '${HASH}'"
+create_new_line
 

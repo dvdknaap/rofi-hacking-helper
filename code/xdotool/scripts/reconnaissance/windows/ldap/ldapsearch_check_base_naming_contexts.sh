@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "ldapsearch -H ldap://${IP} -x -s base namingcontexts"
-xdotool key Return
+execute_command "ldapsearch -H ldap://${IP} -x -s base namingcontexts"
+create_new_line

@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "snmpwalk -v2c -c public ${IP}"
-xdotool key Return
+execute_command "snmpwalk -v2c -c public ${IP}"
+create_new_line

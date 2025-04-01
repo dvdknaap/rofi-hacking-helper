@@ -16,5 +16,5 @@ AUTH_EMAIL=${form_data["auth_email"]}
 AUTH_PASSWORD=${form_data["auth_password"]}
 SERVER=${form_data["server"]}
 
-paste_command "swaks --auth-user '${AUTH_EMAIL}' --auth LOGIN --auth-password ${AUTH_PASSWORD} --quit-after AUTH --server ${SERVER}"
-xdotool key Return
+execute_command "swaks --auth-user '${AUTH_EMAIL}' --auth LOGIN --auth-password ${AUTH_PASSWORD} --quit-after AUTH --server ${SERVER}"
+create_new_line

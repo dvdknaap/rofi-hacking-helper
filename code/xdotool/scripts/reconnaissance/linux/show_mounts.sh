@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "showmount -e ${IP}"
-xdotool key Return
+execute_command "showmount -e ${IP}"
+create_new_line

@@ -4,13 +4,13 @@
 smbclient: download files recursive
 '
 
-paste_command "PROMPT OFF"
-xdotool key Return
+execute_command "PROMPT OFF"
+create_new_line
 sleep 0.8
 
-paste_command "RECURSE ON"
-xdotool key Return
+execute_command "RECURSE ON"
+create_new_line
 sleep 0.8
 
-paste_command "mget *"
-xdotool key Return
+execute_command "mget *"
+create_new_line

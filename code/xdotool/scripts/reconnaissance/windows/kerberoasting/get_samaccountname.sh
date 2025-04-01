@@ -4,5 +4,5 @@
 PowerShell: Get SPN user account names.
 '
 
-paste_command "Get-DomainUser * -spn | select samaccountname"
-xdotool key Return
+execute_command "Get-DomainUser * -spn | select samaccountname"
+create_new_line

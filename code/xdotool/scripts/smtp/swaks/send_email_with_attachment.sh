@@ -23,5 +23,5 @@ SERVER=${form_data["server"]}
 ATTACHMENT=${form_data["attachment"]}
 ATTACHMENT_TYPE=$(get_mimetype ${ATTACHMENT})
 
-paste_command "swaks --to ${TO} --from ${FROM} --header \"Subject: ${SUBJECT}\" --body \"${BODY}\" --server ${SERVER} --attach-type ${ATTACHMENT_TYPE} --attach ${ATTACHMENT}"
-xdotool key Return
+execute_command "swaks --to ${TO} --from ${FROM} --header \"Subject: ${SUBJECT}\" --body \"${BODY}\" --server ${SERVER} --attach-type ${ATTACHMENT_TYPE} --attach ${ATTACHMENT}"
+create_new_line

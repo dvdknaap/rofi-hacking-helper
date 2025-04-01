@@ -16,6 +16,6 @@ IP=${form_data["ip"]}
 USER_FILE=${form_data["user_file"]}
 PASSWORD_FILE=${form_data["password_file"]}
 
-paste_command "hydra -L ${USER_FILE} -P ${PASSWORD_FILE} rdp://${IP}"
-xdotool key Return
+execute_command "hydra -L ${USER_FILE} -P ${PASSWORD_FILE} rdp://${IP}"
+create_new_line
 

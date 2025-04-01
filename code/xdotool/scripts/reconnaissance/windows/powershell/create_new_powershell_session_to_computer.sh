@@ -16,5 +16,5 @@ COMPUTER_NAME=${form_data["computer_name"]}
 DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 
-paste_command "Enter-PSSession -ComputerName ${COMPUTER_NAME} -Credential ${DOMAIN}\\${USERNAME}"
-xdotool key Return
+execute_command "Enter-PSSession -ComputerName ${COMPUTER_NAME} -Credential ${DOMAIN}\\${USERNAME}"
+create_new_line

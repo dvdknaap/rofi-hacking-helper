@@ -4,5 +4,5 @@
 mysql: show all available tables in the selected database
 '
 
-paste_command "show tables;"
-xdotool key Return
+execute_command "show tables;"
+create_new_line

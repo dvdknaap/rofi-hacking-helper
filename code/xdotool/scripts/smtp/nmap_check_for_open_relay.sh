@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "nmap ${IP} -p25 --script smtp-open-relay -v"
-xdotool key Return
+execute_command "nmap ${IP} -p25 --script smtp-open-relay -v"
+create_new_line

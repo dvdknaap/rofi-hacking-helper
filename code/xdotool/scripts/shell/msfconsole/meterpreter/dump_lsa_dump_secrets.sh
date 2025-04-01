@@ -4,5 +4,5 @@
 dump lsa_dump_secrets
 '
 
-paste_command "lsa_dump_secrets"
-xdotool key Return
+execute_command "lsa_dump_secrets"
+create_new_line

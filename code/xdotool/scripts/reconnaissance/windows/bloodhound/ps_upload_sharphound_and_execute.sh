@@ -17,7 +17,7 @@ generate_form "${ZIP_FILENAME_FIELD}"
 
 ZIP_FILENAME=${form_data["zip_filename"]}
 
-paste_command "${FILE_LOCATION} -c All --zipfilename ${ZIP_FILENAME}"
-xdotool key Return
+execute_command "${FILE_LOCATION} -c All --zipfilename ${ZIP_FILENAME}"
+create_new_line
 
 kill $HTTP_PID

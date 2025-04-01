@@ -13,5 +13,5 @@ generate_form "${URL_FIELD}" "${DATABASE_FIELD}"
 URL=${form_data["url"]}
 DATABASE=${form_data["database"]}
 
-paste_command "sqlmap -u ${URL} -D '${DATABASE}' --tables --random-agent --level 5 --risk 3 --batch"
-xdotool key Return
+execute_command "sqlmap -u ${URL} -D '${DATABASE}' --tables --random-agent --level 5 --risk 3 --batch"
+create_new_line

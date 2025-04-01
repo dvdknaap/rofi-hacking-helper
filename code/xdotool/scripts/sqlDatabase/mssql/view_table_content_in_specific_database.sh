@@ -14,10 +14,10 @@ generate_form "${DATABASE_FIELD}" "${TABLE_FIELD}"
 DATABASE=${form_data["database"]}
 TABLE=${form_data["table"]}
 
-paste_command "use ${DATABASE}"
-xdotool key Return
+execute_command "use ${DATABASE}"
+create_new_line
 sleep 0.8
 
-paste_command "select * from ${TABLE};"
-xdotool key Return
+execute_command "select * from ${TABLE};"
+create_new_line
 sleep 0.8

@@ -18,5 +18,5 @@ if [ -d "${SMB_SHARE_LOCATION}" ]; then
   mkdir ${SMB_SHARE_LOCATION}
 fi
 
-paste_command "sudo impacket-smbserver ${SHARE} -smb2support ${SMB_SHARE_LOCATION}"
-xdotool key Return
+execute_command "sudo impacket-smbserver ${SHARE} -smb2support ${SMB_SHARE_LOCATION}"
+create_new_line

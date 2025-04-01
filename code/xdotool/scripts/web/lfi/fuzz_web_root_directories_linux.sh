@@ -16,5 +16,5 @@ WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 FILE=${form_data["file"]}
 
-paste_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ/${FILE}' -fs 0"
-xdotool key Return
+execute_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ/${FILE}' -fs 0"
+create_new_line

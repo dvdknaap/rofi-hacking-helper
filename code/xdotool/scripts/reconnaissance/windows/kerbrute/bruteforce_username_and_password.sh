@@ -18,5 +18,5 @@ IP=${form_data["ip"]}
 DOMAIN=${form_data["domain"]}
 USERNAME_FILE=${form_data["username_file"]}
 
-paste_command "${FILE_LOCATION}/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_FILE} -v"
-xdotool key Return
+execute_command "${FILE_LOCATION}/kerbrute userenum -d ${DOMAIN} --dc ${IP} ${USERNAME_FILE} -v"
+create_new_line

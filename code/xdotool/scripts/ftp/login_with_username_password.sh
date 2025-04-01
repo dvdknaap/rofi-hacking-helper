@@ -27,5 +27,5 @@ REPLACE_FIELDS=(
 
 find_and_replace_file "${FILES_FOLDER}" "user_login.txt" "${REPLACE_FIELDS[@]}"
 
-paste_command "ftp -v -n -s:${TMP_FILE} ${IP}"
-xdotool key Return
+execute_command "ftp -v -n -s:${TMP_FILE} ${IP}"
+create_new_line

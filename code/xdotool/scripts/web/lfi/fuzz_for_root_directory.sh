@@ -15,5 +15,5 @@ WEBSITE=${form_data["website"]}
 FILE=${form_data["file"]}
 WORDLIST="${SCRIPTS_DIR}/web/lfi/.files/root_directory_wordlist.txt"
 
-paste_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ${FILE}'"
-xdotool key Return
+execute_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ${FILE}'"
+create_new_line

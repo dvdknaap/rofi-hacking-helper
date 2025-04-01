@@ -12,13 +12,13 @@ generate_form "${SESSION_FIELD}"
 
 SESSION=${form_data["SESSION"]}
 
-paste_command "use windows/gather/hashdump"
-xdotool key Return
+execute_command "use windows/gather/hashdump"
+create_new_line
 sleep 0.8
 
-paste_command "set SESSION ${SESSION}"
-xdotool key Return
+execute_command "set SESSION ${SESSION}"
+create_new_line
 sleep 0.8
 
-paste_command "exploit"
-xdotool key Return
+execute_command "exploit"
+create_new_line

@@ -14,5 +14,5 @@ generate_form "${DOMAIN_FIELD}" "${PFX_FILE_FIELD}"
 DOMAIN=${form_data["domain"]}
 PFX_FILE=${form_data["pfx_file"]}
 
-paste_command "sudo ntpdate -s ${DOMAIN} && certipy-ad auth -pfx ${PFX_FILE}"
-xdotool key Return
+execute_commandnd "sudo ntpdate -s ${DOMAIN} && certipy-ad auth -pfx ${PFX_FILE}"
+create_new_line

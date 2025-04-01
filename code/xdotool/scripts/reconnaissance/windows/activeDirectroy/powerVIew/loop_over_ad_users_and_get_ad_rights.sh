@@ -12,5 +12,5 @@ generate_form "${AD_USERS_LOCATION_FIELD}"
 
 AD_USERS_LOCATION=${form_data["ad_users_location"]}
 
-paste_command "foreach(\$line in [System.IO.File]::ReadLines(\"${AD_USERS_LOCATION}\")) {get-acl \"AD:\$(Get-ADUser \$line)\" }"
-xdotool key Return
+execute_command "foreach(\$line in [System.IO.File]::ReadLines(\"${AD_USERS_LOCATION}\")) {get-acl \"AD:\$(Get-ADUser \$line)\" }"
+create_new_line

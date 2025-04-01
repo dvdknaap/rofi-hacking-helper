@@ -4,5 +4,5 @@
 Powershell: show hidden files
 '
 
-paste_command "Get-ChildItem -File -Recurse -Hidden -ErrorAction SilentlyContinue"
-xdotool key Return
+execute_command "Get-ChildItem -File -Recurse -Hidden -ErrorAction SilentlyContinue"
+create_new_line

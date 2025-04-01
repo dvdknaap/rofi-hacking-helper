@@ -18,9 +18,9 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "GetADUsers.py -all ${DOMAIN}/${USERNAME} -dc-ip ${IP}"
-xdotool key Return
+execute_command "GetADUsers.py -all ${DOMAIN}/${USERNAME} -dc-ip ${IP}"
+create_new_line
 sleep 1.5
 
-paste_command "${PASSWORD}"
-xdotool key Return
+execute_command "${PASSWORD}"
+create_new_line

@@ -12,5 +12,5 @@ generate_form "${WEBSITE_FIELD}"
 
 WEBSITE=${form_data["website"]}
 
-paste_command "nikto -h ${WEBSITE} -Tuning b"
-xdotool key Return
+execute_command "nikto -h ${WEBSITE} -Tuning b"
+create_new_line

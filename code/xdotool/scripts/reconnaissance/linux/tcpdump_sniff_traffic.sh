@@ -14,5 +14,5 @@ generate_form "${INTERFACE_NAME_FIELD}" "${OUTPUT_FILE_FIELD}"
 INTERFACE_NAME=${form_data["interface_name"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "tcpdump -i ${INTERFACE_NAME} -vv -w ${OUTPUT_FILE}"
-xdotool key Return
+execute_commandnd "tcpdump -i ${INTERFACE_NAME} -vv -w ${OUTPUT_FILE}"
+create_new_line

@@ -12,5 +12,5 @@ generate_form "${WEBSITE_FIELD}"
 
 WEBSITE=${form_data["website"]}
 
-paste_command "finalrecon --headers --whois --url ${WEBSITE}"
-xdotool key Return
+execute_command "finalrecon --headers --whois --url ${WEBSITE}"
+create_new_line

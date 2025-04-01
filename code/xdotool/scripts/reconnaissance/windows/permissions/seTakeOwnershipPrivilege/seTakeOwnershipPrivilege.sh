@@ -12,9 +12,9 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-paste_command "takeown /f '${FILE}'"
-xdotool key Return
+execute_command "takeown /f '${FILE}'"
+create_new_line
 sleep 2
 
-paste_command "Get-ChildItem -Path '${FILE}' | select name,directory, @{Name="Owner";Expression={(Get-ACL \$_.Fullname).Owner}}"
-xdotool key Return
+execute_command "Get-ChildItem -Path '${FILE}' | select name,directory, @{Name="Owner";Expression={(Get-ACL \$_.Fullname).Owner}}"
+create_new_line

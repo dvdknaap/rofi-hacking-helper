@@ -11,6 +11,6 @@ get_dns_record() {
 
     DOMAIN=${form_data["domain"]}
 
-    paste_command "dig ${dns_type} ${DOMAIN}"
-    xdotool key Return
+    execute_command "dig ${dns_type} ${DOMAIN}"
+    create_new_line
 }

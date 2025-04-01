@@ -16,6 +16,6 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --groups | grep -v 'membercount: 0'"
-xdotool key Return
+execute_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --groups | grep -v 'membercount: 0'"
+create_new_line
 

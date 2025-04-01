@@ -16,5 +16,5 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 
-paste_command "certipy-ad find -u '${USERNAME}' -p '${PASSWORD}' -dc-ip ${IP} -stdout -vulnerable"
-xdotool key Return
+execute_command "certipy-ad find -u '${USERNAME}' -p '${PASSWORD}' -dc-ip ${IP} -stdout -vulnerable"
+create_new_line

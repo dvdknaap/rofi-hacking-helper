@@ -10,5 +10,5 @@ FILE="mimipenguin.py"
 curl_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
-paste_command "sudo python3 mimipenguin.py"
-xdotool key Return
+execute_command "sudo python3 mimipenguin.py"
+create_new_line

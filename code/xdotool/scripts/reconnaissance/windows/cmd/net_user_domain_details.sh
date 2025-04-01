@@ -12,5 +12,5 @@ generate_form "${USERNAME_FIELD}"
 
 USERNAME=${form_data["username"]}
 
-paste_command "net user ${USERNAME} /dom"
-xdotool key Return
+execute_command "net user ${USERNAME} /dom"
+create_new_line

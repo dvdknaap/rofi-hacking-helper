@@ -14,9 +14,9 @@ generate_form "${FILE_FIELD}" "${BASE64_FILE_STRING_FIELD}"
 FILE=${form_data["file"]}
 BASE64_FILE_STRING=${form_data["base64_file_string"]}
 
-paste_command "echo -n '${BASE64_FILE_STRING}' | base64 -d > ${FILE}"
-xdotool key Return
+execute_command "echo -n '${BASE64_FILE_STRING}' | base64 -d > ${FILE}"
+create_new_line
 sleep 0.8
 
-paste_command "md5sum ${FILE}"
-xdotool key Return
+execute_command "md5sum ${FILE}"
+create_new_line

@@ -22,5 +22,5 @@ IP=${form_data["ip"]}
 CA_NAME=${form_data["ca_name"]}
 REQUEST_ID=${form_data["request_id"]}
 
-paste_command "certipy-ad req -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -retrieve ${REQUEST_ID}"
-xdotool key Return
+execute_command "certipy-ad req -u ${USERNAME}@${DOMAIN} -p '${PASSWORD}' -dc-ip ${IP} -ca ${CA_NAME} -retrieve ${REQUEST_ID}"
+create_new_line

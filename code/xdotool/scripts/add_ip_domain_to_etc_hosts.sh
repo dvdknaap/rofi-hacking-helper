@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${DOMAINS_FIELD}"
 IP=${form_data["ip"]}
 DOMAINS=${form_data["domains"]}
 
-paste_command "echo \"${IP}\\t${DOMAINS}\\n\\n\" | sudo tee -a /etc/hosts"
-xdotool key Return
+execute_command "echo \"${IP}\\t${DOMAINS}\\n\\n\" | sudo tee -as /etc/hosts"
+create_new_line

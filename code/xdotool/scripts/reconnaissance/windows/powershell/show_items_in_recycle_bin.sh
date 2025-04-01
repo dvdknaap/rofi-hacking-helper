@@ -4,18 +4,18 @@
 Powershell: Show Items in recycle bin
 '
 
-paste_command "\$shell = New-Object -com shell.application"
-xdotool key Return
+execute_command "\$shell = New-Object -com shell.application"
+create_new_line
 sleep 0.8
 
-paste_command "\$rb = \$shell.Namespace(10)"
-xdotool key Return
+execute_command "\$rb = \$shell.Namespace(10)"
+create_new_line
 sleep 0.8
 
-paste_command "\$rb | get-member"
-xdotool key Return
+execute_command "\$rb | get-member"
+create_new_line
 sleep 0.8
 
-paste_command "\$rb.Items() | select -first 2"
-xdotool key Return
+execute_command "\$rb.Items() | select -first 2"
+create_new_line
 sleep 0.8   

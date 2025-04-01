@@ -18,5 +18,5 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 CMD=${form_data["cmd"]}
 
-paste_command "smbmap -H ${IP}  -u '${USERNAME}' -p '${PASSWORD}' -x '${CMD}'"
-xdotool key Return
+execute_command "smbmap -H ${IP}  -u '${USERNAME}' -p '${PASSWORD}' -x '${CMD}'"
+create_new_line

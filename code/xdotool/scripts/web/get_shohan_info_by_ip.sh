@@ -12,5 +12,5 @@ generate_form "${IP_FILE_FIELD}"
 
 IP_FILE=${form_data["ip_file"]}
 
-paste_command "for i in $(cat ${IP_FILE});do shodan host \$i;done"
-xdotool key Return
+execute_command "for i in $(cat ${IP_FILE});do shodan host \$i;done"
+create_new_line

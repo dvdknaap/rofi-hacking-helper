@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${WORDLIST_FIELD}"
 WORDLIST_FILE=${form_data["wordlist_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "hashcat --force ${WORDLIST_FILE} -r ${SCRIPTS_DIR}/crackPasswords/hashcat/.rules/OneRuleToRuleThemAll.rule --stdout | sort -u > ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "hashcat --force ${WORDLIST_FILE} -r ${SCRIPTS_DIR}/crackPasswords/hashcat/.rules/OneRuleToRuleThemAll.rule --stdout | sort -u > ${OUTPUT_FILE}"
+create_new_line

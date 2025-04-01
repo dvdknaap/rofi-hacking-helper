@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 AD_USERNAME_FILE=${form_data["username_file"]}
 AD_PASSWORD_FILE=${form_data["password_file"]}
 
-paste_command "netexec ftp ${IP} -u '${AD_USERNAME_FILE}' -p '${AD_PASSWORD_FILE}'"
-xdotool key Return
+execute_command "netexec ftp ${IP} -u '${AD_USERNAME_FILE}' -p '${AD_PASSWORD_FILE}'"
+create_new_line

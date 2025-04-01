@@ -1,7 +1,20 @@
 #!/bin/bash
 
+type_command() {
+    local COMMAND="${1}"
+    local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
+    local TYPING_CHARACTER_DELAY="${3:-"${SETTING_TYPING_CHARACTER_DELAY}"}"
+
+    if [[ "${TYPEING_DELAY}" > 0 ]]; then
+        sleep "${TYPEING_DELAY}"
+    fi
+
+    xdotool type --delay "${TYPING_CHARACTER_DELAY}" "${COMMAND}"
+    return 0
+}
+
 paste_command() {
-    local command="$1"
+    local command="${1}"
 
     # Wait a bit to get focus
     sleep 0.5
@@ -17,15 +30,19 @@ paste_command() {
 
                 echo -n "$CLIPBOARD_OLD" | clip.exe
             else
-            
-                CLIPBOARD_OLD=$(xclip -o -selection clipboard)
-                echo -n "$command" | xclip -selection clipboard
-
                 # Detect active window class
                 ACTIVE_WINDOW_ID=$(xdotool getactivewindow)
                 WINDOW_CLASS=$(xprop -id "$ACTIVE_WINDOW_ID" | grep "WM_CLASS" | awk -F '"' '{print $2}' | tr '[:upper:]' '[:lower:]')
+            
+                if [[ "$WINDOW_CLASS" =~ (xfreerdp|xfreerdp3) ]]; then
+                    type_command "${command}"
+                    return 0
+                fi
+
+                CLIPBOARD_OLD=$(xclip -o -selection clipboard)
+                echo -n "$command" | xclip -selection clipboard
                 
-                if [[ "$WINDOW_CLASS" =~ (gnome.terminal|terminal|konsole|gnome-terminal|xfce4-terminal|alacritty|xterm|tilix|mate-terminal|terminator|warp|xfreerdp|xfreerdp3) ]]; then
+                if [[ "$WINDOW_CLASS" =~ (gnome.terminal|terminal|konsole|gnome-terminal|xfce4-terminal|alacritty|xterm|tilix|mate-terminal|terminator|warp) ]]; then
                     xdotool key ctrl+Shift+v  # Terminal
                 else
                     xdotool key ctrl+v  # GUI-apps
@@ -56,4 +73,27 @@ paste_command() {
 
     # Wait a bit to get focus
     sleep 0.5
+}
+
+create_new_line() {
+    xdotool key Return
+}
+
+execute_command() {
+    local COMMAND="${1}"
+    local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
+    local TYPING_CHARACTER_DELAY="${3:-"${SETTING_TYPING_CHARACTER_DELAY}"}"
+
+    case "${SETTING_EXECUTE_COMMAND_TYPE}" in
+        type*)
+            type_command "${COMMAND}" "${TYPEING_DELAY}" "${TYPING_CHARACTER_DELAY}"
+            ;;
+        paste*)
+            paste_command "${COMMAND}"
+            ;;
+        *)
+            xdotool type "Unsupported execute command type setting"
+            return 1
+            ;;
+    esac
 }

@@ -18,9 +18,9 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 LEVEL_DEPTH=${form_data["level_depth"]}
 
-paste_command "wget -m --no-passive --no-verbose --no-parent --recursive --level=${LEVEL_DEPTH} --no-directories --user='${USERNAME}' --password='${PASSWORD}' ftp://${IP}/"
-xdotool key Return
+execute_command "wget -m --no-passive --no-verbose --no-parent --recursive --level=${LEVEL_DEPTH} --no-directories --user='${USERNAME}' --password='${PASSWORD}' ftp://${IP}/"
+create_new_line
 sleep 3
 
-paste_command "tree ."
-xdotool key Return
+execute_command "tree ."
+create_new_line

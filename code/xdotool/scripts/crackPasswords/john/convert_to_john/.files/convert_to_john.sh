@@ -13,6 +13,6 @@ convert_to_john() {
     INPUT_FILE=${form_data["input_file"]}
     HASH_FILE=${form_data["hash_file"]}
 
-    paste_command "${john_program} ${INPUT_FILE} > ${HASH_FILE}"
-    xdotool key Return
+    execute_command "${john_program} ${INPUT_FILE} > ${HASH_FILE}"
+    create_new_line
 }

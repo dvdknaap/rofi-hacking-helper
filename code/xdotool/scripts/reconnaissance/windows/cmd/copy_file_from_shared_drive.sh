@@ -14,5 +14,5 @@ generate_form "${FILE_FIELD}" "${LOCATION_FIELD}"
 FILE=${form_data["file"]}
 LOCATION=${form_data["location"]}
 
-paste_command "copy \\\TSCLIENT${FILE} ${LOCATION}"
-xdotool key Return
+execute_command "copy \\\TSCLIENT${FILE} ${LOCATION}"
+create_new_line

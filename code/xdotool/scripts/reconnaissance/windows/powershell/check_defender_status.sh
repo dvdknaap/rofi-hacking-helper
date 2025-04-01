@@ -4,5 +4,5 @@
 check defender status
 '
 
-paste_command "Get-MpComputerStatus"
-xdotool key Return
+execute_command "Get-MpComputerStatus"
+create_new_line

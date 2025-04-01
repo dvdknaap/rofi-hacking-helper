@@ -16,9 +16,9 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "sudo ntpdate ${IP} && getTGT.py -dc-ip {IP} ${DOMAIN}/${USERNAME}:'${PASSWORD}'"
-xdotool key Return
+execute_command "sudo ntpdate ${IP} && getTGT.py -dc-ip {IP} ${DOMAIN}/${USERNAME}:'${PASSWORD}'"
+create_new_line
 sleep 4
 
-paste_command "export KRB5CCNAME=*.ccache"
-xdotool key Return
+execute_command "export KRB5CCNAME=*.ccache"
+create_new_line

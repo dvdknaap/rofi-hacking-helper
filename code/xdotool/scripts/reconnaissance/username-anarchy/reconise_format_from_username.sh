@@ -14,5 +14,5 @@ generate_form "${USERNAME_FIELD}"
 
 USERNAME=${form_data["username"]}
 
-paste_command "${PROGRAM_PATH} --recognise '${USERNAME}'"
-xdotool key Return
+execute_command "${PROGRAM_PATH} --recognise '${USERNAME}'"
+create_new_line

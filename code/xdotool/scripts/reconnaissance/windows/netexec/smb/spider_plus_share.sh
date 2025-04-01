@@ -18,6 +18,6 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 SHARE=${form_data["share"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' -M spider_plus --share '${SHARE}'"
-xdotool key Return
+execute_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' -M spider_plus --share '${SHARE}'"
+create_new_line
  

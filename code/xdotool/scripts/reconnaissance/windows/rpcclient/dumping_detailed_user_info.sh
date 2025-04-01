@@ -22,6 +22,6 @@ IP=${form_data["ip"]}
 DC=${form_data["dc"]}
 RID=${form_data["rid"]}
 
-paste_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'queryuser ${RID}; quit;'"
-xdotool key Return
+execute_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'queryuser ${RID}; quit;'"
+create_new_line
 

@@ -14,5 +14,5 @@ generate_form "${IP_RANGE_FIELD}" "${OUTPUT_FILE_FIELD}"
 IP_RANGE=${form_data["ip_range"]}
 OUTPUT_FILE=${form_data["location"]}
 
-paste_command "nmap -sn -T4 ${IP_RANGE} -oN ${OUTPUT_FILE} | grep for | cut -d\" \" -f5"
-xdotool key Return
+execute_command "nmap -sn -T4 ${IP_RANGE} -oN ${OUTPUT_FILE} | grep for | cut -d\" \" -f5"
+create_new_line

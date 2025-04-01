@@ -12,5 +12,5 @@ generate_form "${AD_USERS_LOCATION_FIELD}"
 
 AD_USERS_LOCATION=${form_data["ad_users_location"]}
 
-paste_command "Get-ADUser -Filter * | Select-Object -ExpandProperty SamAccountName > ${AD_USERS_LOCATION}"
-xdotool key Return
+execute_command "Get-ADUser -Filter * | Select-Object -ExpandProperty SamAccountName > ${AD_USERS_LOCATION}"
+create_new_line

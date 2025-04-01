@@ -4,5 +4,5 @@
 smbclient: turn off prompt
 '
 
-paste_command "PROMPT OFF"
-xdotool key Return
+execute_command "PROMPT OFF"
+create_new_line

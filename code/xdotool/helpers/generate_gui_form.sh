@@ -49,13 +49,13 @@ generate_form() {
     # Check if at least one argument is provided
     if [ $# -eq 0 ]; then
         paste_command "# Usage: generate_form \"Field 1\" \"Field 2\" ..."
-        xdotool key Return
+        create_new_line
 
         paste_command "# or"
-        xdotool key Return
+        create_new_line
 
         paste_command "# generate_form '{\"label\": \"Field 1\", \"type\": \"text\", \"name\": \"field1\"}' '{\"label\": \"Field 2\", \"type\": \"password\", \"name\": \"field2\"}' ..."
-        xdotool key Return
+        create_new_line
         exit 1
     fi
 
@@ -94,13 +94,13 @@ generate_form() {
 
     if [ $? -ne 0 ]; then
         paste_command "# python3 ${python_script} '${json_array}' '${active_cred_system_json}'"
-        xdotool key Return
+        create_new_line
 
         paste_command "# Error: Failed to execute ${python_script}"
-        xdotool key Return
+        create_new_line
 
         paste_command "# ${json_output}"
-        xdotool key Return
+        create_new_line
         exit 1
     fi
 

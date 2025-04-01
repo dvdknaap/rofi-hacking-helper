@@ -14,5 +14,5 @@ generate_form "${FILE_FIELD}" "${VIRUS_TOTAL_API_KEY_FIELD}"
 FILE=${form_data["file"]}
 VIRUS_TOTAL_API_KEY=${form_data["virus_total_api_key"]}
 
-paste_command "yes | msf-virustotal -k ${VIRUS_TOTAL_API_KEY} -f ${FILE}"
-xdotool key Return
+execute_command "yes | msf-virustotal -k ${VIRUS_TOTAL_API_KEY} -f ${FILE}"
+create_new_line

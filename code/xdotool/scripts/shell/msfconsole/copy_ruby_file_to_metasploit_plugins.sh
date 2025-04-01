@@ -14,6 +14,6 @@ generate_form "${FILE_FIELD}" "${LOCATION_FIELD}"
 FILE=${form_data["file"]}
 LOCATION=${form_data["location"]}
 
-paste_command "cp ${FILE} /usr/share/metasploit-framework/modules/${LOCATION}"
-xdotool key Return
+execute_command "cp ${FILE} /usr/share/metasploit-framework/modules/${LOCATION}"
+create_new_line
 

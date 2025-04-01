@@ -4,5 +4,5 @@
 Net: Show connected network drives.
 '
 
-paste_command "net use"
-xdotool key Return
+execute_command "net use"
+create_new_line

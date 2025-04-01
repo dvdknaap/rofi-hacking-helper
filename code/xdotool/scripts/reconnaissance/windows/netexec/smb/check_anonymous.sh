@@ -12,5 +12,5 @@ generate_form "${IP_FIELD}"
 
 IP=${form_data["ip"]}
 
-paste_command "netexec smb ${IP} -u 'a' -p '' --shares"
-xdotool key Return
+execute_command "netexec smb ${IP} -u 'a' -p '' --shares"
+create_new_line

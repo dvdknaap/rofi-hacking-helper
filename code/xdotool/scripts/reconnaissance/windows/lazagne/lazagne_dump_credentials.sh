@@ -4,5 +4,5 @@
 Dump windows stored credentials
 '
 
-paste_command ".\laZagne.exe all"
-xdotool key Return
+execute_command ".\laZagne.exe all"
+create_new_line

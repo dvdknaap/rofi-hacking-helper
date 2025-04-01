@@ -16,9 +16,9 @@ ETC_PASSWORD_FILE=${form_data["etcPasswd_file"]}
 SHADOW_FILE=${form_data["shadow_file"]}
 WORDLIST_FILE=${form_data["wordlist_file"]}
 
-paste_command "unshadow ${ETC_PASSWORD_FILE} ${SHADOW_FILE} > unshadow.txt"
-xdotool key Return
+execute_command "unshadow ${ETC_PASSWORD_FILE} ${SHADOW_FILE} > unshadow.txt"
+create_new_line
 sleep 2
 
-paste_command "john --wordlist=${WORDLIST_FILE} unshadow.txt"
-xdotool key Return
+execute_command "john --wordlist=${WORDLIST_FILE} unshadow.txt"
+create_new_line

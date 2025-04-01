@@ -4,4 +4,4 @@
 PowerShell: Import PowerView module.
 '
 
-paste_command "Import-Module .\PowerView.ps1"
+execute_command "Import-Module .\PowerView.ps1"

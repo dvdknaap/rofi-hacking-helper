@@ -14,5 +14,5 @@ generate_form "${HASH_FIELD}" "${OUTPUT_FILE}"
 WORDLIST_FILE=${form_data["wordlist_file"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "hashcat --force ${WORDLIST_FILE} -r /usr/share/hashcat/rules/best64.rule --stdout | sort -u > ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "hashcat --force ${WORDLIST_FILE} -r /usr/share/hashcat/rules/best64.rule --stdout | sort -u > ${OUTPUT_FILE}"
+create_new_line

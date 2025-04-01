@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "ruby -run -ehttpd . -p${PORT}"
-xdotool key Return
+execute_command "ruby -run -ehttpd . -p${PORT}"
+create_new_line

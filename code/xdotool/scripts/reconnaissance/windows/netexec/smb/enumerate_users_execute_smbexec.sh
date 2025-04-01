@@ -15,6 +15,6 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' -x 'net user Administrator /domain' --exec-method smbexec"
-xdotool key Return
+execute_command "netexec smb ${IP} -u '${USERNAME}' -p '${PASSWORD}' -x 'net user Administrator /domain' --exec-method smbexec"
+create_new_line
 

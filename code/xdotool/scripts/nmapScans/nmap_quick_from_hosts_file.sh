@@ -14,5 +14,5 @@ generate_form "${HOSTS_FILE_FIELD}" "${OUTPUT_FILE_FIELD}"
 HOSTS_FILE=${form_data["hosts_file"]}
 OUTPUT_FILE=${form_data["location"]}
 
-paste_command "nmap --open -oA ${OUTPUT_FILE} -iL ${HOSTS_FILE} -vvv"
-xdotool key Return
+execute_command "nmap --open -oA ${OUTPUT_FILE} -iL ${HOSTS_FILE} -vvv"
+create_new_line

@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 TIMING=${form_data["timing"]}
 OUTPUT_FILE=${form_data["location"]}
 
-paste_command "nmap -p- -sC -A -T ${TIMING} -vvv --min-parallelism 10  --min-rate 1000 -oA ${OUTPUT_FILE} -Pn ${IP}"
-xdotool key Return
+execute_command "nmap -p- -sC -A -T ${TIMING} -vvv --min-parallelism 10  --min-rate 1000 -oA ${OUTPUT_FILE} -Pn ${IP}"
+create_new_line

@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${SHARE_FIELD}"
 IP=${form_data["ip"]}
 SHARE=${form_data["share"]}
 
-paste_command "smbclient //${IP}/${SHARE}/"
-xdotool key Return
+execute_command "smbclient //${IP}/${SHARE}/"
+create_new_line

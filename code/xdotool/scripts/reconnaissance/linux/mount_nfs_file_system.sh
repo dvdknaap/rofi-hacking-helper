@@ -14,5 +14,5 @@ generate_form "${IP_FIELD}" "${TARGET_DIR_FIELD}"
 IP=${form_data["ip"]}
 TARGET_DIR=${form_data["target_dir"]}
 
-paste_command "mkdir ${TARGET_DIR} && sudo mount -t nfs ${IP}:/ ./${TARGET_DIR}/ -o nolock && cd ${TARGET_DIR} && tree ."
-xdotool key Return
+execute_command "mkdir ${TARGET_DIR} && sudo mount -t nfs ${IP}:/ ./${TARGET_DIR}/ -o nolock && cd ${TARGET_DIR} && tree ."
+create_new_line

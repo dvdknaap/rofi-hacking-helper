@@ -12,5 +12,5 @@ generate_form "${PROCESS_NAME_FIELD}"
 
 PROCESS_NAME=${form_data["process_name"]}
 
-paste_command "Get-Process ${PROCESS_NAME}"
-xdotool key Return
+execute_command "Get-Process ${PROCESS_NAME}"
+create_new_line

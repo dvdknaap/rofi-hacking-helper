@@ -4,5 +4,5 @@
 Net: Check local administrators
 '
 
-paste_command "net localgroup administrators"
-xdotool key Return
+execute_commandnd "net localgroup administrators"
+create_new_line

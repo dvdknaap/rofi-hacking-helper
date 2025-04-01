@@ -12,5 +12,5 @@ generate_form "${VENV_FOLDER_FIELD}"
 
 VENV_FOLDER=${form_data["venv_folder"]}
 
-paste_command "python3 -m venv ${VENV_FOLDER}"
-xdotool key Return
+execute_command "python3 -m venv ${VENV_FOLDER}"
+create_new_line

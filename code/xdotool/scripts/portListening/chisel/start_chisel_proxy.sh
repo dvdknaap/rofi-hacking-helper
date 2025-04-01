@@ -14,5 +14,5 @@ generate_form "${PROXY_PORT_FIELD}"
 
 PROXY_PORT=${form_data["proxy_port"]}
  
-paste_command "${PROXY_LOCATION} server -p ${PROXY_PORT} --reverse"
-xdotool key Return
+execute_command "${PROXY_LOCATION} server -p ${PROXY_PORT} --reverse"
+create_new_line

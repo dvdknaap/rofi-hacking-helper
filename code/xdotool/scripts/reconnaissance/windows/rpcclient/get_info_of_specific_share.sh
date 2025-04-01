@@ -22,6 +22,6 @@ IP=${form_data["ip"]}
 DC=${form_data["dc"]}
 SHARE=${form_data["share"]}
 
-paste_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'netsharegetinfo ${SHARE}; quit;'"
-xdotool key Return
+execute_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'netsharegetinfo ${SHARE}; quit;'"
+create_new_line
 

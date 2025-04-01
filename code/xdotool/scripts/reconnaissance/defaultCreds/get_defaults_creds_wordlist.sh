@@ -4,5 +4,5 @@
 get default credentials wordlist
 '
 
-paste_command "${SCRIPTS_DIR}/reconnaissance/defaultCreds/.files/userpass.txt"
-xdotool key Return
+execute_command "${SCRIPTS_DIR}/reconnaissance/defaultCreds/.files/userpass.txt"
+create_new_line

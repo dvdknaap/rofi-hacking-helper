@@ -14,5 +14,5 @@ generate_form "${DOMAIN_FIELD}" "${OUTPUT_FILE_FIELD}"
 DOMAIN=${form_data["domain"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "curl -s 'https://crt.sh/?q=${DOMAIN}&output=json' | jq . | grep name | cut -d\":\" -f2 | grep -v \"CN=\" | cut -d'\"' -f2 | awk '{gsub(/\\n/,\"\n\");}1;' | sort -u > ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "curl -s 'https://crt.sh/?q=${DOMAIN}&output=json' | jq . | grep name | cut -d\":\" -f2 | grep -v \"CN=\" | cut -d'\"' -f2 | awk '{gsub(/\\n/,\"\n\");}1;' | sort -u > ${OUTPUT_FILE}"
+create_new_line

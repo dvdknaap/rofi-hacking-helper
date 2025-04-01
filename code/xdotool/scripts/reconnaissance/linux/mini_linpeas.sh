@@ -45,6 +45,6 @@ create_commands_oneliner() {
 
 create_commands_oneliner
 
-paste_command "${commands_oneline}"
-xdotool key Return
+execute_command "${commands_oneline}"
+create_new_line
 

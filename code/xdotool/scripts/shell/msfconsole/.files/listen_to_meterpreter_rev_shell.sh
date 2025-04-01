@@ -20,6 +20,6 @@ create_meterpreter_multi_handler() {
 
     find_and_replace_file "${FILES_FOLDER}" "multi_handler.rc" "${REPLACE_FIELDS[@]}"
 
-    paste_command "msfconsole -r ${TMP_FILE}"
-    xdotool key Return
+    execute_command "msfconsole -r ${TMP_FILE}"
+    create_new_line
 }

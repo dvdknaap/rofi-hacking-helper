@@ -16,6 +16,6 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["Username"]}
 SHARE=${form_data["Share"]}
 
-paste_command "smbclient -U ${USERNAME} '//${IP}/${SHARE}'"
-xdotool key Return
+execute_command "smbclient -U ${USERNAME} '//${IP}/${SHARE}'"
+create_new_line
 

@@ -15,5 +15,5 @@ PORT=${form_data["port"]}
 
 start_python_server "${location}" "${PORT}" "0"
 
-paste_command "# use \`kill ${HTTP_PID}\` to kill the server; use http://${KALI_IP}:${PORT} to download files"
-xdotool key Return
+execute_command "# use \`kill ${HTTP_PID}\` to kill the server; use http://${KALI_IP}:${PORT} to download files"
+create_new_line

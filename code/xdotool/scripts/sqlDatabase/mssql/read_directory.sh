@@ -12,5 +12,5 @@ generate_form "${DIRECTORY_FIELD}"
 
 DIRECTORY=${form_data["directory"]}
 
-paste_command "xp_dirtree ${DIRECTORY}"
-xdotool key Return
+execute_command "xp_dirtree ${DIRECTORY}"
+create_new_line

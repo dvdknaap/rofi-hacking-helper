@@ -22,5 +22,5 @@ if [[ "${FORMAT}" != "all" ]]; then
     selected_format="--select-format '${FORMAT}'"
 fi
 
-paste_command "${PROGRAM_PATH} --country '${COUNTRY}' ${selected_format}"
-xdotool key Return
+execute_command "${PROGRAM_PATH} --country '${COUNTRY}' ${selected_format}"
+create_new_line

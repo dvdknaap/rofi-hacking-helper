@@ -20,6 +20,6 @@ PASSWORD=${form_data["password"]}
 IP=${form_data["ip"]}
 DC=${form_data["dc"]}
 
-paste_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'enumdomusers; quit;' | awk '{print \$2}' | awk -F: '{print \$2}' | cut -f 2 -d '[' | cut -f 1 -d ']'"
-xdotool key Return
+execute_command "rpcclient -U "${DOMAIN}/${USERNAME}%${PASSWORD}" -I ${IP} ${DC} -c 'enumdomusers; quit;' | awk '{print \$2}' | awk -F: '{print \$2}' | cut -f 2 -d '[' | cut -f 1 -d ']'"
+create_new_line
 

@@ -33,8 +33,8 @@ This repository contains **588** scripts organized into **123** subdirectories.
 | 📜 `add_ip_domain_to_etc_hosts.sh` | add ip and domains to /etc/hosts |
 | 📜 `documentation_folders.sh` | create the HTB documentation folder structure |
 | 📜 `kali_ip.sh` | get Kali IP address |
+| 📜 `kali_ssh_key.sh` | get SSH key |
 | 📜 `save_ssh_key_to_authorized_keys.sh` | save SSH key to authorized_keys |
-| 📜 `ssh_key.sh` | get SSH key |
 <br />
 
 ### dynamicFields

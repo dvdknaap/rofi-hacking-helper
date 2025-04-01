@@ -18,5 +18,5 @@ DOMAIN=${form_data["domain"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-paste_command "GetUserSPNs.py -dc-ip ${IP} ${DOMAIN}/${USERNAME}:${PASSWORD}"
-xdotool key Return
+execute_command "GetUserSPNs.py -dc-ip ${IP} ${DOMAIN}/${USERNAME}:${PASSWORD}"
+create_new_line

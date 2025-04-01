@@ -4,5 +4,5 @@
 Powershell: show hidden directories
 '
 
-paste_command "Get-ChildItem -Directory -Recurse -Hidden -ErrorAction SilentlyContinue"
-xdotool key Return
+execute_command "Get-ChildItem -Directory -Recurse -Hidden -ErrorAction SilentlyContinue"
+create_new_line

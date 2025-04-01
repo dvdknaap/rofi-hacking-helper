@@ -12,6 +12,6 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-paste_command "\Get-ChildItem -Recurse -Include ${FILE} -ErrorAction SilentlyContinue -File"
-xdotool key Return
+execute_command "\Get-ChildItem -Recurse -Include ${FILE} -ErrorAction SilentlyContinue -File"
+create_new_line
 sleep 0.8

