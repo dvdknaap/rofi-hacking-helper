@@ -1,0 +1,1 @@
+../../../../fileTransfer/windows/.binaries/Invoke-WMIExec.ps1

@@ -18,4 +18,3 @@ sleep 1
 
 execute_command "lsadump::secrets"
 create_new_line
-sleep 1

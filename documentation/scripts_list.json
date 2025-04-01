@@ -611,6 +611,31 @@
     },
     {
         "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_invoke_smb_client.sh",
+        "description": "cmd: upload invoke-smbclient.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_invoke_smb_enum.sh",
+        "description": "cmd: upload invoke-smbenum.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_invoke_smb_exec.sh",
+        "description": "cmd: upload invoke-smbexec.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_invoke_the_hash.sh",
+        "description": "cmd: upload invoke-thehash.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_invoke_wmi_exec.sh",
+        "description": "cmd: upload invoke-wmiexec.ps1 file to server"
+    },
+    {
+        "type": "script",
         "path": "fileTransfer/windows/cmd/upload_lazagne_file.sh",
         "description": "cmd: upload LaZagne file to server"
     },
@@ -673,6 +698,31 @@
         "type": "script",
         "path": "fileTransfer/windows/powershell/upload_attacker_file_to_nc_as_base64.sh",
         "description": "ps: upload attacker file to nc as base64"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_invoke_smb_client.sh",
+        "description": "ps: upload invoke-smbclient.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_invoke_smb_enum.sh",
+        "description": "ps: upload invoke-smbenum.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_invoke_smb_exec.sh",
+        "description": "ps: upload invoke-smbexec.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_invoke_the_hash.sh",
+        "description": "ps: upload invoke-thehash.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_invoke_wmi_exec.sh",
+        "description": "ps: upload invoke-wmiexec.ps1 file to server"
     },
     {
         "type": "script",
@@ -1068,6 +1118,16 @@
         "type": "script",
         "path": "reconnaissance/linux/execute_mimipenguin_python.sh",
         "description": "download mimipenguin.py and find credentials in files and memory (root required)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/klist_get_info.sh",
+        "description": "klist: get info of file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/klist_impersonating_user_with_file.sh",
+        "description": "klist: impersonating user with file"
     },
     {
         "type": "script",
@@ -1491,6 +1551,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/cmd/enable_restricted_admin_mode_rdp.sh",
+        "description": "enable restricted admin mode"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/cmd/execute_winpeas_any_exe.sh",
         "description": "download winPEASany.exe to server and execute"
     },
@@ -1568,6 +1633,31 @@
         "type": "script",
         "path": "reconnaissance/windows/cmd/secretsdump_domain_user.sh",
         "description": "Impacket: use secretsdump to dump hashes (DCSync)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/upload_invoke_smb_client.sh",
+        "description": "cmd: upload invoke-smbclient.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/upload_invoke_smb_enum.sh",
+        "description": "cmd: upload invoke-smbenum.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/upload_invoke_smb_exec.sh",
+        "description": "cmd: upload invoke-smbexec.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/upload_invoke_the_hash.sh",
+        "description": "cmd: upload invoke-thehash.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/upload_invoke_wmi_exec.sh",
+        "description": "cmd: upload invoke-wmiexec.ps1 file to server"
     },
     {
         "type": "directory",
@@ -1743,6 +1833,31 @@
         "type": "script",
         "path": "reconnaissance/windows/mimikatz/dump_lsass_credentials_with_processprotect.sh",
         "description": "Mimikatz: Dump LSASS credentials (remove protection, debug, logonpasswords)."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/execute_program_with_pass_the_hash.sh",
+        "description": "Mimikatz: execute program with pass the hash"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/export_tickets.sh",
+        "description": "Mimikatz: export tickets"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/extract_kerberos_keys.sh",
+        "description": "Mimikatz: extract kerberos keys"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/get_tgt_ticket.sh",
+        "description": "Mimikatz: get tgt ticket"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/mimikatz/import_tgt_ticket.sh",
+        "description": "Mimikatz: import tgt ticket"
     },
     {
         "type": "script",
@@ -2186,6 +2301,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/powershell/execute_invoke_smb_exec.sh",
+        "description": "ps: upload invoke-smbexec.ps1 file to server"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh",
         "description": "Search for password in .txt,.ini, config, .db, .py files"
     },
@@ -2265,6 +2385,61 @@
         "description": "Powershell: show process info"
     },
     {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_invoke_smb_client.sh",
+        "description": "ps: upload invoke-smbclient.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_invoke_smb_enum.sh",
+        "description": "ps: upload invoke-smbenum.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_invoke_the_hash.sh",
+        "description": "ps: upload invoke-thehash.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_invoke_wmi_exec.sh",
+        "description": "ps: upload invoke-wmiexec.ps1 file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_any_file.sh",
+        "description": "ps: upload winPEASany.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_any_ofs_file.sh",
+        "description": "ps: upload winPEASany_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_bat_file.sh",
+        "description": "ps: upload winPEAS.bat file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_x64_file.sh",
+        "description": "ps: upload winPEASx64.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_x64_ofs_file.sh",
+        "description": "ps: upload winPEASx64_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_x86_file.sh",
+        "description": "ps: upload winPEASx86.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/upload_winpeas_x86_ofs_file.sh",
+        "description": "ps: upload winPEASx86_ofs.exe file to server"
+    },
+    {
         "type": "directory",
         "path": "reconnaissance/windows/rpcclient",
         "description": "scripts to read AD info with rpcclient"
@@ -2336,6 +2511,36 @@
     },
     {
         "type": "directory",
+        "path": "reconnaissance/windows/rubeus",
+        "description": ""
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/execute_createnetonly.sh",
+        "description": "Rubeus: execute createnetonly"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/export_tickets.sh",
+        "description": "Rubeus: export tickets"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/get_tgt_ticket.sh",
+        "description": "Rubeus: get tgt ticket"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/import_tgt_ticket.sh",
+        "description": "Rubeus: import tgt ticket"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/ps_upload_robeus.sh",
+        "description": "ps: Upload Rubeus.exe"
+    },
+    {
+        "type": "directory",
         "path": "reconnaissance/windows/smbclient",
         "description": "Scripts using smbclient for share enumeration and access."
     },
@@ -2363,6 +2568,11 @@
         "type": "script",
         "path": "reconnaissance/windows/smbclient/enable_recursive.sh",
         "description": "smbclient: enable recursive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/smbclient/execute_cmd_with_kerberos_user.sh",
+        "description": "smbclient: execute cmd with kerberos user"
     },
     {
         "type": "script",
@@ -2451,8 +2661,18 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/xfreerdp_pass_the_hash.sh",
+        "description": "xfreerdp: Connect with specified credentials with pass the hash"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive.sh",
         "description": "xfreerdp: Connect, map drive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/xfreerdp/xfreerdp_with_attached_drive_pass_the_hash.sh",
+        "description": "xfreerdp: Connect with pass the hash, map drive"
     },
     {
         "type": "directory",

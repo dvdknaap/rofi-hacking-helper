@@ -1,0 +1,1 @@
+../../../../fileTransfer/windows/.binaries/Invoke-SMBExec.ps1
