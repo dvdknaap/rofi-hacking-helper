@@ -1,10 +1,11 @@
 #!/bin/bash
 
-ROOT_DIR="${HOME}/Desktop/base"
-source "${ROOT_DIR}/code/xdotool/env.sh"
+# Set base directory
+REAL_PATH="$(realpath "$0")"
+ROOT_DIR="$(dirname "${REAL_PATH}")"
 
 # Function to check if a package is installed and install it if missing
-install_packages() {
+check_and_install_packages() {
     if [[ $# -eq 0 ]]; then
         show_info_notify_message "Usage: install_packages <package1> <package2> ..."
         return 1
@@ -125,12 +126,19 @@ setup_gnome_binding() {
 # Main function to execute the script steps
 main() {
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"
-    local screenshot_shortcut_command="bash -i -c \"source ${ROOT_DIR}/code/xdotool/env.sh && source ${ROOT_DIR}/code/xdotool/createScreenshot.sh\""
+    local screenshot_shortcut_command="bash -i -c \"source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
+
+    # clone or update repo
+    clone_or_update_repo
+
+    XDOTOOL_DIR="${ROOT_DIR}/code/xdotool"
+
+    source "${XDOTOOL_DIR}/env.sh"
 
     # Check for existing keybinding
     setup_xfce_shortcut "${helper_shortcut_command}" "Ctrl+Shift+${helper_keybind}" "m"
@@ -146,7 +154,9 @@ main() {
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
 
-    clone_or_update_repo
+    if [[ -f "${SCRIPTS_DIR}/settings.sh"]]; then
+        cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
+    fi
 
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
     echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal.\e[0m"

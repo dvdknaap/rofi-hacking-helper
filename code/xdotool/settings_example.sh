@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# before editing copy this fale to settings.sh
+# before editing, copy this file to settings.sh
 # cp code/xdotool/settings_example.sh code/xdotool/settings.sh
 
 # execute command type (paste or type)
