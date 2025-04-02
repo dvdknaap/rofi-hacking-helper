@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 HASH=${form_data["hash"]}
 
-execute_command "xfreerdp3 /u:'${USERNAME}' /pth:'${HASH}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080"
+execute_command "xfreerdp3 /u:'${USERNAME}' /pth:'${HASH}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080 /dynamic-resolution"
 create_new_line

@@ -20,5 +20,5 @@ HASH=${form_data["hash"]}
 DRIVE_NAME=${form_data["drive_name"]}
 DRIVE_DIR=${form_data["drive_dir"]}
 
-execute_command "xfreerdp3 /u:'${USERNAME}' /pth:'${HASH}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080 /drive:${DRIVE_NAME},\"${DRIVE_DIR}\""
+execute_command "xfreerdp3 /u:'${USERNAME}' /pth:'${HASH}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080 /dynamic-resolution /drive:${DRIVE_NAME},\"${DRIVE_DIR}\""
 create_new_line

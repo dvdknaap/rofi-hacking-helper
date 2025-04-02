@@ -16,5 +16,5 @@ IP=${form_data["ip"]}
 USERNAME=${form_data["username"]}
 PASSWORD=${form_data["password"]}
 
-execute_command "xfreerdp3 /u:'${USERNAME}' /p:'${PASSWORD}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080"
+execute_command "xfreerdp3 /u:'${USERNAME}' /p:'${PASSWORD}' /v:${IP} /cert:ignore /smart-sizing /size:1920x1080 /dynamic-resolution"
 create_new_line
