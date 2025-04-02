@@ -6,7 +6,10 @@ perform mini linpeas to get pentest info
 
 declare -gA all_commands
 all_commands["id"]='id'
+all_commands["searching for ccache files in /tmp"]='ls -la /tmp'
+all_commands["search for encrypted/encoded files"]='for ext in $(echo ".xls .xls* .xltx .csv .od* .doc .doc* .pdf .pot .pot* .pp*");do echo -e "\nFile extension: " $ext; find / -name *$ext 2>/dev/null | grep -v "lib\|fonts\|share\|core" ;done'
 all_commands["env"]='env'
+all_commands["env search for kb5"]='env | grep -i krb5'
 all_commands["cat /etc/passwd"]='cat /etc/passwd|grep /home/'
 all_commands["ls -alF"]='ls -alF'
 all_commands["cat /etc/*-release"]='cat /etc/*-release'
@@ -31,8 +34,12 @@ all_commands["SSH Private Keys"]='grep -rnw "PRIVATE KEY" /home/* 2>/dev/null | 
 all_commands["SSH Public Keys"]='grep -rnw "ssh-rsa" /home/* 2>/dev/null | grep ":1"'
 all_commands["cat /etc/hosts"]='cat /etc/hosts'
 all_commands["sudo -l"]='sudo -l'
-all_commands["check if machine is domain joined"]='ps -ef | grep -i "winbind\|sssd"'
+all_commands["check if server is domain joined"]='realm list && ps -ef | grep -i "winbind\|sssd"'
 all_commands["search for Files with keytab in the name"]='find / -name *keytab* -ls 2>/dev/null'
+all_commands["find files with the name cred"]='find / -name "*cred*"'
+all_commands["find files with the name secret"]='find / -name "*secret*"'
+all_commands["find files with the word cred"]='grep -rn / -ie cred'
+all_commands["find files with the word secret"]='grep -rn / -ie secret'
 
 commands_oneline=""
 

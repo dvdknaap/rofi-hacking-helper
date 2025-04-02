@@ -81,6 +81,11 @@
     },
     {
         "type": "script",
+        "path": "crackPasswords/hashcat/crack_hash_and_find_format_automatically.sh",
+        "description": "crack hashes and find format automatically"
+    },
+    {
+        "type": "script",
         "path": "crackPasswords/hashcat/crack_jwt.sh",
         "description": "Crack JWT (JSON Web Token) string"
     },
@@ -1096,6 +1101,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/convert_ccache_to_kirbi_file.sh",
+        "description": "convert ccache file (windows) to kirbi file (linux)"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/create_lsass_dump.sh",
         "description": "Powershell: create lsass.dump in elevated powershell"
     },
@@ -1103,6 +1113,11 @@
         "type": "script",
         "path": "reconnaissance/linux/execute_firefox_decrypt.sh",
         "description": "download firefox_decrypt.py to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/execute_linkatz.sh",
+        "description": "download linikatz to server and execute (root needed)"
     },
     {
         "type": "script",
@@ -1156,6 +1171,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/set_ccache_file_as_variable.sh",
+        "description": "set ccache file as variable KRB5CCNAME"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/show_mounts.sh",
         "description": "show ip mounts"
     },
@@ -1168,6 +1188,26 @@
         "type": "script",
         "path": "reconnaissance/linux/unmount_nfs_file_system.sh",
         "description": "unmount ip mount"
+    },
+    {
+        "type": "directory",
+        "path": "reconnaissance/linux/wmiexec",
+        "description": "scripts to use wmiexec"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/wmiexec/login_with_ccache_file.sh",
+        "description": "login with wmiexec with ccache file"
+    },
+    {
+        "type": "directory",
+        "path": "reconnaissance/linux/wmiexec/proxychains",
+        "description": "proxychains: scripts to use wmiexec"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/wmiexec/proxychains/login_with_ccache_file.sh",
+        "description": "proxychains: login with wmiexec with ccache file"
     },
     {
         "type": "directory",
@@ -1602,7 +1642,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/cmd/mini_linpeas.sh",
-        "description": "perform mini linpeas to get pentest info"
+        "description": "Perform mini Windows Linpeas to get pentest info"
     },
     {
         "type": "script",
@@ -2322,7 +2362,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/powershell/mini_linpeas.sh",
-        "description": "perform mini linpeas to get pentest info"
+        "description": "perform mini linpeas to get pentest info (PowerShell version)"
     },
     {
         "type": "script",

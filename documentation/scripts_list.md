@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **633** scripts organized into **124** subdirectories.
+This repository contains **639** scripts organized into **126** subdirectories.
 
 ## Table of Contents
 
@@ -82,6 +82,7 @@ crack passwords with hashcat
 
 | Path | Description |
 |------|-------------|
+| 📜 `crackPasswords/hashcat/crack_hash_and_find_format_automatically.sh` | crack hashes and find format automatically |
 | 📜 `crackPasswords/hashcat/crack_jwt.sh` | Crack JWT (JSON Web Token) string |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_as_rep_hash.sh` | Crack Kerberos 5, etype 23, AS-REP hashes with hashcat. |
 | 📜 `crackPasswords/hashcat/crack_kerberos5_etype-23_tgs_rep_hash.sh` | Crack Kerberos 5, etype 23, TGS-REP hashes with hashcat. |
@@ -515,8 +516,10 @@ scripts to do reconnaissance on linux
 |------|-------------|
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
+| 📜 `reconnaissance/linux/convert_ccache_to_kirbi_file.sh` | convert ccache file (windows) to kirbi file (linux) |
 | 📜 `reconnaissance/linux/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
 | 📜 `reconnaissance/linux/execute_firefox_decrypt.sh` | download firefox_decrypt.py to server and execute |
+| 📜 `reconnaissance/linux/execute_linkatz.sh` | download linikatz to server and execute (root needed) |
 | 📜 `reconnaissance/linux/execute_linpeas.sh` | download linpeas to server and execute |
 | 📜 `reconnaissance/linux/execute_mimipenguin_bash.sh` | download mimipenguin.sh and find credentials in files and memory (root required) |
 | 📜 `reconnaissance/linux/execute_mimipenguin_python.sh` | download mimipenguin.py and find credentials in files and memory (root required) |
@@ -527,9 +530,28 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/mini_linpeas.sh` | perform mini linpeas to get pentest info |
 | 📜 `reconnaissance/linux/mount_nfs_file_system.sh` | mount to ip |
 | 📜 `reconnaissance/linux/ping_sweep_linux.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
+| 📜 `reconnaissance/linux/set_ccache_file_as_variable.sh` | set ccache file as variable KRB5CCNAME |
 | 📜 `reconnaissance/linux/show_mounts.sh` | show ip mounts |
 | 📜 `reconnaissance/linux/tcpdump_sniff_traffic.sh` | sniff for traffic with tcpdump and save to pcap file |
 | 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` | unmount ip mount |
+<br />
+
+### reconnaissance/linux/wmiexec
+
+scripts to use wmiexec
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/linux/wmiexec/login_with_ccache_file.sh` | login with wmiexec with ccache file |
+<br />
+
+### reconnaissance/linux/wmiexec/proxychains
+
+proxychains: scripts to use wmiexec
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/linux/wmiexec/proxychains/login_with_ccache_file.sh` | proxychains: login with wmiexec with ccache file |
 <br />
 
 ### reconnaissance/username-anarchy
@@ -742,7 +764,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_x86_ofs_exe.sh` | download winPEASx86_ofs.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/find_services.sh` | Find services |
 | 📜 `reconnaissance/windows/cmd/get_tasklist.sh` | Get tasklist |
-| 📜 `reconnaissance/windows/cmd/mini_linpeas.sh` | perform mini linpeas to get pentest info |
+| 📜 `reconnaissance/windows/cmd/mini_linpeas.sh` | Perform mini Windows Linpeas to get pentest info |
 | 📜 `reconnaissance/windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
@@ -1066,7 +1088,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
 | 📜 `reconnaissance/windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
 | 📜 `reconnaissance/windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
-| 📜 `reconnaissance/windows/powershell/mini_linpeas.sh` | perform mini linpeas to get pentest info |
+| 📜 `reconnaissance/windows/powershell/mini_linpeas.sh` | perform mini linpeas to get pentest info (PowerShell version) |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/windows/powershell/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
 | 📜 `reconnaissance/windows/powershell/ps_disable_defender.sh` | Disable defender |

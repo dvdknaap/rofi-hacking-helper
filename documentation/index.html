@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>633</b> scripts organized into <b>124</b> subdirectories.</p>
+    <p>This repository contains <b>639</b> scripts organized into <b>126</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -115,6 +115,11 @@
         "type": "script",
         "path": "auditTools/domainPasswordAuditTool_dpat/audit_ad_passwords_hashcat_profile.sh",
         "description": "Domain Password Audit Tool (DPAT)"
+    },
+    {
+        "type": "script",
+        "path": "crackPasswords/hashcat/crack_hash_and_find_format_automatically.sh",
+        "description": "crack hashes and find format automatically"
     },
     {
         "type": "script",
@@ -963,6 +968,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/convert_ccache_to_kirbi_file.sh",
+        "description": "convert ccache file (windows) to kirbi file (linux)"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/create_lsass_dump.sh",
         "description": "Powershell: create lsass.dump in elevated powershell"
     },
@@ -970,6 +980,11 @@
         "type": "script",
         "path": "reconnaissance/linux/execute_firefox_decrypt.sh",
         "description": "download firefox_decrypt.py to server and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/execute_linkatz.sh",
+        "description": "download linikatz to server and execute (root needed)"
     },
     {
         "type": "script",
@@ -1023,6 +1038,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/set_ccache_file_as_variable.sh",
+        "description": "set ccache file as variable KRB5CCNAME"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/show_mounts.sh",
         "description": "show ip mounts"
     },
@@ -1035,6 +1055,16 @@
         "type": "script",
         "path": "reconnaissance/linux/unmount_nfs_file_system.sh",
         "description": "unmount ip mount"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/wmiexec/login_with_ccache_file.sh",
+        "description": "login with wmiexec with ccache file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/wmiexec/proxychains/login_with_ccache_file.sh",
+        "description": "proxychains: login with wmiexec with ccache file"
     },
     {
         "type": "script",
@@ -1379,7 +1409,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/cmd/mini_linpeas.sh",
-        "description": "perform mini linpeas to get pentest info"
+        "description": "Perform mini Windows Linpeas to get pentest info"
     },
     {
         "type": "script",
@@ -1969,7 +1999,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/powershell/mini_linpeas.sh",
-        "description": "perform mini linpeas to get pentest info"
+        "description": "perform mini linpeas to get pentest info (PowerShell version)"
     },
     {
         "type": "script",

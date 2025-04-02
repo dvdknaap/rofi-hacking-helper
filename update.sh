@@ -34,9 +34,19 @@ install_pip3_packages() {
 pull_latest_git_version() {
     cd "${ROOT_DIR}"
 
-    git checkout main
-    git fetch origin
-    git pull origin main
+    git fetch origin &>/dev/null
+    LOCAL=$(git rev-parse HEAD)
+    REMOTE=$(git rev-parse origin/main)
+
+    if [[ "${LOCAL}" != "${REMOTE}" ]]; then
+        git checkout main
+        git fetch origin
+        git pull origin main
+
+        # we got changes so exit script and start update script again
+        bash ./update.sh
+        exit 1
+    fi
 }
 
 # Function to set up a keyboard shortcut using XFCE
@@ -141,7 +151,7 @@ main() {
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
     # Install required programs
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user python3-impacket
 
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
