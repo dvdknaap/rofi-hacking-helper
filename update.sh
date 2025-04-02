@@ -78,7 +78,7 @@ setup_gnome_binding() {
             local command=$(gsettings get "${key_path}" command | tr -d "'")
             local binding=$(gsettings get "${key_path}" binding | tr -d "'")
 
-            if [[ "${command}" != *"${search_command}" ]]; then
+            if [[ "${command}" != *"${shortcut_command}" ]]; then
                 gsettings set "${key_path}" command "${shortcut_command}"
                 return 0
             fi
