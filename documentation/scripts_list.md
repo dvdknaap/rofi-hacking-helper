@@ -32,8 +32,8 @@ This repository contains **633** scripts organized into **124** subdirectories.
 |------|-------------|
 | 📜 `add_ip_domain_to_etc_hosts.sh` | add ip and domains to /etc/hosts |
 | 📜 `documentation_folders.sh` | create the HTB documentation folder structure |
-| 📜 `kali_ip.sh` | get Kali IP address |
-| 📜 `kali_ssh_key.sh` | get SSH key |
+| 📜 `get_kali_ip.sh` | get Kali IP address |
+| 📜 `get_kali_ssh_key.sh` | get SSH key |
 | 📜 `save_ssh_key_to_authorized_keys.sh` | save SSH key to authorized_keys |
 <br />
 
@@ -1034,8 +1034,8 @@ exploit SeImpersonatePrivilege permission
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | CMD: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
-| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PS: PrintSpoofer: Reverse shell to KALI_IP:443 using SeImpersonatePrivilege. |
+| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/cmd_seImpersonatePrivilege.sh` | CMD: PrintSpoofer: Reverse shell using SeImpersonatePrivilege. |
+| 📜 `reconnaissance/windows/permissions/seImpersonatePrivilege/ps_seImpersonatePrivilege.sh` | PS: PrintSpoofer: Reverse shell using SeImpersonatePrivilege. |
 <br />
 
 ### reconnaissance/windows/permissions/seTakeOwnershipPrivilege
