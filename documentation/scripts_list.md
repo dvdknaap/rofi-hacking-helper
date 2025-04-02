@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **639** scripts organized into **126** subdirectories.
+This repository contains **649** scripts organized into **127** subdirectories.
 
 ## Table of Contents
 
@@ -536,6 +536,15 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/unmount_nfs_file_system.sh` | unmount ip mount |
 <br />
 
+### reconnaissance/linux/responder
+
+scripts to start responder
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/linux/responder/start_responder.sh` | start responder |
+<br />
+
 ### reconnaissance/linux/wmiexec
 
 scripts to use wmiexec
@@ -575,7 +584,9 @@ scripts to do reconnaissance on windows
 |------|-------------|
 | 📜 `reconnaissance/windows/get_usernames_ntlm_hashes_from_ntlm_username_rid_lm_ntlm_hashes.sh` | save username and ntlm hashes in seperated files from form username:RID:LM:NTLM::: |
 | 📜 `reconnaissance/windows/impacket_get_ad_users.sh` | Impacket: GetADUsers.py get domain users |
-| 📜 `reconnaissance/windows/impacket_ntlmrelay.sh` | impacket NTLM relayx attack |
+| 📜 `reconnaissance/windows/impacket_ntlmrelay_dump_sam_database.sh` | ntlmrelayx: NTLM relayx attack, dump sam database |
+| 📜 `reconnaissance/windows/impacket_ntlmrelay_execute_cmd.sh` | ntlmrelayx: NTLM relayx attack, execute cmd |
+| 📜 `reconnaissance/windows/impacket_ntlmrelay_start_shell.sh` | ntlmrelayx: NTLM relayx attack, execute cmd |
 | 📜 `reconnaissance/windows/psexect_to_user.sh` | Impacket: psexec.py get psexec shell |
 | 📜 `reconnaissance/windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `reconnaissance/windows/request_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
@@ -1435,6 +1446,10 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | msfconsole: start mssql ping |
+| 📜 `sqlDatabase/mssql/mssql_enable_ole_precedure.sh` | mssql: enable Ole Automation procedure |
+| 📜 `sqlDatabase/mssql/mssql_read_local_file.sh` | mssql: read local file |
+| 📜 `sqlDatabase/mssql/mssql_write_file_with_ole_precedure.sh` | mssql: write shell with Ole Automation procedure |
+| 📜 `sqlDatabase/mssql/mssql_write_simple_webshell.sh` | mssql: upload simple webshell |
 | 📜 `sqlDatabase/mssql/nmap_enumerate_mssql_service.sh` | nmap: enumerate mysql service |
 | 📜 `sqlDatabase/mssql/read_directory.sh` | script to read directories with xp_dirtree |
 | 📜 `sqlDatabase/mssql/show_databases.sh` | show databases |
@@ -1444,6 +1459,8 @@ script to enable xp_cmdshell and read directories
 | 📜 `sqlDatabase/mssql/start_sp_execute_external_script_powershell_reverse_shell.sh` | execute sp_execute_external_script powershell reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_nc_reverse_shell.sh` | execute xp_cmdshell nc reverse shell |
 | 📜 `sqlDatabase/mssql/start_xp_cmdshell_powershell_reverse_shell.sh` | execute xp_cmdshell powershell reverse shell |
+| 📜 `sqlDatabase/mssql/steal_hashes_with_xp_dirtree.sh` | steal hashes with xp_dirtree |
+| 📜 `sqlDatabase/mssql/steal_hashes_with_xp_subdirs.sh` | steal hashes with xp_subdirs |
 | 📜 `sqlDatabase/mssql/view_table_content_in_specific_database.sh` | view content in table in specific database |
 <br />
 
@@ -1454,6 +1471,7 @@ scripts to enumerate MySQL server
 | Path | Description |
 |------|-------------|
 | 📜 `sqlDatabase/msyql/connect_to_mysql_server.sh` | nmap: enumerate mysql service |
+| 📜 `sqlDatabase/msyql/mysql_read_local_file.sh` | mysql: read local file |
 | 📜 `sqlDatabase/msyql/nmap_enumerate_mysql_service.sh` | nmap: enumerate mysql service |
 | 📜 `sqlDatabase/msyql/select_one_existing_database.sh` | mysql: Select one of the existing databases |
 | 📜 `sqlDatabase/msyql/show_all_databases.sh` | mysql: show all databases |
