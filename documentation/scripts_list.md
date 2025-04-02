@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **649** scripts organized into **127** subdirectories.
+This repository contains **657** scripts organized into **128** subdirectories.
 
 ## Table of Contents
 
@@ -779,6 +779,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/net_user_domain_details.sh` | Net: Get domain user information. |
 | 📜 `reconnaissance/windows/cmd/ping_sweep_cmd.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
 | 📜 `reconnaissance/windows/cmd/proof_admin.sh` | Read contents of C:\Users\Administrator\Desktop\proof.txt. |
+| 📜 `reconnaissance/windows/cmd/rdp_session_hijacking.sh` | RDP: Session Hijacking. |
 | 📜 `reconnaissance/windows/cmd/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `reconnaissance/windows/cmd/search_for_sensative_files.sh` | search for sensative files |
 | 📜 `reconnaissance/windows/cmd/secretsdump_domain_user.sh` | Impacket: use secretsdump to dump hashes (DCSync) |
@@ -1125,6 +1126,15 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/upload_winpeas_x86_ofs_file.sh` | ps: upload winPEASx86_ofs.exe file to server |
 <br />
 
+### reconnaissance/windows/rdesktop
+
+scripts to login to rdesktop
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/rdesktop/login_to_rdp.sh` | rdesktop: Connect with specified credentials. |
+<br />
+
 ### reconnaissance/windows/rpcclient
 
 scripts to read AD info with rpcclient
@@ -1440,9 +1450,15 @@ script to enable xp_cmdshell and read directories
 
 | Path | Description |
 |------|-------------|
+| 📜 `sqlDatabase/mssql/check_current_user_name.sh` | check current username |
+| 📜 `sqlDatabase/mssql/check_if_user_has_role.sh` | check if current user has (sysadmin) role |
+| 📜 `sqlDatabase/mssql/check_linked_servers.sh` | check current username |
 | 📜 `sqlDatabase/mssql/enable_xp_cmdshell.sh` | script to enable xp_cmdshell |
+| 📜 `sqlDatabase/mssql/execute_as_linked_server.sh` | check current username |
 | 📜 `sqlDatabase/mssql/execute_sp_execute_external_script.sh` | execute sp_execute_external_script command |
 | 📜 `sqlDatabase/mssql/execute_xp_cmdshell.sh` | execute xp_cmdshell command |
+| 📜 `sqlDatabase/mssql/identify_users_that_can_be_impersonated.sh` | Identify users that can be impersonate |
+| 📜 `sqlDatabase/mssql/impersonate_as_user.sh` | impersonating the (sa) user |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_and_password_file.sh` | mssql: bruteforce username and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_username_file_and_password_file.sh` | mssql: bruteforce username file and passwords file |
 | 📜 `sqlDatabase/mssql/metasploit_bruteforce_userpass_file.sh` | msfconsole: start mssql ping |

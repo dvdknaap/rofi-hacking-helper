@@ -15,6 +15,7 @@ all_commands["find files with the name secret"]='dir n:\*secret* /s /b'
 all_commands["find words with cred"]='findstr /s /i cred n:\*.*'
 all_commands["find words with secret"]='findstr /s /i cresecretd n:\*.*'
 all_commands["net_admins"]='net localgroup Administrators'
+all_commands["check user sessions"]='query user'
 
 commands_oneline=""
 
