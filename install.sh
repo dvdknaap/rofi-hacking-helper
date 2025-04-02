@@ -129,7 +129,7 @@ main() {
     source "${XDOTOOL_DIR}/env.sh"
     
     local helper_name="rofi-hacking-helper"
-    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/rofisearch_scripts_menu.sh\""
+    local helper_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/scriptSearcher.sh\""
     local helper_keybind="M"
 
     local screenshot_name="rofi-hacking-helper-screenshot"

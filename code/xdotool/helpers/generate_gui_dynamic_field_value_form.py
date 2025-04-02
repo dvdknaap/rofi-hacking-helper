@@ -14,6 +14,8 @@ class JSONSelectorApp:
 
         :param root: Tkinter root window.
         :param json_file: Path to the JSON file.
+        :param form_width: form width.
+        :param form_height: form height.
         """
         self.root = root
         self.form_width = form_width
