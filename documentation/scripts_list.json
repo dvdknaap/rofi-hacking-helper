@@ -1681,6 +1681,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/cmd/rdp_session_hijacking.sh",
+        "description": "RDP: Session Hijacking."
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/cmd/root_admin.sh",
         "description": "Read contents of C:\\Users\\Administrator\\Desktop\\root.txt."
     },
@@ -2501,6 +2506,16 @@
     },
     {
         "type": "directory",
+        "path": "reconnaissance/windows/rdesktop",
+        "description": "scripts to login to rdesktop"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rdesktop/login_to_rdp.sh",
+        "description": "rdesktop: Connect with specified credentials."
+    },
+    {
+        "type": "directory",
         "path": "reconnaissance/windows/rpcclient",
         "description": "scripts to read AD info with rpcclient"
     },
@@ -3281,8 +3296,28 @@
     },
     {
         "type": "script",
+        "path": "sqlDatabase/mssql/check_current_user_name.sh",
+        "description": "check current username"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/check_if_user_has_role.sh",
+        "description": "check if current user has (sysadmin) role"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/check_linked_servers.sh",
+        "description": "check current username"
+    },
+    {
+        "type": "script",
         "path": "sqlDatabase/mssql/enable_xp_cmdshell.sh",
         "description": "script to enable xp_cmdshell"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/execute_as_linked_server.sh",
+        "description": "check current username"
     },
     {
         "type": "script",
@@ -3293,6 +3328,16 @@
         "type": "script",
         "path": "sqlDatabase/mssql/execute_xp_cmdshell.sh",
         "description": "execute xp_cmdshell command"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/identify_users_that_can_be_impersonated.sh",
+        "description": "Identify users that can be impersonate"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/impersonate_as_user.sh",
+        "description": "impersonating the (sa) user"
     },
     {
         "type": "script",

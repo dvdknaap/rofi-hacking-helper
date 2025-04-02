@@ -15,7 +15,7 @@ all_commands["search for filenames with cred"]='Get-ChildItem -Recurse -Path N:\
 all_commands["search for filenames with secret"]='Get-ChildItem -Recurse -Path N:\ -Include *secret* -File'
 all_commands["search for file that contains the word cred"]='Get-ChildItem -Recurse -Path N:\ | Select-String "cred" -List'
 all_commands["search for file that contains the wordh secret"]='Get-ChildItem -Recurse -Path N:\ | Select-String "secret" -List'
-
+all_commands["check user sessions"]='query user'
 
 commands_oneline=""
 
