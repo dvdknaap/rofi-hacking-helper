@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>639</b> scripts organized into <b>126</b> subdirectories.</p>
+    <p>This repository contains <b>649</b> scripts organized into <b>127</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -1058,6 +1058,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/responder/start_responder.sh",
+        "description": "start responder"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/wmiexec/login_with_ccache_file.sh",
         "description": "login with wmiexec with ccache file"
     },
@@ -1103,8 +1108,18 @@
     },
     {
         "type": "script",
-        "path": "reconnaissance/windows/impacket_ntlmrelay.sh",
-        "description": "impacket NTLM relayx attack"
+        "path": "reconnaissance/windows/impacket_ntlmrelay_dump_sam_database.sh",
+        "description": "ntlmrelayx: NTLM relayx attack, dump sam database"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/impacket_ntlmrelay_execute_cmd.sh",
+        "description": "ntlmrelayx: NTLM relayx attack, execute cmd"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/impacket_ntlmrelay_start_shell.sh",
+        "description": "ntlmrelayx: NTLM relayx attack, execute cmd"
     },
     {
         "type": "script",
@@ -2803,6 +2818,26 @@
     },
     {
         "type": "script",
+        "path": "sqlDatabase/mssql/mssql_enable_ole_precedure.sh",
+        "description": "mssql: enable Ole Automation procedure"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/mssql_read_local_file.sh",
+        "description": "mssql: read local file"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/mssql_write_file_with_ole_precedure.sh",
+        "description": "mssql: write shell with Ole Automation procedure"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/mssql_write_simple_webshell.sh",
+        "description": "mssql: upload simple webshell"
+    },
+    {
+        "type": "script",
         "path": "sqlDatabase/mssql/nmap_enumerate_mssql_service.sh",
         "description": "nmap: enumerate mysql service"
     },
@@ -2848,6 +2883,16 @@
     },
     {
         "type": "script",
+        "path": "sqlDatabase/mssql/steal_hashes_with_xp_dirtree.sh",
+        "description": "steal hashes with xp_dirtree"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/mssql/steal_hashes_with_xp_subdirs.sh",
+        "description": "steal hashes with xp_subdirs"
+    },
+    {
+        "type": "script",
         "path": "sqlDatabase/mssql/view_table_content_in_specific_database.sh",
         "description": "view content in table in specific database"
     },
@@ -2855,6 +2900,11 @@
         "type": "script",
         "path": "sqlDatabase/msyql/connect_to_mysql_server.sh",
         "description": "nmap: enumerate mysql service"
+    },
+    {
+        "type": "script",
+        "path": "sqlDatabase/msyql/mysql_read_local_file.sh",
+        "description": "mysql: read local file"
     },
     {
         "type": "script",

@@ -14,5 +14,5 @@ generate_form "${CCACHE_FILE_FIELD}" "${KIRBI_FILE_FIELD}"
 CCACHE_FILE=${form_data["ccache_file"]}
 KIRBI_FILE=${form_data["kirbi_file"]}
 
-execute_command "python3 ticketConverter.py ${CCACHE_FILE} j${KIRBI_FILE}"
+execute_command "python3 ticketConverter.py ${CCACHE_FILE} ${KIRBI_FILE}"
 create_new_line
