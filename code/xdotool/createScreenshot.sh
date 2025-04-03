@@ -3,6 +3,10 @@
 SCREENSHOT_PATH="${SCREENSHOTS_DIR}"
 screenshot_filename=""
 
+if [[ ! -d "${SCREENSHOT_PATH}" ]]; then
+    mkdir "${SCREENSHOT_PATH}"
+fi
+
 # Check if the JSON file exists
 if [[ -f "${ACTIVE_DYNAMIC_FIELDS_FILE}" ]]; then
     output_json=$(cat "${ACTIVE_DYNAMIC_FIELDS_FILE}")
