@@ -63,7 +63,7 @@ class DynamicFieldForm:
             file_path = file["path"]
 
             unique_tag = file_path
-            treeview.insert("", "end", values=(ip, domain, domain, username, password), tags=(unique_tag,))
+            treeview.insert("", "end", values=(ip, website, domain, username, password), tags=(unique_tag,))
             treeview.tag_bind(unique_tag, "<Double-1>", lambda event, filepath=file_path: self.on_select(filepath))
 
         return treeview
