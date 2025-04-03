@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **657** scripts organized into **128** subdirectories.
+This repository contains **658** scripts organized into **128** subdirectories.
 
 ## Table of Contents
 
@@ -50,6 +50,7 @@ scripts to add, edit or remote dynamic fields
 | 📜 `dynamicFields/get_active_ip.sh` | get current active dynamic field ip |
 | 📜 `dynamicFields/get_active_password.sh` | get current active dynamic field password |
 | 📜 `dynamicFields/get_active_username.sh` | get current active dynamic field username |
+| 📜 `dynamicFields/get_active_website.sh` | get current active dynamic field website |
 | 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
 | 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
 | 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields |

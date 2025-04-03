@@ -41,6 +41,11 @@
     },
     {
         "type": "script",
+        "path": "dynamicFields/get_active_website.sh",
+        "description": "get current active dynamic field website"
+    },
+    {
+        "type": "script",
         "path": "dynamicFields/remove_dynamic_fields.sh",
         "description": "show a list of dynamic fields so you can remove them"
     },
