@@ -64,6 +64,11 @@ start_form_and_save() {
     password=$(echo "${output_json}" | jq -r '.password')
     domain=$(echo "${output_json}" | jq -r '.domain')
 
+    # create folder if it doesnt exists
+    if [[ ! -d "${DYNAMIC_FIELDS_DIR}" ]]; then
+        mkdir "${DYNAMIC_FIELDS_DIR}"
+    fi
+
     # Generate the new file name based on md5sum of ip, username, password, and domain
     new_filename=$(echo -n "${ip}_${username}_${password}_${domain}" | md5sum | cut -d' ' -f1)
     json_filename="${DYNAMIC_FIELDS_DIR}/${new_filename}.json"
