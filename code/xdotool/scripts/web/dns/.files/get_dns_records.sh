@@ -5,12 +5,14 @@ get_dns_record() {
 
     # Generate GUI form items (label, type (optional: default text), name, default (optional))
     DOMAIN_FIELD=$(form_item "domain" "domain")
+    NAMESERVER_FIELD=$(form_item "ip" "ip")
 
     # Generate GUI form
-    generate_form "${DOMAIN_FIELD}"
+    generate_form "${DOMAIN_FIELD}" "${NAMESERVER_FIELD}"
 
     DOMAIN=${form_data["domain"]}
+    NAMESERVER=${form_data["ip"]}
 
-    execute_command "dig ${dns_type} ${DOMAIN}"
+    execute_command "dig ${dns_type} ${DOMAIN} @${ip}"
     create_new_line
 }

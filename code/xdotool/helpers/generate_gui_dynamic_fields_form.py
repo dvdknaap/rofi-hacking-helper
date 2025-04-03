@@ -41,26 +41,29 @@ class DynamicFieldForm:
         """
         Populates the Treeview with formatted file data.
         """
-        treeview = ttk.Treeview(self.root, columns=("ip", "domain", "username", "password"), show="headings")
+        treeview = ttk.Treeview(self.root, columns=("ip", "website", "domain", "username", "password"), show="headings")
         treeview.heading("ip", text="IP")
+        treeview.heading("website", text="Website")
         treeview.heading("domain", text="Domain")
         treeview.heading("username", text="Username")
         treeview.heading("password", text="Password")
 
         treeview.column("ip", width=100, anchor="center")
+        treeview.column("website", width=150, anchor="center")
         treeview.column("domain", width=150, anchor="center")
         treeview.column("username", width=100, anchor="center")
         treeview.column("password", width=100, anchor="center")
 
         for file in self.files:
             ip = file["data"].get("ip", "N/A")
+            website = file["data"].get("website", "N/A")
             domain = file["data"].get("domain", "N/A")
             username = file["data"].get("username", "N/A")
             password = file["data"].get("password", "N/A")
             file_path = file["path"]
 
             unique_tag = file_path
-            treeview.insert("", "end", values=(ip, domain, username, password), tags=(unique_tag,))
+            treeview.insert("", "end", values=(ip, domain, domain, username, password), tags=(unique_tag,))
             treeview.tag_bind(unique_tag, "<Double-1>", lambda event, filepath=file_path: self.on_select(filepath))
 
         return treeview
