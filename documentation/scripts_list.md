@@ -768,7 +768,7 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/check_user_account.sh` | Net: Get user information. |
 | 📜 `reconnaissance/windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
 | 📜 `reconnaissance/windows/cmd/enable_rdp_with_ntlm_hash_login.sh` | cmd: enable rdp with ntlm hash login |
-| 📜 `reconnaissance/windows/cmd/enable_rdp_with_password_login.sh` | Powershell: enable rdp with password |
+| 📜 `reconnaissance/windows/cmd/enable_rdp_with_password_login.sh` | cmd: enable rdp with password |
 | 📜 `reconnaissance/windows/cmd/enable_restricted_admin_mode_rdp.sh` | enable restricted admin mode |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_exe.sh` | download winPEASany.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh` | download winPEASany_ofs.exe to server and execute |

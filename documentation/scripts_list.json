@@ -1627,7 +1627,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/cmd/enable_rdp_with_password_login.sh",
-        "description": "Powershell: enable rdp with password"
+        "description": "cmd: enable rdp with password"
     },
     {
         "type": "script",
