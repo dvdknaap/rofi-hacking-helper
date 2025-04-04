@@ -12,5 +12,5 @@ generate_form "${PORT_FIELD}"
 
 PORT=${form_data["port"]}
 
-execute_command "rlwrap -cAr nc -lvnp ${PORT}"
+execute_command "stty raw -echo; (stty size; cat) | rlwrap -cAr nc -lvnp ${PORT}"
 create_new_line

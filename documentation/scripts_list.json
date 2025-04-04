@@ -1011,6 +1011,11 @@
     },
     {
         "type": "script",
+        "path": "portListening/ligolo/add_ligolo_port_listener.sh",
+        "description": "add ligolo port listener"
+    },
+    {
+        "type": "script",
         "path": "portListening/ligolo/add_new_ligolo_interface.sh",
         "description": "add new ligolo interface"
     },
@@ -1613,6 +1618,16 @@
         "type": "script",
         "path": "reconnaissance/windows/cmd/copy_file_from_shared_drive.sh",
         "description": "Copy file from shared drive"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/enable_rdp_with_ntlm_hash_login.sh",
+        "description": "cmd: enable rdp with ntlm hash login"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/cmd/enable_rdp_with_password_login.sh",
+        "description": "Powershell: enable rdp with password"
     },
     {
         "type": "script",
@@ -2371,6 +2386,16 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/powershell/enable_rdp_with_ntlm_hash_login.sh",
+        "description": "Powershell: enable rdp with ntlm hash login"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/enable_rdp_with_password_login.sh",
+        "description": "cmd: enable rdp with password"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/powershell/execute_invoke_smb_exec.sh",
         "description": "ps: upload invoke-smbexec.ps1 file to server"
     },
@@ -2428,6 +2453,11 @@
         "type": "script",
         "path": "reconnaissance/windows/powershell/save_custom_script_to_remote_server.sh",
         "description": "PowerShell: Save file and save in current remote folder."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/search_for_content_in_files.sh",
+        "description": "Powershell: search for content in string"
     },
     {
         "type": "script",

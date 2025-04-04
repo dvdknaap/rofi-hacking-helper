@@ -14,4 +14,3 @@ FILE=${form_data["file"]}
 
 execute_command "\Get-ChildItem -Recurse -Include ${FILE} -ErrorAction SilentlyContinue -File"
 create_new_line
-sleep 0.8

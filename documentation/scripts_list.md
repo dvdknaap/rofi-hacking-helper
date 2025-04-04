@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **658** scripts organized into **128** subdirectories.
+This repository contains **664** scripts organized into **128** subdirectories.
 
 ## Table of Contents
 
@@ -472,6 +472,7 @@ scripts to use ligolo
 
 | Path | Description |
 |------|-------------|
+| 📜 `portListening/ligolo/add_ligolo_port_listener.sh` | add ligolo port listener |
 | 📜 `portListening/ligolo/add_new_ligolo_interface.sh` | add new ligolo interface |
 | 📜 `portListening/ligolo/cmd_upload_ligolo_agent_exe.sh` | cmd: download ligolo agent.exe to server and connect to proxy |
 | 📜 `portListening/ligolo/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
@@ -766,6 +767,8 @@ scripts to do reconnaissance in cmd
 | 📜 `reconnaissance/windows/cmd/check_local_administrators.sh` | Net: Check local administrators |
 | 📜 `reconnaissance/windows/cmd/check_user_account.sh` | Net: Get user information. |
 | 📜 `reconnaissance/windows/cmd/copy_file_from_shared_drive.sh` | Copy file from shared drive |
+| 📜 `reconnaissance/windows/cmd/enable_rdp_with_ntlm_hash_login.sh` | cmd: enable rdp with ntlm hash login |
+| 📜 `reconnaissance/windows/cmd/enable_rdp_with_password_login.sh` | Powershell: enable rdp with password |
 | 📜 `reconnaissance/windows/cmd/enable_restricted_admin_mode_rdp.sh` | enable restricted admin mode |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_exe.sh` | download winPEASany.exe to server and execute |
 | 📜 `reconnaissance/windows/cmd/execute_winpeas_any_ofs_exe.sh` | download winPEASany_ofs.exe to server and execute |
@@ -1097,6 +1100,8 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
 | 📜 `reconnaissance/windows/powershell/download_and_execute_custom_script_in_memory.sh` | PowerShell: Download and execute script in memory. |
 | 📜 `reconnaissance/windows/powershell/elevate_user.sh` | Powershell - elevate user |
+| 📜 `reconnaissance/windows/powershell/enable_rdp_with_ntlm_hash_login.sh` | Powershell: enable rdp with ntlm hash login |
+| 📜 `reconnaissance/windows/powershell/enable_rdp_with_password_login.sh` | cmd: enable rdp with password |
 | 📜 `reconnaissance/windows/powershell/execute_invoke_smb_exec.sh` | ps: upload invoke-smbexec.ps1 file to server |
 | 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
 | 📜 `reconnaissance/windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
@@ -1109,6 +1114,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/restore_item_from_recycle_bin.sh` | Powershell: restore item from recycle bin |
 | 📜 `reconnaissance/windows/powershell/root_admin.sh` | Read contents of C:\Users\Administrator\Desktop\root.txt. |
 | 📜 `reconnaissance/windows/powershell/save_custom_script_to_remote_server.sh` | PowerShell: Save file and save in current remote folder. |
+| 📜 `reconnaissance/windows/powershell/search_for_content_in_files.sh` | Powershell: search for content in string |
 | 📜 `reconnaissance/windows/powershell/search_for_file.sh` | Powershell: search for a file or extension |
 | 📜 `reconnaissance/windows/powershell/show_hidden_directories.sh` | Powershell: show hidden directories |
 | 📜 `reconnaissance/windows/powershell/show_hidden_files.sh` | Powershell: show hidden files |

