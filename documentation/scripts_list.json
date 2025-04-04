@@ -1901,6 +1901,31 @@
     },
     {
         "type": "directory",
+        "path": "reconnaissance/windows/ldapsearchAd",
+        "description": "perform ldapsearch-ad enumerations"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldapsearchAd/enumerate_ldap.sh",
+        "description": "enumerate ldap"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldapsearchAd/enumerate_ldap_with_username_password.sh",
+        "description": "enumerate ldap with username and password"
+    },
+    {
+        "type": "directory",
+        "path": "reconnaissance/windows/lookupsid",
+        "description": "get domain info with lookupsid.py"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/lookupsid/lookup_sids.sh",
+        "description": "lookupsid.py - lookup domain and user sid"
+    },
+    {
+        "type": "directory",
         "path": "reconnaissance/windows/mimikatz",
         "description": "Scripts for Active Directory enumeration and credential dumping."
     },
@@ -2113,6 +2138,11 @@
         "type": "script",
         "path": "reconnaissance/windows/netexec/smb/user_hash.sh",
         "description": "check if smb is possible for user hash"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/netexec/smb/write_file_to_smb_share.sh",
+        "description": "write file to smb share"
     },
     {
         "type": "directory",
@@ -2763,6 +2793,16 @@
         "type": "script",
         "path": "reconnaissance/windows/smbmap/proxychains/show_shares.sh",
         "description": "proxychains: smbmap: show shares."
+    },
+    {
+        "type": "directory",
+        "path": "reconnaissance/windows/targetedKerberoast",
+        "description": "perform targeted kerberoast attack"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/targetedKerberoast/targeted_kerberoast_with_user_file.sh",
+        "description": "targeted kerberoast attack on ad users files"
     },
     {
         "type": "directory",

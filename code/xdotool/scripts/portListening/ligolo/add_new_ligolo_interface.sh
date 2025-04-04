@@ -14,9 +14,9 @@ generate_form "${IP_FIELD}" "${INTERFACE_NAME_FIELD}"
 IP=${form_data["ip_range"]}
 INTERFACE_NAME=${form_data["interface_name"]}
 
-execute_command "sudo ip link delete ${INTERFACENAME}"
+execute_command "sudo ip link delete ${INTERFACE_NAME}"
 create_new_line
 sleep 2
 
-execute_command "sudo ip tuntap add user \$USER mode tun ${INTERFACENAME} && sudo ip link set ${INTERFACENAME} up && sudo ip route add ${IP} dev ${INTERFACENAME}"
+execute_command "sudo ip tuntap add user \$USER mode tun ${INTERFACE_NAME} && sudo ip link set ${INTERFACE_NAME} up && sudo ip route add ${IP} dev ${INTERFACE_NAME}"
 create_new_line
