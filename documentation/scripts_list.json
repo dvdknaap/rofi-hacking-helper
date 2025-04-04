@@ -3241,8 +3241,13 @@
     },
     {
         "type": "script",
+        "path": "shell/windows/powershell_reverse_shell.sh",
+        "description": "generate reverse shell in powershell"
+    },
+    {
+        "type": "script",
         "path": "shell/windows/powershell_reverse_shell_base64.sh",
-        "description": "generate base64 reverse powershell"
+        "description": "generate base64 reverse shell in powershell"
     },
     {
         "type": "script",

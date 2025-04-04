@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **664** scripts organized into **128** subdirectories.
+This repository contains **665** scripts organized into **128** subdirectories.
 
 ## Table of Contents
 
@@ -1406,7 +1406,8 @@ scripts to create windows shells
 | 📜 `shell/windows/cmd_upload_nc_and_execute_cmd.sh` | upload nc.exe and start nc.exe and execute cmd |
 | 📜 `shell/windows/cmd_upload_nc_and_execute_powershell.sh` | upload nc.exe and start nc.exe and execute powershell |
 | 📜 `shell/windows/powershell_one_liner_reverse_shell.sh` | generate reverse powershell oneliner |
-| 📜 `shell/windows/powershell_reverse_shell_base64.sh` | generate base64 reverse powershell |
+| 📜 `shell/windows/powershell_reverse_shell.sh` | generate reverse shell in powershell |
+| 📜 `shell/windows/powershell_reverse_shell_base64.sh` | generate base64 reverse shell in powershell |
 | 📜 `shell/windows/ps_download_nc_file.sh` | ps: download nc file |
 | 📜 `shell/windows/ps_execute_conPtyShell.sh` | ps: download Invoke-ConPtyShell.ps1 to server and start shell |
 | 📜 `shell/windows/ps_execute_powershellTcp.sh` | ps: download Invoke-PowerShellTc.ps1 to server and start shell |

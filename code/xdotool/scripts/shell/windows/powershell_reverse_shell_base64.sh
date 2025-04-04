@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-generate base64 reverse powershell
+generate base64 reverse shell in powershell
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
