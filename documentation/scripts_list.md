@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **666** scripts organized into **128** subdirectories.
+This repository contains **671** scripts organized into **131** subdirectories.
 
 ## Table of Contents
 
@@ -888,6 +888,25 @@ scripts to do ldap enumerations
 | 📜 `reconnaissance/windows/ldap/nmap_ldap_scripts_scan.sh` | nmap scan with ldap scripts |
 <br />
 
+### reconnaissance/windows/ldapsearchAd
+
+perform ldapsearch-ad enumerations
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/ldapsearchAd/enumerate_ldap.sh` | enumerate ldap |
+| 📜 `reconnaissance/windows/ldapsearchAd/enumerate_ldap_with_username_password.sh` | enumerate ldap with username and password |
+<br />
+
+### reconnaissance/windows/lookupsid
+
+get domain info with lookupsid.py
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/lookupsid/lookup_sids.sh` | lookupsid.py - lookup domain and user sid |
+<br />
+
 ### reconnaissance/windows/mimikatz
 
 Scripts for Active Directory enumeration and credential dumping.
@@ -969,6 +988,7 @@ perform netexec smb attacks
 | 📜 `reconnaissance/windows/netexec/smb/smb_start_listener.sh` | inject reverse shell |
 | 📜 `reconnaissance/windows/netexec/smb/spider_plus_share.sh` | netexec smb use spider_plus to get all share files |
 | 📜 `reconnaissance/windows/netexec/smb/user_hash.sh` | check if smb is possible for user hash |
+| 📜 `reconnaissance/windows/netexec/smb/write_file_to_smb_share.sh` | write file to smb share |
 <br />
 
 ### reconnaissance/windows/netexec/smb/proxychains
@@ -1223,6 +1243,15 @@ proxychains: Scripts using smbmap for SMB share enumeration and command executio
 | 📜 `reconnaissance/windows/smbmap/proxychains/administrator_execute_cmd_with_ntlm_hash.sh` | proxychains: smbmap: Execute command on smb as user with NTLM hash. |
 | 📜 `reconnaissance/windows/smbmap/proxychains/administrator_execute_cmd_with_password.sh` | proxychains: smbmap: Execute |
 | 📜 `reconnaissance/windows/smbmap/proxychains/show_shares.sh` | proxychains: smbmap: show shares. |
+<br />
+
+### reconnaissance/windows/targetedKerberoast
+
+perform targeted kerberoast attack
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/targetedKerberoast/targeted_kerberoast_with_user_file.sh` | targeted kerberoast attack on ad users files |
 <br />
 
 ### reconnaissance/windows/xfreerdp

@@ -145,10 +145,13 @@ main() {
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
 
     # Install required programs
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap
+    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap impacket bloodyad
 
     # install pip3 packages
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
+
+    # instll pipx packages
+    pipx install git+https://github.com/yaap7/ldapsearch-ad
 
     if [ ! -f "${XDOTOOL_DIR}/settings.sh" ]; then
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
