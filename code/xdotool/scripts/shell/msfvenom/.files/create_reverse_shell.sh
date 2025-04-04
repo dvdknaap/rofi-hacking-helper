@@ -7,7 +7,7 @@ create_reverse_shell() {
     local LPORT="${4:-1337}"
 
     # Generate GUI form items (label, type (optional: default text), name, default (optional))
-    LHOST_FIELD=$(form_item  "LHOST" "number" "lhost" "${KALI_IP}")
+    LHOST_FIELD=$(form_item  "LHOST"  "lhost" "${KALI_IP}")
     LPORT_FIELD=$(form_item  "LPORT" "number" "lport" "${LPORT}")
     FILENAME_FIELD=$(form_item  "filename" "text" "filename" "${FILENAME}")
 
