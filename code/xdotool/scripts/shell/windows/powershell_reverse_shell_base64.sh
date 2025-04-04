@@ -5,7 +5,7 @@ generate base64 reverse powershell
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-LHOST_FIELD=$(form_item  "LHOST" "number" "lhost" "${KALI_IP}")
+LHOST_FIELD=$(form_item  "LHOST"  "lhost" "${KALI_IP}")
 PORT_FIELD=$(form_item  "port" "number" "port" "1337")
 
 # Generate GUI form
