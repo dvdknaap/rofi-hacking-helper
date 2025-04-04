@@ -1516,6 +1516,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/bloodhound/execute_sharphound.sh",
+        "description": "ps: execute sharphound"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/bloodhound/ps_upload_sharphound_and_execute.sh",
         "description": "ps: Upload sharphound and execute"
     },
