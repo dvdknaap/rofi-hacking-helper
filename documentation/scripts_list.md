@@ -870,8 +870,8 @@ perform attacks with lazagne
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/lazagne/cmd_upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
-| 📜 `reconnaissance/windows/lazagne/lazagne_dump_browser_credentials.sh` | Dump browser stored credentials |
-| 📜 `reconnaissance/windows/lazagne/lazagne_dump_credentials.sh` | Dump windows stored credentials |
+| 📜 `reconnaissance/windows/lazagne/lazagne_dump_browser_credentials.sh` | laZagne: Dump browser stored credentials |
+| 📜 `reconnaissance/windows/lazagne/lazagne_dump_credentials.sh` | laZagne: Dump windows stored credentials |
 | 📜 `reconnaissance/windows/lazagne/ps_upload_lazagne_exe.sh` | ps upload LaZagne to server |
 <br />
 
