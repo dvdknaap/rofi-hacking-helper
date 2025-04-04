@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-Dump windows stored credentials
+laZagne: Dump windows stored credentials
 '
 
 execute_command ".\laZagne.exe all"

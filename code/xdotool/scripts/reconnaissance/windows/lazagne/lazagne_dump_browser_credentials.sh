@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-Dump browser stored credentials
+laZagne: Dump browser stored credentials
 '
 
 execute_command ".\laZagne.exe browsers"
