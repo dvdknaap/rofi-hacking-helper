@@ -13,8 +13,8 @@ SHARE_FIELD=$(form_item  "Share" "share")
 generate_form "${IP_FIELD}" "${USERNAME_FIELD}" "${SHARE_FIELD}"
 
 IP=${form_data["ip"]}
-USERNAME=${form_data["Username"]}
-SHARE=${form_data["Share"]}
+USERNAME=${form_data["Userusernamename"]}
+SHARE=${form_data["share"]}
 
 execute_command "smbclient -U ${USERNAME} '//${IP}/${SHARE}'"
 create_new_line
