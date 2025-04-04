@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **665** scripts organized into **128** subdirectories.
+This repository contains **666** scripts organized into **128** subdirectories.
 
 ## Table of Contents
 
@@ -704,6 +704,7 @@ Scripts for starting BloodHound and Neo4j.
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/bloodhound/cmd_upload_sharphound_and_execute.sh` | cmd: Upload sharphound and execute |
+| 📜 `reconnaissance/windows/bloodhound/execute_sharphound.sh` | ps: execute sharphound |
 | 📜 `reconnaissance/windows/bloodhound/ps_upload_sharphound_and_execute.sh` | ps: Upload sharphound and execute |
 | 📜 `reconnaissance/windows/bloodhound/python_create_bloodhound_zip.sh` | Create a bloodhound zip with bloodhound-python |
 | 📜 `reconnaissance/windows/bloodhound/start_bloodhound.sh` | Start Neo4j service and launch BloodHound GUI. |
