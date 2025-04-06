@@ -1559,7 +1559,7 @@ scripts to enumerate MySQL server
 
 | Path | Description |
 |------|-------------|
-| 📜 `sqlDatabase/msyql/connect_to_mysql_server.sh` | nmap: enumerate mysql service |
+| 📜 `sqlDatabase/msyql/connect_to_mysql_server.sh` | mysql: connect to mysql |
 | 📜 `sqlDatabase/msyql/mysql_read_local_file.sh` | mysql: read local file |
 | 📜 `sqlDatabase/msyql/nmap_enumerate_mysql_service.sh` | nmap: enumerate mysql service |
 | 📜 `sqlDatabase/msyql/select_one_existing_database.sh` | mysql: Select one of the existing databases |

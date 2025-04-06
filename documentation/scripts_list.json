@@ -3667,7 +3667,7 @@
     {
         "type": "script",
         "path": "sqlDatabase/msyql/connect_to_mysql_server.sh",
-        "description": "nmap: enumerate mysql service"
+        "description": "mysql: connect to mysql"
     },
     {
         "type": "script",

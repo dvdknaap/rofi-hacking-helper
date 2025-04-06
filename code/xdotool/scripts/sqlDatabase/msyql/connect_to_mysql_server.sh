@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-nmap: enumerate mysql service
+mysql: connect to mysql
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
