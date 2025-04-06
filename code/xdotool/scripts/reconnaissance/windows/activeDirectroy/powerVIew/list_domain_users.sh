@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-creating a List of Domain Users
+powerview: creating a List of Domain Users
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

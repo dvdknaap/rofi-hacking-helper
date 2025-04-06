@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **671** scripts organized into **131** subdirectories.
+This repository contains **695** scripts organized into **132** subdirectories.
 
 ## Table of Contents
 
@@ -326,6 +326,7 @@ transfer file to or from a server for windows
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/windows/cmd/upload_Start-SimpleHTTPServer_ps1.sh` | cmd: upload Start-SimpleHTTPServer.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_invoke_smb_client.sh` | cmd: upload invoke-smbclient.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_invoke_smb_enum.sh` | cmd: upload invoke-smbenum.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_invoke_smb_exec.sh` | cmd: upload invoke-smbexec.ps1 file to server |
@@ -334,6 +335,7 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/cmd/upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc64_file.sh` | cmd: upload nc64 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc_file.sh` | cmd: upload nc file to server |
+| 📜 `fileTransfer/windows/cmd/upload_powerview_ps1.sh` | cmd: upload powerview.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_print_spoofer_file.sh` | cmd: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_any_file.sh` | cmd: upload winPEASany.exe file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_any_ofs_file.sh` | cmd: upload winPEASany_ofs.exe file to server |
@@ -348,6 +350,9 @@ transfer file to or from a server for windows
 
 | Path | Description |
 |------|-------------|
+| 📜 `fileTransfer/windows/powershell/start_powershell_http_server.sh` | Powershell: start http server |
+| 📜 `fileTransfer/windows/powershell/start_simple_powershel_server.sh` | Powershell: start simple http server and use current folder as root |
+| 📜 `fileTransfer/windows/powershell/upload_Start-SimpleHTTPServer_ps1.sh` | ps: upload powerview.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_attacker_file_to_nc_as_base64.sh` | ps: upload attacker file to nc as base64 |
 | 📜 `fileTransfer/windows/powershell/upload_invoke_smb_client.sh` | ps: upload invoke-smbclient.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_invoke_smb_enum.sh` | ps: upload invoke-smbenum.ps1 file to server |
@@ -357,6 +362,7 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/powershell/upload_lazagne_file.sh` | ps: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc64_file.sh` | ps: upload nc64 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc_file.sh` | ps: upload nc file to server |
+| 📜 `fileTransfer/windows/powershell/upload_powerview_ps1.sh` | ps: upload powerview.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_print_spoofer_file.sh` | ps: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_any_file.sh` | ps: upload winPEASany.exe file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_any_ofs_file.sh` | ps: upload winPEASany_ofs.exe file to server |
@@ -590,9 +596,10 @@ scripts to do reconnaissance on windows
 | 📜 `reconnaissance/windows/impacket_ntlmrelay_execute_cmd.sh` | ntlmrelayx: NTLM relayx attack, execute cmd |
 | 📜 `reconnaissance/windows/impacket_ntlmrelay_start_shell.sh` | ntlmrelayx: NTLM relayx attack, execute cmd |
 | 📜 `reconnaissance/windows/psexect_to_user.sh` | Impacket: psexec.py get psexec shell |
-| 📜 `reconnaissance/windows/read_sam_database.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
+| 📜 `reconnaissance/windows/read_sam_database.sh` | secretsdump: dump secrets with SYSTEM, SAM, and SECURITY(optional) database. |
 | 📜 `reconnaissance/windows/request_user_spns_check_for_services.sh` | GetUserSPNs: check for services |
 | 📜 `reconnaissance/windows/save_sam_database.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `reconnaissance/windows/secretsdump_ntds_system.sh` | secretsdump: dump secrets with ntds and system.save file. |
 | 📜 `reconnaissance/windows/show_user_spns.sh` | GetUserSPNs: check for services |
 | 📜 `reconnaissance/windows/snaffler.sh` | Run Snaffler on domain. |
 | 📜 `reconnaissance/windows/wmiexec_connect_to_user.sh` | wmiexec: get shell to user |
@@ -605,6 +612,15 @@ scripts for active directory (AD) hacking
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/windows/activeDirectroy/get_user_tgt.sh` | get user Ticket Granting Ticket (TGT) |
+<br />
+
+### reconnaissance/windows/activeDirectroy/bloodyAD
+
+scripts for bloodyAD
+
+| Path | Description |
+|------|-------------|
+| 📜 `reconnaissance/windows/activeDirectroy/bloodyAD/set_domain_group_owner.sh` | bloody AD: add user to group |
 <br />
 
 ### reconnaissance/windows/activeDirectroy/certipy_ad
@@ -653,9 +669,19 @@ scripts for powerview.ps1
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/list_domain_users.sh` | creating a List of Domain Users |
-| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | Loop over de ad_users and get AD rights |
-| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload sharphound and execute |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/add_user_to_ad_group.sh` | powerview: add user to ad group |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/export_ad_users_to_csv_file.sh` | powerview: export ad users to csv file |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/export_spn_users.sh` | PowerShell: Get SPNs, format for Hashcat, export to spns.csv. |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/get_domain_object_acl_ad_user_info.sh` | powerview: get DomainObjectACL AD user info |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/get_domain_user_info.sh` | powerview: get domain user info |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/get_samaccountname.sh` | PowerShell: Get SPN user account names. |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/list_domain_users.sh` | powerview: creating a List of Domain Users |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh` | powerview: loop over de ad_users and get AD rights |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh` | ps: Upload powerview and execute |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/set_dcsync_rights_to_ad_user.sh` | powerview: set dc sync rights of a group to a specific ad user |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/set_domain_group_owner.sh` | powerview: set domain group owner |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/set_full_rights_to_ad_user.sh` | powerview: set full rights of a group to a specific ad user |
+| 📜 `reconnaissance/windows/activeDirectroy/powerVIew/show_ad_users_in_group.sh` | powerview: show ad users in group |
 <br />
 
 ### reconnaissance/windows/activeDirectroy/rubeus
@@ -1082,9 +1108,11 @@ exploit seBackupPrivilege permission
 
 | Path | Description |
 |------|-------------|
+| 📜 `reconnaissance/windows/permissions/seBackupPrivilege/copy_file_with_Copy-FileSeBackupPrivilege.sh` | copy file with Copy-FileSeBackupPrivilege |
 | 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
 | 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_with_security.sh` | Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives. |
 | 📜 `reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh` | Registry: Save SYSTEM, SECURITY, and SAM hives. |
+| 📜 `reconnaissance/windows/permissions/seBackupPrivilege/upload_and_import_copy_FileSeBackupPrivilege.sh` | ps: upload and import Copy-FileSeBackupPrivilege modules |
 <br />
 
 ### reconnaissance/windows/permissions/seImpersonatePrivilege
@@ -1117,6 +1145,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/check_internal_listening_ports.sh` | check internal listening ports |
 | 📜 `reconnaissance/windows/powershell/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
 | 📜 `reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh` | Powershell - login to user on a different computer |
+| 📜 `reconnaissance/windows/powershell/create_shadowdisk_of_drive.sh` | ps: create shadow disk (backup) and get ntds.dit |
 | 📜 `reconnaissance/windows/powershell/disable_defender.sh` | Disable Windows Defender and Firewall. |
 | 📜 `reconnaissance/windows/powershell/disable_firewall.sh` | Disable firewall |
 | 📜 `reconnaissance/windows/powershell/download_and_execute_custom_script_in_memory.sh` | PowerShell: Download and execute script in memory. |
@@ -1126,6 +1155,7 @@ scripts to do reconnaissance in powershell
 | 📜 `reconnaissance/windows/powershell/execute_invoke_smb_exec.sh` | ps: upload invoke-smbexec.ps1 file to server |
 | 📜 `reconnaissance/windows/powershell/find_password_in_txt_ini_config_db_py_files.sh` | Search for password in .txt,.ini, config, .db, .py files |
 | 📜 `reconnaissance/windows/powershell/find_passwords_in_account_description.sh` | PowerShell: Get users with non-null descriptions. |
+| 📜 `reconnaissance/windows/powershell/get_clear_password_from_powershell_cred_xml_file.sh` | ps: get clear password from powershell credentials xml file |
 | 📜 `reconnaissance/windows/powershell/import_module_powerview_ps1.sh` | PowerShell: Import PowerView module. |
 | 📜 `reconnaissance/windows/powershell/mini_linpeas.sh` | perform mini linpeas to get pentest info (PowerShell version) |
 | 📜 `reconnaissance/windows/powershell/ping_sweep_powershell.sh` | ping sweep - check if ips are alive in ip range 0.0.0 |
@@ -1192,6 +1222,7 @@ scripts to read AD info with rpcclient
 | 📜 `reconnaissance/windows/rubeus/export_tickets.sh` | Rubeus: export tickets |
 | 📜 `reconnaissance/windows/rubeus/get_tgt_ticket.sh` | Rubeus: get tgt ticket |
 | 📜 `reconnaissance/windows/rubeus/import_tgt_ticket.sh` | Rubeus: import tgt ticket |
+| 📜 `reconnaissance/windows/rubeus/perform_kerberoast_attack_on_domain.sh` | Rubeus: perform kerberoast attack on domain |
 | 📜 `reconnaissance/windows/rubeus/ps_upload_robeus.sh` | ps: Upload Rubeus.exe |
 <br />
 
@@ -1441,6 +1472,7 @@ scripts to create windows shells
 | 📜 `shell/windows/ps_download_nc_file.sh` | ps: download nc file |
 | 📜 `shell/windows/ps_execute_conPtyShell.sh` | ps: download Invoke-ConPtyShell.ps1 to server and start shell |
 | 📜 `shell/windows/ps_execute_powershellTcp.sh` | ps: download Invoke-PowerShellTc.ps1 to server and start shell |
+| 📜 `shell/windows/ps_login_as_user_and_create_reverse_shell.sh` | ps: login as user and create reverse shell |
 <br />
 
 ### smtp
