@@ -157,7 +157,7 @@ main() {
     install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy
 
     # instll pipx packages
-    pipx install git+https://github.com/yaap7/ldapsearch-ad
+    pipx install git+https://github.com/yaap7/ldapsearch-ad --force
     
     if [ ! -f "${XDOTOOL_DIR}/settings.sh" ]; then
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
