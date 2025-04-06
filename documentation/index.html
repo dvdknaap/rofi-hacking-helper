@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>671</b> scripts organized into <b>131</b> subdirectories.</p>
+    <p>This repository contains <b>695</b> scripts organized into <b>132</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -558,6 +558,11 @@
     },
     {
         "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_Start-SimpleHTTPServer_ps1.sh",
+        "description": "cmd: upload Start-SimpleHTTPServer.ps1 file to server"
+    },
+    {
+        "type": "script",
         "path": "fileTransfer/windows/cmd/upload_invoke_smb_client.sh",
         "description": "cmd: upload invoke-smbclient.ps1 file to server"
     },
@@ -598,6 +603,11 @@
     },
     {
         "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_powerview_ps1.sh",
+        "description": "cmd: upload powerview.ps1 file to server"
+    },
+    {
+        "type": "script",
         "path": "fileTransfer/windows/cmd/upload_print_spoofer_file.sh",
         "description": "cmd: upload PrintSpoofer file to server"
     },
@@ -635,6 +645,21 @@
         "type": "script",
         "path": "fileTransfer/windows/cmd/upload_winpeas_x86_ofs_file.sh",
         "description": "cmd: upload winPEASx86_ofs.exe file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/start_powershell_http_server.sh",
+        "description": "Powershell: start http server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/start_simple_powershel_server.sh",
+        "description": "Powershell: start simple http server and use current folder as root"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_Start-SimpleHTTPServer_ps1.sh",
+        "description": "ps: upload powerview.ps1 file to server"
     },
     {
         "type": "script",
@@ -680,6 +705,11 @@
         "type": "script",
         "path": "fileTransfer/windows/powershell/upload_nc_file.sh",
         "description": "ps: upload nc file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_powerview_ps1.sh",
+        "description": "ps: upload powerview.ps1 file to server"
     },
     {
         "type": "script",
@@ -1139,7 +1169,7 @@
     {
         "type": "script",
         "path": "reconnaissance/windows/read_sam_database.sh",
-        "description": "Impacket: Local secretsdump using SYSTEM, SAM, and SECURITY hives."
+        "description": "secretsdump: dump secrets with SYSTEM, SAM, and SECURITY(optional) database."
     },
     {
         "type": "script",
@@ -1150,6 +1180,11 @@
         "type": "script",
         "path": "reconnaissance/windows/save_sam_database.sh",
         "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/secretsdump_ntds_system.sh",
+        "description": "secretsdump: dump secrets with ntds and system.save file."
     },
     {
         "type": "script",
@@ -1170,6 +1205,11 @@
         "type": "script",
         "path": "reconnaissance/windows/activeDirectroy/get_user_tgt.sh",
         "description": "get user Ticket Granting Ticket (TGT)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/bloodyAD/set_domain_group_owner.sh",
+        "description": "bloody AD: add user to group"
     },
     {
         "type": "script",
@@ -1253,18 +1293,68 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/add_user_to_ad_group.sh",
+        "description": "powerview: add user to ad group"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/export_ad_users_to_csv_file.sh",
+        "description": "powerview: export ad users to csv file"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/export_spn_users.sh",
+        "description": "PowerShell: Get SPNs, format for Hashcat, export to spns.csv."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/get_domain_object_acl_ad_user_info.sh",
+        "description": "powerview: get DomainObjectACL AD user info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/get_domain_user_info.sh",
+        "description": "powerview: get domain user info"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/get_samaccountname.sh",
+        "description": "PowerShell: Get SPN user account names."
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/activeDirectroy/powerVIew/list_domain_users.sh",
-        "description": "creating a List of Domain Users"
+        "description": "powerview: creating a List of Domain Users"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/activeDirectroy/powerVIew/loop_over_ad_users_and_get_ad_rights.sh",
-        "description": "Loop over de ad_users and get AD rights"
+        "description": "powerview: loop over de ad_users and get AD rights"
     },
     {
         "type": "script",
         "path": "reconnaissance/windows/activeDirectroy/powerVIew/ps_upload_powerview_and_import.sh",
-        "description": "ps: Upload sharphound and execute"
+        "description": "ps: Upload powerview and execute"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/set_dcsync_rights_to_ad_user.sh",
+        "description": "powerview: set dc sync rights of a group to a specific ad user"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/set_domain_group_owner.sh",
+        "description": "powerview: set domain group owner"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/set_full_rights_to_ad_user.sh",
+        "description": "powerview: set full rights of a group to a specific ad user"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/activeDirectroy/powerVIew/show_ad_users_in_group.sh",
+        "description": "powerview: show ad users in group"
     },
     {
         "type": "script",
@@ -1968,6 +2058,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/windows/permissions/seBackupPrivilege/copy_file_with_Copy-FileSeBackupPrivilege.sh",
+        "description": "copy file with Copy-FileSeBackupPrivilege"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part1.sh",
         "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
     },
@@ -1980,6 +2075,11 @@
         "type": "script",
         "path": "reconnaissance/windows/permissions/seBackupPrivilege/seBackupPrivilege-part2_without_security.sh",
         "description": "Registry: Save SYSTEM, SECURITY, and SAM hives."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/permissions/seBackupPrivilege/upload_and_import_copy_FileSeBackupPrivilege.sh",
+        "description": "ps: upload and import Copy-FileSeBackupPrivilege modules"
     },
     {
         "type": "script",
@@ -2020,6 +2120,11 @@
         "type": "script",
         "path": "reconnaissance/windows/powershell/create_new_powershell_session_to_computer.sh",
         "description": "Powershell - login to user on a different computer"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/create_shadowdisk_of_drive.sh",
+        "description": "ps: create shadow disk (backup) and get ntds.dit"
     },
     {
         "type": "script",
@@ -2065,6 +2170,11 @@
         "type": "script",
         "path": "reconnaissance/windows/powershell/find_passwords_in_account_description.sh",
         "description": "PowerShell: Get users with non-null descriptions."
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/powershell/get_clear_password_from_powershell_cred_xml_file.sh",
+        "description": "ps: get clear password from powershell credentials xml file"
     },
     {
         "type": "script",
@@ -2285,6 +2395,11 @@
         "type": "script",
         "path": "reconnaissance/windows/rubeus/import_tgt_ticket.sh",
         "description": "Rubeus: import tgt ticket"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/rubeus/perform_kerberoast_attack_on_domain.sh",
+        "description": "Rubeus: perform kerberoast attack on domain"
     },
     {
         "type": "script",
@@ -2820,6 +2935,11 @@
         "type": "script",
         "path": "shell/windows/ps_execute_powershellTcp.sh",
         "description": "ps: download Invoke-PowerShellTc.ps1 to server and start shell"
+    },
+    {
+        "type": "script",
+        "path": "shell/windows/ps_login_as_user_and_create_reverse_shell.sh",
+        "description": "ps: login as user and create reverse shell"
     },
     {
         "type": "script",

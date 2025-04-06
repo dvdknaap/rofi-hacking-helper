@@ -16,13 +16,17 @@ all_commands["search for filenames with secret"]='Get-ChildItem -Recurse -Path N
 all_commands["search for file that contains the word cred"]='Get-ChildItem -Recurse -Path N:\ | Select-String "cred" -List'
 all_commands["search for file that contains the wordh secret"]='Get-ChildItem -Recurse -Path N:\ | Select-String "secret" -List'
 all_commands["check user sessions"]='query user'
+all_commands["search for services"]='wmic service get name,displayname,pathname,startmode |findstr /i "auto"|findstr /i /v "C:\windows\\"'
+all_commands["search for security user logs"]='wevtutil qe Security /rd:true /f:text | Select-String "Process Command Line"'
+all_commands["check all log categories"]='wevtutil el'
+
 
 commands_oneline=""
 
 create_commands_oneliner() {
     for title in "${!all_commands[@]}"; do
         command="${all_commands["${title}"]}"
-        commands_oneline+="Write-Host \"`n${title}:\"; ${command}; "
+        commands_oneline+="Write-Host \"\`n${title}:\"; ${command}; "
     done
 }
 

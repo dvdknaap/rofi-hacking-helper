@@ -1,0 +1,1 @@
+/home/kali/Desktop/base/code/xdotool/scripts/reconnaissance/windows/kerberoasting/export_spn_users.sh

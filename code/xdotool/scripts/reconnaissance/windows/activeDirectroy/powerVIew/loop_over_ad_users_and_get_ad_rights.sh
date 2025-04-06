@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-Loop over de ad_users and get AD rights
+powerview: loop over de ad_users and get AD rights
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

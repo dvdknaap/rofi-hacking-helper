@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ps: Upload sharphound and execute
+ps: Upload powerview and execute
 '
 
 LOCATION="${SCRIPTS_DIR}/reconnaissance/windows/activeDirectroy/powerVIew/.files"
