@@ -154,7 +154,7 @@ main() {
     check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap impacket bloodyad
 
     # install pip3 packages
-    install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz
+    install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy
 
     # instll pipx packages
     pipx install git+https://github.com/yaap7/ldapsearch-ad
