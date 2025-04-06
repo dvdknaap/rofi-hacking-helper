@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-configure ligolo interface and start proxy
+ligolo: start proxy and configure ligolo interface
 '
 
 PROXY_LOCATION="${SCRIPTS_DIR}/portListening/ligolo/.files/proxy"
