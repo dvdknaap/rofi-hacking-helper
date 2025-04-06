@@ -157,7 +157,6 @@ main() {
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
         echo -e "\e[32mSettings file created ${XDOTOOL_DIR}/settings.sh.\e[0m"
     fi
-    fi
 
     local NOW=$(date +%s)
     echo "${NOW}" > "${UPDATE_CHECK_FILE}"
