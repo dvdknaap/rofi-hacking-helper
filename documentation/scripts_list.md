@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **695** scripts organized into **132** subdirectories.
+This repository contains **696** scripts organized into **132** subdirectories.
 
 ## Table of Contents
 
@@ -481,10 +481,11 @@ scripts to use ligolo
 | 📜 `portListening/ligolo/add_ligolo_port_listener.sh` | add ligolo port listener |
 | 📜 `portListening/ligolo/add_new_ligolo_interface.sh` | add new ligolo interface |
 | 📜 `portListening/ligolo/cmd_upload_ligolo_agent_exe.sh` | cmd: download ligolo agent.exe to server and connect to proxy |
-| 📜 `portListening/ligolo/curl_ligolo_agent.sh` | download ligolo agent to server and connect to proxy |
+| 📜 `portListening/ligolo/curl_ligolo_agent.sh` | curl: download ligolo agent to server and connect to proxy |
 | 📜 `portListening/ligolo/ps_upload_ligolo_agent_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
 | 📜 `portListening/ligolo/remove_ligolo_interface.sh` | remove ligolo interface |
 | 📜 `portListening/ligolo/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
+| 📜 `portListening/ligolo/wget_ligolo_agent.sh` | wget: download ligolo agent to server and connect to proxy |
 <br />
 
 ### python
