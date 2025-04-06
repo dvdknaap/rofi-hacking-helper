@@ -14,5 +14,5 @@ generate_form "${FILE_FIELD}" "${PATH_FIELD}"
 FILE=${form_data["file"]}
 PATH=${form_data["path"]}
 
-execute_command "Get-ChildItem -Recurse -Include "${FILE}" -Path "${PATH}" -ErrorAction SilentlyContinue -File"
+execute_command "Get-ChildItem -Recurse -Include \"${FILE}\" -Path \"${PATH}\" -ErrorAction SilentlyContinue -File"
 create_new_line
