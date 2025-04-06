@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **697** scripts organized into **132** subdirectories.
+This repository contains **698** scripts organized into **132** subdirectories.
 
 ## Table of Contents
 
@@ -525,6 +525,7 @@ scripts to do reconnaissance on linux
 | Path | Description |
 |------|-------------|
 | 📜 `reconnaissance/linux/check_for_ps_changes.sh` | refresh ps -aux list every second |
+| 📜 `reconnaissance/linux/check_internal_listening_ports.sh` | check internal listening ports |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/convert_ccache_to_kirbi_file.sh` | convert ccache file (windows) to kirbi file (linux) |
 | 📜 `reconnaissance/linux/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
