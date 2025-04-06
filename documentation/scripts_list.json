@@ -1077,7 +1077,7 @@
     {
         "type": "script",
         "path": "portListening/ligolo/wget_ligolo_agent.sh",
-        "description": "wget: download ligolo agent to server and connect to proxy"
+        "description": "wget: download ligolo agent.exe to server and connect to proxy"
     },
     {
         "type": "directory",
