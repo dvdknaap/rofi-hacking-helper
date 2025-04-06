@@ -18,7 +18,7 @@ This tool enhances your productivity by making frequently used scripts and crede
 To install the tool automatically, run:
 
 ```bash
-sudo mkdir /opt/rofiHackingHelper && sudo chown $USER:$USER /opt/rofiHackingHelper -R && cd /opt/rofiHackingHelper && bash <(curl -s -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "$(pwd)"
+sudo mkdir /opt/rofiHackingHelper; sudo chown $USER:$USER /opt/rofiHackingHelper -R && cd /opt/rofiHackingHelper && bash <(curl -s -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "$(pwd)"
 ```
 
 This script will set up everything, including downloading dependencies.
