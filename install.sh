@@ -119,6 +119,9 @@ setup_gnome_binding() {
 
 # Main function to execute the script steps
 main() {
+    # create folder and give the correct rights
+    sudo mkdir "${ROOT_DIR}"; sudo chown "${USER}":"${USER}" "${ROOT_DIR}" -R && cd "${ROOT_DIR}"
+
     # clone or update repo
     clone_or_update_repo
 

@@ -138,6 +138,9 @@ main() {
     local screenshot_name="rofi-hacking-helper-screenshot"
     local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
+    
+    # create folder and give the correct rights
+    sudo mkdir "${ROOT_DIR}"; sudo chown "${USER}":"${USER}" "${ROOT_DIR}" -R && cd "${ROOT_DIR}"
 
     # get latest update repo
     pull_latest_git_version
