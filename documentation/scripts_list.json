@@ -1057,7 +1057,7 @@
     {
         "type": "script",
         "path": "portListening/ligolo/curl_ligolo_agent.sh",
-        "description": "download ligolo agent to server and connect to proxy"
+        "description": "curl: download ligolo agent to server and connect to proxy"
     },
     {
         "type": "script",
@@ -1073,6 +1073,11 @@
         "type": "script",
         "path": "portListening/ligolo/start_ligolo_proxy.sh",
         "description": "configure ligolo interface and start proxy"
+    },
+    {
+        "type": "script",
+        "path": "portListening/ligolo/wget_ligolo_agent.sh",
+        "description": "wget: download ligolo agent to server and connect to proxy"
     },
     {
         "type": "directory",
