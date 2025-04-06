@@ -1146,6 +1146,11 @@
     },
     {
         "type": "script",
+        "path": "reconnaissance/linux/check_internal_listening_ports.sh",
+        "description": "check internal listening ports"
+    },
+    {
+        "type": "script",
         "path": "reconnaissance/linux/check_running_cronjobs.sh",
         "description": "download pspy64 to server and run it"
     },
