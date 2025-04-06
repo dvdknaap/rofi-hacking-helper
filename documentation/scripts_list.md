@@ -485,7 +485,7 @@ scripts to use ligolo
 | 📜 `portListening/ligolo/ps_upload_ligolo_agent_exe.sh` | ps download ligolo agent.exe to server and connect to proxy |
 | 📜 `portListening/ligolo/remove_ligolo_interface.sh` | remove ligolo interface |
 | 📜 `portListening/ligolo/start_ligolo_proxy.sh` | configure ligolo interface and start proxy |
-| 📜 `portListening/ligolo/wget_ligolo_agent.sh` | wget: download ligolo agent to server and connect to proxy |
+| 📜 `portListening/ligolo/wget_ligolo_agent.sh` | wget: download ligolo agent.exe to server and connect to proxy |
 <br />
 
 ### python
