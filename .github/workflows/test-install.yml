@@ -78,7 +78,7 @@ jobs:
             -e TERM=xterm-256color \
             -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
             "${TEMP_IMAGE_TAG}" \
-            bash -c "set -ex; sed -i  -e 's|SETTING_EXECUTE_COMMAND_TYPE=\"paste\"|SETTING_EXECUTE_COMMAND_TYPE=\"${{ matrix.execute_command_type }}\"|g' /tmp/git_source/code/xdotool/settings.sh"
+            bash -c "set -ex; sed -e 's|SETTING_EXECUTE_COMMAND_TYPE=\"paste\"|SETTING_EXECUTE_COMMAND_TYPE=\"${{ matrix.execute_command_type }}\"|g' /tmp/git_source/code/xdotool/settings_example.sh > /tmp/git_source/code/xdotool/settings.sh"
 
           echo "show paste_commands.sh"
           docker exec -it \
