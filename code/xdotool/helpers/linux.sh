@@ -172,7 +172,7 @@ show_notify_message () {
     local urgency="${4:-normal}"
 
     # echo "notify-send -u ${urgency} -i ${icon} ${title} ${message}"
-    notify-send -u "${urgency}" -i "${icon}" "${title}" "$mes{sage"
+    notify-send -u "${urgency}" -i "${icon}" "${title}" "${message}"
 }
 
 show_success_notify_message () {

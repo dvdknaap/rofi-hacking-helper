@@ -3,6 +3,10 @@
 Automate typing and run background tasks a dynamic menu. 
 This tool enhances your productivity by making frequently used scripts and credentials quickly accessible.
 
+[![Deploy static content to Pages](https://github.com/dvdknaap/rofi-hacking-helper/actions/workflows/deploy-static-pages.yml/badge.svg)](https://github.com/dvdknaap/rofi-hacking-helper/actions/workflows/deploy-static-pages.yml)
+
+[![Test HackingHelper Installation](https://github.com/dvdknaap/rofi-hacking-helper/actions/workflows/test-install.yml/badge.svg)](https://github.com/dvdknaap/rofi-hacking-helper/actions/workflows/test-install.yml)
+
 ## Features
 
 - Quickly execute pentesting scripts (NetExec, SMB, RDP, WinRM, Metasploit, MSFVenom, BloodHound, web reconnaissance, etc.).
