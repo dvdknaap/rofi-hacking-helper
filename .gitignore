@@ -4,3 +4,4 @@
 /code/xdotool/var/cache/*
 /code/xdotool/screenshots/*
 /code/xdotool/settings.sh
+/.idea/

@@ -1,1 +1,1 @@
-/home/kali/Desktop/base/code/xdotool/scripts/reconnaissance/windows/kerberoasting/get_samaccountname.sh
+../../kerberoasting/get_samaccountname.sh
