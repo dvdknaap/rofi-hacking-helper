@@ -1,4 +1,4 @@
-# Pentest Productivity Hack with Rofi
+# Pentest Productivity Hacking helper
 
 Automate typing and run background tasks a dynamic menu. 
 This tool enhances your productivity by making frequently used scripts and credentials quickly accessible.
@@ -10,6 +10,7 @@ This tool enhances your productivity by making frequently used scripts and crede
 - Create custom fields to store additional information needed for scripts.
 - Works in any application with an input field, such as terminals, text editors, and browsers.
 - **Launch the tool anytime with `Ctrl+Shift+M`.**
+- **Create a screenshot with with `Ctrl+Shift+N`.**
 
 ## Installation
 
@@ -18,7 +19,7 @@ This tool enhances your productivity by making frequently used scripts and crede
 To install the tool automatically, run:
 
 ```bash
-FOLDER="/opt/rofiHackingHelper";sudo mkdir "${FOLDER}"; sudo chown "${USER}":"${USER}" "${FOLDER}" -R && cd "${FOLDER}" && bash <(curl -s -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "$(pwd)"
+FOLDER="/opt/rofiHackingHelper"; bash <(curl -s -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "$(FOLDER)"
 ```
 
 This script will set up everything, including downloading dependencies.
