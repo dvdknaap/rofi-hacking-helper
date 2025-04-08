@@ -72,13 +72,13 @@ jobs:
             "${TEMP_IMAGE_TAG}" \
             bash -c "set -ex; bash /tmp/git_source/install.sh \"${{ matrix.folder }}\" \"0\""
 
-          echo "change SETTING_EXECUTE_COMMAND_TYPE to type"
+          echo "change SETTING_EXECUTE_COMMAND_TYPE to ${{ matrix.execute_command_type }}"
           docker exec -it \
             -e DISPLAY=:99 \
             -e TERM=xterm-256color \
             -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
             "${TEMP_IMAGE_TAG}" \
-            bash -c "set -ex; sed -i  -e 's|SETTING_EXECUTE_COMMAND_TYPE=\"paste\"|SETTING_EXECUTE_COMMAND_TYPE=\"${{ matrix.execute_command_type }}\"|g' ${{ matrix.folder }}/code/xdotool/settings.sh"
+            bash -c "set -ex; sed -i  -e 's|SETTING_EXECUTE_COMMAND_TYPE=\"paste\"|SETTING_EXECUTE_COMMAND_TYPE=\"${{ matrix.execute_command_type }}\"|g' /tmp/git_source/code/xdotool/settings.sh"
 
           echo "show paste_commands.sh"
           docker exec -it \
