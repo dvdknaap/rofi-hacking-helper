@@ -14,7 +14,7 @@ This tool enhances your productivity by making frequently used scripts and crede
 - Create custom fields to store additional information needed for scripts.
 - Works in any application with an input field, such as terminals, text editors, and browsers.
 - **Launch the tool anytime with `Ctrl+Shift+M`.**
-- **Create a screenshot with with `Ctrl+Shift+N`.**
+- **Create a screenshot with `Ctrl+Shift+N`.**
 
 ## Installation
 
