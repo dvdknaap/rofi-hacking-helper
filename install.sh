@@ -190,7 +190,7 @@ main() {
     
     if [[ "${START_DOC}" == "1" ]]; then
         sleep 0.8
-        firefox "${ROOT_DIR}/documentation/index.html"
+        firefox "${ROOT_DIR}/documentation/index.html" &
     fi
     
     show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
