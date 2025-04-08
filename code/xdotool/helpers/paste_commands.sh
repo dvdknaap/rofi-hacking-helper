@@ -49,7 +49,7 @@ paste_command() {
                 ACTIVE_WINDOW_ID=$(xdotool getactivewindow 2>/dev/null)
                 set -e
                 EXIT_CODE=$?
-                ech "check done"
+                echo "check done"
 
                 if [[ "${EXIT_CODE}" == "0" && -n "${ACTIVE_WINDOW_ID}" ]]; then
                     echo "found window manager"
