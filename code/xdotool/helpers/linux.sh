@@ -171,7 +171,7 @@ show_notify_message () {
     local icon="${3:-dialog-information}"
     local urgency="${4:-normal}"
 
-    echo "notify-send -u ${urgency} -i ${icon} ${title} ${message}"
+    # echo "notify-send -u ${urgency} -i ${icon} ${title} ${message}"
     notify-send -u "${urgency}" -i "${icon}" "${title}" "$mes{sage"
 }
 

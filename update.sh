@@ -188,6 +188,7 @@ main() {
     
     sleep 0.8
     firefox "${ROOT_DIR}/documentation/index.html"
+    exit 0
 }
 
 # Run the main function
