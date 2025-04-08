@@ -17,14 +17,17 @@ RUN useradd --create-home --shell /bin/bash testuser || echo "User already exist
 RUN usermod -aG sudo testuser
 RUN echo "testuser  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && chmod 0440 /etc/sudoers
 
+RUN mkdir -p /tmp/git_source
+COPY . /tmp/git_source
+RUN chown testuser:testuser /tmp/git_source -R
+
 RUN echo 'export PATH="/home/testuser/.local/bin:$PATH"' > /etc/profile.d/local_bin_path.sh && chmod +x /etc/profile.d/local_bin_path.sh
 
 # Switch to the regular user for subsequent commands/runtime
 USER testuser
 WORKDIR /home/testuser
 
-RUN mkdir -p /tmp/git_source
-COPY . /tmp/git_source
+
 
 ENTRYPOINT ["/bin/bash","/tmp/git_source/.docker/entrypoint.sh"]
 
