@@ -1,122 +1,110 @@
-name: Test rofiHackingHelper Installation
+name: Test HackingHelper Installation
 
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   test-in-container:
-    # Unified job to run tests inside Docker containers
-    name: Test on ${{ matrix.os.name }} (${{ matrix.user_context }}) # Dynamic job name
-    runs-on: ubuntu-latest # Needs Docker environment
+    name: Build & Test on ${{ matrix.os.name }} (${{ matrix.user }}, ${{ matrix.folder }} on ${{ matrix.desktop }}) with ${{ matrix.execute_command_type }}
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # Allow other matrix jobs to continue if one fails
+      fail-fast: false
+      max-parallel: 10
       matrix:
-        # Define combinations of OS images and user contexts
         os:
-          # Add more Ubuntu/Kali versions/tags as needed/available on Docker Hub
-          - { name: "Ubuntu Latest", image: "ubuntu:latest" }
-          - { name: "Ubuntu 22.04",  image: "ubuntu:22.04" }
-          - { name: "Ubuntu 20.04",  image: "ubuntu:20.04" }
-          - { name: "Kali Rolling",  image: "kalilinux/kali-rolling" }
-          - { name: "Kali Last Release", image: "kalilinux/kali-last-release" }
-        user_context: [regular, root]
-
-    env: # Define environment variables accessible by the runner
-      FOLDER: "/opt/rofiHackingHelper"
-      INSTALL_SCRIPT_URL: "https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh"
-      CURL_OPTS: "-s -H 'Cache-Control: no-cache, no-store'"
-      TEST_USER: "testuser" # Define the non-root user to create
+          # - { name: "Ubuntu Latest", image: "ubuntu:latest", image_tag: "ubuntu-latest" }
+          # - { name: "Ubuntu 22.04",  image: "ubuntu:22.04", image_tag: "ubuntu-22-04" }
+          # - { name: "Ubuntu 20.04",  image: "ubuntu:20.04", image_tag: "ubuntu-20-04" }
+          - { name: "Kali Rolling",  image: "kalilinux/kali-rolling", image_tag: "kali-rolling" }
+          - { name: "Kali Last Release", image: "kalilinux/kali-last-release", image_tag: "kali-last-release" }
+        user: [testuser, root]
+        folder: ["/opt/rofiHackingHelper", "/tmp/rofiHackingHelper"]
+        desktop: ["kali-desktop-gnome", "kali-desktop-xfce"]
+        execute_command_type: ['paste', 'type', 'echo']
 
     steps:
-      - name: Run installation test inside ${{ matrix.os.image }} as ${{ matrix.user_context }}
+      # Step 1: Checkout the code (from PR or push)
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Build Docker image and Run Test
+      - name: Build Docker image and Run Test (${{ matrix.os.image }}, ${{ matrix.user }}), ${{ matrix.folder }} on ${{ matrix.desktop }}) with ${{ matrix.execute_command_type }}
+        shell: 'script -q -e -c "bash {0}"'
         run: |
-          # Exit immediately if a command exits with a non-zero status (-e)
-          # Print each command before executing it (-x)
           set -ex
+          BASE_IMAGE="${{ matrix.os.image }}"
+          USER_CONTEXT="${{ matrix.user }}"
+          TEMP_IMAGE_TAG="hacking-helper-test-${{ github.run_id }}-${{ matrix.desktop }}-${{ matrix.os.image_tag }}-${USER_CONTEXT}-${{ matrix.execute_command_type }}"
 
-          CONTAINER_IMAGE="${{ matrix.os.image }}"
-          USER_CONTEXT="${{ matrix.user_context }}"
+          echo "--- Generating Dockerfile for ${BASE_IMAGE} (${USER_CONTEXT}) ---"
 
-          echo "--- Starting test for user context: ${USER_CONTEXT} inside Container: ${CONTAINER_IMAGE} ---"
+          # Conditionally add user setup and switch USER instruction
+          DOCKER_FILE=".docker/${USER_CONTEXT}.Dockerfile"
 
-          echo "Pulling Docker image: ${CONTAINER_IMAGE}..."
-          docker pull ${CONTAINER_IMAGE}
+          echo "Replacing placeholders..."
+          sed -i  -e "s|__BASE_IMAGE__|${BASE_IMAGE}|g"  "${DOCKER_FILE}"
+          sed -i  -e "s|__KALI_DESKTOP__|${{ matrix.desktop }}|g" "${DOCKER_FILE}"
 
-          echo "Running test script inside container..."
+          echo "Building temporary image: ${TEMP_IMAGE_TAG}"
+          docker build --no-cache -t "${TEMP_IMAGE_TAG}" -f "${DOCKER_FILE}" .
 
-          # Execute the main logic within the container using docker run
-          # Use single quotes for the outer bash -c '...' to simplify internal quoting
-          # Pass necessary variables from the runner's env into the container's script
-          docker run --rm \
-            --env FOLDER="${FOLDER}" \
-            --env INSTALL_SCRIPT_URL="${INSTALL_SCRIPT_URL}" \
-            --env CURL_OPTS="${CURL_OPTS}" \
-            --env TEST_USER="${TEST_USER}" \
-            --env USER_CONTEXT="${USER_CONTEXT}" \
-            ${CONTAINER_IMAGE} \
-            bash -c '
-              # Start script inside the container
-              set -ex
+          echo "start docker container"
+          docker run -id --name "${TEMP_IMAGE_TAG}" \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}"
 
-              echo "Container OS Info:"
-              cat /etc/os-release || echo "Cannot read /etc/os-release"
-              echo "Initial User inside container: $(whoami) (UID: $(id -u))"
+          echo "wait till docker container is fully started"
+          until [ "`docker inspect -f {{.State.Running}} "${TEMP_IMAGE_TAG}"`"=="true" ]; do
+              sleep 0.1;
+          done;
+          echo  "docker inspect: `docker inspect "${TEMP_IMAGE_TAG}"`"
 
-              echo "Updating apt cache and installing prerequisites (curl, sudo, procps)..."
-              export DEBIAN_FRONTEND=noninteractive
-              # Update package list quietly, install packages quietly
-              apt-get update -qq > /dev/null
-              apt-get install -y -qq curl sudo procps --no-install-recommends > /dev/null
+          echo "install hacking helper"
+          docker exec -it \
+            -e DISPLAY=:99 \
+            -e TERM=xterm-256color \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}" \
+            bash -c "set -ex; bash /tmp/git_source/install.sh \"${{ matrix.folder }}\" \"0\""
 
-              # Core logic based on user context
-              if [ "${USER_CONTEXT}" = "regular" ]; then
-                echo "Setting up regular user context (${TEST_USER})..."
-                # Create user, ensure home exists, grant passwordless sudo
-                # Use - G sudo if the group reliably exists, otherwise rely only on sudoers file
-                useradd --create-home --shell /bin/bash "${TEST_USER}"
-                # Add user to sudo group if it exists (common in full installs)
-                # getent group sudo >/dev/null && usermod -aG sudo "${TEST_USER}"
-                # Always grant passwordless sudo via sudoers.d file for reliability
-                echo "${TEST_USER} ALL=(ALL) NOPASSWD:ALL" > "/etc/sudoers.d/99_${TEST_USER}"
-                chmod 0440 "/etc/sudoers.d/99_${TEST_USER}"
+          echo "change SETTING_EXECUTE_COMMAND_TYPE to ${{ matrix.execute_command_type }}"
+          docker exec -it \
+            -e DISPLAY=:99 \
+            -e TERM=xterm-256color \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}" \
+            bash -c "set -ex; sed -e 's|SETTING_EXECUTE_COMMAND_TYPE=\"paste\"|SETTING_EXECUTE_COMMAND_TYPE=\"${{ matrix.execute_command_type }}\"|g' /tmp/git_source/code/xdotool/settings_example.sh > /tmp/git_source/code/xdotool/settings.sh"
 
-                echo "Executing core commands as regular user (${TEST_USER}) via sudo -u..."
-                # Execute the actual test sequence AS the test user
-                # Use sudo for privileged operations (mkdir/chown in /opt)
-                # Preserve environment using -E is often needed for scripts relying on env vars
-                # Use double quotes for the inner bash -c "..." and escape internal quotes/dollar signs
-                sudo -u "${TEST_USER}" -E bash -c "
-                  set -ex
-                  echo \"Executing User inside sudo -u bash: \$(whoami) (UID: \$(id -u))\"
-                  echo \"Creating directory \${FOLDER} using sudo...\"
-                  sudo mkdir -p \"\${FOLDER}\"
-                  echo \"Changing ownership to \${TEST_USER}:\${TEST_USER} using sudo...\"
-                  sudo chown \${TEST_USER}:\${TEST_USER} \"\${FOLDER}\" -R
-                  echo \"Changing to directory \${FOLDER}...\"
-                  cd \"\${FOLDER}\"
-                  echo \"Executing install script from \${INSTALL_SCRIPT_URL}...\"
-                  bash <(curl \${CURL_OPTS} \${INSTALL_SCRIPT_URL}) \"\$(pwd)\"
-                  echo \"Verifying installation directory exists...\"
-                  ls -ld \"\${FOLDER}\"
-                "
-              else # root context
-                echo "Executing core commands as root user..."
-                echo "Executing User: $(whoami) (UID: $(id -u))"
-                echo "Creating directory ${FOLDER}..."
-                mkdir -p "${FOLDER}"
-                echo "Changing ownership to root:root..."
-                chown root:root "${FOLDER}" -R
-                echo "Changing to directory ${FOLDER}..."
-                cd "${FOLDER}"
-                echo "Executing install script from ${INSTALL_SCRIPT_URL}..."
-                bash <(curl ${CURL_OPTS} ${INSTALL_SCRIPT_URL}) "$(pwd)"
-                echo "Verifying installation directory exists..."
-                ls -ld "${FOLDER}"
-              fi
+          echo "show paste_commands.sh"
+          docker exec -it \
+            -e DISPLAY=:99 \
+            -e TERM=xterm-256color \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}" \
+            bash -c "cat /tmp/git_source/code/xdotool/helpers/paste_commands.sh"
 
-              echo "--- Docker container commands finished successfully ---"
-            ' # End of main docker run bash -c script
+          echo "test env.sh"
+          docker exec -it \
+            -e DISPLAY=:99 \
+            -e TERM=xterm-256color \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}" \
+            bash -c "source /tmp/git_source/code/xdotool/env.sh"
 
-          echo "--- Test completed successfully for ${USER_CONTEXT} in ${CONTAINER_IMAGE} ---"
+          echo "test get kali ip"
+          docker exec -it \
+            -e DISPLAY=:99 \
+            -e TERM=xterm-256color \
+            -u "${USER_CONTEXT}":"${USER_CONTEXT}" \
+            "${TEMP_IMAGE_TAG}" \
+            bash -c "set -ex; source /tmp/git_source/code/xdotool/env.sh && source /tmp/git_source/code/xdotool/scripts/get_kali_ip.sh"
+
+          docker stop "${TEMP_IMAGE_TAG}" || echo "Container already stopped or not found."
+          docker rm -fl "${TEMP_IMAGE_TAG}" || echo "Container already removed or not found."
+
+          echo "--- Test completed successfully for ${USER_CONTEXT} in ${BASE_IMAGE} ---"

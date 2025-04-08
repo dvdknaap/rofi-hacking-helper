@@ -16,7 +16,7 @@ check_and_install_packages() {
         return 1
     fi
 
-    sudo apt update && sudo apt install -y "$@"
+    sudo apt-get update && sudo apt-get install -y "$@" && sudo apt autoremove -y && sudo apt clean
 }
 
 # Function to install pip3 packages
@@ -55,14 +55,16 @@ setup_xfce_shortcut() {
     local keybind="$2"
     local letter="$3"
 
-    echo "Setting up keyboard shortcut..."
-    xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>${letter}" -t string -s "${shortcut_command}" --create
+    if command -v xfconf-query > /dev/null 2>&1; then
+        echo "Setting up keyboard shortcut..."
+        xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Primary><Shift>${letter}" -t string -s "${shortcut_command}" --create
 
-    if [ $? -eq 0 ]; then
-        echo -e "\e[32mShortcut successfully created! Use ${keybind} to launch the menu.\e[0m"
-    else
-        show_error_notify_message "Failed to create shortcut. Please check your XFCE settings manually."
-        echo -e "\e[31mFailed to create shortcut. Please check your XFCE settings manually.\e[0m"
+        if [ $? -eq 0 ]; then
+            echo -e "\e[32mShortcut successfully created! Use ${keybind} to launch the menu.\e[0m"
+        else
+            show_error_notify_message "Failed to create shortcut. Please check your XFCE settings manually."
+            echo -e "\e[31mFailed to create shortcut. Please check your XFCE settings manually.\e[0m"
+        fi
     fi
 }
 
@@ -139,8 +141,28 @@ main() {
     local screenshot_shortcut_command="bash -i -c \"cd ${ROOT_DIR} && source ${XDOTOOL_DIR}/env.sh && source ${XDOTOOL_DIR}/createScreenshot.sh\""
     local screenshot_keybind="N"
     
-    # create folder and give the correct rights
-    sudo mkdir "${ROOT_DIR}"; sudo chown "${USER}":"${USER}" "${ROOT_DIR}" -R && cd "${ROOT_DIR}"
+    # create folder and give the correct permissions
+    sudo mkdir -p "${ROOT_DIR}"
+    sudo chown "$(whoami)":"$(whoami)" "${ROOT_DIR}" -R
+    cd "${ROOT_DIR}"    
+
+    if [ ! -d "${CACHE_DIR}" ]; then
+        mkdir -p "${CACHE_DIR}"
+    fi
+
+    # Install required programs
+    check_and_install_packages python3 python3-pip x11-utils
+    check_and_install_packages firefox-esr git rofi xdotool libnotify-bin python3-tk
+    check_and_install_packages powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon
+    check_and_install_packages imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap 
+    check_and_install_packages python3-impacket bloodyad pipx ruby-full
+
+    # install pip3 packages
+    install_pip3_packages setuptools pyftpdlib sv-ttk darkdetect git-dumper uploadserver wsgidav 
+    install_pip3_packages cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy shodan
+
+    # instll pipx packages
+    pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad  --force)
 
     # get latest update repo
     pull_latest_git_version
@@ -152,15 +174,6 @@ main() {
     # Check for existing keybinding
     setup_xfce_shortcut "${screenshot_shortcut_command}" "Ctrl+Shift+${screenshot_keybind}" "n"
     setup_gnome_binding "${screenshot_name}" "${screenshot_shortcut_command}" "<Shift><Control>${screenshot_keybind}"
-
-    # Install required programs
-    check_and_install_packages rofi xdotool python3 python3-tk powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap python3-impacket bloodyad pipx
-
-    # install pip3 packages
-    install_pip3_packages pyftpdlib sv-ttk darkdetect git-dumper shodan uploadserver wsgidav cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy
-
-    # instll pipx packages
-   pix_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad  --force)
     
     if [ ! -f "${XDOTOOL_DIR}/settings.sh" ]; then
         cp "${XDOTOOL_DIR}/settings_example.sh" "${XDOTOOL_DIR}/settings.sh"
