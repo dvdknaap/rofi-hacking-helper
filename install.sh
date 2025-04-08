@@ -193,8 +193,8 @@ main() {
         firefox "${ROOT_DIR}/documentation/index.html" &
     fi
     
-    show_success_notify_message "Setup is complete. You can now use the ROFI menu with ${keybind} in your terminal."
-    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with ${keybind} in your terminal\nIf the menu isn't showing up logout and login again.\e[0m"
+    show_success_notify_message "Setup is complete. You can now use the ROFI menu with Ctrl+Shift+${helper_keybind} "m" in your terminal."
+    echo -e "\n\e[32mSetup is complete. You can now use the ROFI menu with  Ctrl+Shift+${helper_keybind} in your terminal\nIf the menu isn't showing up logout and login again.\e[0m"
 }
 
 # Run the main function
