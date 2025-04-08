@@ -45,7 +45,9 @@ paste_command() {
             else
                 echo "active window id check"
                 # Detect active window class
-                ACTIVE_WINDOW_ID=$(timeout -k 3s 3s xdotool getactivewindow 2>/dev/null)
+                set +e
+                ACTIVE_WINDOW_ID=$(xdotool getactivewindow 2>/dev/null)
+                set -e
                 EXIT_CODE=$?
                 ech "check done"
 
