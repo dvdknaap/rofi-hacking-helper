@@ -23,7 +23,7 @@ This tool enhances your productivity by making frequently used scripts and crede
 To install the tool automatically, run:
 
 ```bash
-FOLDER="/opt/rofiHackingHelper"; bash <(curl -s -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "$(FOLDER)"
+FOLDER="/opt/rofiHackingHelper"; bash <(curl -s -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/dvdknaap/rofi-hacking-helper/main/install.sh) "${FOLDER}"
 ```
 
 This script will set up everything, including downloading dependencies.
