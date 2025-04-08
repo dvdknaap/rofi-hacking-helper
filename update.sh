@@ -187,7 +187,7 @@ main() {
     echo -e "\n\e[32mUpdate is complete.\e[0m"
     
     sleep 0.8
-    firefox "${ROOT_DIR}/documentation/index.html"
+    firefox "${ROOT_DIR}/documentation/index.html" &
     exit 0
 }
 
