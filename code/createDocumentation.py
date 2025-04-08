@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
+
 import os
 import json
 
-CODE_ROOT = "~/Desktop/base"
+CODE_DIR = os.path.dirname(os.path.realpath(__file__))
+CODE_ROOT = os.path.realpath(f"{CODE_DIR}/..")
 SCRIPTS_DIR = os.path.expanduser(f"{CODE_ROOT}/code/xdotool/scripts/")
 JSON_PATH = os.path.expanduser(f"{CODE_ROOT}/documentation/scripts_list.json")
 

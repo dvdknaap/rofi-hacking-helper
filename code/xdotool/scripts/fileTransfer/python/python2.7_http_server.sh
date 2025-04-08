@@ -1,1 +1,1 @@
-/home/kali/Desktop/base/code/xdotool/scripts/python/python2.7_http_server.sh
+../../python/python2.7_http_server.sh
