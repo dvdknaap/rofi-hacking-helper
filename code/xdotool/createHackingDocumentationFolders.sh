@@ -32,4 +32,4 @@ for folder in "${!folder_descriptions[@]}"; do
 done
 
 tree "${BASE_DIR}"
-echo "folder structure and markdown files created under: `pwd`/${BASE_DIR}"
+echo "folder structure and markdown files created under: $(pwd)/${BASE_DIR}"
