@@ -9,7 +9,7 @@ SETTINGS_FILE="${XDOTOOL_DIR}/settings.sh"
 
 declare -gA ACTIVE_CRED_SYSTEM
 
-# Source all helper functies
+# Source all helper functions
 for file in "${HELPERS_DIR}"/*.sh; do
   [ -f "${file}" ] || continue  # Skip if not a regular file
   source "${file}"

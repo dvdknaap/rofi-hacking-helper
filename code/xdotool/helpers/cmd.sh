@@ -41,18 +41,18 @@ cmd_upload_file() {
     CREATE_FOLDER=${form_data["create_folder"]}
 
     if [[ "${CREATE_FOLDER}" == "yes" ]]; then
-        # Verwijder eventuele trailing backslash
+        # Remove any trailing backslash
         TARGET_PATH="${FILE_LOCATION%\\}"
 
-        # Als het pad een bestand bevat (punt + extensie), verwijder dan de bestandsnaam
+        # If the path contains a file (dot + extension), remove the file name
         if [[ "${TARGET_PATH}" =~ \.[a-zA-Z0-9]+$ ]]; then
-            TARGET_PATH="${TARGET_PATH%\\*}"  # Verwijdert het laatste deel (de bestandsnaam)
+            TARGET_PATH="${TARGET_PATH%\\*}"  # Removes the last part (the file name)
         fi
 
-        # Haal de parent directory op (alles vóór de laatste backslash)
+        # Get the parent directory (everything before the last backslash)
         PARENT_FOLDER="${TARGET_PATH%\\*}"
 
-        # Haal de laatste component op (mapnaam die aangemaakt moet worden)
+        # Get the last component (folder name to be created)
         FOLDER_NAME="${TARGET_PATH##*\\}"
 
         TMP_FOLDER="${PARENT_FOLDER}\\${FOLDER_NAME}"

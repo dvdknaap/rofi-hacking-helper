@@ -19,27 +19,27 @@ start_python_server() {
     # Expand ~ to the full path manually
     location="${location/#\~/$HOME}"
 
+    HTTP_PORT="${python_port}"
+    HTTP_LOCATION="${location}"
+
     # check if we already got a server running with the same port and location
-    if [ "${HTTP_PID}" != "" && "${HTTP_PORT}" == "${python_port}" && "${HTTP_LOCATION}" == "${location}" ]; then
-        if ps -p $HTTP_PID > /dev/null
+    if [ "${HTTP_PID}" != "" ] && [ "${HTTP_PORT}" == "${python_port}" ] && [ "${HTTP_LOCATION}" == "${location}" ]; then
+        if ps -p "{$HTTP_PID}" > /dev/null
         then
             return
         fi
     fi
 
-    HTTP_PORT="${python_port}"
-    HTTP_LOCATION="${location}"
-
     # Change directory to the given location
-    cd "${location}"
+    cd "${HTTP_LOCATION}"
 
     # Start the Python HTTP server in the background
-    python3 -m http.server ${python_port} &
+    python3 -m http.server "${HTTP_PORT}" &
     HTTP_PID=$!
 
     if [ "${time_to_life}" != "0" ]; then
         # Wait for the TTL time and then kill the server
-        sleep ${time_to_life} && kill ${HTTP_PID} &
+        sleep "${time_to_life}" && kill ${HTTP_PID} &
     fi
 }
 
@@ -171,7 +171,6 @@ show_notify_message () {
     local icon="${3:-dialog-information}"
     local urgency="${4:-normal}"
 
-    # echo "notify-send -u ${urgency} -i ${icon} ${title} ${message}"
     notify-send -u "${urgency}" -i "${icon}" "${title}" "${message}"
 }
 

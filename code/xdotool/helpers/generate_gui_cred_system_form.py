@@ -120,7 +120,7 @@ class DynamicFormApp:
 
 
         # Focus on the first input
-        if set_focus == True:
+        if set_focus:
             entry.focus_set()
 
         # Bind keyboard shortcuts

@@ -87,7 +87,8 @@ start_form_and_save() {
 
     # Save the JSON to the file
     echo "${output_json}" > "${json_filename}"
-    if [[ $? -eq 0 ]]; then
+    ret=$?
+    if [[ $ret -ne 0 ]]; then
         echo "✅ JSON saved to: ${json_filename}"
     else
         echo "❌ Error saving JSON to ${json_filename}"

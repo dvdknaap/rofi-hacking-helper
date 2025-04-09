@@ -21,14 +21,13 @@ replace_in_file() {
         local replace="$2"
         shift 2
 
-        # Ontsnap vierkante haken
+        # Escape Square Brackets
         search=$(printf '%s\n' "$search" | sed 's/\[/\\[/g; s/\]/\\]/g')
 
         sed_commands+=(-e "s|$search|$replace|g")
     done
 
     sed "${sed_commands[@]}" "$input_file" > "$output_file"
-    #echo "Processed file saved as: $output_file"
 }
 
 # Declare TMP_FILE as a global variable
