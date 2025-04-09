@@ -21,7 +21,7 @@ class FormApp:
         """
         self.root = root
         self.fields = fields
-        self.entries: Dict[str, tk.Widget | str] = {}
+        self.entries: Dict[str, tk.Widget | tk.BooleanVar |  tk.StringVar | str] = {}
         form_fields_added = False 
         first_field = True
 
@@ -47,15 +47,22 @@ class FormApp:
         self.canvas.create_window((0, 0), window=self.scroll_frame, anchor="nw")
         self.canvas.configure(yscrollcommand=scrollbar.set)
 
-        # Scrollwheel binding (Windows + Linux)
+        # Scroll wheel binding (Windows + Linux)
         root.bind_all("<MouseWheel>", self._on_mousewheel)  # Windows
-        root.bind_all("<Button-4>", self._on_mousewheel)  # Linux (op sommige distro’s)
-        root.bind_all("<Button-5>", self._on_mousewheel)  # Linux (op sommige distro’s)
+        root.bind_all("<Button-4>", self._on_mousewheel)  # Linux
+        root.bind_all("<Button-5>", self._on_mousewheel)  # Linux
 
         self.canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
         for i, field in enumerate(fields):
+            field_type: str = ""
+            field_name: str = ""
+            label_text: str = ""
+            options: list = []
+            default_value: str | bool = ""
+            entry: ttk.Entry | ttk.Combobox | tk.Checkbutton | tk.Radiobutton | None = None
+
             if isinstance(field, str):
                 label_text = field
                 field_name = field.lower().replace(" ", "_")
@@ -92,8 +99,8 @@ class FormApp:
 
                 entry.bind("<Control-a>", self.select_all_entry_text)  # Bind Ctrl + A
                 entry.bind("<Command-a>", self.select_all_entry_text)  # Voor Mac (⌘ + A)
-                entry.bind("<Return>", lambda event, field_name=field_name: self.submit_on_enter(event, field_name))
-                entry.bind("<KP_Enter>", lambda event, field_name=field_name: self.submit_on_enter(event, field_name))
+                entry.bind("<Return>", lambda event, name=field_name: self.submit_on_enter(event, name))
+                entry.bind("<KP_Enter>", lambda event, name=field_name: self.submit_on_enter(event, name))
                 self.entries[field_name] = entry
                 
             elif field_type == "select" and options:
@@ -129,11 +136,11 @@ class FormApp:
             form_fields_added = True
 
             # Focus on the first input
-            if first_field == True:
+            if first_field:
                 entry.focus_set()
                 first_field = False
                 
-        if form_fields_added == False:
+        if not form_fields_added:
             self.submit()
             return
         
@@ -206,8 +213,8 @@ def parse_arguments() -> Tuple[List[Union[str, Dict]], Dict[str, Any]]:
             raise ValueError("Invalid JSON format. Expected a dict.")
             
         return fields,active_cred_system_fields
-    except json.JSONDecodeError as e:
-        print("Error: Invalid JSON input.", file=e.stderr)
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON input.")
         exit(1)
 
 def main() -> None:
@@ -218,7 +225,7 @@ def main() -> None:
     form_height=500
 
     root = tk.Tk()
-    app = FormApp(root, fields, active_cred_system_fields, form_width, form_height)
+    FormApp(root, fields, active_cred_system_fields, form_width, form_height)
 
     sv_ttk.set_theme(darkdetect.theme())
 

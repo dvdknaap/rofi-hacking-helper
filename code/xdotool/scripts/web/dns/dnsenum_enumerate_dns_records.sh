@@ -16,5 +16,5 @@ DOMAIN=${form_data["domain"]}
 DNS_SERVER_IP=${form_data["dns_server_ip"]}
 OUTPUT_FILE=${form_data["output_file"]}
 
-execute_command "dnsenum --dnsserver ${DNS_SERVER_IP} --enum -p 0 -s 0 -o ${OUTPUT_FILE_FIELD} -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt ${DOMAIN}"
+execute_command "dnsenum --dnsserver ${DNS_SERVER_IP} --enum -p 0 -s 0 -o ${OUTPUT_FILE} -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt ${DOMAIN}"
 create_new_line

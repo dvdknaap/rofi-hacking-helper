@@ -2,11 +2,11 @@
 
 type_command() {
     local COMMAND="${1}"
-    local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
+    local TYPE_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
     local TYPING_CHARACTER_DELAY="${3:-"${SETTING_TYPING_CHARACTER_DELAY}"}"
 
-    if [[ "${TYPEING_DELAY}" > 0 ]]; then
-        sleep "${TYPEING_DELAY}"
+    if [[ "${TYPE_DELAY}" > 0 ]]; then
+        sleep "${TYPE_DELAY}"
     fi
 
     xdotool type --delay "${TYPING_CHARACTER_DELAY}" "${COMMAND}"
@@ -15,10 +15,10 @@ type_command() {
 
 echo_command() {
     local COMMAND="${1}"
-    local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
+    local TYPE_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
 
-    if [[ "${TYPEING_DELAY}" > 0 ]]; then
-        sleep "${TYPEING_DELAY}"
+    if [[ "${TYPE_DELAY}" > 0 ]]; then
+        sleep "${TYPE_DELAY}"
     fi
 
     echo "${COMMAND}"
@@ -107,19 +107,19 @@ create_new_line() {
 
 execute_command() {
     local COMMAND="${1}"
-    local TYPEING_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
+    local TYPE_DELAY="${2:-"${SETTING_TYPING_DELAY}"}"
     local TYPING_CHARACTER_DELAY="${3:-"${SETTING_TYPING_CHARACTER_DELAY}"}"
     local EXECUTE_COMMAND_TYPE="${SETTING_EXECUTE_COMMAND_TYPE:-"paste"}"
 
     case "${EXECUTE_COMMAND_TYPE}" in
         type*)
-            type_command "${COMMAND}" "${TYPEING_DELAY}" "${TYPING_CHARACTER_DELAY}"
+            type_command "${COMMAND}" "${TYPE_DELAY}" "${TYPING_CHARACTER_DELAY}"
             ;;
         paste*)
             paste_command "${COMMAND}"
             ;;
         echo*)
-            echo_command "${COMMAND}" "${TYPEING_DELAY}"
+            echo_command "${COMMAND}" "${TYPE_DELAY}"
             ;;
         *)
             xdotool type "Unsupported execute command type setting: '${EXECUTE_COMMAND_TYPE}'"

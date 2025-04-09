@@ -13,6 +13,6 @@ get_dns_record() {
     DOMAIN=${form_data["domain"]}
     NAMESERVER=${form_data["ip"]}
 
-    execute_command "dig ${dns_type} ${DOMAIN} @${ip}"
+    execute_command "dig ${dns_type} ${DOMAIN} @${NAMESERVER}"
     create_new_line
 }
