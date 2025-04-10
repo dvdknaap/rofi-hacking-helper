@@ -1,0 +1,17 @@
+#!/bin/bash
+
+: '
+python3: create pickle RCE with subprocess.check_output
+'
+
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+CMD_FIELD=$(form_item  "cmd" "cmd" 'id')
+
+# Generate GUI form
+generate_form "${CMD_FIELD}"
+
+CMD=${form_data["cmd"]}
+
+execute_command "python3 ${SCRIPTS_DIR}/python/.files/pythonPickleRceSubProcess.py --cmd ${CMD}"
+create_new_line
+python3 -c 'import string;print(string.printable)'

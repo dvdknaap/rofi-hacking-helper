@@ -57,7 +57,7 @@
     {
         "type": "script",
         "path": "dynamicFields/unset_active_dynamic_fields.sh",
-        "description": "remove active dynamic fields"
+        "description": "remove active dynamic fields as default"
     },
     {
         "type": "directory",
@@ -666,6 +666,11 @@
     },
     {
         "type": "script",
+        "path": "fileTransfer/windows/cmd/upload_powerup_file.sh",
+        "description": "cmd: upload powerup.ps1 file to server"
+    },
+    {
+        "type": "script",
         "path": "fileTransfer/windows/cmd/upload_powerview_ps1.sh",
         "description": "cmd: upload powerview.ps1 file to server"
     },
@@ -773,6 +778,11 @@
         "type": "script",
         "path": "fileTransfer/windows/powershell/upload_nc_file.sh",
         "description": "ps: upload nc file to server"
+    },
+    {
+        "type": "script",
+        "path": "fileTransfer/windows/powershell/upload_powerup_file.sh",
+        "description": "ps: upload powerup.ps1 file to server"
     },
     {
         "type": "script",
@@ -1091,6 +1101,21 @@
     },
     {
         "type": "script",
+        "path": "python/create_pickle_rce_with_os_system.sh",
+        "description": "python3: create pickle RCE with os.system"
+    },
+    {
+        "type": "script",
+        "path": "python/create_pickle_rce_with_sub_process.sh",
+        "description": "python3: create pickle RCE with subprocess.check_output"
+    },
+    {
+        "type": "script",
+        "path": "python/get_printate_chars.sh",
+        "description": "python3: get all printable ascii chars"
+    },
+    {
+        "type": "script",
         "path": "python/python2.7_http_server.sh",
         "description": "python2.7: start http server"
     },
@@ -1108,6 +1133,11 @@
         "type": "script",
         "path": "python/python3_venv_install_requirements.sh",
         "description": "python3 venv install requirements.txt"
+    },
+    {
+        "type": "script",
+        "path": "python/read_pickle_from_base64.sh",
+        "description": "python3: read pickle file or base64 string"
     },
     {
         "type": "script",
@@ -1158,6 +1188,11 @@
         "type": "script",
         "path": "reconnaissance/linux/convert_ccache_to_kirbi_file.sh",
         "description": "convert ccache file (windows) to kirbi file (linux)"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/create_list_of_numbers.sh",
+        "description": "create a list of numbers. e.g. 2FA codes or ports and save to file"
     },
     {
         "type": "script",
@@ -1983,6 +2018,11 @@
         "type": "directory",
         "path": "reconnaissance/windows/ldap",
         "description": "scripts to do ldap enumerations"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/windows/ldap/ladap_website_search.sh",
+        "description": "ldap: search on a website form for uid or other fields"
     },
     {
         "type": "script",
@@ -3961,6 +4001,21 @@
     },
     {
         "type": "directory",
+        "path": "web/fuzzingInputs",
+        "description": "fuzz inputs in an attempt to break it"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzzingInputs/fuzz_input_fields.sh",
+        "description": "fuzz input fields in an attempt to break it"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzzingInputs/fuzz_sql_fields.sh",
+        "description": "fuzz sql fields in an attempt to break it"
+    },
+    {
+        "type": "directory",
         "path": "web/gitDumper",
         "description": "dump .git folder to local folder"
     },
@@ -4123,6 +4178,16 @@
         "type": "script",
         "path": "web/wordpress/wpscan_enumerate_users.sh",
         "description": "wpscan enumerate users"
+    },
+    {
+        "type": "directory",
+        "path": "web/xss",
+        "description": "scripts to perform xss"
+    },
+    {
+        "type": "script",
+        "path": "web/xss/simpel_xss_check_img_on_error.sh",
+        "description": "simpel xss check with a img onerror"
     },
     {
         "type": "script",

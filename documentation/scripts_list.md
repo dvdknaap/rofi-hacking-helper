@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **698** scripts organized into **132** subdirectories.
+This repository contains **709** scripts organized into **134** subdirectories.
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ scripts to add, edit or remote dynamic fields
 | 📜 `dynamicFields/get_active_website.sh` | get current active dynamic field website |
 | 📜 `dynamicFields/remove_dynamic_fields.sh` | show a list of dynamic fields so you can remove them |
 | 📜 `dynamicFields/set_active_dynamic_fields.sh` | show a list of dynamic fields and select one to use as default values |
-| 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields |
+| 📜 `dynamicFields/unset_active_dynamic_fields.sh` | remove active dynamic fields as default |
 <br />
 
 ### auditTools
@@ -335,6 +335,7 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/cmd/upload_lazagne_file.sh` | cmd: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc64_file.sh` | cmd: upload nc64 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_nc_file.sh` | cmd: upload nc file to server |
+| 📜 `fileTransfer/windows/cmd/upload_powerup_file.sh` | cmd: upload powerup.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_powerview_ps1.sh` | cmd: upload powerview.ps1 file to server |
 | 📜 `fileTransfer/windows/cmd/upload_print_spoofer_file.sh` | cmd: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/cmd/upload_winpeas_any_file.sh` | cmd: upload winPEASany.exe file to server |
@@ -362,6 +363,7 @@ transfer file to or from a server for windows
 | 📜 `fileTransfer/windows/powershell/upload_lazagne_file.sh` | ps: upload LaZagne file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc64_file.sh` | ps: upload nc64 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_nc_file.sh` | ps: upload nc file to server |
+| 📜 `fileTransfer/windows/powershell/upload_powerup_file.sh` | ps: upload powerup.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_powerview_ps1.sh` | ps: upload powerview.ps1 file to server |
 | 📜 `fileTransfer/windows/powershell/upload_print_spoofer_file.sh` | ps: upload PrintSpoofer file to server |
 | 📜 `fileTransfer/windows/powershell/upload_winpeas_any_file.sh` | ps: upload winPEASany.exe file to server |
@@ -495,10 +497,14 @@ different python scripts like to start http server
 
 | Path | Description |
 |------|-------------|
+| 📜 `python/create_pickle_rce_with_os_system.sh` | python3: create pickle RCE with os.system |
+| 📜 `python/create_pickle_rce_with_sub_process.sh` | python3: create pickle RCE with subprocess.check_output |
+| 📜 `python/get_printate_chars.sh` | python3: get all printable ascii chars |
 | 📜 `python/python2.7_http_server.sh` | python2.7: start http server |
 | 📜 `python/python3_create_venv_folder.sh` | python3: create venv env folder |
 | 📜 `python/python3_http_server.sh` | python3: start http server |
 | 📜 `python/python3_venv_install_requirements.sh` | python3 venv install requirements.txt |
+| 📜 `python/read_pickle_from_base64.sh` | python3: read pickle file or base64 string |
 | 📜 `python/server_always_return_200.sh` | start server and always return 200 |
 <br />
 
@@ -528,6 +534,7 @@ scripts to do reconnaissance on linux
 | 📜 `reconnaissance/linux/check_internal_listening_ports.sh` | check internal listening ports |
 | 📜 `reconnaissance/linux/check_running_cronjobs.sh` | download pspy64 to server and run it |
 | 📜 `reconnaissance/linux/convert_ccache_to_kirbi_file.sh` | convert ccache file (windows) to kirbi file (linux) |
+| 📜 `reconnaissance/linux/create_list_of_numbers.sh` | create a list of numbers. e.g. 2FA codes or ports and save to file |
 | 📜 `reconnaissance/linux/create_lsass_dump.sh` | Powershell: create lsass.dump in elevated powershell |
 | 📜 `reconnaissance/linux/execute_firefox_decrypt.sh` | download firefox_decrypt.py to server and execute |
 | 📜 `reconnaissance/linux/execute_linkatz.sh` | download linikatz to server and execute (root needed) |
@@ -910,6 +917,7 @@ scripts to do ldap enumerations
 
 | Path | Description |
 |------|-------------|
+| 📜 `reconnaissance/windows/ldap/ladap_website_search.sh` | ldap: search on a website form for uid or other fields |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_check_base_naming_contexts.sh` | ldapsearch check for base namingcontexts |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_check_specific_naming_contexts.sh` | ldapsearch check for specific namingcontexts |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
@@ -1676,6 +1684,16 @@ scripts to do attacks with fuzz
 | 📜 `web/fuzz/vhost.sh` | fuzz vhosts |
 <br />
 
+### web/fuzzingInputs
+
+fuzz inputs in an attempt to break it
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/fuzzingInputs/fuzz_input_fields.sh` | fuzz input fields in an attempt to break it |
+| 📜 `web/fuzzingInputs/fuzz_sql_fields.sh` | fuzz sql fields in an attempt to break it |
+<br />
+
 ### web/gitDumper
 
 dump .git folder to local folder
@@ -1756,4 +1774,13 @@ script to do wordpress attacks
 | 📜 `web/wordpress/wpscan_bruteforce_user_with_password_file.sh` | wpscan bruteforce user with password file |
 | 📜 `web/wordpress/wpscan_check_for_vulnerable_plugins.sh` | wpscan check for vulnerable plugins |
 | 📜 `web/wordpress/wpscan_enumerate_users.sh` | wpscan enumerate users |
+<br />
+
+### web/xss
+
+scripts to perform xss
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/xss/simpel_xss_check_img_on_error.sh` | simpel xss check with a img onerror |
 <br />

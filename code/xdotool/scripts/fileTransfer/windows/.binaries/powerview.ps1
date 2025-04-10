@@ -1,1 +1,1 @@
-/home/kali/Desktop/base/code/xdotool/scripts/reconnaissance/windows/activeDirectroy/powerVIew/.files/powerview.ps1
+../../../reconnaissance/windows/activeDirectroy/powerVIew/.files/powerview.ps1

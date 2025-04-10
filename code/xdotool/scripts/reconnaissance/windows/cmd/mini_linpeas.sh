@@ -6,8 +6,15 @@ Perform mini Windows Linpeas to get pentest info
 
 declare -gA all_commands
 all_commands["whoami"]='whoami /all'
-all_commands["net_user"]='net user'
-all_commands["dir_CUsers"]='dir C:\\Users'
+all_commands["net user"]='net user'
+all_commands["net domain user"]='net user /domain'
+all_commands["net group user"]='net group /domain'
+all_commands["get local group members of administrators"]='net group "administrators" /domain'
+all_commands["get local group members of Remote Management Users"]='net group "Remote Management Users" /domain'
+all_commands["get local group members of Remote Desktop Users"]='net group "Remote Desktop Users" /domain'
+all_commands["get local group members of Backup Operators"]='net group "Backup Operators" /domain'
+all_commands["get local group members of Remote Desktop Users"]='net group "Remote Desktop Users" /domain'
+all_commands["dir Users"]='dir C:\\Users'
 all_commands["systeminfo"]='systeminfo | findstr /B /C:"OS Name" /C:"OS Version"'
 all_commands["ver"]='ver'
 all_commands["find files with the name cred"]='dir n:\*cred* /s /b'

