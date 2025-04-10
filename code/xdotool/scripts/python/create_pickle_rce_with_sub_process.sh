@@ -14,4 +14,3 @@ CMD=${form_data["cmd"]}
 
 execute_command "python3 ${SCRIPTS_DIR}/python/.files/pythonPickleRceSubProcess.py --cmd ${CMD}"
 create_new_line
-python3 -c 'import string;print(string.printable)'

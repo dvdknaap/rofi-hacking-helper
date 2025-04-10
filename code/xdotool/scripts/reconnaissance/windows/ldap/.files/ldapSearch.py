@@ -33,7 +33,7 @@ def main():
                 flag += char
                 print("[+] Flag: " + flag)
 
-                if len(flag) >= max_length:
+                if len(flag) >= int(max_length):
                     print("[!] Max flag length reached.")
                     sys.exit(0)
                 break
