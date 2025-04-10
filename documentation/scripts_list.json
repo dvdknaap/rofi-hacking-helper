@@ -1111,7 +1111,7 @@
     },
     {
         "type": "script",
-        "path": "python/get_printate_chars.sh",
+        "path": "python/get_printable_chars.sh",
         "description": "python3: get all printable ascii chars"
     },
     {
@@ -1143,6 +1143,16 @@
         "type": "script",
         "path": "python/server_always_return_200.sh",
         "description": "start server and always return 200"
+    },
+    {
+        "type": "script",
+        "path": "python/test_punctuation_breaks.sh",
+        "description": "python3: check which punctuation breaks the website"
+    },
+    {
+        "type": "script",
+        "path": "python/test_punctuation_breaks_with_burp_request_file.sh",
+        "description": "python3: check which punctuation breaks the website with burp request file"
     },
     {
         "type": "directory",
@@ -2021,7 +2031,7 @@
     },
     {
         "type": "script",
-        "path": "reconnaissance/windows/ldap/ladap_website_search.sh",
+        "path": "reconnaissance/windows/ldap/ldap_website_search.sh",
         "description": "ldap: search on a website form for uid or other fields"
     },
     {

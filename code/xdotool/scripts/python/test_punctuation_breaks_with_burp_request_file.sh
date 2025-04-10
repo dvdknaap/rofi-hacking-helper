@@ -1,0 +1,20 @@
+#!/bin/bash
+
+: '
+python3: check which punctuation breaks the website with burp request file
+'
+
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+REQUEST_FILE_FIELD=$(form_item  "request file (optional)" "request_file")
+TEST_PARAM_FIELD=$(form_item  "test param in request" "test_param" "search")
+OUTPUT_INVALID_STRING_FIELD=$(form_item  "output invalid string" "result_invalid_string")
+
+# Generate GUI form
+generate_form "${REQUEST_FILE_FIELD}"  "${TEST_PARAM_FIELD}" "${OUTPUT_INVALID_STRING_FIELD}"
+
+REQUEST_FILE=${form_data["request_file"]}
+TEST_PARAM=${form_data["test_param"]}
+OUTPUT_INVALID_STRING=${form_data["result_invalid_string"]}
+
+execute_command "python3 ${SCRIPTS_DIR}/python/.files/pythonTestPunctuationBreaks.py --request-file ${REQUEST_FILE} --test-param '${TEST_PARAM}' --invalid-text '${OUTPUT_INVALID_STRING}'"
+create_new_line

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **709** scripts organized into **134** subdirectories.
+This repository contains **711** scripts organized into **134** subdirectories.
 
 ## Table of Contents
 
@@ -499,13 +499,15 @@ different python scripts like to start http server
 |------|-------------|
 | 📜 `python/create_pickle_rce_with_os_system.sh` | python3: create pickle RCE with os.system |
 | 📜 `python/create_pickle_rce_with_sub_process.sh` | python3: create pickle RCE with subprocess.check_output |
-| 📜 `python/get_printate_chars.sh` | python3: get all printable ascii chars |
+| 📜 `python/get_printable_chars.sh` | python3: get all printable ascii chars |
 | 📜 `python/python2.7_http_server.sh` | python2.7: start http server |
 | 📜 `python/python3_create_venv_folder.sh` | python3: create venv env folder |
 | 📜 `python/python3_http_server.sh` | python3: start http server |
 | 📜 `python/python3_venv_install_requirements.sh` | python3 venv install requirements.txt |
 | 📜 `python/read_pickle_from_base64.sh` | python3: read pickle file or base64 string |
 | 📜 `python/server_always_return_200.sh` | start server and always return 200 |
+| 📜 `python/test_punctuation_breaks.sh` | python3: check which punctuation breaks the website |
+| 📜 `python/test_punctuation_breaks_with_burp_request_file.sh` | python3: check which punctuation breaks the website with burp request file |
 <br />
 
 ### reconnaissance
@@ -917,7 +919,7 @@ scripts to do ldap enumerations
 
 | Path | Description |
 |------|-------------|
-| 📜 `reconnaissance/windows/ldap/ladap_website_search.sh` | ldap: search on a website form for uid or other fields |
+| 📜 `reconnaissance/windows/ldap/ldap_website_search.sh` | ldap: search on a website form for uid or other fields |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_check_base_naming_contexts.sh` | ldapsearch check for base namingcontexts |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_check_specific_naming_contexts.sh` | ldapsearch check for specific namingcontexts |
 | 📜 `reconnaissance/windows/ldap/ldapsearch_get_spn_of_specific_naming_contexts.sh` | ldapsearch show user info of specific namingcontexts |
