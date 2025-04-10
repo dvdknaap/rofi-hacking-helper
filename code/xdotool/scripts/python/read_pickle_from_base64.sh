@@ -1,0 +1,16 @@
+#!/bin/bash
+
+: '
+python3: read pickle file or base64 string
+'
+
+# Generate GUI form items (label, type (optional: default text), name, default (optional))
+INPUT_FIELD=$(form_item  "base64 string or pickle file" "input")
+
+# Generate GUI form
+generate_form "${INPUT_FIELD}"
+
+INPUT=${form_data["input"]}
+
+execute_command "python3 ${SCRIPTS_DIR}/python/.files/readPickle.py --input ${INPUT}"
+create_new_line

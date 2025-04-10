@@ -19,6 +19,13 @@ all_commands["check user sessions"]='query user'
 all_commands["search for services"]='wmic service get name,displayname,pathname,startmode |findstr /i "auto"|findstr /i /v "C:\windows\\"'
 all_commands["search for security user logs"]='wevtutil qe Security /rd:true /f:text | Select-String "Process Command Line"'
 all_commands["check all log categories"]='wevtutil el'
+all_commands["get local user info"]='Get-LocalUser'
+all_commands["get local group info"]='Get-LocalGroup'
+all_commands["get local group members of administrators"]='Get-LocalGroupMember "administrators"'
+all_commands["get local group members of Remote Management Users"]='Get-LocalGroupMember "Remote Management Users"'
+all_commands["get local group members of Remote Desktop Users"]='Get-LocalGroupMember "Remote Desktop Users"'
+all_commands["get local group members of Backup Operators"]='Get-LocalGroupMember "Backup Operators"'
+all_commands["get local group members of Remote Desktop Users"]='Get-LocalGroupMember "Event Log Readers"'
 
 
 commands_oneline=""
