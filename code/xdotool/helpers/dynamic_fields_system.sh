@@ -46,7 +46,7 @@ start_form_and_save() {
     # If a file is provided, load its contents as JSON
     if [[ -n "$input_file" && -f "$input_file" ]]; then
         input_json=$(cat "$input_file")
-        echo "📂 File loaded from: $input_file"
+        echo "File loaded from: $input_file"
     fi
 
     # Run the form and get the JSON output
@@ -54,7 +54,7 @@ start_form_and_save() {
 
     # Ensure that we receive valid JSON output
     if [[ $? -ne 0 || -z "${output_json}" ]]; then
-        echo "❌ Error: Form submission failed or no output received."
+        echo "Error: Form submission failed or no output received."
         return 1
     fi
 
@@ -89,16 +89,16 @@ start_form_and_save() {
     echo "${output_json}" > "${json_filename}"
     ret=$?
     if [[ $ret -ne 0 ]]; then
-        echo "✅ JSON saved to: ${json_filename}"
+        echo "JSON saved to: ${json_filename}"
     else
-        echo "❌ Error saving JSON to ${json_filename}"
+        echo "Error saving JSON to ${json_filename}"
         return 1
     fi
 }
 
 debug_active_cred_system() {
     if [[ ${#ACTIVE_CRED_SYSTEM[@]} -eq 0 ]]; then
-        echo "⚠️ ACTIVE_CRED_SYSTEM is empty."
+        echo "ACTIVE_CRED_SYSTEM is empty."
         return
     fi
 
