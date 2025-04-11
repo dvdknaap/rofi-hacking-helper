@@ -144,9 +144,9 @@ main() {
 
     # install pip3 packages
     install_pip3_packages setuptools pyftpdlib sv-ttk darkdetect git-dumper uploadserver wsgidav 
-    install_pip3_packages cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy shodan
+    install_pip3_packages cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy shodan requests
 
-    # instll pipx packages
+    # install pipx packages
     pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad --force)
 
     # clone or update repo
