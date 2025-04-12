@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **718** scripts organized into **134** subdirectories.
+This repository contains **718** scripts organized into **135** subdirectories.
 
 ## Table of Contents
 
@@ -1753,6 +1753,15 @@ scripts to perform LFI attacks
 | 📜 `web/lfi/remote_rfi_with_ftp.sh` | Remote RFI with FTP |
 | 📜 `web/lfi/remote_rfi_with_http.sh` | Remote RFI with HTTP |
 | 📜 `web/lfi/remote_rfi_with_smb.sh` | Remote RFI with SMB |
+<br />
+
+### web/lfi/gopherus
+
+start gorpherus with a protocol
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/lfi/gopherus/start_gorpherus.sh` | gorpherus: create LFI gopher urls |
 <br />
 
 ### web/nikto

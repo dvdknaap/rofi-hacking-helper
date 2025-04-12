@@ -4181,6 +4181,16 @@
     },
     {
         "type": "directory",
+        "path": "web/lfi/gopherus",
+        "description": "start gorpherus with a protocol"
+    },
+    {
+        "type": "script",
+        "path": "web/lfi/gopherus/start_gorpherus.sh",
+        "description": "gorpherus: create LFI gopher urls"
+    },
+    {
+        "type": "directory",
         "path": "web/nikto",
         "description": "script to use nikto"
     },
