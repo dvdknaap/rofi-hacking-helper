@@ -3966,6 +3966,41 @@
     },
     {
         "type": "directory",
+        "path": "web/ffuf",
+        "description": "scripts to do attacks with fuzz"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_for_files_in_var_www_html_with_php_filter_base64.sh",
+        "description": "ffuf for files in var www html with php filter base64"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_for_php_files.sh",
+        "description": "ffuf for PHP files"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_for_php_param_name.sh",
+        "description": "ffuf for PHP param"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_for_php_param_value.sh",
+        "description": "ffuf for PHP param value"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh",
+        "description": "ffuf for wordpress files in var www html with php filter base64"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/vhost.sh",
+        "description": "ffuf vhosts"
+    },
+    {
+        "type": "directory",
         "path": "web/finalrecon",
         "description": "script to use finalrecon"
     },
@@ -3973,41 +4008,6 @@
         "type": "script",
         "path": "web/finalrecon/gather_domain_info.sh",
         "description": "finalrecon: gather website info"
-    },
-    {
-        "type": "directory",
-        "path": "web/fuzz",
-        "description": "scripts to do attacks with fuzz"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/fuzz_for_files_in_var_www_html_with_php_filter_base64.sh",
-        "description": "fuzz for files in var www html with php filter base64"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/fuzz_for_php_files.sh",
-        "description": "fuzz for PHP files"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/fuzz_for_php_param_name.sh",
-        "description": "fuzz for PHP param"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/fuzz_for_php_param_value.sh",
-        "description": "fuzz for PHP param value"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/fuzz_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh",
-        "description": "fuzz for wordpress files in var www html with php filter base64"
-    },
-    {
-        "type": "script",
-        "path": "web/fuzz/vhost.sh",
-        "description": "fuzz vhosts"
     },
     {
         "type": "directory",
@@ -4101,28 +4101,28 @@
     },
     {
         "type": "script",
-        "path": "web/lfi/fuzz_for_lfi_files_pathtotest_huge.sh",
-        "description": "fuzz for LFI files with LFI-Jhaddix.txt"
+        "path": "web/lfi/ffuf_for_lfi_files_Jhaddix.sh",
+        "description": "ffuf for LFI files with LFI-Jhaddix.txt"
     },
     {
         "type": "script",
-        "path": "web/lfi/fuzz_for_lfi_files_with_jhaddix.sh",
-        "description": "fuzz for LFI files with LFI-LFISuite-pathtotest-huge.txt"
+        "path": "web/lfi/ffuf_for_lfi_files_with_pathtotest_huge.sh",
+        "description": "ffuf for LFI files with LFI-LFISuite-pathtotest-huge.txt"
     },
     {
         "type": "script",
         "path": "web/lfi/fuzz_for_root_directory.sh",
-        "description": "fuzz for LFI root directory with custom wordlist"
+        "description": "ffuf for LFI root directory with custom wordlist"
     },
     {
         "type": "script",
         "path": "web/lfi/fuzz_web_root_directories_linux.sh",
-        "description": "fuzz for web root directories - linux"
+        "description": "ffuf for web root directories - linux"
     },
     {
         "type": "script",
         "path": "web/lfi/fuzz_web_root_directories_windows.sh",
-        "description": "fuzz for web root directories - windows"
+        "description": "ffuf for web root directories - windows"
     },
     {
         "type": "script",

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz for wordpress files in var www html with php filter base64
+ffuf for wordpress files in var www html with php filter base64
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

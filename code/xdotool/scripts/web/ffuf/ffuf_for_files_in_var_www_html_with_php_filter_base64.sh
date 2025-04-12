@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz for files in var www html with php filter base64
+ffuf for files in var www html with php filter base64
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz for web root directories - linux
+ffuf for web root directories - linux
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

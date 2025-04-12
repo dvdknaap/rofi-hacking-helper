@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz for LFI root directory with custom wordlist
+ffuf for LFI root directory with custom wordlist
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

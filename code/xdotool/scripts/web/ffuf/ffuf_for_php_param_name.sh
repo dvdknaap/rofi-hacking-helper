@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz for PHP param
+ffuf for PHP param
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
