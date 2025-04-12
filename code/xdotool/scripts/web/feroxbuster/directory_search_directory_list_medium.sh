@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}"
 WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 
-execute_command "feroxbuster -u '${WEBSITE}' -w ${WORDLIST}"
+execute_command "feroxbuster -A -u '${WEBSITE}' -w ${WORDLIST}"
 create_new_line
