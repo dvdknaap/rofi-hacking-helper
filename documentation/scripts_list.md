@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **717** scripts organized into **134** subdirectories.
+This repository contains **718** scripts organized into **134** subdirectories.
 
 ## Table of Contents
 
@@ -1742,6 +1742,7 @@ scripts to perform LFI attacks
 | Path | Description |
 |------|-------------|
 | 📜 `web/lfi/check_if_expect_attack_is_possible.sh` | Check if we can execute expect to execute commands |
+| 📜 `web/lfi/create_post_request_with_gopher.sh` | gopher: print post request url for lfi urlencoded |
 | 📜 `web/lfi/execute_a_cmd_with_php_input_filter.sh` | Try to execute a cmd with php://input |
 | 📜 `web/lfi/ffuf_for_lfi_files_Jhaddix.sh` | ffuf for LFI files with LFI-Jhaddix.txt |
 | 📜 `web/lfi/ffuf_for_lfi_files_with_pathtotest_huge.sh` | ffuf for LFI files with LFI-LFISuite-pathtotest-huge.txt |
