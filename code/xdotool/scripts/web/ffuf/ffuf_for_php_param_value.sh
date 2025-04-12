@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf for PHP param value
+ffuf: search for PHP param value
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

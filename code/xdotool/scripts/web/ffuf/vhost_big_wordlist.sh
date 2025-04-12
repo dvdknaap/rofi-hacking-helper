@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf vhosts with subdomains-top1million-110000.txt
+ffuf: vhosts, search for subdomains with subdomains-top1million-110000.txt
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

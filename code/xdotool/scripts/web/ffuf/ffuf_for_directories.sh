@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf for directories
+ffuf: search for directories
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
