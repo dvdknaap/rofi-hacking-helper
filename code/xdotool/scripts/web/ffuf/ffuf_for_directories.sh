@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${DIR_WORDLIST_FIELD}"
 WEBSITE=${form_data["website"]}
 DIR_WORDLIST=${form_data["directory_wordlist"]}
 
-execute_command "ffuf -w ${DIR_WORDLIST} -u '${WEBSITE}/FUZZ' -maxtime-job 40 -recursion -recursion-depth 2 -recursion-strategy greedy -r > ffuf_directory_results.txt"
+execute_command "ffuf -w ${DIR_WORDLIST} -u '${WEBSITE}/FUZZ' -v -t 50 -maxtime-job 40 -recursion -recursion-depth 2 -recursion-strategy greedy -r > ffuf_directory_results.txt"
 create_new_line

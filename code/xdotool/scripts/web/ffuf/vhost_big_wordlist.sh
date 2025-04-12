@@ -16,5 +16,5 @@ WEBSITE=${form_data["website"]}
 HOST_HEADER_DOMAIN=${form_data["host_header_domain"]}
 WORDLIST=${form_data["wordlist"]}
 
-execute_command "ffuf -w ${WORDLIST}:FUZZ -u ${WEBSITE} -H 'Host:FUZZ.${HOST_HEADER_DOMAIN}'"
+execute_command "ffuf -w ${WORDLIST}:FUZZ -u ${WEBSITE} -H 'Host:FUZZ.${HOST_HEADER_DOMAIN}' -v -t 50"
 create_new_line

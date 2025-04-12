@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${WORDLIST_FIELD}"
 WEBSITE=${form_data["website"]}
 WORDLIST=${form_data["wordlist"]}
 
-execute_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ'"
+execute_command "ffuf -w ${WORDLIST}:FUZZ -u '${WEBSITE}FUZZ' -v -t 50"
 create_new_line

