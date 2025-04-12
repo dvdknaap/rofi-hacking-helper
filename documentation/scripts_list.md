@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **713** scripts organized into **134** subdirectories.
+This repository contains **714** scripts organized into **134** subdirectories.
 
 ## Table of Contents
 
@@ -16,8 +16,8 @@ This repository contains **713** scripts organized into **134** subdirectories.
 - [ftp](#ftp)
 - [hydra](#hydra)
 - [nmapScans](#nmapscans)
+- [pentestScripts](#pentestscripts)
 - [portListening](#portlistening)
-- [python](#python)
 - [reconnaissance](#reconnaissance)
 - [shell](#shell)
 - [smtp](#smtp)
@@ -275,9 +275,7 @@ start python http server
 | Path | Description |
 |------|-------------|
 | 📜 `fileTransfer/python/python2.7_download_file_one_liner.sh` | python2.7: download file one liner |
-| 📜 `fileTransfer/python/python2.7_http_server.sh` | python2.7: start http server |
 | 📜 `fileTransfer/python/python3_download_file_one_liner.sh` | python3: download file one liner |
-| 📜 `fileTransfer/python/python3_http_server.sh` | python3: start http server |
 <br />
 
 ### fileTransfer/ruby
@@ -451,6 +449,28 @@ proxychains: Collection of scripts for network scanning.
 | 📜 `nmapScans/proxychains/nmap_open_relay.sh` | proxychains: Nmap: Check for open SMTP relay. |
 <br />
 
+### pentestScripts
+
+scripts for pentesting
+
+| Path | Description |
+|------|-------------|
+| 📜 `pentestScripts/base64_decode.sh` | base64 decode |
+| 📜 `pentestScripts/create_pickle_rce_with_os_system.sh` | python3: create pickle RCE with os.system |
+| 📜 `pentestScripts/create_pickle_rce_with_sub_process.sh` | python3: create pickle RCE with subprocess.check_output |
+| 📜 `pentestScripts/get_printable_chars.sh` | python3: get all printable ascii chars |
+| 📜 `pentestScripts/mkdir_cd.sh` | create directory and cd to the new directory |
+| 📜 `pentestScripts/python2.7_http_server.sh` | python2.7: start http server |
+| 📜 `pentestScripts/python3_create_venv_folder.sh` | python3: create venv env folder |
+| 📜 `pentestScripts/python3_http_server.sh` | python3: start http server |
+| 📜 `pentestScripts/python3_url_encode.sh` | python3: url encode string |
+| 📜 `pentestScripts/python3_venv_install_requirements.sh` | python3: venv install requirements.txt |
+| 📜 `pentestScripts/read_pickle_from_base64.sh` | python3: read pickle file or base64 string |
+| 📜 `pentestScripts/server_always_return_200.sh` | python3: start server and always return 200 |
+| 📜 `pentestScripts/test_punctuation_breaks.sh` | python3: check which punctuation breaks the website |
+| 📜 `pentestScripts/test_punctuation_breaks_with_burp_request_file.sh` | python3: check which punctuation breaks the website with burp request file |
+<br />
+
 ### portListening
 
 different scripts to do port listenings
@@ -489,25 +509,6 @@ scripts to use ligolo
 | 📜 `portListening/ligolo/start_ligolo_proxy.sh` | ligolo: start proxy and configure ligolo interface |
 | 📜 `portListening/ligolo/wget_ligolo_agent.sh` | wget: download ligolo agent to server and connect to proxy |
 | 📜 `portListening/ligolo/wget_ligolo_agent_exe.sh` | wget: download ligolo agent.exe to server and connect to proxy |
-<br />
-
-### python
-
-different python scripts like to start http server
-
-| Path | Description |
-|------|-------------|
-| 📜 `python/create_pickle_rce_with_os_system.sh` | python3: create pickle RCE with os.system |
-| 📜 `python/create_pickle_rce_with_sub_process.sh` | python3: create pickle RCE with subprocess.check_output |
-| 📜 `python/get_printable_chars.sh` | python3: get all printable ascii chars |
-| 📜 `python/python2.7_http_server.sh` | python2.7: start http server |
-| 📜 `python/python3_create_venv_folder.sh` | python3: create venv env folder |
-| 📜 `python/python3_http_server.sh` | python3: start http server |
-| 📜 `python/python3_venv_install_requirements.sh` | python3 venv install requirements.txt |
-| 📜 `python/read_pickle_from_base64.sh` | python3: read pickle file or base64 string |
-| 📜 `python/server_always_return_200.sh` | start server and always return 200 |
-| 📜 `python/test_punctuation_breaks.sh` | python3: check which punctuation breaks the website |
-| 📜 `python/test_punctuation_breaks_with_burp_request_file.sh` | python3: check which punctuation breaks the website with burp request file |
 <br />
 
 ### reconnaissance
