@@ -128,6 +128,14 @@ setup_gnome_binding() {
     return 1
 }
 
+# install gopherus
+install_gopherus() {
+  local local_location="/opt/Gopherus/"
+  sudo gite clone https://github.com/tarunkant/Gopherus.git "${local_location}"
+  sudo chmod +x "${local_location}/gopherus.py"
+  ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
+}
+
 # Main function to execute the script steps
 main() {
     # create folder and give the correct permissions
@@ -147,10 +155,13 @@ main() {
 
     # install pip3 packages
     install_pip3_packages setuptools pyftpdlib sv-ttk darkdetect git-dumper uploadserver wsgidav 
-    install_pip3_packages cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy shodan requests
+    install_pip3_packages cheroot defaultcreds-cheat-sheet pypykatz fuzzywuzzy shodan argparse requests
 
     # install pipx packages
     pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad --force)
+
+    # install gopherus
+    install_gopherus
 
     ls -alF "${ROOT_DIR}"
 
