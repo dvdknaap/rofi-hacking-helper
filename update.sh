@@ -150,6 +150,9 @@ main() {
         mkdir -p "${CACHE_DIR}"
     fi
 
+    # get latest update repo
+    pull_latest_git_version
+
     # Install required programs
     check_and_install_packages python3 python3-pip x11-utils
     check_and_install_packages firefox-esr git rofi xdotool libnotify-bin python3-tk
@@ -163,9 +166,6 @@ main() {
 
     # insatll pipx packages
     pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad  --force)
-
-    # get latest update repo
-    pull_latest_git_version
 
     # Check for existing keybinding
     setup_xfce_shortcut "${helper_shortcut_command}" "Ctrl+Shift+${helper_keybind}" "m"

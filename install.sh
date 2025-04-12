@@ -135,6 +135,9 @@ main() {
     sudo chown "$(whoami)":"$(whoami)" "${ROOT_DIR}" -R
     cd "${ROOT_DIR}"
 
+    # clone or update repo
+    clone_or_update_repo
+
     # Install required programs
     check_and_install_packages python3 python3-pip x11-utils wget curl
     check_and_install_packages firefox-esr git rofi xdotool libnotify-bin python3-tk
@@ -148,9 +151,6 @@ main() {
 
     # install pipx packages
     pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad --force)
-
-    # clone or update repo
-    clone_or_update_repo
 
     ls -alF "${ROOT_DIR}"
 
