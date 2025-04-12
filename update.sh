@@ -134,9 +134,9 @@ setup_gnome_binding() {
 # install gopherus
 install_gopherus() {
   local local_location="/opt/Gopherus/"
-  sudo gite clone https://github.com/tarunkant/Gopherus.git "${local_location}"
+  sudo git clone https://github.com/tarunkant/Gopherus.git "${local_location}"
   sudo chmod +x "${local_location}/gopherus.py"
-  ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
+  sudo ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
 }
 
 # Main function to execute the script steps
