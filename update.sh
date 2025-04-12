@@ -155,7 +155,7 @@ main() {
     check_and_install_packages firefox-esr git rofi xdotool libnotify-bin python3-tk
     check_and_install_packages powershell xclip expect seclists jq onesixtyone braa wafw00f nikto finalrecon
     check_and_install_packages imagemagick evil-winrm crackmapexec krb5-user python3-impacket rlwrap 
-    check_and_install_packages python3-impacket bloodyad pipx ruby-full
+    check_and_install_packages python3-impacket bloodyad pipx ruby-full feroxbuster ffuf
 
     # install pip3 packages
     install_pip3_packages setuptools pyftpdlib sv-ttk darkdetect git-dumper uploadserver wsgidav 

@@ -1663,6 +1663,20 @@ execute directory and file search with feroxbuster
 | 📜 `web/feroxbuster/extension_search.sh` | execute feroxbuster directory search and files with extensions search |
 <br />
 
+### web/ffuf
+
+scripts to do attacks with fuzz
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ffuf/ffuf_for_files_in_var_www_html_with_php_filter_base64.sh` | ffuf for files in var www html with php filter base64 |
+| 📜 `web/ffuf/ffuf_for_php_files.sh` | ffuf for PHP files |
+| 📜 `web/ffuf/ffuf_for_php_param_name.sh` | ffuf for PHP param |
+| 📜 `web/ffuf/ffuf_for_php_param_value.sh` | ffuf for PHP param value |
+| 📜 `web/ffuf/ffuf_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh` | ffuf for wordpress files in var www html with php filter base64 |
+| 📜 `web/ffuf/vhost.sh` | ffuf vhosts |
+<br />
+
 ### web/finalrecon
 
 script to use finalrecon
@@ -1670,20 +1684,6 @@ script to use finalrecon
 | Path | Description |
 |------|-------------|
 | 📜 `web/finalrecon/gather_domain_info.sh` | finalrecon: gather website info |
-<br />
-
-### web/fuzz
-
-scripts to do attacks with fuzz
-
-| Path | Description |
-|------|-------------|
-| 📜 `web/fuzz/fuzz_for_files_in_var_www_html_with_php_filter_base64.sh` | fuzz for files in var www html with php filter base64 |
-| 📜 `web/fuzz/fuzz_for_php_files.sh` | fuzz for PHP files |
-| 📜 `web/fuzz/fuzz_for_php_param_name.sh` | fuzz for PHP param |
-| 📜 `web/fuzz/fuzz_for_php_param_value.sh` | fuzz for PHP param value |
-| 📜 `web/fuzz/fuzz_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh` | fuzz for wordpress files in var www html with php filter base64 |
-| 📜 `web/fuzz/vhost.sh` | fuzz vhosts |
 <br />
 
 ### web/fuzzingInputs
@@ -1737,11 +1737,11 @@ scripts to perform LFI attacks
 |------|-------------|
 | 📜 `web/lfi/check_if_expect_attack_is_possible.sh` | Check if we can execute expect to execute commands |
 | 📜 `web/lfi/execute_a_cmd_with_php_input_filter.sh` | Try to execute a cmd with php://input |
-| 📜 `web/lfi/fuzz_for_lfi_files_pathtotest_huge.sh` | fuzz for LFI files with LFI-Jhaddix.txt |
-| 📜 `web/lfi/fuzz_for_lfi_files_with_jhaddix.sh` | fuzz for LFI files with LFI-LFISuite-pathtotest-huge.txt |
-| 📜 `web/lfi/fuzz_for_root_directory.sh` | fuzz for LFI root directory with custom wordlist |
-| 📜 `web/lfi/fuzz_web_root_directories_linux.sh` | fuzz for web root directories - linux |
-| 📜 `web/lfi/fuzz_web_root_directories_windows.sh` | fuzz for web root directories - windows |
+| 📜 `web/lfi/ffuf_for_lfi_files_Jhaddix.sh` | ffuf for LFI files with LFI-Jhaddix.txt |
+| 📜 `web/lfi/ffuf_for_lfi_files_with_pathtotest_huge.sh` | ffuf for LFI files with LFI-LFISuite-pathtotest-huge.txt |
+| 📜 `web/lfi/fuzz_for_root_directory.sh` | ffuf for LFI root directory with custom wordlist |
+| 📜 `web/lfi/fuzz_web_root_directories_linux.sh` | ffuf for web root directories - linux |
+| 📜 `web/lfi/fuzz_web_root_directories_windows.sh` | ffuf for web root directories - windows |
 | 📜 `web/lfi/lfi_read_files_with_php_filter_base64_encode.sh` | LFI read files with php filter base64 encode |
 | 📜 `web/lfi/remote_rfi_with_ftp.sh` | Remote RFI with FTP |
 | 📜 `web/lfi/remote_rfi_with_http.sh` | Remote RFI with HTTP |

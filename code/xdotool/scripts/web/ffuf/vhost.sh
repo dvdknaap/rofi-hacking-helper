@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-fuzz vhosts
+ffuf vhosts
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
