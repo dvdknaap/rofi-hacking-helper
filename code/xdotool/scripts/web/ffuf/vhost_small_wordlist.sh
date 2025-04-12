@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf vhosts
+ffuf vhosts with namelist.txt
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **711** scripts organized into **134** subdirectories.
+This repository contains **713** scripts organized into **134** subdirectories.
 
 ## Table of Contents
 
@@ -1669,12 +1669,14 @@ scripts to do attacks with fuzz
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/ffuf/ffuf_for_directories.sh` | ffuf for directories |
 | 📜 `web/ffuf/ffuf_for_files_in_var_www_html_with_php_filter_base64.sh` | ffuf for files in var www html with php filter base64 |
 | 📜 `web/ffuf/ffuf_for_php_files.sh` | ffuf for PHP files |
 | 📜 `web/ffuf/ffuf_for_php_param_name.sh` | ffuf for PHP param |
 | 📜 `web/ffuf/ffuf_for_php_param_value.sh` | ffuf for PHP param value |
 | 📜 `web/ffuf/ffuf_for_wordpress_files_in_var_www_html_with_php_filter_base64.sh` | ffuf for wordpress files in var www html with php filter base64 |
-| 📜 `web/ffuf/vhost.sh` | ffuf vhosts |
+| 📜 `web/ffuf/vhost_big_wordlist.sh` | ffuf vhosts with subdomains-top1million-110000.txt |
+| 📜 `web/ffuf/vhost_small_wordlist.sh` | ffuf vhosts with namelist.txt |
 <br />
 
 ### web/finalrecon

@@ -3971,6 +3971,11 @@
     },
     {
         "type": "script",
+        "path": "web/ffuf/ffuf_for_directories.sh",
+        "description": "ffuf for directories"
+    },
+    {
+        "type": "script",
         "path": "web/ffuf/ffuf_for_files_in_var_www_html_with_php_filter_base64.sh",
         "description": "ffuf for files in var www html with php filter base64"
     },
@@ -3996,8 +4001,13 @@
     },
     {
         "type": "script",
-        "path": "web/ffuf/vhost.sh",
-        "description": "ffuf vhosts"
+        "path": "web/ffuf/vhost_big_wordlist.sh",
+        "description": "ffuf vhosts with subdomains-top1million-110000.txt"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/vhost_small_wordlist.sh",
+        "description": "ffuf vhosts with namelist.txt"
     },
     {
         "type": "directory",
