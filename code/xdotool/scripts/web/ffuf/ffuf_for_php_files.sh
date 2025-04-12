@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf for PHP files
+ffuf: search for PHP files
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

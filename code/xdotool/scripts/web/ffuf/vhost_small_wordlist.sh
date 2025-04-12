@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-ffuf vhosts with namelist.txt
+ffuf vhosts, search for subdomains with namelist.txt
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
