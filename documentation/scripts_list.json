@@ -4072,7 +4072,7 @@
     {
         "type": "script",
         "path": "web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh",
-        "description": "fuzz SSTI fields in an attempt to break it"
+        "description": "fuzz SSTI fields in an attempt to break it (attemp 2)"
     },
     {
         "type": "directory",
@@ -4218,6 +4218,26 @@
         "type": "script",
         "path": "web/nikto/identify_software.sh",
         "description": "nikto: identify software"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssi",
+        "description": "script to do Server-Side Includes (SSI)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssi/ssI_echo_variables.sh",
+        "description": "SSI: echo variables"
+    },
+    {
+        "type": "script",
+        "path": "web/ssi/ssi_execute_cmd.sh",
+        "description": "SSI: execute cmd"
+    },
+    {
+        "type": "script",
+        "path": "web/ssi/ssi_print_env.sh",
+        "description": "SSI: print env variables"
     },
     {
         "type": "directory",
