@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **721** scripts organized into **135** subdirectories.
+This repository contains **738** scripts organized into **139** subdirectories.
 
 ## Table of Contents
 
@@ -1699,9 +1699,11 @@ fuzz inputs in an attempt to break it
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/fuzzingInputs/fuzzTemplateEngine.sh` | fuzz input field to find template engine with request file |
 | 📜 `web/fuzzingInputs/fuzz_input_fields.sh` | fuzz input fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_sql_fields.sh` | fuzz sql fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_ssti_fields.sh` | fuzz SSTI fields in an attempt to break it |
+| 📜 `web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh` | fuzz SSTI fields in an attempt to break it |
 <br />
 
 ### web/gitDumper
@@ -1773,6 +1775,53 @@ script to use nikto
 | Path | Description |
 |------|-------------|
 | 📜 `web/nikto/identify_software.sh` | nikto: identify software |
+<br />
+
+### web/ssti
+
+scripts for SSTI attacks
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssti/ssti_map_check.sh` | SSTImap - check if website is SSTI vulnerable |
+| 📜 `web/ssti/ssti_map_download_file.sh` | SSTImap - download file |
+| 📜 `web/ssti/ssti_map_rce.sh` | SSTImap - execute cmd (RCE) |
+| 📜 `web/ssti/ssti_map_rev_shell.sh` | SSTImap - get shell |
+<br />
+
+### web/ssti/jinja2
+
+scripts to attack jinja2
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssti/jinja2/ssti_jinja2_dump_build_in_functions.sh` | SSTI - dump jinja2 build in functions |
+| 📜 `web/ssti/jinja2/ssti_jinja2_dump_config_info.sh` | SSTI - get jinja2 config info |
+| 📜 `web/ssti/jinja2/ssti_jinja2_lfi_dump_file.sh` | SSTI - jinja2 lfi dump file |
+| 📜 `web/ssti/jinja2/ssti_jinja2_rce.sh` | SSTI - jinja2 rce dump file without built in import, execute code |
+| 📜 `web/ssti/jinja2/ssti_jinja2_rce2.sh` | SSTI - jinja2 rce dump file with built in import, execute code |
+| 📜 `web/ssti/jinja2/ssti_jinja2_reverse_shell_linux.sh` | SSTI - jinja2 rce dump file - linux (mkfifo) |
+| 📜 `web/ssti/jinja2/ssti_jinja2_reverse_shell_windows_powershell.sh` | SSTI - jinja2 rce dump file - windows (powershell) |
+<br />
+
+### web/ssti/ruby
+
+scripts to exploit ruby template engine ERB
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssti/ruby/ssti_ruby_rce2.sh` | SSTI - Ruby template engine (ERB) RCE, execute code |
+<br />
+
+### web/ssti/twig
+
+scripts to exploit twig
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssti/twig/ssti_twig_dump_current_template_info.sh` | SSTI - dump twig current template info |
+| 📜 `web/ssti/twig/ssti_twig_lfi_dump_file.sh` | SSTI - twig lfi dump file |
+| 📜 `web/ssti/twig/ssti_twig_rce.sh` | SSTI - twig rce, execute code |
 <br />
 
 ### web/wafw00f

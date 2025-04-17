@@ -4051,6 +4051,11 @@
     },
     {
         "type": "script",
+        "path": "web/fuzzingInputs/fuzzTemplateEngine.sh",
+        "description": "fuzz input field to find template engine with request file"
+    },
+    {
+        "type": "script",
         "path": "web/fuzzingInputs/fuzz_input_fields.sh",
         "description": "fuzz input fields in an attempt to break it"
     },
@@ -4062,6 +4067,11 @@
     {
         "type": "script",
         "path": "web/fuzzingInputs/fuzz_ssti_fields.sh",
+        "description": "fuzz SSTI fields in an attempt to break it"
+    },
+    {
+        "type": "script",
+        "path": "web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh",
         "description": "fuzz SSTI fields in an attempt to break it"
     },
     {
@@ -4208,6 +4218,101 @@
         "type": "script",
         "path": "web/nikto/identify_software.sh",
         "description": "nikto: identify software"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti",
+        "description": "scripts for SSTI attacks"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_check.sh",
+        "description": "SSTImap - check if website is SSTI vulnerable"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_download_file.sh",
+        "description": "SSTImap - download file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_rce.sh",
+        "description": "SSTImap - execute cmd (RCE)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_rev_shell.sh",
+        "description": "SSTImap - get shell"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti/jinja2",
+        "description": "scripts to attack jinja2"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_dump_build_in_functions.sh",
+        "description": "SSTI - dump jinja2 build in functions"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_dump_config_info.sh",
+        "description": "SSTI - get jinja2 config info"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_lfi_dump_file.sh",
+        "description": "SSTI - jinja2 lfi dump file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_rce.sh",
+        "description": "SSTI - jinja2 rce dump file without built in import, execute code"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_rce2.sh",
+        "description": "SSTI - jinja2 rce dump file with built in import, execute code"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_linux.sh",
+        "description": "SSTI - jinja2 rce dump file - linux (mkfifo)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_windows_powershell.sh",
+        "description": "SSTI - jinja2 rce dump file - windows (powershell)"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti/ruby",
+        "description": "scripts to exploit ruby template engine ERB"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ruby/ssti_ruby_rce2.sh",
+        "description": "SSTI - Ruby template engine (ERB) RCE, execute code"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti/twig",
+        "description": "scripts to exploit twig"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_dump_current_template_info.sh",
+        "description": "SSTI - dump twig current template info"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_lfi_dump_file.sh",
+        "description": "SSTI - twig lfi dump file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_rce.sh",
+        "description": "SSTI - twig rce, execute code"
     },
     {
         "type": "directory",
