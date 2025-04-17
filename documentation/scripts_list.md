@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **741** scripts organized into **140** subdirectories.
+This repository contains **745** scripts organized into **141** subdirectories.
 
 ## Table of Contents
 
@@ -1854,6 +1854,18 @@ script to do wordpress attacks
 | 📜 `web/wordpress/wpscan_bruteforce_user_with_password_file.sh` | wpscan bruteforce user with password file |
 | 📜 `web/wordpress/wpscan_check_for_vulnerable_plugins.sh` | wpscan check for vulnerable plugins |
 | 📜 `web/wordpress/wpscan_enumerate_users.sh` | wpscan enumerate users |
+<br />
+
+### web/xslt
+
+scripts to do XSLT Injections
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/xslt/xslt_get_information_disclosure.sh` | XSLT: get information discloser |
+| 📜 `web/xslt/xslt_lfi_dump_file.sh` | XSLT - lfi dump file (only works in version 2.0) |
+| 📜 `web/xslt/xslt_lfi_dump_file_using_php.sh` | XSLT - lfi dump file using php |
+| 📜 `web/xslt/xslt_rce.sh` | XSLT - rce |
 <br />
 
 ### web/xss

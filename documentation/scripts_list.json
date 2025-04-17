@@ -4371,6 +4371,31 @@
     },
     {
         "type": "directory",
+        "path": "web/xslt",
+        "description": "scripts to do XSLT Injections"
+    },
+    {
+        "type": "script",
+        "path": "web/xslt/xslt_get_information_disclosure.sh",
+        "description": "XSLT: get information discloser"
+    },
+    {
+        "type": "script",
+        "path": "web/xslt/xslt_lfi_dump_file.sh",
+        "description": "XSLT - lfi dump file (only works in version 2.0)"
+    },
+    {
+        "type": "script",
+        "path": "web/xslt/xslt_lfi_dump_file_using_php.sh",
+        "description": "XSLT - lfi dump file using php"
+    },
+    {
+        "type": "script",
+        "path": "web/xslt/xslt_rce.sh",
+        "description": "XSLT - rce"
+    },
+    {
+        "type": "directory",
         "path": "web/xss",
         "description": "scripts to perform xss"
     },
