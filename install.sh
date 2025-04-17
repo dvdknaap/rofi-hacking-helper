@@ -147,12 +147,12 @@ create_python3_venv() {
 
     sudo chmod +x "${local_location}/${start_file}"
     
-    command="${local_location}/${venv_folder_name}/bin/python3 ${local_location}/${start_file}"
+    command="${local_location}/${venv_folder_name}/bin/python3 ${local_location}/${start_file} \"\$@\""
     
-    if [ ! -f "${user_bin_file}" ]; then
+    # if [ ! -f "${user_bin_file}" ]; then
         echo '#!/bin/bash' | sudo tee -a "${user_bin_file}"
         echo "${command}" | sudo tee -a "${user_bin_file}"
-    fi
+    # fi
 
     sudo chmod +x "${user_bin_file}"
 }

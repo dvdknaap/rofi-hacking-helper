@@ -21,5 +21,5 @@ if [[ "${FORCE_HTTPS}" == "yes" ]]; then
     force_https_switch=' --https'
 fi
 
-execute_command "python3 ${SCRIPT_DIR}/web/fuzzingInputs/.files/fuzzTemplateEngine.py -f ${REQUEST_FILE} --test-param '${TEST_PARAM}'${force_https_switch} -v"
+execute_command "python3 ${SCRIPTS_DIR}/web/fuzzingInputs/.files/fuzzTemplateEngine.py -f ${REQUEST_FILE} --test-param '${TEST_PARAM}'${force_https_switch} -v"
 create_new_line
