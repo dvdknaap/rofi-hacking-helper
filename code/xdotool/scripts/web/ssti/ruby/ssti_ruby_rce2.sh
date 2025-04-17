@@ -10,6 +10,6 @@ CMD_FIELD=$(form_item "execute cmd" "cmd" "id")
 # Generate GUI form
 generate_form "${CMD_FIELD}"
 
-CMD=${form_data["file"]}
+CMD=${form_data["cmd"]}
 
-execute_command "<%= system(\"${CMD}\") %>"
+execute_command "<%=system(\"${CMD// /\$\{IFS\}}\")%>"

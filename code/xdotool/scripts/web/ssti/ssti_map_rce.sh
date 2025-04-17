@@ -14,5 +14,5 @@ generate_form "${WEBSITE_FIELD}" "${CMD_FIELD}"
 WEBSITE=${form_data["website"]}
 CMD=${form_data["cmd"]}
 
-execute_command "sstimap -u '${WEBSITE}' -S '${CMD}'"
+execute_command "sstimap -u '${WEBSITE}' -S '${CMD// /\$\{IFS\}}'"
 create_new_line

