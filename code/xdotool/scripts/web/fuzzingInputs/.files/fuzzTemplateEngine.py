@@ -135,7 +135,7 @@ class SstiDetector:
 
         parts = raw_request.split('\n\n', 1)
         header_section = parts[0]
-        body = parts[1] if len(parts) > 1 else None
+        body = parts[1].strip() if len(parts) > 1 else None
 
         header_lines = header_section.splitlines()
 
@@ -249,7 +249,7 @@ class SstiDetector:
         # Priority 2: Find parameter with value '*'
         for location, params_dict in [('query', query_params), ('body', body_params)]:
             for key, values in params_dict.items():
-                if ['*'] == values: # Check if the value is exactly ['*']
+                if '*' in values[0]:
                     logging.debug(f"Found injection marker '*' in {location} parameter: {key}")
                     return key, location, query_params, body_params # Return original parsed params
 
@@ -274,7 +274,14 @@ class SstiDetector:
         if self._injection_location == 'query':
             current_query_params[self._injection_param] = [payload]
         elif self._injection_location == 'body':
-            current_body_params[self._injection_param] = [payload]
+            if current_body_params[self._injection_param][0]:
+                if '*' in current_body_params[self._injection_param][0]:
+                    current_body_params[self._injection_param] = current_body_params[self._injection_param][0].replace('*', payload)
+                else:
+                    current_body_params[self._injection_param] = current_body_params[self._injection_param][0] + payload
+
+            else:
+                current_body_params[self._injection_param] = [payload]
 
         # Reconstruct query string
         target_url_parts = urlparse(self._path)
@@ -289,6 +296,7 @@ class SstiDetector:
             content_type = current_headers.get('Content-Type', '').lower()
             if self._injection_location == 'body' and 'application/x-www-form-urlencoded' in content_type:
                  data_body = urlencode(current_body_params, doseq=True)
+                 #data_body = current_body_params
                  # Requests recalculates Content-Length if data is provided
                  current_headers.pop('Content-Length', None)
             elif self._injection_location == 'body':
