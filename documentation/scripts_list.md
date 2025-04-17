@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **721** scripts organized into **135** subdirectories.
+This repository contains **728** scripts organized into **137** subdirectories.
 
 ## Table of Contents
 
@@ -1699,6 +1699,7 @@ fuzz inputs in an attempt to break it
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/fuzzingInputs/fuzzTemplateEngine.sh` | fuzz input field to find template engine with request file |
 | 📜 `web/fuzzingInputs/fuzz_input_fields.sh` | fuzz input fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_sql_fields.sh` | fuzz sql fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_ssti_fields.sh` | fuzz SSTI fields in an attempt to break it |
@@ -1773,6 +1774,26 @@ script to use nikto
 | Path | Description |
 |------|-------------|
 | 📜 `web/nikto/identify_software.sh` | nikto: identify software |
+<br />
+
+### web/ssti
+
+scripts for SSTI attacks
+
+<br />
+
+### web/ssti/jinja2
+
+scripts to attack jinja2
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssti/jinja2/ssti_jinja2_dump_build_in_functions.sh` | SSTI - dump jinja2 build in functions |
+| 📜 `web/ssti/jinja2/ssti_jinja2_dump_config_info.sh` | SSTI - get jinja2 config info |
+| 📜 `web/ssti/jinja2/ssti_jinja2_lfi_dump_file.sh` | SSTI - jinja2 lfi dump file |
+| 📜 `web/ssti/jinja2/ssti_jinja2_rce.sh` | SSTI - jinja2 lfi dump file |
+| 📜 `web/ssti/jinja2/ssti_jinja2_reverse_shell_linux.sh` | SSTI - jinja2 lfi dump file - linux (mkfifo) |
+| 📜 `web/ssti/jinja2/ssti_jinja2_reverse_shell_windows_powershell.sh` | SSTI - jinja2 lfi dump file - windows (powershell) |
 <br />
 
 ### web/wafw00f

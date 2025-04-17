@@ -4051,6 +4051,11 @@
     },
     {
         "type": "script",
+        "path": "web/fuzzingInputs/fuzzTemplateEngine.sh",
+        "description": "fuzz input field to find template engine with request file"
+    },
+    {
+        "type": "script",
         "path": "web/fuzzingInputs/fuzz_input_fields.sh",
         "description": "fuzz input fields in an attempt to break it"
     },
@@ -4208,6 +4213,46 @@
         "type": "script",
         "path": "web/nikto/identify_software.sh",
         "description": "nikto: identify software"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti",
+        "description": "scripts for SSTI attacks"
+    },
+    {
+        "type": "directory",
+        "path": "web/ssti/jinja2",
+        "description": "scripts to attack jinja2"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_dump_build_in_functions.sh",
+        "description": "SSTI - dump jinja2 build in functions"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_dump_config_info.sh",
+        "description": "SSTI - get jinja2 config info"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_lfi_dump_file.sh",
+        "description": "SSTI - jinja2 lfi dump file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_rce.sh",
+        "description": "SSTI - jinja2 lfi dump file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_linux.sh",
+        "description": "SSTI - jinja2 lfi dump file - linux (mkfifo)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_windows_powershell.sh",
+        "description": "SSTI - jinja2 lfi dump file - windows (powershell)"
     },
     {
         "type": "directory",
