@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **719** scripts organized into **135** subdirectories.
+This repository contains **721** scripts organized into **135** subdirectories.
 
 ## Table of Contents
 
@@ -1670,6 +1670,7 @@ scripts to do attacks with fuzz
 
 | Path | Description |
 |------|-------------|
+| 📜 `web/ffuf/ffuf_blind_ssrf_ports.sh` | ffuf: blind ssrf |
 | 📜 `web/ffuf/ffuf_for_directories.sh` | ffuf: search for directories |
 | 📜 `web/ffuf/ffuf_for_files_in_var_www_html_with_php_filter_base64.sh` | ffuf: search for files in var www html with php filter base64 |
 | 📜 `web/ffuf/ffuf_for_php_files.sh` | ffuf: search for PHP files |
@@ -1700,6 +1701,7 @@ fuzz inputs in an attempt to break it
 |------|-------------|
 | 📜 `web/fuzzingInputs/fuzz_input_fields.sh` | fuzz input fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_sql_fields.sh` | fuzz sql fields in an attempt to break it |
+| 📜 `web/fuzzingInputs/fuzz_ssti_fields.sh` | fuzz SSTI fields in an attempt to break it |
 <br />
 
 ### web/gitDumper
@@ -1746,9 +1748,9 @@ scripts to perform LFI attacks
 | 📜 `web/lfi/execute_a_cmd_with_php_input_filter.sh` | Try to execute a cmd with php://input |
 | 📜 `web/lfi/ffuf_for_lfi_files_Jhaddix.sh` | ffuf for LFI files with LFI-Jhaddix.txt |
 | 📜 `web/lfi/ffuf_for_lfi_files_with_pathtotest_huge.sh` | ffuf for LFI files with LFI-LFISuite-pathtotest-huge.txt |
-| 📜 `web/lfi/fuzz_for_root_directory.sh` | ffuf for LFI root directory with custom wordlist |
-| 📜 `web/lfi/fuzz_web_root_directories_linux.sh` | ffuf for web root directories - linux |
-| 📜 `web/lfi/fuzz_web_root_directories_windows.sh` | ffuf for web root directories - windows |
+| 📜 `web/lfi/ffuf_for_root_directory.sh` | ffuf for LFI root directory with custom wordlist |
+| 📜 `web/lfi/ffuf_web_root_directories_linux.sh` | ffuf for web root directories - linux |
+| 📜 `web/lfi/ffuf_web_root_directories_windows.sh` | ffuf for web root directories - windows |
 | 📜 `web/lfi/lfi_read_files_with_php_filter_base64_encode.sh` | LFI read files with php filter base64 encode |
 | 📜 `web/lfi/remote_rfi_with_ftp.sh` | Remote RFI with FTP |
 | 📜 `web/lfi/remote_rfi_with_http.sh` | Remote RFI with HTTP |

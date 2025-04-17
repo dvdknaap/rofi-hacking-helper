@@ -5,7 +5,7 @@ create a list of numbers. e.g. 2FA codes or ports and save to file
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
-SEQUENCE_START_FIELD=$(form_item  "sequence start" "number" "sequence_start" "0")
+SEQUENCE_START_FIELD=$(form_item  "sequence start" "number" "sequence_start" "1")
 SEQUENCE_END_FIELD=$(form_item  "sequence end" "number" "sequence_end" "65535")
 OUTPUT_FILE_FIELD=$(form_item  "output file" "output_file" "ports.txt")
 
