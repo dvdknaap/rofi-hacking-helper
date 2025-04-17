@@ -139,20 +139,25 @@ create_python3_venv() {
     local user_bin_file="/usr/local/bin/${4}"
 
     cd "${local_location}"
-    python3 -m venv "${venv_folder_name}"
 
-    if [ -f "requirements.txt" ];
-        .venv/bin/pip3 install -r requirements.txt
+    if [ ! -d "${venv_folder_name}" ]; then
+        sudo python3 -m venv "${venv_folder_name}"
+    fi
+
+    if [ -f "requirements.txt" ]; then
+        sudo "${venv_folder_name}"/bin/pip3 install -r requirements.txt
     fi
 
     sudo chmod +x "${local_location}/${start_file}"
     
     command="${local_location}/${venv_folder_name}/bin/python3 ${local_location}/${start_file}"
     
-    if [ ! -f "${user_bin_file}" ];
+    if [ ! -f "${user_bin_file}" ]; then
         echo '#!/bin/bash' | sudo tee -a "${user_bin_file}"
         echo "${command}" | sudo tee -a "${user_bin_file}"
-    if
+    fi
+
+    sudo chmod +x "${user_bin_file}"
 }
 
 # install SSTImap
@@ -162,7 +167,9 @@ install_stti_map() {
     local start_file="sstimap.py"
     local user_bin_file="sstimap"
 
-    sudo git clone https://github.com/vladko312/SSTImap "${local_location}"
+    if [ ! -d "${local_location}" ]; then
+        sudo git clone https://github.com/vladko312/SSTImap "${local_location}"
+    fi
 
     create_python3_venv "${local_location}" "${venv_folder_name}" "${start_file}" "${user_bin_file}"
 }
@@ -170,9 +177,18 @@ install_stti_map() {
 # install gopherus
 install_gopherus() {
     local local_location="/opt/Gopherus/"
-    sudo git clone https://github.com/tarunkant/Gopherus.git "${local_location}"
+
+    if [ ! -d "${local_location}" ]; then
+        sudo git clone https://github.com/tarunkant/Gopherus.git "${local_location}"
+    fi
+
     sudo chmod +x "${local_location}/gopherus.py"
-    sudo ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
+
+    if [ ! -f "/usr/local/bin/gopherus" ]; then
+        sudo ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
+    fi
+
+    sudo chmod +x /usr/local/bin/gopherus
 }
 
 # Main function to execute the script steps
