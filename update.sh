@@ -131,12 +131,48 @@ setup_gnome_binding() {
     return 1
 }
 
+# create python3 venv folder
+create_python3_venv() {
+    local local_location="${1}"
+    local venv_folder_name="${2}"
+    local start_file="${3}"
+    local user_bin_file="/usr/local/bin/${4}"
+
+    cd "${local_location}"
+    python3 -m venv "${venv_folder_name}"
+
+    if [ -f "requirements.txt" ];
+        .venv/bin/pip3 install -r requirements.txt
+    fi
+
+    sudo chmod +x "${local_location}/${start_file}"
+    
+    command="${local_location}/${venv_folder_name}/bin/python3 ${local_location}/${start_file}"
+    
+    if [ ! -f "${user_bin_file}" ];
+        echo '#!/bin/bash' | sudo tee -a "${user_bin_file}"
+        echo "${command}" | sudo tee -a "${user_bin_file}"
+    if
+}
+
+# install SSTImap
+install_stti_map() {
+    local local_location="/opt/SSTImap"
+    local venv_folder_name=".venv"
+    local start_file="sstimap.py"
+    local user_bin_file="sstimap"
+
+    sudo git clone https://github.com/vladko312/SSTImap "${local_location}"
+
+    create_python3_venv "${local_location}" "${venv_folder_name}" "${start_file}" "${user_bin_file}"
+}
+
 # install gopherus
 install_gopherus() {
-  local local_location="/opt/Gopherus/"
-  sudo git clone https://github.com/tarunkant/Gopherus.git "${local_location}"
-  sudo chmod +x "${local_location}/gopherus.py"
-  sudo ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
+    local local_location="/opt/Gopherus/"
+    sudo git clone https://github.com/tarunkant/Gopherus.git "${local_location}"
+    sudo chmod +x "${local_location}/gopherus.py"
+    sudo ln -sf "${local_location}/gopherus.py" /usr/local/bin/gopherus
 }
 
 # Main function to execute the script steps
@@ -174,6 +210,11 @@ main() {
 
     # install pipx packages
     pipx_install=$(pipx install git+https://github.com/yaap7/ldapsearch-ad  --force)
+
+    # install SSTI map
+    install_stti_map
+    
+    cd "${ROOT_DIR}"    
 
     # install gopherus
     install_gopherus

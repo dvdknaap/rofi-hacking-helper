@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>728</b> scripts organized into <b>137</b> subdirectories.</p>
+    <p>This repository contains <b>738</b> scripts organized into <b>139</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -3503,6 +3503,11 @@
     },
     {
         "type": "script",
+        "path": "web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh",
+        "description": "fuzz SSTI fields in an attempt to break it"
+    },
+    {
+        "type": "script",
         "path": "web/gitDumper/dump_git_folder_to_local_folder.sh",
         "description": "dump git folder to local folder"
     },
@@ -3618,6 +3623,26 @@
     },
     {
         "type": "script",
+        "path": "web/ssti/ssti_map_check.sh",
+        "description": "SSTImap - check if website is SSTI vulnerable"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_download_file.sh",
+        "description": "SSTImap - download file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_rce.sh",
+        "description": "SSTImap - execute cmd (RCE)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ssti_map_rev_shell.sh",
+        "description": "SSTImap - get shell"
+    },
+    {
+        "type": "script",
         "path": "web/ssti/jinja2/ssti_jinja2_dump_build_in_functions.sh",
         "description": "SSTI - dump jinja2 build in functions"
     },
@@ -3634,17 +3659,42 @@
     {
         "type": "script",
         "path": "web/ssti/jinja2/ssti_jinja2_rce.sh",
-        "description": "SSTI - jinja2 lfi dump file"
+        "description": "SSTI - jinja2 rce dump file without built in import, execute code"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/jinja2/ssti_jinja2_rce2.sh",
+        "description": "SSTI - jinja2 rce dump file with built in import, execute code"
     },
     {
         "type": "script",
         "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_linux.sh",
-        "description": "SSTI - jinja2 lfi dump file - linux (mkfifo)"
+        "description": "SSTI - jinja2 rce dump file - linux (mkfifo)"
     },
     {
         "type": "script",
         "path": "web/ssti/jinja2/ssti_jinja2_reverse_shell_windows_powershell.sh",
-        "description": "SSTI - jinja2 lfi dump file - windows (powershell)"
+        "description": "SSTI - jinja2 rce dump file - windows (powershell)"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/ruby/ssti_ruby_rce2.sh",
+        "description": "SSTI - Ruby template engine (ERB) RCE, execute code"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_dump_current_template_info.sh",
+        "description": "SSTI - dump twig current template info"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_lfi_dump_file.sh",
+        "description": "SSTI - twig lfi dump file"
+    },
+    {
+        "type": "script",
+        "path": "web/ssti/twig/ssti_twig_rce.sh",
+        "description": "SSTI - twig rce, execute code"
     },
     {
         "type": "script",

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - jinja2 lfi dump file - windows (powershell)
+SSTI - jinja2 rce dump file - windows (powershell)
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

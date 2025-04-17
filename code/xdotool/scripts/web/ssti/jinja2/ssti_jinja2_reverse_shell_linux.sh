@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-SSTI - jinja2 lfi dump file - linux (mkfifo)
+SSTI - jinja2 rce dump file - linux (mkfifo)
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))
