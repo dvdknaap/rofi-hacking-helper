@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **738** scripts organized into **139** subdirectories.
+This repository contains **741** scripts organized into **140** subdirectories.
 
 ## Table of Contents
 
@@ -1703,7 +1703,7 @@ fuzz inputs in an attempt to break it
 | 📜 `web/fuzzingInputs/fuzz_input_fields.sh` | fuzz input fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_sql_fields.sh` | fuzz sql fields in an attempt to break it |
 | 📜 `web/fuzzingInputs/fuzz_ssti_fields.sh` | fuzz SSTI fields in an attempt to break it |
-| 📜 `web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh` | fuzz SSTI fields in an attempt to break it |
+| 📜 `web/fuzzingInputs/fuzz_ssti_fields_attemp2.sh` | fuzz SSTI fields in an attempt to break it (attemp 2) |
 <br />
 
 ### web/gitDumper
@@ -1775,6 +1775,17 @@ script to use nikto
 | Path | Description |
 |------|-------------|
 | 📜 `web/nikto/identify_software.sh` | nikto: identify software |
+<br />
+
+### web/ssi
+
+script to do Server-Side Includes (SSI)
+
+| Path | Description |
+|------|-------------|
+| 📜 `web/ssi/ssI_echo_variables.sh` | SSI: echo variables |
+| 📜 `web/ssi/ssi_execute_cmd.sh` | SSI: execute cmd |
+| 📜 `web/ssi/ssi_print_env.sh` | SSI: print env variables |
 <br />
 
 ### web/ssti
