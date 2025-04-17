@@ -4,4 +4,4 @@
 SSTI - dump twig current template info
 '
 
-execute_command "{{ _self }}"
+execute_command "{{_self}}"

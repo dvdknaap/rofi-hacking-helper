@@ -12,4 +12,4 @@ generate_form "${FILE_FIELD}"
 
 FILE=${form_data["file"]}
 
-execute_command "{{ \"${FILE}\"|file_excerpt(1,-1) }}"
+execute_command "{{\"${FILE}\"|file_excerpt(1,-1)}}"
