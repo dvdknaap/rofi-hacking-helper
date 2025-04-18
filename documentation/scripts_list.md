@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains **745** scripts organized into **141** subdirectories.
+This repository contains **748** scripts organized into **141** subdirectories.
 
 ## Table of Contents
 
@@ -158,6 +158,7 @@ create custom wordlists
 | Path | Description |
 |------|-------------|
 | 📜 `customWordlist/cewl_create_custom_wordlist.sh` | cewl - create custom wordlist |
+| 📜 `customWordlist/create_custom_wordlist_from_wordlist.sh` | create custom wordlist from an existing wordlist and grep uppercase,lowercase,digets and length from the list |
 <br />
 
 ### decompile
@@ -1680,6 +1681,8 @@ scripts to do attacks with fuzz
 | 📜 `web/ffuf/ffuf_post_request.sh` | ffuf: : do a post request with given post data, wordlist and filter (SSRF) |
 | 📜 `web/ffuf/ffuf_post_request_ssrf_files.sh` | ffuf: : do a post request with given post data, wordlist and filter to check files (SSRF) |
 | 📜 `web/ffuf/ffuf_post_request_ssrf_ports.sh` | ffuf: : do a post request with given post data, wordlist and filter to check ports (SSRF) |
+| 📜 `web/ffuf/ffuzz_passwords_on_login_form.sh` | ffuf: fuzz passwords on login form |
+| 📜 `web/ffuf/ffuzz_usernames_on_login_form.sh` | ffuf: fuzz usernames on login form |
 | 📜 `web/ffuf/vhost_big_wordlist.sh` | ffuf: vhosts, search for subdomains with subdomains-top1million-110000.txt |
 | 📜 `web/ffuf/vhost_small_wordlist.sh` | ffuf vhosts, search for subdomains with namelist.txt |
 <br />

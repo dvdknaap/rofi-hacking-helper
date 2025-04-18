@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>745</b> scripts organized into <b>141</b> subdirectories.</p>
+    <p>This repository contains <b>748</b> scripts organized into <b>141</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -375,6 +375,11 @@
         "type": "script",
         "path": "customWordlist/cewl_create_custom_wordlist.sh",
         "description": "cewl - create custom wordlist"
+    },
+    {
+        "type": "script",
+        "path": "customWordlist/create_custom_wordlist_from_wordlist.sh",
+        "description": "create custom wordlist from an existing wordlist and grep uppercase,lowercase,digets and length from the list"
     },
     {
         "type": "script",
@@ -3465,6 +3470,16 @@
         "type": "script",
         "path": "web/ffuf/ffuf_post_request_ssrf_ports.sh",
         "description": "ffuf: : do a post request with given post data, wordlist and filter to check ports (SSRF)"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuzz_passwords_on_login_form.sh",
+        "description": "ffuf: fuzz passwords on login form"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuzz_usernames_on_login_form.sh",
+        "description": "ffuf: fuzz usernames on login form"
     },
     {
         "type": "script",

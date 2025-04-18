@@ -355,6 +355,11 @@
         "description": "cewl - create custom wordlist"
     },
     {
+        "type": "script",
+        "path": "customWordlist/create_custom_wordlist_from_wordlist.sh",
+        "description": "create custom wordlist from an existing wordlist and grep uppercase,lowercase,digets and length from the list"
+    },
+    {
         "type": "directory",
         "path": "decompile",
         "description": "decompile files"
@@ -4023,6 +4028,16 @@
         "type": "script",
         "path": "web/ffuf/ffuf_post_request_ssrf_ports.sh",
         "description": "ffuf: : do a post request with given post data, wordlist and filter to check ports (SSRF)"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuzz_passwords_on_login_form.sh",
+        "description": "ffuf: fuzz passwords on login form"
+    },
+    {
+        "type": "script",
+        "path": "web/ffuf/ffuzz_usernames_on_login_form.sh",
+        "description": "ffuf: fuzz usernames on login form"
     },
     {
         "type": "script",
