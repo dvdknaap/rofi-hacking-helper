@@ -5,36 +5,36 @@ python_script="${HELPERS_DIR}/generate_gui_form.py"
 
 # Function to create a form item json
 form_item() {
-    local label="$1"
+    local label="${1}"
     local type="text"
-    local name="$2"
+    local name="${2}"
     local default="${3:-}"
     local options="${4:-}"
 
     # If there are five arguments overwrite type field
     if [[ "$#" == 5 ]]; then
-        type="$2"
-        name="$3"
-        default="$4"
+        type="${2}"
+        name="${3}"
+        default="${4}"
 
         # Convert string to json
-        options=$(echo "$5" | jq -c -R 'split("|")')
+        options=$(echo "${5}" | jq -c -R 'split("|")')
 
         jq -cn --arg label "${label}" --arg type "${type}" --arg name "${name}" --arg default "${default}" \
             "{label: \$label, type: \$type, name: \$name, default: \$default, options: $options}"
 
     # If there are four arguments overwrite type field
     elif [[ "$#" == 4 ]]; then
-        type="$2"
-        name="$3"
-        default="$4"
+        type="${2}"
+        name="${3}"
+        default="${4}"
 
         jq -cn --arg label "${label}" --arg type "${type}" --arg name "${name}" --arg default "${default}" \
             '{label: $label, type: $type, name: $name, default: $default}'
 
     # If there are four arguments overwrite type field
     elif [[ "$#" == 3 ]]; then
-        default="$3"
+        default="${3}"
 
         jq -cn --arg label "${label}" --arg type "${type}" --arg name "${name}" --arg default "${default}" \
             '{label: $label, type: $type, name: $name, default: $default}'
