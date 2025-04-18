@@ -46,7 +46,7 @@
 </head>
 <body>
     <h1>📜 Script Documentation</h1>
-    <p>This repository contains <b>748</b> scripts organized into <b>141</b> subdirectories.</p>
+    <p>This repository contains <b>750</b> scripts organized into <b>141</b> subdirectories.</p>
     <input type="text" id="search" placeholder="Search for scripts or descriptions..." onkeyup="filterTable()">
     <table>
         <thead>
@@ -1078,13 +1078,18 @@
     },
     {
         "type": "script",
-        "path": "reconnaissance/linux/create_list_of_numbers.sh",
-        "description": "create a list of numbers. e.g. 2FA codes or ports and save to file"
+        "path": "reconnaissance/linux/create_2fa_codes.sh",
+        "description": "create 2FA codes and save to file"
     },
     {
         "type": "script",
         "path": "reconnaissance/linux/create_lsass_dump.sh",
         "description": "Powershell: create lsass.dump in elevated powershell"
+    },
+    {
+        "type": "script",
+        "path": "reconnaissance/linux/create_port_list.sh",
+        "description": "create ports list and save to file"
     },
     {
         "type": "script",
@@ -3458,6 +3463,11 @@
     },
     {
         "type": "script",
+        "path": "web/ffuf/ffuf_passwords_on_login_form.sh",
+        "description": "ffuf: fuzz passwords on login form"
+    },
+    {
+        "type": "script",
         "path": "web/ffuf/ffuf_post_request.sh",
         "description": "ffuf: : do a post request with given post data, wordlist and filter (SSRF)"
     },
@@ -3473,13 +3483,13 @@
     },
     {
         "type": "script",
-        "path": "web/ffuf/ffuzz_passwords_on_login_form.sh",
-        "description": "ffuf: fuzz passwords on login form"
+        "path": "web/ffuf/ffuf_usernames_on_login_form.sh",
+        "description": "ffuf: fuzz usernames on login form"
     },
     {
         "type": "script",
-        "path": "web/ffuf/ffuzz_usernames_on_login_form.sh",
-        "description": "ffuf: fuzz usernames on login form"
+        "path": "web/ffuf/fuff_2fa_tokens_on_password_reset.sh",
+        "description": "ffuf: fuzz 2fa tokens on password reset form"
     },
     {
         "type": "script",
