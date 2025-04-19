@@ -25,4 +25,3 @@ create_new_line
 sleep 60
 
 kill $HTTP_PID
-rm webShell.php

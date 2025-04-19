@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : '
-Check if we can execute expect to execute commands
+lfi: execute commands with expect://
 '
 
 # Generate GUI form items (label, type (optional: default text), name, default (optional))

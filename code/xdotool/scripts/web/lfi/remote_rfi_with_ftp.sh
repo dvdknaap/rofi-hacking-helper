@@ -23,4 +23,3 @@ create_new_line
 sleep 60
 
 kill $FTP_PID
-rm webShell.php
