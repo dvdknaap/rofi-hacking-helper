@@ -27,4 +27,3 @@ create_new_line
 sleep 60
 
 kill $SMB_PID
-rm webShell.php
